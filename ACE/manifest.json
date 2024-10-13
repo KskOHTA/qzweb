@@ -1,6 +1,6 @@
 {
-    "name": "PWA GCDL app",
-    "short_name": "CDL",
+    "name": "PWA GACE app",
+    "short_name": "ACE",
     "display": "standalone",
     "start_url": "index.html",
     "icons": [
