@@ -1,0 +1,20 @@
+.quiz-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.choices {
+    list-style: none;
+    padding: 0;
+}
+.choices li {
+    margin: 10px 0;
+}
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+}
