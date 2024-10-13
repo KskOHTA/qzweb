@@ -1,22 +1,22 @@
 // キャッシュファイルの指定
 var CACHE_NAME = 'pwa-gace-caches';
 var urlsToCache = [
-    './styles.css',
-    './【部内限り】ace_ver1_01.html',
-    './【部内限り】ace_ver1_02.html',
-    './【部内限り】ace_ver1_03.html',
-    './【部内限り】ace_ver1_04.html',
-    './【部内限り】ace_ver1_05.html',
-    './【部内限り】ace_ver1_06.html',
-    './【部内限り】ace_ver1_07.html',
-    './【部内限り】ace_ver1_08.html',
-    './【部内限り】ace_ver1_09.html',
-    './【部内限り】ace_ver1_10.html',
-    './【部内限り】ace_ver1_11.html',
-    './【部内限り】ace_ver1_12.html',
-    './【部内限り】ace_ver1_13.html',
-    './【部内限り】ace_ver1_14.html',
-    './【部内限り】ace_ver1_15.html',
+    '/qzweb/ACE/styles.css',
+    '/qzweb/ACE/【部内限り】ace_ver1_01.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_02.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_03.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_04.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_05.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_06.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_07.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_08.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_09.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_10.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_11.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_12.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_13.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_14.html',
+    '/qzweb/ACE/【部内限り】ace_ver1_15.html',
 ];
 
 // インストール処理
