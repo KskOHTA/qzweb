@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+	<title>AZazf</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+<!-- アドレスバー等のブラウザのUIを非表示 -->
+<meta name="mobile-web-app-capable" content="yes">
+<!-- default（Safariと同じ） / black（黒） / black-translucent（ステータスバーをコンテンツに含める） -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- ホーム画面に表示されるアプリ名 -->
+<meta name="apple-mobile-web-app-title" content="AZazf">
+<!-- ホーム画面に表示されるアプリアイコン -->
+<link rel="apple-touch-icon" href='./icon.png'>
+
+<link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
+
+<script>
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('./service_worker.js').then(function() { console.log('Service Worker Registered'); });
+}
+</script>
+
+</head>
+<body>
+	問題集<br>
+	<a href='【部内限り】pmle_ver1_01'>01</a>
+	<a href='【部内限り】pmle_ver1_02'>02</a>
+	<a href='【部内限り】pmle_ver1_03'>03</a>
+	<a href='【部内限り】pmle_ver1_04'>04</a>
+	<a href='【部内限り】pmle_ver1_05'>05</a>
+	<a href='【部内限り】pmle_ver1_06'>06</a>
+	<a href='【部内限り】pmle_ver1_07'>07</a>
+	<a href='【部内限り】pmle_ver1_08'>08</a>
+	<a href='【部内限り】pmle_ver1_09'>09</a>
+	<a href='【部内限り】pmle_ver1_10'>10</a>
+	<a href='【部内限り】pmle_ver1_11'>11</a>
+
+
+</body>
+</html>

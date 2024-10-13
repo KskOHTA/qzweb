@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Fundamental問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-data" style="display: none;">
+
+
+<div class='question' data-multiple='false' data-question='問題21<br>Microsoftのクラウド導入フレームワークにおいて、最初の3ステップは何ですか。' data-answer='1' data-explanation='戦略 ⇒ 計画 ⇒ 準備<br>説明<br>Microsoftのクラウド導入フレームワークは、企業がAzureを効果的に活用するための包括的なガイドです。このフレームワークは、ビジネスの要件と技術的なニーズに基づいてクラウド戦略を策定し、戦略、計画、準備の各段階を通じてクラウド導入を推進するための指針を提供します。具体的なツールやリソースを活用することで、企業はクラウド導入のリスクを軽減し、クラウド環境を最大限に活用することができます。<br>各フェーズの説明については以下の通りとなります。<br>1. 戦略(Strategy)：ビジネスの正当な理由と期待される導入の成果を定義します。ここでは、クラウド導入の目的と目標が明確化されます。<br>2. 計画(Plan)：ビジネス成果に合致するように実行可能な導入計画を行います。このフェーズでは、クラウド導入の具体的な計画が策定されます。<br>3. 準備(Ready)：計画されている変更のためにクラウド環境を準備します。ここでは、クラウド導入のための基盤となる環境が整えられます。<br>4. 移行(Adopt)：既存のワークロードを最新のクラウド環境に移行します。この段階で実際のデータやアプリケーションのクラウドへの移行が行われます。'>
+<div class='choice'> 計画 ⇒ 準備 ⇒ イノベーション</div>
+<div class='choice'> 戦略 ⇒ 計画 ⇒ 準備</div>
+<div class='choice'> 戦略 ⇒ 準備 ⇒ 計画</div>
+<div class='choice'> 準備 ⇒ 計画 ⇒ 移行</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題22<br>Azure Arcについて正しい記述はどれですか。（２つ選択）' data-answer='0,3' data-explanation='AzureポータルからAzure Arcにアクセスできる<br>Azure以外のリソースをAzure Resource Manager(ARM)で一元的に管理できる<br>説明<br>Azure Arcは、Azureの管理とガバナンスのツールを使用して、オンプレミス、マルチクラウド、およびエッジ環境のリソースを一元的に表示および管理するためのサービスです。Azure Arcを使用すると、異なる環境で実行されているリソースをAzureのリソースとして一元的に管理し、Azureのセキュリティ、運用、および管理のベストプラクティスをこれらのリソースに適用できます。<br>A:AzureポータルからAzure Arcにアクセスできる：Azure ArcはAzureポータルを通じてアクセスおよび管理できます。<br>D:Azure以外のリソースをAzure Resource Manager(ARM)内で一元的に管理できる：Azure Arcは、Azure外のリソース（例えば、オンプレミスのサーバーや他のクラウドプロバイダーのリソース）をAzure Resource Managerを通じて一元的に管理できます。<br>■その他の選択肢<br>B:Azure CLIからAzure Arcにアクセスできる：Azure ArcへはAzureポータルからアクセスする必要があります。Azure CLIからはアクセスできません。<br>C:オンプレミスとクラウドのアイデンティティを一元管理する：これはAzure ADの役割です。Azure Arcはリソース管理に焦点を当てています。<br>E:トラフィックを最適な場所にルーティングして負荷分散を行う：これはAzure Front DoorやAzure Traffic Managerの役割です。Azure Arcはリソース管理に関連しています。'>
+<div class='choice'> AzureポータルからAzure Arcにアクセスできる</div>
+<div class='choice'> Azure CLIからAzure Arcにアクセスできる</div>
+<div class='choice'> オンプレミスとクラウドのアイデンティティを一元管理する</div>
+<div class='choice'> Azure以外のリソースをAzure Resource Manager(ARM)で一元的に管理できる</div>
+<div class='choice'> トラフィックを最適な場所にルーティングして負荷分散を行う</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題23<br>あなたの組織は、数万個のIoTデバイスをデプロイし、Azure IoT Hubを使ってデータを収集・管理したいと考えています。<br>これらの収集したデータを保管するのに最適なストレージサービスは何ですか。' data-answer='3' data-explanation='Azure Data Lake<br>説明<br>Azure Data Lakeは、大規模なデータ分析やデータストレージ用途に最適化されたAzureのストレージサービスです。スケーラビリティが高く、大量の非構造化データを効率的に処理し、保存することができます。数万台のIoTデバイスからの大量データを取り扱う場合、このようなスケーラブルなストレージが必要であり、大量データを効率的に収集、保存、分析するのに適しています。<br>■その他の選択肢<br>A:Azure キュー ストレージは、メッセージキューイングに適していますが、大規模なデータのストレージや分析には最適ではありません。<br>B:Azure SQL Databaseは、リレーショナルデータベースサービスであり、IoTデータのような非構造化データには最適ではありません。<br>C:Azure Cosmos DBは、分散データベースサービスであり、グローバル分散、低レイテンシー、スケーラビリティを提供しますが、大規模な非構造化データの長期保存やビッグデータ分析には最適ではありません。<br>■用語解説<br>IoTデバイス：インターネットに接続されている物理機器を指し、センサーやソフトウェアを使って周囲の情報を収集し、インターネットを通じて他のデバイスやサービスと情報を共有することができます。例えば、スマートウォッチやスマートホームのセキュリティシステムなどがあります。これにより、遠隔での制御やデータ収集、効率的な運用が可能となります。'>
+<div class='choice'> Azure キュー ストレージ</div>
+<div class='choice'> Azure SQL Database</div>
+<div class='choice'> Azure Cosmos DB</div>
+<div class='choice'> Azure Data Lake</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題24<br>あなたは、以下の要件を満たすサービスを探しています。<br>・負荷に応じて仮想マシンの数を自動的に増減させる<br>・増減させる仮想マシンは同じ設定で構成されている<br>どのAzureサービスが最適ですか。' data-answer='2' data-explanation='仮想マシンスケールセット<br>説明<br>仮想マシンスケールセット（Virtual machine Scale Sets）は、Azureの高可用性を提供するサービスであり、同じ仮想マシンのコピーをデプロイし、負荷に応じてスケーリングすることができます。これにより、アプリケーションの高可用性と冗長性を実現することができます。スケールセットは、自動的にまたは手動で、仮想マシンの数を増減させることができるため、需要に合わせてリソースを最適に利用することができます。<br>■その他の選択肢<br>A:Azure Load Balancerは、Azureの負荷分散ソリューションであり、複数の仮想マシン間でネットワークトラフィックを分散します。ただし、自動的に仮想マシンの数を増減させる機能は持っていません。<br>B:ARM テンプレートは、Azureリソースのデプロイや設定を自動化するためのものですが、自動的に仮想マシンの数を増減させる機能は持っていません。<br>D:Azure Container Instances (ACI)は、コンテナーをAzureで迅速に実行するためのサービスです。負荷に応じて自動的にスケーリングする機能は持っていません。'>
+<div class='choice'> Azure Load Balancer</div>
+<div class='choice'> ARM テンプレート</div>
+<div class='choice'> 仮想マシンスケールセット</div>
+<div class='choice'> Azure Container Instances (ACI)</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題25<br>Azureの使用量とコストに基づいて、設定した上限を超えた際にメール通知を行う機能はどれですか。' data-answer='0' data-explanation='予算アラート<br>説明<br>Azureの予算アラートは、Azure Cost Managementで提供されている機能の一部であり、ユーザーは、特定の期間に対して設定した予算を基に使用状況をモニタリングすることができます。予算の使用状況が設定したしきい値（例えば、予算の50%、80%など）を超えると、自動的にメール通知を送信することができ、コストの管理が容易になります。これにより、意図しない高額の課金を防ぐことができ、Azureの利用コストを効果的に管理することができます。<br>■その他の選択肢<br>B:クレジット アラートは、Azureサービスの使用に先立って支払った金額の使用量が90％および100％になった際に通知されるアラートです。<br>C:部署課金クォータ アラートは、特定の部署やチームの課金クォータを設定し、その上限を超えた際の通知を行うアラートです。<br>D:メトリックアラートは、Azureリソースの特定のメトリック（CPUの使用率、ディスクの読み書きなど）に関する情報をモニタリングし、指定したしきい値を超えた場合に通知するアラートです。<br>Azure Cost Management のコストのアラートで使用量と支出を監視する - Microsoft Cost Management'>
+<div class='choice'> 予算アラート</div>
+<div class='choice'> クレジット アラート</div>
+<div class='choice'> 部署課金クォータ アラート</div>
+<div class='choice'> メトリックアラート</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題26<br>セキュリティ情報イベント管理（SIEM）ソリューションを提供するAzureサービスは何ですか。' data-answer='2' data-explanation='Microsoft Sentinel<br>説明<br>Microsoft Sentinelは、AzureのクラウドネイティブSIEMサービスです。大量のセキュリティデータをリアルタイムで収集、分析し、脅威の検出と応答を自動化します。クラウド環境、オンプレミスおよび他のクラウドプロバイダーからのデータを統合し、包括的なセキュリティポスチャの確立を支援します。インシデント対応の自動化や、ビジュアルな分析ツールを通じて、セキュリティオペレーションを効率化します。<br>■その他の選択肢<br>A:Azure Blueprintsは、Azure環境のガバナンスとコンプライアンスを支援するためのサービスですが、SIEM機能は提供していません。<br>B:Microsoft Intuneは、モバイルデバイス管理（MDM）とモバイルアプリケーション管理（MAM）を提供するサービスですが、SIEMソリューションは提供していません。<br>D:Log Analyticsは、データ収集と分析を行うサービスですが、SIEMソリューションを提供するものではありません。<br>■用語解説<br>セキュリティ情報イベント管理（SIEM）：組織のセキュリティを監視して保護するためのシステムです。SIEMは、コンピューターやネットワークからのセキュリティ関連のデータ（例えば、ログファイルやネットワークトラフィック）を集めて分析します。この分析によって、不審な活動や潜在的なセキュリティ違反を早期に検出し、対応することができます。また、組織がセキュリティポリシーに準拠しているかどうかを確認するのにも役立ちます。SIEMは、組織のセキュリティ体制を強化する重要なツールです。'>
+<div class='choice'> Azure Blueprints</div>
+<div class='choice'> Microsoft Intune</div>
+<div class='choice'> Microsoft Sentinel</div>
+<div class='choice'> Log Analytics</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題27<br>あなたの組織は、オンプレミスのデータをAzureにすべて移行したいと考えています。<br>移行後の運用負担を減らすため、PaaSソリューションでの運用を検討している場合、最適なAzureサービスは何ですか。' data-answer='1' data-explanation='Azure SQL Database<br>説明<br>Azure SQL Databaseは、アップグレード、修正プログラムの適用、バックアップ、監視などのデータベース管理機能を自動的に処理するフルマネージドのPaaSデータベースエンジンです。これにより、ユーザーはデータベース管理に関わる作業から解放され、ビジネスの核となる活動に集中できます。<br>■その他の選択肢<br>A:Microsoft SQL ServerがインストールされたAzure仮想マシンは、IaaS（サービスとしてのインフラストラクチャ）に該当し、PaaSではありません。<br>C:Azure Storageアカウントは、データストレージに関連するサービスであり、データベース管理に特化したサービスではありません。<br>D:Azure Kubernetes Service（AKS）は、コンテナオーケストレーションサービスであり、データベース移行には関連していません。'>
+<div class='choice'> SQL ServerがインストールされたAzure仮想マシン</div>
+<div class='choice'> Azure SQL Database</div>
+<div class='choice'> Azure Storageアカウント</div>
+<div class='choice'> Azure Kubernetes Service（AKS）</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題28<br>ARMテンプレートについて正しい記述はどれですか。（２つ選択）' data-answer='1,4' data-explanation='JSONで記載する<br>一貫性のあるリソースを繰り返しデプロイすることができる<br>説明<br>ARMテンプレートは、Azureリソースを管理およびデプロイするために使用されるJSON形式のファイルです。これにより、クラウドリソースの一貫性あるデプロイメント、管理、およびバージョン管理が可能になります。<br>ARMテンプレートは、Azureの様々なサービスやリソースの構成を記述し、それらを一元的に管理するために使用されます。効率的かつ再利用可能なリソース管理の方法を提供し、複雑な環境を容易にデプロイすることができます。<br>B:JSONで記載する：ARMテンプレートはJSON形式で記述されます。<br>E:一貫性のあるリソースを繰り返しデプロイすることができる：ARMテンプレートを使用すると、一貫した構成のリソースを繰り返しデプロイできます。<br>■その他の選択肢<br>A:YAMLで記載する：ARMテンプレートはJSON形式で記述されます。YAML形式ではありません。<br>C:リソースを監視し、準拠していないリソースを特定することができる：ARMテンプレートはリソースのデプロイメントに使用されます。リソースの監視やコンプライアンスの確認には使用されません。<br>D:複数のリソースのデプロイにはそれぞれテンプレートが必要である：単一のARMテンプレートで複数のリソースをデプロイすることが可能です。'>
+<div class='choice'> YAMLで記載する</div>
+<div class='choice'> JSONで記載する</div>
+<div class='choice'> リソースを監視し、準拠していないリソースを特定することができる</div>
+<div class='choice'> 複数のリソースのデプロイにはそれぞれテンプレートが必要である</div>
+<div class='choice'> 一貫性のあるリソースを繰り返しデプロイすることができる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題29<br>ユーザーの資格情報を検証するプロセスのことを何と言いますか。' data-answer='0' data-explanation='認証（Authentication）<br>説明<br>認証（Authentication）は、ユーザーが主張している身元が本当にその人であるかを確認するプロセスです。例えば、ユーザー名とパスワードを提供することで、その情報がシステムに登録されている情報と一致するかを確認します。正しい資格情報が与えられた時にのみ、ユーザーはシステムにアクセスできます。<br>■その他の選択肢<br>B:承認（Authorization）は、ユーザーが特定のリソースや情報にアクセスするための権限があるかどうかを決定するプロセスです。ユーザーが認証された後、そのユーザーがアクセスしようとしているデータや機能を使うことが許可されているかどうかをチェックします。<br>C:監査（Audit）は、システムの使用状況やトランザクションを記録し、後でレビューできるようにするプロセスです。セキュリティ上のインシデントが発生した場合に原因を特定するために使用されます。<br>D:許可（Permission）は、特定のリソースやアクションに対するアクセスをユーザーに与えることですが、これ自体はプロセスではなく、承認の結果として与えられるものです。'>
+<div class='choice'> 認証（Authentication）</div>
+<div class='choice'> 承認（Authorization）</div>
+<div class='choice'> 監査（Audit）</div>
+<div class='choice'> 許可（Permission）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題30<br>以下のうち、コストが発生するAzureコンポーネントはどれですか。' data-answer='2' data-explanation='パブリックIPアドレス<br>説明<br>AzureのパブリックIPアドレスは、インターネット上のリソースがAzureリソースに対して通信を行うために使用される設定可能なコンポーネントです。AzureリソースにパブリックIPアドレスを割り当てることで、そのリソースへのインターネットからの受信通信が可能になります。<br>Azureでは、動的IPアドレスと静的IPアドレスの2種類のパブリックIPアドレスが提供されています。動的IPアドレスは、仮想マシンが実行中の間だけ割り当てられ、割り当て解除時に開放されます。静的IPアドレスは、一度割り当てられると、ユーザーが明示的に解放するまでそのアドレスが維持されます。<br>またパブリックIPアドレスの割り当てや保持には、コストが発生し、リージョンやIPアドレスの種類（静的または動的）、使用されるリソースタイプによって異なります。<br>その他の選択肢は、使用時にコストは発生しません。'>
+<div class='choice'> リソースグループ</div>
+<div class='choice'> ネットワークインターフェイス</div>
+<div class='choice'> パブリックIPアドレス</div>
+<div class='choice'> Azureカスタムロール</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題31<br>オンプレミスとクラウドコンピューティングについて正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='クラウドでは、オンプレミスに比べてCapExでかかるコストを抑えることができる<br>クラウドでは、オンプレミスに比べてビジネスニーズに合わせたリソースのスケーリングが可能である<br>説明<br>オンプレミスは、企業が自社の物理的な場所にITインフラを設置・運用するモデルです。企業は全てのハードウェア、ソフトウェアを購入・管理し、全てのメンテナンスとアップグレードを自己責任で行います。<br>一方、クラウドコンピューティングは、サーバー、ストレージ、データベースなどのITリソースがインターネット経由で提供されるサービスモデルです。これにより、企業はリソースをオンデマンドで購入し、使用した分だけ支払うことができます。<br>設問の解説については以下の通りとなります。<br>B:クラウドでは、オンプレミスに比べてCapExでかかるコストを抑えることができる：クラウドコンピューティングは物理的なハードウェアやデータセンターの設置に関連する初期投資コストを削減します。支払いは使用したサービスに基づくため、CapExが大幅に削減されます。<br>C:クラウドでは、オンプレミスに比べてビジネスニーズに合わせたリソースのスケーリングが可能である：クラウドサービスは需要に応じてリソースを迅速にスケールアップまたはスケールダウンする柔軟性を提供します。これはオンプレミスの環境では提供できない性質です。<br>■その他の選択肢<br>A:オンプレミスと同様にクラウドでは設定の高度なカスタマイズが可能である：クラウドサービスは多くの設定オプションを提供しますが、オンプレミス環境ほどの高度なカスタマイズは提供できない場合があります。原則、オンプレミス環境のほうが、ハードウェアやその他のリソースをより細かくコントロールすることができます。<br>D:オンプレミスは、クラウドに比べてよりOpExのコストがかかる：OpEx（運用支出）はクラウドとオンプレミスのどちらが高いか一概には言えず、組織の特定の使用状況や運用効率に大きく依存します。<br>■用語解説<br>CapEx（Capital Expenditure、資本支出）は、企業が物理的な資産を購入または改善するために発生する長期的な固定投資を指します。これには、ビル、機器、インフラなどが含まれます。<br>OpEx（Operational Expenditure、運用支出）は、企業の日常的な業務に関連する支出を指します。これには、賃金、賃貸料、サービス料金などが含まれます。'>
+<div class='choice'> オンプレミスと同様にクラウドでは設定の高度なカスタマイズが可能である</div>
+<div class='choice'> クラウドでは、オンプレミスに比べてCapExでかかるコストを抑えることができる</div>
+<div class='choice'> クラウドでは、オンプレミスに比べてビジネスニーズに合わせたリソースのスケーリングが可能である</div>
+<div class='choice'> オンプレミスは、クラウドに比べてよりOpExのコストがかかる</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題32<br>CapEx（資本支出）に当てはまる例はどれですか。（複数選択）' data-answer='0,3' data-explanation='データセンターの建築費用<br>サーバーラックやネットワーク機器の購入費用<br>説明<br>CapEx（資本支出）は、企業が物理的な固定資産を購入または改善するための費用です。これには建物、機器、ソフトウェアなどの長期的な投資が含まれ、通常は一度の大きな支出として発生します。また、CapExは減価償却を通じて長期にわたって財務報告に反映されます。<br>A:データセンターの建築費用：これはCapExの典型的な例です。データセンターの建設は大規模な初期投資を必要とし、長期間にわたってその価値が減少します（減価償却）。<br>D:サーバーラックやネットワーク機器の購入費用：これもCapExに該当します。サーバーラックやネットワーク機器のような物理的な資産の購入は、一度の大きな支出として処理され、その価値は時間とともに減少します。<br>■その他の選択肢<br>その他の選択肢は、OpEx（運用費用）となります。OpExは費用としてその発生した期間に完全に計上され、資本的な資産のように減価償却の対象とはなりません。<br>B:ITスタッフに支払う給料：給料は日々の運営に関連する費用であり、OpExに該当します。<br>C:Azureへの支払い料金：クラウドサービスへの支払いは、利用したサービスに基づいて定期的に発生するため、OpExです。<br>E:ソフトウェアのサブスクリプション費用：ソフトウェアのサブスクリプションも、定期的な支払いが必要なため、OpExに分類されます。'>
+<div class='choice'> データセンターの建築費用</div>
+<div class='choice'> ITスタッフに支払う給料</div>
+<div class='choice'> Azureへの支払い料金</div>
+<div class='choice'> サーバーラックやネットワーク機器の購入費用</div>
+<div class='choice'> ソフトウェアのサブスクリプション費</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題33<br>Azureサブスクリプションのユーザーを作成するためには、どのサービスを使用すればよいですか。' data-answer='2' data-explanation='Azure Active Directory<br>説明<br>Azure Active Directory（Azure AD）は、クラウドベースのIDとアクセス管理のサービスであり、Microsoft Entraの一部として提供されています。組織内のユーザーアカウントの作成、管理、シングルサインオン、多要素認証などのセキュリティ機能を提供します。Azureサブスクリプションのユーザーを管理するにはこのサービスを使用します。<br>■その他の選択肢<br>A:Active Directory Domain Services（AD DS）は、オンプレミスの環境でユーザーアカウント、コンピューター、その他のデバイスのアイデンティティ情報を管理するためのサービスです。クラウドではなく、オンプレミスの環境で利用されます。<br>B:Microsoft Sentinelは、セキュリティ情報とイベント管理 (SIEM) およびセキュリティ オーケストレーション、自動化、応答 (SOAR) 機能のサービスであり、ユーザー管理とは関連しません。<br>D:Azure Key Vaultは、キー、シークレット、証明書の管理を行うサービスであり、ユーザー作成とは直接関係ありません。'>
+<div class='choice'> Active Directory Domain Services</div>
+<div class='choice'> Microsoft Sentinel</div>
+<div class='choice'> Azure Active Directory</div>
+<div class='choice'> Azure Key Vault</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題34<br>従量課金制について正しい記述はどれですか。（２つ選択）' data-answer='2,4' data-explanation='サーバーレスコンピューティング利用時の支払いは従量課金制で行われる<br>従量課金制で提供されるサービスは、OpExと見なされる<br>説明<br>従量課金制とは、サービスやリソースの利用量に基づいて料金を支払う課金モデルです。この制度により、ユーザーは必要な分だけサービスを利用し、その使用量に応じて費用が発生します。これにより、過剰なリソースの確保や未使用リソースに対する支払いを避けることができます。<br>C:サーバーレスコンピューティング利用時の支払いは従量課金制で行われる：サーバーレスコンピューティングは、実際に使用したリソースやサービスの量に基づいて課金されるため、従量課金制の典型的な例です。<br>E:従量課金制で提供されるサービスは、OpExと見なされる：従量課金制は、使用した分だけ料金を支払うモデルであり、運用経費（OpEx）の一部と見なされます。<br>■その他の選択肢<br>A:従量課金制では、一定の金額を支払うことでリソースの供給を受けることができる：従量課金制では、利用したリソースやサービスの量に基づいて料金が発生します。事前に一定の金額を支払う形式ではありません。<br>B:リザーブドインスタンス利用時の支払いは従量課金制で行われる：リザーブドインスタンスは、あらかじめリソースを確保し、長期間にわたって一定の料金を支払う契約であり、従量課金制ではありません。<br>D:従量課金制で提供されるサービスは、CapExと見なされる：資本経費（CapEx）は事前に大きな投資を行う支出方法を指し、従量課金制とは異なります。'>
+<div class='choice'> 従量課金制では、一定の金額を支払うことでリソースの供給を受けることができる</div>
+<div class='choice'> リザーブドインスタンス利用時の支払いは従量課金制で行われる</div>
+<div class='choice'> サーバーレスコンピューティング利用時の支払いは従量課金制で行われる</div>
+<div class='choice'> 従量課金制で提供されるサービスは、CapExと見なされる</div>
+<div class='choice'> 従量課金制で提供されるサービスは、OpExと見なされる</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題35<br>Azure Information Protectionの機能は何ですか。（２つ選択）' data-answer='0,2' data-explanation='ドキュメントとメールを暗号化する<br>自動的にドキュメントに透かしを追加する<br>説明<br>Azure Information Protection（AIP）は、データの分類、ラベリング、保護を行い、機密情報のセキュリティを強化するクラウドベースのソリューションです。<br>具体的には、以下のような機能を備えています。<br>A:ドキュメントとメールを暗号化する：AIPは、ドキュメントやメールなどの情報を暗号化する機能を提供します。これにより機密情報が含まれるコンテンツが不正アクセスから保護され、セキュリティが強化されます。ユーザーは、特定の条件に基づいてアクセス権を設定することができ、機密データの安全な共有を保証できます。<br>C:自動的にドキュメントに透かしを追加する：AIPは、ドキュメントに透かしを追加する機能も提供します。この透かしはドキュメントの分類を視覚的に示し、不正使用を防止するための追加的なセキュリティ層として機能します。透かしは自動的に、またはユーザーが指定した条件に基づいてドキュメントに追加されます。<br>■その他の選択肢<br>B:Azure Storage内のデータを暗号化する：これはAIPではなく、Azure Storageサービスの一部として提供されています。AIPはドキュメントやメールに特化しており、ストレージサービス全体の暗号化には関与しません。<br>D:準拠していないデバイスからのアクセスをブロックする：これはデバイス管理やネットワークセキュリティに関連する機能であり、AIPの提供範囲外です。AIPは情報の保護とラベル付けに特化しており、デバイスの準拠状態やアクセス制御には関与しません。'>
+<div class='choice'> ドキュメントとメールを暗号化する</div>
+<div class='choice'> Azure Storage内のデータを暗号化する</div>
+<div class='choice'> 自動的にドキュメントに透かしを追加する</div>
+<div class='choice'> 準拠していないデバイスからのアクセスをブロックする</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題36<br>あなたはIT管理者として、ユーザーがAzure仮想マシン”VM1”にインターネット経由でアクセスできるようにする必要があります。<br>HTTPまたはHTTPSでアクセスできるようにするために、最適なサービスは何ですか。（２つ選択）' data-answer='1,2' data-explanation='Azure Firewall<br>ネットワークセキュリティグループ（NSG）<br>説明<br>Azure Firewallは、Azureで実行されるクラウドワークロードに対する高レベルの脅威保護を提供するセキュリティサービスです。インバウンドおよびアウトバウンドのトラフィックをフィルタリングし、セキュリティルールに基づいて許可または拒否できます。<br>特定のポート（HTTPの80番およびHTTPSの443番など）へのアクセスを許可することで、VM1をインターネット経由でアクセス可能にすることができます。<br>ネットワークセキュリティグループ（NSG）は、Azure仮想ネットワーク内のリソース間のネットワークトラフィックをフィルター処理するために使用されます。NSGにはセキュリティ規則が含まれており、これらの規則を使用して送信元と送信先、ポート、プロトコルを指定することができます。HTTPまたはHTTPSへのアクセスを許可するルールを設定することで、VM1へのアクセスを可能にすることができます。<br>■その他の選択肢<br>A:Azure DDoS保護は、分散型サービス拒否（DDoS）攻撃からリソースを保護するために使用されます。これはアクセス制御とは関連していません。<br>D:Microsoft Sentinelは、セキュリティ情報およびイベント管理（SIEM）とセキュリティオーケストレーション、自動化および応答（SOAR）のソリューションです。これは主にセキュリティ監視および脅威対策に使用され、アクセス制御には関与しません。<br>E:Azure Policyは、Azureリソースの設定およびコンプライアンスの自動化に使用されますが、HTTP/HTTPSトラフィックの制御やアクセス許可には関連していません。 Azureポリシーは、特定のネットワークルールを定義するために使用されるものではありません。'>
+<div class='choice'> Azure DDoS保護</div>
+<div class='choice'> Azure Firewall</div>
+<div class='choice'> ネットワークセキュリティグループ（NSG）</div>
+<div class='choice'> Microsoft Sentinel</div>
+<div class='choice'> Azure Policy</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題37<br>Azure Storageの”リハイドレート”とは何ですか。' data-answer='3' data-explanation='アーカイブアクセス層のデータをホットまたはクールに切り替える機能<br>説明<br>Azure Storageの"リハイドレート"とは、アーカイブされたデータをホットまたはクールのアクセス層に戻すプロセスを指します。アーカイブ層はコスト効率が非常に高いですが、データの取り出しには時間がかかるアクセス層です。<br>リハイドレートを使用すると、アーカイブ層に格納されているデータを、より高いアクセス頻度の層へ移動させることができます。データをホット層に戻すときは迅速なアクセスが可能になり、クール層に戻すときは頻繁ではないがある程度のアクセスが見込まれる場合に適しています。<br>注意点として、リハイドレーションには時間がかかり、プロセス完了までの所要時間はデータ量やシステムの状況によって異なります。<br>■その他の選択肢<br>A:プライマリリージョンの仮想マシンをセカンダリリージョンに複製する機能：これは、Azureの地理的冗長ストレージ（GRS）や災害復旧に関連する機能であり、リハイドレートとは異なります。<br>B:特定の条件に従ってデータを自動的に削除、またはアーカイブアクセス層に移動する機能：これは、ライフサイクル管理ポリシーに関連する機能であり、リハイドレートのプロセスとは関係ありません。<br>C:Azure Storageリソースへの一時的なアクセス権を提供する機能：これは、共有アクセス署名（SAS）などの一時的なアクセス許可を提供する機能であり、リハイドレートとは異なります。'>
+<div class='choice'> プライマリリージョンの仮想マシンをセカンダリリージョンに複製する機能</div>
+<div class='choice'> 特定の条件に従ってデータを自動的に削除、またはアーカイブアクセス層に移動する機能</div>
+<div class='choice'> Azure Storageリソースへの一時的なアクセス権を提供する機能</div>
+<div class='choice'> アーカイブアクセス層のデータをホットまたはクールに切り替える機能</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題38<br>シークレット、キー、証明書を管理できるAzureサービスは何ですか。' data-answer='1' data-explanation='Azure Key Vault<br>説明<br>Azure Key Vaultは、シークレット、キー、証明書を安全に管理するためのクラウドサービスです。以下の機能を提供します。<br>・シークレットの管理：シークレットとは、トークン、パスワード、APIキーなどの機密情報を指します。Key Vaultでは、これらを安全に格納し、アクセスを厳格に制御します。<br>・キー管理：キーは、データを暗号化および復号化するために使用されるデジタルコードです。Key Vaultでは、キーを管理することでデータの機密性を保持し、閲覧権限を持たないユーザーによるデータの閲覧や改変を防ぎます。<br>・証明書の管理：証明書（特にTLS/SSL証明書）は、ウェブサイトの身元を認証し、データの安全な転送を可能にするために使用されます。これにより、Azureおよび内部接続されたリソースのセキュリティが強化されます。<br>■その他の選択肢<br>A: Microsoft Defender for Cloudは、クラウドベースのセキュリティ管理ツールで、リソースのセキュリティポスチャを強化し、脅威から保護するための機能を提供します。シークレットやキー、証明書の管理には特化していません。<br>C:Azure ADは、ユーザー認証とアイデンティティ管理に使用されるサービスですが、シークレットやキー、証明書を直接管理する機能は提供していません。<br>D:Azure Blueprintsは、クラウド環境の構築と開発のための定義やガイドラインを提供するサービスですが、シークレットやキー、証明書の管理には使用されません。'>
+<div class='choice'> Microsoft Defender for Cloud</div>
+<div class='choice'> Azure Key Vault</div>
+<div class='choice'> Azure AD</div>
+<div class='choice'> Azure Blueprints</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題39<br>Azure Virtual Network（仮想ネットワーク）の特徴として正しいのはどれですか。' data-answer='0' data-explanation='ネットワークの分離<br>説明<br>ネットワークの分離は、Azure Virtual Networkの主要な特徴の一つであり、異なるネットワークリソースを論理的に分けることができます。これにより、他のAzureリソースやパブリックインターネットから隔離されたプライベートネットワークを作成でき、セキュリティとデータ保護を強化することができます。<br>■その他の選択肢<br>B:初期コストの発生：Azure Virtual Network自体の設定は、初期設定のコストが特にかかりません。ただし、使用するリソースやサービスによってはコストが発生する場合があります。<br>C:拡張性の制約：Azure Virtual Networkは高い拡張性を提供します。ユーザーは必要に応じてネットワークリソースを拡張または縮小でき、成長するビジネスニーズに柔軟に対応できます。<br>D:運用業務の負担が重い：Azure Virtual Networkは、ネットワークの管理と運用を容易にするためのツールと機能を提供します。これにより、運用業務の負担は軽減されます。'>
+<div class='choice'> ネットワークの分離</div>
+<div class='choice'> 初期コストの発生</div>
+<div class='choice'> 拡張性の制約</div>
+<div class='choice'> 運用業務の負担が重い</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題40<br>サーバーを必要とせず、コードを実行できるAzureサービスは何ですか。' data-answer='3' data-explanation='Azure Functions<br>説明<br>Azure Functionsは、サーバーレスコンピューティングソリューションの一つであり、サーバーの管理なしでコードを実行できるようにするサービスです。<br>サーバーレスとは、コンピューティングリソースを事前にプロビジョニングする必要がない、イベント駆動型のコンピューティングアプローチを指します。このアプローチでは、アプリケーションコードが実行されるサーバーの管理やスケーリングについて心配する必要がありません。代わりに、特定のイベントやトリガーに対してコードが自動的に実行され、必要なリソースが自動的に割り当てられます。<br>Azure Functionsでは、実際に使用したコンピューティングリソースに基づいて課金されるため、アクティビティがない場合はコストがかからず、コストを抑えた運用が可能となります。<br>■その他の選択肢<br>A:Azure SQL Databaseは、フルマネージドのリレーショナルデータベースサービスです。コードの実行ではなくデータ管理に主に使用されます。<br>B:Azure Batchは、大規模な並列およびバッチコンピューティング作業の管理と実行に使用されますが、サーバーレスではありません。<br>C:Azure Databricksは、データ分析および機械学習プラットフォームです。これはサーバーレスプラットフォームではなく、またコード実行よりもデータ処理と分析に特化しています。'>
+<div class='choice'> Azure SQL Database</div>
+<div class='choice'> Azure Batch</div>
+<div class='choice'> Azure Databricks</div>
+<div class='choice'> Azure Functions</div>
+</div>
+
+
+            <!-- 他の問題も同様に追加 -->
+        </div>
+
+        <h2 id="question"></h2>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),  // innerHTMLに変更
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+            choicesContainer.innerHTML = '';
+
+            currentQuestion.choices.forEach((choice, i) => {
+                const li = document.createElement('li');
+                const input = document.createElement('input');
+                const label = document.createElement('label');
+
+                input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                input.name = 'choice';
+                input.value = choice.index;
+                input.id = 'choice' + i;
+
+                label.htmlFor = 'choice' + i;
+                label.innerHTML = choice.text;  // textContentをinnerHTMLに変更
+
+                li.appendChild(input);
+                li.appendChild(label);
+                choicesContainer.appendChild(li);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = Array.from(document.querySelectorAll('input[name="choice"]:checked'))
+                                        .map(checkbox => parseInt(checkbox.value))
+                                        .sort();
+            const resultElement = document.getElementById('result');
+            
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+                
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++; // 正解数をカウント
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            // クイズのUI全体を初期化
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            // 初期化後に最初の問題を表示
+            showQuestion();
+        }        
+    </script>
+</body>
+</html>

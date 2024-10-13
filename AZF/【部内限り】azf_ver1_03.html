@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Fundamental問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-data" style="display: none;">
+
+
+<div class='question' data-multiple='false' data-question='問題1<br>過去のトレーニングデータを活用して予測を行うための総合的なプラットフォームであり、人工知能（AI）ソリューションの開発、学習、評価およびデプロイメントをサポートするAzureサービスは何ですか。' data-answer='1' data-explanation='Azure Machine Learning<br>説明<br>Azure Machine Learningは、データサイエンスと機械学習のためのツールやサービスを提供するクラウドベースのプラットフォームです。このプラットフォームを使うことで、データから有益な洞察や予測を引き出すための機械学習モデルを作成、学習、デプロイすることができます。<br>Azure Machine Learningは、機械学習の専門知識がないユーザーでもドラッグ＆ドロップやシンプルなツールを使ってモデルを構築できます。また、より高度なデータサイエンティスト向けの機能も備えており、複雑なモデルのカスタマイズや大規模なデータ処理にも対応しています。<br>■その他の選択肢<br>A:Azure Functionsは、サーバーレスコンピューティングプラットフォームであり、AIや機械学習に特化していません。<br>C:Azure Bot Serviceは、チャットボットの開発に特化したサービスですが、一般的な機械学習のプラットフォームではありません。<br>D:Azure Logic Appsは、ビジネスプロセスの自動化に特化していますが、機械学習の開発やデプロイメントには関係しません。'>
+<div class='choice'> Azure Functions</div>
+<div class='choice'> Azure Machine Learning</div>
+<div class='choice'> Azure Bot Service</div>
+<div class='choice'> Azure Logic Apps</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題2<br>Azure仮想マシンを作成する際に最低限必要なリソースは何ですか。（２つ選択）' data-answer='2,3' data-explanation='仮想ネットワーク<br>ネットワークインターフェイス (NIC)<br>説明<br>Azure仮想マシン(VM)を作成する際に最低限必要なリソースは以下のとおりです。<br>C:仮想ネットワーク：Azureの仮想ネットワークは、Azure内でのプライベートネットワークとして機能します。これは、オンプレミスのネットワークと同様に、IPアドレスの範囲、サブネット、ルーティングテーブルなどを持つことができます。仮想ネットワークはAzureで仮想マシンを作成するために必要な基本的なリソースです。<br>D:ネットワークインターフェイス (NIC)：ネットワークインターフェイスは、Azure 仮想マシンが仮想ネットワークに接続して通信するためのエンドポイントです。NICは、Azure VMが仮想ネットワーク上で通信を行うために必要なリソースであり、各仮想マシンは少なくとも1つのNICを持っている必要があります。<br>■その他の選択肢<br>A:パブリックIPアドレス：仮想マシンは、プライベートネットワーク内や内部のみで利用される場合、外部インターネットとの直接通信が不要であれば、パブリックIPアドレスは必要ありません。<br>B:ネットワークセキュリティ グループ (NSG)：NSGは、仮想ネットワーク内のリソースへのネットワークトラフィックをフィルタリングするために使用されますが、仮想マシンを作成するためには必ずしも必要ではありません。<br>E:ロードバランサー：ロードバランサーは必須ではありませんが、複数の仮想マシンに対して受信トラフィックを分散させるために使用されるオプションのリソースです。'>
+<div class='choice'> パブリックIPアドレス</div>
+<div class='choice'> ネットワークセキュリティ グループ(NSG)</div>
+<div class='choice'> 仮想ネットワーク</div>
+<div class='choice'> ネットワークインターフェイス (NIC)</div>
+<div class='choice'> ロードバランサー</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題3<br>以下の内容を定義している文書は何ですか。<br>・Microsoftがユーザーのデータをどのように収集、使用、保護し、ユーザーが自身のデータに対してどのような選択肢を持っているかを説明する' data-answer='1' data-explanation='Microsoft プライバシー ステートメント<br>説明<br>Microsoftのプライバシー ステートメントは、Microsoftがどのようにユーザーのデータを収集、使用し、保護するかについてのポリシーを説明しています。これには、ユーザーの個人情報の収集方法、その情報の使用目的、情報の共有方法などが含まれています。<br>この文書はまた、ユーザーが自分のデータに関してどのような選択肢を持っているか（例えば、データへのアクセス、データの修正や削除のリクエストなど）を明確にしています。ユーザーはこの文書を通じて、自分のデータがどのように扱われるかを理解し、適切な選択をすることができます。<br>■その他の選択肢<br>A:Microsoft サポート契約は、製品サポートに関する条件を定めたもので、データの収集や使用方法については説明していません。<br>C:Microsoft オンライン サブスクリプション契約は、Microsoftのオンラインサービスのサブスクリプションに関する法的条件を記載していますが、データの収集や使用に関する詳細は含まれていません。<br>D:サービスレベルアグリーメント（SLA）は、サービスの提供水準に関する合意事項を定めており、データの収集や使用方法についての情報は含まれていません。<br>Microsoft のプライバシーに関する声明 – Microsoft のプライバシー'>
+<div class='choice'> Microsoft サポート契約</div>
+<div class='choice'> Microsoft プライバシー ステートメント</div>
+<div class='choice'> Microsoft オンライン サブスクリプション契約</div>
+<div class='choice'> サービスレベルアグリーメント（SLA）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題4<br>オンプレミスのデータとAzureファイル共有を同期するためには、どの機能を使用するべきですか。' data-answer='3' data-explanation='Azure File Sync<br>説明<br>Azureファイル共有は、クラウド上でファイル共有サービスを提供するAzureの機能です。ユーザーはインターネット経由でファイルをアップロード、ダウンロード、共有することができます。<br>Azure File Syncは、オンプレミスのファイルサーバーとAzure ファイル共有を同期させるためのサービスです。これによりオンプレミスのデータとクラウドのデータをシームレスに統合し、ファイルの同期とバックアップを簡単に行うことができます。<br>■その他の選択肢<br>A:Azure AD Connectは、Azure Active DirectoryとオンプレミスのActive Directoryの間でユーザー情報を同期するためのツールです。Azure ファイル共有とオンプレミスデータを共有する機能はありません。<br>B:Azure Event Gridは、イベント駆動型のアプリケーションを作成するためのサービスであり、データを同期する機能はありません。<br>C:Azure API Managementは、APIを公開、管理、保護するためのサービスであり、データを同期する機能はありません。'>
+<div class='choice'> Azure AD Connect</div>
+<div class='choice'> Azure Event Grid</div>
+<div class='choice'> Azure API Management</div>
+<div class='choice'> Azure File Sync</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題5<br>セキュリティ情報およびイベント管理 （SIEM）機能を提供するAzureサービスは何ですか。' data-answer='0' data-explanation='Microsoft Sentinel<br>説明<br>Microsoft Sentinelは、様々な情報源から情報を収集して、そのデータを使って企業のセキュリティを向上させるためのツールです。SIEMとSOARという2つの主要な機能を提供します。<br>１．セキュリティ情報およびイベント管理 （SIEM）：企業のコンピューターシステムやネットワーク全体で起きていることを追跡し、そのデータを一か所に集める機能です。このデータには、誰がシステムにログインしたか、どのプログラムが使用されたか、どのような警告やエラーが発生したかなどが含まれます。SIEMは、これらの情報を集めて分析することで、不審な動きやセキュリティ上の問題を検出するのに役立ちます。例えば、通常とは異なる時間にログインしたり、いつもと違う場所からアクセスしたりすると、SIEMはそれを検出して警告を出すことができます。<br>２．セキュリティオーケストレーション、自動化および応答（SOAR）：セキュリティ上の問題が発見されたときに、それに迅速かつ効率的に対応するための機能です。オーケストレーションは、セキュリティチームが複数のツールや情報源を一元的に管理するのをサポートし、自動化は、あらかじめ定義されたルールに基づいてセキュリティ関連のタスクを自動的に実行することを指します。これにより、セキュリティチームは手動で行わなければならない作業を減らし、迅速に対応することができます。応答機能は、セキュリティインシデントに対して適切な措置をとることを指し、例えば不正アクセスを検出した場合に自動的にそのアカウントをロックするなどが含まれます。<br>■その他の選択肢<br>B:Azure Firewallは、ネットワークセキュリティと脅威保護を提供するサービスです。SIEM機能は提供しません。<br>C:Azure Synapse Analyticsは、データ統合、エンタープライズデータウェアハウス、およびビッグデータ分析を提供するサービスであり、SIEM機能は含まれていません。<br>D:Azure Key Vaultは、暗号化キー、シークレット、および他の機密情報の管理を行うサービスです。SIEM機能は含まれていません。'>
+<div class='choice'> Microsoft Sentinel</div>
+<div class='choice'> Azure Firewall</div>
+<div class='choice'> Azure Synapse Analytics</div>
+<div class='choice'> Azure Key Vault</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題6<br>Azureのサービスレベルアグリーメント（SLA）は、主に何を基に設定されていますか。' data-answer='2' data-explanation='サービスのパフォーマンス基準<br>説明<br>Azureのサービスレベルアグリーメント（SLA）は、Microsoftが提供するクラウドサービスの品質と可用性に関する正式なポリシーです。SLAは、特定のサービスのパフォーマンスと稼働時間を保証するものであり、Microsoftがこれを守れなかった場合の補償についても定めています。例えば、99.9%の稼働時間を保証するSLAでは、年間で最大約8.76時間のダウンタイムが許容される計算になります。<br>サービスの予期しない中断が発生した際には、顧客はクレジットの形で保証を受けることができ、顧客はそのクレジットを今後のサービス料金の支払いに使用できます。<br>■その他の選択肢<br>A:ユーザーの支払い方法：SLAはユーザーの支払い方法には直接的に基づいていません。しかし異なる価格プランやサービスレベルが選択された場合、SLAの詳細が変わることがあります。<br>B:リージョン：リージョンによって、特定のAzureサービスの可用性が異なる場合がありますが、SLAは通常リージョンに基づいて設定されるものではありません。ただし、地理的な冗長性を提供するサービスでは、リージョン間での可用性がSLAに影響を与える場合があります。<br>D:ユーザーのサービスの使用頻度：SLAはユーザーがどれだけ頻繁にサービスを使用するかに基づいているわけではありません。SLAは一貫したサービス品質を全てのユーザーに保証するために存在します。'>
+<div class='choice'> ユーザーの支払い方法</div>
+<div class='choice'> リージョン</div>
+<div class='choice'> サービスのパフォーマンス基準</div>
+<div class='choice'> ユーザーのサービスの使用頻度</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題7<br>Azure StorageのPremiumアカウントでサポートされているストレージサービスは何ですか。（２つ選択）' data-answer='0,2' data-explanation='ブロックBLOB<br>ファイル共有<br>説明<br>Azure StorageのPremiumアカウントは、一般的なストレージニーズに対して高いパフォーマンスと低遅延を提供し、特にデータ集約型のアプリケーションやハイパフォーマンスを必要とするワークロードに適しています。これらのアカウントは、Standardアカウントと比較して高速なアクセスと処理能力を提供し、特定のシナリオでの効率を向上させることができます。<br>Premiumアカウントでは、以下のストレージアカウントの種類を提供しています。<br>１．Premium ブロック BLOBは、Blob Storageにおいて、トランザクションレートが高く、小さなオブジェクトを使用するシナリオや、ストレージ待ち時間が短いシナリオに推奨されます。<br>２．Premium ファイル共有は、Azure Files専用であり、エンタープライズレベルまたはハイパフォーマンスが要求されるアプリケーションの利用に推奨されます。サーバーメッセージブロック (SMB) ファイル共有とネットワークファイルシステム (NFS) ファイル共有の両方をサポートするアカウントです。<br>テーブル、キュー、汎用v2のストレージタイプは、Premiumストレージアカウントではサポートされていません。'>
+<div class='choice'> ブロックBLOB</div>
+<div class='choice'> テーブル</div>
+<div class='choice'> ファイル共有</div>
+<div class='choice'> キュー</div>
+<div class='choice'> 汎用v2</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題8<br>ハイブリッドクラウドについて正しい記述はどれですか。（２つ選択）' data-answer='1,3' data-explanation='オンプレミスとクラウドベースのリソースを有する<br>ハイブリッドクラウドの一部はパブリッククラウドである<br>説明<br>ハイブリッドクラウドは、プライベートクラウドとパブリッククラウドを組み合わせたコンピューティング環境です。このシステムでは、データやアプリケーションがオンプレミスとクラウドの間で共有され、企業は柔軟性、スケーラビリティ、コスト効率などの利点を享受できます。<br>B:オンプレミスとクラウドベースのリソースを有する：ハイブリッドクラウドは、オンプレミス（企業が管理するデータセンター内のインフラ）とクラウドベース（パブリッククラウドまたはプライベートクラウド上のサービスやリソース）の組み合わせで構成されます。<br>D:ハイブリッドクラウドの一部はパブリッククラウドである：ハイブリッドクラウドは、オンプレミスのプライベートクラウドと外部のパブリッククラウドサービスを組み合わせたものです。したがって、その一部がパブリッククラウドであるのは正しい記述となります。<br>■その他の選択肢<br>A:ハイブリッドクラウド実現のためには、パブリッククラウドから移行する必要がある：ハイブリッドクラウドは、既存のオンプレミスのリソースとクラウドリソースを組み合わせて利用することを指し、必ずしもパブリッククラウドからの移行する必要はありません。<br>C:リソース拡張の際、企業はCapEx（資本的支出）を負担する：ハイブリッドクラウドでは、リソース拡張は主にクラウドプロバイダーを通じて行われ、これは通常、運用費用（OpEx）として分類されます。資本的支出（CapEx）は、物理的な資産の購入や建設に関連するものです。'>
+<div class='choice'> ハイブリッドクラウド実現のためには、パブリッククラウドから移行する必要がある</div>
+<div class='choice'> オンプレミスとクラウドベースのリソースを有する</div>
+<div class='choice'> リソース拡張の際、企業はCapEx(資本的支出)を負担する</div>
+<div class='choice'> ハイブリッドクラウドの一部はパブリッククラウドである</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題9<br>Microsoft Entraデバイス登録（旧：Azure ADデバイス登録）を行うことができるOSはどれですか。（複数選択）' data-answer='0,2,3' data-explanation='Windows<br>iOS<br>Android<br>説明<br>Microsoft Entraデバイス登録（旧：Azure ADデバイス登録）とは、企業や組織のAzure Active Directoryにデバイスを登録するプロセスです。このプロセスにより、対象デバイスは組織のリソースにアクセスするための認証やポリシー管理の対象となります。<br>この登録により、ユーザーは自分のデバイスを企業のリソースへのアクセス権を持つデバイスとして識別させることができ、企業ネットワークに接続することができます。またMicrosoft Entraデバイス登録はBYOD（Bring Your Own Device）での利用を想定した機能であり、様々なOSをサポートしています。<br>Microsoft Entraデバイス登録がサポートされているOSは以下の通りとなります。<br>・Windows 10 以降<br>・iOS<br>・Android<br>・macOS<br>・Ubuntu 20.04/22.04 LTS'>
+<div class='choice'> Windows</div>
+<div class='choice'> Chrome OS</div>
+<div class='choice'> iOS</div>
+<div class='choice'> Android</div>
+<div class='choice'> CentOS</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題10<br>Azureサブスクリプションのセキュリティスコアを確認するには、どのサービスを使用すればよいですか。' data-answer='2' data-explanation='Microsoft Defender for Cloud<br>説明<br>Microsoft Defender for Cloudのセキュリティスコアは、Azureサブスクリプションの現在のセキュリティ状況を把握し、セキュリティを効率的かつ効果的に向上させるための機能です。このスコアは、Microsoft Cloud セキュリティ ベンチマーク（MCSB）に基づいており、組み込みの推奨事項に対する準拠度を評価します。<br>Azureポータルでは、このセキュリティスコアがパーセンテージ値として表示され、基になる値も明確に示されます。スコアが高いほど、Azure環境のセキュリティレベルが高いことを意味し、識別されたリスクが低いことを示します。<br>■その他の選択肢<br>A:Azure Advisorは、パフォーマンス、コスト、セキュリティおよびサービスの信頼性に関するベストプラクティスの推奨事項を提供するサービスです。セキュリティスコアの確認には特化していません。<br>B:Microsoft Sentinelは、セキュリティ情報およびイベント管理（SIEM）とセキュリティオーケストレーション、自動化および応答（SOAR）を提供するクラウドネイティブなソリューションです。セキュリティスコアの確認には使用されません。<br>D:Azure Alertは、Azureリソースの状態やメトリックに基づいてアラートを作成し通知するサービスですが、セキュリティスコアの確認には適していません。'>
+<div class='choice'> Azure Advisor</div>
+<div class='choice'> Microsoft Sentinel</div>
+<div class='choice'> Microsoft Defender for Cloud</div>
+<div class='choice'> Azure Alert</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題11<br>Azure ExpressRouteを使ってデータ転送を行う場合、どのデータ転送は無料ですか。' data-answer='3' data-explanation='オンプレミスからAzureへのインバウンドのデータ転送<br>説明<br>Azure ExpressRouteは、Microsoft Azure、Office 365、Dynamics 365などのMicrosoftクラウドサービスとオンプレミスの環境との間にプライベート接続を提供するサービスです。この接続はインターネットを使用せず、プライベート接続を行うことで安全にデータを転送することができます。<br>Azure ExpressRouteでは、オンプレミスからAzureへのインバウンドのデータ転送は無料です。これにより、大量のデータをAzureに転送する場合のコストを削減できます。ただし、Azureからオンプレミスへのアウトバウンドデータ転送や、リージョン間のデータ転送には料金が発生します。<br>選択肢AのAzure ExpressRoute Global Reachは、異なる地域にあるオンプレミスの拠点をAzure ExpressRouteを介して接続する機能です。この機能を使用するには、それに応じた料金が発生します。'>
+<div class='choice'> Azure ExpressRoute Global Reachを使用したデータ転送</div>
+<div class='choice'> Azureからアウトバウンドへのデータ転送</div>
+<div class='choice'> リージョン間のデータ転送</div>
+<div class='choice'> オンプレミスからAzureへのインバウンドのデータ転送</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題12<br>Azure Advisorの機能は何ですか。（２つ選択）' data-answer='0,1' data-explanation='ベストプラクティスに従って推奨事項を提供する<br>Azureソリューションのコストを見積もる<br>説明<br>Azure Advisorは、Azureのリソースとサービスを最適化するためのクラウドコンサルティングサービスです。このサービスは、パフォーマンス、コスト、可用性、運用優秀性およびセキュリティの5つの主要な領域にわたって推奨事項を提供します。<br>A:ベストプラクティスに従って推奨事項を提供する：Azure Advisorは、ベストプラクティスに基づいてカスタマイズされた推奨事項を提供する機能を持っています。Azure環境の最適化とセキュリティを強化するための推奨事項をユーザーに提供します。<br>B:Azureソリューションのコストを見積もる：Azure Advisorは、Azureソリューションのコスト最適化に関する推奨事項を提供します。これにより、コストの削減やリソースの効率的な使用が可能になります。<br>■その他の選択肢<br>C:パフォーマンスのトラブルシューティングを自動的に行う：Azure Advisorは、パフォーマンスのトラブルシューティングを自動的に行う機能を提供しません。主に分析と推奨事項の提供に焦点を当てています。<br>D:Azure環境内のネットワークトラフィックを可視化する：Azure Advisorは、ネットワークトラフィックの可視化を目的としたツールではありません。ネットワーク監視とトラフィック分析は、Azure Network Watcherなどによって提供されます。<br>E:コスト節約のため予算を作成する：Azure Advisorは、予算作成の機能を提供していません。しかし、コスト削減に関連する推奨事項を提供することで間接的に予算策定に役立つことはあります。'>
+<div class='choice'> ベストプラクティスに従って推奨事項を提供する</div>
+<div class='choice'> Azureソリューションのコストを見積もる</div>
+<div class='choice'> パフォーマンスのトラブルシューティングを自動的に行う</div>
+<div class='choice'> Azure環境内のネットワークトラフィックを可視化する</div>
+<div class='choice'> コスト節約のため予算を作成する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題13<br>SaaS（サービスとしてのソフトウェア）において、ユーザーの責任範囲に該当するものはどれですか。(２つ選択）' data-answer='1,2' data-explanation='アプリケーションのカスタマイズ<br>アプリケーションデータ<br>説明<br>SaaS（サービスとしてのソフトウェア）は、ソフトウェアをクラウド上で提供するサービスモデルです。ユーザーはソフトウェアのメンテナンスやアップデートを気にせず、ウェブブラウザを介してアプリケーションを利用できます。<br>B:アプリケーションのカスタマイズ：SaaSでは、ユーザーは提供されるソフトウェアを自分のニーズに合わせてカスタマイズすることが一般的です。これには、ユーザーインターフェイスの変更や、特定の機能の設定変更などが含まれます。<br>C:アプリケーションデータ：ユーザーは自身のデータを管理し、そのセキュリティや整合性を保つ責任があります。<br>■その他の選択肢<br>A:アプリケーションのインストール：SaaSモデルでは、アプリケーションはクラウドベースで提供されるため、ユーザーは特にインストールを行う必要はありません。ブラウザやアプリケーション専用のクライアントを通じてアクセスします。<br>D:OSの設定変更：SaaSでは、ユーザーはOSの設定や管理に関与しません。これらはクラウドプロバイダーの責任範囲内です。<br>E:データベースの管理：SaaSモデルでは、データベースやその他のバックエンドシステムの管理もクラウドプロバイダーが行います。<br>F:データストレージ：ストレージの管理と運用はサービスプロバイダーが担います。'>
+<div class='choice'> アプリケーションのインスト―ル</div>
+<div class='choice'> アプリケーションのカスタマイズ</div>
+<div class='choice'> アプリケーションデータ</div>
+<div class='choice'> OSの設定変更</div>
+<div class='choice'> データベースの管理</div>
+<div class='choice'> データストレージ</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題14<br>リソースロックについて正しい記述はどれですか。（２つ選択）' data-answer='0,3' data-explanation='リソースはリソースグループに適用されたロックを継承する<br>一つのリソースに対して削除ロックと読み取り専用ロックの両方を適用できる<br>説明<br>Azureのロック機能は、Azureのサブスクリプション、リソースグループ、またはリソースを不注意による削除や変更から保護するためのものです。主に二つのタイプがあります。<br>1. 削除ロック (CanNotDelete)：このロックは、リソースを読み取りおよび変更することはできますが、削除はできません。<br>2. 読み取り専用ロック (ReadOnly)：このロックは、リソースの読み取りのみ可能で、削除や更新はできません。これにより、正規ユーザーのアクセス権限は閲覧者ロールに制限されます。<br>ロックは、ロールベースのアクセス制御（RBAC）と異なり、すべてのユーザーとロールに対する制限を適用することが可能です。また、親スコープでロックを適用すると、そのスコープ内のすべてのリソースは同じロックを継承します。<br>A:リソースはリソースグループに適用されたロックを継承する：リソースグループに適用されたロックは、そのグループ内のリソースに自動的に適用されます。これにより、グループ内のすべてのリソースに対して一貫した保護を提供できます。<br>D:一つのリソースに対して削除ロックと読み取り専用ロックの両方を適用できる：Azureでは、一つのリソースに複数のロックを適用することができます。<br>■その他の選択肢<br>B:読み取り専用ロックが適用されたリソースは削除可能である：読み取り専用ロックが適用されたリソースは削除不可能です。読み取り専用ロックは、リソースの閲覧は許可しますが、変更や削除を防ぐために設計されています。<br>C:削除ロックが適用されたリソースは編集することができない：削除ロックが適用されたリソースは編集可能です。削除ロックは、リソースの削除を防ぐものであり、リソースの編集自体は制限しません。'>
+<div class='choice'> リソースはリソースグループに適用されたロックを継承する</div>
+<div class='choice'> 読み取り専用ロックが適用されたリソースは削除可能である</div>
+<div class='choice'> 削除ロックが適用されたリソースは編集することができない</div>
+<div class='choice'> 一つのリソースに対して削除ロックと読み取り専用ロックの両方を適用できる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題15<br>あなたは、20日前にデプロイされたAzure仮想マシンを作成したユーザーを特定したいと考えています。<br>どのAzureサービスを使用するべきですか。' data-answer='2' data-explanation='Azure アクティビティ ログ<br>説明<br>Azure アクティビティ ログは、Azureサブスクリプションで発生するイベントの詳細情報を提供するサービスです。これには、Resource Managerを通じて行われるリソースの作成、更新、削除などの操作が含まれ、仮想マシンの作成や変更を行ったユーザーやアプリケーションに関する情報を取得することができます。<br>■その他の選択肢<br>A:Azure Advisorは、パフォーマンス、コスト、セキュリティ、およびサービスの信頼性に関するベストプラクティスの推奨事項を提供するサービスですが、特定のリソースの作成履歴や作成者情報を追跡する機能はありません。<br>B:Azure Alertは、Azureリソースの状態やメトリックに基づいてアラートを作成し通知するサービスです。これはリアルタイムの監視に重点を置いており、特定のリソースの作成履歴を追跡する目的には使用されません。<br>D:Azure Blueprintsは、クラウド環境の設計と開発のための定義やガイドラインを提供するサービスですが、特定のリソースの作成者を特定する機能はありません。'>
+<div class='choice'> Azure Advisor</div>
+<div class='choice'> Azure Alert</div>
+<div class='choice'> Azure アクティビティ ログ</div>
+<div class='choice'> Azure Blueprints</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題16<br>24時間年中無休、メールと電話によるテクニカルサポートへのアクセスを提供するAzureのサポートプランはどれですか。<br>最もコストが低いプランを選択してください。' data-answer='2' data-explanation='Standard<br>説明<br>Azureサポートプランには、Basic、Developer、StandardおよびProfessional Directの4つのレベルがあります。各プランの特徴は以下の通りです。<br>１．Basicプラン：Azureのすべてのユーザーに提供されている基本的なサポートプランです。必要な数のサポートチケットの提出が可能で、Azure AdvisorやAzureの正常性状態と通知が含まれます。しかし、24時間年中無休のメールや電話によるテクニカルサポートへのアクセスは含まれていません。<br>２．Developerプラン：月額USD$29で、試用および非運用環境に適しています。サードパーティ製ソフトウェアのサポートやトラブルシューティングが含まれますが、24時間年中無休のサポートは営業時間中のメールのみです。<br>３．Standardプラン：月額USD$100で、運用ワークロード環境に適したサポートプランです。24時間年中無休のメールと電話によるテクニカルサポートが含まれます。<br>４．Professional Directプラン：月額USD$1,000で、ビジネス上重要な用途での利用に最適です。最も包括的なサポートを提供しますが、コストも最も高いです。<br>本設問について、24時間年中無休のメールと電話によるテクニカルサポートへのアクセスを提供し、最もコストが低いプランはStandardプランです。'>
+<div class='choice'> Basic</div>
+<div class='choice'> Developer</div>
+<div class='choice'> Standard</div>
+<div class='choice'> Professional Direct</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題17<br>あなたは、組織で利用しているAzure環境が規制のコンプライアンス要件を満たしているか確認したいと考えています。<br>どのAzureサービスを利用するべきですか。' data-answer='2' data-explanation='Microsoft Defender for Cloud<br>説明<br>Microsoft Defender for Cloudは、Azure、オンプレミスおよび他のクラウド環境におけるセキュリティ状況を強化する包括的なセキュリティソリューションです。<br>このサービスには、規制コンプライアンスダッシュボードが含まれており、組織のAzure環境が特定の規制基準やコンプライアンス要件にどの程度準拠しているかを確認できます。規制コンプライアンスダッシュボードは、様々な業界標準や規制に関する詳細なコンプライアンス評価を提供し、改善のためのアクションを推奨します。<br>■その他の選択肢<br>A:Azure Monitorは、Azureリソースのパフォーマンス監視とデータ収集を行いますが、コンプライアンス要件の確認には関連していません。<br>B:Azure Advisorは、パフォーマンス、コスト、セキュリティの最適化に関する推奨事項を提供しますが、コンプライアンスの確認に特化したサービスではありません。<br>D:Microsoft Sentinelは、セキュリティ情報とイベント管理（SIEM）を提供するサービスですが、コンプライアンスの確認には適していません。'>
+<div class='choice'> Azure Monitor</div>
+<div class='choice'> Azure Advisor</div>
+<div class='choice'> Microsoft Defender for Cloud</div>
+<div class='choice'> Microsoft Sentinel</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題18<br>PaaS（サービスとしてのプラットフォーム）について正しい記述はどれですか。（２つ選択）' data-answer='1,3' data-explanation='リソースを自動的にスケーリングできる<br>スケールアップ（CPU、メモリの追加）が可能である<br>説明<br>PaaS（サービスとしてのプラットフォーム）は、アプリケーション開発に必要なプラットフォームと環境をクラウド上で提供するサービスです。このサービスでは、開発者はインフラストラクチャの管理について心配することなく、アプリケーションのコーディング、テスト、デプロイ、管理、アップデートに集中できます。<br>B:リソースを自動的にスケーリングできる：PaaSでは、アプリケーションの負荷に応じて自動的にリソースをスケーリングする機能を提供します。これにより、需要の増減に迅速に対応し、リソースの効率的な利用が可能になります。<br>D:スケールアップ（CPU、メモリの追加）が可能である：PaaSサービスでは、プランを変更することによってリソースのスケールアップ（CPUやメモリの追加など）が可能です。これにより、アプリケーションの成長や変化する需要に応じて、必要なリソースを柔軟に調整することができます。<br>■その他の選択肢<br>A:アプリケーションのカスタマイズはクラウドプロバイダーの責任範囲である：アプリケーションのカスタマイズはユーザーの責任です。PaaSは開発環境やツールを提供しますが、アプリケーション自体の開発やカスタマイズはユーザーが行います。<br>C:ユーザーに対してOSの完全な制御を提供する：PaaSは、オペレーティングシステム（OS）や基礎となるインフラストラクチャの管理をクラウドプロバイダーが行い、ユーザーはアプリケーション開発に集中できる環境を提供します。OSはクラウドプロバイダーの責任範囲となります。'>
+<div class='choice'> アプリケーションのカスタマイズはクラウドプロバイダーの責任範囲である</div>
+<div class='choice'> リソースを自動的にスケーリングできる</div>
+<div class='choice'> ユーザーに対してOSの完全な制御を提供する</div>
+<div class='choice'> スケールアップ（CPU、メモリの追加）が可能である</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題19<br>IoTデバイスを大規模に接続、監視、管理するAzureサービスは何ですか。' data-answer='0' data-explanation='Azure IoT Central<br>説明<br>Azure IoT Centralは、インターネット上の様々なデバイス（IoTデバイス）を接続、監視、管理するためのクラウドベースのサービスです。このサービスを使用することで、デバイスからデータを収集し、それを分析してビジネスに役立つ洞察を得ることができます。IoT Centralはコーディングの必要がないため、IT初心者でも容易にIoTソリューションを構築して運用することができます。<br>■その他の選択肢<br>B:Azure Event Hubsは、大量のイベントデータを収集し、処理するための高スループットのサービスですが、IoTデバイスを直接管理する機能は提供しません。<br>C:Azure Sphereは、セキュリティに特化したIoTデバイスとオペレーティングシステムの統合ソリューションであり、IoTデバイスの接続、監視、管理に直接関連していません。<br>D:Azure Synapse Analyticsは、データ統合、分析、ビジュアライゼーションを行うためのビッグデータと分析サービスであり、IoTデバイスの大規模な接続、監視、管理には使用されません。'>
+<div class='choice'> Azure IoT Central</div>
+<div class='choice'> Azure Event Hubs</div>
+<div class='choice'> Azure Sphere</div>
+<div class='choice'> Azure Synapse Analytics</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題20<br>ハイブリッドクラウド環境やマルチクラウド構成において、リソースのセキュリティとコンプライアンスを一元管理できるAzureサービスは何ですか。' data-answer='2' data-explanation='Azure Arc<br>説明<br>Azure Arcは、Azureの管理ツールを使用して、オンプレミス環境や他のクラウドプロバイダーのリソースを管理するためのサービスです。Azure Arcを使用すると、オンプレミス、マルチクラウドの場所で実行されているリソースでも、Azureの管理ポータル、API、Azure Policyなどのツールを利用して一貫した方法で管理することができます。これにより、異なる環境におけるリソースの一元管理と、Azureのセキュリティとコンプライアンスのポリシーの適用が可能となります。<br>■その他の選択肢<br>A:Microsoft Sentinelは、AzureのクラウドネイティブのSIEM (Security Information and Event Management) ソリューションです。ハイブリッドクラウドやマルチクラウド環境のリソースの一元管理のサービスではありません。<br>B:Azure Key Vaultは、アプリケーションのシークレットやキー、証明書を安全に管理するためのサービスです。ハイブリッドクラウドやマルチクラウド環境の一元管理のためのサービスではありません。<br>D:Microsoft Defenderは、マルウェアや他の脅威からデバイスを保護するためのエンドポイントセキュリティソリューションです。ハイブリッドクラウドやマルチクラウド環境の一元管理のためのサービスではありません。'>
+<div class='choice'> Microsoft Sentinel</div>
+<div class='choice'> Azure Key Vault</div>
+<div class='choice'> Azure Arc</div>
+<div class='choice'> Microsoft Defender</div>
+</div>
+
+
+            <!-- 他の問題も同様に追加 -->
+        </div>
+
+        <h2 id="question"></h2>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),  // innerHTMLに変更
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+            choicesContainer.innerHTML = '';
+
+            currentQuestion.choices.forEach((choice, i) => {
+                const li = document.createElement('li');
+                const input = document.createElement('input');
+                const label = document.createElement('label');
+
+                input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                input.name = 'choice';
+                input.value = choice.index;
+                input.id = 'choice' + i;
+
+                label.htmlFor = 'choice' + i;
+                label.innerHTML = choice.text;  // textContentをinnerHTMLに変更
+
+                li.appendChild(input);
+                li.appendChild(label);
+                choicesContainer.appendChild(li);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = Array.from(document.querySelectorAll('input[name="choice"]:checked'))
+                                        .map(checkbox => parseInt(checkbox.value))
+                                        .sort();
+            const resultElement = document.getElementById('result');
+            
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+                
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++; // 正解数をカウント
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            // クイズのUI全体を初期化
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            // 初期化後に最初の問題を表示
+            showQuestion();
+        }        
+    </script>
+</body>
+</html>

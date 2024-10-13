@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Fundamental問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-data" style="display: none;">
+
+
+<div class='question' data-multiple='false' data-question='問題1<br>あなたは、Azure Disk Encryptionを使って仮想マシンのディスクを暗号化したいと考えています。<br>ディスク暗号化キーを制御および管理するためには、どのAzureサービスを使用するべきですか。' data-answer='1' data-explanation='Azure Key Vault<br>説明<br>Azure Disk Encryptionは、Microsoft Azureのクラウドサービスで使用されるディスク暗号化機能です。この機能は、仮想マシンのディスクデータを暗号化するために使用されます。<br>仮想マシンのディスクを暗号化する際、ディスク暗号化キーの制御および管理にはAzure Key Vaultが使用されます。Azure Key Vaultは、暗号化キーやシークレット、証明書などの機密情報を安全に保管するためのサービスです。このサービスを利用することで、暗号化キーのセキュリティを強化し、アクセス管理と監査機能を利用してキーの使用を適切に管理できます。<br>■その他の選択肢<br>A:Azure Storage アカウントは、データ保存のために使用されますが、ディスク暗号化のキー管理には関連していません。<br>C:Azure Blob Storageは、大規模なデータの保存のためのサービスですが、暗号化キーの管理には関係ありません。<br>D:Log Analytics ワークスペースは、データの収集と分析のためのサービスですが、暗号化キーの管理とは無関係です。<br>Windows VM 用の Azure Disk Encryption を有効にする - Azure Virtual Machines'>
+<div class='choice'> Azure Storage アカウント</div>
+<div class='choice'> Azure Key Vault</div>
+<div class='choice'> Azure Blob Storage</div>
+<div class='choice'> Log Analytics ワークスペース</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題2<br>あなたの組織は、現在5台の仮想マシンを運用中であり、さらに3台の仮想マシンのデプロイを計画しています。<br>既存の5台の仮想マシンとは独立・隔離して運用する場合、どのようなアプローチが適切ですか。' data-answer='2' data-explanation='作成する仮想マシンを別の仮想ネットワークにデプロイする<br>説明<br>Azureの仮想ネットワーク（VNet）は、独自のプライベートネットワーク空間を提供するサービスです。これにより、Azure上の仮想マシンや他のAzureサービスが安全かつ効果的に通信できるようになります。ユーザーは仮想ネットワークを通じて、自分のネットワークを設計し、IPアドレス範囲、サブネット、NSG、ルーティングなどのネットワークポリシーを管理できます。仮想ネットワークを利用することで、Azure環境内のリソース間、オンプレミスネットワークとの接続、さらには他のVNet間の通信をセキュアに構成することが可能です。<br>異なる仮想ネットワーク間では、特別な接続（ピアリングなど）を設定しない限り、リソースは分離されており、互いに通信することはありません。したがって、本設問のように隔離が必要な新しい仮想マシンは、既存の仮想マシンとは別の仮想ネットワークにデプロイするのが最適です。<br>■その他の選択肢<br>A:作成する仮想マシンを別のリソースグループに所属させる：リソースグループは管理の単位であり、Azureリソースのグループ化を行いますが、リソース間の通信の隔離を実現するものではありません。従って、このアプローチだけでは隔離要件を満たしません。<br>B:別のインスタンスタイプで仮想マシンを作成する：インスタンスタイプは、仮想マシンのサイズや性能に関連するものであり、リソース間の隔離には影響しません。<br>D:ネットワークセキュリティグループ (NSG) を使用してトラフィックを制御する：NSGは、ネットワークトラフィックのセキュリティ規則を設定して制御するために使用されます。これにより、特定の通信を制限することは可能ですが、完全な隔離を実現するためには、別の仮想ネットワークにデプロイする方が効果的です。'>
+<div class='choice'> 作成する仮想マシンを別のリソースグループに所属させる</div>
+<div class='choice'> 別のインスタンスタイプで仮想マシンを作成する</div>
+<div class='choice'> 作成する仮想マシンを別の仮想ネットワークにデプロイする</div>
+<div class='choice'> ネットワークセキュリティグループ (NSG) を使用してトラフィックを制御する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題3<br>クラウドコンピューティングの特徴は何ですか。（２つ選択）' data-answer='0,3' data-explanation='必要に応じて素早くリソースを展開できる<br>ITスタッフの運用負担を削減<br>説明<br>クラウドコンピューティングは、オンデマンドでコンピューターのリソースやサービスを提供する技術であり、リソースを必要に応じて迅速に調整できるスケーラビリティを提供します。また、物理的なインフラストラクチャに対する初期投資が不要で、使用した分だけのコストでサービスを利用できる点も大きなメリットです。さらに、クラウドプロバイダーによる管理の自動化により、メンテナンスやセキュリティの運用負担が軽減されます。信頼性が高く、どこからでもアクセス可能なため、ビジネスの柔軟性と効率性を大幅に向上させることができます。<br>A:必要に応じて素早くリソースを展開できる：クラウドコンピューティングの主要な特徴の一つであり、迅速なスケーリングと柔軟性を提供します。<br>D:ITスタッフの運用負担を削減：クラウドサービスは、インフラストラクチャの管理や運用に関連する作業を軽減することで、ITスタッフの負担を削減します。<br>■その他の選択肢<br>B:オンプレミスのような組織独自の設定が可能：クラウド環境ではカスタマイズが可能ですが、オンプレミス環境と同じレベルのカスタマイズを提供されません。<br>C:小規模ビジネスより大企業に最適化されたサービスを提供：クラウドコンピューティングは、規模に関わらずあらゆるタイプのビジネスに適しています。<br>E:初期投資による高い費用負担：クラウドコンピューティングは通常、初期投資の費用を削減し、運用費用ベースでの支払いを提供します。'>
+<div class='choice'> 必要に応じて素早くリソースを展開できる</div>
+<div class='choice'> オンプレミスのような組織独自の設定が可能</div>
+<div class='choice'> 小規模ビジネスより大企業に最適化されたサービスを提供</div>
+<div class='choice'> ITスタッフの運用負担を削減</div>
+<div class='choice'> 初期投資による高い費用負担</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題4<br>あなたの組織は、オンプレミスのワークロードをクラウドに移行したいと考えています。<br>移行に伴うコスト削減を計算するためには、どのツールを使用すれば良いですか。' data-answer='1' data-explanation='TCO 計算ツール<br>説明<br>TCO計算ツールは、オンプレミスのインフラストラクチャとクラウドベースのソリューションの総所有コストを評価するためのオンラインツールです。ユーザーは、ハードウェア、ソフトウェア、ワークロードおよびオンプレミス環境の運用コストに関するデータを入力することで、3年または5年の期間にわたるコストの見積もりを取得できます。移行による投資対効果を検討する際に有用なツールとなります。<br>■その他の選択肢<br>A:Cost Management and Billingは、既にAzureを使用しているユーザーがコストを追跡し、最適化するためのツールですが、オンプレミスからクラウドへの移行コストを計算する主な目的ではありません。<br>C:Azure Budgetsは、Azure内での支出を管理するためのツールです。予算を設定し、支出を監視することは可能ですが、移行コストの計算には使用されません。<br>D:Azure Migrateは、オンプレミスのワークロードをAzureに移行するためのプロセスを支援するサービスですが、コスト計算そのものには用いられません。<br>演習 - TCO 計算ツールを使用してワークロードのコストを比較する – Training'>
+<div class='choice'> Cost Management and Billing</div>
+<div class='choice'> TCO 計算ツール</div>
+<div class='choice'> Azure Budgets</div>
+<div class='choice'> Azure Migrate</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題5<br>Azure Marketplaceで試用もしくは購入できるものは何ですか。（複数選択）' data-answer='1,2,3' data-explanation='仮想マシンイメージ<br>仮想セキュリティアプライアンス<br>アプリケーション<br>説明<br>Azure Marketplaceは、Microsoft Azureのプラットフォーム上で提供される、様々なサードパーティ製のアプリケーションやサービスのオンラインストアです。このマーケットプレイスでは、クラウドソリューション、ソフトウェアアプリケーション、サービスなどが提供され、Azureユーザーはこれらの製品を直接購入して自分の環境に導入することができます。製品の価格はサービスの提供者によって設定され、無料、サブスクリプションベース、使用量ベースという形で提供されることが一般的です。<br>Azure Marketplaceで試用・購入できるものとして以下のようなサービスがあります。<br>B:仮想マシンイメージ：Azure Marketplaceでは、様々な仮想マシンイメージが提供されています。これには、さまざまなオペレーティングシステムやアプリケーションがプリインストールされたイメージが含まれます。<br>C:仮想セキュリティアプライアンス：サードパーティ製の仮想セキュリティアプライアンス（例えば、ファイアウォール、アンチウイルス、侵入検知システム）も提供しています。<br>D:アプリケーション：ビジネスインテリジェンス、データベース管理、開発ツールなど、多様なアプリケーションが提供されています。<br>■その他の選択肢<br>A:物理ハードウェア：Azure Marketplaceはデジタル製品とサービスに焦点を当てており、物理ハードウェアは含まれていません。<br>E:ITスタッフ用の教育資料：Azure Marketplaceは主にソフトウェア製品やサービスに焦点を当てており、ITスタッフ用の教育資料のような非デジタル製品は一般的に含まれていません。'>
+<div class='choice'> 物理ハードウェア</div>
+<div class='choice'> 仮想マシンイメージ</div>
+<div class='choice'> 仮想セキュリティアプライアンス</div>
+<div class='choice'> アプリケーション</div>
+<div class='choice'> ITスタッフ用の教育資料</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題6<br>IaaS（サービスとしてのインフラストラクチャ）においてユーザーの責任範囲に該当するものはどれですか。（２つ選択）' data-answer='0,3' data-explanation='ネットワークの設定<br>ストレージの設定とメンテナンス<br>説明<br>IaaS（サービスとしてのインフラストラクチャ）は、クラウドコンピューティングの一形態であり、サーバーやストレージ、ネットワークなどの基本的なコンピューティングインフラストラクチャをサービスとして提供します。<br>クラウドプロバイダーは、インフラストラクチャのメンテナンスや物理的セキュリティを担当し、ユーザーはその上で動作するソフトウェアやデータの管理を行います。ユーザーは、これらのインフラストラクチャ上で自由にオペレーティングシステムやアプリケーションを実行し、管理することができます。<br>A:ネットワークの設定：ユーザーの責任範囲に含まれます。ユーザーは自身のネットワーク設定を管理する必要があります。<br>D:ストレージの設定とメンテナンス：ユーザーの責任範囲に含まれます。ストレージの設定とデータの管理はユーザーが行います。<br>■その他の選択肢<br>B:ハードウェアのメンテナンス：ユーザーの責任範囲に含まれません。IaaSでは、ハードウェアのメンテナンスはクラウドサービスプロバイダーが行います。<br>C:データセンターの物理的なセキュリティ設定：物理的なセキュリティとデータセンターの整備はクラウドプロバイダーが担当します。<br>E:SLA（サービスレベルアグリーメント）の遵守：提供されるサービスの品質や利用条件に関する合意事項の遵守はクラウドプロバイダーが担います。'>
+<div class='choice'> ネットワークの設定</div>
+<div class='choice'> ハードウェアのメンテナンス</div>
+<div class='choice'> データセンターの物理的なセキュリティ設定</div>
+<div class='choice'> ストレージの設定とメンテナンス</div>
+<div class='choice'> SLA（サービスレベルアグリーメント）の遵守</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題7<br>Azure Arcで管理できるリソースはどれですか。（３つ選択）' data-answer='1,3,4' data-explanation='オンプレミスでホストされているLinuxの物理サーバー<br>AWS上に構築したEC2サーバー<br>任意の場所に配置されたAzure Kubernetes Service(AKS)クラスター<br>説明<br>Azure Arcは、Azureの管理とガバナンスのツールを使用して、オンプレミス、マルチクラウドおよびエッジ環境のリソースを一元的に表示および管理するためのサービスです。Azure Arcを使用すると、既存のツールやスキルをそのまま利用しながら、Azureのスケーラビリティ、管理およびコンプライアンスのメリットを享受することができます。<br>B:オンプレミスでホストされているLinuxの物理サーバー：Azure Arcは、オンプレミスの物理サーバー、特にLinuxをAzureと同じように一元的に管理することができます。<br>D:AWS上に構築したEC2サーバー：Azure Arcは、他のクラウドプロバイダーで実行されているサーバーやリソースもAzureの管理下に取り込むことができます。<br>E:任意の場所に配置されたAzure Kubernetes Service(AKS)クラスター：Azure Arcは、AKSクラスターや他のKubernetesクラスターを一元的に管理することができます。<br>■その他の選択肢<br>A:Azure Active Directoryに登録されているユーザー：Azure Arcはリソース管理に特化しており、ユーザーやIDの管理は対象としていません。<br>C:オンプレミスでホストされているOracleデータベース：Azure Arcは、オンプレミスでホストされているサードパーティ製データベースの管理はサポートしていません。'>
+<div class='choice'> Azure Active Directoryに登録されているユーザー</div>
+<div class='choice'> オンプレミスでホストされているLinuxの物理サーバー</div>
+<div class='choice'> オンプレミスでホストされているOracleデータベース</div>
+<div class='choice'> AWS上に構築したEC2サーバー</div>
+<div class='choice'> 任意の場所に配置されたAzure Kubernetes Service(AKS)クラスター</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題8<br>Azure StorageのPremiumアカウントにおいて、すべてのリージョンでサポートされている冗長オプションは何ですか。' data-answer='2' data-explanation='LRS（ローカル冗長ストレージ）<br>説明<br>Azure StorageのPremiumアカウントは、高いI/Oパフォーマンスと低レイテンシーが必要なシナリオ向けに設計されています。これには、特にファイル共有やディスクが含まれ、プレミアムアカウントでは主にLRS（ローカル冗長ストレージ）が冗長オプションとして提供されています。<br>LRSは、データを同じデータセンター内の複数のデバイスに複製するオプションで、デバイス障害やデータセンター内の問題に対する耐久性を提供します。<br>■その他の選択肢<br>A:ZRS（ゾーン冗長ストレージ）は、同じリージョン内の複数の可用性ゾーンにデータを複製します。これによりデータセンター全体の障害に対して保護を提供します。Premiumアカウントでは、ZRSをサポートしているリージョンもありますが、全リージョンでサポートされているわけではありません。<br>B:GRS（geo 冗長ストレージ）は、データを別のリージョンに複製することで、地理的な災害に対する保護を提供します。しかし、PremiumアカウントではGRSはサポートしていません。<br>D:RA-GRS（読み取りアクセス geo 冗長ストレージ）は、GRSに加えて、セカンダリリージョンで読み取り専用アクセスを提供します。ただし、RA-GRSもPremiumアカウントではサポートされていません。'>
+<div class='choice'> ZRS（ゾーン冗長ストレージ）</div>
+<div class='choice'> GRS（geo 冗長ストレージ）</div>
+<div class='choice'> LRS（ローカル冗長ストレージ）</div>
+<div class='choice'> RA-GRS（読み取りアクセス geo 冗長ストレージ）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題9<br>AIを使用した機械学習モデルを構築、展開できるAzureサービスは何ですか。' data-answer='3' data-explanation='Azure Machine Learning Studio<br>説明<br>Azure Machine Learning Studioは、機械学習プロジェクトのライフサイクルを加速および管理するためのクラウドサービスであり、ユーザーは機械学習モデルの学習、デプロイそして管理を行うことができます。データサイエンティストや開発者など、多様なユーザーが利用でき、ビジュアルなツールとワークフローにより、プログラミングのスキルがないユーザーでもモデルを作成できます。<br>■その他の選択肢<br>A:Azure SDKは、Azureサービスとの連携に使用される開発キットであり、機械学習モデル構築や展開を行う機能は含まれていません。<br>B:Azure Cosmos DBは、グローバル分散データベースサービスであり、機械学習モデルの構築や展開の機能は提供していません。<br>C:Azure HDInsightは、ビッグデータ処理用のクラウドサービスであり、機械学習モデルの構築や展開を目的としていません。'>
+<div class='choice'> Azure SDK</div>
+<div class='choice'> Azure Cosmos DB</div>
+<div class='choice'> Azure HDInsight</div>
+<div class='choice'> Azure Machine Learning Studio</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題10<br>デスクトップのアプリケーションとAzure間でデータのやり取りを行うためには、どのプロトコルもしくは技術が使用されますか。' data-answer='2' data-explanation='API<br>説明<br>APIは、アプリケーションプログラムインターフェイスの略で、異なるソフトウェアやアプリケーションが相互にデータをやり取りするための方法や手段を提供します。APIを使用することで、一つのプログラムが別のプログラムの機能やデータにアクセスできるようになります。<br>AzureのAPIは、インターネットを介してどこからでもアクセスすることができます。したがって、デスクトップアプリケーションからも、AzureのAPIを直接呼び出すことができ、例えば、Azureのサービスとオンプレミスのデータセンター内のアプリケーションとを連携させることなどが可能です。<br>■その他の選択肢<br>A:SSHは、ネットワーク経由で別のコンピューターにログインするためのプロトコルです。主にサーバーの管理に使用されます。<br>B:HTTP/HTTPSは、ウェブサーバーとブラウザ間での通信プロトコルです。セキュアな通信の場合はHTTPSが使用されます。<br>D:WebSocketsは、リアルタイムの双方向通信を可能にするプロトコルです。一度接続が確立されれば、サーバーとクライアントの間でメッセージを自由にやり取りすることができます。'>
+<div class='choice'> SSH</div>
+<div class='choice'> HTTP/HTTPS</div>
+<div class='choice'> API</div>
+<div class='choice'> WebSockets</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題11<br>Azureサービスの利用方法について正しい記述はどれですか。（３つ選択）' data-answer='0,2,3' data-explanation='リソースにアクセスするにはインターネット接続が必要である<br>リソース管理のためモバイルアプリが提供されている<br>ウェブブラウザならびにコマンドラインから管理することができる<br>説明<br>Azureサービスの利用は、インターネット経由で、様々なデバイスやプラットフォームから、柔軟かつ効率的に行うことができます。<br>A:リソースにアクセスするにはインターネット接続が必要である：Azureサービスはクラウドベースで提供されるため、これらのサービスにアクセスするにはインターネット接続が必要です。<br>C:リソース管理のためモバイルアプリが提供されている：Azureは、モバイルアプリとしてAzure Mobile Appを提供しています。Azure Mobile Appを使用することで、外出先からでもリソースの監視や管理が可能です。<br>D:ウェブブラウザならびにコマンドラインから管理することができる：Azureサービスは、ウェブブラウザを通じたAzureポータルや、Azure CLIを使用して管理することができます。これにより、ユーザーは柔軟にリソースを操作することができます。<br>■その他の選択肢<br>B:サポートされているデバイスのOSはWindowsとmacOSのみである：AzureサービスはWindowsとmacOSに加えて、Linuxなど他のオペレーティングシステムでも利用できます。<br>E:管理には、プログラミングスキルが必須である：Azureサービスの管理には必ずしもプログラミングスキルは必要ありません。ウェブベースのポータルやモバイルアプリを使用することで、プログラミングスキルがないユーザーもリソースを管理できます。<br>F:特定の国や地域からのみアクセス可能である：Azureサービスは世界中の多くの国や地域からアクセス可能です。地理的な制限は一般的にはありません。'>
+<div class='choice'> リソースにアクセスするにはインターネット接続が必要である</div>
+<div class='choice'> サポートされているデバイスのOSはWindowsとmacOSのみである</div>
+<div class='choice'> リソース管理のためモバイルアプリが提供されている</div>
+<div class='choice'> ウェブブラウザならびにコマンドラインから管理することができる</div>
+<div class='choice'> 管理には、プログラミングスキルが必須である</div>
+<div class='choice'> 特定の国や地域からのみアクセス可能である</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題12<br>ある組織は、Azure App ServiceでホストされるWebアプリのバックエンドデータベースとしてAzure SQL Databaseを使用しています。<br>それぞれのサービスのSLAが以下の場合、複合SLAはどのように計算されますか。<br>・App Service Web アプリ：99.95%<br>・SQL Database：99.99%' data-answer='2' data-explanation='99.95% × 99.99% = 99.94%<br>説明<br>複合SLA（Service Level Agreement）は、複数のサービスが組み合わされた場合の全体の可用性のことです。<br>複合SLAを求める際の計算は、個々のサービスのSLAの積として求められます。例えば、Azure App ServiceのSLAが99.95%、Azure SQL DatabaseのSLAが99.99%の場合、その複合SLAは両者を乗算して得られる値、つまり99.94%となります。この計算方法により、複数のサービスを使用するシステムの全体的な信頼性を評価することが可能です。'>
+<div class='choice'> 100 - ((100 - 99.95) + (100 - 99.99)) = 99.94%</div>
+<div class='choice'> (99.95 + 99.99) × 0.5 = 99.97%</div>
+<div class='choice'> 99.95% × 99.99% = 99.94%</div>
+<div class='choice'> 100 - (100 - 99.95) × (100 - 99.99) = 99.99%</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題13<br>ハイブリッドクラウドの特徴について正しい選択肢はどれですか。（２つ選択）' data-answer='1,2' data-explanation='パブリッククラウドに一部リソースを有している<br>内部ネットワーク（イントラネット）を有している<br>説明<br>ハイブリッドクラウドは、プライベートクラウドとパブリッククラウドの組み合わせたクラウドサービスであり、柔軟なリソースの配置が可能です。重要なデータはプライベートクラウドで保護し、一時的な需要変動に対応するためにパブリッククラウドを利用できます。<br>具体的には、以下のような特徴を持っています。<br>B:パブリッククラウドに一部リソースを有している：ハイブリッドクラウドは、プライベートクラウド（またはオンプレミスの環境）とパブリッククラウドのリソースを組み合わせて使用します。この特徴により、リソースの柔軟性と効率性が高まります。<br>C:内部ネットワーク（イントラネット）を有している：ハイブリッドクラウドでは、組織の内部ネットワーク（イントラネット）とパブリッククラウドサービスが統合され、連携して動作します。これにより、セキュリティやコントロールを維持しながらも、クラウドの柔軟性を活用できます。<br>■その他の選択肢<br>A:パブリッククラウドからハイブリッドクラウドの順に移行する必要がある：ハイブリッドクラウドへの移行は一定の順序を要求しません。組織は独自のニーズに基づいて最適な移行戦略を選択できます。<br>D:パブリッククラウドに比べてスケーラビリティに優れている：パブリッククラウドはスケーラビリティに非常に優れたクラウドサービスです。ハイブリッドクラウドもスケーラビリティを提供しますが、一部プライベートクラウドを使用しているため、パブリッククラウドよりスケーラビリティの点において劣ります。<br>E:プライベートクラウドに比べてカスタマイズ性に優れている：プライベートクラウドは通常、高いカスタマイズ性を備えています。一方、ハイブリッドクラウドもカスタマイズ可能ですが、一部パブリッククラウドを利用しているため、カスタマイズには制限があることがあり、プライベートクラウドと比較しても優れているとは言い難いです。'>
+<div class='choice'> パブリッククラウドからハイブリッドクラウドの順に移行する必要がある</div>
+<div class='choice'> パブリッククラウドに一部リソースを有している</div>
+<div class='choice'> 内部ネットワーク（イントラネット）を有している</div>
+<div class='choice'> パブリッククラウドに比べてスケーラビリティに優れている</div>
+<div class='choice'> プライベートクラウドに比べてカスタマイズ性に優れている</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題14<br>Apache Hadoopなどのオープンソースフレームワークを利用した分散処理とビッグデータ分析を行うAzureサービスは何ですか。' data-answer='3' data-explanation='Azure HDInsight<br>説明<br>分散処理は、大量のデータ処理作業を複数のコンピューターに分けて行うことを意味します。また、ビッグデータ分析は、大量のデータから有益な情報や知見を引き出す分析手法です。<br>Azure HDInsightは、Apache Hadoop、Apache Spark、Apache Kafkaなどのオープンソースフレームワークを利用することで、クラウド上で分散処理とビッグデータ分析を行うマネージドサービスです。ビッグデータのバッチ処理、リアルタイム分析、機械学習、IoTデータ処理などに対応し、データ分析と処理に必要なスケーラビリティと柔軟性を提供します。<br>■その他の選択肢<br>A:Azure Sphereは、IoTデバイスのセキュリティに特化したソリューションであり、ビッグデータ処理や分析には使用されません。<br>B:Azure Cosmos DBは、グローバルに分散したマルチモデルデータベースサービスですが、Apache Hadoopなどのオープンソースフレームワークを利用した分散処理やビッグデータ分析には特化していません。<br>C:Azure Synapse Analyticsは、ビッグデータ分析とデータウェアハウス機能を提供するサービスですが、Apache Hadoopに特化した分散処理機能はありません。<br>■用語解説<br>Apache Hadoop：大量のデータを処理し保存するためのオープンソースのフレームワークです。Apache Hadoopは、ビッグデータの分析や処理に広く使用され、多数のコンピューターを利用して大規模なデータセットを処理します。これにより複雑なデータ処理タスクを高速かつ効率的に実行できます。'>
+<div class='choice'> Azure Sphere</div>
+<div class='choice'> Azure Cosmos DB</div>
+<div class='choice'> Azure Synapse Analytics</div>
+<div class='choice'> Azure HDInsight</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題15<br>多層防御（defense-in-depth）のコンセプトにおいて、層1と層2に該当するのは何ですか。<br>外部｜層1 &gt; 層2 &gt; 境界 &gt; ネットワーク &gt; コンピューティング....｜内部ネットワーク' data-answer='1' data-explanation='層1：物理的なセキュリティ 層2：IDとアクセス<br>説明<br>多層防御（defense-in-depth）は、複数の防御層を使用して、組織のデータとシステムを保護するセキュリティアプローチです。このアプローチの目的は、不正なアクセスを遅らせ、セキュリティの侵害を防ぐために、異なるタイプの防御メカニズムを層状に配置することで内部データを保護します。各層は独自の保護機能を提供し、一つの層が破られた場合でも他の層が保護を継続します。これにより、セキュリティシステムの全体的な強度が向上し、攻撃者による侵入をより困難にします。<br>多層防御における層1と層2は以下の通りです。<br>層1：物理的なセキュリティ：これは、データセンター内のコンピューティングハードウェアを保護するための防御の最前線です。物理的なセキュリティ層は、ハードウェアやデータセンター自体に対する物理的アクセスを制御し、不正アクセスや損害から保護することを目的としています。<br>層2：IDとアクセス：この層では、インフラストラクチャと変更制御へのアクセスが管理されます。IDとアクセス層は、適切なユーザーが適切なリソースにのみアクセスできるようにするための認証と承認メカニズムを提供します。'>
+<div class='choice'> 層1：物理的なセキュリティ 層2：データ</div>
+<div class='choice'> 層1：物理的なセキュリティ 層2：IDとアクセス</div>
+<div class='choice'> 層1：アプリケーション 層2：IDとアクセス</div>
+<div class='choice'> 層1：アプリケーション 層2：物理的なセキュリティ</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題16<br>下記の用途に適したストレージサービスはどれですか。<br>・アーカイブのため大量のデータを保存する<br>・画像やドキュメントを配信する' data-answer='2' data-explanation='Azure Blob Storage<br>説明<br>Azure Blob Storageは、大量の非構造化データを保存するためのサービスであり、テキストやバイナリデータを含む様々なタイプのデータを格納できます。これにはドキュメント、画像、ビデオなどのコンテンツの配信、アプリケーションデータの保存、バックアップやアーカイブ、そして災害復旧の目的で利用されます。ホット、クール、コールド、アーカイブの４つのアクセス層を提供しており、使用頻度に応じてデータを管理することが可能です。<br>■その他の選択肢<br>A:Azure Filesは、SMBプロトコルを介した共有ファイルストレージを提供しますが、主にファイル共有や企業内のファイルサーバーの代替として使用されます。大規模なアーカイブやコンテンツ配信には最適ではありません。<br>B:Azure Queue Storageは、メッセージキューイングのためのサービスであり、アプリケーション間の非同期通信に使用されます。データのアーカイブやコンテンツ配信には適していません。<br>D:Azure Table Storageは、構造化された非リレーショナルデータを保存するためのNoSQLデータストアです。大規模なアーカイブやコンテンツ配信には適していません。'>
+<div class='choice'> Azure Files</div>
+<div class='choice'> Azure Queue Storage</div>
+<div class='choice'> Azure Blob Storage</div>
+<div class='choice'> Azure Table Storage</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題17<br>あなたの組織は、複数の仮想マシンをAzure上にデプロイする予定です。<br>１つのデータセンターに障害が生じた場合でも、仮想マシン上のサービスは利用可能である必要があります。<br>この要件を満たすためには、どのリソースを使用するのが適切ですか。' data-answer='1' data-explanation='可用性ゾーン<br>説明<br>可用性ゾーンは、同じリージョン内で物理的に分離された複数のデータセンターで構成されています。これにより、1つのデータセンターに障害が発生しても他のゾーンのサービスは稼働し続けることができます。<br>同じリージョン内に位置するため、リージョンをまたいだデプロイに比べて通信遅延が少なく、低レイテンシーを保持することが可能です。可用性ゾーンを利用することで、高い可用性と低いレイテンシーを両立させることができます。<br>■その他の選択肢<br>A:可用性セットは、同じデータセンター内のサーバーラック間でリソースを分散させることにより、ハードウェア障害から保護しますが、単一のデータセンター全体の障害からは保護しません。<br>C:リージョンは、Azureサービスをホストする地理的な場所を指します。複数のリージョン間でサービスを分散させることは、広範な地理的な耐障害性を提供しますが、低レイテンシーの保持には必ずしも最適ではありません。<br>D:リソースグループは、Azureリソースの管理を効率化するための論理的なコンテナーであり、可用性やレイテンシーに影響を与える機能は提供しません。'>
+<div class='choice'> 可用性セット</div>
+<div class='choice'> 可用性ゾーン</div>
+<div class='choice'> リージョン</div>
+<div class='choice'> リソースグループ</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題18<br>Azure Virtual Desktopの機能として正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='仮想のアプリケーションをサポートしており、リモートでアクセスできる<br>ロールベースのアクセス制御（RBAC）を使用してアクセスを制御する<br>説明<br>Azure Virtual Desktopは、クラウドにおけるデスクトップとアプリケーションの仮想化サービスです。このサービスを利用することで、企業は物理的なデスクトップ環境に依存することなく、セキュアな仮想デスクトップ環境を構築し、管理することができます。ユーザーはどのデバイスからでも、インターネットを通じて仮想デスクトップやアプリケーションにアクセスすることができ、これにはマルチファクタ認証や条件付きアクセスポリシーといったAzure ADのセキュリティ機能が統合されています。<br>B:仮想のアプリケーションをサポートしており、リモートでアクセスできる：Azure Virtual Desktopはアプリケーションの仮想化をサポートし、ユーザーはインターネット経由でこれらのアプリケーションにリモートアクセスすることができます。<br>C:ロールベースのアクセス制御（RBAC）を使用してアクセスを制御する：Azure Virtual DesktopはRBACを利用して、特定のユーザーやグループに対して詳細なアクセス制御を設定できます。<br>■その他の選択肢<br>A:サポートされているOSは、Windows Serverのみである：Azure Virtual DesktopはWindows Serverのみならず、Windows 10、Windows 11を含むさまざまなWindows OSバージョンをサポートしています。<br>D:3389番ポートを開くことが推奨されている：Azure Virtual Desktopでは、安全な接続を提供するために、リモートデスクトッププロトコル（RDP）のトラフィックをAzureのインフラストラクチャを介してルーティングします。このため、3389番ポートを直接インターネットに公開することは推奨されていません。'>
+<div class='choice'> サポートされているOSは、Windows Serverのみである</div>
+<div class='choice'> 仮想のアプリケーションをサポートしており、リモートでアクセスできる</div>
+<div class='choice'> ロールベースのアクセス制御（RBAC）を使用してアクセスを制御する</div>
+<div class='choice'> 3389番ポートを開くことが推奨されている</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題19<br>あなたはIT管理者として、セキュリティパッチが適用されていないデバイスまたは特定のIPアドレス範囲から、Azure上のアプリケーションへのアクセスを制限したいと考えています。<br>Azure ADのどの機能を使用するべきですか。' data-answer='3' data-explanation='条件付きアクセスポリシー<br>説明<br>Azure ADの条件付きアクセスポリシーは、特定の条件を満たす場合にのみユーザーがアプリケーションやサービスにアクセスできるようにする機能です。これにより、IT管理者はセキュリティポリシーを設定して、リスクの高いデバイスやネットワークからのアクセスを制限することができます。<br>この機能は、Azure ADのアイデンティティ保護機能の一部として提供され、組織のセキュリティポスチャを強化するのに役立ちます。<br>条件付きアクセスポリシーを使用すると、セキュリティパッチが適用されていないデバイスや特定のIPアドレス範囲からのアクセスを拒否するポリシーを設定できます。<br>■その他の選択肢<br>A:シングルサインオン（SSO）は、ユーザーが一度の認証で複数のアプリケーションにアクセスできるようにする機能ですが、セキュリティパッチが適用されていないデバイスや特定のIPアドレスからのアクセスを制限する機能ではありません。<br>B:多要素認証（MFA）は、セキュリティを強化するために使用されますが、特定のデバイスやIPアドレスからのアクセスを直接制限するものではありません。<br>C:B2B コラボレーションは、他の組織との間でユーザーを共有するための機能ですが、デバイスのセキュリティ状態やIPアドレスに基づくアクセス制御とは直接関係ありません。'>
+<div class='choice'> シングルサインオン（SSO）</div>
+<div class='choice'> 多要素認証（MFA）</div>
+<div class='choice'> B2B コラボレーション</div>
+<div class='choice'> 条件付きアクセスポリシー</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題20<br>Azure FirewallやAzure ADなどからセキュリティイベントを収集し、自動的に分析するAzureサービスは何ですか。' data-answer='0' data-explanation='Microsoft Sentinel<br>説明<br>Microsoft Sentinelは、セキュリティ情報とイベント管理（SIEM）およびセキュリティオーケストレーション、自動化、応答（SOAR）を提供するクラウドネイティブのセキュリティ分析プラットフォームです。これは、セキュリティデータの収集、脅威の検出、調査、応答を行うために使用されます。<br>Azure FirewallやAzure ADなどの多様なソースからセキュリティデータを収集し、これらのデータをリアルタイムで分析して脅威を検出します。またユーザーは、カスタマイズ可能なダッシュボードを使用して脅威を視覚的に確認し、詳細な調査と応答を行うことができます。<br>■その他の選択肢<br>B:Azure Advisorは、Azureリソースの最適化とパフォーマンス向上に関する推奨事項を提供するサービスですが、セキュリティイベントの収集と分析には関連していません。<br>C:Azure Policyは、Azureリソースに対するポリシー適用とコンプライアンス管理を行うサービスですが、セキュリティイベントの収集や自動分析には使用されません。<br>D:Azure Monitorは、Azureリソースの監視とデータ収集を行うサービスですが、セキュリティイベントの分析に特化しているわけではありません。'>
+<div class='choice'> Microsoft Sentinel</div>
+<div class='choice'> Azure Advisor</div>
+<div class='choice'> Azure Policy</div>
+<div class='choice'> Azure Monitor</div>
+</div>
+
+
+            <!-- 他の問題も同様に追加 -->
+        </div>
+
+        <h2 id="question"></h2>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),  // innerHTMLに変更
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+            choicesContainer.innerHTML = '';
+
+            currentQuestion.choices.forEach((choice, i) => {
+                const li = document.createElement('li');
+                const input = document.createElement('input');
+                const label = document.createElement('label');
+
+                input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                input.name = 'choice';
+                input.value = choice.index;
+                input.id = 'choice' + i;
+
+                label.htmlFor = 'choice' + i;
+                label.innerHTML = choice.text;  // textContentをinnerHTMLに変更
+
+                li.appendChild(input);
+                li.appendChild(label);
+                choicesContainer.appendChild(li);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = Array.from(document.querySelectorAll('input[name="choice"]:checked'))
+                                        .map(checkbox => parseInt(checkbox.value))
+                                        .sort();
+            const resultElement = document.getElementById('result');
+            
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+                
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++; // 正解数をカウント
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            // クイズのUI全体を初期化
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            // 初期化後に最初の問題を表示
+            showQuestion();
+        }        
+    </script>
+</body>
+</html>

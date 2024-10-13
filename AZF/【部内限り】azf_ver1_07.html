@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Fundamental問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-data" style="display: none;">
+
+
+<div class='question' data-multiple='false' data-question='問題1<br>以下の要件を満たすAzureサービスは何ですか。<br>・エンタープライズデータウェアハウス（EDW）を提供する<br>・追加コストなしで包括的なセキュリティを提供する' data-answer='2' data-explanation='Azure Synapse Analytics<br>説明<br>Azure Synapse Analyticsは、大規模なデータ処理と分析を行うためのクラウドベースのサービスです。これはエンタープライズデータウェアハウス（EDW）を提供するPaaSであり、追加コストなしで全スケールレベルにおいて包括的なセキュリティを提供します。また、データ分析のための高度な機能を提供し、ビジネスインテリジェンスとデータ駆動型の意思決定をサポートします。<br>■その他の選択肢<br>A:Azure IOT Hubは、IoTデバイスを大規模にAzureに接続し、データの収集と処理を行うサービスですが、EDW機能は提供しません。<br>B:Azure Cosmos DBは、グローバルに分散したマルチモデルデータベースサービスです。EDW機能を直接提供するものではなく、追加コストなしでの包括的なセキュリティに特化しているわけでもありません。<br>D:Azure HDInsightは、クラウドベースのビッグデータ処理サービスであり、主にHadoop、Sparkなどのビッグデータエコシステムを提供しますが、EDW機能は提供しません。<br>■用語解説<br>エンタープライズデータウェアハウス（EDW）：組織全体のデータを一か所に集約し、分析やレポーティングのために使用される大規模なデータベースシステムです。異なる部門やシステムからのデータを統合し、全社的な洞察（インサイト）を得ることができます。EDWは、ビジネスインテリジェンスやデータ分析に不可欠なツールとされており、意思決定プロセスをサポートします。'>
+<div class='choice'> Azure IOT Hub</div>
+<div class='choice'> Azure Cosmos DB</div>
+<div class='choice'> Azure Synapse Analytics</div>
+<div class='choice'> Azure HDInsight</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題2<br>Just-In-Time (JIT) アクセスを有効にするためには、どのAzureサービスを使用しますか。' data-answer='3' data-explanation='Microsoft Defender for Cloud<br>説明<br>Just-In-Time (JIT) アクセスは、Azure Defender for Cloudの機能の一つであり、仮想マシンへのアクセスをセキュアに管理するためのものです。通常、仮想マシンへのネットワークアクセスは制限されていますが、JITアクセスを使用すると、ユーザーが必要な時のみ特定のIPアドレスから仮想マシンへのアクセスを許可することができます。これにより不正アクセスのリスクを減らし、セキュリティを強化することができます。<br>Microsoft Defender for Cloudは、Azure環境におけるセキュリティの状況を監視し、改善するための統合セキュリティソリューションです。このサービスには、JIT アクセス機能が含まれており、管理者はこれを使用して仮想マシンへのアクセスを制御し、セキュリティを向上させることができます。<br>■その他の選択肢<br>A:Azure Monitorは、リソースのパフォーマンスと監視データを収集するサービスですが、JIT アクセスの有効化には使用されません。<br>B:Microsoft Intuneは、モバイルデバイスとアプリケーションの管理を提供するサービスですが、JIT アクセスの設定には関連していません。<br>C:Azure ADは、アイデンティティとアクセス管理サービスですが、JIT アクセスの有効化には使用されません。'>
+<div class='choice'> Azure Monitor</div>
+<div class='choice'> Microsoft Intune</div>
+<div class='choice'> Azure AD</div>
+<div class='choice'> Microsoft Defender for Cloud</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題3<br>地理的分散アーキテクチャではどのようなメリットがありますか。' data-answer='3' data-explanation='ユーザーに近い地域にリソースが配置されることでパフォーマンスが向上する<br>説明<br>地理的分散アーキテクチャは、複数のリージョンにアプリケーションとデータを分散することにより、高可用性、災害復旧、パフォーマンスの向上を実現するアーキテクチャです。リージョン規模の災害や障害が発生した場合にも、他のリージョンでサービスを継続することが可能になります。<br>D:ユーザーに近い地域にリソースが配置されることでパフォーマンスが向上する：エンドユーザーの位置に近いデータセンターからサービスを提供することでレイテンシーを減少させ、ユーザーエクスペリエンスを向上させることができます。<br>■その他の選択肢<br>A:サービスのコストを大きく下げることができる：地理的分散はコスト削減に貢献することがありますが、必ずしも大幅なコスト削減に直結するわけではありません。リソースの管理やデータ転送に関連するコストが発生することもあります。<br>B:すべてのリージョンで同じサービスレベルアグリーメント（SLA）が適用される：各リージョンは異なるインフラストラクチャを持ち、SLAはリージョンやサービスによって異なる場合があります。一様なSLAが適用されるとは限りません。<br>C:すべてのデータセンターで同一のセキュリティプロトコルを使用できる：セキュリティプロトコルは、リージョンによって異なる場合があります。また、法規制やコンプライアンスの要件によって異なるアプローチが必要になることもあります。'>
+<div class='choice'> サービスのコストを大きく下げることができる</div>
+<div class='choice'> すべてのリージョンで同じサービスレベルアグリーメント（SLA）が適用される</div>
+<div class='choice'> すべてのデータセンターで同一のセキュリティプロトコルを使用できる</div>
+<div class='choice'> ユーザーに近い地域にリソースが配置されることでパフォーマンスが向上する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題4<br>Azure Storageにおいて、アーカイブ層に保管されているデータにアクセスするためには何をする必要がありますか。' data-answer='2' data-explanation='リハイドレートを行う<br>説明<br>Azure Storageのアーカイブ層に保管されているデータはオフラインと見なされ、読み取りや変更はできません。アーカイブ層のデータにアクセスするためには、そのデータをリハイドレートする必要があります。このプロセスによって、アーカイブされたデータをホットまたはクールアクセス層のオンライン層に移動します。このプロセスは時間がかかる可能性があり、リハイドレートの優先度を設定することもできます。<br>その他の選択肢は、アーカイブ層のデータへのアクセスに関連しない対応方法です。'>
+<div class='choice'> アクセスするユーザーに権限を付与する</div>
+<div class='choice'> データのバックアップを取得する</div>
+<div class='choice'> リハイドレートを行う</div>
+<div class='choice'> データを暗号化する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題5<br>ある企業は、オンプレミスでデータベースを運用しています。<br>現在、Azureの分析サービスと連携させてより高度なデータ分析やリアルタイムのレポーティングを行いたいと考えています。<br>これは、どのクラウドタイプの使用例ですか。' data-answer='3' data-explanation='ハイブリッド<br>説明<br>ハイブリッドクラウドは、オンプレミスのインフラストラクチャとクラウドサービスを組み合わせたモデルです。このシナリオでは、既存のオンプレミスデータベースをAzureの分析サービスと連携させ、より強力なデータ分析とリアルタイムレポーティングを実現するためにハイブリッドクラウド環境が活用されています。これにより、既存のシステムを活用しつつ、クラウドの柔軟性と拡張性を得ることができます。<br>■その他の選択肢<br>A:パブリッククラウドは、公開されているクラウドサービスを指し、インターネット経由で一般のユーザーや企業が利用できるものです。このシナリオでは、Azureの利用が含まれていますが、オンプレミスのデータベースとの組み合わせが必要となるため当てはまりません。<br>B:プライベートクラウドは、特定の組織が専用に利用するクラウド環境です。オンプレミス環境または専用のデータセンターで運用されることが多いですが、このシナリオではプライベートクラウドだけではなく、Azureとの組み合わせが含まれているため当てはまりません。<br>C:コミュニティクラウドは、特定の共通の目的を持つ複数の組織が共有するクラウド環境です。このシナリオでは、特定のコミュニティ間での共有ではなく、ある企業がオンプレミスとAzureを組み合わせて使用しているため、当てはまりません。'>
+<div class='choice'> パブリック</div>
+<div class='choice'> プライベート</div>
+<div class='choice'> コミュニティ</div>
+<div class='choice'> ハイブリッド</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題6<br>下記について正しい記述はどれですか。<br>記述１：ユーザーは、OAuth IDプロバイダーを使って認証を行い、Azureリソースへアクセスすることができる<br>記述２：ユーザーは、オンプレミスのActive Directoryを使って認証を行い、Azureリソースへアクセスすることができる<br>記述３：ユーザーは、Azure ADを使って認証を行い、オンプレミスのアプリケーションへアクセスすることができる' data-answer='4' data-explanation='すべての記述<br>説明<br>Azureでは、OAuth IDプロバイダー、オンプレミスのActive Directory、Azure ADなど、さまざまな認証方法を利用することができます。これによりAzureリソースだけでなく、オンプレミスのアプリケーションにもアクセスすることが可能になります。<br>記述１: OAuth IDプロバイダーを使ってユーザー認証を行い、Azureリソースへアクセスすることができる。<br>OAuth IDプロバイダーはサードパーティ製のIDプロバイダーであり、これを使用することで、ユーザーは外部認証システム（GoogleやFacebookなど）を通じてAzureリソースにアクセスできます。このプロセスは、ユーザーの認証情報を直接Azureに提供する代わりに、信頼されたサードパーティサービスを介して行われるため、セキュリティが強化されます。<br>記述２: オンプレミスのActive Directoryを使ってユーザー認証を行い、Azureリソースへアクセスすることができる。<br>オンプレミスのActive DirectoryはAzure ADと統合することが可能であり、Azureリソースへのアクセスを可能にします。この統合により、オンプレミスとクラウド環境間でシームレスな認証とアイデンティティ管理が実現され、企業のセキュリティ基準と運用の効率化を両立することができます。<br>記述３: Azure ADを使ってユーザー認証を行い、オンプレミスのアプリケーションへアクセスすることができる。<br>Azure ADを使用してユーザー認証を行い、オンプレミスのアプリケーションへアクセスすることが可能です。Azure ADのアプリケーションプロキシ機能を利用することで、オンプレミスのアプリケーションに対して、セキュアなリモートアクセスを提供することができます。この機能により、ユーザーはどこからでもオンプレミスアプリケーションにアクセスすることができ、同時にセキュリティと利便性を確保することが可能になります。'>
+<div class='choice'> 記述２のみ</div>
+<div class='choice'> 記述３のみ</div>
+<div class='choice'> 記述１と記述２のみ</div>
+<div class='choice'> 記述２と記述３のみ</div>
+<div class='choice'> すべての記述</div>
+</div>
+
+
+<div class='question' data-multiple='true' data-question='問題7<br>Azure Active Directoryの多要素認証（MFA）について正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='MFAでは複数の認証方法をユーザーに要求する<br>Azure AuthenticatorアプリやSMSで認証することができる<br>説明<br>Azure Active Directoryの多要素認証（MFA）は、セキュリティを強化するためにユーザーが複数の認証方法（パスワードと追加の確認手段）を提供することを要求するシステムです。これにより、不正アクセスのリスクを大幅に減少させることができます。ユーザーは、SMS、電話コール、モバイルアプリの通知など、複数の認証方法から選択できます。<br>B:MFAでは複数の認証方法をユーザーに要求する：MFAでは、パスワード以外に追加の認証方法（SMS、アプリ通知など）を要求します。<br>C:Azure AuthenticatorアプリやSMSで認証することができる：Microsoft Entra 多要素認証では、Microsoft Authenticator、SMS、音声通話など様々な検証方法を使用することができます。<br>■その他の選択肢<br>A:MFAを実施するためには、オンプレミスのActive Directoryと同期させる必要がある：オンプレミスのActive Directoryとの同期は、MFA実施の必須条件ではありません。Azure AD単独でMFAを実施することができます。<br>D:管理者ユーザーにMFAを強制することはできない：管理者ユーザーにもMFAを強制することは可能です。Microsoftは、管理者権限を持ったユーザーにはMFAを必須にすることを推奨しています。<br>E:認証後、複数のアプリケーションにアクセスすることができる：MFAは認証プロセスに関わりますが、認証後のアプリケーションアクセスには関連しません。'>
+<div class='choice'> MFAを実施するためには、オンプレミスのActive Directoryと同期させる必要がある</div>
+<div class='choice'> MFAでは複数の認証方法をユーザーに要求する</div>
+<div class='choice'> Azure AuthenticatorアプリやSMSで認証することができる</div>
+<div class='choice'> 管理者ユーザーにMFAを強制することはできない</div>
+<div class='choice'> 認証後、複数のアプリケーションにアクセスすることができる</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題8<br>パブリッククラウドの特徴について正しい選択肢はどれですか。（２つ選択）' data-answer='2,3' data-explanation='ユーザーはデータセンターを必要としない<br>複数の企業がクラウドリソースを共有する<br>説明<br>パブリッククラウドは、インターネット経由で提供されるクラウドコンピューティングサービスです。サービスは、一般的に従量課金制で利用され、物理的インフラストラクチャはクラウドサービスプロバイダーによって管理されます。<br>また、パブリッククラウドは以下のような特徴を有しています。<br>C:ユーザーはデータセンターを必要としない：パブリッククラウドは、物理的なデータセンターやインフラストラクチャをユーザーが所有・運用する必要がないサービスです。クラウドプロバイダーがデータセンターを管理します。<br>D:複数の企業がクラウドリソースを共有する：パブリッククラウドは、複数の顧客間で物理的リソース（サーバー、ストレージなど）を共有するマルチテナント環境を提供します。<br>■その他の選択肢<br>A:ユーザーはセキュリティに対して完全な制御を行う：パブリッククラウドでは、セキュリティの一部はクラウドプロバイダーが担います。ユーザーはアプリケーションレベルのセキュリティに対してのみ制御を行うことができます。<br>B:ユーザーはCapExを支払う必要がある：パブリッククラウドでは、従量課金制（OpExモデル）が一般的で、CapEx（資本的支出）は必要ありません。<br>E:オンプレミスもしくはクラウドのリソースを使用する：これはハイブリッドクラウドの特徴です。パブリッククラウドは、クラウド上のリソースのみを使用します。'>
+<div class='choice'> ユーザーはセキュリティに対して完全な制御を行う</div>
+<div class='choice'> ユーザーはCapExを支払う必要がある</div>
+<div class='choice'> ユーザーはデータセンターを必要としない</div>
+<div class='choice'> 複数の企業がクラウドリソースを共有する</div>
+<div class='choice'> オンプレミスもしくはクラウドのリソースを使用する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題9<br>あなたの組織では、管理者権限を持ったユーザーのみAzureサブスクリプション内にリソースを作成できるようにしたいと考えています。<br>どのサービスもしくは機能を使用するべきですか。' data-answer='0' data-explanation='Azure Policy<br>説明<br>Azure Policyを使用すると、組織のクラウド環境におけるリソースの作成と使用に関するポリシーを定義し、適用することができます。これにより、特定のユーザーやグループにのみリソースの作成を許可するようなアクセス管理が可能になります。<br>■その他の選択肢<br>B:リソースロックは、既存のリソースに対する変更を制限するために使用されます。アクセス管理を行うことはできません。<br>C:リソースグループは、リソースを整理するためのコンテナーですが、アクセス管理には使用されません。<br>D:ARMテンプレートは、リソースのデプロイメントを自動化するためのものですが、アクセス制御には関連しません。'>
+<div class='choice'> Azure Policy</div>
+<div class='choice'> リソースロック</div>
+<div class='choice'> リソースグループ</div>
+<div class='choice'> ARMテンプレート</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題10<br>Azureの従量課金とはどのような支出モデルですか。' data-answer='1' data-explanation='運用費用モデル<br>説明<br>Azureの従量課金は、使用したリソースの量に基づいて料金が計算される支出モデルです。これは運用費用モデル（Operational Expenditure、OpEx）に分類されます。このモデルでは、事前の大きな投資（CapEx）が不要で、必要に応じてリソースを追加または削減でき、使用量に応じて費用が発生します。<br>■その他の選択肢<br>A:プロジェクトベースの支出モデル：これはプロジェクト単位で支払いを行うモデルですが、Azureの従量課金はこのカテゴリーには該当しません。<br>C:資本支出モデル（CapEx）：これは大規模な前払い投資を必要とするモデルです。Azureの従量課金とは異なります。<br>D:サブスクリプションモデル：これは定期的な支払いを伴うモデルです。Azureの従量課金は使用量に基づいて料金が計算されます。'>
+<div class='choice'> プロジェクトベースの支出モデル</div>
+<div class='choice'> 運用費用モデル</div>
+<div class='choice'> 資本支出モデル</div>
+<div class='choice'> サブスクリプションモデル</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題11<br>以下はそれぞれ、どのクラウドのサービスモデルですか。<br>サービス１：Azure Cosmos DB<br>サービス２：Microsoft Intune' data-answer='0' data-explanation='サービス１：PaaS サービス２：SaaS<br>説明<br>クラウドのサービスモデルには、IaaS（サービスとしてのインフラストラクチャ）、PaaS（サービスとしてのプラットフォーム）、SaaS（サービスとしてのソフトウェア）の3つがあります。IaaSは仮想化されたインフラストラクチャを提供し、PaaSはアプリケーション実行環境を提供し、SaaSは完全なアプリケーションを提供します。ユーザーは必要なレベルの管理責任を持ち、コストや運用効率を調整できます。<br>Azure Cosmos DB：PaaS<br>PaaSは、アプリケーション開発とデプロイメントを容易にするためのプラットフォームと環境を提供します。Azure Cosmos DBは、高可用性、グローバル分散、マルチモデルデータベース機能を提供するマネージドサービスであり、開発者はインフラストラクチャの運用やスケーリングについて心配する必要がなく、データベースの設計とデータの処理に集中できます。<br>Microsoft Intune：SaaS<br>SaaSは、インターネット経由で提供されるソフトウェアアプリケーションです。Microsoft Intuneは、組織がデバイスとアプリケーションの管理を簡単に行えるクラウドベースのサービスであり、エンドユーザーに対してソフトウェアのインストール、更新、セキュリティポリシーの適用などを中央管理できます。'>
+<div class='choice'> サービス１：PaaS サービス２：SaaS</div>
+<div class='choice'> サービス１：IaaS サービス２：SaaS</div>
+<div class='choice'> サービス１：PaaS サービス２：PaaS</div>
+<div class='choice'> サービス１：PaaS サービス２：IaaS</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題12<br>あなたは、特定の条件に基づいて自動的にメール通知を送りたいと考えています。<br>サーバーレスコンピューティングで実現したい場合、これらの要求を満たすためのAzureサービスは何ですか。' data-answer='3' data-explanation='Azure Logic Apps<br>説明<br>Azure Logic Appsは、特定の条件に基づいて自動的に実行されるワークフローを作成するためのサーバーレスコンピューティングサービスです。コーディングをほとんど、または全く必要とせず、ビジュアルデザイナーを使用してワークフローを構築できます。Logic Appsは、Office 365を使用したスケジュールに基づくメール通知の送信など、さまざまな自動化されたタスクに対応できる機能を提供しています。これにより、特定のイベントが発生したときにメール通知を自動で送信するなどのビジネスプロセスを簡単に自動化できます。<br>■その他の選択肢<br>A:Azure SQL Databaseは、クラウドベースのリレーショナルデータベースサービスであり、データの保存とクエリを提供します。メール通知の自動送信には関連しておらず、通知機能は提供しません。<br>B:Azure仮想マシンは、仮想サーバーを提供するサービスであり、自動的なメール通知のためには追加の設定とカスタムアプリケーションの開発が必要です。サーバーレスコンピューティングではありません。<br>C:Azure Active Directory（Azure AD）は、クラウドベースのアイデンティティとアクセス管理サービスです。メール通知の自動送信には関連していますが、サーバーレスコンピューティングサービスではありません。'>
+<div class='choice'> Azure SQL Database</div>
+<div class='choice'> Azure仮想マシン</div>
+<div class='choice'> Azure AD</div>
+<div class='choice'> Azure Logic Apps</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題13<br>Azure ExpressRouteについて正しい記述はどれですか。（２つ選択）' data-answer='2,3' data-explanation='BGPを使用してルーティングを行う<br>専用回線を使用してオンプレミスとAzureを接続する<br>説明<br>Azure ExpressRouteは、Azureとオンプレミスのインフラストラクチャやデータセンターを専用の高速プライベート接続で接続するためのサービスです。インターネットを経由しないため、より安定した接続速度、低レイテンシー、高いセキュリティを実現できます。<br>C:BGPを使用してルーティングを行う：BGP(Border Gateway Protocol)を使用してルーティングを行います。BGPは大規模なネットワークでのルーティングを効率的に管理するためのプロトコルであり、ExpressRouteのようなエンタープライズ級の接続サービスで使用されます。<br>D:専用回線を使用してオンプレミスとAzureを接続する：インターネットを使用せずにAzureとオンプレミスの環境を接続するための専用回線を使用します。これにより接続の安定性や帯域幅の確保、セキュリティの向上などの利点があります。<br>■その他の選択肢<br>A:OSPFを使用してルーティングを行う：Azure ExpressRouteは、BGPを使用してルーティングを行います。OSPF（Open Shortest Path First）は使用されません。<br>B:インターネット回線を使用してオンプレミスとAzureを接続する：Azure ExpressRouteは、専用のプライベート回線を使用してオンプレミスネットワークとAzureを接続するサービスです。一般的なインターネット回線は使用されません。'>
+<div class='choice'> OSPFを使用してルーティングを行う</div>
+<div class='choice'> インターネット回線を使用してオンプレミスとAzureを接続する</div>
+<div class='choice'> BGPを使用してルーティングを行う</div>
+<div class='choice'> 専用回線を使用してオンプレミスとAzureを接続する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題14<br>削除や読み取り専用ロックなどのリソースロックが誤って解除された場合に、自動的にリソースロックを再適用するためにはどのAzureサービスを利用するべきですか。' data-answer='3' data-explanation='Azure Blueprints<br>説明<br>Azure Blueprintsは、Azure環境内でのリソース管理と構成を自動化するサービスです。このサービスを使用すると、削除や読み取り専用などのリソースロックを含む定義済みのガバナンスポリシーを、Azureリソースに簡単に適用することができます。<br>Azure Blueprintsは、特定のセキュリティルールやポリシーを設定することでコンプライアンスを確保し、一貫性のある環境を維持します。また、リソースロックの管理にも関与し、例えばリソースロックが誤って解除された場合でも、Azure Blueprintsは自動的にリソースロックを再適用してセキュリティポリシーを維持します。<br>■その他の選択肢<br>A:Azure ADは、アイデンティティとアクセス管理に関連するサービスであり、リソースロックの自動再適用には関連していません。<br>B:Azure Functionsは、サーバーレスコンピューティングを提供するサービスであり、リソースロックの管理とは関係がありません。<br>C:Azure Sphereは、IoTデバイス向けのセキュリティプラットフォームです。リソースロックの管理とは無関係であり、リソースロックの自動再適用には使用されません。'>
+<div class='choice'> Azure AD</div>
+<div class='choice'> Azure Functions</div>
+<div class='choice'> Azure Sphere</div>
+<div class='choice'> Azure Blueprints</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題15<br>サーバーレスコンピューティングプラットフォームの一部であり、コードを実行することができるAzureサービスは何ですか。' data-answer='2' data-explanation='Azure Functions<br>説明<br>Azure Functionsは、サーバーレスコンピューティングモデルを採用したサービスであり、特定のイベントやトリガーに応じてコードを実行します。リソースの使用に応じて課金されるため、コストを削減できます。また、開発者はインフラストラクチャの管理を気にせず、コードの開発に集中できます。<br>■その他の選択肢<br>A:Azure Bot Serviceは、チャットボットを開発し、公開するためのサービスですが、サーバーレスコンピューティングプラットフォームとは異なります。<br>B:Azure Databricksは、ビッグデータ処理と分析に特化したサービスであり、サーバーレスコンピューティングとは関連しません。<br>D:Azure PowerShellは、Azureリソースを管理するためのコマンドラインツールですが、サーバーレスコンピューティングプラットフォームではありません。'>
+<div class='choice'> Azure Bot Service</div>
+<div class='choice'> Azure Databricks</div>
+<div class='choice'> Azure Functions</div>
+<div class='choice'> Azure PowerShell</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題16<br>Azure Policyについて正しい記述はどれですか。（２つ選択）' data-answer='1,3' data-explanation='ポリシーをリソースグループに割り当てることができる<br>ポリシー適用時、ポリシーに準拠していないリソースは修正するための推奨アクションが示される<br>説明<br>Azure Policyは、Azureリソースのデプロイと使用に対する企業の要件、規則および規制要件を確実に満たすためのサービスです。これによりリソースが所定の構成、設定およびその他の要件を満たしていることを確認できます。Azure Policyを使用することで、組織はクラウド環境におけるガバナンスとコンプライアンスを実施することができます。<br>B:ポリシーをリソースグループに割り当てることができる：Azureポリシーは、リソースグループに割り当てることができます。これによりリソースグループ内のリソースが特定のポリシー要件を満たすことを確認できます。<br>D:ポリシー適用時、ポリシーに準拠していないリソースは修正するための推奨アクションが示される：非適合リソースがある場合、Azureポリシーはそのポリシー違反を報告し、適切な修正のための推奨アクションを表示することができます。<br>■その他の選択肢<br>A:ポリシーを仮想マシン単位で適用することができる：Azureポリシーは仮想マシンに直接割り当てることはできません。しかし、仮想マシンが属するリソースグループやサブスクリプションにポリシーを割り当てることで、仮想マシンに影響を与えることは可能です。<br>C:ポリシー適用時、ポリシーに準拠していないリソースは削除される：Azureポリシーが適用された後、準拠していないリソースは自動的に削除されません。適切な修正のための推奨アクションが表示されます。'>
+<div class='choice'> ポリシーを仮想マシン単位で適用することができる</div>
+<div class='choice'> ポリシーをリソースグループに割り当てることができる</div>
+<div class='choice'> ポリシー適用時、ポリシーに準拠していないリソースは削除される</div>
+<div class='choice'> ポリシー適用時、ポリシーに準拠していないリソースは修正するための推奨アクションが示される</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題17<br>Azure Storageアカウント間で、BLOBまたはファイルをコピーできるコマンドラインユーティリティは何ですか。' data-answer='3' data-explanation='AzCopy<br>説明<br>AzCopyは、Azure Storageアカウント間でBLOBやファイルをコピーするためのコマンドラインユーティリティです。このツールを使用すると、データを高速かつ効率的に転送できます。また、大量のデータを移行する際にも役立ち、ファイルのアップロードやダウンロードにも使用されます。<br>AzCopyは、データの移動やバックアップ、データ復元など、Azure Storageとのデータ操作を効率的に行うためのツールとして広く利用されています。また、Azureの異なるストレージサービス間でデータをコピーしたり、バッチ処理を行ったりするのに役立つ多くのコマンドとオプションが提供されています。<br>■その他の選択肢<br>A:Azure File Syncは、オンプレミスのファイルサーバーとAzureのクラウドストレージを同期させるためのサービスです。Azure Storageアカウント間で直接BLOBやファイルをコピーする機能はありません。<br>B:Azure Migrateは、主にオンプレミスのワークロードをAzureへ移行するためのサービスです。Azure Storageアカウント間のファイル転送には使用されません。<br>C:Azure Databricksは、ビッグデータ処理と分析のためのサービスです。Azure Storageアカウント間でデータをコピーするためのツールではありません。<br>■用語解説<br>コマンドラインユーティリティ：コンピューターの操作を行うためのテキストベースのインターフェイスです。ユーザーは特定のコマンドを入力して、ファイルの管理、プログラムの実行、システム設定の変更などを行います。このインターフェイスは、マウスを使用するグラフィカルなユーザーインターフェイスとは異なり、テキストコマンドのみで操作されます。'>
+<div class='choice'> Azure File Sync</div>
+<div class='choice'> Azure Migrate</div>
+<div class='choice'> Azure Databricks</div>
+<div class='choice'> AzCopy</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題18<br>クラウドの特徴である”災害復旧 (Disaster Recovery)”について正しい記述はどれですか。' data-answer='2' data-explanation='障害が発生した場合にバックアップサービスを使用してリソースを復元する能力<br>説明<br>災害復旧 (Disaster Recovery)は、システムやデータが何らかの理由（例: 地震、火災、ハードウェアの故障など）で失われたときに、それらを元の状態に戻すためのプロセスや手段のことを指します。<br>このプロセスにより、例えば、機密データが保存されているコンピューターが故障した際、バックアップからそれらのデータを取り戻すことができます。クラウドサービスを使用すると、この災害復旧のプロセスをより簡単かつ迅速に行うことができます。<br>■その他の選択肢<br>A:システムやサービスが長時間にわたって利用可能な状態にする能力：これは、高可用性 (High Availability)という概念を指しています。災害復旧とは異なる特徴です。<br>B:アプリケーションの要件が変更された際にリソースを迅速に展開する能力：これは、アジリティ(Agility)を指しています。災害復旧とは関係のない概念です。<br>D:システムが単一の障害点に依存せず、障害が発生してもサービスの中断を最小限に抑える能力：これは、フォールトトレランス(Fault Tolerance)を指す概念です。災害復旧とは異なります。'>
+<div class='choice'> システムやサービスが長時間にわたって利用可能な状態にする能力</div>
+<div class='choice'> アプリケーションの要件が変更された際にリソースを迅速に展開する能力</div>
+<div class='choice'> 障害が発生した場合にバックアップサービスを使用してリソースを復元する能力</div>
+<div class='choice'> システムが単一の障害点に依存せず、障害が発生してもサービスの中断を最小限に抑える能力</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題19<br>Microsoft Sentinelのプレイブックはどのような役割を果たしますか。' data-answer='3' data-explanation='セキュリティインシデントに対して自動的に対応する<br>説明<br>Microsoft Sentinelのプレイブックは、Azure Logic Appsをベースにした自動化ツールです。これにより、セキュリティインシデントやアラートに対する応答を自動化できます。<br>D:セキュリティインシデントに対して自動的に対応する：プレイブックは、特定のセキュリティインシデントやアラートがトリガーされたときに実行される一連のアクションを定義します。例えば、特定の種類のアラートに対して管理者に通知を送る、インシデントを自動的に閉じる、データを他のシステムに送信するなどのアクションが含まれます。プレイブックを使用することで、インシデントの検出から対応までの時間を短縮し、セキュリティオペレーションを効率化できます。<br>■その他の選択肢<br>A:データソースとシステムからセキュリティデータを取得する：この役割は通常、Microsoft Sentinelのデータコネクタによって果たされます。プレイブックはデータ収集に関与しません。<br>B:セキュリティの分析ルールを定義する：分析ルールは、Microsoft Sentinel内でセキュリティイベントに関するアラートやインシデントを生成するために定義されますが、これはプレイブックの主な役割ではありません。<br>C:セキュリティデータを視覚化しダッシュボードを表示する：セキュリティデータの視覚化は、Microsoft Sentinelのダッシュボードや分析ツールによって行われます。プレイブックはデータの視覚化に関与しません。'>
+<div class='choice'> データソースとシステムからセキュリティデータを取得する</div>
+<div class='choice'> セキュリティの分析ルールを定義する</div>
+<div class='choice'> セキュリティデータを視覚化しダッシュボードを表示する</div>
+<div class='choice'> セキュリティインシデントに対して自動的に対応する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題20<br>Azureの可用性ゾーンでは、データセンターをどのように配置していますか。' data-answer='1' data-explanation='単一のリージョン内に複数のデータセンターを配置<br>説明<br>Azureの可用性ゾーン（Availability Zone）は、単一リージョン内の複数の物理的に分離されたデータセンターから構成されています。各ゾーンは、独立した電源、冷却手段、ネットワークインフラストラクチャを備えており、この設計により、一つのゾーンに障害が発生しても他のゾーンがサービスを継続できるようになっています。<br>■その他の選択肢<br>A:複数のリージョン内に複数のデータセンターを配置：可用性ゾーンは単一のリージョン内に限定されます。<br>C:単一のサブスクリプションごとに複数のデータセンターを配置：サブスクリプションとデータセンターの配置は、可用性ゾーンとは関係がありません。<br>D:地理（geo）ごとに複数のデータセンターを配置：地理的な配置は、可用性ゾーンの設計ではなく、より大規模な地域的災害からの保護に関連します。'>
+<div class='choice'> 複数のリージョン内に複数のデータセンターを配置</div>
+<div class='choice'> 単一のリージョン内に複数のデータセンターを配置</div>
+<div class='choice'> 単一のサブスクリプションごとに複数のデータセンターを配置</div>
+<div class='choice'> 地理（geo）ごとに複数のデータセンターを配置</div>
+</div>
+
+
+            <!-- 他の問題も同様に追加 -->
+        </div>
+
+        <h2 id="question"></h2>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),  // innerHTMLに変更
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+            choicesContainer.innerHTML = '';
+
+            currentQuestion.choices.forEach((choice, i) => {
+                const li = document.createElement('li');
+                const input = document.createElement('input');
+                const label = document.createElement('label');
+
+                input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                input.name = 'choice';
+                input.value = choice.index;
+                input.id = 'choice' + i;
+
+                label.htmlFor = 'choice' + i;
+                label.innerHTML = choice.text;  // textContentをinnerHTMLに変更
+
+                li.appendChild(input);
+                li.appendChild(label);
+                choicesContainer.appendChild(li);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = Array.from(document.querySelectorAll('input[name="choice"]:checked'))
+                                        .map(checkbox => parseInt(checkbox.value))
+                                        .sort();
+            const resultElement = document.getElementById('result');
+            
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+                
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++; // 正解数をカウント
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            // クイズのUI全体を初期化
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            // 初期化後に最初の問題を表示
+            showQuestion();
+        }        
+    </script>
+</body>
+</html>

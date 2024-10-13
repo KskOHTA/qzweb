@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Fundamental問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-data" style="display: none;">
+
+
+<div class='question' data-multiple='true' data-question='問題21<br>Azure Active Directory（Azure AD）について正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='Azureリソースへのアクセスを付与するための組み込みロールが用意されている<br>すべてのユーザーに対して多要素認証（MFA）を適用することが推奨されている<br>説明<br>Azure Active Directory（Azure AD）は、Microsoftのクラウドベースのアイデンティティおよびアクセス管理サービスです。ユーザーの認証（ログインとアイデンティティの確認）と承認（アクセス権限の管理）を行い、企業のデータとアプリケーションのセキュリティを強化します。また、シングルサインオン（SSO）機能により、ユーザーは複数のアプリケーションに一度のログインでアクセスできます。<br>B:Azureリソースへのアクセスを付与するための組み込みロールが用意されている：Azure ADは、Azureリソースへのアクセス権限を管理するための組み込みロールを提供されており、ユーザーがAzureリソースへアクセスする際の権限を簡単に割り当てることができます。例えば、「閲覧者」ロールには閲覧権限が、「管理者」ロールには編集権限があります。<br>C:すべてのユーザーに対して多要素認証（MFA）を適用することが推奨されている：多要素認証（MFA）は、すべてのユーザーに対して適用することが推奨されています。MFAは、ユーザーがサインインする際に２つ以上の認証方法（パスワード、電話のSMS、指紋など）を必要とするセキュリティ手法です。これによりセキュリティを強化することができます。<br>■その他の選択肢<br>A:ユーザーに複数のライセンスを割り当てることはできない：Azure ADでは、ユーザーに複数のライセンスを割り当てることが可能です。<br>D:リソースグループを使用してユーザーを一括管理することが推奨されている：Azure ADでは「リソースグループ」ではなく「グループ」を使用してユーザーを管理します。リソースグループはAzureのリソース管理に関連しています。'>
+<div class='choice'> ユーザーに複数のライセンスを割り当てることはできない</div>
+<div class='choice'> Azureリソースへのアクセスを付与するための組み込みロールが用意されている</div>
+<div class='choice'> すべてのユーザーに対して多要素認証（MFA）を適用することが推奨されている</div>
+<div class='choice'> リソースグループを使用してユーザーを一括管理することが推奨されている</div>
+</div>
+
+
+<div class='question' data-multiple='false' data-question='問題22<br>データセンターを必要としないクラウドモデルは何ですか。' data-answer='1' data-explanation='パブリッククラウド<br>説明<br>パブリッククラウドは、サーバーやストレージなどのコンピューティングリソースをインターネット経由で一般に提供するクラウドモデルです。クラウドサービスプロバイダーは、物理的なインフラストラクチャをユーザーに提供し、ユーザーは自分自身のデータセンターを持つ必要がありません。これにより、ハードウェアの購入、設定、メンテナンスに関連するコストと労力が削減されます。サービスは従量課金制で提供されるため、使用したリソースに対してのみ料金が発生します。<br>■その他の選択肢<br>A:プライベートクラウドは、特定の企業または組織専用のクラウド環境です。このクラウドは一般に共有されず、データセンターのインフラを使用して運営されるため、組織は物理的なデータセンターを必要とします。<br>C:ハイブリッドクラウドは、プライベートクラウドとパブリッククラウドの両方の特徴を組み合わせたクラウド環境です。一部のデータとアプリケーションはプライベートクラウドに保持しつつ、他の部分はパブリッククラウドに配置されます。これにより柔軟性が増すものの、プライベートクラウド部分にはデータセンターが必要です。<br>D:マルチクラウドは、複数のクラウドサービスプロバイダーからのサービスを組み合わせて使用するアプローチです。各プロバイダーはパブリック、プライベート、またはハイブリッドクラウドサービスを提供することができますが、マルチクラウドを採用しても組織は自身のデータセンターを必要とする場合としない場合があります。'>
+<div class='choice'> プライベートクラウド</div>
+<div class='choice'> パブリッククラウド</div>
+<div class='choice'> ハイブリッドクラウド</div>
+<div class='choice'> マルチクラウド</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題23<br>Azureサブスクリプションには、仮想マシンが使用するCPUコア数の制限が設定されています。<br>使用できるコア数の制限を引き上げるためには、どのように対応が必要ですか。' data-answer='2' data-explanation='Microsoftのサポートに問い合わせを行う<br>説明<br>Azureでは、各サブスクリプションにCPUコア数などのリソース使用量に関する制限（クォータ）が設定されています。これらの制限は、ユーザーの不注意や操作ミスにより、Azureのリソースが過剰に消費されることを防ぐためのものです。<br>サブスクリプションのCPUコア数の制限を引き上げるには、Microsoft Azureのサポートに問い合わせて、クォータ増加のリクエストを提出する必要があります。これは、Azureポータル内からサポートリクエストとして行うことができます。<br>■その他の選択肢<br>A:オペレーティングシステムを更新する：オペレーティングシステムの更新は、サブスクリプションのリソース制限には影響しません。<br>B:Azure Policyを使って制限を引き上げる：Azure Policyはポリシー管理に使用されますが、サブスクリプションのクォータを変更する機能はありません。<br>D:Azure App Serviceプランをアップグレードする：App Serviceプランのアップグレードは、App Serviceに関連するリソースの変更に関わるもので、仮想マシンのCPUコア数の制限には影響しません。'>
+<div class='choice'> オペレーティングシステムを更新する</div>
+<div class='choice'> Azure Policyを使って制限を引き上げる</div>
+<div class='choice'> Microsoftのサポートに問い合わせを行う</div>
+<div class='choice'> Azure App Serviceプランをアップグレードする</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題24<br>クラウドの特徴である”高可用性(High Availability)”について正しい記述はどれですか。' data-answer='3' data-explanation='システムに障害が発生してもダウンタイムを最小限に抑え、リソースへのアクセスを確保する<br>説明<br>高可用性（High Availability）とは、システムが何らかの問題や障害が発生しても、サービス提供を中断せずに継続できる能力を指します。高可用性のあるシステムは、例えばオンラインのショッピングサイトや銀行のウェブサイトなど、障害が発生してもユーザーに影響を与えずにサービスを続けるためのしくみを備えています。<br>■その他の選択肢<br>A:需要に応じてリソースを自動的にスケーリングする：これは、スケーラビリティ(Scalability)の特性を指します。<br>B:アプリケーションの要件が変更された際にリソースを迅速に展開する：これは、アジリティ(Agility)の特性を指します。<br>C:障害が発生した場合にバックアップサービスを使用してリソースを復元する：これは、災害復旧(Disaster Recovery)の特性を指します。'>
+<div class='choice'> 需要に応じてリソースを自動的にスケーリングする</div>
+<div class='choice'> アプリケーションの要件が変更された際にリソースを迅速に展開する</div>
+<div class='choice'> 障害が発生した場合にバックアップサービスを使用してリソースを復元する</div>
+<div class='choice'> システムに障害が発生してもダウンタイムを最小限に抑え、リソースへのアクセスを確保する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題25<br>あなたの組織は、オンプレミスActive Directoryで従業員のユーザーアカウントを管理しています。<br>オンプレミスのアプリケーションをAzureへ移行するため、ユーザーをAzure側でユーザー認証したいと考えています。<br>そのためには、どのような対応が適切ですか。' data-answer='2' data-explanation='Azure AD Connectを使ってオンプレミスActive DirectoryとAzure ADを同期する<br>説明<br>Azure AD Connectは、オンプレミスのActive DirectoryとAzure Active Directory (Azure AD)との間でユーザーアカウントとその他のデータを同期するためのツールです。このツールは、シングルサインオン（SSO）を実現し、ユーザーがオンプレミスとAzureの両方で同じ資格情報を使用できるようにします。<br>これによりオンプレミスのActive Directoryを使用している組織は、クラウドベースのアプリケーションやサービスへのスムーズな移行を実現できます。<br>■その他の選択肢<br>A:すべてのユーザーをAzure ADのゲストユーザーとして登録する：ゲストユーザーとして個別に登録するのではなく、既存のアカウントを同期する方が効率的で一元的な管理が可能です。<br>B:オンプレミスActive Directoryのユーザーデータを手動でAzure ADに移行する：手動での移行は時間がかかり、誤りが生じる可能性が高いです。自動同期する方法が推奨されます。<br>D:VPNを通じてAzure ADをオンプレミスActive Directoryに接続する：VPNを使うのではなく、Azure AD Connectを使用して同期を行うのが適切です。'>
+<div class='choice'> すべてのユーザーをAzure ADのゲストユーザーとして登録する</div>
+<div class='choice'> オンプレミスActive Directoryのユーザーデータを手動でAzure ADに移行する</div>
+<div class='choice'> Azure AD Connectを使ってオンプレミスActive DirectoryとAzure ADを同期する</div>
+<div class='choice'> VPNを通じてAzure ADをオンプレミスActive Directoryに接続する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題26<br>クラウドの予測可能性（Predictability）について正しい記述はどれですか。' data-answer='1' data-explanation='クラウドサービスの利用で生じるコストを予測する能力<br>説明<br>予測可能性（Predictability）は、クラウドサービスを利用する際に発生するコストを見積もりやすいことを意味します。クラウドサービスを利用する際、コストは使用したリソースの量に応じて変動するため、予期せずコストが急増することがあります。クラウドプロバイダーは、ユーザーの利用状況を詳細に追跡し、リアルタイムで監視し、必要に応じてアラートを提供することで、コストの予測可能性を確保します。<br>この特性により、企業はIT予算をより正確に計画し、コスト管理を効果的に行うことができます。また、クラウドサービスの料金体系は通常、透明性が高いことから、ユーザーは使用状況をリアルタイムで把握し、予算内での運用を容易に維持できます。<br>■その他の選択肢<br>A:ソフトウェアパッチやアップデートを自動的に適用する能力：これはクラウドサービスのセキュリティ（Security）に関連する特性であり、セキュリティ管理の一環として非常に重要な能力ですが、予測可能性には関係しません。<br>C:非準拠のリソースを特定する能力：これは、ガバナンス（Governance）に関連しています。システムが企業の方針や業界の規制にどれだけ適合しているかを監視、報告する機能ですが、予測可能性の定義には含まれません。<br>D:システムが障害から回復し継続して機能する能力：これは、信頼性（Responsibility）に関連しています。システムの可用性や回復力を示す指標であり、障害が発生しても迅速に正常な運用状態に復旧する能力を指します。'>
+<div class='choice'> ソフトウェアパッチやアップデートを自動的に適用する能力</div>
+<div class='choice'> クラウドサービスの利用で生じるコストを予測する能力</div>
+<div class='choice'> 非準拠のリソースを特定する能力</div>
+<div class='choice'> システムが障害から回復し継続して機能する能力</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題27<br>あなたの組織では、Azure AD環境でユーザー認証を行っています。<br>ユーザーが、組織で通常把握していないIPアドレスからアクセスしたり、通常アクセスしない国や地域からアクセスしたりした場合に、パスワードの変更を要求したいと考えています。<br>Azure ADのどの機能を使用するのが適切ですか。' data-answer='2' data-explanation='Identity Protection<br>説明<br>Identity Protectionは、ユーザーおよびサインインリスクに基づいてセキュリティ対策を行うAzure ADの機能です。これには条件付きアクセスの機能が含まれており、リスクが検出された際には自動的に対応できるように設定することが可能です。<br>たとえば、未知のIPアドレスや通常と異なる地域からのアクセスが検出された場合には、ユーザーのリスクレベルが高いと判断し、パスワード変更やアクセス拒否などのアクションを実行することができます。<br>■その他の選択肢<br>A:Identity Governanceは、アイデンティティ管理とアクセス管理のプロセスを制御するための機能です。特定のリスク状況に基づいてパスワードの変更を要求する機能は含まれていません。<br>B:Privileged Identity Management（PIM）は、特権アクセスとその権限の管理を行う機能です。リスクベースのアクセス制御には対応していません。<br>D:多要素認証（MFA）は、セキュリティを強化するために使用される認証方法です。特定のリスク状況に基づいてパスワードの変更を要求する機能は含まれていません。'>
+<div class='choice'> Identity Governance</div>
+<div class='choice'> Privileged Identity Management（PIM）</div>
+<div class='choice'> Identity Protection</div>
+<div class='choice'> 多要素認証（MFA）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題28<br>リソースの構成やロール・ポリシーの割り当てを定義することで、一貫したAzure環境の展開を可能にするサービスは何ですか。' data-answer='3' data-explanation='Azure Blueprints<br>説明<br>Azure Blueprintsは、リソースの構成、ロールやポリシーの割り当てなどを定義し、一貫性のあるAzure環境を展開するためのサービスです。これにより新しいAzure環境を迅速に構築し、運用開始することが可能になります。<br>Azure Blueprintsでは、リソースグループ、ポリシー、ロールの割り当て、ARMテンプレートなど、異なる種類のアーティファクトをパッケージ化し、一貫性とコンプライアンスを確保することができます。<br>■その他の選択肢<br>A:Azure Sphereは、IoTデバイスのセキュリティに特化したサービスであり、Azureの環境展開には関連しません。<br>B:Azure Policyは、Azureリソースに対するポリシー管理を提供するサービスです。こちらもAzureの環境展開を行うことはできません。<br>C:Azure ADは、Azureのアイデンティティとアクセス管理サービスですが、Azureの環境展開には関連しません。'>
+<div class='choice'> Azure Sphere</div>
+<div class='choice'> Azure Policy</div>
+<div class='choice'> Azure AD</div>
+<div class='choice'> Azure Blueprints</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題29<br>Webアプリケーションを構築、展開およびホストするAzureサービスは何ですか。' data-answer='1' data-explanation='Azure App Service<br>説明<br>Azure App Serviceは、Webアプリケーション、REST APIおよびモバイルバックエンドをホストするためのHTTPベースのサービスです。様々な言語（.NET、Java、Node.js、PHP、Pythonなど）での開発に対応し、WindowsおよびLinuxベースの環境でのアプリケーションの実行とスケーリングを容易にします。また、セキュリティ、負荷分散、自動スケーリングなど、多くのAzure機能をアプリケーションに追加することが可能です。<br>Azure App Serviceは、フルマネージドなPaaSサービスであり、開発者が高品質なアプリの作成に集中できるようサポートします。<br>■その他の選択肢<br>A:Azure Container Instancesは、コンテナベースのアプリケーションを実行するためのサービスですが、Webアプリの開発とホスティングに特化しているわけではありません。<br>C:Azure Application Insightsは、アプリケーションのパフォーマンス監視および分析サービスですが、アプリケーションのホスティングは行いません。<br>D:Azure Functionsは、サーバーレスコンピューティングを提供するサービスですが、主にイベントベースの小規模な機能を実行するためのものです。'>
+<div class='choice'> Azure Container Instances</div>
+<div class='choice'> Azure App Service</div>
+<div class='choice'> Azure Application Insights</div>
+<div class='choice'> Azure Functions</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題30<br>以下の要件を満たすAzureサービスは何ですか。<br>・Webアプリケーションをモニタリングする<br>・Webアプリケーションを診断し異常を検出する<br>・Webページの読み込みにかかる時間を特定する' data-answer='1' data-explanation='Azure Application Insights<br>説明<br>Azure Application Insightsは、アプリケーションのパフォーマンス管理 (APM) ツールであり、リアルタイム監視とアプリケーション診断を提供します。視覚的なダッシュボードやカスタマイズ可能なアラートを利用して、アプリケーションの状態を継続的に監視し、問題発生時に迅速に対応することができます。<br>またApplication Insightsは、アプリケーションのパフォーマンスの問題を特定し、解決するための詳細なデータと洞察を提供します。ページの読み込み時間、サーバーの応答時間、ユーザーセッションの分析など、アプリケーションの詳細な監視と分析を行うことも可能です。<br>■その他の選択肢<br>A:Azure DevOpsは、ソフトウェア開発のライフサイクル全体を支援するツールですが、Webアプリケーションのパフォーマンス監視に特化していません。<br>C:Azure Service Healthは、Azureサービス全体の健康状態を追跡するサービスです。個々のアプリケーションのパフォーマンス監視には用いられません。<br>D:Azure HDInsightは、ビッグデータ処理のためのクラウドサービスです。Webアプリケーションのモニタリングやパフォーマンス診断には向いていません。'>
+<div class='choice'> Azure DevOps</div>
+<div class='choice'> Azure Application Insights</div>
+<div class='choice'> Azure Service Health</div>
+<div class='choice'> Azure HDInsight</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題31<br>あなたは、Azure上のWebアプリケーションに対するトラフィックを制限するため、TCPポート80（HTTP）と443（HTTPS）のアクセスを制御したいと考えています。<br>どのAzureサービスもしくは機能を使用するべきですか。' data-answer='3' data-explanation='ネットワークセキュリティグループ（NSG）<br>説明<br>ネットワークセキュリティグループ（NSG）は、Azureリソースへのネットワークトラフィックを制御するためのサービスです。NSGを使用することで、特定のポートやプロトコルへのアクセスを許可または拒否するルールを設定できます。この場合、TCPポート80（HTTP）やTCPポート443（HTTPS）などの特定のポートへのアクセスを制限するためにNSGが適切です。<br>■その他の選択肢<br>A:Azure Monitorは、監視とパフォーマンスデータの収集に使用されるサービスですが、トラフィック制御やポート管理の機能は提供しません。<br>B:Azure DDoS保護は、分散型サービス拒否（DDoS）攻撃からAzureリソースを保護するために設計されていますが、特定のポートへのアクセスを制御する目的には使用されません。<br>C:ユーザー定義ルートは、Azure仮想ネットワーク内のトラフィックのルーティングをカスタマイズするために使用されます。これはポート制御には適していません。'>
+<div class='choice'> Azure Monitor</div>
+<div class='choice'> Azure DDoS保護</div>
+<div class='choice'> ユーザー定義ルート</div>
+<div class='choice'> ネットワークセキュリティグループ（NSG）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題32<br>Azure Site Recoveryはどのような機能を提供しますか。' data-answer='0' data-explanation='障害によりシステムがダウンした際にディザスタリカバリを行う<br>説明<br>Azure Site Recoveryは、データセンターの災害が発生した場合に、ビジネスの継続性を確保するためのソリューションです。予備のデータセンターまたはクラウド環境に仮想マシンや物理サーバーを複製し、本番環境がダウンした際に迅速に復旧することが可能になります。<br>A:障害によりシステムがダウンした際にディザスタリカバリを行う：Azure Site Recoveryは、システムがダウンした際に迅速なディザスタリカバリを提供し、ビジネスの中断を最小限に抑えます。予期せぬ事態や災害が発生した場合に備えて、データとアプリケーションを保護するために使用されます。<br>■その他の選択肢<br>B:データの暗号化とセキュリティ対策を提供する：Azure Site Recoveryの主な目的はディザスタリカバリであり、データの暗号化やセキュリティ対策は直接的な機能ではありません。<br>C:自動的にリソースをスケーリングすることで弾力性を高める：この機能はAzure Site Recoveryの主な機能ではありません。自動スケーリングは、通常、クラウドのコンピューティングリソースに関連する機能です。<br>D:クラウド内のリソースのパフォーマンス監視を行う：Azure Site Recoveryは、パフォーマンス監視よりも災害復旧に焦点を当てています。'>
+<div class='choice'> 障害によりシステムがダウンした際にディザスタリカバリを行う</div>
+<div class='choice'> データの暗号化とセキュリティ対策を提供する</div>
+<div class='choice'> 自動的にリソースをスケーリングすることで弾力性を高める</div>
+<div class='choice'> クラウド内のリソースのパフォーマンス監視を行う</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題33<br>組織内のAzureリソースのコストを部署ごとに管理するためには、どの機能を使用するべきですか。' data-answer='3' data-explanation='タグ<br>説明<br>Azureのタグは、Azureリソースにメタデータ（補足情報）を付けるための機能であり、これによりリソースを分類しやすくなり、特に費用管理やリソースの整理に役立てることができます。例えば、”部署：営業部”や ”プロジェクト：新製品開発”といったタグをリソースに適用することができ、後でそのリソースを特定のプロジェクトや部署と関連付けて簡単に識別できるようになります。<br>■その他の選択肢<br>A:サブスクリプションは、アクセス許可や課金の境界を定義します。複数のサブスクリプションを持つことで、コストのセグメント化は可能ですが、より細かい部署レベルでの追跡には適していません。<br>B:ポリシーは、リソースの作成と使用に対するルールを定義します。これにより、組織がコンプライアンス要件を満たし、リソースの統制を保つのに役立ちますが、コストの追跡自体には使用されません。<br>C:リソースグループは、関連するリソースをまとめるためのコンテナーです。一つのリソースグループにまとめられたリソースは、管理ポリシーが同じであることが一般的ですが、これだけではコストを部署ごとに分けるには不十分です。'>
+<div class='choice'> サブスクリプション</div>
+<div class='choice'> ポリシー</div>
+<div class='choice'> リソースグループ</div>
+<div class='choice'> タグ</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題34<br>下記の要件を満たすためにはどのAzureサービスを使用するべきですか。<br>・特定のリソースグループ内では、ユーザーが仮想マシンを作成できないようにする' data-answer='0' data-explanation='Azure Policy<br>説明<br>Azure Policyは、Azure環境内でのリソースの作成、設定、管理に関するポリシーを定義し、適用するためのサービスです。これにより組織は一貫したコンプライアンス基準を維持し、特定のリソースタイプの作成や設定を制限することができます。<br>IT管理者はポリシーを定義して、リソースグループやサブスクリプション全体で特定の要件を強制することができます。特定のリソースグループ内でユーザーが仮想マシンを作成できないようにするポリシーの設定が可能です。<br>■その他の選択肢<br>B:リソースロックは、リソースやリソースグループの削除や変更を防ぐために使用されますが、特定のリソースタイプの作成を制限するためには適していません。<br>C:ARMテンプレートは、リソースのデプロイメントを定義するために使用されますが、特定のリソースの作成を制限する機能はありません。<br>D:Azure ロールは、アクセス管理に関連するものであり、特定のリソースタイプの作成を制限するためには適していません。ロールは、ユーザーがリソースに対して実行できる操作の範囲を定義しますが、リソースの作成自体を制限するものではありません。'>
+<div class='choice'> Azure Policy</div>
+<div class='choice'> リソースロック</div>
+<div class='choice'> ARMテンプレート</div>
+<div class='choice'> Azure ロール</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題35<br>Microsoftのモダンライフサイクルポリシーについて正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='サポートを終了する場合は、少なくとも12ヶ月前に通知される<br>継続的にサービスとサポートが提供される製品およびサービスを対象としている<br>説明<br>Microsoftのモダンライフサイクルポリシーは、Microsoftの製品とサービスに対する持続的なサポートとアップデートの提供を確約するものです。このポリシーに基づき、Microsoftは製品を定期的に更新し、新しい機能やセキュリティの向上を実施します。これにより、ユーザーは常に最新のサービスを利用でき、Microsoftからのサポートも受けられます。<br>B:サポートを終了する場合は、少なくとも12ヶ月前に通知される：Microsoftは、モダンライフサイクルポリシーに基づく製品のサポート終了を少なくとも12ヶ月前に通知することが義務付けられています。<br>C:継続的にサービスとサポートが提供される製品およびサービスを対象としている：このポリシーは、継続的にサービスとサポートが提供される製品やサービスに適用されます。これには、クラウドサービスやその他のオンラインサービスが含まれます。<br>■その他の選択肢<br>A:サービスの変更通知は、1週間前に行われる：サービスの変更通知は、1週間前ではなく30日以上前に行われます。<br>D:量販店での購入やボリュームライセンスを通じて提供される製品およびサービスを対象としている：モダンライフサイクルポリシーは販売方法に依存しません。これは固定ライフサイクル ポリシーの説明となります。<br>E:少なくとも５年間のメインストリームサポートが適用される：こちらも固定ライフサイクルポリシーの説明となります。メインストリームサポートの期間は、モダンライフサイクルポリシーでは定められていません。'>
+<div class='choice'> サービスの変更通知は、1週間前に行われる</div>
+<div class='choice'> サポートを終了する場合は、少なくとも12ヶ月前に通知される</div>
+<div class='choice'> 継続的にサービスとサポートが提供される製品およびサービスを対象としている</div>
+<div class='choice'> 量販店での購入や、ボリュームライセンスを通じて提供される製品およびサービスを対象としている</div>
+<div class='choice'> 少なくとも５年間のメインストリームサポートが適用される</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題36<br>以下の要件を満たすAzureサービスは何ですか。<br>・Azureサービスに関連する監査およびコンプライアンスに関する情報を確認する<br>・Microsoftクラウドサービスアカウントでサービスにログインする' data-answer='2' data-explanation='Microsoft Service Trust Portal<br>説明<br>Microsoft Service Trust Portalは、Microsoftのクラウドサービスに関連する重要な監査レポートやコンプライアンス情報を提供するオンラインポータルです。ユーザーは、Microsoftクラウドサービスアカウント（AzureやMicrosoft 365などにアクセスするために使用されるアカウント）を使用してこのポータルにアクセスし、コンプライアンス関連の資料を閲覧することができます。<br>■その他の選択肢<br>A:Azure Service Healthは、Azureサービスの健全性とパフォーマンスに関する情報を提供しますが、監査やコンプライアンスには関連しません。<br>B:Microsoft Sentinelは、セキュリティ情報およびイベント管理（SIEM）とセキュリティオーケストレーション、自動化、応答（SOAR）ソリューションです。監査やコンプライアンスレポートには焦点を当てていません。<br>D:Azure Portalは、Azureのリソースとサービスを管理するためのウェブベースのインターフェイスです。特定の監査やコンプライアンスレポートを提供する主な目的ではありません。'>
+<div class='choice'> Azure Service Health</div>
+<div class='choice'> Microsoft Sentinel</div>
+<div class='choice'> Microsoft Service Trust Portal</div>
+<div class='choice'> Azure Portal</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題37<br>Azure Storageアカウントにおけるレプリケーションオプションにおいて、以下のオプションを冗長性が高い順に並べ替えてください。（右に行くほど冗長性が高い：低 A &lt; B &lt; C 高）<br>・ローカル冗長ストレージ (LRS)<br>・ゾーン冗長ストレージ (ZRS)<br>・geo 冗長ストレージ (GRS)' data-answer='2' data-explanation='LRS &lt; ZRS &lt; GRS<br>説明<br>Azure Storageアカウントのレプリケーションオプションは、データの耐久性と可用性を保証するために異なるレベルの冗長性を提供します。<br>・ローカル冗長ストレージ (LRS)：同じデータセンター内でデータを複製します。これにより、機器の故障などの局所的な障害に対応しますが、データセンター全体の障害には耐えられません。<br>・ゾーン冗長ストレージ (ZRS)：異なる３つの可用性ゾーン間でデータをコピーします。これにより、単一のデータセンターの障害にも対応でき、より高い冗長性を提供します。<br>・geo 冗長ストレージ (GRS)：別のリージョンにデータを複製することで、地域全体の障害に対して耐性を持たせます。これにより、最も高いレベルの耐障害性を提供します。<br>したがって、冗長性が高い順に並べ替えるとLRS &lt; ZRS &lt; GRSが正しい順序です。'>
+<div class='choice'> LRS &lt; GRS &lt; ZRS</div>
+<div class='choice'> GRS &lt; ZRS &lt; LRS</div>
+<div class='choice'> LRS &lt; ZRS &lt; GRS</div>
+<div class='choice'> ZRS &lt; LRS &lt; GRS</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題38<br>Azure Monitorの一部として提供されているサービスを選択してください。（２つ選択）' data-answer='0,3' data-explanation='Log Analytics<br>Application Insights<br>説明<br>Azure Monitorは、Azureリソースおよびオンプレミスリソースに関する監視データを収集、分析、およびアクション化するためのサービスです。Azure Monitorを使用すると、アプリケーションのパフォーマンス、インフラストラクチャの状態、およびネットワークの活動をリアルタイムで追跡して監視することができます。<br>Application InsightsやLog Analyticsなどのツールと統合されており、一貫した監視および自動修復を行うことが可能です。<br>A:Log Analyticsは、Azure Monitorの一部として提供されるログデータの収集、保存および分析サービスです。Azureリソースやオンプレミス環境のリソースからログデータを集約し、Kusto Query Language (KQL)を使用してデータをクエリして分析することができます。セキュリティ、運用、およびコンプライアンスの情報に関する洞察を提供することを目的としています。<br>D:Application Insightsは、Azure Monitorの一部として提供されるアプリケーションのパフォーマンス管理サービスです。Webアプリケーションやモバイルアプリ、デスクトップアプリケーションなどのアプリケーションのパフォーマンスや使用状況に関する情報を収集および分析することができます。エラーや例外、ページビュー、ユーザーセッションなどの詳細なテレメトリデータを提供します。'>
+<div class='choice'> Log Analytics</div>
+<div class='choice'> Azure Backup</div>
+<div class='choice'> Azure Logic Apps</div>
+<div class='choice'> Application Insights</div>
+<div class='choice'> Azure Functions</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題39<br>あなたは、IT管理者として組織内の特定のユーザーがAzure Virtual Desktopにアクセスできるようにする必要があります。<br>どのような対応が適切ですか。' data-answer='3' data-explanation='RBACを使用してユーザーにロールを割り当てる<br>説明<br>Azure Virtual Desktopは、クラウドにおけるデスクトップとアプリケーションの仮想化サービスです。このサービスを利用することで、ユーザーはどのデバイスからでも、インターネットを通じて仮想デスクトップやアプリケーションにアクセスすることができます。<br>D:RBACを使用してユーザーにロールを割り当てる：RBACは「ロールベースのアクセス制御」を意味し、特定のロールに対するアクセス許可をユーザーやグループに割り当てることで、リソースへのアクセスを制御するAzureの機能です。Azure Virtual Desktopにアクセスするための組み込みロールも用意されており、最適なロールをユーザーに割り当てることで業務を遂行するのに必要な最小限の権限を付与することが可能です。<br>■その他の選択肢<br>A:すべてのユーザーに管理者権限を付与する：この方法はセキュリティリスクが非常に高く、組織のすべてのユーザーに管理権限を与えることは推奨されません。最小権限の原則に反しており、不適切なアクセス制御となります。<br>B:パブリックIPアドレスをユーザーごとに割り当てる：パブリックIPアドレスを割り当てることは、アクセス制御とは異なる概念です。ユーザーがリソースにアクセスするために必要な認証や認可には寄与しません。<br>C:Azure Virtual Desktopリソースにタグを適用する：タグはリソースを分類するために使用されるメタデータであり、アクセス制御には使用されません。'>
+<div class='choice'> すべてのユーザーに管理者権限を付与する</div>
+<div class='choice'> パブリックIPアドレスをユーザーごとに割り当てる</div>
+<div class='choice'> Azure Virtual Desktopリソースにタグを適用する</div>
+<div class='choice'> RBACを使用してユーザーにロールを割り当てる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題40<br>Azure仮想マシンのアンマネージドディスク（非管理ディスク）を保存するために使用できるストレージサービスは何ですか。' data-answer='3' data-explanation='BLOB ストレージ<br>説明<br>Azureでの仮想マシンのディスクは大きく分けて、アンマネージドディスク（非管理ディスク）とマネージドディスク（管理ディスク）の二種類があります。<br>１．アンマネージドディスク：ユーザーがストレージアカウントを管理し、その中にディスクファイル（VHDファイル）を格納する方式です。ストレージアカウント内でのディスクの配置やパフォーマンスの管理は全てユーザーの責任となります。<br>２．マネージドディスク：Azureがディスクの管理を行う方式で、ストレージアカウントの管理やサイズ調整などが自動的に行われます。ユーザーはディスクのサイズや種類を指定するだけで良く、より簡単に扱えるようになっています。<br>Azure仮想マシンのアンマネージドディスク（非管理ディスク）は、BLOB ストレージ（コンテナーストレージ）に格納され、仮想マシンのOSディスクやデータディスクとして使用されます。<br>■その他の選択肢<br>A:File ストレージは、ファイルベースの共有ストレージを提供しますが、アンマネージドディスクの保存には使用されません。<br>B:Table ストレージは、NoSQLデータストアであり、アンマネージドディスクの保存には適していません。<br>C:Queue ストレージは、メッセージキューを提供しますが、アンマネージドディスクの保存には使用されません。'>
+<div class='choice'> File ストレージ</div>
+<div class='choice'> Table ストレージ</div>
+<div class='choice'> Queue ストレージ</div>
+<div class='choice'> BLOB ストレージ</div>
+</div>
+
+
+            <!-- 他の問題も同様に追加 -->
+        </div>
+
+        <h2 id="question"></h2>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),  // innerHTMLに変更
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+            choicesContainer.innerHTML = '';
+
+            currentQuestion.choices.forEach((choice, i) => {
+                const li = document.createElement('li');
+                const input = document.createElement('input');
+                const label = document.createElement('label');
+
+                input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                input.name = 'choice';
+                input.value = choice.index;
+                input.id = 'choice' + i;
+
+                label.htmlFor = 'choice' + i;
+                label.innerHTML = choice.text;  // textContentをinnerHTMLに変更
+
+                li.appendChild(input);
+                li.appendChild(label);
+                choicesContainer.appendChild(li);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = Array.from(document.querySelectorAll('input[name="choice"]:checked'))
+                                        .map(checkbox => parseInt(checkbox.value))
+                                        .sort();
+            const resultElement = document.getElementById('result');
+            
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+                
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++; // 正解数をカウント
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            // クイズのUI全体を初期化
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            // 初期化後に最初の問題を表示
+            showQuestion();
+        }        
+    </script>
+</body>
+</html>

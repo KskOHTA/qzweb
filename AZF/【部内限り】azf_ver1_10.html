@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Fundamental問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-data" style="display: none;">
+
+
+<div class='question' data-multiple='true' data-question='問題21<br>あなたは、Azure仮想マシンから生成されるメトリクスやログを収集し、クエリを使用して監視を行いたいと考えています。<br>この要件に最適なサービスの組み合わせは何ですか。（２つ選択）' data-answer='0,2' data-explanation='Azure Monitor<br>Log Analytics<br>説明<br>Azure Monitorは、Azureサービスのパフォーマンスと可用性を監視するためのサービスです。アプリケーションとインフラストラクチャからメトリックとログを収集し、分析する機能を提供します。仮想マシンを監視する場合、CPU使用率、ネットワークトラフィック、ディスクI/Oなどの基本的なメトリックを追跡できます。<br>Log Analyticsは、Azure Monitorの一部であり、収集したデータに対して複雑なクエリを実行し、詳細な分析を提供するサービスです。仮想マシンからのメトリックやログの分析に使用することができます。<br>■その他の選択肢<br>B:Blob Storageは、Azureのオブジェクトストレージソリューションです。大量の非構造化データを格納することができますが、メトリックやログの収集、クエリを使った分析、監視等を行うことはできません<br>D:Azure Functionsは、サーバーレスコンピューティング環境を提供するサービスです。イベントベースのコードを実行することができますが、メトリックやログの収集、分析等を行うことはできません。<br>E:Azure Advisorは、サービス最適化のための推奨事項を提供するサービスです。セキュリティ、パフォーマンス、コストなどの面での改善点を指摘しますが、リアルタイムでの監視やログ分析機能は提供しません。'>
+<div class='choice'> Azure Monitor</div>
+<div class='choice'> Blob Storage</div>
+<div class='choice'> Log Analytics</div>
+<div class='choice'> Azure Functions</div>
+<div class='choice'> Azure Advisor</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題22<br>あなたの会社はWebアプリケーションをAzure上で運用しており、社内ユーザーがアクセスしています。<br>現在、勤務開始時にアプリケーションへのアクセスが急増し、パフォーマンスが落ちることが問題となっています。<br>この問題に対処するため、クラウドのどの特徴を向上させる必要がありますか。' data-answer='3' data-explanation='弾力性（Elasticity）<br>説明<br>クラウドの弾力性（Elasticity）とは、需要の増減に応じてリソース（例えば、サーバーの処理能力やストレージ）を自動的にスケールアップまたはスケールダウンさせる能力を指します。<br>勤務開始時にアプリケーションへのアクセスが急増するという状況では、自動的に追加のリソースを確保してパフォーマンスを維持する弾力性が重要です。これにより、需要のピーク時でもアプリケーションの性能を最適化し、ユーザー体験を向上させることができます。<br>■その他の選択肢<br>A:高可用性 （High Availability）は、システムやアプリケーションが継続的に利用可能であることを指しますが、需要の急増によるパフォーマンスの問題には関連しません。<br>B:アジリティ（Agility）は、迅速に変化に対応し、新しいリソースを素早く導入できる能力を指しますが、既存のリソースの負荷増加に直接対処する機能ではありません。<br>C:耐障害性（Fault Tolerance）は、障害や不具合が発生した際にサービスが継続できる能力を指しますが、利用者の急増によるパフォーマンス低下には関連しません。'>
+<div class='choice'> 高可用性 （High Availability）</div>
+<div class='choice'> アジリティ（Agility）</div>
+<div class='choice'> 耐障害性（Fault Tolerance）</div>
+<div class='choice'> 弾力性（Elasticity）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題23<br>Azure Container Instanceはどのようなサービスですか。' data-answer='1' data-explanation='コンピューティングサービスであり、コンテナベースのアプリケーションをデプロイする<br>説明<br>Azure Container Instances（ACI）は、コンピューティングサービスであり、コンテナベースのアプリケーションを効率的にデプロイするためのサービスです。<br>このサービスを使用すると、仮想マシンのプロビジョニングなしでコンテナーを迅速に起動し、アプリケーションを実行することができます。ACIは、特にコンテナーのデプロイメントに関して、管理の手間を最小限に抑えつつ、柔軟性と利便性を提供します。<br>■その他の選択肢<br>A:ネットワークセキュリティサービスであり、ファイアウォール機能を提供する：これはAzure Firewallなどのネットワークセキュリティサービスに該当します。<br>C:ファイルストレージサービスであり、大量のファイルをクラウド上に保存する：これはAzure Filesなどのストレージサービスに該当します。<br>D:メールホスティングサービスであり、企業のメールシステムを運用する：これはMicrosoft Exchangeなどのメールホスティングサービスに該当します。'>
+<div class='choice'> ネットワークセキュリティサービスであり、ファイアウォール機能を提供する</div>
+<div class='choice'> コンピューティングサービスであり、コンテナベースのアプリケーションをデプロイする</div>
+<div class='choice'> ファイルストレージサービスであり、大量のファイルをクラウド上に保存する</div>
+<div class='choice'> メールホスティングサービスであり、企業のメールシステムを運用する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題24<br>Webサイトに対する攻撃から保護し、その攻撃の詳細に関してレポートを生成することができるAzureサービスは何ですか。' data-answer='0' data-explanation='Azure DDoS保護<br>説明<br>Azure DDoS保護は、Azureリソースを分散型サービス拒否（DDoS）攻撃から保護するためのサービスです。このサービスは、ネットワークトラフィックの監視と分析を行い、異常なトラフィックパターンを検出することでDDoS攻撃を阻止します。<br>攻撃が発生した場合、DDoS保護はリアルタイムの脅威情報を提供し、攻撃の詳細に関するレポートを生成します。これにより、攻撃の詳細を把握し対応策を強化することができます。<br>■その他の選択肢<br>B:Azure Firewallは、ネットワークレベルのセキュリティとトラフィックフィルタリングを提供しますが、特にWebサイト攻撃の詳細レポートを生成する機能は有していません。<br>C:アプリケーションセキュリティグループ（ASG)は、Azure仮想ネットワーク内の特定のアプリケーションのトラフィックフローを制御するために使用されますが、攻撃からの保護やレポート生成を行うことはできません。<br>D:Azure Monitorは、リソースの監視とデータ収集を行いますが、Webサイトに対する攻撃からの保護や攻撃詳細のレポート生成には適していません。'>
+<div class='choice'> Azure DDoS保護</div>
+<div class='choice'> Azure Firewall</div>
+<div class='choice'> アプリケーションセキュリティグループ（ASG)</div>
+<div class='choice'> Azure Monitor</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題25<br>あなたの組織では、WindowsやLinuxを組み合わせたテスト環境の構築を検討しています。<br>また仮想マシンを、デプロイした１週間後には削除される予定です。<br>どのAzureサービスを利用するべきですか。' data-answer='1' data-explanation='Azure DevTest Labs<br>説明<br>Azure DevTest Labsは、仮想マシンとPaaS環境の作成・管理を容易にするサービスであり、テスト環境やトレーニングラボなどの利用に適しています。カスタムイメージやARMテンプレートを使用して環境を構築し、効率的なコスト管理を実現します。このサービスは、特定の期間だけ仮想マシンを使用するようなシナリオに最適で、テスト環境の構築・削除を迅速に行うことができます。<br>■その他の選択肢<br>A:Azure Logic Appsは、ワークフロー自動化に使用されるサービスであり、テスト環境の構築とは関連がありません。<br>C:リザーブドインスタンスは、長期的なコスト削減に適しており、短期間の仮想マシン利用には適していません。<br>D:Azure Marketplaceは、ソフトウェアやサービスの購入に使われるプラットフォームであり、テスト環境の構築には関連していません。'>
+<div class='choice'> Azure Logic Apps</div>
+<div class='choice'> Azure DevTest Labs</div>
+<div class='choice'> リザーブドインスタンス</div>
+<div class='choice'> Azure Marketplace</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題26<br>Azureサービスのパブリックプレビューで提供されている機能は何ですか。' data-answer='3' data-explanation='フィードバック機能<br>説明<br>Azureサービスのパブリックプレビューは、一般公開前の新機能やサービスを試用できる期間を指します。これらのプレビュー機能は、実際の製品環境に導入される前に一般ユーザーからのフィードバックを集めるために提供されます。<br>プレビュー中のサービスは通常、本番環境での使用には推奨されず、正式リリースされた製品のような完全なサポートやSLAは提供されないことが一般的です。ユーザーはプレビュー機能をテストし、使用感やパフォーマンスに関するフィードバックをMicrosoftに提供することで、製品の改善に貢献することができます。<br>D:フィードバック機能：パブリックプレビューでは、ユーザーはフィードバック機能を通じて製品に関する意見や提案を直接Microsoftに送ることができます。<br>■その他の選択肢<br>A:緊急サービスへの連絡：パブリックプレビューに関しては、緊急サービスへの連絡機能が特に提供されているわけではありません。これは一般的には製品の正式リリースでのみ提供されるサポートです。<br>B:カスタマーサポート：公式にリリースされた製品とは異なり、パブリックプレビュー期間中のカスタマーサポートは限定的であるか、全く提供されない場合があります。<br>C:サービスレベルアグリーメント（SLA）：パブリックプレビューの期間中は、サービスレベルアグリーメント（SLA）は通常提供されません。SLAは製品やサービスが正式リリースされた後に提供されることが多いです。'>
+<div class='choice'> 緊急サービスへの連絡</div>
+<div class='choice'> カスタマーサポート</div>
+<div class='choice'> サービスレベルアグリーメント（SLA）</div>
+<div class='choice'> フィードバック機能</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題27<br>以下はそれぞれ、どのクラウドのサービスモデルですか。<br>サービス１：Azure仮想マシン上のDNSサーバー<br>サービス２：Azure Files' data-answer='1' data-explanation='サービス１：IaaS サービス２：PaaS<br>説明<br>クラウドのサービスモデルには、IaaS（サービスとしてのインフラストラクチャ）、PaaS（サービスとしてのプラットフォーム）、SaaS（サービスとしてのソフトウェア）の3つがあります。IaaSは仮想化されたインフラストラクチャを提供し、PaaSはアプリケーション実行環境を提供し、SaaSは完全なアプリケーションを提供します。ユーザーは必要なレベルの管理責任を持ち、コストや運用効率を調整できます。<br>Azure仮想マシン上のDNSサーバー：IaaS<br>Azureの仮想マシン（VM）は、クラウド上で提供される仮想化されたサーバーです。これにより、ユーザーは物理ハードウェアを管理することなく、自由にサーバー環境を設定できます。DNSサーバーをAzureのVM上で運用する場合、その管理と設定はユーザーの責任になります。<br>Azure Files：PaaS<br>PaaSは、アプリケーション開発とデプロイメントを容易にするためのプラットフォームと環境を提供します。Azure Filesは、ファイル共有のためのクラウドベースのサービスであり、ユーザーはファイルストレージの管理に注力でき、サーバーの運用やメンテナンスについては気にする必要がありません。これにより、アプリケーションの開発や運用が簡略化されます。'>
+<div class='choice'> サービス１：PaaS サービス２：SaaS</div>
+<div class='choice'> サービス１：IaaS サービス２：PaaS</div>
+<div class='choice'> サービス１：PaaS サービス２：PaaS</div>
+<div class='choice'> サービス１：PaaS サービス２：SaaS</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題28<br>Azure ADについて正しい記述はどれですか。（２つ選択）' data-answer='1,3' data-explanation='動的メンバーシップを使ってメンバーを自動的に追加・削除できる<br>シングルサインオン（SSO）を使った認証を行うことができる<br>説明<br>Azure AD（Active Directory）では、動的メンバーシップならびにシングルサインオン（SSO）をサポートしています。グループポリシーやドメインコントローラーは、オンプレミスActive Directoryの機能であり、Azure ADでは使用されません。<br>■用語解説<br>・動的メンバーシップ：動的メンバーシップは、ユーザーやデバイスの属性（部署や役職など）に基づいて、自動的にグループのメンバーを追加・削除する機能です。例えば、「営業部門」のグループを作り、営業部門に所属するユーザーは自動的にこのグループに追加されます。これにより、管理者は手動でメンバーを追加・削除する手間を省くことができます。<br>・シングルサインオン（SSO）：シングルサインオンは、一度のログインで複数のアプリケーションやサービスにアクセスできる機能です。たとえば、一度社内システムにログインすれば、他の関連するアプリケーション（電子メール、ドキュメント共有サービスなど）を別々にログインすることなく使えるようになります。これにより、ユーザーは多くのパスワードを覚える必要がなく、効率的に作業ができます。<br>・ドメインコントローラー：ドメインコントローラーは、ネットワーク上のユーザーの認証や権限の管理を行うサーバーのことです。オンプレミスActive Directoryを使ってネットワークにログインしようとするユーザーを確認し、その人がネットワークの利用権限を持っているかどうかを判断します。<br>・グループポリシー：グループポリシーは、ネットワーク上のコンピューターとユーザーの設定を管理するためのツールです。たとえば、全てのコンピューターにセキュリティの設定を統一したり、特定のソフトウェアの使用を制限したりするなどの設定が可能です。これにより、管理者は個々のコンピューターに対してではなく、一括して設定を行うことができます。'>
+<div class='choice'> グループポリシーを作成することができる</div>
+<div class='choice'> 動的メンバーシップを使ってメンバーを自動的に追加・削除できる</div>
+<div class='choice'> ドメインコントローラーを実装する必要がある</div>
+<div class='choice'> シングルサインオン（SSO）を使った認証を行うことができる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題29<br>異なるリソースから大量のイベントデータを受信し、集約および処理することができるAzureサービスは何ですか。' data-answer='1' data-explanation='Azure Event Hubs<br>説明<br>Azure Event Hubsは、クラウドネイティブのデータストリーミングサービスであり、大量のイベントデータをリアルタイムで処理するために使用することができます。Event Hubsを使用することで、企業はストリーミングデータの機能を活用し、貴重な分析情報を取得し、リアルタイムでイベントに対応できます。<br>■その他の選択肢<br>A:Azure Sphereは、IoTデバイスのセキュリティに特化したサービスであり、イベントデータの処理には関連しません。<br>C:Azure Synapse Analyticsは、大規模なデータ分析とビッグデータの処理に特化したサービスですが、イベントデータの処理を行う機能はありません。<br>D:Azure Databricksは、ビッグデータの分析と処理に特化したサービスですが、イベントデータの処理を行う主要な機能はありません。'>
+<div class='choice'> Azure Sphere</div>
+<div class='choice'> Azure Event Hubs</div>
+<div class='choice'> Azure Synapse Analytics</div>
+<div class='choice'> Azure Databricks</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題30<br>Webアプリケーションを構築、デプロイおよびスケーリングするAzureサービスは何ですか。' data-answer='2' data-explanation='Azure App Service<br>説明<br>Azure App Serviceは、Webアプリケーション、APIおよびモバイルアプリバックエンドを構築、デプロイ、運用するためのクラウドプラットフォームです。開発者は、コードやコンテナーを利用して、さまざまな言語（.NET、.NET Core、Java、Node.js、PHP、Pythonなど）でアプリを簡単に開発・デプロイできます。またオートスケール機能により、トラフィックの増減に応じて自動的にリソースを調整し、最適なパフォーマンスを維持できます。<br>■その他の選択肢<br>A:Azure Application Insightsは、アプリケーションのパフォーマンス監視と診断に特化していますが、アプリケーションの構築、デプロイ、スケーリングに使用されるサービスではありません。<br>B:Azure Logic Appsは、ビジネスプロセスやワークフローを自動化するためのサービスで、Webアプリケーションの開発やスケーリングには関連していません。<br>D:Azure DevOpsは、ソフトウェア開発プロセスを支援するツール群ですが、Webアプリケーションのホスティングやランタイム環境を提供するものではありません。'>
+<div class='choice'> Azure Application Insights</div>
+<div class='choice'> Azure Logic Apps</div>
+<div class='choice'> Azure App Service</div>
+<div class='choice'> Azure DevOps</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題31<br>以下の要件を満たすAzureサービスは何ですか。<br>・Apache Sparkをベースにした分析サービス<br>・ビッグデータの分析を行い、それを利用して機械学習モデルを構築し学習させることが可能' data-answer='0' data-explanation='Azure Databricks<br>説明<br>Azure Databricksは、Apache Sparkベースのアナリティクスプラットフォームであり、ビッグデータ処理、分析、機械学習などに最適化されています。ビッグデータの処理と分析、リアルタイムのストリーミングデータ処理、機械学習モデルのトレーニングとデプロイメントなどを行うことができます。<br>クラウド上の統合された環境で、データサイエンティスト、データエンジニア、ビジネスアナリストが協力して作業できるため、効率的なデータ処理と分析が可能です。<br>■その他の選択肢<br>B:Log Analyticsは、Azureリソースからのログデータを収集して分析するためのサービスであり、Apache Sparkベースの分析や機械学習には特化していません。<br>C:Blob Storageは、データストレージサービスであり、直接的な分析機能や機械学習機能は提供していません。<br>D:Azure Synapse Analyticsは、統合データウェアハウスソリューションであり、分析と機械学習機能を提供しますが、Apache Sparkをベースにしていません。'>
+<div class='choice'> Azure Databricks</div>
+<div class='choice'> Log Analytics</div>
+<div class='choice'> Blob Storage</div>
+<div class='choice'> Azure Synapse Analytics</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題32<br>以下の要件を満たすAzureデータベースは何ですか。<br>・複数のリージョンからデータの高速な読み書きが可能<br>・WebアプリケーションやIoTデバイスからのデータ処理の用途に向いている<br>・JSONドキュメントを格納できる' data-answer='0' data-explanation='Azure Cosmos DB<br>説明<br>Azure Cosmos DBは、マルチリージョンの書き込みと自動スケーリングをサポートする、グローバル分散型データベースサービスです。WebアプリケーションやIoTデバイスからのデータ処理に適しており、JSON形式のドキュメントストレージを提供します。高可用性と低レイテンシーを実現し、複数のAPIとデータモデルをサポートします。<br>■その他の選択肢<br>B:Azure Database for MySQL Serverは、リレーショナルデータベースであり、主にSQLデータの格納に適しています。WebアプリケーションやIoTデバイスからのデータ処理という点では、Cosmos DBほど柔軟性がありません。<br>C:SQL Data Warehousesは、データウェアハウスサービスで、主に大規模なデータ分析用です。複数リージョンからの高速なデータアクセスやJSONドキュメントの格納というニーズには適していません。<br>D:Azure Cache for Redisは、高速データアクセス用のキャッシュサービスです。これは、主に一時的なデータの格納や高速アクセスに使用され、持続的なデータストレージや複数リージョンからのデータアクセスには適していません。'>
+<div class='choice'> Azure Cosmos DB</div>
+<div class='choice'> Azure Database for MySQL Server</div>
+<div class='choice'> SQL Data warehouses</div>
+<div class='choice'> Azure Cache for Redis</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題33<br>あなたは、Linuxを実行しているAzure仮想マシンを監視したいと考えています。<br>仮想マシン障害時の通知をAzure Portalから確認することができるサービスは何ですか。' data-answer='3' data-explanation='Azure Monitor<br>説明<br>Azure Monitorを使用すると、仮想マシンのデータを収集し、そのデータを分析できます。WindowsやLinuxなどの異なるオペレーティングシステム（OS）を問わずに監視することができ、Azure上のリソースだけでなく、オンプレミスや他のクラウド環境のリソースも監視できる機能を備えています。<br>また障害発生時には、Azure Portalから通知を確認することが可能です。これにより、システムの状態や問題をリアルタイムで把握し、適切な対応を行うことができます。<br>■その他の選択肢<br>A:Azure Event Gridは、Azureリソースで発生するイベントをキャッチし、それらのイベントに対するアクションをトリガーするためのサービスです。仮想マシンの障害時の通知を提供するサービスではありません。<br>B:Azure DevOpsは、ソフトウェア開発の共同作業とプロセスをサポートするサービスです。仮想マシンの監視や障害通知には関連していません。<br>C:Azure Log Analyticsは、Azure Monitor Logs ストア内のデータに対するログクエリの編集と実行に使用されるツールです。障害時の通知を提供するサービスではありません。'>
+<div class='choice'> Azure Event Grid</div>
+<div class='choice'> Azure DevOps</div>
+<div class='choice'> Azure Log Analytics</div>
+<div class='choice'> Azure Monitor</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題34<br>Azure Cost Managementで表示できないものは何ですか。' data-answer='1' data-explanation='Azureに移行した際の予測コスト<br>説明<br>Azure Cost Managementは、Azureリソースのコストと使用状況を管理し分析するためのツールです。このサービスを通じて、リソースの消費トレンドを分析し、コスト削減のための改善策を見つけることができます。また、コスト分析、レポート作成、コスト割り当てなどの機能を提供しています。<br>ただし、Azure Cost Managementは、過去の使用データに基づいて将来のコストを予測しますが、移行前のコストを予測する機能は提供していません。<br>■その他の選択肢<br>A:管理グループに関するコスト：Azure Cost Managementでは、管理グループに関連するコストを表示することができます。<br>C:リソースグループに関するコスト：このサービスを使用して、リソースグループごとのコストも確認できます。<br>D:過去の月ごとのコスト：Azure Cost Managementでは、一日当たりまたは月ごとのコストを表示する機能があります。'>
+<div class='choice'> 管理グループに関するコスト</div>
+<div class='choice'> Azureに移行した際の予測コスト</div>
+<div class='choice'> リソースグループに関するコスト</div>
+<div class='choice'> 過去の月ごとのコスト</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題35<br>あなたは、iOSやAndroidデバイスにAzure mobile appをインストールしてAzureリソースを作成・管理したいと考えています。<br>Azure Cloud Shellで使用できる言語は何ですか。（２つ選択）' data-answer='0,3' data-explanation='Bash<br>PowerShell<br>説明<br>Azure mobile appは、iOSやAndroidデバイスにインストールして、Azureリソースの監視、管理、トラブルシューティングを行うことができるアプリケーションです。このアプリを使用することで、外出中やデスクトップ環境がない場所からでもAzureリソースの状態を確認し、必要な操作を行うことができます。<br>Azure mobile appでは、Azure Cloud Shellを使用することができ、このシェルを使用すると、Azureリソースの管理と操作が簡単に行えます。また、スクリプトやコマンドを実行するためには、BashまたはPowerShellの環境を選択することができます。<br>選択肢にあるPython、PHP、Perlは、Azure Cloud Shellでサポートされる主要なシェル言語ではありません。'>
+<div class='choice'> Bash</div>
+<div class='choice'> Python</div>
+<div class='choice'> Perl</div>
+<div class='choice'> PowerShell</div>
+<div class='choice'> PHP</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題36<br>コンプライアンスマネージャーについて正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='特定の規制基準に対して、組織が準拠しているかを評価する<br>Microsoft Service Trust Portalよりアクセスする<br>説明<br>コンプライアンスマネージャーは、Microsoft Purviewの一部として提供されるツールであり、組織がコンプライアンスとリスク管理を効果的に行えるよう支援します。このツールは、データ保護と規制遵守のための評価、監査、リスクベースの洞察を提供し、法的および規制要件への遵守をサポートします。組織内のコンプライアンス状況を簡単に把握し、改善策を提案してリスクを軽減します。<br>B:特定の規制基準に対して、組織が準拠しているかを評価する：コンプライアンスマネージャーは、組織が特定の規制基準やコンプライアンス要件にどの程度準拠しているかを評価するためのツールです。<br>C:Microsoft Service Trust Portalよりアクセスする：このツールはMicrosoft Service Trust Portalからアクセス可能で、Microsoftのクラウドサービスに関するコンプライアンス情報を提供します。<br>■その他の選択肢<br>A:クラウドサービスのコスト管理に特化している：コンプライアンスマネージャーは、コンプライアンスと規制遵守を評価し、管理するためのツールであり、コスト管理に特化した機能ではありません。コスト管理は、Azure Cost Managementなどによって行うことができます。<br>D:Microsoft 365管理センターよりアクセスする：コンプライアンスマネージャーは、Microsoft Service Trust Portal経由でアクセスされます。Microsoft 365管理センターは、Microsoft 365サービスの管理を行うことに特化しています。'>
+<div class='choice'> クラウドサービスのコスト管理に特化している</div>
+<div class='choice'> 特定の規制基準に対して、組織が準拠しているかを評価する</div>
+<div class='choice'> Microsoft Service Trust Portalよりアクセスする</div>
+<div class='choice'> Microsoft 365管理センターよりアクセスする</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題37<br>Azureの無料試用版（無料アカウント）について正しい記述はどれですか。（２つ選択）' data-answer='0,2' data-explanation='利用にはクレジット カードまたはデビット カードの登録が必須である<br>従量課金への移行が可能である<br>説明<br>Azureの無料試用版（無料アカウント）は、特定のサービスに限定された無料利用枠を提供し、ユーザーがAzureの機能を試用し、必要に応じて追加のリソースやサービスにアクセスするための入口となっています。トライアル期間後には、ユーザーはサービスを継続して利用するために従量課金モデルに移行することができ、これにより柔軟にコストを管理しながらAzureの様々なサービスを活用できます。<br>A:利用にはクレジット カードまたはデビット カードの登録が必須である：Azureの無料アカウントを作成するには、クレジットカードまたはデビットカードの情報を登録する必要があります。これは、無料期間終了後の従量課金への移行をスムーズに行うためです。<br>C:従量課金への移行が可能である：無料アカウントは、トライアル期間が終了するか、無料クレジットを使い切った後、従量課金モデルに移行することができます。これにより、ユーザーは継続してAzureのサービスを利用することができます。<br>■その他の選択肢<br>B:Azure ハイブリッド特典を利用することができる：Azure ハイブリッド特典は、既存のオンプレミスのWindows ServerやSQL ServerライセンスをAzureで利用するためのプログラムです。しかし、無料試用版アカウントでこの特典を利用することはできません。<br>D:1人当たり最大3個まで無料アカウントを作成できる：各個人のアカウントは1つの無料試用版アカウントに制限されます。複数の無料アカウントを作成することはできません。<br>E:5TBまでデータをアップロードできる：Azureの無料試用版では、Azure Blob Storageにおいて5GBまで、Azure Filesに関しては100GBまでの書き込み操作が提供されています。データを5TBまでアップロードできるという特定の制限はありません。'>
+<div class='choice'> 利用にはクレジット カードまたはデビット カードの登録が必須である</div>
+<div class='choice'> Azure ハイブリッド特典を利用することができる</div>
+<div class='choice'> 従量課金への移行が可能である</div>
+<div class='choice'> 1人当たり最大3個まで無料アカウントを作成できる</div>
+<div class='choice'> 5TBまでデータをアップロードできる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題38<br>Azureハイブリッド特典の”ソフトウェアアシュアランス（SA）”はどのようなサービスですか。' data-answer='3' data-explanation='Windows ServerやSQL ServerのライセンスをAzureで再利用する<br>説明<br>Azureハイブリッド特典の”ソフトウェアアシュアランス（SA）”は、ユーザーがオンプレミスのWindows ServerおよびSQL Serverライセンスを持っている場合、そのライセンスをAzureの仮想マシンに適用してコストを削減できる特典です。具体的には、ユーザーはAzure仮想マシンのコンピューティングコストのみを支払い、Windows ServerやSQL Serverのライセンスコストは発生しません。この特典により、企業は既存のライセンスを最大限に活用し、クラウドへの移行をより経済的に行うことができます。<br>■その他の選択肢<br>A:仮想マシンを1年または3年の長期間の契約で利用する： これはAzureのリザーブドインスタンスに関連するものであり、ソフトウェアアシュアランスとは関係がありません。<br>B:サポート終了から3年間、セキュリティ更新プログラムの適用が無償になる：これはAzureの延長セキュリティ更新に関するもので、ソフトウェアアシュアランスとは関係がありません。<br>C:Azure利用可能な様々なソフトウェアやアプリケーションなどを提供する：これは、Azure Marketplaceに関連するもので、ソフトウェアアシュアランスとは関係がありません。'>
+<div class='choice'> 仮想マシンを1年または3年の長期間の契約で利用する</div>
+<div class='choice'> サポート終了から3年間、セキュリティ更新プログラムの適用が無償になる</div>
+<div class='choice'> Azure利用可能な様々なソフトウェアやアプリケーションなどを提供する</div>
+<div class='choice'> Windows ServerやSQL ServerのライセンスをAzureで再利用する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題39<br>Azureでサポートリクエストを作成できるサポートプランはどれですか。' data-answer='0' data-explanation='すべてのサポートプラン<br>説明<br>サポートリクエストとは、Azureのサービスや機能に関する質問、問題、障害などを解決するために、Microsoftのサポートチームに対して正式に提出する要求のことです。<br>Azureのサポートプランは、さまざまなレベルのサービスを提供するための異なるオプションをユーザーに提供します。Developer、Standard、Professional Directなどのプランは、必要に応じてテクニカルサポートを受けることができる有料のオプションです。無料のBasicを含めた、すべてのプランでサポートチケットの提出は可能ですが、その内容や対応可能な範囲はプランによって異なります。<br>以下、サポートプランの概要となります。<br>・Basic：すべてのAzureアカウントに標準で付随する無料サポートプランです。製品の利用開始時や評価時に推奨され、”請求およびサブスクリプション管理サポート”やAzure Advisorを利用できます。サポートチケットの作成・管理は可能ですが、テクニカルサポートチケットは作成できません。<br>・Developer：開発者に適したサポートプランであり、開発中やテスト環境での問題に対応します。営業時間内に無制限のサポートチケットを提出可能であり、優先度に応じた応答時間が設定されています。<br>・Standard：本番環境での運用をサポートするプランです。全てのサポートチケットに対して、24時間365日のテクニカルサポートを提供し、Developerより短い応答時間を提供します。ビジネスの重要なアプリケーションや本番環境に最適です。<br>・Professional Direct：企業やビジネスクリティカルなアプリケーションを運用する顧客向けの最上位のサポートプランです。最速の応答時間とベストプラクティスに基づいたガイダンス、専任のサポートアカウントマネージャーの利用など、最も包括的なサポートサービスを提供します。'>
+<div class='choice'> すべてのサポートプラン</div>
+<div class='choice'> Professional DirectとStandardのみ</div>
+<div class='choice'> Professional DirectとStandardとBasicのみ</div>
+<div class='choice'> Professional DirectとStandardとDeveloperのみ</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題40<br>Azure Blob Storageのデータアクセス層について正しい記述はどれですか。' data-answer='1' data-explanation='データに有効期限を設定でき、一定の日数後に自動的に削除することができる<br>説明<br>Azure Blob Storageのデータアクセス層は、異なる需要に対応するために提供される、データの保管コストとアクセス性を最適化するためのオプションです。各アクセス層は、使用頻度と必要なデータアクセスの速度に基づいて設計されています。以下はAzure Blob Storageのアクセス層の概要です。<br>１．ホットアクセス層：頻繁にアクセスされるデータに適しており、ストレージコストは最も高く、アクセスコストは最も低い。<br>２．クールアクセス層：アクセス頻度が低いデータに適しており、ホット層よりストレージコストは低いがアクセスコストは高い。<br>３．コールドアクセス層：さらにアクセス頻度が低いデータに適しており、クール層よりもストレージコストは低く、アクセスコストは高い。<br>４．アーカイブアクセス層：めったにアクセスされないデータに適しており、最もコスト効率の良いオフライン層で、最低180日間の保存が必要。<br>本設問については、以下の通りとなります。<br>B:データに有効期限を設定でき、一定の日数後に自動的に削除することができる：Azure Blob Storageにおけるライフサイクル管理ポリシーを利用すると、一定期間アクセスされないBlobデータを自動的に別のアクセス層に移動したり、削除したりすることができます。この機能により、ストレージコストを最適化することができます。<br>■その他の選択肢<br>A:アーカイブアクセス層をデフォルトのアクセス層として設定できる：アーカイブアクセス層はデフォルトのアクセス層として設定することはできません。ホットまたはクールのアクセス層のみデフォルトとして設定可能です。<br>C:コールドアクセス層は最も保管コストが低い：コールドアクセス層は、頻度が低いアクセスに適したオンライン層であり、クールアクセス層よりもストレージコストが低く設定されています。しかし、最も保管コストが低いのはアーカイブアクセス層です。<br>D:Azure Storageコンテナーを作成後、アクセス層を変更することはできない：ストレージコンテナを作成した後でもアクセス層を変更することが可能です。'>
+<div class='choice'> アーカイブアクセス層をデフォルトのアクセス層として設定できる</div>
+<div class='choice'> データに有効期限を設定でき、一定の日数後に自動的に削除することができる</div>
+<div class='choice'> コールドアクセス層は最も保管コストが低い</div>
+<div class='choice'> Azure Storageコンテナーを作成後、アクセス層を変更することはできない</div>
+</div>
+
+
+            <!-- 他の問題も同様に追加 -->
+        </div>
+
+        <h2 id="question"></h2>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),  // innerHTMLに変更
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+            choicesContainer.innerHTML = '';
+
+            currentQuestion.choices.forEach((choice, i) => {
+                const li = document.createElement('li');
+                const input = document.createElement('input');
+                const label = document.createElement('label');
+
+                input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                input.name = 'choice';
+                input.value = choice.index;
+                input.id = 'choice' + i;
+
+                label.htmlFor = 'choice' + i;
+                label.innerHTML = choice.text;  // textContentをinnerHTMLに変更
+
+                li.appendChild(input);
+                li.appendChild(label);
+                choicesContainer.appendChild(li);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = Array.from(document.querySelectorAll('input[name="choice"]:checked'))
+                                        .map(checkbox => parseInt(checkbox.value))
+                                        .sort();
+            const resultElement = document.getElementById('result');
+            
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+                
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++; // 正解数をカウント
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            // クイズのUI全体を初期化
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            // 初期化後に最初の問題を表示
+            showQuestion();
+        }        
+    </script>
+</body>
+</html>

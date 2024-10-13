@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Fundamental問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-data" style="display: none;">
+
+
+<div class='question' data-multiple='false' data-question='問題21<br>自然言語処理（NLP）や画像認識などのAI機能をアプリケーションに組み込むことができるAzureサービスは何ですか。' data-answer='2' data-explanation='Azure Cognitive Services<br>説明<br>Azure Cognitive Servicesは、開発者がアプリケーションにAI機能を簡単に組み込むことができる一連のAPI、SDK、サービスを提供します。<br>主な機能には以下のようなものがあります。<br>視覚：画像認識、顔認識など。<br>言語：テキスト解析、翻訳、自然言語理解（NLP）など。<br>音声：音声認識、テキストへの音声変換、音声合成など。<br>意思決定：コンテンツのモデレーター、パーソナライズされたレコメンデーションなど。<br>これらのサービスを利用することで、開発者は高度なAI機能を持つアプリケーションを迅速に構築できます。<br>■その他の選択肢<br>A:Azure Synapse Analyticsは、データウェアハウスとビッグデータ分析を統合するサービスであり、AI機能に特化しているわけではありません。<br>B:Azure DevOpsは、ソフトウェア開発のためのCI/CD、プロジェクト管理、コード共有などを提供するサービスですが、AI機能の組み込みには関係しません。<br>D:Azure Logic Appsは、ワークフロー自動化サービスであり、AI機能の提供には特化していません。'>
+<div class='choice'> Azure Synapse Analytics</div>
+<div class='choice'> Azure DevOps</div>
+<div class='choice'> Azure Cognitive Services</div>
+<div class='choice'> Azure Logic Apps</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題22<br>Azureでコストが発生する操作は何ですか。（複数選択）' data-answer='1,2,4' data-explanation='Azure Storage内データの読み取りおよび書き込み操作<br>VPNを使用してAzureからオンプレミスへのデータコピー<br>異なるAzureリージョン間でのデータ転送<br>説明<br>Azureのコストは、使用するサービスや操作によって異なります。データ転送、ストレージ操作、特定のリソースの使用など、様々な要因により費用が発生することがあります。使用する各サービスの料金体系を理解し、効率的なリソース管理を行う必要があります。<br>B:Azure Storage内データの読み取りおよび書き込み操作：データの書き込みや大量のデータ読み取りには、通常、料金が発生します。<br>C:VPNを使用してAzureからオンプレミスへのデータコピー：Azureへのデータ移行は無料ですが、オンプレミスへのデータ移行にはデータ転送量に応じた費用が発生します。<br>E:異なるAzureリージョン間でのデータ転送：同じリージョン内でのデータ転送は無料となりますが、異なるリージョン間のデータ転送には通常、料金が発生します。<br>■その他の選択肢<br>A:リソースグループの追加：リソースグループを追加すること自体にはコストは発生しません。<br>D:VPNを使用してオンプレミスからAzureへのデータコピー：オンプレミスからAzureへのデータ転送は無料です。'>
+<div class='choice'> リソースグループの追加</div>
+<div class='choice'> Azure Storage内データの読み取りおよび書き込み操作</div>
+<div class='choice'> VPNを使用してAzureからオンプレミスへのデータコピー</div>
+<div class='choice'> VPNを使用してオンプレミスからAzureへのデータコピー</div>
+<div class='choice'> 異なるAzureリージョン間でのデータ転送</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題23<br>あなたは、AzureでWebアプリケーションを開発することを検討しています。<br>以下の要件を満たすクラウドサービスは何ですか。<br>・外部ユーザーがインターネットからアクセスする<br>・Webアプリケーションの運用負担を最小限に抑える' data-answer='3' data-explanation='PaaS（サービスとしてのプラットフォーム）<br>説明<br>PaaS（サービスとしてのプラットフォーム）は、アプリケーションの開発、デプロイ、運用に必要なプラットフォームを提供します。このサービスを使用することで、開発者はインフラストラクチャの設定や運用管理から解放され、アプリケーション開発に集中できます。<br>インフラストラクチャの管理がクラウドプロバイダーによって行われるため、ユーザーはアプリケーションの開発や運用に注力できます。これにより、運用負担を最小限に抑えることができます。<br>■その他の選択肢<br>A:SaaS（サービスとしてのソフトウェア）は、クラウド上で直接提供されるソフトウェアアプリケーションを指します。例えば、Office 365やSalesforceなどがこれに該当します。SaaSでは、ユーザーはアプリケーションの開発や運用を行うことはできません。<br>B:IaaS（サービスとしてのインフラストラクチャ）は、仮想マシンやストレージなどの基本的なコンピューティングリソースを提供するサービスです。PaaSに比べて、仮想マシンの設定や運用など、より多くの管理作業が伴います。<br>C:WaaS（サービスとしてのWindows）は、Windowsをサービスとして提供するもので、通常、デスクトップ環境やオペレーティングシステムの提供に関連しています。Webアプリケーションの運用には適していません。<br>PaaS の Web およびモバイル アプリケーションをセキュリティで保護する - Azure App Service'>
+<div class='choice'> SaaS（サービスとしてのソフトウェア）</div>
+<div class='choice'> IaaS（サービスとしてのインフラストラクチャ）</div>
+<div class='choice'> WaaS（サービスとしてのWindows）</div>
+<div class='choice'> PaaS（サービスとしてのプラットフォーム）</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題24<br>Azure Service Healthの機能として正しいものはどれですか。（３つ選択）' data-answer='1,2,4' data-explanation='障害発生時のアラートルールの作成<br>Azureサービスの状態の確認<br>サービスに影響のあるメンテナンスの通知<br>説明<br>Azure Service Healthは、Azureサービス全体の健康状態を追跡し、管理するためのツールです。これにはサービスの中断、メンテナンス、その他の問題に関する情報が含まれます。<br>管理者は、特定のイベントに対するカスタマイズされたアラートを設定することで、問題が発生した際に迅速に通知を受け取ることができます。<br>B:障害発生時のアラートルールの作成：Azure Service Healthを使用すると、特定のサービスの障害が発生した際に、通知を受けるためのアラートルールを設定することができます。<br>C:Azureサービスの状態の確認：Azure Service Healthは、Azureサービスの健康状態を確認できる機能を提供します。これにより、サービスの中断や問題が発生しているかどうかを知ることができます。<br>E:サービスに影響のあるメンテナンスの通知：Azure Service Healthは、計画されたメンテナンスやその他のイベントによって、サービスに影響が出る可能性がある場合の通知を提供します。<br>■その他の選択肢<br>A:セキュリティ強化につながる設定の提案：これはAzure Advisorの機能です。Azure Service Healthはセキュリティ設定の提案を行いません。<br>D:サービスの障害防止：Azure Service Healthは、サービスの障害を防止する機能は提供しません。主に、既存の障害や問題に関する情報提供と通知が主な役割です。'>
+<div class='choice'> セキュリティ強化につながる設定の提案</div>
+<div class='choice'> 障害発生時のアラートルールの作成</div>
+<div class='choice'> Azureサービスの状態の確認</div>
+<div class='choice'> サービスの障害防止</div>
+<div class='choice'> サービスに影響のあるメンテナンスの通知</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題25<br>下記の要件を満たすためにはどのAzureサービスを使用するべきですか。<br>・リソースをユーザーの不注意による削除や変更から保護する' data-answer='3' data-explanation='リソースロック<br>説明<br>リソースロックは、Azureリソースを誤って削除または変更することから保護するための機能です。ロックを設定することで、リソースの削除や重要なプロパティの変更を意図的に制限できます。<br>リソースロックには主に二種類があります。<br>・読み取り専用ロック（ReadOnly）：リソースへの書き込み操作を防ぎますが、読み取り操作は許可します。また、削除もできません。<br>・削除ロック（CanNotDelete）：リソースの削除を防ぎますが、他の種類の変更は許可します。<br>リソースロックは、サブスクリプション、リソースグループ、または個々のリソースレベルで適用できます。<br>■その他の選択肢<br>A:ARMテンプレートは、リソースのデプロイメントを定義するために使用されますが、既存のリソースを不注意から保護する目的には使用されません。<br>B:Azure Policyは、組織のポリシーに基づいてリソースのコンプライアンスを強制するために使用されますが、不注意によるリソースの削除や変更を直接防ぐためには適していません。<br>C:Azure ロールは、リソースへのアクセス権を管理するために使用されますが、既存リソースの保護には関係ありません。'>
+<div class='choice'> ARMテンプレート</div>
+<div class='choice'> Azure Policy</div>
+<div class='choice'> Azure ロール</div>
+<div class='choice'> リソースロック</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題26<br>あなたの組織では、部署ごとに異なる支払いオプションを使用してAzureを利用したいという要望があります。<br>各部門に対して何を作成する必要がありますか。' data-answer='3' data-explanation='サブスクリプション<br>説明<br>Azureのサブスクリプションは、リソースとサービスの使用量を追跡し、それに基づいて請求を行うためのアカウント単位です。サブスクリプションは、特定の支払い方法や請求アカウントに関連付けられており、組織内で異なる部門やプロジェクトごとに別々の請求管理を行うために、複数のサブスクリプションを作成することができます。これにより、組織は部門ごとに独立した予算管理やコスト追跡を行うことが可能になります。<br>サブスクリプションの作成と管理は、AzureポータルやAzureの管理ツールを通じて行うことができます。<br>■その他の選択肢<br>A:タグは、リソースの分類や整理に役立ちますが、支払いオプションの管理には使用されません。<br>B:リソースグループは、関連するリソースをまとめるために使用されますが、支払いオプションの管理には関連しません。<br>C:管理グループは、サブスクリプションの整理とガバナンスポリシーの適用に使用されますが、支払いオプションの直接的な管理には使用されません。'>
+<div class='choice'> タグ</div>
+<div class='choice'> リソースグループ</div>
+<div class='choice'> 管理グループ</div>
+<div class='choice'> サブスクリプション</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題27<br>Azure Firewallのネットワークアドレス変換（NAT）ルールの役割は何ですか。' data-answer='3' data-explanation='ユーザーがAzure仮想ネットワーク内のリソースにアクセスできるようにする<br>説明<br>Azure Firewallのネットワークアドレス変換（NAT）は、インバウンドインターネットトラフィックのアドレスを変換し、Azure仮想ネットワーク内の特定のリソースに対するアクセスを可能にする機能です。NATルールを使用すると、Azure FirewallのパブリックIPアドレスとポートを、ネットワーク内の特定のプライベートIPアドレスとポートにマッピングできます。これにより、外部から特定のAzureリソースに安全にアクセスできるようになります。<br>■その他の選択肢<br>A:Azure仮想ネットワーク内のリソースへのトラフィックを制御する：これはAzure Firewallの一般的な機能の一部であり、NATルールはこの機能をサポートするために使用されますが、NATルール自体はトラフィックを制御するものではありません。<br>B:Azure仮想ネットワーク内のトラフィックのルーティングをカスタマイズする：NATルールは、主にインバウンドトラフィックのアドレス変換に関連しており、ネットワーク内のトラフィックのルーティングをカスタマイズするものではありません。<br>C:Azureリソースが組織のセキュリティ基準に準拠して適切に保護されているかを監視する：これはAzure Firewallの機能ではありますが、NATルールの主な役割ではありません。<br>ポータルでAzure Firewall DNAT を使用してインバウンド インターネットトラフィックをフィルター処理する'>
+<div class='choice'> Azure仮想ネットワーク内のリソースへのトラフィックを制御する</div>
+<div class='choice'> Azure仮想ネットワーク内のトラフィックのルーティングをカスタマイズする</div>
+<div class='choice'> Azureリソースが組織のセキュリティ基準に準拠して適切に保護されているかを監視する</div>
+<div class='choice'> ユーザーがAzure仮想ネットワーク内のリソースにアクセスできるようにする</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題28<br>クラウドの弾力性（Elasticity）を高めるためには、どのような機能が有効ですか。（２つ選択）' data-answer='0,3' data-explanation='オートスケーリング<br>サーバーレスコンピューティング<br>説明<br>クラウドの弾力性（Elasticity）は、需要の変動に応じてリソース（例えば、コンピューティングパワーやストレージ）を迅速にスケールアップまたはスケールダウンする能力を指します。<br>弾力性を強化する機能としては、以下のものがあります。<br>オートスケーリングは、トラフィックの増減に応じて自動的にリソース（例えば仮想マシンのインスタンス数）を調整する機能です。需要が増加するとリソースが増加し、減少するとリソースが削減されることで、効率的なリソース利用を可能にします。<br>サーバーレスコンピューティングでは、サーバーの管理をクラウドプロバイダーが行い、ユーザーはコードの実行のみを管理します。このモデルは、使用したリソースのみに対して課金されるため、非常に効率的です。<br>■その他の選択肢<br>B:フェイルオーバーは、主に可用性とディザスタリカバリに関連する機能であり、弾力性とは異なります。<br>C:データのバックアップと復元もディザスタリカバリとデータ保護に関わる機能であり、リソースの柔軟なスケーリングとは直接関係ありません。<br>E:障害ドメインは、システムの可用性と耐障害性を高めることに貢献しますが、弾力性を向上させるものではありません。<br>Azure 仮想マシン スケール セットでの自動スケーリングの概要'>
+<div class='choice'> オートスケーリング</div>
+<div class='choice'> フェイルオーバー</div>
+<div class='choice'> データのバックアップと復元</div>
+<div class='choice'> サーバーレスコンピューティング</div>
+<div class='choice'> 障害ドメイン</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題29<br>組織がISO 27001などの規格・基準に対応しているかを確認できるサービスは何ですか。' data-answer='2' data-explanation='コンプライアンスマネージャー<br>説明<br>コンプライアンスマネージャーは、Microsoftのクラウドサービスに関連する規制遵守活動を追跡、確認できるツールです。このツールを使用して、組織は特定の規格（例えばISO 27001）に対する準拠状態を評価し、必要な改善策を特定し、リスクを管理できます。ドキュメント管理やコンプライアンスに関するレポートの生成も可能です。<br>■その他の選択肢<br>A:トラストセンターは、Microsoftのセキュリティ、プライバシー、コンプライアンスに関する情報を提供するウェブサイトです。トラストセンター自体では組織のコンプライアンス状態を評価するツールを提供していませんが、関連する情報やリソースへのアクセスを提供します。<br>B:セキュリティセンターは、組織のセキュリティ状態を管理し、脅威から保護するためのツールです。セキュリティの監視と脅威対策に重点を置いていますが、特定の規格の遵守状態の評価は行いません。<br>D:マイライブラリは、Service Trust Portal上の文書やリソースを管理する機能です。コンプライアンスや規格の遵守を評価する特定のツールとは関連していません。<br>■用語解説<br>ISO 27001：情報セキュリティマネジメントシステム（ISMS）の国際規格です。この規格は、組織が情報セキュリティのリスクを管理し、セキュリティ対策を効果的に適用する方法を提供します。ISO 27001の認証を取得することで、組織は情報の機密性、完全性、可用性を保護するための体系的なアプローチを実施していることを示すことができます。'>
+<div class='choice'> トラストセンター</div>
+<div class='choice'> セキュリティセンター</div>
+<div class='choice'> コンプライアンスマネージャー</div>
+<div class='choice'> マイライブラリ</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題30<br>リソースグループについて正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='複数のリージョンにあるリソースを1つのリソースグループで管理することができる<br>リソースグループを削除するとリソースグループ内のリソースも削除される<br>説明<br>リソースグループは、Azureリソースを整理および管理するためのコンテナーです。これにより、関連するリソースを一つのグループにまとめ、アクセス制御ポリシーやライフサイクル管理を効率的に行うことができます。<br>B:複数のリージョンにあるリソースを1つのリソースグループで管理することができる：リソースグループは、異なるAzureリージョンにデプロイされたリソースを含むことができます。これにより、リソースの地理的な配置に関係なく、それらを一つのグループで管理することが可能です。<br>C:リソースグループを削除するとリソースグループ内のリソースも削除される：リソースグループを削除すると、そのグループ内のすべてのリソースも削除されます。これは、リソースのライフサイクルを管理する上で重要な機能です。<br>■その他の選択肢<br>A:1つのリソースは複数のリソースグループに所属することができる：各Azureリソースは、一度に1つのリソースグループにのみ属することができます。複数のリソースグループにまたがって同じリソースを持つことはできません。<br>D:リソースグループ内に別のリソースグループを作成することができる：Azureでは、リソースグループ内に別のリソースグループを作成することはできません。リソースグループは、リソースを整理するためのコンテナーとして機能しますが、ネストされた構造はサポートされていません。'>
+<div class='choice'> 1つのリソースは複数のリソースグループに所属することができる</div>
+<div class='choice'> 複数のリージョンにあるリソースを1つのリソースグループで管理することができる</div>
+<div class='choice'> リソースグループを削除するとリソースグループ内のリソースも削除される</div>
+<div class='choice'> リソースグループ内に別のリソースグループを作成することができる</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題31<br>Azureのパブリックプレビューについて正しい記述はどれですか。（２つ選択）' data-answer='1,3' data-explanation='無償もしくは安価なコストで利用できる<br>一般のAzureユーザーに提供される<br>説明<br>Azureのプレビュー機能は、新しいAzureサービスや機能が一般公開（GA）される前に提供されるテスト段階の機能です。これらのプレビューは、ユーザーが新しいテクノロジーや機能を試用し、Microsoftにフィードバックを提供します。プレビュー機能は主に以下の二つのカテゴリーに分けられ、その後、一般公開（GA）へと移行します。<br>１．プライベートプレビュー：限定されたユーザーグループに対してのみ提供されます。通常、特定のお客様やパートナーに向けて行われ、初期フィードバックを収集することが目的です。<br>２．パブリックプレビュー：一般のAzureユーザーに公開されています。これにより、広範囲のユーザーが新しいサービスや機能を試用し、フィードバックを提供することができます。<br>３．一般公開（GA）：サービスが完全にリリースされ、すべてのAzureユーザーに提供される段階です。この段階では、サービスは完全な機能と安定性を備えています。<br>設問の解説については以下の通りとなります<br>B:無償もしくは安価なコストで利用できる：パブリックプレビューのサービスは、多くの場合、無償または通常よりも低コストで利用できることがあります。これにより、ユーザーは新しい機能を試用しやすくなります。<br>D:一般のAzureユーザーに提供される：パブリックプレビューは、一般のAzureユーザーに提供されるものです。これは未発表の新機能や改善が一般公開される前に広範なユーザーによってテストされ、フィードバックが収集されるプロセスです。<br>■その他の選択肢<br>A:一般公開（GA）後にパブリックプレビューとなる：パブリックプレビューは、サービスが一般公開（GA）される前の段階です。一般公開後にプことはありません。<br>C:Azure PowerShellを使用してサービスを管理する必要がある：パブリックプレビューのサービスを管理するために特定のツールの使用が必須というわけではありません。ユーザーはAzureポータル、Azure CLI、Azure PowerShellなど、好みや必要に応じたツールを使用できます。<br>E:限定されたユーザーグループに対してのみ提供される：パブリックプレビューはその名の通り”パブリック”、つまり一般公開されており、特定の限定されたユーザーグループのみに提供されるわけではありません。これはプライベートプレビューについての記述になります。'>
+<div class='choice'> 一般公開（GA）後にパブリックプレビューとなる</div>
+<div class='choice'> 無償もしくは安価なコストで利用できる</div>
+<div class='choice'> Azure PowerShellを使用してサービスを管理する必要がある</div>
+<div class='choice'> 一般のAzureユーザーに提供される</div>
+<div class='choice'> 限定されたユーザーグループに対してのみ提供される</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題32<br>下記の用途に適したストレージサービスはどれですか。<br>・アプリケーション間でメッセージのやり取りを行う<br>・ユーザーやアプリケーションに通知を送信する' data-answer='2' data-explanation='Azure Queue Storage<br>説明<br>Azure Queue Storageは、大量のメッセージを保持できるサービスであり、アプリケーション間での非同期通信を可能にします。メッセージはHTTPまたはHTTPS経由で送受信され、キューに入れられたメッセージは、アプリケーションが処理する準備ができるまで保持されます。これにより、アプリケーションのスケーラビリティが向上し、異なるコンポーネントが独立して作業を行えるようになります。<br>例えば、一つのコンポーネントがタスクをキューに追加し、別のコンポーネントが後でそれを取り出して処理する、といったワークフローが実現できます。<br>■その他の選択肢<br>A:Azure Blob Storageは、大量の非構造化データを保存するためのサービスです。画像、ビデオ、オーディオファイルなどのオブジェクトストレージに最適ですが、メッセージングや通知送信の目的には適していません。<br>B:Azure Filesは、クラウド上での共有ファイルストレージサービスです。ファイルを共有することができますが、これもメッセージング用途には適していません。<br>D:Azure Table Storageは、NoSQLデータストアであり、大量の非構造化データを格納するために使用されます。このサービスは、メッセージングや通知の送信には適していません。'>
+<div class='choice'> Azure Blob Storage</div>
+<div class='choice'> Azure Files</div>
+<div class='choice'> Azure Queue Storage</div>
+<div class='choice'> Azure Table Storage</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題33<br>クラウドの特徴である”アジリティ(Agility)”について正しい記述はどれですか。' data-answer='3' data-explanation='アプリケーションの要件が変更された際にリソースを迅速に展開する能力<br>説明<br>クラウドにおけるアジリティ(Agility)とは、ビジネスの要件や市場の変化に迅速に対応するための能力のことを言います。例えば、新しいアイディアやプロジェクトが出てきたとき、それをすぐに試すことができる環境や体制を持っていることを指し、クラウドではそれに合わせてリソースを迅速に展開することが可能です。ITの世界では、新しい技術やツールをすぐに取り入れて、ビジネスの成果を向上させることが求められるため、アジリティは非常に大切な特徴です。<br>■その他の選択肢<br>A:システムに障害が発生してもサービスの中断を最小限に抑える能力：これはクラウドのフォールトトレランス (Fault Tolerance)という概念を指しています。アジリティとは異なります。<br>B:システムやサービスが長時間にわたって利用可能な状態にする能力：これは高可用性 (High Availability)という概念を指しており、アジリティとは異なります。<br>C:アプリケーションやサービスが需要に応じてリソースを自動的に拡張または縮小できる能力：これは弾力性 (Elasticity)の概念を指しており、アジリティとは異なります。'>
+<div class='choice'> システムに障害が発生してもサービスの中断を最小限に抑える能力</div>
+<div class='choice'> システムやサービスが長時間にわたって利用可能な状態にする能力</div>
+<div class='choice'> アプリケーションやサービスが需要に応じてリソースを自動的に拡張または縮小できる能力</div>
+<div class='choice'> アプリケーションの要件が変更された際にリソースを迅速に展開する能力</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題34<br>Azureの仮想ネットワークについて正しい記述はどれですか。（２つ選択）' data-answer='0,2' data-explanation='同じリージョン内の仮想ネットワークは互いに独立している<br>複数の仮想ネットワークのトラフィックをまとめて１つのAzure Firewallで制御できる<br>説明<br>Azureの仮想ネットワークは、Azure内でプライベートネットワーク環境を作成するためのサービスです。これにより、Azure内のリソース（仮想マシン、アプリケーションなど）が安全に通信できるようになります。ユーザーはIPアドレス範囲、サブネット、ルーティングポリシーなどを設定し、独自のネットワークトポロジーを構築できます。また、インターネット、オンプレミスネットワークとの接続も可能です。<br>A:同じリージョン内の仮想ネットワークは互いに独立している：同じリージョン内であっても、Azure Virtual Networkはそれぞれ独立しており、他のネットワークとは分離されています。これにより、ネットワークリソースのセキュリティと管理が容易になります。ただし、必要に応じて仮想ネットワーク間のピアリングを設定することで、異なるネットワーク間で安全に通信できます。<br>C:複数の仮想ネットワークのトラフィックをまとめて１つのAzure Firewallで制御できる：Azure Firewallは、複数の仮想ネットワーク間のトラフィックを一元管理するために使用できます。これにより、セキュリティポリシーの適用やトラフィックのフィルタリングが効率的に行え、より広範なネットワーク環境に対してセキュリティ管理を提供します。<br>■その他の選択肢<br>B:リソースグループ内の各仮想ネットワークは同じ名前を持つことができる：Azureでは、同じリソースグループ内であっても、仮想ネットワークは一意の名前を持つ必要があります。同じリソースグループ内に同じ名前の仮想ネットワークを作成することはできません。<br>D:サブスクリプション内の各仮想ネットワークは同じIPアドレス空間を持つことが推奨されている：サブスクリプション内の異なる仮想ネットワークは異なるIPアドレス空間を持つべきです。同じIPアドレス空間を持つ仮想ネットワークは、IPアドレスの競合を引き起こす可能性があります。'>
+<div class='choice'> 同じリージョン内の仮想ネットワークは互いに独立している</div>
+<div class='choice'> リソースグループ内の各仮想ネットワークは同じ名前を持つことができる</div>
+<div class='choice'> 複数の仮想ネットワークのトラフィックをまとめて１つのAzure Firewallで制御できる</div>
+<div class='choice'> サブスクリプション内の各仮想ネットワークは同じIPアドレス空間を持つことが推奨されている</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題35<br>あなたは、複数のAzure仮想マシンに対して一括でアクセス許可を制御したいと考えています。<br>どのAzureコンポーネントを使用するべきですか。' data-answer='2' data-explanation='リソースグループ<br>説明<br>リソースグループは、関連するAzureリソースのコンテナーとして機能します。同じアプリケーションやプロジェクトに関連するリソースを一つのグループにまとめ、それらのリソースに対するアクセス許可やポリシーを一括で管理することができます。この機能を活用することで、複数のAzure仮想マシンなどのリソースに対して、一括でアクセス許可を制御することが可能です。<br>■その他の選択肢<br>A:可用性ゾーンは、物理的に分離されたデータセンター群のことですが、これはアクセス許可の制御には使用されません。<br>B:サブスクリプションは、Azureサービスの利用に関連するコストを追跡したり、リソースに対する課金を管理したりするためのものです。サブスクリプションはアクセス制御を提供するものではありません。<br>D:管理グループは、複数のサブスクリプションを一括で管理するためのコンテナーです。ただし、個別の仮想マシンレベルでのアクセス許可を一括で制御するためのものではありません。'>
+<div class='choice'> 可用性ゾーン</div>
+<div class='choice'> サブスクリプション</div>
+<div class='choice'> リソースグループ</div>
+<div class='choice'> 管理グループ</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題36<br>サイト間VPNを実現するために必要なものは何ですか。（２つ選択）' data-answer='1,2' data-explanation='VPNデバイス<br>VPNゲートウェイ<br>説明<br>サイト間VPNは、オンプレミスのネットワークとAzure仮想ネットワーク間の安全な接続を提供することができ、これはオンプレミスのVPNデバイスとAzureのVPNゲートウェイを介して実現されます。<br>B:VPNデバイスは、オンプレミスネットワークに設置されるデバイスであり、AzureのVPNゲートウェイとの間でVPN接続を確立します。<br>C:VPNゲートウェイは、Azure VNet内に配置されるゲートウェイであり、オンプレミスネットワークのVPNデバイスと通信を行います。<br>■その他の選択肢<br>A:ピアリングは、異なるネットワーク間での直接的な接続を可能にしますが、サイト間VPNを実現するために必要な要素ではありません。<br>D:専用のプライベート回線は、VPN接続とは異なり、一般に物理的な専用接続を指し、Azure Expressrouteなどで必要となります。サイト間VPNには必要ありません。<br>E:VPNクライアントインストールファイルは、個々のデバイスがリモートからネットワークに接続するためのVPNクライアントに関連し、ポイント対サイト接続などで必要となります。サイト間VPNでは必要ありません。'>
+<div class='choice'> ピアリング</div>
+<div class='choice'> VPNデバイス</div>
+<div class='choice'> VPNゲートウェイ</div>
+<div class='choice'> 専用のプライベート回線</div>
+<div class='choice'> VPNクライアントインストールファイル</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題37<br>Azure Advisorについて正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='個人用に設定された推奨事項が表示される<br>複数のサブスクリプションをサービスの対象とすることができる<br>説明<br>Azure Advisorは、Microsoftのクラウドベストプラクティスに基づいてAzureのリソース利用を最適化するためのサービスです。リソースの高可用性、セキュリティ、パフォーマンス、およびコストの4つのカテゴリーにわたる推奨事項を提供します。Azure Advisorは、Azureの使用状況データを分析して、リソースを最適化し、コストを節約するための具体的なアクションの提案を行います。<br>B:個人用に設定された推奨事項が表示される：Azure Advisorは、Azureリソースの最適な利用のためのパーソナライズされたベストプラクティスの推奨事項を提供します。<br>C:複数のサブスクリプションをサービスの対象とすることができる：Azure Advisorは複数のAzureサブスクリプションにわたる推奨事項を提供することができます。<br>■その他の選択肢<br>A:コストを節約するための推奨事項は行わない：Azure Advisorは、仮想マシンなどのリソースのコストを節約するための推奨事項も提供します。<br>D:リソースのリアルタイムの監視や即時の通知を行う：Azure Advisorは、リアルタイムの監視や即時の通知を目的としたサービスではありません。それはAzure Monitorなどの役割です。'>
+<div class='choice'> コストを節約するための推奨事項は行わない</div>
+<div class='choice'> 個人用に設定された推奨事項が表示される</div>
+<div class='choice'> 複数のサブスクリプションをサービスの対象とすることができる</div>
+<div class='choice'> リソースのリアルタイムの監視や即時の通知を行う</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題38<br>macOSもしくはUbuntu環境でAzureリソースを管理する場合、どのツールを使用できますか。' data-answer='3' data-explanation='Azure CLIとAzure PortalとAzure PowerShell<br>説明<br>macOSやUbuntu環境でAzureリソースを管理するためには、Azure CLI、Azure PortalそしてAzure PowerShellの全てを使用できます。<br>Azure CLIはコマンドラインベースのツールであり、様々なオペレーティングシステムで利用可能です。<br>Azure Portalはブラウザベースのインターフェイスで、直感的な操作でAzureリソースを視覚的に管理できます。<br>Azure PowerShellは、スクリプトを使ってAzureリソースの管理や自動化を行うツールであり、macOSやLinuxでの使用にも対応しています。<br>これらのツールは、それぞれの使用環境や好みに応じて選択し、柔軟にAzureリソースの管理を行うことができます。'>
+<div class='choice'> Azure CLIのみ</div>
+<div class='choice'> Azure PowerShellのみ</div>
+<div class='choice'> Azure CLIとAzure Portal</div>
+<div class='choice'> Azure CLIとAzure PortalとAzure PowerShell</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題39<br>ネットワークセキュリティグループ（NSG）を関連付けることができるAzureコンポーネントは何ですか。（２つ選択）' data-answer='1,2' data-explanation='ネットワークインターフェイス<br>サブネット<br>説明<br>ネットワークセキュリティグループ（NSG）は、Azureの仮想ネットワーク内でトラフィックを制御するためのセキュリティサービスです。NSGは、サブネットまたは個々のネットワークインターフェース（NIC）に適用できます。<br>B:ネットワークインターフェイス：ネットワークセキュリティグループ（NSG）は、個々のネットワークインターフェース（NIC）に関連付けることができます。これにより、特定の仮想マシンまたはインスタンスに対するトラフィックのフィルタリングが可能となります。NSGをNICに適用することで、そのNICを介して行われるすべての通信に対してセキュリティルールを強制することができます。<br>C:サブネット：NSGはサブネットにも関連付けることができます。サブネットにNSGを適用することで、そのサブネット内のすべてのリソースに対するトラフィックの制御が可能になります。これにより、サブネットレベルでの包括的なトラフィックフィルタリングとセキュリティ管理が実現されます。<br>■その他の選択肢<br>A:仮想ネットワーク：NSGは仮想ネットワークに関連付けることはできません。<br>D:VPNゲートウェイ：NSGはVPNゲートウェイに関連付けることはできません。VPNゲートウェイは、異なるネットワーク間の接続を確立するために使用されます。'>
+<div class='choice'> 仮想ネットワーク</div>
+<div class='choice'> ネットワークインターフェイス</div>
+<div class='choice'> サブネット</div>
+<div class='choice'> VPNゲートウェイ</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題40<br>以下の要件を満たすAzureサービスは何ですか。<br>・IoTデバイスとAzure間で双方向通信を行う<br>・PaaSサービスであり、IoTデバイスからテレメトリデータを収集し処理する' data-answer='2' data-explanation='Azure IoT Hub<br>説明<br>Azure IoT Hubは、IoTデバイスを大規模にAzureに接続し、これらのデバイスからテレメトリデータを収集し処理するためのPaaSサービスです。これによりデバイスからのデータの取り込み、デバイスの状態監視および他デバイスへの送信などが可能になります。また、IoT Hubは、デバイスとクラウド間の双方向通信をサポートし、リアルタイムでのデータ処理やデバイス制御が可能です。<br>■その他の選択肢<br>A:IoT CentralはSaaSサービスであり、IoTデバイスの管理とデータの収集には適していますが、PaaSサービスではありません。<br>B:Azure Sphereは、セキュリティに特化したIoTデバイスとオペレーティングシステムの統合ソリューションであり、IoTデータの収集や処理には関連しません。<br>D:Azure Databricksは、データ分析とビッグデータ処理のためのサービスであり、IoTデバイスとの双方向通信やテレメトリデータの収集には関連しません。'>
+<div class='choice'> Azure IoT Central</div>
+<div class='choice'> Azure Sphere</div>
+<div class='choice'> Azure IoT Hub</div>
+<div class='choice'> Azure Databricks</div>
+</div>
+
+
+            <!-- 他の問題も同様に追加 -->
+        </div>
+
+        <h2 id="question"></h2>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),  // innerHTMLに変更
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+            choicesContainer.innerHTML = '';
+
+            currentQuestion.choices.forEach((choice, i) => {
+                const li = document.createElement('li');
+                const input = document.createElement('input');
+                const label = document.createElement('label');
+
+                input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                input.name = 'choice';
+                input.value = choice.index;
+                input.id = 'choice' + i;
+
+                label.htmlFor = 'choice' + i;
+                label.innerHTML = choice.text;  // textContentをinnerHTMLに変更
+
+                li.appendChild(input);
+                li.appendChild(label);
+                choicesContainer.appendChild(li);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = Array.from(document.querySelectorAll('input[name="choice"]:checked'))
+                                        .map(checkbox => parseInt(checkbox.value))
+                                        .sort();
+            const resultElement = document.getElementById('result');
+            
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+                
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++; // 正解数をカウント
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            // クイズのUI全体を初期化
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            // 初期化後に最初の問題を表示
+            showQuestion();
+        }        
+    </script>
+</body>
+</html>

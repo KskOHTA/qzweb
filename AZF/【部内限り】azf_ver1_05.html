@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Fundamental問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-data" style="display: none;">
+
+
+<div class='question' data-multiple='false' data-question='問題1<br>レガシーアプリケーションをオンプレミスからAzureへ移行する場合、最適なクラウドサービスはどれですか。' data-answer='3' data-explanation='IaaS（サービスとしてのインフラストラクチャ）<br>説明<br>レガシーアプリケーションは、古くから使われているが、新しい技術基準やプラットフォームに適応していない既存のアプリケーションです。<br>IaaSは、オンプレミスのインフラストラクチャ（サーバー、ストレージ、ネットワークなど）をクラウド上で提供し、ユーザーが仮想マシンを通じてこれらのリソースを管理できるようにするサービスです。IaaSを使用すると、企業はレガシーアプリケーションをクラウドに移行し、物理的なインフラストラクチャの維持管理を行う必要がありません。最も柔軟性があり、既存のアーキテクチャをそのままクラウドに移行することができます。<br>■その他の選択肢<br>A:PaaSは、アプリケーションを特定のプラットフォームで開発・運用するためのものであり、レガシーアプリケーションの移行には適していないことが多いです。<br>B:SaaSは、クラウド上で完全に管理されたアプリケーションを提供するものであり、個別のアプリケーションの移行には適していません。<br>C:DaaSは、仮想デスクトップ環境を提供するサービスを指します。これは、アプリケーションの移行とは関係がありません。'>
+<div class='choice'> PaaS（サービスとしてのプラットフォーム）</div>
+<div class='choice'> SaaS（サービスとしてのソフトウェア）</div>
+<div class='choice'> DaaS（サービスとしてのデスクトップ）</div>
+<div class='choice'> IaaS（サービスとしてのインフラストラクチャ）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題2<br>あなたの組織は、オンプレミスでソフトウェアアシュアランス（SA）付きのWindows Serverライセンスを使用しています。<br>今後、Azure仮想マシンでWindowsサーバーを利用する場合、コストを削減する最適な方法は何ですか。' data-answer='1' data-explanation='Azureハイブリッド特典<br>説明<br>Azureハイブリッド特典を利用すると、オンプレミスのWindows ServerやSQL ServerのライセンスをAzureのクラウドワークロードに移行できます。これにより、AzureでWindowsサーバーを利用する際のコストを削減することが可能です。<br>この特典を利用すると、Azure上でWindows ServerやSQL Serverの仮想マシンを実行する際に、標準の料金よりも低いコストで使用できます。つまり、オンプレミスで購入したライセンスをクラウドでも活用することができ、コスト効率の良いクラウド移行が可能になります。これにより、クラウドへの移行やスケールアップを経済的に行うことができます。<br>■その他の選択肢<br>A:エンタープライズアグリーメント（EA）：これは大規模な組織向けのライセンス契約であり、ライセンスの購入や管理を簡素化するものですが、既存のオンプレミスライセンスをAzureで利用する方法とは異なります。<br>C:サービスレベルアグリーメント（SLA）：これはサービスの品質や可用性に関する契約であり、ライセンスコストの削減には関係しません。<br>D:Azureの予約：Azureのサービスを1年または3年の期間で前払いすることにより、コストを削減する方法です。事前にリソースを予約することでコストを削減できますが、既存のライセンスは利用されません。<br>■用語解説<br>ソフトウェアアシュアランス（SA）は、Microsoftのライセンスプログラムの一部であり、ソフトウェアの最新バージョンへのアップグレードや追加的なサービスを提供します。Azureハイブリッド特典では、このソフトウェアアシュアランスを持つライセンスをAzureで利用することができ、仮想マシンのコストを大幅に削減できます。'>
+<div class='choice'> エンタープライズアグリーメント（EA）</div>
+<div class='choice'> Azureハイブリッド特典</div>
+<div class='choice'> サービスレベルアグリーメント（SLA）</div>
+<div class='choice'> Azureの予約</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題3<br>あなたは、スマートフォンからAzureで管理しているリソースにアクセスしたいと考えています。<br>どのツールを使用することができますか。（２つ選択）' data-answer='2,3' data-explanation='Azureポータル<br>Azure Cloud Shell<br>説明<br>AzureポータルはWebベースのユーザーインターフェイスであり、Azureリソースの管理を目的としています。MicrosoftはAzure mobile appというスモバイルデバイス用のアプリケーションを提供しており、このアプリケーションをダウンロードしてスマートフォンからAzureリソースを直接管理することが可能です。<br>Azure Cloud Shellは、ブラウザベースのシェル環境であり、Azureリソースをコマンドラインから管理することを可能にします。Azure mobile appからAzure Cloud Shellへのアクセスも提供しており、アプリ内でCloud Shellを起動することで、スマートフォンからAzureリソースにアクセスし管理作業を行うことができます。<br>■その他の選択肢<br>A:ARMテンプレートは、Azureリソースのデプロイメントと構成を自動化するためのJSON形式のファイルです。スマートフォンから直接これを利用することはできません。<br>B:Azure PowerShell DSCは、特定の状態を定義し、Azureリソースがその状態を維持するようにするツールです。これはスマートフォンでは一般的には使用されません。'>
+<div class='choice'> ARMテンプレート</div>
+<div class='choice'> Azure PowerShell DSC</div>
+<div class='choice'> Azureポータル</div>
+<div class='choice'> Azure Cloud Shell</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題4<br>Azureリソースを作成するPowerShellスクリプトを実行する必要がある場合、どのツールを使用することができますか。（２つ選択）' data-answer='0,3' data-explanation='Azure PowerShellモジュール<br>Azure Cloud Shell<br>説明<br>PowerShellスクリプトを実行するためには、コマンドレット（cmdlet）を介する必要があります。コマンドレットとは、PowerShellにおける小さなコマンドや関数のことで、特定の操作を実行するために使用されます。<br>Azure PowerShell モジュールは、PowerShellからAzureリソースを直接管理するためのコマンドレットのセットです。このモジュールはAzureRMの後継であり、これを使用することで、Azureリソースを作成するためのPowerShellスクリプトを実行することができます。<br>Azure Cloud Shellは、ブラウザからアクセスできる対話形式のターミナルであり、Azureリソースを管理するために使用されます。BashまたはPowerShellのどちらかを選択でき、セッション単位で一時的に提供されます。Azure Cloud Shellも、Azure PowerShellコマンドレットを介してリソースにアクセスすることが可能です。<br>■その他の選択肢<br>B:Azure CLIは、コマンドラインインターフェースを通じてAzureサービスを管理するためのツールです。これはスクリプトや自動化のために広く使用されていますが、PowerShellスクリプトを実行するためのツールではありません。<br>C:PowerShell Coreは、オープンソースのクロスプラットフォームバージョンのPowerShellです。Azureリソースを管理するための特定のコマンドレットは含まれていません。<br>E:コマンドプロンプトは、Windowsのコマンドラインインターフェースです。一般的なWindowsコマンドを実行することはできますが、Azureリソースを直接管理するためのツールではありません。'>
+<div class='choice'> Azure PowerShellモジュール</div>
+<div class='choice'> Azure CLI</div>
+<div class='choice'> PowerShell Core 6.0</div>
+<div class='choice'> Azure Cloud Shell</div>
+<div class='choice'> コマンドプロンプト</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題5<br>プライベートクラウドについて正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='オンプレミスまたはクラウドベースの専用リソースを使用する<br>リソースとセキュリティを完全に制御できる<br>説明<br>プライベートクラウドは、特定のユーザーや組織のみを対象としてインターネットまたはプライベートな内部ネットワーク経由で提供されるコンピューティングサービスです。一般に公開されているパブリッククラウドとは異なり、使用者が限定され、セキュリティや制御の面でカスタマイズされた環境を提供します。プライベートクラウドは、企業が自社のデータセンター内に構築するか、クラウドプロバイダーの提供する専用環境を利用することが一般的です<br>B:オンプレミスまたはクラウドベースの専用リソースを使用する：プライベートクラウドは、オンプレミス（組織内部のデータセンター）または専用のクラウドベースリソースで構築されます。これにより、リソースの専用使用が可能となり、セキュリティと性能が向上します。<br>C:リソースとセキュリティを完全に制御できる：プライベートクラウドでは、組織は自身のリソースとセキュリティを完全に制御できます。これによりセキュリティ、コンプライアンスおよびデータガバナンスの要件に合わせて環境をカスタマイズすることが可能です。<br>■その他の選択肢<br>A:パブリッククラウドに比べてコストを抑えることができる：プライベートクラウドは、専用のリソースとインフラストラクチャを必要とするため、しばしばパブリッククラウドよりも高コストになります。<br>D:インターネットから切り離されている環境である：プライベートクラウドがインターネットから完全に切り離されている必要はありません。オンプレミスのプライベートクラウド環境もインターネットに接続されることが多いですが、そのアクセスは厳格に制御され、セキュリティ対策が強化されます。'>
+<div class='choice'> パブリッククラウドに比べてコストを抑えることができる</div>
+<div class='choice'> オンプレミスまたはクラウドベースの専用リソースを使用する</div>
+<div class='choice'> リソースとセキュリティを完全に制御できる</div>
+<div class='choice'> インターネットから切り離されている環境である</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題6<br>Azure Monitorでは、収集したイベントログをどこに保管しますか。' data-answer='3' data-explanation='Log Analytics ワークスペース<br>説明<br>Azure Monitorは、Azure環境の全体的な監視を行い、パフォーマンスと可用性のデータを収集するサービスです。<br>Log Analytics ワークスペースはAzure Monitorの一部であり、収集したデータを集中管理し、分析するための場所を提供します。様々なリソースからのログデータを収集し、クエリを使用してデータを分析したり、アラートを作成したりすることができます。この機能により、アプリケーションやインフラストラクチャのパフォーマンス監視やトラブルシューティングが可能になります。<br>■その他の選択肢<br>A:Azure Blob Storageは、非構造化データ用のストレージサービスですが、Azure Monitorのログデータの主要な保管場所ではありません。<br>B:Azure Cosmos DBは、グローバルに分散したNoSQLデータベースです。ログデータの分析には利用できますが、Azure Monitorでの主なログ保管場所ではありません。<br>C:Azure File Storageは、ファイル共有サービスですが、Azure Monitorのログを保管するための場所ではありません。'>
+<div class='choice'> Azure Blob Storage</div>
+<div class='choice'> Azure Cosmos DB</div>
+<div class='choice'> Azure File Storage</div>
+<div class='choice'> Log Analytics ワークスペース</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題7<br>あなたの企業は、オンプレミスのITインフラストラクチャを30台のサーバーで運用していますが、新しいプロジェクトのために一時的に追加のリソースが必要です。<br>プロジェクトが終了した後、余分なリソースは不要となります。<br>資本支出（CapEx）を最小限に抑えつつリソースを提供するためには、どのクラウドソリューションが最適ですか。' data-answer='2' data-explanation='クラウドにリソースを作成してハイブリッドクラウドにする<br>説明<br>ハイブリッドクラウドは、オンプレミスのインフラとクラウドサービスを組み合わせたモデルです。企業は既存のインフラに投資を維持しつつ、クラウドの柔軟性と拡張性を利用できます。<br>ハイブリッドクラウドを使うことで、データとアプリケーションをオンプレミスとクラウド間で自由に移動させることが可能であり、ビジネスのニーズや規制要件に応じて最適な環境を選択できます。<br>C:クラウドにリソースを作成してハイブリッドクラウドにする：ハイブリッドクラウドを利用することで、既存のオンプレミス環境を維持しつつ、必要に応じてクラウドリソースを追加できます。プロジェクト終了後には、これらのクラウドリソースを解除してコストを節約できます。<br>■その他の選択肢<br>A:パブリッククラウドに完全に移行する：これは恒久的な解決策であり、一時的なリソースニーズには過剰かつ高コストになる可能性があります。また、移行には時間とコストがかかります。<br>B:追加で物理サーバーを増設する：これはCapExを増やす選択であり、一時的なニーズには不適切です。またサーバーの維持管理にもコストがかかります。<br>D:必要なだけ物理サーバーをリースする：これも一時的なニーズに対しては適切ではありません。リースには長期的な契約が必要になることが多く、柔軟性に欠けます。'>
+<div class='choice'> パブリッククラウドに完全に移行する</div>
+<div class='choice'> 追加で物理サーバーを増設する</div>
+<div class='choice'> クラウドにリソースを作成してハイブリッドクラウドにする</div>
+<div class='choice'> 必要なだけ物理サーバーをリースする</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題8<br>オンプレミスで運用しているサーバーをAzureの仮想マシンに移行する場合、ユーザー側で不要となる作業は何ですか。（２つ選択）' data-answer='1,2' data-explanation='物理サーバーのセキュリティ設定<br>サーバーハードウェアの故障対応<br>説明<br>Azureは、基盤となる物理インフラストラクチャ（サーバー、ストレージ、ネットワークなど）の管理を担います。これにはハードウェアの故障対応や物理的なセキュリティが含まれます。<br>ユーザーは、OSのパッチ適用、ミドルウェアの管理、アプリケーションの実行、データのバックアップなど、仮想マシン上での作業を担当します。Azure仮想マシンに移行することで、ユーザーは物理インフラストラクチャの購入やメンテナンスから解放されますが、仮想マシンの運用に関連する作業は引き続き必要です。<br>B:物理サーバーのセキュリティ設定：Azureの仮想マシンにおいて、ユーザーは物理的なセキュリティに関する管理が不要です。<br>C:サーバーハードウェアの故障対応：これも物理的なハードウェアの管理はAzureが担うため、ユーザーが行う必要がありません。<br>■その他の選択肢<br>A:ソフトウェアのライセンス管理：特定のソフトウェアがAzure仮想マシン上で動作する際には適切なライセンスが必要であり、ユーザー側で対応しなければなりません。<br>D:データのバックアップ対応：Azureでは、データのバックアップと災害復旧戦略を設定する必要がありますが、ユーザーにて対応が必要です。<br>E:OSのパッチ適用：OSのパッチ適用とは、オペレーティングシステムに対してアップデートの更新を行うことであり、ユーザーが管理する必要があります。'>
+<div class='choice'> ソフトウェアのライセンス管理</div>
+<div class='choice'> 物理サーバーのセキュリティ設定</div>
+<div class='choice'> サーバーハードウェアの故障対応</div>
+<div class='choice'> データのバックアップ対応</div>
+<div class='choice'> OSのパッチ適用</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題9<br>Azure仮想マシンを停止または割り当て解除した後、その仮想マシンと関連するAzure Storageはどのようになりますか。' data-answer='0' data-explanation='Azure Storageは残り、引き続き課金される<br>説明<br>Azure Storageは、仮想マシンのディスクやデータを保持するためのストレージサービスです。仮想マシンを停止または割り当て解除しても、Azure Storageに格納されているデータはそのまま保持され、データは失われません。<br>Azure Storageに関する課金は、仮想マシンの停止や割り当て解除に関係なく継続されます。これは、ストレージサービスが使用されている限り、ストレージ容量に対して課金されるためです。<br>■その他の選択肢<br>B:Azure Storageのデータは失われる：Azure仮想マシンを停止または割り当て解除しただけでは、Azure Storageに保存されているデータは失われません。データは引き続きAzure Storageに保持されます。<br>C:Azure Storageに関連する課金は停止される：Azure仮想マシンの操作に関わらず、Azure Storageに関連する課金は継続されます。使用されているストレージ容量に対して料金が発生し続けます。<br>D:Azure Storageのデータがアーカイブされる：Azure仮想マシンを停止または割り当て解除しても、自動的にStorageのデータがアーカイブされることはありません。データのアーカイブはユーザーが別途設定する操作です。<br>Azure Virtual Machines – 停止と停止 (割り当て解除) |Microsoft Learn（英語）'>
+<div class='choice'> Azure Storageは残り、引き続き課金される</div>
+<div class='choice'> Azure Storageのデータは失われる</div>
+<div class='choice'> Azure Storageに関連する課金は停止される</div>
+<div class='choice'> Azure Storageのデータがアーカイブされる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題10<br>Azureリソースが障害により利用できず、サービスレベルアグリーメント（SLA）を下回った場合、ユーザーはMicrosoftからどのような保証を受けることができますか。' data-answer='1' data-explanation='Azureアカウントにクレジットが付与される<br>説明<br>サービス障害により、サービスレベルアグリーメント（SLA）を下回った場合には、ユーザーはMicrosoftよりクレジットとして補償を受けることができます。このクレジットは、将来のAzureサービスの使用に対して適用され、影響を受けたユーザーが負担する費用を削減するために使用できます。<br>クレジットの額は、障害の影響度やサービス停止の期間に基づいて決定されます。またクレジットの申請は、ユーザーより行う必要があります。<br>■その他の選択肢<br>A:次の月には、該当サービスの費用が無料になる：このような保証は行われません。代わりに、クレジットを提供することが通常の対応です。<br>C:現金で払い戻しを受けることができる：Microsoftは通常、現金での払い戻しではなく、サービスの利用に対するクレジットを提供します。<br>D:サポートプランがアップグレードされる：サポートプランのアップグレードは一般的な保証ではありません。クレジットによって保証されます。'>
+<div class='choice'> 次の月には、該当サービスの費用が無料になる</div>
+<div class='choice'> Azureアカウントにクレジットが付与される</div>
+<div class='choice'> 現金で払い戻しを受けることができる</div>
+<div class='choice'> サポートプランがアップグレードされる</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題11<br>Microsoft Entra参加（旧：Azure AD参加）を行うことができるOSはどれですか。（複数選択）' data-answer='1,2' data-explanation='Windows 10<br>Windows 11<br>説明<br>Microsoft Entra参加（旧：Azure AD参加）は、Windows 10およびWindows 11のデバイスに適用され、これらのデバイスをAzure ADに参加させるプロセスです。このプロセスにより、デバイスを企業または組織のアイデンティティに関連付け、エンタープライズレベルのセキュリティおよび管理機能を提供します。<br>サポートされているOSはWindows 10、Windows 11と制限されており、企業所有のWindowsデバイスを深いレベルで管理・制御することができます。<br>Microsoft Entra参加は、主に企業環境で使用され、デバイス管理とセキュリティのニーズが高いシナリオに適しています。'>
+<div class='choice'> iOS</div>
+<div class='choice'> Windows 10</div>
+<div class='choice'> Windows 11</div>
+<div class='choice'> macOS</div>
+<div class='choice'> Android</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題12<br>Azure DevOpsサービスの一部で、コードのバージョン管理やコラボレーション機能を有するサービスは何ですか。' data-answer='3' data-explanation='Azure Repos<br>説明<br>Azure ReposはAzure DevOpsサービスの一部であり、コードのバージョン管理とコラボレーションをサポートするツールです。バージョンコントロールシステムは、時間の経過と共にコードの変更を追跡し、ファイルのスナップショットを取得して永続的に保存します。これにより作業の保存や、チーム全体でのコード変更の調整が可能になります。<br>またAzure Reposでは、チームメンバーはコード変更をレビューし、コメントを追加することができます。これにより、コードの品質を向上させ、バグやセキュリティの問題を特定しやすくなります。<br>■その他の選択肢<br>A:Azure Pipelinesは、自動ビルドおよびテストを行うサービスであり、継続的インテグレーション（CI）と継続的デリバリー（CD）をサポートします。コードのバージョン管理やコラボレーションの機能はありません。<br>B:Azure Artifactsは、ソフトウェア開発プロジェクトにおいてパッケージ管理とアーティファクト管理を提供するプラットフォームです。しかし、これもバージョン管理やコラボレーションの主要な機能とは異なります。<br>C:Azure Test Plansは、ソフトウェアテストの計画、追跡、管理を支援するツールと機能を提供します。バージョン管理やコラボレーション機能を提供するものではありません'>
+<div class='choice'> Azure Pipelines</div>
+<div class='choice'> Azure Artifacts</div>
+<div class='choice'> Azure Test Plans</div>
+<div class='choice'> Azure Repos</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題13<br>Azureファイル共有を使用するためには、あらかじめ何を作成する必要がありますか。' data-answer='3' data-explanation='ストレージアカウント<br>説明<br>Azureファイル共有は、SMBプロトコルを使用して、クラウドでファイルを共有するためのサービスです。これを使用すると、Azure上でファイル共有をセットアップし、任意の場所からそれらのファイルにアクセスできるようになります。ファイル共有は、Windows、Linux、macOSの各種オペレーティングシステムから接続可能です。<br>ストレージアカウントは、Azureファイル共有を含むAzure Storageサービスへのアクセスを管理するための基本的なエンティティです。ストレージアカウント内で、Blob、キュー、テーブル、ファイル共有など、さまざまな種類のデータストレージオプションを作成し、使用することができます。<br>したがって本設問にあるように、Azureファイル共有を作成するには、まずストレージアカウントを作成する必要があります。<br>■その他の選択肢<br>A:Azureポリシーは、Azureリソースの作成や設定に対して組織の規則を適用するために使用されます。リソースが特定の要件や規則に従っていることを保証するのに役立ちますが、Azureファイル共有を使用するために必要ではありません。<br>B:仮想マシン（VM）は、仮想化されたコンピュータリソースを提供するAzureサービスです。ファイル共有を使用するためにVMを事前に作成する必要はありません。<br>C:カスタムロールは、特定のニーズに合わせてカスタマイズされたアクセス許可のコレクションです。これはファイル共有の使用に直接関連するものではありません。<br>チュートリアル: SMB Azure ファイル共有を作成し、Azure portal を使用してWindows 仮想マシンに接続する'>
+<div class='choice'> Azureポリシー</div>
+<div class='choice'> 仮想マシン</div>
+<div class='choice'> カスタムロール</div>
+<div class='choice'> ストレージアカウント</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題14<br>Azureクラウドの未使用のコンピューティングリソースを大幅割引で提供するサービスは何ですか。' data-answer='2' data-explanation='仮想スポットマシン<br>説明<br>Azure 仮想スポットマシンは、Azureの未使用のコンピューティング容量に割引価格でアクセスできるサービスです。これによりコストを大幅に削減しながらも、Azureのコンピューティングリソースを利用することができます。ただし、これらの仮想マシンは予告なく終了される可能性があるため、中断可能なワークロードに適しています。また、ユーザーは必要に応じて、使用する仮想マシンの最大価格を設定することができます。<br>■その他の選択肢<br>A:リザーブドインスタンスは、あらかじめ決まった期間（1年または3年）の使用を予約することで割引が適用されるサービスです。長期的に一定のリソースを確保し続ける必要がある場合に適しています。<br>B:Azureハイブリッド特典は、オンプレミスのWindows ServerおよびSQL ServerライセンスをAzureに持ち込むことで割引を受けるサービスです。未使用のコンピューティングリソースの使用とは関連がありません。<br>D:可用性セットは、インフラストラクチャの障害からアプリケーションを保護するために使用されるサービスであり、コスト削減には関係しません。'>
+<div class='choice'> リザーブドインスタンス</div>
+<div class='choice'> Azureハイブリッド特典</div>
+<div class='choice'> 仮想スポットマシン</div>
+<div class='choice'> 可用性セット</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題15<br>あなたの企業は、Azureリソースの定義や構成をコードとして定義し、部署ごとにリソースを繰り返し展開できるサービスを検討しています。<br>これらの要件を満たすAzureサービスは何ですか。' data-answer='0' data-explanation='Azure Resource Manager (ARM) テンプレート<br>説明<br>Azure Resource Manager (ARM) テンプレートは、Azure リソースのデプロイメントと構成をコードとして定義するためのサービスです。JSON形式で書かれ、リソースの種類、関連するプロパティ、およびリソース間の依存関係を指定できます。これにより、一貫性のある環境を繰り返し展開することができ、効率的に作業を進めることが可能となります。<br>■その他の選択肢<br>B:Azure ポータルは、ウェブベースのユーザーインターフェイスであり、Azure リソースを作成、構成、管理するためのものです。直感的な操作が可能ですが、コードとしてリソースの定義や構成を管理する機能は提供していません。<br>C:Azure Logic Appsは、データ、アプリ、サービスを接続して自動化されたワークフローを作成するためのサービスです。ビジネスプロセスや統合シナリオを実装するのに適していますが、リソースの定義や構成をコードとして管理する機能は提供していません。<br>D:Azure SDKは、Azure サービスとのプログラム上のやり取りを簡単にするための一連の開発者向けツールです。多くのプログラミング言語で利用できますが、一貫した環境の展開は、Azure Resource Manager (ARM) テンプレートが適しています。'>
+<div class='choice'> Azure Resource Manager (ARM) テンプレート</div>
+<div class='choice'> Azure ポータル</div>
+<div class='choice'> Azure Logic Apps</div>
+<div class='choice'> Azure SDK</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題16<br>SaaS（サービスとしてのソフトウェア）の特徴として正しい記述はどれですか。' data-answer='3' data-explanation='顧客の管理責任が最小限に抑えられる<br>説明<br>SaaS（サービスとしてのソフトウェア）は、アプリケーションをインターネット経由で提供するモデルです。従来のソフトウェア購入と異なり、SaaSはサブスクリプションベースまたは使用量に基づいて課金され、ユーザーはソフトウェアをインストールや保守をすることなく、ブラウザからアクセスして使用できます。クラウドプロバイダーはアプリケーションの運用、保守、アップグレードを行い、エンドユーザーはソフトウェアの機能を利用することに集中できます。これにより、ユーザーはITインフラストラクチャの複雑さやメンテナンスコストを抑えることができます。<br>■その他の選択肢<br>A:開発者がアプリケーションの開発とデプロイに集中できる：これはPaaS（サービスとしてのプラットフォーム）の特徴です。PaaSは開発者がアプリケーションの開発、テスト、デプロイに専念できる環境を提供します。<br>B:関数単位でコードを実行できる：これはFaaS（サービスとしての関数）の特徴です。FaaSはコードのスニペットをイベントの発生に応じて実行するサービスです。<br>C:顧客が仮想マシンを構築し、OSを管理する：これはIaaS（サービスとしてのインフラストラクチャ）の特徴です。IaaSはストレージ、ネットワーク、仮想マシンなどの基盤を提供し、ユーザーはその上でOSなどを管理します。'>
+<div class='choice'> 開発者がアプリケーションの開発とデプロイに集中できる</div>
+<div class='choice'> 関数単位でコードを実行できる</div>
+<div class='choice'> 顧客が仮想マシンを構築し、OSを管理する</div>
+<div class='choice'> 顧客の管理責任が最小限に抑えられる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題17<br>使用時にコストが発生するAzureリソースはどれですか。' data-answer='1' data-explanation='パブリックIPアドレス<br>説明<br>AzureのパブリックIPアドレスは、インターネットからAzureリソースへのアクセスを可能にするIPアドレスであり、仮想マシン、ロードバランサー、VPNゲートウェイなどのAzureリソースに関連付けることができます。パブリックIPアドレスはコストが発生し、選択されたSKU（BasicまたはStandard）、IPアドレスのタイプ（動的または静的）によって異なります。<br>■その他の選択肢<br>A:ユーザーアカウント：Azure Active Directory内のユーザーアカウントは無料で作成できます。そのため、コストは発生しません。<br>C:ユーザーグループ：ユーザーグループもAzure Active Directory内で、無料で作成・管理できるため追加のコストはかかりません。<br>D:ネットワークインターフェイス：ネットワークインターフェイスを作成、使用してもコストは発生しません。'>
+<div class='choice'> ユーザーアカウント</div>
+<div class='choice'> パブリックIPアドレス</div>
+<div class='choice'> ユーザーグループ</div>
+<div class='choice'> ネットワークインターフェイス</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題18<br>OpEx（運用費用）に当てはまる例はどれですか。（複数選択）' data-answer='0,2,4' data-explanation='従量課金モデルで支払われる費用<br>ソフトウェアのリース費用<br>データセンターの電力料金<br>説明<br>OpEx（運用費用）は、日常の業務運営にかかる費用を指します。これには従業員の給与、賃貸料、ユーティリティ費用、サブスクリプション料金などが含まれ、これらの費用は発生した期間において全額計上され、資本資産のように長期間にわたって減価償却されることはありません。<br>A:従量課金モデルで支払われる費用：使用した分だけ料金を支払うモデルは、定期的かつ変動する経費であり、OpExに当てはまります。<br>C:ソフトウェアのリース費用：リースや賃貸は、資産の所有ではなく利用に関する費用なので、OpExに該当します。<br>E:データセンターの電力料金：電力料金は定期的な経費で、運用に直接関連するためOpExに含まれます。<br>■その他の選択肢<br>その他の選択肢は、CapEx（資本支出）となります。CapExは、企業が物理的な固定資産を購入または改善するための費用です。一度の大きな支出であり、減価償却を通じて長期にわたって財務報告に反映されます。<br>B:ソフトウェアのライセンスの購入費用：ライセンス購入は長期的な投資であり、CapExに分類されます。<br>D:ハードウェアのアップグレードや交換：これは資産の価値向上や維持に関連する一回限りの支出で、CapExに分類されます。'>
+<div class='choice'> 従量課金モデルで支払われる費用</div>
+<div class='choice'> ソフトウェアのライセンスの購入費用</div>
+<div class='choice'> ソフトウェアのリース費用</div>
+<div class='choice'> ハードウェアのアップグレードや交換</div>
+<div class='choice'> データセンターの電力料金</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題19<br>Azure Policyのイニシアティブ定義とは何ですか。' data-answer='1' data-explanation='複数のポリシー定義を組み合わせたポリシーの集合体<br>説明<br>Azure Policyのイニシアティブ定義は、複数の関連するポリシー定義を組み合わせたものです。これにより、組織は関連する複数のポリシーをまとめて管理し、特定のコンプライアンス目標やセキュリティ要件に対応できます。<br>例えば、特定のセキュリティ基準や規制要件を満たすために、複数のセキュリティ関連ポリシーを一つのイニシアティブとして定義することができます。イニシアティブ定義を使用することで、組織はAzure環境全体のポリシー遵守状態を効率的に評価し、管理することができます。<br>■その他の選択肢<br>A:個別のリソースに適用される単一のポリシー：単一のポリシーは、イニシアティブ定義ではなく、個別のポリシー定義を表します。<br>C:サブスクリプション全体のセキュリティ設定：これはサブスクリプションのセキュリティ設定を指すもので、イニシアティブ定義の定義ではありません。<br>D:データの暗号化を自動化するポリシー：特定の操作（例えばデータ暗号化）に関連するポリシーは、イニシアティブ定義の一部となる可能性はありますが、イニシアティブ定義自体を指すものではありません。'>
+<div class='choice'> 個別のリソースに適用される単一のポリシー</div>
+<div class='choice'> 複数のポリシー定義を組み合わせたポリシーの集合体</div>
+<div class='choice'> サブスクリプション全体のセキュリティ設定</div>
+<div class='choice'> データの暗号化を自動化するポリシー</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題20<br>クラウドの特徴である”スケーラビリティ（Scalability）”について正しい記述はどれですか。' data-answer='3' data-explanation='コンピューティングリソースを増減させる<br>説明<br>スケーラビリティ（Scalability）は、ビジネスのニーズや要求に応じて、コンピューティングリソース（CPU、メモリ、ストレージなど）を柔軟に増減させることができる能力を指します。これにより、需要が高まった際にはリソースを追加してシステムのパフォーマンスを維持し、需要が低下した際にはリソースを削減してコストを節約することが可能です。<br>D:コンピューティングリソースを増減させる：これがスケーラビリティの正しい記述です。必要に応じてリソース（例えばサーバーのCPU、メモリ、ストレージ）を増やしたり減らしたりできる能力を指します。<br>■その他の選択肢<br>A:ダウンタイムなしでユーザーにサービスを提供する：これは高可用性（High Availability）に関連する特徴です。高可用性は、システムが障害やメンテナンスの際にも中断なく稼働し続ける能力を指します。<br>B:データのバックアップや復旧計画を提供する：これは耐障害性（Disaster Recovery）に関連します。耐障害性は、災害や障害が発生した場合にシステムやデータを迅速に復旧させる能力を意味します。<br>C:リソースを最適に配置し、環境負荷を削減する：これは持続可能性（Sustainability）に関連する特徴です。持続可能性は、リソースの効率的な利用と環境への影響を最小限に抑えることを目指します。'>
+<div class='choice'> ダウンタイムなしでユーザーにサービスを提供する</div>
+<div class='choice'> データのバックアップや復旧計画を提供する</div>
+<div class='choice'> リソースを最適に配置し、環境負荷を削減する</div>
+<div class='choice'> コンピューティングリソースを増減させる</div>
+</div>
+
+
+            <!-- 他の問題も同様に追加 -->
+        </div>
+
+        <h2 id="question"></h2>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),  // innerHTMLに変更
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+            choicesContainer.innerHTML = '';
+
+            currentQuestion.choices.forEach((choice, i) => {
+                const li = document.createElement('li');
+                const input = document.createElement('input');
+                const label = document.createElement('label');
+
+                input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                input.name = 'choice';
+                input.value = choice.index;
+                input.id = 'choice' + i;
+
+                label.htmlFor = 'choice' + i;
+                label.innerHTML = choice.text;  // textContentをinnerHTMLに変更
+
+                li.appendChild(input);
+                li.appendChild(label);
+                choicesContainer.appendChild(li);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = Array.from(document.querySelectorAll('input[name="choice"]:checked'))
+                                        .map(checkbox => parseInt(checkbox.value))
+                                        .sort();
+            const resultElement = document.getElementById('result');
+            
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+                
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++; // 正解数をカウント
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            // クイズのUI全体を初期化
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            // 初期化後に最初の問題を表示
+            showQuestion();
+        }        
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "name": "PWA AZazf app",
+    "short_name": "azf",
+    "display": "standalone",
+    "start_url": "index.html",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ]
+}

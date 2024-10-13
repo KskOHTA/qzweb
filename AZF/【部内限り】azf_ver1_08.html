@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Fundamental問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-data" style="display: none;">
+
+
+<div class='question' data-multiple='false' data-question='問題21<br>ローカル冗長ストレージ(LRS)ならびにgeo冗長ストレージ(GRS)で保持されるデータのコピー数はいくつですか。' data-answer='0' data-explanation='LRS:3 GRS:6<br>説明<br>Azure Storageの冗長性オプションの選択は、必要な冗長性のレベルとコストによって異なります。高い冗長性が求められる場合は、ゾーン冗長ストレージ（ZRS）やgeo冗長ストレージ（GRS）が適切ですが、これらはより高いコストがかかります。一方、コストを抑えたい場合は、ローカル冗長ストレージ（LRS）が選択肢になりますが、冗長性は低くなります。<br>ローカル冗長ストレージ (LRS)は、同じデータセンター内でデータを３回複製することによって、データの耐久性を確保するストレージオプションです。これにより、データセンター内のハードウェア障害が発生してもデータが失われることはありませんが、データセンター全体が影響を受けるような災害が発生した場合にはデータを失うリスクがあります。<br>geo冗長ストレージ (GRS)は、より高い耐久性を実現するために、データをプライマリリージョン内で３回複製し、さらに異なる地域（セカンダリリージョン）にも３回複製するオプションです。合計で６回の複製が行われ、プライマリリージョン全体に影響を及ぼす災害が発生した場合でも、データはセカンダリリージョンに保持されているため、データの耐久性が非常に高くなります。'>
+<div class='choice'> LRS:3 GRS:6</div>
+<div class='choice'> LRS:3 GRS:3</div>
+<div class='choice'> LRS:1 GRS:3</div>
+<div class='choice'> LRS:2 GRS:4</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題22<br>Azure Blob Storageはどのようなストレージサービスですか。' data-answer='3' data-explanation='ビデオや音声などの非構造化データを大量に格納する<br>説明<br>Azure Blob Storageは、ビデオや音声、画像などの非構造化データを格納するためのクラウドベースのストレージソリューションです。このサービスは、大容量のデータを管理し、アクセスを容易にするためのスケーラブルなストレージを提供します。<br>Azure Blob Storageを使用することで、企業は大量の非構造化データを安全に保存し、データは世界中からアクセスすることができます。<br>■その他の選択肢<br>A:ファイル共有を提供し、仮想マシンからファイルを読み書きする：これはAzure File Storageの特徴です。Azure File Storageは共有ファイルシステムを提供し、仮想マシンやオンプレミスシステムからファイルへのアクセスを可能にします。<br>B:メッセージキューを使用して異なるサービス間でメッセージを送受信する：これはAzure Queue Storageの機能です。Azure Queue Storageは、異なるサービス間のメッセージ通信を管理するためのキュー機能を提供します。<br>C:Webアプリケーションのユーザーデータやアドレス帳などのテーブルデータを格納する：これはAzure Table Storageの特徴です。Azure Table Storageは、構造化データを格納するためのNoSQLデータストアです。'>
+<div class='choice'> ファイル共有を提供し、仮想マシンからファイルを読み書きする</div>
+<div class='choice'> メッセージキューを使用して異なるサービス間でメッセージを送受信する</div>
+<div class='choice'> Webアプリケーションのユーザーデータやアドレス帳などのテーブルデータを格納する</div>
+<div class='choice'> ビデオや音声などの非構造化データを大量に格納する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題23<br>Azure GovernmentならびにAzure Chinaについて、正しい記述はどれですか。' data-answer='2' data-explanation='Azure Governmentは、アメリカの政府機関のみ利用できる<br>説明<br>Azure Chinaは、中国の法律や規制に準拠するために設計された、Microsoft Azureの特別なクラウドサービスです。中国内での使用に特化しており、一部のサービスや機能はAzure Globalと異なります。<br>Azure Governmentは、アメリカ政府機関およびその契約者が使用するために設計された、Microsoft Azureの特別なクラウドサービスです。アメリカ政府の厳格なセキュリティ要件に準拠しており、政府関連のデータやアプリケーションのホスティングに使用されます。<br>C:Azure Governmentは、アメリカの政府機関のみ利用できる：Azure Governmentはアメリカの政府機関やそのパートナー向けに設計されており、米国政府のセキュリティおよびコンプライアンス要件を満たす専用のクラウド環境を提供します。米国の連邦、州、地方政府またはそのパートナーのみが利用できます。<br>■その他の選択肢<br>A:Azure ChinaはMicrosoftによって運営されている：Azure Chinaは21Vianetという中国の会社によって運営されています。これは中国に位置する独立したクラウドサービスであり、中国国内でのデータレジデンシー、ネットワークパフォーマンスおよび法的コンプライアンスの要件に対応しています。<br>B:Azure Governmentは21Vianetによって運営されている：21Vianetによって運営されているのはAzure Chinaです。Azure Governmentは、Microsoftによって運営されています。<br>D:Azure Chinaは、通常のAzureで提供しているすべてのサービスが利用できる：Azure Chinaはさまざまなサービスを提供していますが、標準のAzureサービスと完全に同じではありません。サービスの機能には差があり、通常のAzureにあるすべてのサービスが利用できるわけではありません。'>
+<div class='choice'> Azure Chinaは、Microsoftによって運営されている</div>
+<div class='choice'> Azure Governmentは、21Vianetによって運営されている</div>
+<div class='choice'> Azure Governmentは、アメリカの政府機関のみ利用できる</div>
+<div class='choice'> Azure Chinaは、通常のAzureで提供しているすべてのサービスが利用できる</div>
+</div>
+
+
+<div class='question' data-multiple='true' data-question='問題24<br>GDPRについて正しい記述はどれですか。（２つ選択）' data-answer='0,3' data-explanation='データ保護とプライバシーの規則を定義する<br>EU内の個人に商品やサービスを提供する企業に適用される<br>説明<br>GDPR（一般データ保護規則）は、欧州連合（EU）の個人データ保護に関する包括的な規制です。<br>A:データ保護とプライバシーの規則を定義する：GDPRは、個人データの保護とプライバシーに関する規則を定義しています。これにはデータ収集、処理、転送に関する厳格な規則が含まれています。<br>D:EU内の個人に商品やサービスを提供する企業に適用される：GDPRは、EU内の個人に商品やサービスを提供する、またはEU内の個人のデータを処理するすべての企業や組織に適用されます。これにはEUでサービスを提供するEU外の企業も含まれます。<br>Azureでは、GDPRの要件に準拠し、顧客がGDPRの要件を遵守できるようにサポートするための機能とツールを提供しています。データの透明性、制御、セキュリティ対策の強化などが含まれます。<br>■その他の選択肢<br>B:世界中の国や産業で通用する標準を管理・発行する機関である：これは、ISO（International Organization for Standardization）についての説明です。GDPRは国際標準を管理・発行する機関ではなく、EUのデータ保護法規です。<br>C:アメリカによって設立された、情報セキュリティに関するガイダンスと標準を策定する機関である：これは、NIST（National Institute of Standards and Technology）の説明です。GDPRはアメリカによって設立されたものではなく、EUのデータ保護規則です。<br>E:顧客のクレジットカード情報のセキュリティを確保するための基準を定義する：これは、PCI DSS（Payment Card Industry Data Security Standard）の説明です。PCI DSSはクレジットカード業界における標準的なセキュリティ要件として広く受け入れられています。<br>GDPR に確実に準拠するための新機能をご紹介 (microsoft.com)'>
+<div class='choice'> データ保護とプライバシーの規則を定義する</div>
+<div class='choice'> 世界中の国や産業で通用する標準を管理・発行する機関である</div>
+<div class='choice'> アメリカによって設立された、情報セキュリティに関するガイダンスと標準を策定する機関である</div>
+<div class='choice'> EU内の個人に商品やサービスを提供する企業に適用される</div>
+<div class='choice'> 顧客のクレジットカード情報のセキュリティを確保するための基準を定義する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題25<br>Azureのサブスクリプションについて正しい記述はどれですか。（２つ選択）' data-answer='2,3' data-explanation='組織は、複数のサブスクリプションのリソースを使用できる<br>サブスクリプション間で仮想マシンを移動させることができる<br>説明<br>Azure サブスクリプションは、クラウドコンピューティング環境でアプリケーションやサービスを展開し、管理するための中心的な要素です。<br>C:組織は、複数のサブスクリプションのリソースを使用できる：組織は複数のAzureサブスクリプションを持つことができ、各サブスクリプション内のリソースを使用することが可能です。これにより、異なるプロジェクトや部門で異なるサブスクリプションを使い分けることができます。<br>D:サブスクリプション間で仮想マシンを移動させることができる：Azureでは、仮想マシンなどのリソースを一つのサブスクリプションから別のサブスクリプションに移動させることが可能です。これにより、リソース管理の柔軟性が高まります。<br>■その他の選択肢<br>A:Azureサブスクリプションを管理するのはMicrosoftアカウントのみである：Azureサブスクリプションは、Microsoftアカウントのみならず、組織のAzure Active Directoryアカウントを使用しても管理できます。企業は自社のアカウントシステムを利用してサブスクリプションを管理できます。<br>B:Azureリソースグループに、複数のサブスクリプションを含むことができる：リソースグループは特定のAzureサブスクリプションに属しており、複数のサブスクリプションをまたいでリソースグループを設定することはできません。リソースグループは、特定のサブスクリプション内のリソースを整理するために使用されます。<br>マイクロソフトのクラウド プランのサブスクリプション、ライセンス、アカウント、およびテナント<br>リソースを新しいサブスクリプションまたはリソース グループに移動する'>
+<div class='choice'> Azureサブスクリプションを管理するのはMicrosoftアカウントのみである</div>
+<div class='choice'> Azureリソースグループに、複数のサブスクリプションを含むことができる</div>
+<div class='choice'> 組織は、複数のサブスクリプションのリソースを使用できる</div>
+<div class='choice'> サブスクリプション間で仮想マシンを移動させることができる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題26<br>リモートワークを実施している企業において、従業員がAzure仮想マシンにアクセスできるようにするためには、どのサービスを利用すべきですか。' data-answer='1' data-explanation='ポイント対サイトVPN<br>説明<br>ポイント対サイトVPNは、ユーザーの個々のデバイスがAzure Virtual Networkにセキュアに接続するためのサービスです。これはリモートワーカーが個々のクライアントデバイス（ノートPCやデスクトップなど）からAzureのネットワークリソースにアクセスするのに適しており、インターネット経由で暗号化された接続を提供します。この方法は、VPNクライアントソフトウェアのインストールを必要とし、ユーザーごとの認証を行います。<br>■その他の選択肢<br>A:サイト間VPNは、オフィスや複数のサイト間の安全な接続を提供しますが、個々のリモートユーザーの接続には最適ではありません。<br>C:Azure AD Connectは、Azure ADとオンプレミスのディレクトリを同期するためのツールです。リモートアクセス機能を提供しません。<br>D:Azure ExpressRouteは、専用のプライベート接続を提供しますが、一般的には大規模な組織やデータ集約的なシナリオ向けです。'>
+<div class='choice'> サイト間VPN</div>
+<div class='choice'> ポイント対サイトVPN</div>
+<div class='choice'> Azure AD Connect</div>
+<div class='choice'> Azure ExpressRoute</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題27<br>Azureでサポートリクエストを作成するためには、どのポータルを使用する必要がありますか。' data-answer='3' data-explanation='Azure Portal<br>説明<br>Azure Portalは、Azureのサービスを管理するためのWebベースのアプリケーションです。ユーザーはここでリソースの作成、管理、監視を行い、サポートリクエストを作成することができます。サポートリクエストを作成するにはアクセス権が必要であり、所有者、共同作成者、サポートリクエスト共同作成者などのロールが必要です。<br>■その他の選択肢<br>A:Microsoft Intune管理センターは、デバイスとアプリケーションの管理に特化しており、Azureサポートリクエストの作成には使用されません。<br>B:Microsoft 365 管理センターは、主にMicrosoft 365サービスの管理に使用され、Azureサポートリクエストの作成には適していません。<br>C:Microsoft Defender for Cloudは、セキュリティ管理と脅威保護に使用されるもので、サポートリクエストの作成には使用されません。'>
+<div class='choice'> Microsoft Intune管理センター</div>
+<div class='choice'> Microsoft 365 管理センター</div>
+<div class='choice'> Microsoft Defender for Cloud</div>
+<div class='choice'> Azure Portal</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題28<br>複数の仮想マシンに対してのアクセス権を一括で管理したい場合、どのリソースを作成・活用するべきですか。' data-answer='2' data-explanation='リソースグループ<br>説明<br>リソースグループは、Azureリソースの論理的コンテナーであり、アプリケーションの管理、ライフサイクル、アクセス権の管理を効率的に行うために使用されます。同じリソースグループ内のリソースは、通常、同じライフサイクルを共有し、グループ単位での管理やアクセス制御が可能です。<br>例えば、特定のリソースグループに対してユーザーやグループにアクセス権を与えることにより、そのリソースグループ内のすべてのリソースに対するアクセス権が一括で付与されます。<br>■その他の選択肢<br>A:リージョンは、Azureのデータセンターが物理的に存在する地理的な場所を指します。アクセス権の管理には関連しません。<br>B:サブネットは、ネットワーク内の一部分を区切るものであり、リソースへのアクセス権の管理に使用されるものではありません。<br>D:サブスクリプションは、Azureサービスへのアクセスや課金を管理する単位ですが、個別のリソースのアクセス権を一括で管理するためには適していません。<br>リソース グループの管理 - Azure portal - Azure Resource Manager'>
+<div class='choice'> リージョン</div>
+<div class='choice'> サブネット</div>
+<div class='choice'> リソースグループ</div>
+<div class='choice'> サブスクリプション</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題29<br>コードの開発からデプロイまでのソフトウェア開発プロセス全体を統合的にサポートするAzureサービスは何ですか。' data-answer='2' data-explanation='Azure DevOps<br>説明<br>Azure DevOpsは、ソフトウェア開発のライフサイクルを通じて、計画、コードの開発、ビルド、テスト、リリースといったプロセスをサポートする統合的なサービスです。以下の主要な機能を提供します。<br>Azure Boards：プロジェクト管理や問題計画・追跡機能を提供する。<br>Azure Repos：ソースコードのバージョン管理を提供する。<br>Azure Pipelines：CI/CD（継続的インテグレーションと継続的デリバリー）をサポートし、自動ビルドとデプロイを可能にする。<br>Azure Test Plans：テストの計画と実行の管理をサポートする。<br>Azure Artifacts：パッケージの管理と共有を行う。<br>Azure DevOpsは、チームが高品質なソフトウェアをより迅速に提供できるようにするためのツールとサービスを統合して提供します。<br>■その他の選択肢<br>A:Log Analyticsは、Azureリソースのログデータを収集、分析し、インサイトを提供するサービスです。開発プロセスの統合的なサポートとは関連がありません。<br>B:Azure Functionsは、イベント駆動型のサーバレスコンピューティングプラットフォームです。特定のイベントに応じてコードを実行する機能を提供しますが、開発プロセスの統合的なサポートは行いません。<br>D:Azure Logic Appsは、ビジネスプロセスやワークフローを自動化するためのサービスです。開発プロセス全体の統合的なサポートには該当しません。'>
+<div class='choice'> Log Analytics</div>
+<div class='choice'> Azure Functions</div>
+<div class='choice'> Azure DevOps</div>
+<div class='choice'> Azure Logic Apps</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題30<br>WebアプリケーションをオンプレミスからAzureへ移行する場合、何を支払う必要がありますか。' data-answer='2' data-explanation='月額の使用量<br>説明<br>Webアプリケーションを運用する際、オンプレミスでは初期投資と維持管理に高いコストがかかりますが、Azureでは利用したリソースに応じた料金のみで運用が可能です。また、Azureでは物理的なインフラストラクチャの管理が不要となるため、運用の柔軟性とコスト効率が向上します。<br>C:月額の使用量：Azureのサービスを使用するためには、使用したリソースに基づいて月額の使用料を支払う必要があります。<br>■その他の選択肢<br>A:Azureへのデータ転送：Azureでは、インバウンドのデータ転送には費用がかかりません。<br>B:データセンターの運用コスト：クラウドサービスを利用する場合、オンプレミスのデータセンター運用に関わるコストは発生しません。クラウドサービスの使用量に基づいて支払いをします。<br>D:ハードウェアの調達コスト：クラウドサービスを利用する場合、ハードウェアの調達に関するコストは発生しません。ハードウェアの費用は、クラウドプロバイダーにて負担します。'>
+<div class='choice'> Azureへのデータ転送</div>
+<div class='choice'> データセンターの運用コスト</div>
+<div class='choice'> 月額の使用量</div>
+<div class='choice'> ハードウェアの調達コスト</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題31<br>PaaS（サービスとしてのプラットフォーム）に該当するサービスはどれですか。（２つ選択）' data-answer='1,3' data-explanation='Azure Functions<br>Azure Cosmos DB<br>説明<br>PaaS（サービスとしてのプラットフォーム）は、アプリケーションの開発、実行、管理を行うためのプラットフォームをクラウド経由で提供するサービスモデルです。PaaSでは、サーバー、ストレージ、ネットワーキングおよびデータベース管理システムなどの基盤インフラストラクチャの管理をクラウドプロバイダーが行うため、開発者はアプリケーションの開発に集中することができます。<br>B:Azure Functionsは、イベント駆動型のサーバーレスコンピューティングプラットフォームであり、PaaSの一種です。開発者はサーバーの管理を気にせずに、コードの実行に集中できます。<br>D:Azure Cosmos DBは、グローバル分散型のマルチモデルデータベースサービスで、PaaSに分類されます。開発者はデータベースのスケーリングやパフォーマンスの管理をクラウドプロバイダーに委ねることができます。<br>■その他の選択肢<br>A:Microsoft 365は、クラウドベースのサービスであり、メール、カレンダー、ドキュメント共有、ビデオ会議、コラボレーションツールなどを提供するサービス群です。これはSaaS（サービスとしてのソフトウェア ）モデルに該当します。<br>C:Dynamics 365は、ビジネスアプリケーションの集合であり、CRMやERP機能を提供するSaaSです。<br>E:Azure 仮想マシンは、IaaS（サービスとしてのインフラストラクチャ）に分類され、仮想マシンの配備と管理を可能にするサービスです。'>
+<div class='choice'> Microsoft 365</div>
+<div class='choice'> Azure Functions</div>
+<div class='choice'> Dynamics 365</div>
+<div class='choice'> Azure Cosmos DB</div>
+<div class='choice'> Azure 仮想マシン</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題32<br>下記の用途に適したストレージサービスは何ですか。<br>・Windowsデバイスからネットワークを介してアクセスする<br>・複数の仮想マシンからデータを共有する' data-answer='3' data-explanation='Azure Files<br>説明<br>Azure Filesは、クラウド上でSMBプロトコルを使用した共有ファイルストレージサービスであり、オンプレミスのファイルサーバーのように機能します。これによりWindows、Linux、macOSデバイスなど、異なるプラットフォームからSMBまたはNFSプロトコルを通じてファイル共有にアクセスできます。<br>また、Azure Filesは、クラウドベースのアプリケーションやオンプレミスのアプリケーションからのデータ共有、データ移行、データレプリケーションの用途にも適しています。<br>■その他の選択肢<br>A:Azure Blob Storageは、大量の非構造化データの保存に適したオブジェクトストレージサービスです。ストリーミングやバックアップなどに用いられますが、ネットワークを介したWindowsデバイスや複数の仮想マシンからのファイル共有には最適ではありません。<br>B:Azure Queue Storageは、アプリケーションコンポーネント間でのメッセージの非同期通信を可能にするサービスです。ファイル共有とは異なる目的に用いられるため、この用途には適していません。<br>C:Azure Table Storageは、NoSQLデータストアであり、構造化されたデータの保存に使用されます。ファイル共有には用いられず、この用途には適していません。'>
+<div class='choice'> Azure Blob Storage</div>
+<div class='choice'> Azure Queue Storage</div>
+<div class='choice'> Azure Table Storage</div>
+<div class='choice'> Azure Files</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題33<br>クラウドコンピューティングの特徴について正しい記述はどれですか。（２つ選択）' data-answer='1,3' data-explanation='オンプレミス環境よりリソースを拡張するコストが低い<br>仮想化技術により複数のユーザーに同時にサービスを提供できる<br>説明<br>クラウドコンピューティングとは、インターネット経由でコンピューティングリソースやデータ処理機能を提供するサービスです。ユーザーは物理的なハードウェアやソフトウェアを所有する必要がなく、必要に応じてリソースを拡張・縮小できます。<br>B:オンプレミス環境よりリソースを拡張するコストが低い：クラウドコンピューティングは迅速な拡張性と低コストでリソースを追加できるため、オンプレミス環境と比較してコスト削減が可能です。<br>D:仮想化技術により複数のユーザーに同時にサービスを提供できる：仮想化技術により、一つの物理的リソース上で多数の仮想マシンを動作させ、複数のユーザーにサービスを提供することができます。<br>■その他の選択肢<br>A:OpExを最小限に抑えることができる：クラウドコンピューティングは通常、CapEx（資本支出）を削減しますが、OpEx（運用費用）はサービスの利用量や利用方法に応じて変動します。最小限に抑えられるとは一概には言えません。<br>C:オフラインでも利用できる：クラウドサービスはインターネット接続を必要としており、基本的にオフラインでは利用できません。<br>E:ユーザー側に物理サーバーが必要である：クラウドコンピューティングはユーザーが物理サーバーを持つ必要はなく、リモートのデータセンターにあるリソースを利用します。'>
+<div class='choice'> OpExを最小限に抑えることができる</div>
+<div class='choice'> オンプレミス環境よりリソースを拡張するコストが低い</div>
+<div class='choice'> オフラインでも利用できる</div>
+<div class='choice'> 仮想化技術により複数のユーザーに同時にサービスを提供できる</div>
+<div class='choice'> ユーザー側に物理サーバーが必要である</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題34<br>あなたの組織では、Azure仮想マシンの実行が停止した場合に、自動的にアラートを作成しIT管理者に通知を送るようにしたいと考えています。<br>どのAzureサービスを使用するべきですか。' data-answer='2' data-explanation='Azure Monitor<br>説明<br>Azure Monitorは、Azureリソースのパフォーマンス、動作およびリソースの利用状況を監視するサービスです。仮想マシンなどのAzureリソースの可用性、パフォーマンスメトリクス、ログデータを収集し、これらのデータに基づいてアラートを設定し、問題発生時に通知を行います。Azure Monitorを使用することで、システムの健全性を継続的に監視し、問題発生時に迅速に対応できるようになります。<br>■その他の選択肢<br>A:Azure Service Healthは、Azureサービス全体の健康状態や障害情報を提供しますが、個別の仮想マシンの監視には用いられません。<br>B:Azure Firewallは、ネットワークトラフィックのフィルタリングと保護を提供するサービスですが、仮想マシンの実行状態の監視には使用されません。<br>D:Microsoft Sentinelは、クラウドネイティブのSIEMシステムであり、仮想マシンの実行状態の監視には使用されません。<br>複数の Azure 仮想マシンの可用性アラート ルールを作成する (プレビュー) - Azure Monitor'>
+<div class='choice'> Azure Service Health</div>
+<div class='choice'> Azure Firewall</div>
+<div class='choice'> Azure Monitor</div>
+<div class='choice'> Microsoft Sentinel</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題35<br>あなたの組織は、Azure上に複数のWebサーバーとデータベースサーバーのデプロイを計画しています。<br>デプロイ後、Webサーバーとデータベースサーバー間のトラフィックを制御する必要があります。<br>そのために最適な機能は何ですか。' data-answer='3' data-explanation='ネットワークセキュリティグループ（NSG）<br>説明<br>ネットワークセキュリティグループ（NSG）は、Azure内のリソース間のネットワークトラフィックを管理することができ、セキュリティ規則を通じて、どのトラフィックが許可され、どのトラフィックが拒否されるかを細かく指定できます。これによりAzure内のWebサーバーとデータベースサーバーの間の通信を厳格に制御し、セキュリティを高めることができます。<br>■その他の選択肢<br>A:ローカルネットワークゲートウェイは、オンプレミスネットワークとAzureの間のVPN接続に使用されますが、内部トラフィックの制御には適していません。<br>B:サイト間VPNは、異なるネットワーク間の安全な接続を確立するために使用されますが、特定のトラフィックの制御には適していません。<br>C:Azure AD Connectは、オンプレミスディレクトリとAzure ADの間のデータ同期に使用されますが、トラフィック制御には関連しません。'>
+<div class='choice'> ローカルネットワークゲートウェイ</div>
+<div class='choice'> サイト間VPN</div>
+<div class='choice'> Azure AD Connect</div>
+<div class='choice'> ネットワークセキュリティグループ（NSG）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題36<br>Azureの可用性ゾーンでは、どのような障害からサービスを保護できますか。' data-answer='3' data-explanation='データセンター規模の障害<br>説明<br>Azureの可用性ゾーンは、単一のリージョン内の複数の物理的に分離されたデータセンターです。各ゾーンは独立した電源、冷却、ネットワーキングを持っており、他のゾーンとは別々に運用されています。この設計により、ひとつのゾーンで障害が発生しても、他のゾーンに影響を与えずにサービスの可用性を維持できます。<br>可用性ゾーンは、データセンター規模の障害（例えば、特定の施設での電源や冷却の問題）からサービスを保護するために特に有効です。これにより、アプリケーションとデータの耐障害性が大幅に向上します。<br>■その他の選択肢<br>A:リージョン規模の障害：可用性ゾーンは、リージョン全体の障害から保護するものではありません。<br>B:ソフトウェアバグによる障害：可用性ゾーンは物理的な障害に対処するもので、ソフトウェアの問題は含まれません。<br>C:ユーザーエラーによる障害：可用性ゾーンはユーザーの誤操作から生じる障害を防ぐものではありません。'>
+<div class='choice'> リージョン規模の障害</div>
+<div class='choice'> ソフトウェアバグによる障害</div>
+<div class='choice'> ユーザーエラーによる障害</div>
+<div class='choice'> データセンター規模の障害</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題37<br>以下の要件を満たすAzureサービスは何ですか。<br>・マイクロコントローラユニット（MCU）でIoTデバイスを保護する<br>・カスタマイズされたLinuxベースのOSでデータ処理を行う' data-answer='1' data-explanation='Azure Sphere<br>説明<br>マイクロコントローラーユニット（MCU）は、小型のコンピュータチップの一種であり、特にIoTデバイスで使用されます。これはデバイスを制御し、データを処理するための心臓部として機能します。<br>Azure Sphereは、IoTデバイスのセキュリティを強化するためのMicrosoftのソリューションであり、以下の3つの主要なコンポーネントがあります。<br>１．セキュアなマイクロコントローラユニット（MCU）で、デバイスのハードウェアを保護する。<br>２．カスタマイズされたLinuxベースのOSで、安全な通信やデータの処理を行う。<br>３．クラウドベースのセキュリティサービスで、デバイスの継続的なセキュリティ更新や管理を行う。<br>Azure Sphereは、IoTデバイスのセキュリティを強化し、信頼できる接続を保証することを目的としています。<br>■その他の選択肢<br>A:Azure IoT Hubは、IoTデバイスからクラウドへの通信を管理しますが、MCUの提供やカスタマイズされたOSの機能は持っていません。<br>C:Azure AD Connectは、オンプレミスのActive DirectoryとAzure Active Directoryとの間で認証情報を同期するためのツールです。MCUの提供やカスタマイズされたOSの機能は持っていません。<br>D:Azure Key Vaultは、セキュアなキーストレージサービスを提供しますが、MCUやカスタマイズされたOSは含まれません。'>
+<div class='choice'> Azure IoT Hub</div>
+<div class='choice'> Azure Sphere</div>
+<div class='choice'> Azure AD Connect</div>
+<div class='choice'> Azure Key Vault</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題38<br>あなたは、アプリケーションの資格情報（データベースの接続文字列、APIキーなど）を効果的に管理したいと考えています。<br>資格情報を安全に保存し、それらを暗号化して保護するAzureサービスは何ですか。' data-answer='3' data-explanation='Azure Key Vault<br>説明<br>Azure Key Vaultは、暗号化キーやシークレット、証明書などの機密情報を安全に保存し、管理するためのクラウドベースのサービスです。アプリケーションの資格情報を中央で安全に管理し、アクセスを制御できます。これにより、ソースコードや設定ファイルに資格情報を直接保存するリスクを避けることができます。<br>Azure Key Vaultは、資格情報の暗号化とアクセス制御を提供し、必要に応じて資格情報のローテーションをサポートします。また、アクセス履歴や利用状況の監視も可能です。<br>■その他の選択肢<br>A:Azure ADは、アイデンティティとアクセス管理サービスですが、アプリケーションの資格情報を暗号化し、保存する目的には適していません。<br>B:BLOBストレージは、データの保存に使用されますが、特に資格情報の暗号化や管理のために設計されているわけではありません。<br>C:Azure Information Protectionは、データの分類と保護に焦点を当てていますが、アプリケーションの資格情報を管理するためのサービスではありません。<br>■用語解説<br>接続文字列：これはデータベースや他のリソースへの接続に必要な情報を含む文字列です。サーバーのアドレス、データベース名、認証情報など、接続に必要な詳細が組み込まれています。<br>API：API（Application Programming Interface）は、異なるソフトウェア間で情報のやり取りを可能にするルールやプロトコルのセットです。APIを使用することで、アプリケーションは他のサービスやアプリケーションの機能にアクセスし、データの交換や相互作用を行うことができます。例えば、ウェブサイトが外部の天気情報サービスのAPIを利用して、最新の天気情報を取得することができます。<br>APIキーは、外部サービスやAPIへのアクセスを認証するための長い文字列です。アプリケーションがAPIを利用する際、APIキーを使用することで、外部のAPIとの安全な通信とデータ交換が可能となります。'>
+<div class='choice'> Azure AD</div>
+<div class='choice'> BLOBストレージ</div>
+<div class='choice'> Azure Information Protection</div>
+<div class='choice'> Azure Key Vault</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題39<br>Azure Data Boxはどのようなサービスを提供しますか。' data-answer='0' data-explanation='物理デバイスを使用して大量のデータをオフラインでAzureに転送する<br>説明<br>Azure Data Boxでは、オフラインで安全かつ迅速に大量のデータをAzureに転送するための物理デバイスを提供します。これによりネットワーク制限や帯域幅の問題を回避しながら、大規模なデータセットをAzureに移行することができます。デバイスは頑丈で、セキュリティ対策が施されており、データは暗号化された状態で転送されます。<br>Azure Data Boxを使用するプロセスは、デバイスの注文、データのコピー、デバイスの返却、およびAzureへのデータのアップロードというステップから成ります。これにより、インターネット接続を使用せずに大量のデータを効率的にAzureに移行することが可能になります。<br>■その他の選択肢<br>B:オンプレミスのファイルサーバーとAzure Files間でファイルデータを同期する：これはAzure File Syncの機能に該当します。<br>C:オンプレミスとAzure間を専用のネットワーク接続を使用してデータ転送する：これはAzure ExpressRouteなどのサービスに該当します。<br>D:オンプレミスのアプリケーションの依存関係をマッピングし、Azureへの移行をサポートする：これはAzure Migrateの機能に該当します。'>
+<div class='choice'> 物理デバイスを使用して大量のデータをオフラインでAzureに転送する</div>
+<div class='choice'> オンプレミスのファイルサーバーとAzure Files間でファイルデータを同期する</div>
+<div class='choice'> オンプレミスとAzure間を専用のネットワーク接続を使用してデータ転送する</div>
+<div class='choice'> オンプレミスのアプリケーションの依存関係をマッピングし、Azureへの移行をサポートする</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題40<br>あなたは、組織で利用しているAzureリソースの設計や設定を、業界標準のベストプラクティスと比較し、リソースの最適化を図りたいと考えています。<br>そのために最適なサービスは何ですか。' data-answer='2' data-explanation='Azure Advisor<br>説明<br>Azure Advisorは、Azureの使用状況と構成に基づいてパフォーマンス、コスト、セキュリティ、サービスの可用性といった多様な側面でのベストプラクティスの推奨事項を提供する無料のサービスです。Azureリソースを最適化して運用を改善するためのアクション可能なガイダンスを提供し、組織がクラウドの投資からより多くの価値を得られるよう支援します。これには、リソースを適切にスケーリングしてコストを削減する方法、セキュリティを強化するための手順、および信頼性を向上させるための戦略等が含まれます。<br>■その他の選択肢<br>A:Azure Monitorは、リソースのパフォーマンスと正常性を監視するサービスです。ベストプラクティスの推奨事項を提供するものではありません。<br>B:Azure Log Analyticsは、データ収集と分析を行うサービスです。システムの監視とログデータの分析には役立ちますが、ベストプラクティスの推奨事項を提供するものではありません。<br>D:Cost Management and Billingは、Azureのコストを追跡し、予算を設定し、コストを最適化するためのツールです。設計や設定の最適化を行うものではありません。'>
+<div class='choice'> Azure Monitor</div>
+<div class='choice'> Azure Log Analytics</div>
+<div class='choice'> Azure Advisor</div>
+<div class='choice'> Cost Management and Billing</div>
+</div>
+
+
+            <!-- 他の問題も同様に追加 -->
+        </div>
+
+        <h2 id="question"></h2>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),  // innerHTMLに変更
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+            choicesContainer.innerHTML = '';
+
+            currentQuestion.choices.forEach((choice, i) => {
+                const li = document.createElement('li');
+                const input = document.createElement('input');
+                const label = document.createElement('label');
+
+                input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                input.name = 'choice';
+                input.value = choice.index;
+                input.id = 'choice' + i;
+
+                label.htmlFor = 'choice' + i;
+                label.innerHTML = choice.text;  // textContentをinnerHTMLに変更
+
+                li.appendChild(input);
+                li.appendChild(label);
+                choicesContainer.appendChild(li);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = Array.from(document.querySelectorAll('input[name="choice"]:checked'))
+                                        .map(checkbox => parseInt(checkbox.value))
+                                        .sort();
+            const resultElement = document.getElementById('result');
+            
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+                
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++; // 正解数をカウント
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            // クイズのUI全体を初期化
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            // 初期化後に最初の問題を表示
+            showQuestion();
+        }        
+    </script>
+</body>
+</html>
