@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='false' data-question='問題1<br>あるヘルスケアアプリケーションを提供する企業が、Azure Functionを使用してデータ処理を行っています。ユーザーがアップロードした健康データはAzure Blob StorageおよびAzure SQL Databaseに保存され、処理結果のレポートがユーザーにメールで送信されます。しかし、データ処理中に生成される大量のログメッセージが原因で、ログ容量の問題が発生しています。<br>ログの量を減らすためにはどのような対応が適切ですか。' data-answer='3' data-explanation='■正解：<br>D: ループを更新してアイテムを並列処理する<br>■解説<br>データ処理中に生成される大量のログメッセージが原因でログ容量の問題が発生している場合、Application Insightsのサンプリングを実装することで対応することができます。<br>Application Insightsは、アプリケーションのパフォーマンスや動作を監視するためのツールです。このツールは、アプリケーションが実行されている間に発生するさまざまなイベントやログを収集します。しかし、大規模なアプリケーションや多くのユーザーがアクセスするアプリケーションでは、収集されるデータが膨大な量になることがあります。これが「ログ容量の問題」です。<br>サンプリングとは、収集するデータの量を減らすための方法です。サンプリングを使うと、すべてのデータを収集するのではなく、一部のデータだけをランダムに選んで収集します。これにより、ログの量を減らし、コストを削減しながら、重要な情報を引き続き得ることができます。<br>サンプリングは、固定サンプリングとアダプティブサンプリングの2種類があり、それぞれの方法で効率的にデータを管理できます。<br>固定サンプリング:例えば、「すべてのリクエストのうち10%だけを記録する」という設定ができます。これにより、ランダムに選ばれた10%のリクエストだけがログとして記録されます。<br>アダプティブサンプリング:トラフィックの量に応じて、サンプリング率が自動的に調整されます。例えば、トラフィックが少ないときは多くのデータを記録し、トラフィックが多いときは記録するデータを減らします。<br>■その他の選択肢<br>ログの保存期間を延長する：ログの保存期間を延長することは、ログの量を減らすのではなく、むしろデータがより長期間保持されることを意味します。これはログ容量の問題を解決する手段にはなりません。<br>ログを外部ストレージに移動する：ログを外部ストレージに移動することは、一時的な容量問題の回避策にはなりますが、根本的なログの量を減らす解決策にはなりません。また、外部ストレージに移動することで新たなコストや管理の課題が発生する可能性があります。<br>ログレベルをDEBUGに変更する：ログレベルをDEBUGに変更することは、より詳細なログを取得するため、むしろログの量を増やす結果になります。これはログ容量の問題を悪化させるだけです。'>
+<div class='choice'  data-group='選択肢' >ログの保存期間を延長する</div>
+<div class='choice'  data-group='選択肢' >ログを外部ストレージに移動する</div>
+<div class='choice'  data-group='選択肢' >Application Insightsのサンプリングを実装する</div>
+<div class='choice'  data-group='選択肢' >ログレベルをDEBUGに変更する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題2<br>あなたは、オンライン小売業者のデータ管理システムを開発しています。顧客の注文情報や在庫情報をAzure Cosmos DBに保存し、顧客データの整合性を確保する必要があります。さらに、ARMテンプレートを使用して、リソースのデプロイメントに関する設定を行い、再試行ポリシーなどを構成します。ユーザーの認証情報からクレームオブジェクトを使用してデータにアクセスする必要もあります。<br>これら要件を満たすAzure Cosmos DBの整合性レベルならびにAPIは何ですか。' data-answer='1,3' data-explanation='■正解：<br>整合性レベル：B:厳密（Strong）<br>API：D:NoSQL<br>■解説<br>厳密（Strong Consistency）な整合性レベルは、データが書き込まれた後に即座に全てのクライアントに対して可視となり、一貫性の高いデータアクセスが保証されます。オンライン小売業者のシステムでは、顧客の注文情報や在庫情報の整合性が極めて重要であり、リアルタイムで正確なデータが必要です。そのため、厳密な整合性を選択することで、顧客に正確な情報を提供し、在庫管理を適切に行うことができます。<br>Azure Cosmos DBのNoSQL APIは、幅広い用途で使用される汎用的なデータベースAPIです。NoSQL APIは、スキーマレスで柔軟なデータモデルを提供し、高速なクエリ処理やトランザクションをサポートしています。顧客の注文情報や在庫情報の管理には、効率的でスケーラブルなデータベースが必要であり、NoSQL APIはその要件を満たします。'>
+<div class='choice'  data-group='整合性レベル' >最終的（Eventual）</div>
+<div class='choice'  data-group='整合性レベル' >厳密（Strong）</div>
+<div class='choice'  data-group='整合性レベル' >セッション（Session）</div>
+<div class='choice'  data-group='API：Apache Cassandra' >NoSQL</div>
+<div class='choice'  data-group='API：Apache Cassandra' >Apache Gremlin</div>
+<div class='choice'  data-group='API：Apache Cassandra' >MongoDB</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題3<br>あなたは、プロジェクト管理プラットフォームを開発しています。このプラットフォームは、チームメンバーがプロジェクトの進捗を追跡し、タスクを割り当て、ドキュメントを共有するために使用されます。このプラットフォームは、チームメンバーがプロジェクトの進捗を追跡し、タスクを割り当て、ドキュメントを共有するために使用されます。 各チームメンバーはMicrosoft Entra IDを通じて認証し、プロファイル情報や役割に基づいたアクセス権を持ちます。 また、プラットフォームはJWTトークンを使用して、セッション管理とクレームを取り扱います。<br>これら要件を満たすため、ユーザーの認証とプロファイル情報の取得には、どのコードライブラリとAPIを使用するのが最適ですか。' data-answer='1,2' data-explanation='■正解：<br>コードライブラリ：B:Microsoft Authentication Library (MSAL)<br>API：C:Microsoft Graph<br>■解説<br>説明<br>Microsoft Authentication Library (MSAL)は、アプリケーションがMicrosoft Entra IDおよびMicrosoftアカウントを使用して認証を行うためのライブラリです。MSALは、JWTトークンを取得し、そのトークンを使用してユーザーの属性や役割を取得するためのクレームを含んでいます。このトークンは、ユーザー認証やセッション管理に使用されます。MSALを使用することで、開発者はシングルサインオン(SSO)の機能や多要素認証(MFA)など、Azure ADの強力な認証機能を簡単にアプリケーションに統合できます。<br>Microsoft Graph APIは、Microsoft 365のデータにアクセスするための統合APIです。これにより、ユーザーのプロファイル情報、グループ、カレンダー、メールなどのリソースにアクセスできます。プロジェクト管理プラットフォームでは、ユーザーのプロファイル情報や役割に基づいてアクセス制御を行うためにMicrosoft Graphを使用します。このAPIは、広範なMicrosoftクラウドサービスにアクセスできるため、ユーザーのプロファイル情報やその他の関連データを一元的に取得しやすくなります。<br>この組み合わせにより、ユーザーはAzure ADを通じて認証され、Microsoft Graph APIを使用してプロファイル情報や役割を取得し、プロジェクト管理プラットフォームで適切なアクセス制御を行うことができます。これにより、シームレスなユーザー体験と強固なセキュリティを提供することが可能です。'>
+<div class='choice'  data-group='コードライブラリ' >Azure Identity library</div>
+<div class='choice'  data-group='コードライブラリ' >Microsoft Authentication Library (MSAL)</div>
+<div class='choice'  data-group='API' >Microsoft Graph</div>
+<div class='choice'  data-group='API' >Azure Key Vault</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題4<br>あなたは、オンラインヘルスケアサービスを提供する企業のシステム管理者です。企業はAzure Blob Storageに患者の診療データを保存しています。新たに契約したデータ分析パートナーが、このデータを3ヶ月間のプロジェクト期間中に読み取る必要があります。このアクセスは読み取り専用であり、安全に管理する必要があります。<br>データ分析パートナーに対して、患者の診療データへの読み取り専用アクセスを提供するために、どのアクセス方法を使用すべきですか。' data-answer='3' data-explanation='■正解：<br>D: 共有アクセス署名（SAS）<br>■解説<br>共有アクセス署名（Shared Access Signature: SAS）は、Azureのストレージリソースに対して限定的なアクセス権を提供するためのセキュリティ機能です。以下のポイントがSASトークンを選択する理由となります。<br>・限定的なアクセス権の付与：SASトークンを使用すると、特定のストレージリソース（Blob、キュー、ファイル、テーブル）に対して、読み取り、書き込み、削除などの操作を特定の時間枠内で許可できます。これにより、特定のデータ分析パートナーに対して3ヶ月間の読み取り専用アクセスを提供することが可能です。<br>・時間制限：SASトークンには有効期限を設定できるため、アクセスが必要な期間（この場合は3ヶ月）だけ有効にすることができます。有効期限が切れると、自動的にアクセスが無効になります。<br>・最小限の権限：必要最低限の権限のみを付与することで、セキュリティリスクを最小化できます。具体的には、読み取り専用の権限を付与することで、データの不正な変更や削除を防止できます。<br>・簡単な管理：SASトークンを生成して提供するプロセスは簡単で、Azureポータル、Azure CLI、Azure PowerShellなどのツールを使用して管理できます。<br>SASトークンを使用することで、セキュリティを確保しつつ、データ分析パートナーに対して必要なアクセスを柔軟に提供できます。'>
+<div class='choice'  data-group='選択肢' >アクセス トークン</div>
+<div class='choice'  data-group='選択肢' >リフレッシュトークン</div>
+<div class='choice'  data-group='選択肢' >Azure RBACロール</div>
+<div class='choice'  data-group='選択肢' >共有アクセス署名（SAS）</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題5<br>あなたは、グローバルに展開するオンライン教育プラットフォームを開発しています。このプラットフォームは学生や講師が講義動画や資料にアクセスし、相互にやり取りすることができます。プラットフォームはReactを使用して構築され、Azure上でホスティングされています。すべてのページとAPIエンドポイントには認証が必要です。 また以下の要件を満たす必要があります。<br>・ウェブサイトは高可用性を確保するため、複数の地域で稼働する<br>・学生と講師の通信を暗号化するため、SSL証明書を使用する<br>これら要件を満たすSSL証明書ならびにプロキシタイプは何が適切ですか。' data-answer='0,3' data-explanation='■正解：<br>SSL証明書：A:有効なルート証明書<br>プロキシタイプ：D:Azure Application Gateway<br>■解説<br>オンライン教育プラットフォームを開発する際に、学生や講師が安全にアクセスできるようにするために、以下の要件を満たす必要があります。<br>有効なルート証明書は、信頼できる認証局（CA）から発行された証明書です。この証明書はブラウザやクライアントによって自動的に信頼されるため、ユーザーはウェブサイトが安全であると確信できます。自己署名証明書は信頼されず、セキュリティ警告が表示されるため、本番環境では適していません。<br>Azure Application Gatewayは、以下の理由から適しています。<br>・高可用性の確保：Application GatewayはAzureのリージョン間で冗長化されており、一つのリージョンで障害が発生しても他のリージョンでサービスが継続されます。<br>・Webアプリケーションファイアウォール（WAF）のサポート：Application GatewayにはWAFが組み込まれており、ウェブアプリケーションに対する攻撃を防御する機能があります。<br>・SSL証明書の管理：Application GatewayはSSL証明書を簡単に管理し、SSL終了を行うことで、バックエンドサーバーへの負荷を軽減できます。<br>この組み合わせにより、オンライン教育プラットフォームは学生と講師が安全かつ信頼できる環境で使用することができます。'>
+<div class='choice'  data-group='SSL証明書' >有効なルート証明書</div>
+<div class='choice'  data-group='SSL証明書' >自己署名証明書</div>
+<div class='choice'  data-group='プロキシタイプ' >nginx</div>
+<div class='choice'  data-group='プロキシタイプ' >Azure Application Gateway</div>
+<div class='choice'  data-group='プロキシタイプ' >nginx</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題6<br>あなたは、大手物流会社のIT部門で働いています。会社は、コンテナの情報をリアルタイムで追跡するシステムをAzureで開発しています。 このシステムは、複数の地域で稼働し、各地の配送センターと連携します。システムは、業界標準プロトコルX12を使用してコンテナの詳細を処理し、すべてのリソースを企業のVNetにセキュアに保つ必要があります。<br>また、コストを最小限に抑えるため、固定コストモデルの専用ストレージリソースを使用します。 これら要件を満たすサービスは何ですか。' data-answer='1' data-explanation='■正解：<br>B:統合サービス環境 (ISE)<br>■解説<br>統合サービス環境 (ISE) は、Azure Logic Apps を仮想ネットワーク (VNet) 内にデプロイするための専用環境を提供するサービスです。ISE は、以下の要件を満たすために最適です。<br>・セキュリティ：ISE を使用すると、Logic Apps を企業の VNet 内で稼働させることができ、リソースがセキュアに保たれます。<br>・コスト管理：ISE は固定コストモデルを提供し、予測可能な料金体系を実現します。<br>・業界標準プロトコルのサポート：ISE は、X12 などの業界標準プロトコルをサポートしています。<br>ISE は、高セキュリティ、予測可能なコスト、および業界標準プロトコルのサポートを必要とするシナリオに最適です。ISE を利用することで、物流会社のシステムはセキュアに運用され、コストを最小限に抑えることができます。'>
+<div class='choice'  data-group='選択肢' >Azure App Service Environment (ASE)</div>
+<div class='choice'  data-group='選択肢' >統合サービス環境 (ISE)</div>
+<div class='choice'  data-group='選択肢' >仮想ネットワーク (VNet) サービス エンドポイント</div>
+<div class='choice'  data-group='選択肢' >Microsoft Entra B2B の統合</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題7<br>あなたは、大規模なeコマースプラットフォームの開発を担当しています。このプラットフォームでは、ユーザーが商品を購入し、レビューを投稿することができます。プラットフォームは、購入およびレビューに関する大量のデータを処理する必要があり、特定のプロモーション期間中にはトラフィックが急増します。これらの期間中にシステムが自動的にスケールするために、リアルタイムでメトリックデータを収集し、適切なスケーリングを行う必要があります。<br>eコマースプラットフォームのスケーリング要件を満たすために、どのAzure Application Insightsデータモデルを使用するべきですか。' data-answer='0' data-explanation='■正解：<br>A:Application Insightsメトリック<br>■解説<br>Azure Application Insightsのメトリックは、リアルタイムでシステムのパフォーマンスや使用状況をモニタリングするために使用されます。メトリックデータは、システムのスケーリングやパフォーマンス最適化のための重要な情報を提供します。以下のような特性があります。<br>・リアルタイム監視：メトリックはリアルタイムで収集され、システムの現在の状態を反映します。これにより、プロモーション期間中のトラフィック急増に迅速に対応できます。<br>・スケーリングの基準：自動スケーリングを設定する際に、CPU使用率やメモリ使用量などのメトリックを基準にすることができます。これにより、需要に応じたスケーリングが可能です。<br>これにより、システムのスケーリングのためにはリアルタイムのメトリックデータが必要であることが明確です。この要件を満たすためには、Application Insightsメトリックが最適です。'>
+<div class='choice'  data-group='選択肢' >Application Insightsメトリック</div>
+<div class='choice'  data-group='選択肢' >Application Insightsイベント</div>
+<div class='choice'  data-group='選択肢' >Application Insightsトレース</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題8<br>あなたは、医療データ管理システムを開発しています。 このシステムでは、患者の診療データを非リレーショナルなJSON形式で保存し、SQLを使用してクエリします。 データの変更は即時に全てのパーティションに反映される必要があります。また、外部パートナー（医療研究機関）は自分の組織の認証管理ソリューションを使用して認証し、システム内のデータにアクセスできるようにする必要があります。 あなたは、Azure環境への初期のシステム配置後に、ワークフローを実行したところ、タイムアウトによって定期的に失敗することに気づきました。<br>どのような対応が適切ですか。（２つ選択）' data-answer='0,1' data-explanation='■正解：<br>A: ワークフローの実行履歴を確認する<br>B: ワークフローのトリガー履歴を確認する<br>■解説<br>ワークフローの実行履歴を確認する: Azure Logic Appsを使用する場合、ワークフローの実行履歴を確認することで、どのステップで問題が発生しているかを特定することができます。実行履歴には、各アクションの詳細が含まれており、エラーやタイムアウトの原因を特定するために重要です。実行履歴の確認は、ワークフローのトラブルシューティングにおいて最初に行うべき重要なステップです。<br>ワークフローのトリガー履歴を確認する: トリガー履歴を確認することで、ワークフローがどのようにトリガーされているか、トリガーが適切に機能しているかどうかを確認できます。トリガーに問題がある場合、ワークフローが開始されない、または正しいデータで実行されない可能性があります。<br>これらの手順により、具体的なエラーの原因を特定し、適切な対策を講じることが可能となります。例えば、特定のAPI呼び出しがタイムアウトしている場合、そのAPIのパフォーマンスを向上させるための対策や、リトライポリシーを設定することが考えられます。'>
+<div class='choice'  data-group='選択肢' >ワークフローの実行履歴を確認する</div>
+<div class='choice'  data-group='選択肢' >ワークフローのトリガー履歴を確認する</div>
+<div class='choice'  data-group='選択肢' >ワークフローの実行頻度を増やす</div>
+<div class='choice'  data-group='選択肢' >クエリのパフォーマンスチューニングを行う</div>
+<div class='choice'  data-group='選択肢' >システムの再起動を試みる</div>
+<div class='choice'  data-group='選択肢' >ワークフローの実行を手動でトリガーする</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題9<br>あなたは、大手製造業界のIT部門で働いています。 製造プロセスの監視と管理を行うためのシステムをAzureに移行するプロジェクトを担当しています。 このシステムには、オンプレミスのデータベースとレガシーアプリケーションが含まれており、これらは依然として製造ラインの重要なデータを処理しています。 レガシーアプリケーションとデータベースをAzureに移行する計画ですが、移行が完了するまでの間、オンプレミス環境との接続を維持する必要があります。<br>そのためには、どのソリューションを使用するべきですか。' data-answer='3' data-explanation='■正解：<br>D:オンプレミス データ ゲートウェイ<br>■解説<br>オンプレミス データ ゲートウェイは、オンプレミス環境とAzureサービス間の安全なデータ転送を可能にするソリューションです。このゲートウェイを使用することで、オンプレミスのデータベースやレガシーアプリケーションに接続しながら、Azure上のクラウドサービスとシームレスに連携することができます。具体的には、以下の特徴を有しています。<br>1.安全なデータ転送：オンプレミス データ ゲートウェイは、オンプレミスのデータベースやアプリケーションに対する安全な接続を提供し、データを暗号化してAzureサービスに転送します。<br>2.継続的な接続：移行期間中も、オンプレミス環境との接続を維持する必要がある場合、オンプレミス データ ゲートウェイはその要件を満たします。これにより、システムのダウンタイムを最小限に抑えつつ、クラウドへの移行が可能です。<br>3.柔軟性：オンプレミス データ ゲートウェイは、Azure Logic Apps、Power BI、Power Automateなど、複数のAzureサービスと連携できるため、データの統合と処理の柔軟性を提供します。'>
+<div class='choice'  data-group='選択肢' >Microsoft Entra アプリケーション プロキシ</div>
+<div class='choice'  data-group='選択肢' >Azure Private Link</div>
+<div class='choice'  data-group='選択肢' >サイト間 VPN 接続</div>
+<div class='choice'  data-group='選択肢' >オンプレミス データ ゲートウェイ</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題10<br>あなたは、グローバルeコマースプラットフォームを開発するチームのメンバーです。このプラットフォームでは、ユーザーが商品を購入し、レビューを投稿することができます。プラットフォームは、購入やレビューに関する大量のデータを処理し、特定のプロモーション期間中にはトラフィックが急増することが見込まれています。<br>このプラットフォームは、以下の要件を満たす必要があります。<br>・すべてのAzureサービスのコストを最小限に抑える。<br>・すべてのウェブサイトおよびサービスは有効なルート証明書機関からのSSLを使用する必要がある。<br>・プロモーション期間中のトラフィックの急増に対応するために、リアルタイムでメトリックデータを収集し、適切なスケーリングを行う。<br>これら要件を満たすために、どのAzure Functionsのホスティングモデルを使用すべきですか。' data-answer='2' data-explanation='■正解：<br>C: 従量課金プラン<br>■解説<br>設問の要件を満たすAzure Functionsのホスティングプランは、従量課金プランです。従量課金プランは、実行された関数の回数と実行時間に基づいて課金されるため、他のプランと比較してコスト効率が高いAzure Functionsのプランです。また、従量課金プランは自動的にスケールアウトし、トラフィックの急増に対応できるため、プロモーション期間中でもサービスを継続的に提供できます。'>
+<div class='choice'  data-group='選択肢' >専用プラン</div>
+<div class='choice'  data-group='選択肢' >Premium プラン</div>
+<div class='choice'  data-group='選択肢' >従量課金プラン</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題11<br>あなたは、グローバルな非営利組織のITマネージャーです。 この組織は、世界中の支援者と連携して、さまざまなプロジェクトを実施しています。現在、新しい寄付プラットフォームを開発しており、グローバルなユーザーが簡単に寄付できるようにする必要があります。 プラットフォームは、React JavaScriptを使用したユーザーインターフェースやHTML、CSS、画像アセット、さらにはAzure FunctionsにホスティングされたいくつかのAPIを利用して構築される予定です。 また、99.95%のアップタイムを達成する必要があります。<br>どのようなサービスおよびプランを選択すべきですか。 コストを最小限に抑えた選択肢を選んでください。' data-answer='0' data-explanation='■正解：<br>A: Azure App ServiceのStandardプランを選択して、App Service Web Appを使用する<br>■解説<br>設問の要件を満たすサービスならびにプランは以下の通りです。<br>Standardプランは、コスト効率が良いプランです。PremiumプランやIsolatedプランと比較して、必要な機能を提供しつつ、コストを抑えることができます。またStandardプランは、99.95%のアップタイムを提供できます。この要件は、選択肢のAとBの両方で満たすことができますが、コストを考慮するとStandardプランが適しています。<br>App Service Web Appは、動的コンテンツ（React JavaScript、HTML、CSS、画像アセット、API）を効率的にホスティングするのに適しています。Static Web Appは主に静的コンテンツに最適化されているため、動的なAPIホスティングにはWeb Appがより適しています。また、App Service Web Appは、SSL証明書を簡単に設定してウェブサイトのセキュリティを確保できます。'>
+<div class='choice'  data-group='選択肢' >Azure App ServiceのStandardプランを選択して、App Service Web Appを使用する</div>
+<div class='choice'  data-group='選択肢' >Azure App ServiceのPremiumプランを選択して、App Service Web Appを使用する</div>
+<div class='choice'  data-group='選択肢' >Azure App ServiceのPremiumプランを選択して、App Service Static Web Appを使用する</div>
+<div class='choice'  data-group='選択肢' >Azure App ServiceのStandardプランを選択して、App Service Static Web Appを使用する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題12<br>あなたは、グローバルに展開する小売企業のIT管理者です。 この企業は数千の小売店舗をサポートしており、各店舗からのデータは毎時間Azure Blob Storageに送信されます。これらのデータは在庫管理や購入、配送サービスを支えるために使用されます。 最近、誤ってデータが削除されてしまい、そのデータを特定の時点に復元する必要がありました。今後、誤って削除されたデータを特定の時点に復元するために、Azure Blob Storageで有効にするべき機能は何ですか。 各選択肢は解決策の一部です。（３つ選択）' data-answer='1,2,3' data-explanation='■正解：<br>B: 論理的な削除<br>C: 変更フィード<br>D: バージョン管理<br>■解説<br>論理的な削除（Soft Delete）：Azure Blob Storageの論理的な削除機能は、誤って削除されたデータを復元するために使用されます。これにより、指定された保持期間内に削除されたブロブを簡単に復元できます。この機能は、誤った削除からデータを保護し、迅速に復元するための重要な手段です。<br>変更フィード（Change Feed）：変更フィードは、Azure Blob Storageのすべての書き込み操作と削除操作を記録します。これにより、データの変更履歴を追跡し、特定の時点のデータ状態を再構築するのに役立ちます。この機能は、データのタイムラインを把握し、必要な復元操作を支援します。<br>バージョン管理（Versioning）：バージョン管理は、ブロブの異なるバージョンを保持し、任意の過去のバージョンに戻すことができます。これにより、特定の時点におけるデータの状態を簡単に復元できます。誤った更新や削除が発生した場合、以前のバージョンに戻すことができるため、データの一貫性と可用性を維持するのに役立ちます。<br>これらの機能を組み合わせて使用することで、データの復元や誤った削除への対応が効率的に行うことができます。'>
+<div class='choice'  data-group='選択肢' >ライフサイクル管理</div>
+<div class='choice'  data-group='選択肢' >論理的な削除</div>
+<div class='choice'  data-group='選択肢' >変更フィード</div>
+<div class='choice'  data-group='選択肢' >バージョン管理</div>
+<div class='choice'  data-group='選択肢' >スナップショット</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題13<br>あなたは、国際的なマーケティング会社のITディレクターです。会社は新しい広告キャンペーンの管理システムを開発しており、毎時間数百万のユーザーインタラクションデータを収集しています。これらのデータは、マーケティング部門、分析部門、営業部門など、複数の部門からアクセスされる必要があり、ユーザーの応答が失われることなく、常に利用可能でなければなりません。どのAzureサービスを使用すべきですか。' data-answer='1' data-explanation='■正解：<br>B:Azure Event Hub<br>■解説<br>国際的なマーケティング会社のITディレクターとして、新しい広告キャンペーン管理システムで毎時間数百万のユーザーインタラクションデータを収集し、それらのデータを複数の部門からアクセス可能にするためには、Azure Event Hubを使用するのが最適です。Azure Event Hubは、大規模なデータストリーム処理を行うためのAzureサービスであり、特にリアルタイムのデータ収集と分析に適しています。<br>具体的には、以下のような特徴があります。<br>・大規模データ処理：Azure Event Hubは、毎秒数百万のイベントを処理できるように設計されています。これにより、ユーザーインタラクションデータをリアルタイムで収集し、迅速に処理することが可能です。<br>・データの信頼性：データの耐久性と可用性が保証されており、ユーザーの応答が失われることなく、安全にデータを管理できます。<br>・複数の消費者からのアクセス：イベントストリームを複数の消費者がリアルタイムで処理できるため、マーケティング部門、分析部門、営業部門など、複数の部門が同時にデータにアクセスし、利用することができます。<br>・スケーラビリティ：イベントハブは、自動的にスケールアウトできるため、急増するデータ量にも対応できます。これにより、広告キャンペーンのピーク時にも効率的にデータを処理できます。<br>これらの機能により、データの信頼性と可用性が確保され、各部門が効率的にデータを利用することができます。'>
+<div class='choice'  data-group='選択肢' >Azure Arc</div>
+<div class='choice'  data-group='選択肢' >Azure Event Hub</div>
+<div class='choice'  data-group='選択肢' >Azure Service Bus</div>
+<div class='choice'  data-group='選択肢' >Azure Event Grid</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題14<br>あなたは、グローバルな教育機関のITマネージャーです。この機関は、オンライン教育プラットフォームを提供しており、世界中の学生がアクセスしています。プラットフォームは、高可用性とセキュリティを確保しながら、ストレージコストを最小限に抑える必要があります。以下の要件を満たす必要があります。<br>・教育資料や学生データは、安全かつ効率的に保存する<br>・データは複数の地域にレプリケートされ、最低でも3つのアベイラビリティゾーンにわたって高可用性を確保する<br>・データストレージとホスティングのコストを最小限に抑える<br>これら要件を満たすため、どのストレージアカウントならびに冗長オプションを選択するべきですか。' data-answer='1,4' data-explanation='■正解：<br>アカウント: B:Standard 汎用 v2<br>冗長性: E:geo ゾーン冗長ストレージ (GZRS)<br>■解説<br>アカウントの種類: Standard 汎用 v2<br>Standard 汎用 v2アカウントは、最新のストレージ機能を提供し、ブロブ、ファイル、キュー、テーブルなど、すべてのAzure Storageサービスをサポートします。このアカウントタイプは、低コストで高性能なストレージオプションを提供し、標準の汎用v1よりも多くの機能とオプションを持っています。特に、データアクセス頻度に応じた料金体系を提供し、ストレージコストを最適化します。<br>冗長性: geo ゾーン冗長ストレージ (GZRS)<br>geo ゾーン冗長ストレージ (GZRS)は、データを複数のAzureリージョンにわたってレプリケートし、さらに各リージョン内で複数のアベイラビリティゾーンに分散します。これにより、地理的な災害やゾーン単位の障害からのデータ保護を提供し、万が一の災害時にもデータが失われるリスクを最小限に抑えることができます。'>
+<div class='choice'  data-group='アカウント' >Standard 汎用 v1</div>
+<div class='choice'  data-group='アカウント' >Standard 汎用 v2</div>
+<div class='choice'  data-group='アカウント' >BlobStorage</div>
+<div class='choice'  data-group='冗長性' >読み取りアクセス geo 冗長ストレージ (RA-GRS)</div>
+<div class='choice'  data-group='冗長性' >geo ゾーン冗長ストレージ (GZRS)</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題15<br>あなたは、グローバルに展開するニュース配信サービスのシステムエンジニアです。 リアルタイムで速報をユーザーに通知するため、Azure Functionsを使用したシステムを運用しています。 しかし、利用者が多い時間帯に通知が遅れるという問題が発生しています。 通知の遅延を解消し、迅速にユーザーに情報を届けるための設定を検討する必要があります。<br>通知の遅延を最小限にするために、どの設定を行うべきですか。（2つ選択）' data-answer='0,2' data-explanation='■正解：<br>A:Azure Functionsの「Always On」をtrueに設定する<br>C:Azure FunctionsのApp Serviceプランを選択する<br>■解説<br>Azure Functionsの「Always On」をtrueに設定する：「Always On」設定を有効にすることで、Azure Functionsがアイドル状態になった場合でもスリープせずに常にアクティブな状態を維持します。これにより、関数がすぐにリクエストに応答でき、コールドスタートによる遅延が発生しなくなります。<br>Azure FunctionsのApp Serviceプランを選択する：App Serviceプランを使用すると、Azure Functionsが専用のリソースを持つことができ、より高いパフォーマンスと信頼性を提供します。これにより、利用者が多い時間帯でも安定した動作が可能になり、遅延が最小限に抑えられます。従量課金プランはコールドスタートの問題があり、これが遅延の原因となることがあります。<br>Azure Functions Always On<br>Azure Functions Premium Plan'>
+<div class='choice'  data-group='選択肢' >Azure Functionsの「Always On」をtrueに設定する</div>
+<div class='choice'  data-group='選択肢' >Azure Functionsの「Always On」をfalseに設定する</div>
+<div class='choice'  data-group='選択肢' >Azure FunctionsのApp Serviceプランを選択する</div>
+<div class='choice'  data-group='選択肢' >Azure Functionsの従量課金プランを選択する</div>
+<div class='choice'  data-group='選択肢' >通知の遅延を許容するために通知の優先度を下げる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題16<br>あなたは、グローバルに展開するeコマースプラットフォームのシステムエンジニアです。このプラットフォームでは、ユーザーが購入した商品の領収書をアップロードし、その処理結果をメールで受け取ります。領収書の処理はAzure Blob Storageを使用して行われますが、複数のユーザーが同時に領収書をアップロードすることがあります。このため、並行処理の問題が発生しないようにする必要があります。<br>領収書の並行処理を防ぐために、どのAzure Blob Storage機能を使用すべきですか。' data-answer='0' data-explanation='■正解：<br>A: リース<br>■解説<br>Azure Blob Storageのリース(Lease)機能は、特定のブロブに対して排他的なアクセスを提供します。これにより、複数のプロセスが同時に同じブロブを変更することを防ぎ、並行処理の問題を解決することができます。リース機能を使用することで、並行処理が原因で発生するデータの競合や不整合を防ぐことができます。<br>リース機能を使用すると、以下の利点があります。<br>・排他ロック：リースを取得すると、他のクライアントが同じブロブにアクセスできなくなり、競合を防ぐことができます。<br>・安定したデータ処理：データの整合性を維持し、複数のプロセスが同時に同じデータを処理することによる問題を回避できます。'>
+<div class='choice'  data-group='選択肢' >リース</div>
+<div class='choice'  data-group='選択肢' >プロパティ</div>
+<div class='choice'  data-group='選択肢' >メタデータ</div>
+<div class='choice'  data-group='選択肢' >スナップショット</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題17<br>あなたは、医療データ管理システムの開発を担当するITディレクターです。 このシステムでは、医療従事者が患者データをアップロードし、その処理結果を即座に確認することができます。 最近、システムにエラーが発生し、データ処理が遅延するという報告がありました。 エラー発生時に迅速に対応するために、Azure Functionsのパフォーマンスとエラーをリアルタイムで監視する方法を検討しています。<br>どの設定を行うべきですか。' data-answer='1' data-explanation='■正解：<br>B:Azure FunctionsのライブメトリクスストリームをApplication Insightsに接続して、メトリクスをフィルタリングする<br>■解説<br>Azure Functionsのパフォーマンスとエラーをリアルタイムで監視するためには、ライブメトリクスストリームを使用することが最適です。Azure FunctionsのライブメトリクスストリームをApplication Insightsに接続すると、次の利点があります。<br>・リアルタイム監視：リアルタイムで関数アプリのパフォーマンスデータを確認でき、遅延やエラーの発生を即座に検出して対応できます。<br>・詳細なフィルタリング：メトリクスをフィルタリングすることで、特定のエラーやパフォーマンスの問題を迅速に特定し、トラブルシューティングが容易になります。<br>これにより、エラーやパフォーマンスの問題が発生した際に即座に対応することができ、Azure Functionアプリのパフォーマンスとエラーに関するメトリクスをリアルタイムで監視できます。'>
+<div class='choice'  data-group='選択肢' >Azure Functionsの常時接続（Always On）をtrueに設定する</div>
+<div class='choice'  data-group='選択肢' >Azure FunctionsのライブメトリクスストリームをApplication Insightsに接続して、メトリクスをフィルタリングする</div>
+<div class='choice'  data-group='選択肢' >Azure Functionsの診断設定を変更して、ログをLog Analyticsに送信する</div>
+<div class='choice'  data-group='選択肢' >Azure FunctionsのApp Serviceプランを選択する</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

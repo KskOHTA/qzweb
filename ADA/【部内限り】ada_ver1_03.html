@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='false' data-question='問題35<br>共有アクセス署名 (SAS) の有効期限を設定する目的は何ですか。' data-answer='1' data-explanation='■正解：<br>B:一時的なアクセス権限を提供し、セキュリティを強化するため<br>■解説<br>共有アクセス署名 (SAS) は、Azure Storageサービスに対して、限定的なアクセス権を時間限定で提供するための仕組みです。これにより、ストレージアカウントのキーを共有せずに、外部のユーザーやサービスに対して、特定のリソースへのアクセスを許可することができます。SASはURLパラメータとして提供され、このURLを持つ人は設定された条件と期間内でリソースにアクセスできます。<br>SASの主な機能と利点は、以下の通りです。<br>・限定的なアクセス：SASを使用すると、読み取り、書き込み、削除など、リソースに対する特定の操作のみを許可できます。これにより、必要最小限の権限を提供することが可能になり、セキュリティを強化します。<br>・有効期限の設定：SASトークンには開始日時と終了日時を設定できます。有効期限が過ぎると、トークンは自動的に無効になり、アクセスは拒否されます。これにより、一時的なアクセス権限を安全に提供することができます。<br>・IPアドレスによる制限：SASトークンの使用を特定のIPアドレスからのアクセスに限定することができます。これにより、さらにアクセス制御を強化することが可能です。<br>・プロトコルによる制限：HTTPSプロトコルを使用したアクセスのみを許可することで、データの安全な転送を保証します。'>
+<div class='choice'  data-group='選択肢' >SASトークンのサイズを小さくするため</div>
+<div class='choice'  data-group='選択肢' >一時的なアクセス権限を提供し、セキュリティを強化するため</div>
+<div class='choice'  data-group='選択肢' >アクセスログを自動的に生成するため</div>
+<div class='choice'  data-group='選択肢' >SASトークンの使用後に自動的にリソースを削除するため</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題36<br>共有アクセス署名 (SAS) のうち、ストレージアカウント内の複数のサービスにわたるリソースへのアクセスを委任できるのはどれですか。' data-answer='2' data-explanation='■正解：<br>C:アカウント SAS<br>■解説<br>共有アクセス署名（SAS）は、Azure Storageサービス（Blob、Queue、Table、File）に対するセキュアなアクセス権を限定的に提供するための方法です。SASを使用することで、ストレージアカウントのキーを公開することなく、特定のリソースへのアクセスを細かく制御できます。SASはURLの一部として提供され、このURLを持つユーザーは設定された条件下でのみリソースにアクセスできます。<br>アカウント SASは、ストレージアカウント内の複数のサービス（Blob、Queue、Table、Fileサービス全て）にわたるリソースへのアクセス権を提供します。これにより、ストレージアカウント内の複数のリソースタイプに対して広範囲のアクセス権を委任できるため、ストレージアカウントレベルでのアクセス制御が可能になります。アカウントSASは、ストレージアカウントのキーを使用して生成され、さまざまなサービスや操作に対する権限をカスタマイズできます。'>
+<div class='choice'  data-group='選択肢' >ユーザー委任 SAS</div>
+<div class='choice'  data-group='選択肢' >サービス SAS</div>
+<div class='choice'  data-group='選択肢' >アカウント SAS</div>
+<div class='choice'  data-group='選択肢' >上記すべてのSAS</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題37<br>共有アクセス署名 (SAS) のうち、特定のストレージサービスレベルでのリソースへのアクセスを提供するのはどれですか。' data-answer='1' data-explanation='■正解：<br>B:サービス SAS<br>■解説<br>サービス SASは、特定のサービス（Blob、Queue、Table、Fileのいずれか）内の特定のリソースに対するアクセス権を提供します。これにより、単一のBlobやコンテナ、キュー、テーブル、ファイルなど、特定のリソースへの細かなアクセス制御が可能になります。サービス SASは、リソースレベルでアクセスポリシーを設定することにより生成され、リソースに対する特定の操作（読み取り、書き込み、削除など）を許可または制限できます。'>
+<div class='choice'  data-group='選択肢' >ユーザー委任 SAS</div>
+<div class='choice'  data-group='選択肢' >サービス SAS</div>
+<div class='choice'  data-group='選択肢' >アカウント SAS</div>
+<div class='choice'  data-group='選択肢' >上記すべてのSAS</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題38<br>共有アクセス署名 (SAS) のうち、Azure AD 認証を使用して取得し、Blobやファイルサービスのリソースへのアクセス権を提供するのはどれですか。' data-answer='0' data-explanation='■正解：<br>A:ユーザー委任 SAS<br>■解説<br>ユーザー委任 SASは、特にAzure Blob StorageおよびAzure File Storageに対して使用されます。Azure Active Directory (Azure AD) の認証と承認を使用して取得され、Blobやファイルサービスのリソースへのアクセスを許可します。この種類のSASは、Azure ADのセキュリティ機能を活用し、よりセキュアなアクセス制御が可能です。ユーザー委任SASは、ユーザーやアプリケーションのアイデンティティに基づいてアクセス権を委任できるため、特定のユーザーが行う操作に対して細かいアクセス許可を設定できます。'>
+<div class='choice'  data-group='選択肢' >ユーザー委任 SAS</div>
+<div class='choice'  data-group='選択肢' >サービス SAS</div>
+<div class='choice'  data-group='選択肢' >アカウント SAS</div>
+<div class='choice'  data-group='選択肢' >上記すべてのSAS</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題39<br>”保存されているアクセスポリシー”（Stored Access Policy）を使用する主な目的は何ですか。' data-answer='3' data-explanation='■正解：<br>D:複数の共有アクセス署名（SAS）に一貫したアクセス権限を設定する<br>■解説<br>保存されているアクセスポリシー（Stored Access Policy）は、Azure Storageで共有アクセス署名（SAS）の使用をより細かく制御するための方法です。これを使用すると、複数のSASに対してアクセス権限、有効期限、およびIPアドレス制限などの条件を一括で管理できます。これにより、セキュリティを強化し、アクセスポリシーの変更が必要になった場合に、個々のSASを再発行することなく、中央で管理しやすくなります。<br>・アクセス権限の集中管理：特定のコンテナ、キュー、テーブル、またはファイル共有に対して、一貫したアクセスポリシーを適用できます。これにより、複数のSASトークンに対して同じアクセス権限セットを簡単に適用することができます。<br>・有効期限と開始時刻の設定：ポリシーでは、SASトークンの有効期限と開始時刻を設定できます。これにより、アクセスの開始と終了を正確に制御することができ、セキュリティを強化します。<br>・アクセス権限の変更と無効化：保存されているアクセスポリシーを変更または削除することで、関連するすべてのSASトークンのアクセス権限を変更または無効化できます。これにより、セキュリティ侵害のリスクが発生した場合に迅速に対応することが可能です。<br>・柔軟性の向上：SASトークンを個別に管理する代わりに、保存されているアクセスポリシーを使用することで、アクセス要件が変更された場合に柔軟に対応できます。ポリシーを更新するだけで、関連するすべてのSASトークンの権限を調整できます。'>
+<div class='choice'  data-group='選択肢' >データの暗号化レベルを設定する</div>
+<div class='choice'  data-group='選択肢' >ストレージアカウントのパフォーマンスを向上させる</div>
+<div class='choice'  data-group='選択肢' >ストレージアカウントの料金を削減する</div>
+<div class='choice'  data-group='選択肢' >複数の共有アクセス署名（SAS）に一貫したアクセス権限を設定する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題40<br>Microsoft Graphを使用する主な目的は何ですか' data-answer='2' data-explanation='■正解：<br>C:クラウドベースのサービスを統合し、豊富なデータアクセスと操作機能を提供する<br>■解説<br>Microsoft Graphは、Microsoft 365のサービスとアプリケーションを結びつける強力なAPIです。これは、開発者がMicrosoftのクラウドサービスから豊富なリソースにアクセスできるようにするための統一的なプログラミングインターフェースを提供します。Office 365、Enterprise Mobility + Security (EMS)、Windows 10、さらには教育用のMicrosoftサービスなど、Microsoftのクラウドプラットフォーム全体にわたるデータとインサイトにアクセス可能です。<br>Microsoft Graphの主な機能は以下の通りです。<br>・豊富なデータアクセス：Microsoft Graphを使用すると、ユーザー、グループ、メール、カレンダー、ファイル、タスク、チーム、教育機関の情報など、Microsoft 365の幅広いデータにアクセスできます。<br>・複数のサービス間の統合：異なるMicrosoftサービス間でのデータのシームレスな共有と操作が可能になり、開発者は複数のAPIにわたって一貫した経験を提供できます。<br>・セキュリティとコンプライアンス：Microsoft Graphを通じて取得したデータは、Microsoftのセキュリティとプライバシー基準に準拠しており、開発者とユーザーの両方に安心感を提供します。<br>・クロスプラットフォーム対応：RESTful APIとして提供されるため、任意のプログラミング言語やプラットフォームからアクセス可能です。これにより、ウェブ、デスクトップ、モバイルアプリケーションでの利用が可能になります。'>
+<div class='choice'  data-group='選択肢' >ローカルサーバーの物理的なメンテナンスと管理を自動化する</div>
+<div class='choice'  data-group='選択肢' >ビデオストリーミングの品質を向上させるためのアルゴリズムを改善する</div>
+<div class='choice'  data-group='選択肢' >クラウドベースのサービスを統合し、豊富なデータアクセスと操作機能を提供する</div>
+<div class='choice'  data-group='選択肢' >物理的なネットワークインフラストラクチャのセキュリティ監視を強化する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題41<br>Microsoft Graphのベストプラクティスとして正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='■正解：<br>B:最小特権を使用する<br>C:シナリオに基づいて適切なアクセス許可の種類を使用する<br>■解説<br>Microsoft Graphのベストプラクティスは、開発者がMicrosoft 365サービスに対するアプリケーションを効率的かつセキュアに構築するための指針です。以下は、主要なベストプラクティスです。<br>・最小特権を使用する：これは、アプリケーションが実行する必要のある操作に必要最小限のアクセス権限のみを要求するというセキュリティのベストプラクティスです。最小特権の原則に従うことで、潜在的なセキュリティリスクを最小化し、アプリケーションの安全性を高めることができます。<br>・シナリオに基づいて適切なアクセス許可の種類を使用する：Microsoft Graphを使用する際には、アプリケーションが必要とする正確なアクセスレベルに対応する適切なアクセス許可を選択することが重要です。これにより、アプリケーションがユーザーや組織のデータに適切にアクセスすることが保証されます。<br>■その他の選択肢<br>・エンド ユーザーと管理者のエクスペリエンスを考慮しない：アプリケーションの設計と開発では、エンドユーザーと管理者の両方のエクスペリエンスを考慮し、使いやすさと管理のしやすさを最適化することが推奨されます。<br>・シングルテナントアプリケーションを使用する：アプリケーションがシングルテナントまたはマルチテナントであるかは、アプリケーションの用途やターゲットとする顧客によって異なります。シナリオに応じて適切なアーキテクチャを選択することが重要です。'>
+<div class='choice'  data-group='選択肢' >エンド ユーザーと管理者のエクスペリエンスを考慮しない</div>
+<div class='choice'  data-group='選択肢' >最小特権を使用する</div>
+<div class='choice'  data-group='選択肢' >シナリオに基づいて適切なアクセス許可の種類を使用する</div>
+<div class='choice'  data-group='選択肢' >シングルテナントアプリケーションを使用する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題42<br>Azure App Configurationを使用する主な目的は何ですか。' data-answer='1' data-explanation='■正解：<br>B:アプリケーションの設定と機能フラグの管理<br>■解説<br>Azure App Configurationは、アプリケーションの設定データや機能フラグを一元的に管理するクラウドサービスです。これにより、アプリケーションの設定をアプリケーションコードから分離し、クラウドで集中的に管理できるようになります。Azure App Configurationを使用することで、開発、テスト、本番環境間での設定の一貫性を保ちつつ、設定変更を迅速かつ安全に行うことが可能になります。<br>・集中管理：アプリケーションの設定や機能フラグを一箇所で管理することができます。これにより、複数の環境やアプリケーションにわたる設定の一貫性と再利用性が向上します。<br>・機能フラグ：機能フラグは、アプリケーション内で特定の機能をオンまたはオフにするためのマーカーです。開発者は機能フラグを利用して、機能のリリースを細かくコントロールし、段階的な展開やA/Bテストを実施できます。<br>機能フラグを使用して、新機能の展開をコントロールし、A/B テストやカナリアリリースなどの段階的な機能展開を実現できます。これにより、リスクを最小限に抑えながら新機能を評価し、ユーザー体験を徐々に向上させることが可能です。<br>・動的な設定の更新：アプリケーションを再デプロイすることなく、リアルタイムで設定値を更新することができます。アプリケーションは更新された設定を自動的に取得し、動的に振る舞いを変更できます。<br>・セキュリティと監視：Azureのセキュリティ基準に準拠しており、設定データのアクセス制御や変更履歴の追跡が可能です。これにより、設定管理のセキュリティと透明性が向上します。'>
+<div class='choice'  data-group='選択肢' >データベースのバックアップと復元</div>
+<div class='choice'  data-group='選択肢' >アプリケーションの設定と機能フラグの管理</div>
+<div class='choice'  data-group='選択肢' >ネットワークのセキュリティ監視</div>
+<div class='choice'  data-group='選択肢' >仮想マシンの自動スケーリング</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題43<br>Azure App Configurationをセキュアにアクセスするために使用されるAzureの機能はどれですか。' data-answer='1' data-explanation='■正解：<br>B:マネージドID<br>■解説<br>Azure App Configurationにセキュアにアクセスする際、マネージドID（Managed Identities）を利用することで、Azureリソースへのアクセスに必要な資格情報の管理を簡素化し、セキュリティを強化できます。マネージドIDを使用することにより、アプリケーションやサービスがAzureリソースに対してAzure Active Directoryの認証を使用してアクセスできるようになり、資格情報をコードにハードコーディングする必要がなくなります。'>
+<div class='choice'  data-group='選択肢' >Azure Sentinel</div>
+<div class='choice'  data-group='選択肢' >マネージドID</div>
+<div class='choice'  data-group='選択肢' >Azure DDoS Protection</div>
+<div class='choice'  data-group='選択肢' >ネットワークセキュリティグループ（NSG）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題44<br>Azure API Management の主な機能はどれですか。' data-answer='2' data-explanation='■正解：<br>C:APIの公開、管理、保護<br>■解説<br>Azure API Managementは、企業がAPIを効果的に公開、管理、保護し、分析するためのMicrosoftのクラウドサービスです。このプラットフォームは、APIの全ライフサイクルを通じてサポートを提供し、開発者が既存のバックエンドサービスをより簡単に再利用できるようにします。主な目的は、複数のAPIを統一的なフロントエンドを通じて公開し、APIの消費を容易にすることです。<br>Azure API Managementの機能は以下になります。<br>・APIの公開と管理：API Managementを使用すると、企業はAPIを一箇所で管理し、開発者に公開できます。これにより、APIの発見性が向上し、再利用が促進されます。<br>・認証と認可：OAuth 2.0、OpenID Connectなどの標準プロトコルを用いてAPIへのアクセスをセキュアに管理できます。APIキー管理やトークンベースの認証を提供し、APIのセキュリティを強化します。<br>・レート制限とクォータ：APIの使用率を管理するためのポリシーを設定できます。これにより、過剰な使用を防ぎ、バックエンドシステムへの負荷を管理できます。<br>・分析とモニタリング：APIの使用状況、パフォーマンス、効率性に関する洞察を提供します。これにより、APIの運用状況をリアルタイムで監視し、必要に応じて最適化できます。<br>・バージョニングとドキュメント: APIのバージョン管理をサポートし、APIの変更を効果的に管理できます。SwaggerやOpenAPIのような業界標準のフォーマットでAPIドキュメントを自動生成し、開発者がAPIを容易に理解し利用できるようにします。'>
+<div class='choice'  data-group='選択肢' >データの自動バックアップ</div>
+<div class='choice'  data-group='選択肢' >仮想マシンの自動スケーリング</div>
+<div class='choice'  data-group='選択肢' >APIの公開、管理、保護</div>
+<div class='choice'  data-group='選択肢' >ネットワークトラフィックの分析</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題45<br>Azure Event Gridの主な用途は何ですか。' data-answer='1' data-explanation='■正解：<br>B:イベントベースのメッセージングと統合<br>■解説<br>Azure Event Gridは、クラウドサービス間でのイベントベースの通信を可能にするフルマネージドのイベントルーティングサービスです。このサービスは、アプリケーション、データソース、およびサービス間で発生するイベントを簡単に受け取り、処理することができるように設計されています。主な目的は、モダンなアプリケーションアーキテクチャにおいてイベント駆動型の統合パターンをサポートし、開発者がイベントの発生から反応までの流れを簡単に管理できるようにすることです。<br>Azure Event Gridの主な機能は以下の通りです。<br>・イベント駆動型アーキテクチャのサポート：Azure Event Gridは、リアルタイムのイベント通知を可能にし、サービスやアプリケーションがイベントに基づいて動的に反応できるようにします。<br>・広範な統合：Azureサービスはもちろん、カスタムトピックやサードパーティのアプリケーションとも統合でき、イベントソースとイベントハンドラー間の柔軟な連携を実現します。<br>・フィルタリングとルーティング：イベントのタイプや特定のデータ内容に基づいてフィルタリングし、関連するイベントハンドラーへのみルーティングすることができます。これにより、必要なイベント情報のみを処理することができます。<br>・スケーラビリティと信頼性：高いスケーラビリティと信頼性を備え、大量のイベントを処理することができます。また、イベントの配信保証機能を提供し、イベントが適切にハンドルされることを保証します。'>
+<div class='choice'  data-group='選択肢' >大規模なデータベースの管理</div>
+<div class='choice'  data-group='選択肢' >イベントベースのメッセージングと統合</div>
+<div class='choice'  data-group='選択肢' >静的ウェブサイトのホスティング</div>
+<div class='choice'  data-group='選択肢' >ネットワークのトラフィック分析</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題46<br>Azure Event Gridのイベントスキーマとは何ですか。' data-answer='0' data-explanation='■正解：<br>A:配信されるイベントメッセージの構造を定義するフォーマット<br>■解説<br>Azure Event Gridのイベントスキーマは、イベント駆動型アーキテクチャをサポートするために設計された、イベント情報を標準化するための定義です。このスキーマに従ってフォーマットされたイベントメッセージは、Azure Event Gridを介してサブスクライバーに配信され、サブスクライバーはこれらのメッセージを受け取り、適切な処理を行います。<br>イベントスキーマは、イベントの種類、発生源、発生時刻など、イベントに関する基本的な情報を含むフィールドのセットで構成されています。これにより、イベントを発行する側とサブスクライブする側の間で共通の理解が保証され、さまざまなソースからのイベントを一貫して処理することが可能になります。<br>具体的には、イベントスキーマには以下のような主要なフィールドが含まれます。<br>・id：イベントを一意に識別するID<br>・topic：イベントが発行されたリソースのフルパス<br>・subject：イベントが適用されるリソースの特定のアスペクトを示します<br>・eventType：イベントの種類を識別<br>・eventTime：イベントが生成された時刻<br>・data：イベントに特有の詳細情報を含むオブジェクト<br>・dataVersion：イベントデータのバージョンを指定'>
+<div class='choice'  data-group='選択肢' >配信されるイベントメッセージの構造を定義するフォーマット</div>
+<div class='choice'  data-group='選択肢' >Event Gridのパフォーマンスに関するベンチマークデータ</div>
+<div class='choice'  data-group='選択肢' >Event Gridの料金体系を説明するドキュメント</div>
+<div class='choice'  data-group='選択肢' >Event Gridの利用方法を示すチュートリアル</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題47<br>Azure Event Hubsの主な目的は何ですか。' data-answer='2' data-explanation='■正解：<br>C:大規模なイベントストリームの収集と処理<br>■解説<br>Azure Event Hubsは、大量のイベントやデータストリームを収集し、リアルタイムに処理するための高スループットのフルマネージドサービスです。これは、アプリケーション、デバイス、センサーからのデータを一か所に集約し、そのデータをリアルタイムまたは後で分析するためのパイプラインを提供します。特に、IoTデバイス、ユーザー活動のモニタリング、アプリケーションログの分析、ライブデータフィードの処理など、大量のイベントデータを扱うシナリオに最適です。<br>Azure Event Hubの主な機能は、以下の通りです。<br>・高スループットとスケーラビリティ：Event Hubsは、秒間数百万のイベントを処理できる能力を持ち、ビジネスニーズに合わせてスケールアウトすることが可能です。<br>・リアルタイム処理：ストリーミングデータをリアルタイムに分析し、迅速なインサイトの取得や即時のアクションを可能にします。<br>・柔軟なインテグレーション：Azure Stream Analytics、Azure Functions、Azure Logic Appsなど、他のAzureサービスと簡単に統合できます。これにより、データ処理と分析のパイプラインを柔軟に構築できます。<br>・セキュリティと信頼性：TLSとSASトークンベースの認証を提供し、データのセキュリティを確保します。また、99.9%のSLAでサービスの可用性が保証されています。<br>・多様なプロトコルサポート：AMQP、HTTPなど、複数のプロトコルをサポートしており、さまざまなソースからのデータ収集に対応します。'>
+<div class='choice'  data-group='選択肢' >データベースのバックアップと復元</div>
+<div class='choice'  data-group='選択肢' >静的ウェブサイトのホスティング</div>
+<div class='choice'  data-group='選択肢' >大規模なイベントストリームの収集と処理</div>
+<div class='choice'  data-group='選択肢' >ネットワークのセキュリティ監視</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題48<br>Azure Cache for Redisを使用する主な利点はどれですか。' data-answer='0' data-explanation='■正解：<br>A:アプリケーションのデータキャッシュによるパフォーマンス向上<br>■解説<br>Azure Cache for Redisは、アプリケーションのパフォーマンスを向上させるために設計された、マネージド型のオープンソースRedisキャッシュサービスです。このサービスは、アプリケーションにおける高速なデータアクセスとスケーラビリティを提供し、データベース負荷の軽減やレスポンスタイムの短縮を実現します。<br>主な機能と利点は、以下の通りです。<br>・高速データアクセス：よくアクセスするデータをメモリ内にキャッシュすることで、データベースへのクエリレスポンスタイムを大幅に短縮し、アプリケーションのパフォーマンスを向上させます。<br>・スケーラビリティ：Azure Cache for Redisは、需要に応じて簡単にスケールアップやスケールアウトが可能で、大規模なアプリケーションにも柔軟に対応します。<br>・永続性オプション：Redisのデータを定期的なスナップショットやAzure Blob Storageへの永続化により、データの耐久性を保証します。<br>・セキュリティ：TLS/SSLを介したエンドツーエンドの暗号化でデータを保護し、Azure Virtual Network (VNet) の統合により、ネットワークレベルでのセキュリティを提供します。'>
+<div class='choice'  data-group='選択肢' >アプリケーションのデータキャッシュによるパフォーマンス向上</div>
+<div class='choice'  data-group='選択肢' >大規模なデータベースのバックアップと復元</div>
+<div class='choice'  data-group='選択肢' >静的ウェブサイトのホスティング</div>
+<div class='choice'  data-group='選択肢' >ネットワークのセキュリティ監視</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題49<br>Azure Content Delivery Network (CDN) の主な利用目的は何ですか。' data-answer='3' data-explanation='■正解：<br>D:静的コンテンツの高速配信<br>■解説<br>Azure Content Delivery Network (CDN) は、静的コンテンツ（HTMLページ、画像、スタイルシート、JavaScriptファイル、ビデオなど）をユーザーにより近い地理的な位置にあるサーバーにキャッシュして配信することで、ウェブサイトやアプリケーションのロード時間を短縮し、エンドユーザーの体験を向上させるサービスです。これにより、グローバルなオーディエンスへのコンテンツ配信時の遅延を削減し、ウェブサイトやアプリケーションのパフォーマンスを最適化します。<br>主な機能と利点:<br>・グローバルなリーチ：Azure CDNは、世界中に広がる複数のポイントオブプレゼンス（POP）を通じてコンテンツを配信します。これにより、地理的な距離に関係なく、エンドユーザーに対して高速にコンテンツを提供できます。<br>・スケーラビリティとパフォーマンス：トラフィックの急増時でも、コンテンツの配信速度が低下することなく、大量のリクエストに対応可能です。CDNは、ウェブサイトのトラフィック分散を効果的に管理し、サーバーへの負荷を軽減します。<br>・セキュリティの強化：ウェブアプリケーションファイアウォール（WAF）との統合や、HTTPSを使用したセキュアなコンテンツ配信など、複数のセキュリティ機能を提供します。これにより、データの保護と安全な配信が保証されます。<br>・キャッシュと最適化：コンテンツを地理的に分散したキャッシュサーバーに保存し、コンテンツの最適化を通じて配信速度をさらに向上させます。また、キャッシュコントロールヘッダーを使用して、キャッシュポリシーを細かく管理できます。'>
+<div class='choice'  data-group='選択肢' >データベース管理</div>
+<div class='choice'  data-group='選択肢' >インフラストラクチャの監視</div>
+<div class='choice'  data-group='選択肢' >ネットワークセキュリティの強化</div>
+<div class='choice'  data-group='選択肢' >静的コンテンツの高速配信</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題50<br>複数の非同期関数呼び出しを調整し、長期間にわたるオーケストレーション、複数の関数間の依存関係を管理するAzureサービスはどれですか。' data-answer='2' data-explanation='■正解：<br>C:Azure Durable Functions<br>■解説<br>Azure Durable Functionsは、Azure Functionsの拡張機能であり、サーバーレスアプリケーションの開発をより容易にし、特に長期実行タスク、複雑なワークフローおよび状態管理が必要なシナリオに適しています。<br>Azure Durable Functionsには、以下の４つの関数があります。<br>オーケストレーション関数：複数の関数を調整し、順序付け、依存関係を管理する役割を果たします。オーケストレーション関数は、ワークフロー全体の状態を保持し、タスクが完了するたびに次のステップをトリガーします。<br>アクティビティ関数：実際の処理を実行する独立した関数です。オーケストレーション関数によってトリガーされ、必要に応じてデータを返します。<br>エンティティ関数：状態を持つオペレーションをサポートする関数で、Durable Entitiesとしても知られています。これにより、分散アプリケーションで共有される状態を維持しながら、同時実行管理を簡素化できます。<br>クライアント関数：オーケストレーションやエンティティ関数を開始、ステータスをチェック、結果を取得するためのAPIを提供します。'>
+<div class='choice'  data-group='選択肢' >Azure WebJobs</div>
+<div class='choice'  data-group='選択肢' >Azure Service Bus</div>
+<div class='choice'  data-group='選択肢' >Azure Durable Functions</div>
+<div class='choice'  data-group='選択肢' >Azure App Service</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

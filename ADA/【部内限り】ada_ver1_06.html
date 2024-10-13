@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='true' data-question='問題35<br>あなたは、Azureを利用したデータ分析サービスを提供するSaaS企業で働いています。このサービスには、DataASPというAzure App Service Planで実行されるいくつかのWebアプリが含まれています。<br>現在、新しいWebアプリDataAnalyzerを開発中であり、このアプリには複数のデータソースからデータを収集し分析するためのサードパーティのライブラリが含まれています。また、ライブラリのライセンスは、インスタンスを1つだけ実行できると定めています。<br>これら要件を満たすため、下記スクリプトのオプションは何を選択するべきですか。' data-answer='1,4' data-explanation='■正解：<br>B:-PerSiteScaling $true<br>E:.SiteConfig.NumberOfWorkers = 1<br>■解説<br>設問のシナリオに基づき、サードパーティのライブラリが単一のインスタンスでのみ実行されるように設定するためには、以下のようなオプションを選択する必要があります。<br>オプション１には-PerSiteScaling $true を指定します。これにより、App Service Plan 内の各Webアプリが独自のスケーリング設定を持つことが可能になります。<br>PerSiteScalingオプションは、Azure App Service Plan 内の個々のWebアプリが独自のスケーリング設定を持つことを可能にします。通常、App Service Plan内のすべてのWebアプリは、プランに設定されたリソース（CPU、メモリ、インスタンス数）を共有します。しかし、-PerSiteScaling $trueを設定することで、特定のWebアプリに対して個別にスケーリングオプション（例えば、ワーカーの数）を設定できるようになります。<br>オプション２には $app.SiteConfig.NumberOfWorkers = 1 を指定します。このオプションは、特定のWebアプリのワーカー（仮想マシンインスタンス）の数を設定します。これにより、DataAnalyzer Webアプリは常に1つのインスタンスでのみ実行されるように設定されます。これは、サードパーティライブラリのライセンス要件に対応するために重要です。' data-images='000004.jpg'>
+<div class='choice'  data-group='オプション１' >-AutoScaleEnabled $true</div>
+<div class='choice'  data-group='オプション１' >-PerSiteScaling $true</div>
+<div class='choice'  data-group='オプション１' >-PerSiteScaling $false</div>
+<div class='choice'  data-group='オプション２' >.SiteConfig.MinWorkers = 1</div>
+<div class='choice'  data-group='オプション２' >.SiteConfig.NumberOfWorkers = 1</div>
+<div class='choice'  data-group='オプション２' >.AlwaysOn = $true</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題36<br>あなたは、小売業向けの在庫管理システムを開発しており、複数の店舗と倉庫間で在庫情報を交換する必要があります。このシステムでは、送信されるメッセージがトランザクションサポートを持ち、重複処理を避け、長期にわたってデータを保持できる必要があります。<br>上記要件を満たすサービスや機能の組み合わせはどれですか。' data-answer='3' data-explanation='■正解：<br>D:Azure Service Busのトピックとキュー<br>■解説<br>Azure Service Busのトピックとキューは、Microsoft Azureが提供するメッセージングサービスの機能であり、アプリケーション間やアプリケーション内のコンポーネント間で非同期にデータや状態情報を安全に交換するために使用されます。これらのサービスは、信頼性が高く、スケーラブルで、セキュアな通信を提供します。<br>Azure Service Bus キュー：FIFO（First In, First Out）方式でメッセージを一時保持し、一方のコンポーネントから別のコンポーネントへのメッセージ配信を一対一で行うためのシンプルなデータ構造です。つまり、一つの送信者と一つの受信者が存在します。<br>例えば、注文処理システムで注文を受け取り、それを処理する一連のステップを管理する際に使われます。注文はキューに送られ、処理が完了するとキューから削除されます。<br>Azure Service Bus トピック：キューと似ていますが、一対多の通信をサポートする点が異なります。つまり、一つのメッセージを複数の受信者に配信することができます。<br>トピックにはサブスクリプションがあり、各サブスクリプションはトピック内のメッセージのフィルタリングや受信を行うことができます。これにより、送信されたメッセージを関心のある受信者だけが受け取ることが可能です。<br>例えば、プロモーション情報を異なる地域の店舗に送信したい場合、各店舗は異なるサブスクリプションを持ち、自店舗に関連するプロモーションの情報だけを受け取れます。<br>設問のシナリオについて、Azure Service Busのトピックとキューを使用して下記要件を満たすことができます。<br>トランザクションサポート：Azure Service Bus はトランザクションの一環としてメッセージを処理する能力を持っています。これにより、メッセージの送信、受信、または削除をトランザクションで一元管理できます。<br>重複処理を避ける：Service Bus は重複検出機能を提供しており、一定期間内に同一のメッセージIDが再度受信されるのを防ぎます。<br>長期にわたるデータの保持：Service Bus はメッセージをキューまたはトピックに長期間保持する設定を可能にします。'>
+<div class='choice'  data-group='選択肢' >Azure API ManagementとAzure Service Busのトピック</div>
+<div class='choice'  data-group='選択肢' >Azure Event GridとAzure Storage Queue</div>
+<div class='choice'  data-group='選択肢' >Azure Event HubsとAzure SQL Database</div>
+<div class='choice'  data-group='選択肢' >Azure Service Busのトピックとキュー</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題37<br>ある旅行代理店は、Azure Durable Functionsを使用したWebサイトの構築を検討しています。このプロセスでは、航空券の検索、ホテルの予約情報の取得をし、旅行プランを逐次的に実行していく必要があります。<br>これら要件を満たすため、Azure Durable Functionsのどの関数を使用するのが最適ですか。（２つ選択）' data-answer='0,2' data-explanation='■正解：<br>A:アクティビティ<br>C:オーケストレーター<br>■解説<br>Azure Durable Functionsは、Azure Functionsの拡張機能であり、長時間実行される処理や状態管理が必要な処理をシンプルに実装するためのフレームワークです。<br>この旅行代理店のWebサイト構築シナリオにおいて、航空券の検索、ホテルの予約情報の取得、旅行プランの逐次的な実行を効果的に行うためには、以下の２つの関数が最適です。<br>オーケストレーター関数は、複数の関数呼び出し（タスク）を調整し、制御する役割を持ちます。このシナリオでは、オーケストレーター関数が航空券の検索、ホテルの予約、最終的な旅行プランの作成といったプロセスの進行を管理し、それぞれのステップを順序よく実行します。<br>アクティビティ関数は、具体的な処理を行う関数です。航空券の検索やホテルの予約情報の取得など、具体的な作業を担います。これらの処理はオーケストレーター関数によって呼び出され、その結果はオーケストレーター関数によって次のステップへと渡されます。'>
+<div class='choice'  data-group='選択肢' >アクティビティ</div>
+<div class='choice'  data-group='選択肢' >クライアント</div>
+<div class='choice'  data-group='選択肢' >オーケストレーター</div>
+<div class='choice'  data-group='選択肢' >エンティティ</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題38<br>あなたは、Azure API Managementを使用して特定のAPIのリクエストやレスポンスの処理をカスタマイズする必要があります。<br>以下の要件を満たすポリシータイプはそれぞれ何ですか。<br>要件１：レスポンスデータの変更や削除を行う<br>要件２：入力パラメータを変更する' data-answer='2,3' data-explanation='■正解：<br>要件１：C:Outbound<br>要件２：D:Inbound<br>■解説<br>Azure API Managementにおいて、ポリシーはAPIの挙動を定義し、APIのリクエストやレスポンスをカスタマイズするために用いられます。ポリシータイプは大きく分けて「Inbound」、「Outbound」、「Backend」という3つのタイプに分類されます。<br>1. Inboundポリシー：このポリシーは、APIへのリクエストがバックエンドサービスに到達する前に適用されます。このポリシーを使用することで、リクエストを検証したり、リクエストヘッダを変更したり、APIキーの検証などの認証処理を行ったりすることができます。リクエストの内容を変更することで、バックエンドへのリクエストをカスタマイズすることが可能です。<br>2. Outboundポリシー：このポリシーは、バックエンドサービスからのレスポンスがクライアントに送信される前に適用されます。このポリシーを利用して、レスポンスデータの変更、レスポンスヘッダの追加や削除、特定の形式へのレスポンスデータの変換などを行うことができます。例えば、JSON形式のデータから特定のフィールドを削除したり、セキュリティ向上のために特定のヘッダを追加するなどの操作が含まれます。<br>3. Backendポリシー：このポリシーは、リクエストがバックエンドサービスに送信される直前に適用されます。このポリシーは、リクエストをバックエンドサービスに転送する際の動作をカスタマイズするために用います。例えば、リクエストのルーティングを動的に変更する、バックエンドサービスへの追加パラメータの注入、リクエストのタイムアウト設定のカスタマイズなどが行えます。<br>設問については、以下の通りです。<br>・要件１：レスポンスデータの変更や削除を行う：この要件は、APIがバックエンドから受け取ったレスポンスをクライアントに送る前に、レスポンスの内容を変更するか削除することを指します。これは、Outboundポリシーで適切に行うことができます。<br>・要件２：入力パラメータを変更する：入力パラメータの変更は、APIへのリクエストがバックエンドに送信される前に行う必要があります。これは、Inboundポリシーで実施されるのが最適です。'>
+<div class='choice'  data-group='要件１' >Backend</div>
+<div class='choice'  data-group='要件１' >Inbound</div>
+<div class='choice'  data-group='要件１' >Outbound</div>
+<div class='choice'  data-group='要件２' >Inbound</div>
+<div class='choice'  data-group='要件２' >Outbound</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題39<br>AzureでホストされているWebアプリのイベントやテレメトリーデータをApplication Insightsを使用して追跡するための設定手順は何ですか。' data-answer='0' data-explanation='■正解：<br>A:Application Insights リソースを作成する ⇒ 接続文字列をコピーする ⇒ アプリにApplication Insights SDKを設定する<br>■解説<br>Application Insightsは、アプリケーションのパフォーマンスと使用状況を追跡するための強力なツールです。これを使用することで、Webアプリや他の種類のアプリケーションで発生するイベントやテレメトリーデータをリアルタイムで監視し、問題を診断し、パフォーマンスを最適化することができます。<br>以下は、Application Insightsを使用してAzureでホストされているWebアプリのデータを追跡する手順です。<br>１．Application Insights リソースを作成する：最初にApplication Insightsリソースを作成する必要があります。これは、Azureポータルでこのサービスを使ってデータを収集し、分析するための基盤を設定することを意味します。リソースは、アプリケーションのデータを送信する先（エンドポイント）であり、収集したデータを保存することができます。<br>２．接続文字列をコピーする：リソースが作成された後、そのリソースから接続文字列を取得する必要があります。この接続文字列には、Application Insightsサービスと通信するために必要なすべての情報が含まれています（例えば、キー、リソースIDなど）。この文字列を使用して、アプリケーションがApplication Insightsと正しく通信できるようにします。接続文字列を先にコピーしておくことで、次のステップであるSDKの設定時にスムーズに進めることができます。<br>３．アプリにApplication Insights SDKを設定する：最後に、アプリケーションにApplication InsightsのSDKを組み込み、先に取得した接続文字列を使用して設定します。SDKは実際にApplication Insightsサービスにデータを送信するための手段であり、そのためには先にリソースの存在と有効な接続情報が必要となります。SDKをアプリケーションに組み込むことで、アプリケーションの運行中に発生する各種イベントやメトリクスが自動的に収集され、リアルタイムで監視および分析することが可能になります。<br>この手順に従うことで、あなたのWebアプリからのデータがApplication Insightsに送られ、アプリのパフォーマンス監視やユーザーエクスペリエンスの向上に役立つ洞察を提供することができます。'>
+<div class='choice'  data-group='選択肢' >Application Insights リソースを作成する ⇒ 接続文字列をコピーする ⇒ アプリにApplication Insights SDKを設定する</div>
+<div class='choice'  data-group='選択肢' >アプリにApplication Insights SDKを設定する ⇒ 接続文字列をコピーする ⇒ Application Insights リソースを作成する</div>
+<div class='choice'  data-group='選択肢' >接続文字列をコピーする ⇒ Application Insights リソースを作成する ⇒ アプリにApplication Insights SDKを設定する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題40<br>あなたは一般利用者向けの旅行予約APIを開発しています。このAPIは、航空券、ホテル、レンタカーの予約機能を提供し、RESTfulサービスとして実装され、OpenAPI仕様を使用しています。現在、APIをAzure API Managementサービスインスタンスで管理する必要性が生じています。<br>Azure API Management サービスに API 定義をインポートするために、どのようなPowerShellコマンドが適切ですか。' data-answer='2' data-explanation='■正解：<br>C:Import-AzureRmApiManagementApi -Context $ApiMgmtContext -SpecificationFormat "Swagger" -SpecificationPath $SwaggerPath -Path "/travel"<br>■解説<br>Import-AzureRmApiManagementApiは、OpenAPI（Swagger）仕様に基づくAPI定義をAzure API Managementにインポートするコマンドです。このコマンドは、指定されたSwagger仕様ファイルを使用してAPIをインポートし、API Managementサービスに登録します。SpecificationPathパラメータを使用してAPI定義ファイルの位置を指定し、Path パラメータでAPIの基本URLパスを設定します。<br>このコマンドを使用することで、APIの仕様ファイルに基づいてAPIを正確に設定し、Azure API Managementプラットフォームで管理できるようになります。これにより、APIの保守、モニタリング、およびセキュリティの強化が容易になります。<br>■その他の選択肢<br>・Get-AzApiManagementApi：これは既存のAPIの情報を取得するためのコマンドであり、新しいAPIをインポートするためには使用されません。<br>・Export-AzApiManagementApi：これは既存のAPIの定義をエクスポートするコマンドであり、新しいAPIをインポートするためのものではありません。<br>・Set-AzApiManagementApi：これは既存のAPIのプロパティを更新するためのコマンドであり、新しいAPIをインポートするためには適切ではありません。'>
+<div class='choice'  data-group='選択肢' >Set-AzApiManagementApi -Context $ApiMgmtContext -ApiId $ApiId -ServiceUrl $NewServiceUrl -Description $NewDescription</div>
+<div class='choice'  data-group='選択肢' >Export-AzApiManagementApi -Context $ApiMgmtContext -ApiId $ApiId -SpecificationFormat $ExportFormat -SaveAs $SaveAs</div>
+<div class='choice'  data-group='選択肢' >Import-AzureRmApiManagementApi -Context $ApiMgmtContext -SpecificationFormat "Swagger" -SpecificationPath $SwaggerPath -Path "/travel"</div>
+<div class='choice'  data-group='選択肢' >Get-AzApiManagementApi -Context $ApiMgmtContext -ApiId $ApiId</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題41<br>あなたは、Webアプリケーションを開発しており、このWebアプリケーションはデータベースの接続文字列にアクセスできるようにしたいと考えています。<br>どのようなコード内において、どのコンポーネントが適切ですか。' data-answer='0,5' data-explanation='■正解：<br>コンポーネント１：A:SecretClient<br>コンポーネント２：F:DefaultAzureCredential<br>■解説<br>Azure Key Vaultは、APIキー、データベース接続文字列、証明書などの機密情報を安全に管理するためのクラウドサービスです。Pythonスクリプトを使用して、Azure Key Vaultからデータベースの接続文字列を安全に取得することができます。<br>SecretClientは、Azure Key Vault内のシークレット（秘密情報）にアクセスするためのツールです。このクライアントを使うことで、プログラムはKey Vaultに保存されている様々な機密データにアクセスできるようになります。具体的には、シークレットの読み取り、作成、更新、削除などの操作が行えます。<br>DefaultAzureCredentialは、Azure SDKが提供する認証方法の一つであり、複数の認証メカニズムを自動的に試して、適用可能な認証方法を見つけ出して使用します。これにより、開発者は環境に応じた認証設定を簡単に構成できます。例えば、開発環境ではAzure CLIを通じての認証、本番環境ではマネージドアイデンティティを使用することが可能です。' data-images='000005.jpg'>
+<div class='choice'  data-group='コンポーネント１' >SecretClient</div>
+<div class='choice'  data-group='コンポーネント１' >CloudCLients</div>
+<div class='choice'  data-group='コンポーネント１' >DefaultAzureCredential</div>
+<div class='choice'  data-group='コンポーネント２' >CloudCLients</div>
+<div class='choice'  data-group='コンポーネント２' >Clientsecretcredential</div>
+<div class='choice'  data-group='コンポーネント２' >DefaultAzureCredential</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題42<br>あなたは、技術マニュアルのオンラインリポジトリを管理するWebアプリケーションを開発しています。このリポジトリ内には、一般公開されているドキュメントと、限定されたユーザーグループのみがアクセス可能な機密ドキュメントが存在します。<br>・一般公開ドキュメント：全ての認証されたユーザーがアクセス可能。<br>・機密ドキュメント：/manuals/special-doc.html は高度な技術知識を持つ特定のユーザーグループ”special-users”のみが閲覧可能。このドキュメントには、業界内でまだ公開されていない技術情報が含まれています。<br>・投稿ページ：/manuals/new.html は新しいマニュアルを投稿するためのページで、"contributors" ロールを持つユーザーのみがアクセス可能です。<br>Webアプリケーションは、ユーザーが適切な権限を持っていることを確認した上で、ドキュメントへのアクセスを許可する必要があります。Azure Static Web Appsを使ってルーティングと認証の設定を行う場合、下記staticwebapp.config.jsonファイル内のオプションとして正しい選択肢はどれですか。' data-answer='1,3,5,7' data-explanation='■正解：<br>値１：B:/manuals/new.html<br>値２：D:contributors<br>値３：F:/manuals*<br>値４：H:authenticated<br>■解説<br>Azure Static Web Appsの staticwebapp.config.json ファイルは、Webアプリケーションのルーティング、認証、認可、およびその他の設定を管理するためのファイルです。このファイルを使用して、アプリケーションの動作をカスタマイズし、アプリケーションのセキュリティを強化するルールを定義します。<br>staticwebapp.config.json ファイルの用途は、アプリケーションのルーティングを定義し、認証および認可を設定することです。また、ルートルールは routes 配列内で定義され、配列に登録された順番で順次評価されます。ルール評価のプロセスは次のように進行します。<br>１．リクエスト受信時のルール評価：リクエストが受信されると、staticwebapp.config.json 内の routes 配列に定義されたルートルールに基づいて評価が始まります。<br>２．ルールの順序による評価：ルールは配列に記述された順序で評価されます。これは、ルールの優先順位を暗黙的に設定することを意味します。<br>３．最初に一致したルールでの停止：リクエストがあるルールと一致すると、その時点でルールの評価は停止し、そのルールに定義されたアクション（ページの表示、リダイレクト、認証要求など）が実行されます。<br>本設問について、正しい選択肢は下記となります。<br>値１：/manuals/new.html<br>値２：contributors<br>値３：/manuals*<br>値４：authenticated<br>この選択肢は、/manuals/new.html のアクセスを contributors のみに限定し、その他の /manuals* に対するアクセスを authenticated ユーザー全員に開放するという要件を正しく設定しています。このため、/manuals/new.html へのアクセスルールが最初に適用され、その後に /manuals* への一般的なルールが適用されるため、適切です。' data-images='000006.jpg'>
+<div class='choice'  data-group='値１' >/manuals*</div>
+<div class='choice'  data-group='値１' >/manuals/new.html</div>
+<div class='choice'  data-group='値２' >authenticated</div>
+<div class='choice'  data-group='値２' >contributors</div>
+<div class='choice'  data-group='値３' >/manuals/new.html</div>
+<div class='choice'  data-group='値３' >/manuals*</div>
+<div class='choice'  data-group='値４' >contributors</div>
+<div class='choice'  data-group='値４' >authenticated</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題43<br>あなたは、複数の出版社からのニュース記事を配信するコンテンツ配信ネットワークを開発しています。このネットワークは、新しい記事が投稿されると登録している読者に自動的に配信する機能が必要です。また、このプロセスは、パブリッシュ-サブスクライブモデルを使用し、ポーリングの手間を省く必要があります。<br>上記要件を満たすサービスはどれですか。サービスは要件を満たす独立した完全なソリューションでなければなりません。（２つ選択）' data-answer='0,2' data-explanation='■正解：<br>A:Azure Event Grid<br>C:Azure Service Bus<br>■解説<br>Azure Service BusとAzure Event Gridは、両方ともAzureのメッセージングおよびイベント配信サービスですが、異なる用途と機能を持っています。これらは、パブリッシュ-サブスクライブモデルをサポートし、ニュース記事を配信するようなシステムに適しています。<br>Azure Service Bus：エンタープライズレベルのメッセージングサービスであり、信頼性が高く、セキュアな通信が可能です。Service Busは、トピックスとキューを提供しており、特に複雑なトランザクションや順序付けが必要なメッセージングに適しています。トピックスは、一つのメッセージを複数のサブスクリプションに配信することができ、各サブスクリプションは特定の条件に基づいてメッセージを受け取ることができます。これにより、特定の読者に向けたカスタマイズされたニュース配信が可能になります。<br>Azure Event Grid：Azure Event Gridは、イベントの生成、管理、配信を自動化するためのフルマネージドのイベントルーティングサービスです。このサービスは、スケーラビリティとイベントのフィルタリングの高度なオプションを提供し、様々なAzureリソースやカスタムソースからのイベントを処理することができます。Event Gridは、イベントの発生に応じて即座に反応することができ、リアルタイムでのデータ配信と処理に最適です。これは、新しい記事が投稿された際に即座に読者に通知を送る場合に有用です。'>
+<div class='choice'  data-group='選択肢' >Azure Event Grid</div>
+<div class='choice'  data-group='選択肢' >Azure Functions</div>
+<div class='choice'  data-group='選択肢' >Azure Service Bus</div>
+<div class='choice'  data-group='選択肢' >Azure Event Hubs</div>
+<div class='choice'  data-group='選択肢' >Azure Queue Storage</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題44<br>あなたは、複数の店舗を持つ小売チェーンの在庫管理システムを開発しています。各店舗から中央の倉庫に在庫データを送信し、これらのデータはトランザクションの順序を保持する必要があります。システムはFIFOでメッセージを処理し、在庫状況を正確に更新する必要があります。<br>これらの要件を満たすため最適なサービスは何ですか。' data-answer='0' data-explanation='■正解：<br>A:Azure Service Bus<br>■解説<br>Azure Service Busは、高度なメッセージング機能を提供するAzureのサービスであり、特に複雑なエンタープライズレベルのアプリケーションに適しています。Azure Service Busの主な特徴は以下の通りです。<br>１．メッセージング機能：Service Busは、キュー、トピックス、サブスクリプションという形で豊富なメッセージング構造を提供します。これにより、1対1、1対多、または多対多の通信パターンを効率的に実装できます。<br>２．FIFOサポート：Service BusはFIFOメッセージングを保証し、メッセージが送信された順序で処理されることを確実にします。<br>３．ダブル処理の防止：Service Busはダブル処理を防ぐためのメカニズムを提供し、同じメッセージが重複して処理されるのを防ぎます。<br>４．スケーラビリティと信頼性：Azure Service Busは高いスケーラビリティを持ち、信頼性の高いサービスを提供します。これは、大量のデータを扱う小売チェーンの在庫管理システムにとって重要です。<br>５．トランザクションサポート：Service Busはトランザクションをサポートし、メッセージ処理中に複数の操作を一連のトランザクションとしてグループ化できます。<br>設問のシナリオのように、複数の店舗からの在庫データを中央の倉庫に送信し、トランザクションの順序を保持しながらFIFO順序でメッセージを処理する必要がある場合、Azure Service Busが最適な選択です。'>
+<div class='choice'  data-group='選択肢' >Azure Service Bus</div>
+<div class='choice'  data-group='選択肢' >Azure Storageキュー</div>
+<div class='choice'  data-group='選択肢' >Azure Event Hub</div>
+<div class='choice'  data-group='選択肢' >Azure Logic Apps</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題45<br>あなたは、Azure Resource Manager テンプレートを使用してリソースのデプロイを検討しています。<br>作成したテンプレートが推奨プラクティスに沿っているかを確認する機能はどれですか。' data-answer='3' data-explanation='■正解：<br>D:ARM テンプレートテスト ツールキット<br>■解説<br>ARM テンプレートテスト ツールキットは、Azure Resource Manager (ARM) テンプレートの品質を向上させるための強力なツールです。これは、開発者やIT管理者がAzureのリソースをデプロイするために使用するJSON形式のテンプレートの検証を行います。このツールキットを使用することで、テンプレートがAzureの推奨プラクティスに準拠しているか、または特定のパフォーマンスやセキュリティの基準を満たしているかを事前に検証できます。<br>このツールの主要な機能は以下の通りです。<br>・構文チェック：テンプレートが正しいJSON形式であり、ARMのスキーマに適合しているかを検証します。<br>・ベストプラクティスの適用：Azureの推奨するセキュリティ、パフォーマンス、コスト管理のベストプラクティスに沿ってテンプレートが設計されているかを確認します。<br>・セキュリティ検証：潜在的なセキュリティリスクを特定し、修正するための提案を行います。例えば、不適切に公開されたリソースや、推奨されないセキュリティ設定の使用を指摘します。'>
+<div class='choice'  data-group='選択肢' >What-If操作</div>
+<div class='choice'  data-group='選択肢' >pull requestテンプレート</div>
+<div class='choice'  data-group='選択肢' >テンプレート関数</div>
+<div class='choice'  data-group='選択肢' >ARM テンプレートテスト ツールキット</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題46<br>あなたは、ソフトウェア会社のプロジェクトマネージャーです。チームは新しいクラウドベースのビデオ編集ツールを開発しており、このツールはAzure Blobストレージを使用してビデオファイルを保存します。チームの開発メンバーが次の３か月間APIを開発するためにAzure Blobストレージアカウントにアクセスする必要がありますが、その期間終了後はアクセス権を持たないようにする必要があります。<br>どのような対応が適切ですか。' data-answer='2' data-explanation='■正解：<br>C:共有アクセス署名（SAS）をAzure Blobストレージアカウントに生成し、すべてのメンバーに提供する<br>■解説<br>共有アクセス署名（SAS）は、Azure Blob Storage に対する限定的なアクセス権をセキュリティで保護された方法で提供するための一時的な認証手段です。SAS は、特定のリソースまたはリソースグループへのアクセスを許可し、そのアクセスを厳格に制限するために使用されます。<br>SASの主な機能は以下の通りです。<br>１．期限設定：SASは特定の期間にのみ有効であり、その期間が過ぎれば自動的にアクセス権が失効します。これにより、一時的なアクセスニーズに理想的な解決策を提供します。<br>２．アクセス権限の制御：SASを使用すると、読み取り、書き込み、削除など、特定のアクションに対するアクセス権を細かく制御できます。<br>３．IPアドレス制限：SASを発行する際に特定のIPアドレスからのアクセスのみを許可することができます。<br>４．プロトコル制限：HTTPSなどのセキュアなプロトコルを使用したアクセスのみを許可することもできます。'>
+<div class='choice'  data-group='選択肢' >ストレージアカウントのファイアウォール設定を変更して、開発者のIPアドレスからのアクセスのみを許可する</div>
+<div class='choice'  data-group='選択肢' >BlobストレージにVPN経由でのみアクセスを許可する</div>
+<div class='choice'  data-group='選択肢' >共有アクセス署名（SAS）をAzure Blobストレージアカウントに生成し、すべてのメンバーに提供する</div>
+<div class='choice'  data-group='選択肢' >Azure Blobストレージのアカウントキーをすべての開発者に提供する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題47<br>あなたは、Microsoft Identity PlatformのREST APIを使用して、アプリケーションがユーザーのプロファイル情報やカレンダーイベントの読み取りを行えるようにしたいと考えています。<br>アプリケーションへアクセス権を許可するためには何を使用するべきですか。' data-answer='1' data-explanation='■正解：<br>B:スコープ<br>■解説<br>スコープは、アプリケーションがユーザーの代わりに実行できる具体的なアクションやアクセスレベルを定義します。Microsoft Identity Platformでは、スコープを使用して、アプリケーションが特定のリソースに対してどのような操作を行えるかを指定します。<br>スコープを使用する主な目的は、セキュリティとユーザープライバシーの保護です。これにより、アプリケーションがユーザーの明示的な許可なしにリソースにアクセスすることが防がれます。たとえば、ユーザーのプロファイル情報を読み取るにはUser.Readスコープが必要であり、カレンダーイベントを読み取るにはCalendars.Readスコープが必要です。'>
+<div class='choice'  data-group='選択肢' >サブスクリプションキー</div>
+<div class='choice'  data-group='選択肢' >スコープ</div>
+<div class='choice'  data-group='選択肢' >リソースグループ</div>
+<div class='choice'  data-group='選択肢' >APIゲートウェイ</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題48<br>あなたは、Azure Functionsを使用してイベントベースの関数を作成したいと考えています。<br>以下の要件を満たすためには、Azure Functionsのどの機能を使用するべきですか。<br>要件１：イベントを処理するための追加機能やライブラリを提供する<br>要件２：GoやRust言語を使用して関数を作成する' data-answer='1,4' data-explanation='■正解：<br>要件１：B:バインド拡張<br>要件２：E:カスタムハンドラー<br>■解説<br>Azure Functionsは柔軟性が高く、さまざまなニーズや要件に対応できるよう設計されています。そのため、特定のシナリオや要件に適したトリガーやホスティングプランを選択し、必要に応じて拡張機能やカスタムハンドラーを利用することで、最適なソリューションを構築することができます。要件に応じて適切なAzure Functionsの機能を選択することが重要です。<br>要件1：イベントを処理するための追加機能やライブラリを提供する：この要件にはバインド拡張が最適です。バインド拡張は、Azure Functionsの機能を拡張する追加の機能やライブラリを提供します。これにより、様々なイベントソースからのイベントを処理するために必要なトリガーやバインディングなどが利用できるようになります。<br>要件2：GoやRust言語を使用して関数を作成する：この要件にはカスタムハンドラーが適しています。カスタムハンドラーを使用すると、Azure Functionsが標準でサポートしていない任意のプログラミング言語で関数を記述できます。これにより、GoやRustなどの言語で関数のロジックを開発し、それをAzure Functionsで実行することが可能になります。'>
+<div class='choice'  data-group='要件１' >トリガー</div>
+<div class='choice'  data-group='要件１' >バインド拡張</div>
+<div class='choice'  data-group='要件１' >ランタイム</div>
+<div class='choice'  data-group='要件２' >ホスティングプラン</div>
+<div class='choice'  data-group='要件２' >カスタムハンドラー</div>
+<div class='choice'  data-group='要件２' >ランタイム</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題49<br>あなたはIT管理者として、開発部のメンバーにAzure Cosmos DBリソースを管理するための権限を付与したいと考えています。Microsoft Entra IDグループを作成し、グループに適切なアクセス制御（RBAC)を設定する予定です。このグループは、Azure Cosmos DBアカウント、データベース、コンテナのプロビジョニングはできるものの、データのアクセスは許可してはいけません。<br>最小権限の原則に沿って、適切なロールはどれですか。' data-answer='1' data-explanation='■正解：<br>B:Azure Cosmos DB オペレーター<br>■解説<br>Azure Cosmos DB オペレーターロールは、Azure Cosmos DB アカウントを管理できる権限を与えますが、キーの表示やデータへの直接アクセスを許可しません。これにより、グループはリソースのプロビジョニングや管理を行うことができますが、データに直接アクセスすることはできません。このロールは、データへのアクセス制御を維持しつつ、必要な管理タスクを行うための最適な選択です。<br>■その他の選択肢<br>・CosmosBackupOperator：Azure Cosmos DBのバックアップ操作を行うための権限を持ちますが、リソースのプロビジョニングや管理には関与しません。<br>・Cosmos DB アカウントの閲覧者：読み取り専用のアクセスを提供し、アカウントの閲覧やリソースの状態を確認することはできますが、プロビジョニングや管理の操作は行えません。<br>・CosmosRestoreOperator：Azure Cosmos DBでの復元操作を行うための権限を持っており、プロビジョニングや通常の管理操作には関与しません。'>
+<div class='choice'  data-group='選択肢' >CosmosRestoreOperator</div>
+<div class='choice'  data-group='選択肢' >Azure Cosmos DB オペレーター</div>
+<div class='choice'  data-group='選択肢' >Cosmos DB アカウントの閲覧者</div>
+<div class='choice'  data-group='選択肢' >CosmosBackupOperator</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題50<br>あなたは、複数の小売業者が各自のオンラインストアを運営するマルチテナントEコマースプラットフォームを開発しています。各テナントの顧客セッション情報と購入履歴のHTML出力を効率的に保存し、ピーク時の負荷を処理できるようにする必要があります。また、全てのテナントのWebアプリケーション間でセッション情報を共有し、セール時などの高負荷時にもHTTPレスポンスを迅速に処理できるようにしなければなりません。<br>これら要件を満たす対応方法は何ですか。' data-answer='2' data-explanation='■正解：<br>C:Azure Cache for Redisをデプロイして設定する<br>■解説<br>Azure Cache for Redisは、マイクロソフトが提供するマネージドRedisサービスであり、高速なインメモリデータストアとして機能します。これは、Webアプリケーションや他のタイプのアプリケーションに対して、セッションステート、キャッシュ、メッセージングブローカーとしての使用など、多様な用途で利用されます。特に、Webアプリケーションのパフォーマンスを向上させるために頻繁にアクセスされるデータを迅速に取得する必要がある場合に有効です。<br>複数の小売業者が各自のオンラインストアを運営するマルチテナントEコマースプラットフォームの場合、Azure Cache for Redisを使用すると、セッション情報を共有し、セール時のような高負荷時にもHTTPレスポンスを迅速に処理することが可能です。セッションデータの迅速な読み取りと書き込みを通じて、ユーザーのショッピング体験を向上させることができ、システムの負荷を効果的に管理することができます。<br>■その他の選択肢<br>・Application Request Routing (ARR) を有効にする：ARRは主にロードバランシングとリクエストルーティングに使用されますが、セッションデータの共有やHTML出力の効率的な保存には直接的な機能を提供しません。<br>・Azure Blob StorageにHTML出力を保存する：Azure Blob Storageは大量の静的ファイルの保存に適していますが、動的なセッション情報の共有や高負荷時の迅速なデータ処理には適していません。<br>・Azure Database for PostgreSQLをデプロイして設定する：Azure Database for PostgreSQLは強力なリレーショナルデータベースサービスですが、セッション情報の共有や即時性が要求されるシナリオには最適ではありません。'>
+<div class='choice'  data-group='選択肢' >Application Request Routing (ARR) を有効にする</div>
+<div class='choice'  data-group='選択肢' >Azure Database for PostgreSQLをデプロイして設定する</div>
+<div class='choice'  data-group='選択肢' >Azure Cache for Redisをデプロイして設定する</div>
+<div class='choice'  data-group='選択肢' >Azure Blob StorageにHTML出力を保存する</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='true' data-question='問題18<br>あなたは、世界中の学生が使用するオンライン教育プラットフォームを開発しています。このプラットフォームは、授業の登録、ビデオ講義の視聴、課題の提出など、複数の機能を提供します。アプリの利用可能性と応答性を保証するために、異なる地理的位置から定期的にアプリをテストする必要があります。またアプリが応答しない場合は、サポートスタッフにアラートを送信する必要があります。<br>どのテストタイプを使用するのが適切ですか。（２つ選択）' data-answer='3,4' data-explanation='■正解：<br>D:URL ping<br>E:複数ステップWeb<br>■解説<br>URL pingテストは、特定のURLに対してHTTPリクエストを送信し、Webアプリが利用可能かつ応答性があるかを確認するためのシンプルな方法です。このテストは、異なる地理的位置から定期的にアプリを監視するのに適しており、基本的なアップタイムとパフォーマンス情報を提供します。また、エラーが発生した際にはアラートを設定することもできます。<br>複数ステップWeb（multi-step web）テストは、実際のユーザーのインタラクションをシミュレートする一連のアクションを自動化します。これにより、授業の登録、ビデオ講義の視聴、課題の提出など、プラットフォームの重要な機能が正しく機能しているかどうかを詳細に検証することができます。エラーが発生した場合には、サポートスタッフに通知するアラートを設定することも可能です。'>
+<div class='choice'  data-group='選択肢' >ユニット</div>
+<div class='choice'  data-group='選択肢' >パフォーマンス</div>
+<div class='choice'  data-group='選択肢' >モック</div>
+<div class='choice'  data-group='選択肢' >URL ping</div>
+<div class='choice'  data-group='選択肢' >複数ステップWeb</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題19<br>ある製造企業は、Azure Logic Appを使用してサプライチェーンの各段階を自動化し、オンプレミスのERP（企業資源計画）システムとの連携を検討しています。また、このシステムは、製造材料の注文、在庫管理、製品の出荷情報など、さまざまなサプライチェーンプロセスのデータを処理し、更新する必要があります。<br>これら要件を満たすためにはどのサービスを利用するのが最適ですか。' data-answer='1' data-explanation='■正解：<br>B:オンプレミスデータゲートウェイ<br>■解説<br>オンプレミス データ ゲートウェイは、Azure サービスとオンプレミスのデータソースとの間でデータを安全に交換するための橋渡しとして機能します。このゲートウェイを使用することで、クラウドベースのアプリケーションやサービスが、オンプレミスにあるデータベースやファイルシステム、その他のデータソースにアクセスできるようになります。主な特徴として、次のような機能があります。<br>１．多様なデータソースへの接続：SQL Server、Oracle、SAP、MySQLなど、多くの人気のあるデータソースへ接続可能です。<br>２．セキュリティ：データはゲートウェイを通じてセキュアに転送されます。すべてのデータは暗号化され、非常に安全な通信を保証します。<br>３．集中管理：Azureポータルを通じて、ゲートウェイのインスタンスを管理し、設定の更新やモニタリングを行うことができます。<br>４．高可用性：複数のゲートウェイを構成することで、耐障害性を高め、高い可用性を実現します。<br>製造企業のシナリオでは、オンプレミスのERPシステムとクラウドサービス（Azure Logic Appなど）との間でデータを連携する必要があります。オンプレミスデータゲートウェイを使用することで、製造材料の注文や在庫管理、製品の出荷情報などを安全かつリアルタイムにクラウドアプリケーションと同期させることが可能になります。'>
+<div class='choice'  data-group='選択肢' >ポイントツーサイト(P2S) VPN接続</div>
+<div class='choice'  data-group='選択肢' >オンプレミスデータゲートウェイ</div>
+<div class='choice'  data-group='選択肢' >Microsoft Entra アプリケーションプロキシ</div>
+<div class='choice'  data-group='選択肢' >サイト間(S2S)VPN接続</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題20<br>あなたは、ARMテンプレートを使用して複数の仮想マシンの作成を予定しています。単一の可用性スケールセットにおいて、障害やメンテナンス時に備えて障害ドメインのプロパティplatformFaultDomainCountを設定する必要があります。<br>可能な限り多くの仮想マシンがアクセスできるようにするには、プロパティの値を何に設定する必要がありますか。' data-answer='3' data-explanation='■正解：<br>D:そのリージョンにおける最大値<br>■解説<br>platformFaultDomainCount プロパティは、可用性セット内での仮想マシンを分散する障害ドメインの数を定義します。障害ドメインとは、共通の電源や冷却などの物理的リソースを共有するハードウェアのグループであり、障害ドメインを設定することで障害やメンテナンス時に一部の障害ドメインが影響を受けても、他の障害ドメインに配置された仮想マシンはアクセス可能な状態を維持することができます。<br>Azureでは、リージョンによって障害ドメインの最大数が異なっており、障害ドメインを設定する場合、platformFaultDomainCountの値は一般的には2から3となります。<br>そのリージョンにおける platformFaultDomainCount の最大値を設定することで、可用性セット内の仮想マシンができるだけ多くの物理的な障害点から分離され、一つのフォルトドメインに問題が発生しても、他のフォルトドメインに配置された仮想マシンは影響を受けにくくなります。'>
+<div class='choice'  data-group='選択肢' >1</div>
+<div class='choice'  data-group='選択肢' >5</div>
+<div class='choice'  data-group='選択肢' >10</div>
+<div class='choice'  data-group='選択肢' >そのリージョンにおける最大値</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題21<br>サプライチェーン管理を行っている企業では、顧客の注文を管理するアプリケーションの構築を検討しています。このアプリケーションは、在庫管理システムやサプライヤー管理システムなどの外部サービスとHTTPリクエストを介して接続する必要があります。また、サインインしたユーザーの顧客IDは、システム全体のすべての操作と関連付けられていることを確認する必要があります。<br>外部サービスがOpenTelemetryに準拠している場合、上記の要件を満たすためにどのような対応が最適ですか。' data-answer='0' data-explanation='■正解：<br>A:CorrelationContextにユーザーの顧客IDを追加する<br>■解説<br>サプライチェーン管理アプリケーションの構築において、在庫管理システムやサプライヤー管理システムなどの外部サービスとHTTPリクエストを介して接続し、サインインしたユーザーの顧客IDをシステム全体のすべての操作に関連付ける必要がある場合、CorrelationContextにユーザーの顧客IDを追加することで対応することができます。<br>OpenTelemetryに準拠した外部サービスとの間で分散トレーシングを行う際、CorrelationContextに顧客IDを追加することで、システム全体のすべての操作にユーザーのアクションを関連付けることができます。これにより、顧客の注文プロセス全体を通じて問題の診断やパフォーマンスの監視が可能になり、顧客サービスの向上に寄与します。<br>■用語解説<br>・CorrelationContext<br>複数のシステムやサービス間でのリクエストやトランザクションを追跡する際に、関連する情報を共有・保持するためのメカニズムです。例えば、Webアプリケーションがバックエンドサービスを呼び出すとき、それぞれのリクエストに固有の識別子やその他の関連情報を含めることができます。これにより、エラーが発生した場合やパフォーマンスの分析を行う場合に、特定のリクエストやトランザクションを容易に追跡できます。<br>・OpenTelemetry<br>アプリケーションのトレーシング、メトリクス、ログデータの収集・処理などを行うためのオープンソースプロジェクトです。例えば、Webリクエストの処理にどれだけの時間がかかったか、どのサービス間でどのようなリクエストが交換されたかなどの情報を可視化できます。OpenTelemetryは、多様なプログラミング言語や実行環境に対応しており、クラウドネイティブアプリケーションの開発において広く利用されています。<br>■その他の選択肢<br>・顧客IDをサーバー側のセッションに保存し、それを使用して認証する：この方法は、ユーザー認証のコンテキストには有用かもしれませんが、サプライチェーン全体の異なるサービス間でのオペレーションを追跡するためには不十分です。<br>・顧客IDをプレーンテキストでHTTPヘッダーに含める：セキュリティ上のリスクが高く、プレーンテキストでのID送信は推奨されません。また、これだけでは分散システムにおいてエンドツーエンドの追跡を保証することは難しいです。<br>・顧客IDを外部サービスに常時送信し続ける：これもセキュリティ上の懸念があり、効率的な方法とは言えません。また、オペレーション間での関連付けの明確なメカニズムを提供しないため、システム全体で一貫した追跡を実現するには適していません。'>
+<div class='choice'  data-group='選択肢' >CorrelationContextにユーザーの顧客IDを追加する</div>
+<div class='choice'  data-group='選択肢' >顧客IDをプレーンテキストでHTTPヘッダーに含める</div>
+<div class='choice'  data-group='選択肢' >顧客IDをサーバー側のセッションに保存し、それを使用して認証する</div>
+<div class='choice'  data-group='選択肢' >顧客IDを外部サービスに常時送信し続ける</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題22<br>あなたの組織は、Microsoft Entra IDを使用してユーザーのサインイン時に多要素認証（MFA）を要求したいと考えています。<br>どのような対応が最適ですか。' data-answer='3' data-explanation='■正解：<br>D:Entra ID P1ライセンスにアップグレードし、条件付きアクセスポリシーを作成する<br>■解説<br>ユーザーのサインイン時に多要素認証（MFA）を要求したい場合、Entra ID P1ライセンスにアップグレードし、条件付きアクセスポリシーを作成する必要があります。<br>Microsoft Entra ID P1ライセンスにアップグレードすることで、より高度なセキュリティ機能にアクセスすることが可能になります。特に、条件付きアクセスポリシーは、Microsoft Entra ID P1またはP2プランの一部として提供されています。<br>また、条件付きアクセスは、特定の条件（場所、デバイスの状態、アクセスしようとしているアプリケーションなど）に基づいて、アクセス要求に対する自動化された決定（承認、ブロック、MFA要求）を行うことができます。このポリシーを設定することで、組織はユーザーがログインする際に多要素認証を要求することができます。<br>■その他の選択肢<br>・SharePoint Onlineでセキュリティグループを作成し、MFAをグループポリシーに組み込む：この選択肢は、SharePoint Onlineのコンテキストでのみ関連があるため、組織全体でMicrosoft Entra IDを使用してMFAを実施する目的には合いません。<br>・Visual Studio Subscriptionを活用し、開発環境にMFAを適用する：Visual Studio Subscriptionは開発者向けのサービスであり、組織全体の認証ポリシー設定とは関連がありません。<br>・Microsoft Teamsを介してMFAを設定し、ユーザーに認証アプリをインストールさせる：Microsoft Teamsはコラボレーションツールであり、認証ポリシーの管理には適していません。'>
+<div class='choice'  data-group='選択肢' >Visual Studio Subscriptionを活用し、開発環境にMFAを適用する</div>
+<div class='choice'  data-group='選択肢' >Microsoft Teamsを介してMFAを設定し、ユーザーに認証アプリをインストールさせる</div>
+<div class='choice'  data-group='選択肢' >SharePoint Onlineでセキュリティグループを作成し、MFAをグループポリシーに組み込む</div>
+<div class='choice'  data-group='選択肢' >Entra ID P1ライセンスにアップグレードし、条件付きアクセスポリシーを作成する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題23<br>あなたは、メディア企業向けのアプリケーションを開発しており、ユーザーが音楽ファイルやビデオクリップをAzureストレージにアップロードできるようにしています。このアプリケーションは、ストレージのREST APIを使ってメディアをアカウント１という名前のブロブストレージアカウントにアップロードします。また、コンテナ１とコンテナ２という名前のブロブストレージコンテナを持っています。<br>ビデオクリップのアップロードは不定期に行われ、新しいビデオがアップロードされた際には、特定のBlobをコンテナ１からコンテナ２にコピーする必要があります。<br>上記要件を満たすためにはどのような対応が適切ですか。' data-answer='1' data-explanation='■正解：<br>B:Start-AzureStorageBlobCopyコマンドレットを使用するEvent Gridトピックを作成する<br>■解説<br>Azure Event Gridはリアルタイムでのイベント処理を可能にするサービスであり、ストレージのBlobサービスで発生する特定のアクション（この場合はビデオのアップロード）をトリガーとして利用できます。<br>Start-AzureStorageBlobCopy コマンドは、Azure PowerShellを使用してAzure Blob Storage内のBlobを別の場所にコピーするためのツールです。このコマンドレットは、特に大きなファイルやメディアコンテンツのコピーを行い、プログラム的にコピー操作を自動化することができます。これにより、新しいビデオがアップロードされるたびに自動的にBlobをコピー処理が開始され、プログラムが必要とする手動介入を減らすことができ、処理の自動化と効率化を図ることができます。<br>また、Event Gridを用いることで、システムのスケーラビリティとレスポンスの速さを保ちつつ、Azure Storage間でのデータの移動を確実に行うことができます。'>
+<div class='choice'  data-group='選択肢' >Azure Logic Appsを使用して、Blobの移動を自動化する</div>
+<div class='choice'  data-group='選択肢' >Start-AzureStorageBlobCopyコマンドレットを使用するEvent Gridトピックを作成する</div>
+<div class='choice'  data-group='選択肢' >Put Blob操作を使用してコンテナ２にBlobをコピーする</div>
+<div class='choice'  data-group='選択肢' >Blobのメタデータを更新してコピーをトリガーする</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題24<br>仮想マシンを一般化するために利用できるツールはどれですか。' data-answer='2' data-explanation='■正解：<br>C:Azure PowerShell<br>■解説<br>仮想マシンを一般化するというプロセスは、仮想マシンからすべての個人的な情報や特定の環境に依存する設定を削除し、その仮想マシンイメージを再利用可能な状態にすることを意味します。これにより、その仮想マシンのイメージを取得し、新しいインスタンスを作成する際のテンプレートとして使用できます。<br>仮想マシンを一般化するプロセスでは、特にWindows VMの場合、Sysprepツールを使用してOSを一般化します。このプロセスには、個人情報やシステム固有の情報を削除し、OSを再デプロイ可能な状態にリセットする作業が含まれます。Linux VMでは、一般化のプロセスはOSによって異なるコマンドを実行することになりますが、これらのプロセスをリモートで、または自動的に実行するためにはAzure PowerShellが使用されます。<br>Azure PowerShellは、Azureのリソースを管理するためのPowerShellモジュールです。仮想マシンの一般化、イメージの作成、新しいインスタンスのデプロイメントなど、Azure環境での多くの自動化されたタスクを実行するのに適しています。'>
+<div class='choice'  data-group='選択肢' >Visual Studioコマンドプロンプト</div>
+<div class='choice'  data-group='選択肢' >Pythonスクリプト</div>
+<div class='choice'  data-group='選択肢' >Azure PowerShell</div>
+<div class='choice'  data-group='選択肢' >Windowsターミナル</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題25<br>金融業界など規制が厳しい業界で活動する企業において、特定のセキュリティとコンプライアンス基準に準拠したAzureリソースをデプロイする必要があります。テンプレートスペックを使用して、これらの基準に準拠したリソースの設定を一貫してデプロイし、監査の準備を効率化する必要があります。<br>テンプレートスペックを作成するために適切なコマンドはどれですか。' data-answer='0' data-explanation='■正解：<br>A:az ts create<br>■解説<br>テンプレートスペックは、Azure Resource Manager (ARM) テンプレートをAzure内に保存し、管理するためのリソースです。これにより、テンプレートのバージョン管理、共有、再利用が簡単になります。テンプレートスペックを使用すると、複数のプロジェクトやチーム間で一貫したインフラストラクチャのデプロイメントを簡単に実施でき、デプロイメントプロセスの効率化と標準化を図ることができます。<br>Azureのテンプレートスペックを理解するためには、まず「メイン テンプレート」と「リンクされたテンプレート」の概念を把握することが重要です。<br>メイン テンプレート：リソース展開を行う際の主要なAzure Resource Manager (ARM) テンプレートです。これは展開プロセスの起点となり、一連のリソースやリソースグループ全体を定義することができます。メイン テンプレートは、デプロイメントを指示する一連のパラメータ、リソースの宣言、そして出力を含むことができます。<br>リンクされたテンプレート：メイン テンプレートから参照されるARMテンプレートであり、より複雑なシナリオや大規模なデプロイメントをモジュラー化するために使用されます。リンクされたテンプレートを使用することで、特定の機能やコンポーネントを分離し、異なるプロジェクトや部署で再利用することができます。これにより、全体のテンプレートがすっきりとし、管理しやすくなります。<br>メイン テンプレートが全体の構成を管理し、リンクされたテンプレートがその一部を分担し、テンプレートスペックがそれらのテンプレートを効率的に管理します。<br>設問について、az ts createを使用することで、Azureテンプレートスペックを作成することができます。このコマンドは、AzureのResource Managerテンプレートをテンプレートスペックとして保存し、再利用可能なテンプレートスペックリソースとしてAzureに公開するために使用されます。テンプレートスペックを使用することで、特定のセキュリティやコンプライアンス基準に準拠したリソースのデプロイメントを一貫して簡単に行うことができ、組織全体での一貫した環境の構築や、監査のためのプロセスを効率化することが可能です。' data-images='000001.jpg'>
+<div class='choice'  data-group='選択肢' >az ts create</div>
+<div class='choice'  data-group='選択肢' >az template submit</div>
+<div class='choice'  data-group='選択肢' >az ts push</div>
+<div class='choice'  data-group='選択肢' >az template create</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題26<br>あなたは、オンラインストアの支払い処理システムを開発しています。このシステムは、Azure App ServiceにデプロイされるWebアプリで構築されています。安全性を高めるために、支払い処理APIのキー、データベースの接続文字列、その他の機密情報をAzure Key Vault（Vault1）に保存します。また、このWebアプリがKey Vaultにアクセスできるようにしながら、機密情報をコードに含めないようにする必要があります。<br>これら要件を満たすため、どのような対応が適切ですか。' data-answer='3' data-explanation='■正解：<br>D:WebアプリにマネージドIDを割り当てる<br>■解説<br>マネージドID（Managed Identity）は、Azureリソースに対する安全な自動認証を提供する機能です。これにより、機密情報（APIキー、パスワードなど）をコードや設定ファイルに直接記載することなく、Azureサービス（例えばAzure Key Vault）に安全にアクセスすることができます。<br>マネージドIDには以下のようなメリットがあります。<br>・セキュリティの強化：機密情報をコードにハードコードする必要がなくなり、情報漏洩のリスクを軽減します。<br>・簡易性と自動化：機密情報の管理が自動化されるため、手動での情報更新やローテーションの必要がなくなります。<br>・アクセス管理の容易さ: Azureのアクセス管理ポリシーと組み合わせることで、誰がどのリソースにアクセスできるかを簡単に管理できます。<br>オンラインストアの支払い処理システムにおいて、支払いAPIのキーやデータベースの接続文字列などの機密情報を安全に管理するためには、これらの情報を安全な場所に保存し、アクセスする際にはセキュリティを確保する必要があります。マネージドIDを使用することで、Azure App ServiceのWebアプリがAzure Key Vaultに格納された機密情報に対して安全にアクセスでき、かつクレデンシャルをコードや外部に露出させることなく利用することが可能になります。'>
+<div class='choice'  data-group='選択肢' >機密情報をGitHubリポジトリに保存し、必要時にアクセスする</div>
+<div class='choice'  data-group='選択肢' >Azure Storageに機密情報を保存し、共有アクセス署名を使用する</div>
+<div class='choice'  data-group='選択肢' >APIキーをWebアプリの設定ファイルに保存する</div>
+<div class='choice'  data-group='選択肢' >WebアプリにマネージドIDを割り当てる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題27<br>あなたはEコマースプラットフォームの技術者であり、Azure Front Doorを活用しています。特定の商品の価格が間違って掲載されたため、価格を更新しました。<br>更新された価格が即座に反映されるよう、関連する商品ページのキャッシュだけを削除するにはどのキャッシュパージオプションを選ぶべきですか。' data-answer='1' data-explanation='■正解：<br>B:単一パス（Single Path）<br>■解説<br>Azure Front Doorのキャッシュパージとは、Azure Front Doorサービスによって一時的に保存された（キャッシュされた）ウェブページやファイルなどのデータを、手動で削除することを指します。これにより、最新の情報がユーザーに提供されるようになります。<br>Azure Front Doorで利用可能なキャッシュパージの方法として、以下の３つのオプションがサポートされています。<br>・ルート ドメイン（Root Domain）：指定されたドメインに関連するすべてのキャッシュが削除されます。例えば、ウェブサイトが example.comであれば、example.comの全てのページのキャッシュがクリアされます。これは、サイト全体にわたる大規模なキャッシュの削除が必要な場合に使用しますが、全てのキャッシュをクリアするため、ウェブサイトのパフォーマンスに一時的な影響を与える可能性があります。<br>・ワイルドカード（Wildcard）：パターンマッチングを利用して、特定のパターンに一致する複数のURLのキャッシュを削除できます。例えば、製品ページのURLが /products/* で終わる場合、/products/* を指定して製品関連のページのキャッシュだけを削除することができます。これにより、必要な範囲のキャッシュのみを効率的にクリアすることが可能です。<br>・単一パス（Single Path）：指定した一つの具体的なURLのキャッシュを削除するために使用します。例えば、ある特定の商品のページのキャッシュを削除したい場合、その商品ページの完全なURLを指定してキャッシュをクリアします。これは、特定の一つのページだけを更新したい場合に非常に有効で、他のページのキャッシュには影響を与えません。<br>設問について、特定の商品の価格情報が間違って掲載され、その価格を正しいものに更新した後、その変更を速やかにウェブサイトに反映させるためには、その商品ページのキャッシュを削除する必要があります。Azure Front Doorのキャッシュパージオプションには以下のものがありますが、この場合には「単一パス」が最も適切です。'>
+<div class='choice'  data-group='選択肢' >キャッシュパージは不要</div>
+<div class='choice'  data-group='選択肢' >単一パス（Single Path）</div>
+<div class='choice'  data-group='選択肢' >ルート ドメイン（Root Domain）</div>
+<div class='choice'  data-group='選択肢' >ワイルドカード（Wildcard）</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題28<br>以下はARMテンプレートの一部であり、特定の場所に3台の仮想マシン（VM）とそれに付随するネットワークインターフェイス（NIC）を自動的にデプロイするために設計されています。仮想マシンの作成はそれぞれのネットワークインターフェースが作成された後に始まる必要があります。<br>下記テンプレートにおいて、どのようなプロパティが最適ですか。' data-answer='1,4,6' data-explanation='■正解：<br>プロパティ１：B:copyIndex<br>プロパティ２：E:copy<br>プロパティ３：G:dependsOn<br>■解説<br>Azure Resource Manager (ARM) テンプレートは、Azure リソースをデプロイおよび管理するためのテンプレートベースの展開手法です。ARM テンプレートは JSON 形式で記述され、Azure リソースの定義、依存関係、展開手順を記述します。<br>設問について、最適なプロパティの選択は以下の通りとなります。<br>プロパティ１：copyIndex<br>この関数は、ループ内の現在の繰り返し回数を返す関数で、0から始まるインデックスです。これにより、複数のリソースを一括で生成する際に、それぞれのリソースに一意の識別子を割り当てることができます。設問では、これによりネットワークインターフェース（NIC）にユニークな名前が付けられます。<br>プロパティ２：copy<br>copyプロパティは、指定した数だけ同じタイプのリソースを複数回作成するために使用されます。ここでは、パラメータvmCountに基づいて、必要な数のネットワークインターフェースが作成されます。<br>プロパティ３：dependsOn<br>dependsOnプロパティは、ARMテンプレートにおいて、特定のリソースが他のリソースに依存していることを示します。この設定により、依存するリソースが作成される前には、依存されるリソースが先に作成されることが保証されます。<br>設問では、これにより仮想マシン（VM）の作成が、それぞれのネットワークインターフェースが先に作成され、仮想マシンが適切にネットワークに接続されるようになります。' data-images='000002.jpg'>
+<div class='choice'  data-group='プロパティ１' >copy</div>
+<div class='choice'  data-group='プロパティ１' >copyIndex</div>
+<div class='choice'  data-group='プロパティ１' >dependsOn</div>
+<div class='choice'  data-group='プロパティ２' >dependsOn</div>
+<div class='choice'  data-group='プロパティ２' >copy</div>
+<div class='choice'  data-group='プロパティ３' >copy</div>
+<div class='choice'  data-group='プロパティ３' >dependsOn</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題29<br>あなたは法律事務所の文書管理システムを開発しており、重要な書類がAzure Blobストレージに保存されています。このシステムは、書類の作成、更新、削除、およびコピーの各操作を含むストレージアカウント内のBlob変更を監査する必要があります。変更は発生した順序でログに記録され、コンプライアンス要件のために保持されなければなりません。トランザクションログの非同期処理を設定する方法を求めています。<br>これら要件を満たすため、どのような対応が適切ですか。' data-answer='1' data-explanation='■正解：<br>B:ストレージアカウントの変更フィードを有効にする<br>■解説<br>Azure Blob ストレージの変更フィード機能は、ストレージアカウントに保存されたBlobに対する変更を記録します。この機能を有効にすることで、作成、更新、削除、コピーといった操作を追跡し、それらの変更を順序通りにログとして記録します。このログは、監査やコンプライアンスの要件に応じて長期間保持することが可能です。<br>変更フィードは、非同期にデータを処理するための効率的な方法を提供し、各操作の詳細な情報を提供することで、システムの透明性を高め、セキュリティと監査の態勢を強化します。<br>■その他の選択肢<br>・Blobの暗号化を顧客管理キー(CMK)に切り替える：これはセキュリティを強化する措置であり、監査ログの作成とは関連がありません。<br>・スナップショットを定期的に取得して変更を追跡する：スナップショットはバージョン管理やデータ復旧に役立ちますが、実際の変更を順序良く追跡するには向いていません。<br>・アクセスポリシーを設定してBlobコンテナにアクセス制限をかける：これもセキュリティ対策の一環であり、変更ログの記録には直接関係ありません。'>
+<div class='choice'  data-group='選択肢' >スナップショットを定期的に取得して変更を追跡する</div>
+<div class='choice'  data-group='選択肢' >ストレージアカウントの変更フィードを有効にする</div>
+<div class='choice'  data-group='選択肢' >Blobの暗号化を顧客管理キー(CMK)に切り替える</div>
+<div class='choice'  data-group='選択肢' >アクセスポリシーを設定してBlobコンテナにアクセス制限をかける</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題30<br>あなたは、Azure App Serviceを使用してウェブアプリの開発を検討しています。CPUの負荷が特定のしきい値（例えば90%）を超えた場合には、自動的にインスタンスを増減させる自動スケーリング機能を実装したいと考えています。<br>コストを最小限に抑える必要がある場合、どのプランが最適ですか。' data-answer='1' data-explanation='■正解：<br>B:Standard(S)<br>■解説<br>Azure App Serviceで提供されるプランの中で、自動スケーリング機能をサポートしているプランはStandardならびにPremiumです。これらのプランを使用することで、CPU負荷が特定のしきい値（例えば90%）を超えた場合に自動的にアプリケーションのインスタンス数を増減させることができます。これにより、アプリケーションのパフォーマンスを維持しつつ、トラフィックの変動に応じてリソースを効率的に管理することが可能になります。<br>Standardプランは、Free、Shared、Basicプランよりも多くの機能を提供し、Premiumプランよりもコストを抑えることができます。自動スケーリング機能を含む高度な管理機能とスケーラビリティが必要な場合に最適です。これにより、必要なパフォーマンスとスケーラビリティを確保しつつ、コストを最小限に抑えることができます。'>
+<div class='choice'  data-group='選択肢' >Basic(B)</div>
+<div class='choice'  data-group='選択肢' >Standard(S)</div>
+<div class='choice'  data-group='選択肢' >Shared(D)</div>
+<div class='choice'  data-group='選択肢' >Premium(P)</div>
+<div class='choice'  data-group='選択肢' >Free(F)</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題31<br>あなたは、開発環境で使用するAzure仮想マシンにマネージドIDを割り当てて、Azureサービスへの認証を自動化する必要があります。また、作成するマネージドIDは、仮想マシンに関連付けなければなりません。<br>PowerShellを使用する場合、どのような設定を行うのが最適ですか。' data-answer='0' data-explanation='■正解：<br>A:-IdentityType $SystemAssigned<br>■解説<br>マネージドIDには、システム割り当てとユーザー割り当ての二つのタイプがあります。<br>・システム割り当てマネージドID：Azureが自動的に管理し、リソース（例えば仮想マシン）に直接割り当てられるIDです。リソースが削除されると、このIDも自動的に削除されます。<br>・ユーザー割り当てマネージドID：ユーザーが明示的に管理するIDで、複数のリソース間で共有することができます。これは独立して存在し、リソースとは別に削除することができます。<br>PowerShellを使用して仮想マシンにマネージドIDを関連付ける場合、-IdentityTypeを使用します。これは、マネージドIDのタイプを指定するオプションであり、$SystemAssignedや$UserAssignedなどの値を設定します。<br>設問について、最適な設定はオプション-IdentityType $SystemAssignedです。この設定は、システムによって割り当てられたマネージドIDを仮想マシンに関連付けるために使用されます。ユーザー割り当て型と異なり、システム割り当て型はAzureが管理するため、特に開発環境での管理が容易になります。' data-images='000003.jpg'>
+<div class='choice'  data-group='選択肢' >-IdentityType $SystemAssigned</div>
+<div class='choice'  data-group='選択肢' >-IdentityID $UserAssigned</div>
+<div class='choice'  data-group='選択肢' >-IdentityType $UserAssigned</div>
+<div class='choice'  data-group='選択肢' >-IdentityID $SystemAssigned</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題32<br>Azureストレージアカウント間でデータのコピーや移動を行うために利用できるサービスはどれですか。' data-answer='0' data-explanation='■正解：<br>A:AzCopy<br>■解説<br>AzCopyは、Azureストレージサービス間でデータをコピーおよび移動するためのコマンドラインユーティリティです。このツールは特に、大規模なデータの移動や効率的なデータ転送を必要とするシナリオに適しています。<br>AzCopyの主な機能は、以下の通りとなります。<br>・パフォーマンスと効率：AzCopyは複数のファイルを並行して転送することで高速なデータ転送を実現します。また、帯域幅を最適に利用し、ネットワーク条件に基づいて転送速度を自動調整します。<br>・大規模なデータ転送：大量のファイルや大きなファイルの転送に最適化されており、Azure Blob Storage、File Storage、Table Storageとの間でデータを効率的に移動できます。<br>・フィルタリングオプション：ワイルドカードや特定のファイルパターンを使用して、転送するファイルを精密に指定することが可能です。<br>・セキュリティ：セキュアなデータ転送を保証するため、すべての転送はSSLを通じて暗号化されます。'>
+<div class='choice'  data-group='選択肢' >AzCopy</div>
+<div class='choice'  data-group='選択肢' >Azure Storage Explorer</div>
+<div class='choice'  data-group='選択肢' >Azure Logic Apps</div>
+<div class='choice'  data-group='選択肢' >Azure Migrate</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題33<br>あなたの組織は、商品の在庫状況を管理するシステムを開発しており、データの管理はAzure Cosmos DBの利用を検討しています。注文データは、非リレーショナルJSONとして保存され、SQLを使用して照会する必要があります。また、オーダーデータへの変更は、すべてのパーティションに即座に反映されなければならず、オーダーデータへの読み取りは、最新の書き込みデータを取得しなければなりません。<br>これら要件を満たすAzure Cosmos DBのAPIと整合性レベルは何ですか。' data-answer='0,2' data-explanation='■正解：<br>A:NoSQL<br>C:厳密（Strong）<br>■解説<br>Azure Cosmos DBの整合性レベルは、データベース内でデータがどのように整合性を保つかを定義する設定です。異なる整合性レベルを選択することで、データの最新性、読み取りの速度、リソースの利用効率などをバランス良く管理することができます。具体的には、以下のような整合性レベルがあります<br>１．Strong（厳密）：読み取り操作が常に最新の書き込みを反映することを保証します。データベースのすべてのレプリカが最新の状態に同期している必要があります。最も厳しい整合性を提供しますが、他の整合性レベルに比べてレイテンシー（遅延）が大きくなる可能性があります。<br>２．Bounded Staleness（有界整合性制約）：読み取り操作が古くなることがある特定の時間範囲または操作数の範囲内で保持されます。リージョン間でのレイテンシーを低減しつつ、整合性を犠牲にすることなくパフォーマンスを向上させることができます。<br>３．Session（セッション）：同一クライアントセッション内での整合性を保証します。ユーザーがそのセッション内で行った変更は、そのユーザーに対しては常に正確に反映されます。Web アプリケーションやモバイル アプリケーションに適しています。<br>４．Consistent Prefix（一貫性のあるプレフィックス）：書き込みは常に一定の順序で行われ、読み取り操作はこの順序を保つことを保証します。最新のデータを必ずしも反映しないことがあるため、一部のアプリケーションでは許容できないかもしれません。<br>５．Eventual（最終的）：最も緩い整合性レベルで、読み取り操作が最終的には最新の書き込みを反映することを保証しますが、いつ反映されるかは保証されません。パフォーマンスは最も高いが、整合性の要件が低いアプリケーションに適しています。<br>設問について、非リレーショナルJSONデータをSQLを使用して照会する必要があり、オーダーデータへの変更がすべてのパーティションに即座に反映される必要があるため、データ整合性は非常に重要です。また、データへの読み取りが最新の書き込みを取得する必要があるという要件もあるため、整合性レベルは厳密（Strong）が適切です。<br>APIについて、NoSQLを使用すると、SQLに似た文法を使ってAzure Cosmos DBのJSONデータをクエリすることができます。これは非リレーショナルJSONデータに対してSQL照会を行う要件に適しています。'>
+<div class='choice'  data-group='API' >NoSQL</div>
+<div class='choice'  data-group='API' >MongoDB</div>
+<div class='choice'  data-group='整合性レベル' >厳密（Strong）</div>
+<div class='choice'  data-group='整合性レベル' >最終的（Eventual）</div>
+<div class='choice'  data-group='整合性レベル' >一貫性のあるプレフィックス(Consistent prefix)</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題34<br>あなたの組織は、Azureを使用してストリーミングビデオを配信するウェブアプリの開発を検討しています。<br>下記の要件を満たす必要がある場合、最適なサービスは何ですか。<br>・ユーザーに最も近い地理的な場所にデータを保存する<br>・可用性が高く、ユーザーのストリーミング体験が一定である' data-answer='0' data-explanation='■正解：<br>A:Azure Content Delivery Network（CDN）<br>■解説<br>Azure Content Delivery Network（CDN）は、全世界に分散されたサーバーネットワークを使用してコンテンツをユーザーに高速で配信するサービスです。ストリーミングビデオなどの静的および動的コンテンツをユーザーに最も近い地理的な場所から配信することで、ロード時間を短縮し、ユーザー体験を向上させることができます。これにより、可用性が高く、一貫したストリーミング体験を提供することができます。<br>■その他の選択肢<br>・Azure Redis Cache：高速なアクセスを提供する分散キャッシュサービスです。主にアプリケーションのパフォーマンスを向上させるために使用されますが、ストリーミングビデオの配信や地理的な位置に基づくデータの保存には特化していません。<br>・Azure Elastic SAN：高性能なストレージエリアネットワーク（SAN）ソリューションを提供します。主にデータセンター内での使用を想定しており、ストリーミングビデオの地理的な配信やユーザー体験の向上に直接貢献するものではありません。<br>・Azure Event Hubs：大量のイベントデータを収集、保存、処理するためのビッグデータストリーミングプラットフォームです。イベント処理には適していますが、ビデオコンテンツの配信や地理的な位置に基づくデータの保存には向いていません。'>
+<div class='choice'  data-group='選択肢' >Azure Content Delivery Network（CDN）</div>
+<div class='choice'  data-group='選択肢' >Azure Redis Cache</div>
+<div class='choice'  data-group='選択肢' >Azure Event Hubs</div>
+<div class='choice'  data-group='選択肢' >Azure Elastic SAN</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

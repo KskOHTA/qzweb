@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='false' data-question='問題35<br>あなたは、Azureにて仮想マシンVM1を運用していますが、リモートデスクトップ接続に問題があるため、VM1を別のホストに移動させたいと考えています。<br>どのような対応が最適ですか。' data-answer='2' data-explanation='■正解：<br>C:VM1の再デプロイを行う<br>■解説<br>Azureの仮想マシンを別のホストに移動するには、「再デプロイ」機能を利用します。再デプロイ機能を使用することで、現在のAzureホストから仮想マシンを別のホストに移動させることができます。このプロセスは、仮想マシンに生じている一時的な問題やリモートデスクトップ接続の問題など、ホストレベルで起こっている問題を解決する際に使用されます。<br>再デプロイにより、仮想マシンは新しいノードに移動され、その過程でシステムがリセットされるため、接続問題などのトラブルを解決することが可能です。'>
+<div class='choice'  data-group='選択肢' >Azureサポートに問い合わせを行う</div>
+<div class='choice'  data-group='選択肢' >VM1の再起動を行う</div>
+<div class='choice'  data-group='選択肢' >VM1の再デプロイを行う</div>
+<div class='choice'  data-group='選択肢' >VM1を削除し、新しいVMを作成する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題36<br>あなたはスマートビル管理システムを開発しており、ビル内のセンサーからのエネルギー消費データを中央サーバーに送信するソリューションを構築しています。受信したデータは処理されるまで保存する必要があり、Azure Service Busインスタンスを作成しました。<br>その次の手順としてどのコマンドが最適ですか。' data-answer='3' data-explanation='■正解：<br>D:az servicebus queue create --resource-group building-rg --namespace-name building-ns --name energy-data-queue<br>■解説<br>Azure Service Bus を使用してメッセージング ソリューションを構築するためには、まず名前空間を作成し、その中にキューまたはトピックを設定する必要があります。Azure CLI（コマンドライン インターフェイス）を使用して名前空間とキューを作成する基本的な手順は以下の通りです。<br>１．リソースグループの作成：名前空間を作成する前に、リソースグループが必要です。以下のコマンドで新しいリソースグループを作成できます。すでにリソースグループがある場合は、このステップをスキップできます。<br>az group create --name <リソースグループ名> --location <ロケーション><br>２．Service Bus 名前空間の作成：Azure Service Busの名前空間は、Azure Service Busインスタンス全体を指します。名前空間は、Service Busのキューやトピックなどのすべてのリソースを含むコンテナのようなものです。リソースを論理的にグループ化し、アクセス管理を簡素化するために使用されます。次のコマンドを使用して、Service Bus 名前空間を作成することができます。<br>az servicebus namespace create --resource-group <リソースグループ名> --name <名前空間名> --location <ロケーション> --sku Standard<br>３．キューの作成：名前空間が設定されたら、次のコマンドで名前空間内にキューを作成します。<br>az servicebus queue create --resource-group <リソースグループ名> --namespace-name <名前空間名> --name <キュー名><br>４．名前空間の接続文字列の取得：キューにメッセージを送受信するためには、名前空間の接続文字列が必要です。この接続文字列を取得するには、以下のコマンドを使用します。<br>az servicebus namespace authorization-rule keys list --resource-group [リソースグループ名] --namespace-name [名前空間名] --name RootManageSharedAccessKey --query primaryConnectionString --output tsv<br>これらの手順に従うことで、Azure Service Bus 名前空間とキューをCLIを通じて簡単にセットアップできます。<br>設問のシナリオでは、エネルギー消費データを受信し、処理されるまで保存する必要があるため、Azure Service Busのキューを作成する必要があります。このキューは、送信されたメッセージを保持し、順序通りに処理するために使用されます。与えられた選択肢の中で正しいコマンドは以下のとおりです。<br>・az servicebus queue create --resource-group building-rg --namespace-name building-ns --name energy-data-queue：このコマンドは、指定されたリソースグループと名前空間に新しいキューを作成します。これは、スマートビル管理システムでセンサーデータを受信し保持するのに適切な方法です。'>
+<div class='choice'  data-group='選択肢' >az servicebus topic create --resource-group building-rg --namespace-name building-ns --name energy-data-topic</div>
+<div class='choice'  data-group='選択肢' >Set-AzureRmServiceBusQueue -ResourceGroupName building-rg -NamespaceName building-ns -QueueName energy-data-queue -MaxSizeInMegabytes 1024</div>
+<div class='choice'  data-group='選択肢' >New-AzureRmServiceBusNamespace -ResourceGroupName building-rg -NamespaceName building-ns -Location eastus</div>
+<div class='choice'  data-group='選択肢' >az servicebus queue create --resource-group building-rg --namespace-name building-ns --name energy-data-queue</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題37<br>大学の研究データを処理するためのAzure APIを構築しています。セキュリティが重要な要件であり、APIを呼び出す際にはクライアントがAPIに機密情報を送信しない方式が必要です。<br>どの認証メカニズムが最適ですか。' data-answer='1' data-explanation='■正解：<br>B:マネージドID<br>■解説<br>認証メカニズムに関して、クライアントがAPIに機密情報を送信しない方法が必要である場合、特にAzure環境内でAPIを安全に利用するための効果的な手段としてマネージドID（Managed Identity）が適しています。このメカニズムは、Azure Active Directoryを利用して自動的にAzureリソースへの認証を行い、機密性の高いクレデンシャルをコード内にハードコーディングする必要がなく、セキュアな認証が可能です。<br>■その他の選択肢<br>・ユーザー名とパスワード：この方法はクライアントが直接機密情報をAPIに送信するため、求められている要件に適合しません。<br>・OAuth 2.0：OAuthもセキュリティは強力ですが、このシナリオではクライアントがアクセストークンを取得するために一部の機密情報を提供する必要があります。<br>・クライアント証明書：セキュアではありますが、設定と管理が複雑であり、APIへのクレデンシャル情報の送信を避けるための最適な選択肢ではありません。'>
+<div class='choice'  data-group='選択肢' >ユーザー名とパスワード</div>
+<div class='choice'  data-group='選択肢' >マネージドID</div>
+<div class='choice'  data-group='選択肢' >OAuth 2.0</div>
+<div class='choice'  data-group='選択肢' >クライアント証明書</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題38<br>あなたは、Azure Resource Managerテンプレートを使用してリソースのデプロイを検討しています。<br>テンプレートをデプロイする前に、そのテンプレートが環境にどのような変更を加えるかをシミュレートし表示する機能はどれですか。' data-answer='1' data-explanation='■正解：<br>B:What-If操作<br>■解説<br>What-If 操作は、Azure Resource Manager (ARM) テンプレートを実際にデプロイする前に、そのテンプレートがAzure環境に対して行う予定の変更をシミュレートし、予測するための機能です。この機能を使うことで、デプロイメントが意図した通りの効果をもたらすか、予期せぬ変更を加える可能性があるかを事前に確認できます。<br>What-if操作の主要な機能およびメリットは以下の通りです。<br>・変更の予測：テンプレートがデプロイされた場合に作成、更新、削除されるリソースを表示します。これにより、テンプレートの影響を正確に理解することができます。<br>・詳細情報の提供：変更されるリソースの詳細な情報を提供し、どのプロパティがどのように変更されるかを示します。<br>・安全な検証：実際にリソースをデプロイすることなく、テンプレートの影響を検証できるため、誤ったリソースのデプロイによるリスクを回避できます。<br>・変更のカスタマイズ：What-If操作の結果をもとに、テンプレートを調整し、望ましいデプロイメント結果を得るための計画を立てることができます。'>
+<div class='choice'  data-group='選択肢' >テンプレート関数</div>
+<div class='choice'  data-group='選択肢' >What-If操作</div>
+<div class='choice'  data-group='選択肢' >ARM テンプレートテスト ツールキット</div>
+<div class='choice'  data-group='選択肢' >Azure Deployment Manager</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題39<br>あなたは、法律事務所向けの文書管理システムを開発しており、契約書類、顧客リスト、法的助言記録などの機密情報をAzure Cosmos DBに保存しています。情報漏洩のリスクを最小限に抑えるため、Always Encryptedを使用して、これらの文書をデータベース内で暗号化する必要があります。<br>暗号化のため、最適な手順は何ですか。' data-answer='3' data-explanation='■正解：<br>D:カスタマーマネージドキー（CMK）を作成し、新しいAzure Key Vaultインスタンスにキーを格納する<br>■解説<br>Always Encryptedは、Microsoft Azure Cosmos DBなどのデータベースサービスで利用可能な機能であり、データベース内の特定のデータを暗号化し、アプリケーションレベルでのみそのデータを復号化できるようにする技術です。この機能の主な目的は、機密性の高いデータを保護することで、たとえデータベースが不正アクセスされた場合でもデータが漏洩するリスクを最小限に抑えることです。<br>Always Encryptedの実装で必要なステップは下記の通りです。<br>手順１：カスタマーマネージドキー（CMK）を作成し、新しいAzure Key Vaultインスタンスにキーを格納する：カスタマーマネージドキー（CMK）キーは、データの暗号化および復号化に使用されるために使用されます。このキーは、データ暗号化キー（DEK）を暗号化するために使用されます。DEKは実際にデータベース内のデータを暗号化・復号化する際に使用されるキーです。CMKによるDEKの暗号化は、DEKが漏洩してもデータが保護されるようにするために重要です。<br>手順２：Azure Cosmos DBアカウントでキーを構成する：Azure Cosmos DB アカウントで、キーボールト（Key Vault）からCMKを参照するように設定します。これには、AzureポータルまたはAzure CLIを使用できます。Cosmos DBアカウントの設定で、キーボールトのURIを指定し、Cosmos DBがキーボールトにアクセスするための必要な権限を持っていることを確認します。<br>手順３：データ暗号化キー（DEK）の生成：アプリケーションからAzure Cosmos DB SDKを使用してデータ暗号化キー（DEK）を生成します。DEKは、データベース内で個々のアイテムを暗号化するために使用されます。DEKはAzure Cosmos DB内に保存されますが、それ自体はCMKによって暗号化されています。<br>手順４：暗号化ポリシーの定義とアイテムの暗号化：Cosmos DBのコンテナを作成する際に、どのフィールドを暗号化するかを指定する暗号化ポリシーを設定します。これにより、指定されたフィールドに格納されるデータが自動的に暗号化されます。アプリケーションがデータベースにアイテムを書き込む際、暗号化ポリシーに基づいて自動的にデータが暗号化されます。' data-images='000013.jpg'>
+<div class='choice'  data-group='選択肢' >暗号化ポリシーを定義し、それを含む新しいデータベースコレクションを作成する</div>
+<div class='choice'  data-group='選択肢' >Azure ADのマネージドIDを生成し、それをAzure Storageアカウントに割り当てる</div>
+<div class='choice'  data-group='選択肢' >Azure Cosmos DBの暗号化設定を更新し、追加のJSONプロパティを暗号化ポリシーに追加する</div>
+<div class='choice'  data-group='選択肢' >カスタマーマネージドキー（CMK）を作成し、新しいAzure Key Vaultインスタンスにキーを格納する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題40<br>あなたの組織は、Azure Cosmos DBを使用する企業の従業員管理システムを開発しており、以下のようなフォーマットで従業員データを保管しています。<br>また、以下のようなクエリを使用して従業員情報を表示することを想定しています。<br>クエリのパフォーマンスを向上させるため、インデックス作成ポリシーをどのように設定するべきですか。' data-answer='1,4' data-explanation='■正解：<br>セグメント１：B:compositeIndexes<br>セグメント２：E:descending<br>■解説<br>Azure Cosmos DBのインデックス作成ポリシーを作成することで、データベースがどのようにデータをインデックス（索引）するかを定義することができます。インデックスを使うと、データの検索やクエリが速くなります。基本的に、Cosmos DBではすべてのデータが自動的にインデックスされるため、特別な設定をしなくても高速にクエリを実行できますが、特定のプロパティのみをインデックスするように設定したり、不要なプロパティのインデックスを排除することで、ストレージの使用量やパフォーマンスを最適化できます。<br>複合インデックス（Composite Indexes）は、2つ以上のプロパティを組み合わせて作成されるインデックスです。これにより、複数のプロパティに基づくソートやクエリが高速に行えます。特定のクエリのパフォーマンスをさらに向上させたい場合は、複合インデックスを適切に設計することが推奨され、これにより、複雑なクエリも迅速に処理できるようになります。<br>本設問について、クエリでは従業員情報を部署名（昇順：ascending）と給与（降順：descending）でソートして表示することが求められています。<br>セグメント１は、複合インデックスを指すcompositeIndexesが適切です。<br>セグメント２は、給与を降順でソートするdescendingが最適です。' data-images='000014.jpg,000015.jpg,000016.jpg,000017.jpg'>
+<div class='choice'  data-group='セグメント１' >descending</div>
+<div class='choice'  data-group='セグメント１' >compositeIndexes</div>
+<div class='choice'  data-group='セグメント１' >orderBy</div>
+<div class='choice'  data-group='セグメント２' >ascending</div>
+<div class='choice'  data-group='セグメント２' >descending</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題41<br>あなたの組織は、Azure Storageへのアクセスを許可するために共有アクセス署名（SAS）の設定を検討しています。<br>複数のストレージサービスにまたがるリソースへのアクセスを委任するためには、どの共有アクセス署名が最適ですか。' data-answer='0' data-explanation='■正解：<br>A:アカウント SAS<br>■解説<br>共有アクセス署名（SAS）は、Azure Storageなどのクラウドストレージサービスを利用する際に、特定のリソースへのアクセスを安全に許可するための方法です。SASを使うことで、ストレージアカウントのキーや他の重要な情報を直接共有することなく、必要なリソースへのアクセス権を他者に与えることができます。<br>アカウント SASは、Azure Storageアカウントに関連する複数のサービス（Blob、File、Queue、Tableサービスなど）へのアクセスを許可するために使用されます。アカウントSASを利用することで、一つのSASキーでアカウント内の複数のサービスに対する広範なアクセス権限を管理することができます。これは、複数のサービスにまたがるリソースへのアクセスを一元的に設定したい場合に特に有効です。'>
+<div class='choice'  data-group='選択肢' >アカウント SAS</div>
+<div class='choice'  data-group='選択肢' >サービス SAS</div>
+<div class='choice'  data-group='選択肢' >ユーザー委任 SAS</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題42<br>あなたの会社は、顧客データベースをAzure Cosmos DBで管理しており、顧客情報が変更されるたびにデータベースのインデックスが即時に更新されるように設定する必要があります。<br>この要件を満たすためにはどうすれば良いですか。' data-answer='3' data-explanation='■正解：<br>D:インデックスモードを同期（Consistent）に設定する<br>■解説<br>Azure Cosmos DBのインデックス作成モードには主に以下の2種類があります。<br>１．Consistent（同期）：このモードでは、アイテムがAzure Cosmos DBに追加または更新されると同時にインデックスも更新されます。これにより、データの一貫性が保たれ、クエリ操作が常に最新のデータを反映した結果を提供します。<br>２．None（無効）：このモードを選択すると、インデックス作成が行われません。これにより、書き込み操作のパフォーマンスは向上しますが、インデックスがないため、多くの種類のクエリ操作ができなくなります。インデックスを必要としない特定のシナリオでのみ推奨されます。<br>設問のシナリオにおいて、Azure Cosmos DBにおいてインデックスモードを「Consistent」と設定することは、データベース内で行われるすべてのアイテムの作成、更新、削除が行われると同時に、インデックスも同期的に更新されることを意味します。これにより、データの最新の状態が常にクエリによって反映され、データの整合性が保たれます。'>
+<div class='choice'  data-group='選択肢' >自動インデックス作成のプロパティをFalseに設定する</div>
+<div class='choice'  data-group='選択肢' >インデックスモードをNoneに設定する</div>
+<div class='choice'  data-group='選択肢' >EnableScanInQueryオプションをTrueに設定する</div>
+<div class='choice'  data-group='選択肢' >インデックスモードを同期（Consistent）に設定する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題43<br>リレーショナルデータのバッチ処理を行うことができるAzure Cosmos DBのAPIは何ですか。' data-answer='1' data-explanation='■正解：<br>B:NoSQL<br>■解説<br>リレーショナルデータのバッチ処理を行う場合、Cosmos DBではNoSQLが最適です。このAPIは、SQLに似たクエリ言語を使用してJSON形式のドキュメントを扱います。これにより、開発者はリレーショナルデータベースのような感覚でデータにアクセスし、操作することが可能ですが、データの格納と管理はNoSQL方式で行われます。これにより、スキーマレスのデータ構造、水平スケーラビリティ、高可用性といったNoSQLデータベースの利点を生かすことができます。'>
+<div class='choice'  data-group='選択肢' >MongoDB</div>
+<div class='choice'  data-group='選択肢' >NoSQL</div>
+<div class='choice'  data-group='選択肢' >Apache Gremlin</div>
+<div class='choice'  data-group='選択肢' >Apache Cassandra</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題44<br>Microsoft ID Platformが提供するIDトークンにおいて、ユーザーを一意に識別するためのクレームはどれですか。' data-answer='0' data-explanation='■正解：<br>A:oid<br>■解説<br>Microsoft Identity PlatformのIDトークンは、ユーザーが認証を行った後に発行されるJWT（JSON Web Token）であり、認証されたユーザーのプロフィール情報や他のセキュリティに関するデータを含んでいます。IDトークン内には複数のクレームが記述されており、クレームにはユーザーに関する属性や権限などの情報などが含まれています。<br>Microsoft Identity Platformが提供するIDトークンにおいて、ユーザーを一意に識別するためのクレームは oid (Object ID：オブジェクトID) です。これは、Microsoft Entra ID内のオブジェクトの一意の識別子であり、ユーザーやサービスプリンシパルを一意に識別します。ユーザーが移動されても、または他のテナントに招待されても、このIDは変更されないため、アプリケーションがユーザーを一貫して識別するために非常に役立ちます。'>
+<div class='choice'  data-group='選択肢' >oid</div>
+<div class='choice'  data-group='選択肢' >iat</div>
+<div class='choice'  data-group='選択肢' >iss</div>
+<div class='choice'  data-group='選択肢' >idp</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題45<br>ある大学は、オンライン試験システムを運営しており、試験期間中に多数の学生が同時にアクセスすることが予想されます。試験は月に一度、事前に決定された日程で行われますが、試験実施中の高負荷に対応するため、自動的にインスタンスを増減させることで対応する必要があります。<br>どのオートスケーリング方法であれば、対応が可能ですか。（２つ選択）' data-answer='0,1' data-explanation='■正解：<br>A:CPU使用率などのメトリックベース<br>B:指定日時のプロファイル（Fixed date and time profile）<br>■解説<br>Azure Monitorの自動スケーリングは、Azureリソースのパフォーマンスメトリックスを監視し、負荷の増減に応じてリソースのインスタンス数を動的に増減させる機能です。これにより、アプリケーションやサービスのトラフィックに応じてリソースのスケールを自動的に調整することができます。<br>また、プロファイルを使用することで、負荷が高まるタイミングに合わせてインスタンスのスケーリングを行うことも可能です。<br>・CPU使用率などのメトリックベース：CPU使用率などのメトリックに基づく自動スケーリングは、リソースの利用状況をリアルタイムで監視し、設定されたしきい値を基に自動的にスケールアップまたはスケールダウンします。オンライン試験システムのように、試験実施中に予期せぬ高負荷が発生した場合、CPU使用率が高くなることを検知して自動的にインスタンス数を増やし、パフォーマンスを維持することが可能です。<br>・指定日時のプロファイル：指定日時のプロファイルを使用すると、あらかじめ決められたスケジュールに基づいてインスタンスの数を自動的に調整することができます。このシナリオでは、試験が月に一度の固定スケジュールで実施されるため、試験開始前に自動的にリソースをスケールアップし、試験終了後にスケールダウンするよう設定することで、需要に応じたリソースの確保が可能になります。<br>■その他の選択肢<br>・定期的なプロファイル：毎週または毎月といった定期的なスケジュールに基づいてリソースを自動的に調整するのに適しています。これは、試験が毎月同じ曜日に実施されるような場合に有効ですが、設問のように試験が特定の日付に行われる場合は、指定日時のプロファイルの方がより正確にスケジューリングできます。<br>・予測自動スケーリング：過去のデータやトレンド分析を利用して将来のリソース需要を予測し、それに応じてスケーリングを行う方法です。ただし、定期的なイベントや確実に予測できる負荷増加には、事前に設定できる定期的なプロファイルやメトリックベースのスケーリングの方が直接的で効果的です。'>
+<div class='choice'  data-group='選択肢' >CPU使用率などのメトリックベース</div>
+<div class='choice'  data-group='選択肢' >指定日時のプロファイル（Fixed date and time profile）</div>
+<div class='choice'  data-group='選択肢' >予測自動スケーリング（Predictive autoscale）</div>
+<div class='choice'  data-group='選択肢' >定期的なプロファイル（Recurring profile）</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題46<br>ある企業は、世界中で展開されるEコマースプラットフォームの構築を検討しています。Azure Cosmos DBを使用したデータ管理を考えていますが、下記の要件を満たす必要があります。<br>・複数のリージョンにデータをレプリケートし、99.99%の可用性を保証する<br>・ローカルネットワーク障害やその他の障害が発生しても注文を受け付ける<br>・各注文は受け付けた正確な順序で処理し、在庫の重複や誤配を防ぐ<br>これら要件を満たすAzure CLIコマンドの設定はどれですか。' data-answer='0,3,6' data-explanation='■正解：<br>プロパティ１：A:enable-automatic-failover true<br>プロパティ２：D:locations "eastus=0 westus=1 southcentralus=2"<br>値１：G:BoundedStaleness<br>■解説<br>az cosmosdb createコマンドは、Azure Cosmos DBのアカウントを作成し、構成するために使用されます。コマンドでは、データベース名、リソースグループ、レプリケーションの地域などの重要なパラメータを指定できます。<br>設問についてオプションの説明は以下の通りです。<br>--enable-automatic-failover：これは、地域間での自動フェールオーバーを有効にするオプションです。障害が発生した際に、自動的に別の地域に切り替えることで、サービスの継続性を高めることができます。<br>--locations "eastus=0 westus=1 southcentralus=2"：このオプションは、Azure Cosmos DB アカウントが複数の地域にデプロイされることを指定します。各地域は優先順位を持っており、0が最も高く、以降順に優先度が低くなります。<br>--default-consistency-level：この設定は、データベースの整合性レベルを定義します。整合性レベルには、BoundedStaleness、ConsistentPrefix、Eventual、Session、Strongなどがあり、データの読み取りと書き込みの一貫性とレイテンシのバランスを取るために使用されます。<br>BoundedStaleness（有界整合性制約） 整合性レベルは、データの一貫性と可用性のバランスを取る設定です。この設定により、データは一定の遅延（最大許容遅延）または操作（最大操作数）内で一貫しています。Eコマースプラットフォームでは、地理的に分散した顧客に対して、データの読み取りと書き込みのレイテンシを低減しながら、在庫の状態が適切に同期されることが重要です。BoundedStaleness を使用することで、99.99%の高可用性を維持しつつ、障害時にも注文の処理を継続でき、在庫の重複や誤配のリスクを減らすことができます。' data-images='000018.jpg'>
+<div class='choice'  data-group='プロパティ１' >enable-automatic-failover true</div>
+<div class='choice'  data-group='プロパティ１' >enable-multiple-write-locations true</div>
+<div class='choice'  data-group='プロパティ２' >locations "eastus=0"</div>
+<div class='choice'  data-group='プロパティ２' >locations "eastus=0 westus=1 southcentralus=2"</div>
+<div class='choice'  data-group='値１' >Eventual</div>
+<div class='choice'  data-group='値１' >ConsistentPrefix</div>
+<div class='choice'  data-group='値１' >BoundedStaleness</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題47<br>あなたは、企業の機密ドキュメントを管理するクラウドベースのアプリケーションを開発しています。このアプリケーションは、Azure Key Vaultにセキュリティ情報を保存し、Azure Key VaultのAPIを利用する予定です。誤ってAzure キーボールトやキーボールトのオブジェクトが削除された際に、削除後90日間でのデータ復元が可能であるようにアプリケーションを設定する必要があります。<br>これら要件を満たすために適切なコマンドは何ですか。' data-answer='0' data-explanation='■正解：<br>A:az keyvault update --name MySecureVault --resource-group MyResourceGroup --enable-soft-delete true --enable-purge-protection true<br>■解説<br>Azure Key Vaultの論理的な削除とパージ保護機能を有効にすることによって、誤って削除されたキーボールトやその中のオブジェクトを最大90日間復元できるようになります。この機能を有効にすると、削除されたオブジェクトは完全に削除される前に一時的に保護され、必要に応じて復元することができます。<br>その為に適切なコマンドは以下の通りです。<br>az keyvault update --name MySecureVault --resource-group MyResourceGroup --enable-soft-delete true --enable-purge-protection true<br>・キーボールトの更新 (az keyvault update)：このコマンドは、既存のAzure Key Vaultの設定を変更するために使われます。<br>・論理的な削除の有効化 (--enable-soft-delete true)：論理的な削除を有効にすると、キーボールトやその中のキー、シークレット、証明書が誤って削除された場合でも、完全に削除されずに一定期間保持され、復元が可能になります。<br>・パージ保護の有効化 (--enable-purge-protection true)：パージ保護を有効にすると、論理的な削除で有効になったオブジェクトが保護期間中に完全に削除されることを防ぎます。これにより、重要なデータが不注意によって永久に失われるリスクをさらに軽減できます。<br>これらの設定は、誤削除からのデータ復元を可能にするとともに、誤ってデータを完全に消去するリスクを低減するのに役立ちます。特に企業の機密データを扱う場合には、このような保護機能の設定は極めて重要です。'>
+<div class='choice'  data-group='選択肢' >az keyvault update --name MySecureVault --resource-group MyResourceGroup --enable-soft-delete true --enable-purge-protection true</div>
+<div class='choice'  data-group='選択肢' >az keyvault delete --name MySecureVault --resource-group MyResourceGroup</div>
+<div class='choice'  data-group='選択肢' >az keyvault update --name MySecureVault --resource-group MyResourceGroup --enable-soft-delete false</div>
+<div class='choice'  data-group='選択肢' >az keyvault set-policy --name MySecureVault --resource-group MyResourceGroup --disable-delete</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題48<br>あなたは、病院の患者記録管理を行うアプリケーションを開発しています。アプリケーションで使用するデータはAzure Cosmos DBに保存され、クエリを実行してデータを操作できる必要があります。保存されるデータは、患者ID、診療記録、治療日、担当医師が含まれます。Azure Cosmos DBのどのAPIを使用し、パーティションキーとして何を選択するべきですか。<br>適切な組み合わせを選択してください。' data-answer='2,5' data-explanation='■正解：<br>API：C:NoSQL<br>パーティションキー：F:患者ID<br>■解説<br>Azure Cosmos DBのNoSQL APIは、JSON形式のドキュメントを扱う際の柔軟性と強力なクエリ機能を提供します。このAPIは、非関係型データベースであり、構造化されていないデータや半構造化データを効率的に扱えるため、患者記録のようなデータ構造に適しています。<br>パーティションキーは、Azure Cosmos DB内でデータを分散し、管理するためのキーです。このキーに基づいて、データは複数のパーティションに分割され、データアクセスの負荷が均等に分散されます。患者IDをパーティションキーとして使用することで、患者に関連するすべてのデータが同じパーティションに配置され、患者に基づくクエリの効率が向上します。'>
+<div class='choice'  data-group='API' >Apache Gremlin</div>
+<div class='choice'  data-group='API' >Table</div>
+<div class='choice'  data-group='API' >NoSQL</div>
+<div class='choice'  data-group='API' >MongoDB</div>
+<div class='choice'  data-group='パーティションキー' >診療記録</div>
+<div class='choice'  data-group='パーティションキー' >患者ID</div>
+<div class='choice'  data-group='パーティションキー' >担当医師</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題49<br>あなたは、.NETアプリケーションを開発しています。アプリケーションは、Azure Cosmos DBのNoSQLデータベースに接続し、データのクエリを行う必要があります。<br>.NETクライアントライブラリのどのクラスを使用すればよいですか。' data-answer='1' data-explanation='■正解：<br>B:CosmosClient<br>■解説<br>CosmosClientクラスは、Azure Cosmos DB サービスに対するプログラムによる操作を可能にする.NET SDKの一部です。このクラスを使用することで、開発者は.NETアプリケーションからAzure Cosmos DBのNoSQLデータベースに接続し、データのクエリ、挿入、更新、削除などの操作を行うことができます。<br>具体的には、CosmosClientクラスはAzure Cosmos DBアカウントへの接続を管理し、データベースやコンテナ（テーブルやコレクションに相当）へのアクセスを提供します。また、トランザクションの実行、パフォーマンスの最適化、複数リージョンへのデータの自動レプリケーションなど、Azure Cosmos DBの高度な機能を活用するためのメソッドも提供します。'>
+<div class='choice'  data-group='選択肢' >QueueClient</div>
+<div class='choice'  data-group='選択肢' >CosmosClient</div>
+<div class='choice'  data-group='選択肢' >AccountRegion</div>
+<div class='choice'  data-group='選択肢' >Conflicts</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題50<br>Azure Cosmos DBの変更フィードプロセッサにおいて、以下の機能は何ですか。<br>機能：変更フィードプロセッサでエラー処理を行う<br>具体例：変更フィードプロセッサがドキュメントの更新処理中にエラーに遭遇した場合、ドキュメントは自動的に配信不能キューに移動され、バッチ全体を再試行しないようにする' data-answer='1' data-explanation='■正解：<br>B:配信不能キュー（Dead-letter queue）<br>■解説<br>配信不能キュー（Dead-letter queue）は、メッセージキューやイベント処理システムで一般的に使用される概念で、処理に失敗したメッセージを格納するための場所を提供します。Azure Cosmos DBの変更フィードプロセッサを使用する際にも、同様の概念が適用されます。<br>プロセッサがドキュメントの更新処理中に遭遇するエラーを扱う際、失敗したドキュメントは配信不能キューに移動され、これによりシステムはバッチ全体を再試行することなく、問題のあるドキュメントのみを隔離して対応することができます。'>
+<div class='choice'  data-group='選択肢' >バージョン管理（Versioning）</div>
+<div class='choice'  data-group='選択肢' >配信不能キュー（Dead-letter queue）</div>
+<div class='choice'  data-group='選択肢' >変更フィード推定（Change feed estimator）</div>
+<div class='choice'  data-group='選択肢' >ライフサイクル通知（Life-cycle notifications）</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='false' data-question='問題35<br>あなたは、大規模なデータ解析を行うアプリケーションを管理しています。このアプリケーションは、Azure Blob Storage内の多数のファイルからデータを読み取る必要があります。安全性を確保しつつ、他のアプリケーションが特定のBlobデータにアクセスできるようにする必要があります。また、セキュリティポリシーに基づき、アクセス権限を迅速に取り消す機能も必要です。<br>以下の要件を満たす必要がある場合、どの共有アクセス署名を使用するべきですか。<br>・ストレージアカウントキーを再生成することなく、アクセスを取り消すことができる<br>・アクセスをストレージアカウントレベルではなく、個々のBlobレベルで指定する' data-answer='2' data-explanation='■正解：<br>C:保存されているアクセスポリシーによるサービス SAS<br>■解説<br>設問の要件に最適な共有アクセス署名（SAS）は、保存されているアクセスポリシーによるサービス SASです。これは、Azure Blobストレージの個々のBlobに対するアクセスを管理するのに最適な方法です。具体的には、以下の機能を提供します。<br>・アクセスの細かい制御：特定のBlobに対するアクセス許可、有効期間、およびその他のパラメータを定義できます。このポリシーを更新または削除することで、関連するSASの有効性を動的に制御できます。<br>・迅速なアクセス取り消し：ストレージアカウントキーを再生成することなく、保存されたアクセスポリシーを削除することで、すべての関連SASを即座に無効化できます。これにより、アクセスの取り消しが迅速かつ効果的に行えます。<br>・セキュリティの強化：個々のBlobレベルでアクセスを指定できるため、不必要なアクセスを防ぎ、データの安全性を向上させることができます。<br>このSASは、大規模なデータ解析アプリケーションで求められるセキュリティとアクセス管理のニーズを満たすことができます。また、アクセスポリシーに基づく動的なアクセス制御により、セキュリティポリシーに応じた柔軟な運用が可能になります。'>
+<div class='choice'  data-group='選択肢' >アドホック SAS</div>
+<div class='choice'  data-group='選択肢' >ユーザー委任 SAS</div>
+<div class='choice'  data-group='選択肢' >保存されているアクセスポリシーによるサービス SAS</div>
+<div class='choice'  data-group='選択肢' >サービス SAS</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題36<br>あなたは、Azure上でJavaアプリケーションを開発していますが、Application Insightsを使ってアプリケーションのパフォーマンス監視を行いたいと考えています。<br>Application Insightsにテレメトリデータを送信する前に、Application Insights SDKでフィルタリングする場合、下記の要件を満たす機能はそれぞれ何ですか。<br>要件１:テレメトリデータの量を統計系に影響を与えずに減少させる<br>要件２:テレメトリ項目を完全に置き換えるか破棄する<br>要件３:テレメトリに追加プロパティを付加する、または既存のものを上書きする' data-answer='0,2,5' data-explanation='■正解：<br>要件１：A:サンプリング<br>要件２：C:ITelemetryProcessor<br>要件３：F:ITelemetryInitializer<br>■解説<br>Application Insights SDKを使用すると、アプリケーションから送信されるテレメトリデータの詳細を調整し、必要な情報のみを収集し、不要なデータを除外するための処理を適用することができます。以下の機能を使用して、サンプリング、フィルタリング、プロパティの追加や修正を行うことができます。<br>・サンプリング (Sampling)：統計に影響を与えることなくテレメトリデータの量を削減する手法です。サンプリングにより、ネットワークトラフィックとストレージの使用量を減少させることができ、コストを抑えながらもアプリケーションのパフォーマンスや利用状況を適切に把握できます。サンプリングは自動的にまたは手動で設定することが可能です。<br>・フィルタリング：テレメトリデータをApplication Insightsに送信する前に、不要または重要でないデータを除外するプロセスです。これにより、データ量を減少させるだけでなく、セキュリティを向上させることもできます。Application Insights SDKでは、ITelemetryInitializerを実装することで、送信されるテレメトリ項目に追加のプロパティを設定するか、既存のプロパティを変更する役割を持ちます。これにより、データに対する洞察を深めることができます。<br>・プロパティの追加または修正 ：テレメトリデータが送信される前に実行されるカスタムロジックを提供します。これを使用して、特定のテレメトリ項目を完全に除外したり、データを修正したりすることができます。これはITelemetryProcessorを実装することで、テレメトリデータをより詳細に制御し、アプリケーションの監視をカスタマイズすることが可能です。<br>設問については、各要件に対して適切な機能は以下の通りです。<br>・要件１：テレメトリデータの量を統計に影響を与えずに減少させるには、サンプリングが適しています。サンプリングはデータの量を減少させつつ、データの統計的意味を保持する方法です。<br>・要件２：テレメトリ項目を完全に置き換えるか破棄するためには、ITelemetryProcessor を使用することが最も適切です。これにより、テレメトリデータをフィルタリングし、必要な場合にデータを変更または除外できます。<br>・要件３：テレメトリに追加プロパティを付加する、または既存のものを上書きするためには、ITelemetryInitializer を使用します。これにより、テレメトリデータに新たなプロパティを追加したり、既存のプロパティの値を変更したりすることができます。'>
+<div class='choice'  data-group='要件１' >サンプリング</div>
+<div class='choice'  data-group='要件１' >ITelemetryInitializer</div>
+<div class='choice'  data-group='要件２' >ITelemetryProcessor</div>
+<div class='choice'  data-group='要件２' >ITelemetryInitializer</div>
+<div class='choice'  data-group='要件３' >ITelemetryProcessor</div>
+<div class='choice'  data-group='要件３' >ITelemetryInitializer</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題37<br>あなたは、教育関連のコンテンツを提供するWebプラットフォームをPythonで開発したいと考えています。また、同じコンテナグループ内に複数のコンテナを使って運用し、プラットフォームは常に同じバージョンのコンテンツを提供する必要があります。<br>Azure CLIを使ってAzure ServiceプランとWebアプリの作成をする場合、正しいコマンドはどれですか。' data-answer='1,4' data-explanation='■正解：<br>オプション１：B:--sku F1 --is-linux<br>オプション２：E:--deployment-container-image-name images.azurecr.io/website:v1.0.0<br>■解説<br>Azure App Serviceは、WebアプリケーションやAPIを簡単に構築、デプロイ、スケーリングするためのサービスです。Pythonは、App Serviceでサポートされているプログラミング言語の1つであり、Pythonで書かれたアプリケーションを、App Serviceにデプロイして実行することができます。<br>・App Serviceプランの作成：コマンド az appservice plan create --sku F1 --is-linux は、LinuxベースのApp Serviceプランを作成します。F1 SKU (サービスプランの種類) は、無料プランを指し、開発やテスト目的に適しています。Linuxオプションを指定することで、PythonなどのLinuxでよく使われる言語で開発されたアプリケーションのホスティングに適した環境を提供します。<br>また、Azure App Serviceでは、複数のコンテナグループの作成はLinuxのみに限定されており、WindowsやWindowsベースの仮想化技術であるHyper-Vは使用できません。<br>・Webアプリの作成：コマンド az webapp create --plan websitePlan --deployment-container-image-name images.azurecr.io/website:v1.0.0 では、特定のコンテナイメージ（ここでは images.azurecr.io/website:v1.0.0）を指定してWebアプリを作成します。このコマンドは、指定されたApp Serviceプラン (websitePlan) を使用して、バージョン v1.0.0 のコンテナをデプロイします。バージョンを指定することで、常に同じバージョンのアプリケーションが実行され、更新による予期せぬ変更が適用されることがないため、安定したサービス提供が可能となります。<br>他の選択肢について、--imageはAzure CLIで有効なオプションではありません。また、latestタグは最新のビルドを指し、常に同じバージョンを保証しません。' data-images='000025.jpg'>
+<div class='choice'  data-group='オプション１' >--hyper-v</div>
+<div class='choice'  data-group='オプション１' >--sku F1 --is-linux</div>
+<div class='choice'  data-group='オプション１' >--sku B1 --is-windows</div>
+<div class='choice'  data-group='オプション２' >--deployment-container-image-name images.azurecr.io/website:latest</div>
+<div class='choice'  data-group='オプション２' >--deployment-container-image-name images.azurecr.io/website:v1.0.0</div>
+<div class='choice'  data-group='オプション２' >--image images.azurecr.io/website:v1.0.0</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題38<br>あなたは、仮想マシンに特定のリソースグループへのアクセス権を付与し、Azure Resource Managerへのアクセストークンを取得する必要があります。<br>そのために適切な対応はどれですか。' data-answer='3' data-explanation='■正解：<br>D:Invoke-RestMethod cmdletを実行して、Azureリソース用のマネージドIDエンドポイントへリクエストを行う<br>■解説<br>Azure仮想マシンにシステム割り当てマネージドIDを使用することで、特定のAzureリソースにアクセスするためのトークンを取得できます。マネージドIDを使用することで、シークレットやパスワードの管理が不要になり、セキュリティリスクが大幅に減少します。<br>Invoke-RestMethod はPowerShell cmdletの一つであり、HTTPリクエストを発行してRESTfulサービスとの通信を行います。設問のケースでは、Invoke-RestMethodを使用してローカルのマネージドIDエンドポイントに対してリクエストを行い、ARMへのアクセス用トークンを取得します。このトークンは、ARM APIへの認証済みリクエストを行う際に使用されます。<br>■その他の選択肢<br>・仮想マシンにシステム管理者の資格情報を設定し、Azure Resource Managerにログインしてアクセストークンを取得する：この方法はセキュリティリスクが高く、実際のプロダクション環境では推奨されません。仮想マシンに管理者資格情報を設定するのはセキュリティのベストプラクティスに反します。<br>・ロールベースのアクセス制御（RBAC）ロールを使用して仮想マシンをAzure Resource Managerに認証する：RBACはアクセス権を制御する強力なツールですが、直接アクセストークンを取得する方法ではありません。これはアクセス制御の設定に関わるものであり、アクセストークンの取得プロセスとは直接関係しません。<br>・仮想マシンにSSHキーを使用してリモート接続し、Azure CLIを使用してアクセストークンを取得する：この方法も可能ではありますが、SSHを通じてAzure CLIを実行するのは比較的複雑であり、マネージドIDを使用する方法に比べて効率的ではありません。'>
+<div class='choice'  data-group='選択肢' >仮想マシンにシステム管理者の資格情報を設定し、Azure Resource Managerにログインしてアクセストークンを取得する</div>
+<div class='choice'  data-group='選択肢' >ロールベースのアクセス制御（RBAC）ロールを使用して仮想マシンをAzure Resource Managerに認証する</div>
+<div class='choice'  data-group='選択肢' >仮想マシンにSSHキーを使用してリモート接続し、Azure CLIを使用してアクセストークンを取得する</div>
+<div class='choice'  data-group='選択肢' >Invoke-RestMethod cmdletを実行して、Azureリソース用のマネージドIDエンドポイントへリクエストを行う</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題39<br>あなたは、病院の緊急呼び出しシステムを開発しています。このシステムは、特定の状況で医療スタッフに呼び出しを送信するために使用されます。Azure Service Busを使用して呼び出しを公開し、各呼び出し端末がトランザクションの一部として信号を受信します。各呼び出しイベントは監査のために記録され、各トランザクション記録にはアクティベートされた呼び出しのタイプに関する情報が含まれます。<br>Azure API管理サービスインスタンスを使用して、APIにアクセスできるようにするにはどのAzure PowerShellコマンドを実行する必要がありますか。' data-answer='0,4' data-explanation='■正解：<br>A:呼び出しメッセージのSessionIDプロパティの値をReplyToSessionIdプロパティに割り当てる<br>E:呼び出しメッセージのMessageIdプロパティの値をCorrelationIdプロパティに割り当てる<br>■解説<br>Azure Service Busとは、クラウドベースのメッセージングサービスです。このサービスを使用することで、異なるアプリケーションやサービス間でデータのやり取りが可能になり、システムの各部分が疎結合であるため、一部がダウンしても全体のシステムに影響を与えにくくなります。また、メッセージングの信頼性やスケーラビリティが向上します。<br>Azure Service Busのメッセージは、実際のデータ（ペイロード）と共に、いくつかのプロパティを持つことができます。これらのプロパティは、メッセージの配送や処理に関するメタデータを提供します。具体的には以下のようなものがあります。<br>・MessageId：メッセージの一意の識別子。<br>・SessionID：セッション指向メッセージングで関連するメッセージをグループ化するために使用される識別子。<br>・CorrelationId：メッセージを相互に関連付けるために使用され、特定のトランザクションやプロセスの一部としてメッセージを追跡する際に便利です。<br>・ReplyTo：メッセージに対する応答を送るべきアドレス。<br>プロパティの割り当てとは、メッセージを送信する際にこれらのプロパティに適切な値を設定することを指します。例えば、ReplyToSessionIdプロパティにSessionIDの値を割り当てることで、応答メッセージが正しいセッションにルーティングされるように設定することができます。これにより、メッセージングの流れが適切に管理され、必要な処理が正確に行われるようになります。<br>本設問の解説については、以下の通りです。<br>ReplyToSessionIdプロパティは、返信メッセージがどのセッションに属するかを指定するのに使用されます。SessionIDをReplyToSessionIdに割り当てることで、応答が同じセッションのコンテキスト内で行われることを保証でき、特定のセッションに対する全てのメッセージが適切に関連付けられます。<br>CorrelationIdプロパティは、関連するメッセージを追跡するために使用されます。MessageIdからCorrelationIdへの割り当てにより、特定のイベントまたはトランザクションに関連するメッセージ群を効果的に追跡できるようになります。'>
+<div class='choice'  data-group='選択肢' >呼び出しメッセージのSessionIDプロパティの値をReplyToSessionIdプロパティに割り当てる</div>
+<div class='choice'  data-group='選択肢' >呼び出しメッセージのDeliveryCountプロパティの値をCorrelationIdプロパティに割り当てる</div>
+<div class='choice'  data-group='選択肢' >呼び出しメッセージのSessionIDプロパティの値をSequenceNumberプロパティに割り当てる</div>
+<div class='choice'  data-group='選択肢' >呼び出しメッセージのSequenceNumberプロパティの値をReplyToプロパティに割り当てる</div>
+<div class='choice'  data-group='選択肢' >呼び出しメッセージのMessageIdプロパティの値をCorrelationIdプロパティに割り当てる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題40<br>あなたの組織は、顧客がサポートポータル内でFAQやトラブルシューティングのガイドを検索できるWebアプリケーションの構築を検討しています。Azure Searchの使用を考えていますが、正規表現を使って検索を行うことができるようにする必要があります。<br>そのためには、SearchParametersクラスのどのプロパティを設定すればよいですか。' data-answer='0' data-explanation='■正解：<br>A:QueryType<br>■解説<br>SearchParametersクラスのQueryTypeプロパティは、Azure Searchでクエリを実行する際に使用されるクエリの種類を指定するために使用されます。<br>Azure Searchでは、クエリタイプとして主にsimpleとfullの二つがあります。正規表現を使った検索機能を利用するためには、クエリタイプをfullに設定する必要があります。fullクエリタイプは、Azure SearchのLuceneベースのクエリ構文を利用して、より複雑な検索クエリを実行できるようにします。これには正規表現を使用した検索が含まれます。'>
+<div class='choice'  data-group='選択肢' >QueryType</div>
+<div class='choice'  data-group='選択肢' >Facets</div>
+<div class='choice'  data-group='選択肢' >Select</div>
+<div class='choice'  data-group='選択肢' >Filter</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題41<br>あなたは、世界中の1000店舗あるレストランチェーンのために、食品安全規制に準拠するための食材温度モニタリングシステムを開発しています。各レストランには、冷蔵庫、冷凍庫、オーブンの温度を監視する複数のセンサーが設置されており、これらのセンサーはそれぞれ1日に最大4MBのデータを生成します。システムは、Azure Blob Storageにデータを収集し、リアルタイムで温度異常を検出する能力が求められています。<br>上記要件を満たすサービスとして何が最適ですか。' data-answer='1' data-explanation='■正解：<br>B:Azure Event Hub<br>■解説<br>Azure Event Hubは、高スループットと低レイテンシーを持ち、大量のイベントデータを効率的に収集し、リアルタイムで処理する能力があります。これにより、レストランのセンサーからの大規模なデータストリームをリアルタイムに受け取り、処理することが可能になります。<br>Azure Event Hubの以下の特性により、本設問の要件を満たすことができます。<br>・スケーラビリティ：1000店舗からのデータを処理するために必要なスケールを提供できます。<br>・リアルタイムデータ処理：Event Hubはストリーム処理能力を持ち、大量のイベントデータをリアルタイムで受け取り、処理することができます。<br>・統合性：Azure Blob Storageとの統合が容易で、データをEvent Hubから直接Blob Storageに自動的に転送し保存することが可能です。<br>■その他の選択肢<br>・Azure Notification Hub：主にモバイルデバイスへのプッシュ通知に適しており、本シナリオのような大量のセンサーデータ収集には適していません。<br>・Azure Service Bus：メッセージングには適していますが、リアルタイムデータ処理のスケールとスループットの面でEvent Hubに劣ります。<br>・Azure Event Grid：イベントルーティングに適していますが、連続的な大量データのストリーム処理には最適ではありません。'>
+<div class='choice'  data-group='選択肢' >Azure Service Bus</div>
+<div class='choice'  data-group='選択肢' >Azure Event Hub</div>
+<div class='choice'  data-group='選択肢' >Azure Notification Hub</div>
+<div class='choice'  data-group='選択肢' >Azure Event Grid</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題42<br>Azure App Service Appにアプリケーションをデプロイする予定です。ユーザーがアプリケーションにサインインまたはサインアウトする際には、Azure Event Gridを使用してイベントを監視し、アクションを実行する必要があります。<br>サインインとサインアウト時にそれぞれ別々のイベントを実行する場合、どのような方法が最適ですか。' data-answer='0' data-explanation='■正解：<br>A:サインインとサインアウト用に別々のAzure Event Gridトピックを作成する<br>■解説<br>Azure Event Gridを使用すると、さまざまなイベントソースからイベントをキャプチャし、それに応じたアクションを自動的に実行することができます。サインインとサインアウトイベントは、それぞれ異なるビジネスロジックをトリガーする可能性があります。これらのイベントを効果的に管理し、適切なアクションを実行するためには、それぞれのイベントタイプに対して別々のトピックを作成することが最適です。<br>別々のトピックを使用することで、サインインとサインアウトイベントを独立して処理できます。それぞれのトピックには、関連するイベントに特化したサブスクリプションを設定することができ、イベントごとに適切なアクションを柔軟に実装できます。'>
+<div class='choice'  data-group='選択肢' >サインインとサインアウト用に別々のAzure Event Gridトピックを作成する</div>
+<div class='choice'  data-group='選択肢' >サインインとサインアウト用に別々のAzure Event Gridドメインを作成する</div>
+<div class='choice'  data-group='選択肢' >サインインとサインアウト用に別々のAzure Event Gridイベントハンドラを作成する</div>
+<div class='choice'  data-group='選択肢' >サインインとサインアウト用に１つのAzure Event Gridサブスクリプションを作成する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題43<br>あなたは、Azure Application Insightsを使用して、組織で運用しているWebアプリケーションのパフォーマンス指標がユーザー体験にどのように影響するかを分析したいと考えています。<br>以下の要件を満たすためには、Azure Application Insightsのどの分析指標を確認すればよいですか。<br>要件１：特定のイベント後にユーザーがアプリケーションを継続して使用するかを特定する<br>要件２：ユーザーが最も訪れるページがその後の行動とどのように関連しているかを特定する' data-answer='0,2' data-explanation='■正解：<br>要件１：A:影響(Impact)<br>要件２：C:ファネル(Funnels)<br>■解説<br>Azure Application Insightsの分析指標には、ユーザーの行動やアプリケーションのパフォーマンスを理解するのに役立つ機能が多数あります。要件に基づいて適切な指標を選択する必要があります。<br>具体的には、以下のような機能があります。<br>1. ユーザー (Users)：アプリケーションを使用しているユーザーの数や、どの地域からアクセスしているかなどの情報を提供します。セッション数やユーザーのセグメント分けも行え、アプリケーションの利用状況の概要を把握するのに役立ちます。<br>2. ファネル (Funnels)：ユーザーが定義された一連のステップをどのように進んでいるかを追跡します。例えば、購入プロセスやサインアップフローの各ステージでどれだけのユーザーが次のステップに進んでいるかを視覚化します。これにより、ドロップオフが発生しているポイントを特定し、改善策を検討することができます。<br>3. 影響 (Impact)：パフォーマンスやロード時間がユーザーエクスペリエンスにどのように影響しているかを分析します。特定のページのロード時間が購入率やセッション時間にどのように影響しているかを理解するのに役立ちます。<br>4. 保持 (Retention)：ユーザーがアプリケーションをどの程度の期間継続して使用しているかを追跡します。特定のイベント後にユーザーがどれだけリピートしてアプリケーションを使用しているかを示し、ユーザーのエンゲージメントとロイヤリティを測定するのに適しています。<br>5. ユーザーフロー (User Flows)：ユーザーがアプリケーション内でどのようなパスを辿っているかを視覚的に表示します。ユーザーがどのページからどのページへと移動しているか、どこで離脱しているかなど、ユーザーのナビゲーションパターンを理解するのに役立ちます。これにより、ユーザー体験を改善するための洞察を得ることができます。<br>設問については、以下の通りとなります。<br>要件１：特定のイベント後にユーザーがアプリケーションを継続して使用するかを特定する：この要件に最も適しているのは、保持 (Retention)指標です。保持分析は、ユーザーが特定のイベント後にどれだけの期間アプリケーションを継続して使用しているかを追跡します。これにより、ユーザーがどれだけ長くアプリケーションに留まっているか、また特定のイベントがユーザーの継続使用にどのように影響しているかが分かります。<br>要件２：ユーザーが最も訪れるページがその後の行動とどのように関連しているかを特定する：この要件に最も適しているのは、ファネル (Funnels)指標です。ファネル分析は、ユーザーがアプリケーションの中でどのページを経由してどのような行動（例えば購入や登録）に至ったかを可視化します。これにより、最も訪問されるページとその後のユーザーの行動との関連性を評価できます。'>
+<div class='choice'  data-group='要件１' >影響(Impact)</div>
+<div class='choice'  data-group='要件１' >保持(Retention)</div>
+<div class='choice'  data-group='要件２' >ファネル(Funnels)</div>
+<div class='choice'  data-group='要件２' >ユーザー(Users)</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題44<br>あなたの組織は、Webサービスの構築を検討しています。WebサービスはAPI Managementを使用してサービスにアクセスし、認証にOpenID Connectを使用する必要があります。また、ユーザーの匿名使用を禁止しなければなりません。<br>どのAPIマネージメントポリシーを使用するべきですか。' data-answer='1' data-explanation='■正解：<br>B:validate-jwt<br>■解説<br>validate-jwt ポリシーは、リクエストが有効なJWT（JSON Web Token）を持っているかどうかを検証し、そのJWTが指定された要件（発行者、有効期限など）を満たしているかを確認します。<br>JWTは、OpenID Connectプロトコルで一般的に使用される認証および情報交換のためのトークン形式です。このポリシーを使用すると、APIへのアクセスを試みるユーザーが適切に認証され、トークンが有効であることを確認できます。このポリシーは、APIへのアクセスが適切に認証されていることを保証し、匿名アクセスを防ぐのに役立ちます。'>
+<div class='choice'  data-group='選択肢' >authenticate-certificate</div>
+<div class='choice'  data-group='選択肢' >validate-jwt</div>
+<div class='choice'  data-group='選択肢' >require-sso</div>
+<div class='choice'  data-group='選択肢' >check-header</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題45<br>Azure Blobストレージアカウント内のデータを保護するために適切な方法はどれですか。（２つ選択）' data-answer='3,4' data-explanation='■正解：<br>D:時間ベースの保持ポリシーを設定する<br>E:アカウントのバージョンレベルの不変性サポートを有効にする<br>■解説<br>Azure Blobストレージアカウント内のデータを保護するために適切な方法として選ぶべき選択肢は以下の通りです。<br>時間ベースの保持ポリシーを設定する：時間ベースの保持ポリシーは、指定された期間、Blobデータを変更や削除から保護します。このポリシーを設定することで、データは「読み取り専用」となり、設定された期間が終了するまで変更や削除ができなくなります。これは、法的な記録保持要件に対応するためによく使用されます。<br>アカウントのバージョンレベルの不変性サポートを有効にする：バージョンレベルの不変性ポリシーは、Azure Blobストレージがバージョニングをサポートする場合に有効です。このポリシーを使うと、各Blobのバージョンが保護され、それぞれのバージョンは変更や削除から保護されます。これにより、データの歴史的な状態を確実に保持することができ、データの監査や復旧が容易になります。<br>■その他の選択肢<br>監査ログを有効にしてアクセスを追跡する：監査ログはアクセスを追跡し、セキュリティ監視には役立ちますが、データの保持や不変性を直接保証するものではありません。<br>アカウントレベルの共有アクセス署名（SAS）を作成する：SASはアクセス制御を提供しますが、データを保護する方法としては不変性や保持ポリシーほど強力ではありません。<br>ネットワークセキュリティグループ（NSG）を構成する：NSGはネットワークレベルでのアクセス制御を提供しますが、Blobデータの保護には直接関係がありません。'>
+<div class='choice'  data-group='選択肢' >ネットワークセキュリティグループ（NSG）を構成する</div>
+<div class='choice'  data-group='選択肢' >アカウントレベルの共有アクセス署名（SAS）を作成する</div>
+<div class='choice'  data-group='選択肢' >監査ログを有効にしてアクセスを追跡する</div>
+<div class='choice'  data-group='選択肢' >時間ベースの保持ポリシーを設定する</div>
+<div class='choice'  data-group='選択肢' >アカウントのバージョンレベルの不変性サポートを有効にする</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題46<br>あなたは、.NETアプリケーションを開発しています。アプリケーションは、Azure仮想マシンが処理を完了するたびにメッセージを受信する必要があります。<br>.NETクライアントライブラリのどのクラスを使用すればよいですか。' data-answer='2' data-explanation='■正解：<br>C:QueueClient<br>■解説<br>QueueClientは、Azure Storage Queuesサービスとのやり取りを行うための.NETクライアントライブラリ内のクラスです。このクラスを使用して、メッセージをキューに追加し、キューからメッセージを受信する操作を行うことができます。設問の要件に基づき、Azure仮想マシンがデータ処理を完了するたびにメッセージを受信する機能を実装するには、QueueClientが適しています。<br>QueueClientは、メッセージを受信し、それらが処理された後にはメッセージが永続化されないようにする機能を提供します。これにより、アプリケーションがメッセージを処理し終わった後にメッセージをキューから削除されます。'>
+<div class='choice'  data-group='選択肢' >SubscriptionClient</div>
+<div class='choice'  data-group='選択肢' >QueueUriBuilder</div>
+<div class='choice'  data-group='選択肢' >QueueClient</div>
+<div class='choice'  data-group='選択肢' >QueueServiceClient</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題47<br>あなたは、大手小売業者のために顧客の購買行動に基づくプロモーション通知を送信するシステムを開発しています。このシステムはAzure Service Busを使用して、各種プロモーションのトピックに基づいて通知をサブスクライブしています。サブスクリプションクライアントを初期化してすべての設定を正しく行いましたが、アプリケーションがメッセージを消費していないことがわかりました。<br>すべてのプロモーションメッセージを確実に処理するためには、どのメソッドを使用すればよいですか。' data-answer='2' data-explanation='■正解：<br>C:subscriptionClient.RegisterMessageHandler<br>■解説<br>subscriptionClient.RegisterMessageHandlerメソッドは、Azure Service Bus のサブスクリプションクライアントで使用されるメソッドです。このメソッドは、Azure Service Bus からメッセージを受信し、自動的にそのメッセージを処理するためのハンドラー（処理関数）を登録するために使われます。つまり、サブスクリプションから送られてくるメッセージに対して、特定のアクションを自動で行うように設定する機能です。<br>具体的には、以下のように機能します。<br>１．メッセージの受信：Service Busからメッセージが送信されると、登録されたハンドラー関数がそのメッセージを受け取ります。この関数は開発者が定義し、メッセージに対する具体的な処理を記述します。<br>２．非同期処理：メッセージは非同期的に処理されるため、システムの他の部分がブロックされることなく、メッセージを継続的に受信し続けることができます。これにより、高い効率とスループットで大量のメッセージを扱うことが可能になります。<br>３．エラーハンドリング：RegisterMessageHandler にはエラー処理機能も組み込まれており、メッセージ処理中に何らかの問題が発生した場合には、エラーハンドリング用の関数が呼び出されます。この関数も開発者が定義し、エラー発生時の適切な対応を記述します。<br>このメソッドを使用すると、サブスクリプションから送信されるメッセージに対してカスタムの処理ロジックを適用することができます。特に、指定された処理関数（Message Handler）がメッセージを受け取るたびに自動的に呼び出されるため、アプリケーションが効率的にメッセージを処理できるようになります。'>
+<div class='choice'  data-group='選択肢' >subscriptionClient.AcceptMessageSessionAsync</div>
+<div class='choice'  data-group='選択肢' >subscriptionClient.AbandonAsync</div>
+<div class='choice'  data-group='選択肢' >subscriptionClient.RegisterMessageHandler</div>
+<div class='choice'  data-group='選択肢' >subscriptionClient.AddRuleAsync</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題48<br>あなたは、リーガルテック企業で法律文書をAzure Blob Storageに保存するソリューションを開発しています。顧客は、複数のコンテナに法律文書をアップロードし、文書はPDF、Word、Excel形式で構成されています。このソリューションでは数百万の文書を数百のコンテナで処理し、文書はアップロード時に顧客識別子で分類される必要があります。<br>顧客識別子による検索とフィルタリングを行うためにはどの機能を使用するべきですか。' data-answer='3' data-explanation='■正解：<br>D:Azure Blobインデックスタグ<br>■解説<br>Azure Blobインデックスタグは、Azure Blob Storage内のBlobに対してユーザー定義のタグを設定し、これらのタグを用いてBlobを簡単に分類、検索、フィルタリングする機能です。タグはキーと値のペアで構成され、Blobに対して直接適用されます。この機能を使用すると、大規模なデータセットでも特定の基準に基づいてBlobを迅速に識別し、アクセスすることが可能になります。<br>例えば、法律文書を管理する場合、各文書に「顧客ID」というキーと、具体的な顧客識別子を値として設定することで、特定の顧客に関連するすべての文書を簡単に検索できるようになります。これにより、アプリケーションは顧客識別子を基に文書をフィルタリングし、必要な文書に素早くアクセスすることが可能です。<br>この機能は特に、数百万の文書が保存される大規模な環境での文書管理において、効率的なデータ管理を支援します。Azure Blobインデックスタグを使うことで、コスト効率よく、高速にデータを取り扱うことができるため、リーガルテック企業での文書管理システムの性能と効率を大きく向上させることができます。'>
+<div class='choice'  data-group='選択肢' >Azure Blobプロパティ</div>
+<div class='choice'  data-group='選択肢' >Azure Blobメタデータ</div>
+<div class='choice'  data-group='選択肢' >Azure Blobインベントリ</div>
+<div class='choice'  data-group='選択肢' >Azure Blobインデックスタグ</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題49<br>あなたは、金融取引を処理するPythonアプリケーションを開発しています。 このアプリケーションは、高速な取引処理を可能にするためにGPUリソースを使用しています。 また、アプリケーションはAzure Container Instances (ACI)のLinuxコンテナにデプロイされます。 セキュリティのため、アプリケーションは起動時にAPIキーとしての秘密の値を必要とし、この値はコンテナ内からのみアクセス可能である必要があります。<br>これら要件を満たす適切な対応方法は何ですか。（２つ選択）' data-answer='1,3' data-explanation='■正解：<br>B:環境変数を作成し、secureValueプロパティに秘密の値を設定する<br>D:秘密の値を含むシークレットファイルがあるシークレットボリュームをマウントする<br>■解説<br>金融取引を処理するPythonアプリケーションをAzure Container Instances (ACI)にデプロイする際、セキュリティを考慮してAPIキーを安全に管理する必要があります。以下は、問題に対する適切な対応方法です。<br>・環境変数を作成し、secureValueプロパティに秘密の値を設定する：環境変数は、プログラムが動作する環境（この場合はAzure Container Instances のコンテナ）において、プログラムが参照できる設定値やデータを提供する方法の一つです。これを利用して、プログラムが必要とする秘密情報（例えばAPIキー）を安全に保持し、プログラムからアクセス可能にします。<br>secureValue はその環境変数の値を暗号化するためのプロパティです。これにより、APIキーなどの秘密の情報を安全に環境変数に設定し、コンテナが実行される際にその情報を使用することができます。コンテナ外からはアクセスできないため、セキュリティが保たれます。<br>・秘密の値を含むシークレットファイルがあるシークレットボリュームをマウントする：Azure Container Instances (ACI) では、アプリケーションが安全に秘密情報（例えばAPIキーなど）を使用できるように、シークレットボリュームという機能を提供しています。シークレットボリュームは、重要なデータを保存する特別な種類のデータ保存領域です。この領域は、コンテナの特定のフォルダにマウントされます。<br>シークレットファイルには、APIキーやパスワードなどの秘密の値を含むことができ、これらのファイルは安全に保管されています。アプリケーションが起動するとき、このシークレットボリュームから秘密のデータを読み取り、必要な操作を行います。<br>■その他の選択肢<br>・アプリケーションのGitHubリポジトリにAPIキーを保存する：GitHubリポジトリは公開される可能性があり、セキュリティ上のリスクが高いです。APIキーを公開の場に保存することは避けるべきです。<br>・Azure Logic Appsを使用してAPIキーを管理する：Azure Logic Apps は主に異なるサービス間での自動化と統合に使用されますが、APIキーを直接管理するためのツールとしては適切ではありません。<br>・Azure SQL Databaseを使用してAPIキーを保存し、必要に応じてアクセスする：Azure SQL Databaseはデータベースサービスであり、APIキーを保存するためのセキュリティフォーカスのストレージソリューションではありません。'>
+<div class='choice'  data-group='選択肢' >Azure Logic Appsを使用してAPIキーを管理する</div>
+<div class='choice'  data-group='選択肢' >環境変数を作成し、secureValueプロパティに秘密の値を設定する</div>
+<div class='choice'  data-group='選択肢' >Azure SQL Databaseを使用してAPIキーを保存し、必要に応じてアクセスする</div>
+<div class='choice'  data-group='選択肢' >秘密の値を含むシークレットファイルがあるシークレットボリュームをマウントする</div>
+<div class='choice'  data-group='選択肢' >アプリケーションのGitHubリポジトリにAPIキーを保存する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題50<br>あなたは、Azure Static Webアプリを開発していますが、Webページへの匿名アクセスをブロックし、認証済みでないユーザーはMicrosoft Entraのサインインページにリダイレクトしたいと考えています。<br>staticwebapp.config.jsonの構成として正しい設定はどれですか。' data-answer='1' data-explanation='■正解：<br>B:"responseOverrides": {<br>401: {<br>statusCode: 302,<br>redirect: "/.auth/login/aad"<br>■解説<br>staticwebapp.config.jsonは、Azure Static Web Appsで使用される設定ファイルです。このファイルを通じて、Webアプリのルーティング、認証、認可の設定、HTTPヘッダーのカスタマイズ、エラーページのカスタマイズなどを行うことができます。このファイルに記述される設定は、アプリケーションがどのようにリクエストを処理し、どのように応答を返すかを制御します。例えば、特定のパスにアクセスした際に特定のロールを持つユーザーのみにアクセスを許可する、あるいは認証されていないユーザーをログインページにリダイレクトするなどの動作を設定できます。<br>responseOverridesは、Azure Static Web Appsのstaticwebapp.config.json設定ファイル内で使用されるセクションです。このセクションでは、特定のHTTPステータスコードが発生した場合のアプリの応答をカスタマイズできます。具体的には、エラー発生時にどのように応答するかを定義することができ、リダイレクトの指定やカスタムエラーページの設定が可能です。<br>ステータスコードには以下のようなものがあります。<br>・400（Bad Request）: リクエストが不正または誤っていることを示します。<br>・401（Unauthorized）: リクエストが認証を必要とするが、認証が行われていないことを示します。<br>・403（Forbidden）: サーバーがリクエストを理解したが、アクセス権がないため拒否されたことを示します。<br>・404（Not Found）: リクエストされたリソースが見つからなかったことを示します。<br>”redirect": "/.auth/login/aad"は、認証されていないユーザーをMicrosoft Entraのログインページへリダイレクトするための設定です。これにより、ユーザーはMicrosoft Entra（旧：Azure AD）を介して認証することになります。' data-images='000026.jpg'>
+<div class='choice'  data-group='選択肢' >"routes": {<br>404: {<br>statusCode: 302,<br>redirect: "/.auth/login/azure"</div>
+<div class='choice'  data-group='選択肢' >"responseOverrides": {<br>401: {<br>statusCode: 302,<br>redirect: "/.auth/login/aad"</div>
+<div class='choice'  data-group='選択肢' >"headers": {<br>403: {<br>statusCode: 302,<br>redirect: "/.auth/login/graph"</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='false' data-question='問題18<br>高性能を要求するシナリオ、例えば仮想マシンのディスクとして使用するのに適しているBlobタイプはどれですか。' data-answer='2' data-explanation='■正解：<br>C:ページ Blob<br>■解説<br>Azure Storageは、さまざまな種類のデータを格納するためのクラウドサービスであり、非構造化データを保存するためのBlob Storageを提供しています。Blob Storageでは、3種類のBlobがサポートされており、それぞれ異なる用途や特性を持っています。<br>ページBlobは、主にランダムアクセスが必要なシナリオや、高性能を要求される用途に適しています。ページBlobは、512バイトの固定サイズ「ページ」にデータを格納します。このBlobタイプは、Azure仮想マシンのディスクとして使用されることが多く、ランダムリード/ライトオペレーションに最適化されています。データベースファイルや、頻繁にアクセスされるデータの格納に適しており、高速なアクセスと効率的なパフォーマンスを提供します。'>
+<div class='choice'  data-group='選択肢' >追加 Blob</div>
+<div class='choice'  data-group='選択肢' >ブロック</div>
+<div class='choice'  data-group='選択肢' >ページ Blob</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題19<br>Azure Key Vaultに保存できる情報の種類はどれですか。(３つ選択)' data-answer='0,2,3' data-explanation='■正解：<br>A:暗号鍵<br>C:SSL/TLS証明書<br>D:データベース接続文字列<br>■解説<br>Azure Key Vaultは、暗号鍵、証明書、およびシークレット（データベース接続文字列などの機密データを含む）を安全に保存できるサービスです。<br>以下の情報を安全に管理するために設計されています。<br>・キー：Key Vaultは、暗号化やデジタル署名に使用される暗号鍵を保管し、管理することができます。これにより、アプリケーションがキーを安全に使用できるようになります。<br>・シークレット：シークレットとしてデータベース接続文字列やAPIキーなどの機密情報を保存することができます。これにより、アプリケーションの構成情報を安全に管理できます。<br>・証明書：SSL/TLS証明書などもKey Vaultに保存し、管理することができます。これにより、ウェブサイトやサービスのセキュリティを強化できます。'>
+<div class='choice'  data-group='選択肢' >暗号鍵</div>
+<div class='choice'  data-group='選択肢' >アプリケーションログ</div>
+<div class='choice'  data-group='選択肢' >SSL/TLS証明書</div>
+<div class='choice'  data-group='選択肢' >データベース接続文字列</div>
+<div class='choice'  data-group='選択肢' >信頼性レポート</div>
+<div class='choice'  data-group='選択肢' >ユーザー権限設定</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題20<br>Azure Key Vaultで認証を行うためには、どの方法がサポートされていますか。（２つ選択）' data-answer='1,3' data-explanation='■正解：<br>B:サービス プリンシパルと証明書<br>D:マネージド ID<br>■解説<br>Azure Key Vaultでは、以下の方法での認証がサポートされています。<br>・サービス プリンシパルと証明書：サービス プリンシパルは、アプリケーションやサービスがAzureリソースにアクセスするためにMicrosoft Entra ID内で使用されるアイデンティティです。証明書やシークレットを使用してサービス プリンシパルの認証を行うことができます。この方法は、アプリケーションが自動的にAzureサービス（Key Vaultを含む）にアクセスするシナリオに適しています。<br>・マネージド ID：マネージド IDは、Azureリソース用のMicrosoft Entra ID用の自動管理されるIDです。これを使用すると、Azureリソース（例えばAzure Virtual Machines、Azure App Serviceなど）がAzure Key Vaultを含む他のAzureサービスに安全にアクセスできるようになります。マネージド IDを使用すると、機密情報をコード内にハードコーディングすることなく、安全にサービス間認証を行うことができます。'>
+<div class='choice'  data-group='選択肢' >Microsoft Entraトークン</div>
+<div class='choice'  data-group='選択肢' >サービス プリンシパルと証明書</div>
+<div class='choice'  data-group='選択肢' >ユーザー名とパスワード</div>
+<div class='choice'  data-group='選択肢' >マネージド ID</div>
+<div class='choice'  data-group='選択肢' >シークレットキー</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題21<br>Azureでサポートされているキューメカニズムはどれですか。（２つ選択）' data-answer='2,3' data-explanation='■正解：<br>C:Service Busキュー<br>D:Storageキュー<br>■解説<br>Azureでサポートされているキューメカニズムには、Azure Service BusキューとAzure Storageキューの2つがあります。これらはAzureのメッセージングサービスの中心的な機能を提供し、アプリケーション間での非同期メッセージングパターンの実装を可能にします。<br>・Azure Service Busキュー：主に複雑なメッセージング要件やエンタープライズレベルのアプリケーション向けに設計されたサービスです。これには、順序保証、トピックとサブスクリプションモデル（同じメッセージを複数の受信者に配布）、トランザクションサポートなどの高度な機能が含まれます。例えば、異なる部門やシステム間での複雑なビジネスプロセスを管理する場合に適しています。<br>・Azure Storageキュー：Azure Storageキューは、シンプルさとスケーラビリティを重視する開発者向けに設計されています。大量のメッセージを効率的に処理する能力を持ち、Webアプリケーションからのバックグラウンドタスク処理など、比較的シンプルなメッセージング要件に適しています。Storageキューは、Storageアカウント内で管理され、低コストで利用できるのが特徴です。<br>Service Busキューは、高度なメッセージング機能を提供し、エンタープライズレベルのアプリケーションに最適です。一方、Storageキューはシンプルなシナリオや大量のメッセージ処理に適しています。<br>コストについて、Storageキューは、Azure Storageアカウントの一部として利用でき、低コストで管理が比較的容易です。Service Busキューは、その高度な機能のためにコストが高く、設定が複雑になる可能性があります。'>
+<div class='choice'  data-group='選択肢' >WebJobs Broker</div>
+<div class='choice'  data-group='選択肢' >Functionキュー</div>
+<div class='choice'  data-group='選択肢' >Service Busキュー</div>
+<div class='choice'  data-group='選択肢' >Storageキュー</div>
+<div class='choice'  data-group='選択肢' >Dataキュー</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題22<br>開発者がアプリケーションのパフォーマンスを最適化させるために有用なAzure Cosmos DBの特徴はどれですか。' data-answer='1' data-explanation='■正解：<br>B:自動インデックス作成<br>■解説<br>Azure Cosmos DBは、Microsoftが提供するグローバル分散型のNoSQLデータベースサービスです。複雑なスケーリングやインフラ管理を心配することなく、世界中どこでも高速にデータを保存、取得できるように設計されています。これにより、Web、モバイル、ゲーム、IoTなど、あらゆる種類のアプリケーションに対応する高パフォーマンスなデータベースソリューションを提供します。<br>Azure Cosmos DBは主に、以下の特徴や機能を有しています。<br>・自動インデックス作成：データを自動的にインデックス化し、ストレージとスループットをリアルタイムでスケールアップまたはスケールダウンできます。この機能により、データに対するクエリの実行速度が向上し、アプリケーションのパフォーマンスが全体的に改善されます。<br>・グローバルディストリビューション：データを世界中の任意のAzureリージョンに自動的に複製し、アプリケーションのユーザーに最も近い場所からデータにアクセスさせることができます。これにより、データの読み込みと書き込みが高速になり、ユーザー体験が向上します。<br>・マルチモデルデータベース：キー/値、ドキュメント、グラフ、列指向のデータモデルをサポートしており、開発者はアプリケーションの要件に応じて最適なデータモデルを選択できます。<br>・複数のAPI対応: SQL API、MongoDB API、Cassandra API、Gremlin API、Table APIを含む、複数のAPIをサポートしており、既存のアプリケーションや開発者のスキルセットに合わせて、簡単にデータベースを統合できます。'>
+<div class='choice'  data-group='選択肢' >手動スケーリング</div>
+<div class='choice'  data-group='選択肢' >自動インデックス作成</div>
+<div class='choice'  data-group='選択肢' >静的データ型</div>
+<div class='choice'  data-group='選択肢' >シングルリージョンデプロイメント</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題23<br>キーバリューストアとして動作するために使用されるAzure Cosmos DBのAPIはどれですか。' data-answer='0' data-explanation='■正解：<br>A:Table API<br>■解説<br>Azure Cosmos DBのTable APIは、キーバリューストアとしての機能を提供します。これは、Azure Table Storageの機能に基づいており、スキーマレスなデータストアでの簡単なキーバリューの読み書きが可能です。データはキーに基づいてアクセスされ、高速な読み取りと書き込みが特徴です。<br>Azure Cosmos DBは、複数のAPIをサポートしており、さまざまなデータモデルやアプリケーション要件に対応するための柔軟性を提供します。<br>・NoSQL API：NoSQL APIは、スキーマレスのJSONドキュメントを扱うためのAPIです。SQLに似たクエリ言語を使用して、ドキュメント内のデータに対して複雑なクエリを実行できます。自動インデックス作成、複数リージョンレプリケーション、水平スケーリングなどの特徴を持ち、大規模なWeb、モバイル、IoTアプリケーションに適しています。<br>PostgreSQL API：PostgreSQLのクエリ言語を使って、Azure Cosmos DB上でリレーショナルデータベースを提供するAPIです。既存のPostgreSQLアプリケーションや開発者のスキルを活かして、グローバル分散型のデータベースの利点を享受できるようになります。自動スケールアウト、高可用性、地理的分散などのCosmos DBの特徴を活用しながら、リレーショナルデータの管理が行うことができます。<br>MongoDB API：MongoDB APIは、MongoDBプロトコルに対応したAPIで、MongoDBクライアントと直接通信できます。このAPIを使用すると、Azure Cosmos DBをMongoDBデータベースとして利用できます。MongoDBを使用した経験がある開発者や、MongoDBアプリケーションをクラウドに移行したい場合に適しています。<br>Cassandra API：Cassandra APIは、Apache Cassandraのクエリ言語（CQL）を使用して、列指向のデータを操作できるAPIです。このAPIを利用することで、Azure Cosmos DB上でCassandraベースのアプリケーションを実行できます。大規模なデータセットや、高速な書き込みと読み出しが求められるシステムに最適です。<br>Gremlin API：Gremlin APIは、グラフベースのデータモデルを操作するためのAPIです。Gremlinクエリ言語を使用して、頂点とエッジで構成されるデータ構造にアクセスし、分析することができます。ソーシャルネットワーク、レコメンドエンジンなど、複雑な関連性を持つデータを扱うアプリケーションに適しています。<br>Table API：Table APIは、キーバリューストアとして機能し、大量の非構造化データを効率的に管理するためのAPIです。Azure Table Storageからの移行も容易に行えます。大量のデータをシンプルなキーバリュー形式で扱いたい場合や、スケーラビリティとパフォーマンスを重視するアプリケーションに最適です。'>
+<div class='choice'  data-group='選択肢' >Table API</div>
+<div class='choice'  data-group='選択肢' >NoSQL API</div>
+<div class='choice'  data-group='選択肢' >Cassandra API</div>
+<div class='choice'  data-group='選択肢' >Apache Gremlin API</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題24<br>列指向スキーマのデータモデルに適したAzure Cosmos DBのAPIはどれですか。' data-answer='1' data-explanation='■正解：<br>B:Apache Cassandra API<br>■解説<br>Azure Cosmos DBのApache Cassandra APIは、列指向スキーマのデータモデルに適しています。Apache Cassandraは、高いスケーラビリティとパフォーマンスを提供する分散型のNoSQLデータベースシステムであり、特に大規模なデータセットを扱うアプリケーションに適しています。'>
+<div class='choice'  data-group='選択肢' >PostgreSQL API</div>
+<div class='choice'  data-group='選択肢' >Apache Cassandra API</div>
+<div class='choice'  data-group='選択肢' >Gremlin API</div>
+<div class='choice'  data-group='選択肢' >MongoDB API</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題25<br>Azure Cosmos DBの整合性レベルとは何ですか。' data-answer='0' data-explanation='■正解：<br>A:データの読み取り時にデータベースがどのように一貫した状態のデータを保証するかを定義する<br>■解説<br>Azure Cosmos DBの整合性レベルは、データの読み取り時にどの程度一貫性を保つか、つまりクライアントがデータを読み取る際に受け取るデータの新鮮さや一貫性のレベルを定義します。これは分散データベースにおいて、データの複製（レプリカ）間でのデータ同期の挙動を指し、アプリケーションの要件に応じて異なる整合性レベルを選択することができます。<br>Azure Cosmos DBは、以下の５つの整合性レベルを提供しています。<br>・Strong (強い整合性)：読み取り操作が常に最新の書き込み操作の結果を反映することを保証します。データの読み取り時には、書き込みが全リージョンに伝播して全てのコピーが更新されるまで待ちます。<br>最も厳格な整合性が必要な場合に適しており、銀行取引のように正確なデータが必須のアプリケーションに最適ですが、パフォーマンスと遅延に影響を与える可能性があります。<br>・Bounded Staleness (有界整合性制約)：有界整合性制約では、読み取り操作が最新の書き込みからある時間または操作数の範囲内であることが保証されます。これにより、データの遅延が許容範囲内に制限されます。<br>リアルタイムではないが、ある程度の遅延を許容できるアプリケーションに適しています。例えば、ソーシャルメディアのフィードや記事の更新などが該当します。<br>・Session (セッション整合性)：セッション整合性は、同じセッション内のクライアントに対して最新の書き込み操作を保証しますが、他のセッションではこの保証はありません。<br>ユーザー固有のデータを扱うWebアプリケーションやモバイルアプリケーションに適しており、ユーザーが自分の操作を最新状態で見ることを保証します。<br>・Consistent Prefix (一貫性のあるプレフィックス)：一貫性のあるプレフィックスは、データの読み取りが書き込みの順序を保持することを保証します。しかし、最新のデータが反映されていない可能性があります。<br>アプリケーションがデータの順序は重視するが、最新の状態でなくても許容できるシナリオに適しています。<br>・Eventual (最終的な一貫性)：最終的な一貫性は、読み取り操作がいずれ最新の書き込み操作の結果を反映することを保証しますが、その時点で最新であるとは限りません。この整合性レベルでは、最高のパフォーマンスを提供しますが、データの一貫性は最も緩いです。<br>パフォーマンスが最優先され、データの即時一貫性がそれほど重要でない場合に適しています。例えば、非同期プロセスやバッチ処理などが該当します。'>
+<div class='choice'  data-group='選択肢' >データの読み取り時にデータベースがどのように一貫した状態のデータを保証するかを定義する</div>
+<div class='choice'  data-group='選択肢' >トランザクションが正常に完了した場合、その変更は永続的であることを保証する</div>
+<div class='choice'  data-group='選択肢' >同時に複数のトランザクションが実行されている場合でも、各トランザクションの結果が互いに干渉しないことを保証する</div>
+<div class='choice'  data-group='選択肢' >トランザクションの、すべての操作が完全に実行されるか、または一切実行されないかを定義する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題26<br>Application Insightsを使用して識別できる問題の種類はどれですか。' data-answer='3' data-explanation='■正解：<br>D:上記の選択肢すべて<br>■解説<br>Application Insightsは、Azureによって提供されるアプリケーションパフォーマンス管理 (APM) および監視ツールです。Webアプリケーションやバックエンドサービスを問わず、リアルタイムでアプリケーションのパフォーマンスと使用状況を追跡し、分析するために設計されています。これは、開発者がアプリケーションの問題をより迅速に特定し、解決するのをサポートすることを目的としています。<br>Application Insightsの主な機能は以下の通りです。<br>・リアルタイムパフォーマンス監視：アプリケーションの応答時間、リクエスト処理速度、サーバーの応答など、パフォーマンスに影響を与える要因をリアルタイムで追跡します。<br>・障害診断：サーバーのダウンタイム、コードのバグ、ネットワークの遅延など、アプリケーションの問題を詳細に診断し、その原因を特定できます。<br>・使用状況分析：アプリケーションがどのように使用されているかについての洞察（インサイト）を提供し、ユーザーセッション、ページビュー、ユーザーの地理的な位置情報などの分析を行います。<br>・カスタムイベントとメトリクス：開発者は、特定のビジネス要件に基づいてカスタムイベントやメトリクスを追跡でき、アプリケーションの特定の側面に焦点を当てた分析が可能になります。<br>・統合アラート：パフォーマンスの閾値や特定の条件が満たされた場合に通知を受け取るためのアラートルールを設定できます。'>
+<div class='choice'  data-group='選択肢' >ネットワークの遅延</div>
+<div class='choice'  data-group='選択肢' >コードのバグ</div>
+<div class='choice'  data-group='選択肢' >サーバーのダウンタイム</div>
+<div class='choice'  data-group='選択肢' >上記の選択肢すべて</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題27<br>Application Insightsの可用性テストとは何ですか。' data-answer='1' data-explanation='■正解：<br>B:ユーザーにとってアプリケーションが利用可能かどうかを確認する<br>■解説<br>Application Insightsの可用性テストは、Webアプリケーションやサービスが外部からアクセス可能であり、正常に機能しているかどうかを定期的にチェックする機能です。これにより、問題が発生した場合に迅速に対応し、高いサービスレベルを維持することができます。可用性テストは、アプリケーションが稼働している複数の地理的位置から実行され、グローバルな視点からの可用性とパフォーマンスの監視を可能にします。<br>可用性テストでは、以下の３種類のテスト手法をサポートしています。<br>・URL ping テスト：指定したURLにHTTP(S)リクエストを送信し、応答をチェックするシンプルなテストです。応答時間、応答コード、およびオプションで応答本文の内容を検証することができます。WebページやAPIエンドポイントが正常に稼働しているかを確認するために使用されます。設定が簡単であり、定期的なヘルスチェックに適しています。<br>・標準テスト（Standard）：より複雑なシナリオをシミュレートするためのマルチステップWebテストです。Visual Studioで作成し、複数のページやカスタムアクションを含むユーザーシナリオを再現することができます。ユーザーのログインプロセスやフォームの送信など、複数ステップを伴うアプリケーションの特定のユーザーフローをテストするために使用されます。<br>・カスタム TrackAvailability テスト：Application Insights SDKを使用してプログラム的に可用性テストを実装し、カスタムロジックに基づいてアプリケーションの可用性をチェックできます。標準的なURL pingテストや標準テストではカバーできない特定の要件がある場合や、アプリケーション特有の可用性チェックを行いたい場合に適しています。より高度なカスタマイズが可能です。'>
+<div class='choice'  data-group='選択肢' >サーバーのセキュリティレベルを評価する</div>
+<div class='choice'  data-group='選択肢' >ユーザーにとってアプリケーションが利用可能かどうかを確認する</div>
+<div class='choice'  data-group='選択肢' >アプリケーションのセキュリティ脆弱性を検出する</div>
+<div class='choice'  data-group='選択肢' >ユーザーのインターフェースの可読性を評価する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題28<br>Azure Container Instance (ACI) におけるコンテナーグループは何を可能にしますか。' data-answer='1' data-explanation='■正解：<br>B:複数のコンテナーを同じホスト上で実行し、リソースを共有する<br>■解説<br>Azure Container Instance (ACI) のコンテナーグループとは、複数のコンテナーをまとめて管理し、同じ実行環境内で実行できるようにする概念です。これにより関連する複数のコンテナーをグループ化して、一つの単位として扱うことが可能になります。各コンテナーは同じホストマシン上で実行されるため、リソース（CPUやメモリなど）を共有し、内部的にネットワーク通信を行うことができます。<br>たとえば、Webアプリケーションとそのバックエンドのデータベースを含む2つのコンテナを同じコンテナグループに配置することで、両者は同じ環境内で密接に連携して動作します。コンテナグループは、これらのコンテナ間の通信を容易にし、外部からのアクセスも一元的に管理できます。<br>コンテナグループを使用する主なメリットは以下の通りです。<br>・関連するコンテナの簡単なデプロイと管理：一緒に動作するコンテナをグループとして一括でデプロイし、管理できます。<br>・リソースの共有：グループ内のコンテナは、同じホストマシンのリソースを共有するため、効率的なリソース使用が可能です。<br>・内部通信の容易さ：同じコンテナグループ内のコンテナ間では、ローカルネットワークを介して簡単に通信できます。'>
+<div class='choice'  data-group='選択肢' >単一のコンテナーのみをデプロイする</div>
+<div class='choice'  data-group='選択肢' >複数のコンテナーを同じホスト上で実行し、リソースを共有する</div>
+<div class='choice'  data-group='選択肢' >コンテナー間でネットワーク接続を禁止する</div>
+<div class='choice'  data-group='選択肢' >各コンテナーに異なるOSを割り当てる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題29<br>Azure Container Instances (ACI) を使用する主な利点は何ですか。' data-answer='2' data-explanation='■正解：<br>C:コンテナーの迅速なデプロイとスケーリングを行うことができる<br>■解説<br>Azure Container Instances (ACI) は、Azure上でコンテナーをサーバーレスで実行するためのサービスです。ACIを使用すると、仮想マシンをプロビジョニングしたり、クラスターを管理したりすることなく、コンテナーを迅速にデプロイし、スケールアウトすることができます。これにより、開発者はアプリケーションのコードに集中でき、インフラストラクチャの管理にかかる時間とコストを削減できます。<br>Azure Container Instancesの主な機能と利点は以下の通りです。<br>・迅速なデプロイ：ACIは、コンテナを数秒で起動することができ、アプリケーションのデプロイメントとテストを迅速化します。これは特に、開発とテスト環境での利用に適しています。<br>・スケーラビリティ：必要に応じて、コンテナの数を簡単に増減させることができます。これにより、需要の変動に柔軟に対応し、リソースの使用効率を最適化できます。<br>・イベント駆動型スケーリング：イベントに応じて自動的にコンテナをスケールアウトする機能をサポートしています。たとえば、Azure Queue Storageのメッセージの増加に応じてコンテナの数を増やすことができます。<br>・容易なネットワーク設定：ACIは、コンテナにパブリックIPアドレスを割り当てることも、Azure Virtual Network内でプライベートに実行することもできます。これにより、セキュリティとネットワークの要件に基づいて、柔軟なデプロイメントが可能になります。<br>・低コスト：使用した分だけ料金が発生する従量課金制であり、余分なコストをかけずにコンテナを実行できます。'>
+<div class='choice'  data-group='選択肢' >高度な機械学習モデルのトレーニングを行うことができる</div>
+<div class='choice'  data-group='選択肢' >ビッグデータ分析と処理を行うことができる</div>
+<div class='choice'  data-group='選択肢' >コンテナーの迅速なデプロイとスケーリングを行うことができる</div>
+<div class='choice'  data-group='選択肢' >長期間実行されるバッチジョブを行うことができる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題30<br>Azure Container InstancesをAzureファイル共有をマウントせずに使用する場合、どのような問題が生じますか。' data-answer='2' data-explanation='■正解：<br>C:コンテナが停止すると、そのコンテナ内で生成されたデータが消去される<br>■解説<br>Azure Container Instances (ACI) でコンテナを実行する際、Azure ファイル共有などの外部ストレージをマウントしないと、コンテナが生成したデータはコンテナのライフサイクルに依存します。つまり、コンテナが停止または削除された場合、そのコンテナ内で作成されたデータも一緒に失われてしまいます。Azure Container InstancesをAzure ファイル共有にマウントすることで、コンテナが生成するデータを永続的に保存したり、コンテナ間でデータを共有したりすることが可能になります。<br>Azure ファイル共有をマウントすることで得られるメリットはその他、以下の点が挙げられます。<br>・コンテナ間でのデータ共有：複数のコンテナが同じファイル共有にアクセスすることで、簡単にデータを共有できます。これは、分散アプリケーションやマイクロサービス間でのデータ共有に便利です。<br>・スケーラビリティと柔軟性：Azure ファイル共有を使用することで、ストレージの管理を容易にし、必要に応じてストレージを拡張することができます。'>
+<div class='choice'  data-group='選択肢' >仮想ネットワーク内でのコンテナの配置ができなくなる</div>
+<div class='choice'  data-group='選択肢' >コンテナ内のアプリケーションのパフォーマンスが低下する</div>
+<div class='choice'  data-group='選択肢' >コンテナが停止すると、そのコンテナ内で生成されたデータが消去される</div>
+<div class='choice'  data-group='選択肢' >Azure Blob Storageへのアクセスができなくなる</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題31<br>サーバーレスなアーキテクチャを採用し、コンテナ化されたアプリケーションの開発、デプロイおよび実行を容易にするAzureサービスは何ですか。' data-answer='1' data-explanation='■正解：<br>B:Azure Container Apps<br>■解説<br>Azure Container Appsは、マイクロサービスやイベント駆動型アプリケーションなど、コンテナ化されたアプリケーションの開発、デプロイ、および運用を簡素化するためのフルマネージド型のサービスです。このサービスはサーバーレス環境を提供し、インフラストラクチャの管理から開発者を解放します。アプリケーションのスケーリング、更新、運用が自動化され、開発者はアプリケーションのコードに集中することができます。<br>Azure Container Appsの主な機能は以下の通りです。<br>・サーバーレス運用：Azure Container Appsは、インフラストラクチャの管理を気にすることなく、コンテナ化されたアプリケーションを実行できるサーバーレスプラットフォームを提供します。これにより、コンテナのプロビジョニング、スケーリング、および管理がAzureによって自動的に行われます。<br>・自動スケーリング：アプリケーションの負荷に応じて自動的にスケールアウトおよびスケールインします。イベント駆動型スケーリングにも対応しており、アプリケーションの需要に基づいてリソースを効率的に割り当てることができます。<br>・マイクロサービスアーキテクチャのサポート：複数のコンテナをグループ化し、それぞれに独立したマイクロサービスを実行することができます。これにより、アプリケーションのモジュール性が向上し、開発と保守が容易になります。<br>・イベント駆動型アプリケーションのサポート：Azure Event GridやAzure Service Busなどのサービスと連携し、イベントに基づいてアプリケーションが反応するように設計できます。'>
+<div class='choice'  data-group='選択肢' >Azure Container Instances (ACI)</div>
+<div class='choice'  data-group='選択肢' >Azure Container Apps</div>
+<div class='choice'  data-group='選択肢' >Azure Logic Apps</div>
+<div class='choice'  data-group='選択肢' >Azure App Configuration</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題32<br>Microsoft Entra IDを使用する主な目的は何ですか。' data-answer='2' data-explanation='■正解：<br>C:アプリケーションへの安全なサインインとアクセス管理<br>■解説<br>Microsoft Entra ID（旧：Microsoft Identity Platform）は、アプリケーションへの安全なサインイン機能を提供し、ユーザーとアプリケーションのアクセス管理を行うためのサービスです。企業や開発者がアプリケーションに組み込むことで、エンドユーザーは一貫した認証体験を得られ、セキュリティを強化しながらも便利にサービスを利用できるようになります。OAuth 2.0とOpenID Connectといった現代の認証プロトコルをサポートしており、マルチファクタ認証や条件付きアクセスなど、高度なセキュリティ機能を提供しています。<br>Microsoft Entra IDではユーザーの認証とアプリケーションへの安全なアクセスを管理するため、以下のような一連の機能とツールを提供します。<br>・シングルサインオン (SSO)：ユーザーが一度のサインインで複数のアプリケーションにアクセスできるようにする機能です。これにより、ユーザーエクスペリエンスが向上し、パスワードに関連するセキュリティリスクが低減されます。<br>・多要素認証 (MFA)：セキュリティを強化するため、パスワード以外の追加の認証手段（SMS、電話呼び出し、アプリ通知など）を要求します。これにより、不正アクセスのリスクを軽減できます。<br>・条件付きアクセス：ユーザーの場所、デバイスの状態、アクセスしようとするアプリケーションなどに基づいて、アクセスポリシーを動的に適用します。不審なアクセス試行を防ぎ、セキュリティを保ちながら柔軟なアクセス制御を実現します。<br>・OAuth 2.0とOpenID Connectサポート：認証と承認のための標準プロトコルをサポートし、安全なAPIアクセスとユーザー情報の共有を可能にします。<br>・開発者ツールとSDK：Web、デスクトップ、モバイルアプリケーションの開発者が、Microsoft Entra IDの機能を簡単に統合できるようにするための豊富なSDKとツールセットを提供します。'>
+<div class='choice'  data-group='選択肢' >ネットワークのパフォーマンス最適化</div>
+<div class='choice'  data-group='選択肢' >クラウドストレージの管理</div>
+<div class='choice'  data-group='選択肢' >アプリケーションへの安全なサインインとアクセス管理</div>
+<div class='choice'  data-group='選択肢' >データ分析とレポート作成</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題33<br>Microsoft Entra IDの条件付きアクセスポリシーを適用することで、どのようなアクションを実行できますか' data-answer='2' data-explanation='■正解：<br>C:特定の条件を満たしたときのみユーザーへのアクセスを許可する<br>■解説<br>条件付きアクセスは、Microsoft Entra IDの機能の一部であり、組織が特定の条件に基づいてアプリケーションやデータへのアクセスを制御できるように設計されています。これにより、組織はセキュリティリスクを最小限に抑えながら、ユーザーが必要な情報やリソースにアクセスできるようにすることができます。<br>条件付きアクセスは以下の機能を有しています。<br>・動的なアクセス制御：条件付きアクセスポリシーを使用すると、組織はユーザーの場所、使用するデバイス、アクセスしようとしているアプリケーション、そしてその他の条件など、さまざまな要因に基づいてアクセス許可を動的に変更することができます。<br>・セキュリティの強化：ユーザーが不審な場所からアクセスしようとする場合や、セキュリティが不十分なデバイスを使用している場合に、アクセスを制限することで、不正アクセスやデータ漏洩のリスクを軽減します。<br>・ユーザーエクスペリエンスの向上：ユーザーが企業のネットワーク内または信頼できるデバイスを使用している場合には、追加の認証手続きを省略することができます。これにより、セキュリティを維持しつつも、ユーザーエクスペリエンスを向上させることができます。<br>・柔軟なポリシーマネジメント：管理者は、Azureポータルを通じて条件付きアクセスポリシーを簡単に作成、更新、適用することができます。また、ポリシーは組織のセキュリティ要件に合わせて細かくカスタマイズ可能です。'>
+<div class='choice'  data-group='選択肢' >ユーザーによる任意のアプリケーションのインストールを強制する</div>
+<div class='choice'  data-group='選択肢' >アクセス試行を基に自動的にユーザーアカウントを削除する</div>
+<div class='choice'  data-group='選択肢' >特定の条件を満たしたときのみユーザーへのアクセスを許可する</div>
+<div class='choice'  data-group='選択肢' >全てのユーザーに対して一律にアクセス権限を付与する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題34<br>Microsoft 認証ライブラリ (MSAL)を使用する主な目的は何ですか。' data-answer='1' data-explanation='■正解：<br>B:アプリケーションへの安全なサインインとアクセス管理<br>■解説<br>Microsoft Authentication Library (MSAL)は、アプリケーション開発者が簡単にセキュアなサインイン機能とアクセス管理を実装できるようにするためのライブラリです。これにより、エンドユーザーはMicrosoftのアイデンティティプラットフォームを利用して、アプリケーションにログインできます。<br>主な機能と利点は以下の通りです。<br>・シングルサインオン (SSO)：MSALを利用することで、ユーザーは一度サインインすれば、その認証情報を用いて複数のアプリケーションやサービスにアクセスできます。これはユーザー体験を向上させ、サインインプロセスを簡素化します。<br>・多要素認証 (MFA)：セキュリティをさらに強化するため、MSALは多要素認証をサポートしています。これにより、パスワードだけでなく、電話のテキストメッセージやアプリの通知など、第二の認証手段が必要になります。<br>・OAuth 2.0とOpenID Connectプロトコルのサポート：MSALはこれらの現代的な認証と承認のプロトコルを利用し、安全なアクセストークンの取得と管理を行います。これにより、アプリケーションはユーザーの代わりに安全にAPIへのアクセスを行うことができます。<br>・クロスプラットフォーム対応：MSALは、.NET、JavaScript、Java、Pythonなど複数のプログラミング言語やプラットフォームで利用できます。これにより、ウェブ、モバイル、デスクトップなど、さまざまな種類のアプリケーションでシームレスに認証機能を組み込むことができます。'>
+<div class='choice'  data-group='選択肢' >データベースの管理と最適化</div>
+<div class='choice'  data-group='選択肢' >アプリケーションへの安全なサインインとアクセス管理</div>
+<div class='choice'  data-group='選択肢' >ウェブページのデザインとレイアウトの改善</div>
+<div class='choice'  data-group='選択肢' >ネットワークトラフィックの監視</div>
+</div>
+
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

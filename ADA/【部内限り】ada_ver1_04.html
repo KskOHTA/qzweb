@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='true' data-question='問題1<br>あなたは、オンライン写真共有プラットフォームを開発しており、ユーザーがアップロードした写真を自動的に解析してタグを付ける機能を統合する予定です。写真はAzure Blob Storageに保存され、アップロードされた後、可能な限り迅速に処理する必要があります。<br>これら要件を満すためのAzure Functions Appの構成は何ですか。' data-answer='1,3' data-explanation='■正解：<br>B:App Serviceプラン<br>D:Blob<br>■解説<br>Azure Functionsは、イベント駆動型のサーバレス計算サービスであり、多様なトリガーに基づいてコードの実行を自動化することができます。このサービスは、特定のイベントが発生するたびに自動的にコードを実行する機能を提供します。<br>様々な種類のトリガーがサポートされており、一般的なものとして以下があります。<br>１．Blob：Azure Blob Storageに新しいファイルがアップロードされたり、既存のファイルが更新されたりした時にAzure Functionsを自動的に起動します。<br>２．HTTP：HTTPリクエストを受信した際にFunctionを起動します。ウェブAPIやウェブフックとして利用するのに適しています。<br>３．タイマー：指定したスケジュールに従って定期的にFunctionを実行します。例えば、毎日や毎週特定の時刻にタスクを実行する場合に使用します。<br>４．キュー：Azure Queue Storageに新しいメッセージが追加されるとFunctionを起動します。バックグラウンド処理や非同期タスクの管理に役立ちます。<br>Azure Functions のプランの種類については以下の通りです。<br>１．App Serviceプラン：このプランでは、Azure FunctionsがAzure App Serviceのインフラ上で実行されます。常時実行が可能で、オートスケール機能を利用して処理能力を自動的に調整することができます。より予測可能なコストとパフォーマンスが求められる場合に適しています。<br>２．従量課金プラン：使用したリソースに応じて費用が発生するプランです。Functionが実際に実行された時間のみで料金が発生するため、不定期に使用する場合やコストを抑えたい場合に適しています。ただし、トリガーが発生してからFunctionが実行されるまで最大で10分間の遅延が発生する可能性があるため、即時性が要求されるアプリケーションには不向きです。<br>本設問について、App ServiceプランでAzure Functionを実行し、トリガーの種類としてBlobを選択するのが最適な選択肢です。この構成では、Azure Blob Storageに新しいファイルがアップロードされた際に、そのイベントがFunctionをトリガーし、ファイルを自動的に処理します。この方法で写真の解析とタグ付けが迅速に実行されるため、プラットフォームの要求に応じた効率的な処理が可能です。'>
+<div class='choice'  data-group='Azure Functionsのプラン' >従量課金プラン</div>
+<div class='choice'  data-group='Azure Functionsのプラン' >App Serviceプラン</div>
+<div class='choice'  data-group='トリガーの種類' >タイマー</div>
+<div class='choice'  data-group='トリガーの種類' >Blob</div>
+<div class='choice'  data-group='トリガーの種類' >HTTP</div>
+<div class='choice'  data-group='トリガーの種類' >キュー</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題2<br>あなたは、金融取引を扱うAzure App ServiceでホストされるWebアプリを開発しています。アプリケーションはプロダクション環境にデプロイされ、Application Insightsが有効にされています。トランザクション処理中に突発的な例外が多発していることが報告されており、これらの例外が発生する際のコードの状態と変数の内容を確認する必要があります。<br>どのApplication Insightsの機能を使用する必要がありますか。' data-answer='3' data-explanation='■正解：<br>D:スナップショットデバッガー<br>■解説<br>スナップショットデバッガーは、Azure Monitorの一部として提供されるツールであり、プロダクション環境でのアプリケーションの例外やパフォーマンスの問題をリアルタイムで捉え、その瞬間のアプリケーションの状態（コードの実行状況、変数の値、スタックトレースなど）をスナップショットとして記録します。これにより、開発者はプロダクション環境での問題を迅速に診断し、解決するための詳細情報を得ることができます。<br>具体的に以下のような機能を有しています。<br>・リアルタイム診断：プロダクション環境での問題発生時に、コードの実行中に何が起こっているのかを正確に把握できます。<br>・最小限のパフォーマンス影響：スナップショットは非常に高速に取得され、アプリケーションのパフォーマンスにほとんど影響を与えません。<br>・デバッグの容易さ：Visual Studioと統合されているため、取得したスナップショットを使って、ローカル環境でのデバッグのように問題の原因を追跡できます。<br>この機能は、特にプロダクション環境で突発的な例外が頻繁に発生している場合に非常に有効であり、金融取引を扱うWebアプリケーションのようなクリティカルなシステムでのエラー診断には不可欠です。'>
+<div class='choice'  data-group='選択肢' >ライブメトリック</div>
+<div class='choice'  data-group='選択肢' >カスタムイベント</div>
+<div class='choice'  data-group='選択肢' >パフォーマンスカウンター</div>
+<div class='choice'  data-group='選択肢' >スナップショットデバッガー</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題3<br>あなたの組織は、EコマースのWebサイトを運営しており、ユーザーはAzure App Service認証を使用してサインインしています。現在、ユーザーが特定の購入履歴や設定に基づいてカスタマイズされた情報が表示されるようにしたいと考えています。<br>ユーザーのIDやユーザークレームオブジェクトからデータにアクセスする場合、どのような対応が最適ですか。' data-answer='3' data-explanation='■正解：<br>D:ウェブサイトを更新して、HTTPリクエストヘッダー値を読み取る<br>■解説<br>ユーザーがAzure App Service認証を使用してサインインし、その後に特定のユーザー情報に基づいてカスタマイズされたデータを提供する場合、以下の選択肢が適切です。<br>ウェブサイトを更新して、HTTPリクエストヘッダー値を読み取る：Webアプリケーションがユーザーのブラウザから送信されるHTTPリクエストを受け取り、そのヘッダー情報から必要なデータを抽出する方法です。HTTPリクエストヘッダーは、インターネットを通じてサーバーへ送信される情報の一部であり、ユーザーエージェントの種類、言語設定、認証情報などが含まれています。<br>Azure App Service認証を使用してユーザーがサインインすると、ユーザーの情報（IDや権限情報などのクレーム）がHTTPリクエストヘッダーに含まれるようになります。Webアプリケーションはこれらのヘッダーを読み取って、誰がリクエストを送信したのかを識別し、ユーザーに適した応答を生成するために使用します。<br>たとえば、あるユーザーが特定の購入履歴や設定に基づいてカスタマイズされた情報を表示したい場合、アプリケーションはそのユーザーのIDをリクエストヘッダーから読み取り、そのIDに基づいてデータベースや他のデータソースから関連情報を取得して表示します。これにより、各ユーザーに合わせたパーソナライズされた体験を提供することができます。<br>■その他の選択肢<br>・ウェブサイトからMicrosoft Graph APIコールを行うカスタムコードを記述する：この方法は、ユーザーの詳細なプロファイル情報を取得する場合に適しています。Azure AD からユーザーの情報を取得するためにMicrosoft Graph APIを使用できますが、このシナリオではユーザーの購入履歴やカスタマイズされた設定にアクセスする必要があるため、直接関連がありません。<br>・Resource Managerのロール割り当てAPIを使用して、ウェブサイトに対して閲覧者ロールを割り当てる：この選択肢はAzureリソースへのアクセス制御に関連していますが、ユーザーのカスタマイズされた情報を管理するためには不適切です。<br>・ウェブサイトにAzure Active Directory B2Cを統合して、ユーザープロファイルを管理する：Azure AD B2Cは消費者向けアイデンティティ管理を提供しますが、既にAzure App Service認証を使用している場合は不要です。'>
+<div class='choice'  data-group='選択肢' >ウェブサイトからMicrosoft Graph APIコールを行うカスタムコードを記述する</div>
+<div class='choice'  data-group='選択肢' >ウェブサイトにAzure Active Directory B2Cを統合して、ユーザープロファイルを管理する</div>
+<div class='choice'  data-group='選択肢' >Resource Managerのロール割り当てAPIを使用して、ウェブサイトに対して閲覧者ロールを割り当てる</div>
+<div class='choice'  data-group='選択肢' >ウェブサイトを更新して、HTTPリクエストヘッダー値を読み取る</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題4<br>あなたの組織は、Azure Storageへのアクセスを許可するために共有アクセス署名（SAS）の設定を検討しています。<br>Microsoft Entra IDの資格情報を使用して生成される共有アクセス署名はどれですか。' data-answer='2' data-explanation='■正解：<br>C:ユーザー委任 SAS<br>■解説<br>共有アクセス署名（SAS）は、Azure Storageなどのクラウドストレージサービスを利用する際に、特定のリソースへのアクセスを安全に許可するための方法です。SASを使うことで、ストレージアカウントのキーや他の重要な情報を直接共有することなく、必要なリソースへのアクセス権を他者に与えることができます。<br>ユーザー委任 SASは、Microsoft Entra IDの資格情報を使用して生成されます。このタイプのSASは、Azure Blob StorageおよびQueue Storageのリソースへのアクセスを許可する際に特に有用です。ユーザー委任SASを使用することで、Microsoft Entra IDのセキュリティ機能（例えば、条件付きアクセスポリシー）を活用し、より安全なアクセス管理が可能となります。<br>Azure Storage では、その他下記の共有アクセス署名がサポートされています。<br>・サービス SAS：Azure Storageサービス内の特定のリソース（たとえば、Blobコンテナ、キュー、テーブル、ファイル共有のいずれか）へのアクセスを制限するために使用されます。このSASは、特定のリソースまたはそのリソースの一部（例：特定のファイルやBlob）に対する権限を委任する際に適しています。細かく権限を設定できるため、必要な操作（読み取り、書き込み、削除など）に限定してアクセスを許可できます。<br>・アカウント SAS：Azure Storageアカウント内の複数のサービスやリソースに対して広範なアクセス権を委任する場合に使用されます。このSASでは、複数のストレージサービス（Blob、ファイル、キュー、テーブル）にわたって権限を設定することができます。一つのSASでアカウント内の多くのリソースにアクセスできるため、大規模なアプリケーションでの管理が容易になります。'>
+<div class='choice'  data-group='選択肢' >アカウント SAS</div>
+<div class='choice'  data-group='選択肢' >サービス SAS</div>
+<div class='choice'  data-group='選択肢' >ユーザー委任 SAS</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題5<br>Azure Logic Appのワークフローを編集する必要がある場合、どのサービスが最適ですか。' data-answer='2' data-explanation='■正解：<br>C:Logic Apps デザイナー<br>■解説<br>Logic Apps デザイナーは、Azure Logic Appsのワークフローを視覚的に構築し、編集するための直感的なグラフィカルユーザーインターフェースを提供します。ユーザーはドラッグアンドドロップでアクションを配置し、条件を定義し、ワークフローのロジックを簡単にカスタマイズできます。Logic Apps デザイナーは、Azureポータル内で直接アクセスでき、既存のLogic Appのワークフローを効率的に編集するための最適なツールです。<br>このデザイナーを使用することで、開発者やビジネスユーザーは複雑な統合プロセスを容易に構築し、既存のワークフローを柔軟に調整できます。'>
+<div class='choice'  data-group='選択肢' >Azure Cognitive Services</div>
+<div class='choice'  data-group='選択肢' >Microsoft Automate</div>
+<div class='choice'  data-group='選択肢' >Logic Apps デザイナー</div>
+<div class='choice'  data-group='選択肢' >Visual Studio Code</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題6<br>KubeCtlを使用してできることはどれですか。（２つ選択）' data-answer='1,3' data-explanation='■正解：<br>B:クラスターのリソース状態を確認する<br>D:外部IPアドレスの情報を表示する<br>■解説<br>KubeCtlは、Kubernetes クラスターを管理するためのコマンドラインツールです。Kubernetes は、複数のコンテナを効率的に管理し、自動でスケールアップやローリングアップデートなどを行うことができるオープンソースのコンテナオーケストレーションシステムです。KubeCtlはこのシステムと対話するための主要な手段で、開発者やシステム管理者がクラスター内のリソースやアプリケーションを操作する際に使用します。<br>設問については下記の選択肢が正解です。<br>・クラスターのリソース状態を確認する：kubectl コマンドはKubernetesクラスター内のリソース状態を確認するために使用されます。例えば、kubectl get pods、kubectl get services などのコマンドでリソースの状態や詳細を取得できます。<br>・外部IPアドレスの情報を表示する：kubectl を使用して、サービスやロードバランサーなどのリソースに割り当てられた外部IPアドレスの情報を表示できます。例えば、kubectl get service コマンドを使用すると、サービスに割り当てられた外部IPアドレスが表示されます。<br>■その他の選択肢<br>・クラスターの物理的なインフラストラクチャの管理：kubectl はKubernetesリソースの管理に限定されており、ハードウェアやネットワークインフラストラクチャ（サーバーの物理的な設定やネットワークトポロジーの構築など）の直接的な管理はできません。<br>・クラスターの作成や削除：kubectl は既存のKubernetesクラスター内でのリソース管理を行いますが、新しいクラスターの作成や既存クラスターの削除は直接行うことができません。'>
+<div class='choice'  data-group='選択肢' >クラスターの物理的なインフラストラクチャの管理</div>
+<div class='choice'  data-group='選択肢' >クラスターのリソース状態を確認する</div>
+<div class='choice'  data-group='選択肢' >クラスターの作成や削除</div>
+<div class='choice'  data-group='選択肢' >外部IPアドレスの情報を表示する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題7<br>あなたは、CI/CDユーティリティを使用してAzure Containerインスタンスにコンテナ化されたアプリケーションのデプロイを検討しています。CI/CDユーティリティからAzure Container Registryに認証し、安全にアクセスするためのアイデンティティを設定する必要があります。また、アイデンティティには、レジストリにイメージをプルおよびプッシュするためのロールを割り当てなければなりません。<br>最小権限の原則に従ってロールを割り当てる場合、適切なアイデンティティとロールの組み合わせはどれですか。' data-answer='0,3' data-explanation='■正解：<br>A:サービスプリンシパル<br>D:AcrPush<br>■解説<br>サードパーティの継続的インテグレーションおよび継続的デリバリー（CI/CD）ユーティリティを使用して新しいAzure Container インスタンスにコンテナ化アプリケーションをデプロイする場合、以下の認証オプションを選択する必要があります。<br>サービスプリンシパル：サービスプリンシパルはMicrosoft Entra ID（旧：Azure AD）に基づく認証手段であり、アプリケーションや自動化されたサービスがAzureリソースに対して安全にアクセスするために使用されます。サービスプリンシパルを使用することで、CI/CDユーティリティが非対話式でAzure Container Registryに対して認証を行い、必要な操作を実行できます。<br>マネージドIDは、主にAzure内のリソース間で使用されるため、外部のCI/CDツールやサードパーティのシステムには直接的に適用することが難しくなります。<br>AcrPush：AcrPush ロールは、イメージをプッシュするための権限に加えて、イメージをプルするための権限も含んでいます。これにより、CI/CDプロセスで必要とされるイメージのダウンロードとアップロードの両方が可能となります。この権限をサービスプリンシパルに割り当てることで、最小権限の原則に沿った適切なアクセス制御が実現されます。<br>AcrPullロールでは、イメージのプッシュを行うことはできません。<br>Contributorロールは権限が過剰であり、最小権限の原則に沿っていません。'>
+<div class='choice'  data-group='アイデンティティ' >サービスプリンシパル</div>
+<div class='choice'  data-group='アイデンティティ' >マネージドID</div>
+<div class='choice'  data-group='アイデンティティ' > サービスプリンシパル</div>
+<div class='choice'  data-group='ロール' >AcrPush</div>
+<div class='choice'  data-group='ロール' >AcrPull</div>
+<div class='choice'  data-group='ロール' >Contributor</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題8<br>あなたは金融サービス会社の開発者であり、顧客のトランザクションデータを処理するAzure Logic Appアプリを担当しています。特定のトランザクションデータのフォーマットやフィルタリングのロジックを更新する必要が生じました。<br>ロジックの詳細なカスタマイズが求められる場合、どのツールを使用するのが最適ですか。' data-answer='2' data-explanation='■正解：<br>C:ロジックアプリコードビュー<br>■解説<br>ロジックアプリコードビューは、Azure Logic Appsの開発において、ロジックアプリの定義を直接JSON形式で編集することができるツールです。このビューを使用することで、ユーザーはビジュアルデザイナーのグラフィカルなインターフェースを使わずに、より詳細な設定や複雑なロジックのカスタマイズを行うことが可能です。<br>金融サービス会社の開発者が、顧客のトランザクションデータを処理するLogic Appのロジックを更新する場合、ロジックアプリコードビューを使うことで、トランザクションデータの特定の属性に基づいて動作する複雑なフィルタリングやデータ変換のロジックを細かく設定することができます。これにより、アプリケーションの要件に密接に合わせたカスタマイズが可能になります。<br>■その他の選択肢<br>・ロジックアプリワークフローデザイナー：ビジュアルベースのインターフェースを提供し、ロジックアプリのフローをドラッグアンドドロップで構築できますが、コードビューよりもカスタマイズの自由度が低く要件を満たしません。<br>・Azureポータル：Logic Appを含むAzureリソースの管理に使用しますが、ロジックのカスタマイズにはコードビューやデザイナーが必要です。<br>・ARMテンプレート：Azureリソースマネージャーテンプレートを使用して、ロジックアプリを含むAzureリソースのデプロイメントや管理を行うことができますが、個々のロジックのカスタマイズには向いていません。'>
+<div class='choice'  data-group='選択肢' >ARMテンプレート</div>
+<div class='choice'  data-group='選択肢' >Azureポータル</div>
+<div class='choice'  data-group='選択肢' >ロジックアプリコードビュー</div>
+<div class='choice'  data-group='選択肢' >ロジックアプリワークフローデザイナー</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題9<br>あなたは、Azure仮想マシンを利用したヘルスケアデータ分析ソリューションを開発しています。仮想マシン内のコードは、Azureリソースグループ内に格納されている患者データにアクセスする必要があります。<br>仮想マシンにリソースグループへのアクセス権を付与しました。仮想マシンのシステム割り当てマネージドIDを使用してアクセストークンを取得する必要があります。<br>どの二つのアクションを実行すべきですか。' data-answer='0,3' data-explanation='■正解：<br>A:仮想マシン上のコードから、アクセストークンを使用して Azure Resource Managerを呼び出す<br>D:PowerShellを使用して、マネージドID用Azureリソースエンドポイントへのリクエストを行う<br>■解説<br>・PowerShellを使用して、マネージドID用Azureリソースエンドポイントへのリクエストを行う：マネージドID用Azureリソースエンドポイント とは、Azureの仮想マシンが自身に割り当てられたマネージドIDを使用して、他のAzureサービスへのアクセス許可を安全に要求できる特定のアドレスです。この選択肢では、仮想マシン上でPowerShellを使用して、その仮想マシンが自動的に持っているマネージドIDを用いてAzureから必要なアクセストークンを取得することを意味します。このトークンは、Azure内の他のリソースにアクセスする際の「鍵」として機能します。<br>・仮想マシン上のコードから、アクセストークンを使用して Azure Resource Managerを呼び出す：Azure Resource Managerは、Azureのリソースを管理するためのサービスです。これを使用して、Azure内のリソース（仮想マシン、データベースなど）の作成、更新、削除などを一元的に行うことができます。仮想マシン上で動作しているコードが、先に取得したアクセストークンを使用してAzure Resource Managerにアクセスし、必要なリソースグループ内のデータやサービスへの操作を行うことを意味します。これにより、プログラムはAzure上のリソースを安全に管理・操作できるようになります。'>
+<div class='choice'  data-group='選択肢' >仮想マシン上のコードから、アクセストークンを使用して Azure Resource Managerを呼び出す</div>
+<div class='choice'  data-group='選択肢' >仮想マシンにインストールされたアプリケーションから、管理者の資格情報を使用してサインインする</div>
+<div class='choice'  data-group='選択肢' >ローカルマシンの環境変数を設定してAzureサービスに接続する</div>
+<div class='choice'  data-group='選択肢' >PowerShellを使用して、マネージドID用Azureリソースエンドポイントへのリクエストを行う</div>
+<div class='choice'  data-group='選択肢' >仮想マシン上で直接SQLデータベースに接続する設定を行う</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題10<br>あなたの組織は、Azure Functions Appを使用してアプリケーションの作成を検討しています。<br>Azure Function Appホストがサポートしていない言語での開発を考えていますが、その場合、ランタイムとデプロイ方法の組み合わせとして何が適切ですか。' data-answer='1,2' data-explanation='■正解：<br>B:カスタムハンドラー<br>C:コード<br>■解説<br>Azure Function Appでサポートされていない言語を使用して開発を行う場合、カスタムハンドラーを利用することが推奨されます。カスタムハンドラーは、Azure Functionsが公式にサポートしていない任意のプログラミング言語で関数を記述し実行することを可能にする機能です。これにより、開発者は選んだ言語のHTTPリクエストとレスポンスを扱うことができます。<br>カスタムハンドラーを使用した関数の開発とデプロイメントには、コードベースのデプロイメントが有効です。これにより、関数アプリのランタイム環境を完全に制御でき、特定のニーズや要件に合わせてランタイムをカスタマイズできます。'>
+<div class='choice'  data-group='ランタイム' >PowerShell Core</div>
+<div class='choice'  data-group='ランタイム' >カスタムハンドラー</div>
+<div class='choice'  data-group='デプロイ方法' >コード</div>
+<div class='choice'  data-group='デプロイ方法' >Dockerコンテナ</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題11<br>あなたは、Azure App Serviceを使用してアプリケーションを開発しており、Azure Key Vaultにキー、シークレットおよび証明書を保存する予定です。Azure Key Vaultオブジェクトは、削除後90日間保持する必要があります。<br>ユーザーの不注意や偶発的な削除後もデータを回復可能な状態で保持するためにはどの機能を有効にするべきですか。' data-answer='0' data-explanation='■正解：<br>A:論理的な削除<br>■解説<br>Azure Key Vaultでオブジェクトを削除後も90日間保持し、ユーザーの不注意や偶発的な削除からデータを保護するためには、論理的な削除（Soft delete） を有効にする必要があります。<br>論理的な削除は、Azure Key Vaultで提供される重要な機能であり、キー、シークレット、証明書などが誤って削除された場合にそれらを保護し、必要に応じて復元することを可能にします。<br>例えば、キーボールトやその中のオブジェクトが削除された場合、完全に消去されるのではなく、一定期間（デフォルトでは90日）保留され、この期間中にはオブジェクトを復元することができます。<br>これにより、開発者や管理者が不注意による削除からデータを保護し、安全なデータ管理を実現できます。'>
+<div class='choice'  data-group='選択肢' >論理的な削除</div>
+<div class='choice'  data-group='選択肢' >消去保護</div>
+<div class='choice'  data-group='選択肢' >キーの監査</div>
+<div class='choice'  data-group='選択肢' >アクセス制御</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題12<br>あなたは、音声認識を行うWebサービスを構築しています。このサービスはユーザーが提供したオーディオファイルを解析し、話されている内容のテキスト表現を提供します。音声解析プロセスは時間とリソースを大量に消費するため、重複のアップロードが再処理されないようにAzure Redis Cacheを利用する予定です。さらに、データセンターの障害時にはメタデータの損失を最小化することが求められています。<br>Azure Redisキャッシュインスタンスをどのように構成するのが適切ですか。' data-answer='2' data-explanation='■正解：<br>C:AOF永続化を使用し、２つ目のストレージアカウントを構成する<br>■解説<br>音声認識を行うWebサービスでAzure Redis Cacheを使用する場合、特にデータセンターの障害時にメタデータの損失を最小化するためのキャッシュインスタンスの設定は非常に重要です。Azure Redis Cacheでは、データ永続化のために主にRDB（Redis Database）またはAOF（Append Only File）の2種類の方式が利用可能です。<br>・AOF（Append Only File）永続化：実行されたすべての書き込み操作をログとしてファイルに追記する方法です。サーバーが再起動された場合、このログファイルを読み込むことで、最後の状態を復元できます。この方法は、データの完全性を高めるのに適していますが、ファイルのサイズが大きくなるとパフォーマンスに影響を与える可能性があります。<br>・RDB（Redis Database）永続化：特定の時間間隔でデータのスナップショットをディスクに保存する方法です。この方法はリソースの消費が少なく、パフォーマンスが良好ですが、最後のスナップショット以降に行われた変更は失われるリスクがあります。<br>本設問のシナリオでは、データセンターの障害時にメタデータの損失を最小化することが重要です。そのため、より詳細なデータ復旧を可能とするAOF永続化が推奨されます。さらに、安全性を高めるために第二のストレージアカウントを構成して、AOFファイルのバックアップを別の場所に保存することが理想的です。これにより、一つのストレージアカウントが障害を受けた場合でも、もう一つのアカウントからデータを復旧できるようになります。<br>他の選択肢では、RDB永続化を選んだ場合、障害発生時に最後のスナップショット以降のデータ損失のリスクが高まるため、この要件には最適ではありません。'>
+<div class='choice'  data-group='選択肢' >RDB永続化を使用し、バックアップ頻度を最小値に設定する</div>
+<div class='choice'  data-group='選択肢' >RDB永続化を使用し、２つ目のストレージアカウントを構成する</div>
+<div class='choice'  data-group='選択肢' >AOF永続化を使用し、２つ目のストレージアカウントを構成する</div>
+<div class='choice'  data-group='選択肢' >AOF永続化を使用し、バックアップ頻度を最小値に設定する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題13<br>あなたは、ウェブアプリが10分間にわたって利用可能なCPUコアの95％以上を使用した場合に、通知を受け取りたいと考えています。<br>Azure Monitorでメトリックアラートを作成する場合、適切なコマンドはそれぞれ何ですか。' data-answer='0,3' data-explanation='■正解：<br>A:avg Percentage CPU<br>D:windows-size<br>■解説<br>Azure Monitorでメトリックアラートを作成する際、指定する条件や集計間隔はコマンドのオプションによって設定されます。問題のコマンドオプションの説明に基づくと、以下の選択肢が適切です。<br>avg Percentage CPU：このオプションは、平均CPU使用率をパーセンテージで指定します。これは、WebアプリのCPU使用率が一定期間にわたって高いレベルにあるかどうかを監視するのに適しています。<br>window-size：このオプションは、Azure Monitorでメトリックアラートを設定する際に使用されるパラメータです。このオプションは、メトリックの集計期間を指定するために使用されます。集計期間は、アラート条件を評価するためにどのくらいの時間をデータポイントを集計するかを定義します。10m（10分）に設定されている場合、指定されたメトリック（この場合はCPU使用率など）は過去10分間のデータを集計してその平均値を計算し、その平均値をアラート条件と比較します。この設定により、アラートがトリガーされるかどうかを決定します。' data-images='000000.jpg'>
+<div class='choice'  data-group='コマンド１' >avg Percentage CPU</div>
+<div class='choice'  data-group='コマンド１' >Percentage CPU</div>
+<div class='choice'  data-group='コマンド２' >evaluation-frequency</div>
+<div class='choice'  data-group='コマンド２' >windows-size</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題14<br>あなたの組織は、オンラインショッピングサイトの構築を検討しています。サイトでは、顧客が商品を注文した後、注文確認メールを顧客に自動送信する必要があります。注文確認メールは注文データがデータベースに追加されるたびに関数がトリガーされることで自動送信を行う必要があります。また、その機能の実装に必要なコストは最小限に抑える必要があります。<br>上記要件に適したサービスと料金プランは何ですか。（２つ選択）' data-answer='2,5' data-explanation='■正解：<br>C:SendGrid バインディング<br>F:従量課金プラン<br>■解説<br>Azure FunctionsのSendGrid バインディングを使用すると、関数がトリガーされた際にメールを自動的に送信することができます。<br>設問のシナリオでは、顧客が商品を注文した後、注文データがデータベースに追加されるたびに、注文確認メールを顧客に自動送信する機能が必要です。SendGridバインディングを利用することで、Azure Functionsから直接メール送信のロジックを実装でき、注文確認メールの自動送信が容易になります。<br>Azure Functionsの従量課金プランは、関数の実行回数に基づいて料金が発生するプランです。関数が実行されない期間は料金がかからず、実際に利用したリソースに応じてのみコストが発生します。オンラインショッピングサイトにおける注文処理のように、実行頻度が不規則な場合や、利用量に応じてスケールアップする必要がある場合に、コストを最小限に抑えながら運用するのに適しています。<br>■その他の選択肢<br>・Azure Event Hubs：主に大量のイベントデータを収集し、ストリーム処理するために設計されたサービスです。イベントをAzure Functionsに転送などしてメール送信を行うことは可能ですが、Event Hubs自体にメール送信を行う機能はありません。<br>・Azure IoT Central：IoTアプリケーション開発プラットフォームであり、このシナリオのメール送信機能には関連しません。<br>・Azureリザーブドインスタンス：一定期間の利用を前提とした前払いプランであり、実行回数に応じたスケーラビリティが求められるシナリオには適していません。<br>・Azure ハイブリッド特典：既存のオンプレミスWindows ServerまたはSQL ServerライセンスをAzureに持ち込むことでコストを削減できるプランです。このシナリオとは関連性が低いです。'>
+<div class='choice'  data-group='サービス' >Azure Event Hubs Azure</div>
+<div class='choice'  data-group='サービス' >Azure IoT Central</div>
+<div class='choice'  data-group='サービス' >SendGridバインディング</div>
+<div class='choice'  data-group='料金プラン' >Azureリザーブドインスタンス</div>
+<div class='choice'  data-group='料金プラン' >ハイブリッド特典</div>
+<div class='choice'  data-group='料金プラン' >従量課金プラン</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題15<br>あなたは、ARMテンプレートを使用して複数の仮想マシンをデプロイする予定です。作成する仮想マシンは管理者パスワードなどの機密情報を参照する必要がありますが、ARMテンプレートに平文で記載することはできません。<br>このようなケースにおいて、どのAzureサービスの使用が最適ですか。' data-answer='1' data-explanation='■正解：<br>B:Azure Key Vault<br>■解説<br>Azure Key Vaultは、暗号化キー、証明書およびその他の機密情報を安全に保管するために設計されたサービスです。<br>ARMテンプレートで仮想マシンをデプロイする際に管理者パスワードなどの機密情報を参照する必要がある場合、その情報を平文でテンプレートに記述する代わりに、Azure Key Vaultにその情報を保存し、テンプレートからはKey Vault内の対象情報を参照することが可能です。これにより、機密情報の安全性が保たれるとともに、セキュリティのベストプラクティスに従うことができます。<br>■その他の選択肢<br>・Azureストレージアカウント：ファイル、ディスク、その他のデータストレージのニーズを満たすために使用されますが、機密情報をセキュアに保管するための機能は提供していません。<br>・Microsoft Entra ID：IDとアクセス管理のためのサービスです。ユーザーやアプリケーションの認証や権限付与を管理しますが、機密情報をセキュアに保管するための直接的な機能は提供しません。<br>・Azure Backup：データのバックアップと復旧のためのサービスです。データ損失やデータ破損から保護するために使用されますが、ARMテンプレート内の機密情報を安全に参照するためのソリューションではありません。'>
+<div class='choice'  data-group='選択肢' >Azure Backup</div>
+<div class='choice'  data-group='選択肢' >Azure Key Vault</div>
+<div class='choice'  data-group='選択肢' >Microsoft Entra ID</div>
+<div class='choice'  data-group='選択肢' >Azureストレージアカウント</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題16<br>あなたの組織は、文書管理ウェブサイトを開発しており、保存された文書が第三者によってダウンロードされた場合に備えて暗号化する必要があります。<br>そのために最適な方法は何ですか。' data-answer='3' data-explanation='■正解：<br>D:Azure Key Vaultを使用してキーを生成し、データを暗号化、その後Azure Blobストレージに保管する<br>■解説<br>Azure Key Vaultは、暗号化キー、証明書、その他の秘密情報を管理するためのセキュアなプラットフォームです。<br>・Azure Key Vaultを使用してキーを生成し、データを暗号化、その後Azure Blobストレージに保管する：この方法は、文書を第三者が不正にダウンロードしても内容を保護できる最も効果的なアプローチです。Azure Key Vaultを利用することで、暗号化キーの管理を中央集権化し、セキュリティを強化することができます。キーを使用して文書を暗号化した後、安全にAzure Blobストレージに保管することが可能です。このプロセスにより、もし文書が不正にアクセスされた場合でも、暗号化されているため内容を読み取ることができません。<br>■その他の選択肢<br>・ストレージサービスの暗号化が有効なAzure Cosmos DBデータベースを作成しデータを保存する：Cosmos DBよりもAzure Blobストレージが一般的に推奨されます。また、Cosmos DBは文書のような大きなファイルの管理には最適化されていません。<br>・Azure Rights Management（Azure RMS）を使用して文書を暗号化する：Azure RMSは文書の保護に有効ですが、このシナリオではAzure Key Vaultによる暗号化が推奨されます。RMSはアクセス権管理に重点を置いており、異なるタイプの保護を提供します。<br>・文書を暗号化する代わりに、アクセスポリシーでアクセス権を制御する：アクセスポリシーの設定はセキュリティを向上させますが、暗号化ほどのデータ保護は提供しません。不正アクセスが発生した場合、文書の内容が露見するリスクがあります。'>
+<div class='choice'  data-group='選択肢' >ストレージサービスの暗号化が有効なAzure Cosmos DBデータベースを作成しデータを保存する</div>
+<div class='choice'  data-group='選択肢' >文書を暗号化する代わりに、アクセスポリシーでアクセス権を制御する</div>
+<div class='choice'  data-group='選択肢' >Azure Rights Management（Azure RMS）を使用して文書を暗号化する</div>
+<div class='choice'  data-group='選択肢' >Azure Key Vaultを使用してキーを生成し、データを暗号化、その後Azure Blobストレージに保管する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題17<br>あなたは、Azure Cache for Redisを使用したアプリケーションの開発をしていますが、キャッシュが頻繁に満杯になることが予想されるため削除ポリシー（Eviction policy ）を設定する必要があります。要件として頻繁にアクセスされる要素はキャッシュに残り続け、使用頻度が低い要素を優先的に削除されることが求められます。<br>どのポリシーを設定するのが適切ですか。（２つ選択）' data-answer='2,3' data-explanation='■正解：<br>C:allkeys-lru<br>D:volatile-lru<br>■解説<br>Azure Cache for Redisの削除ポリシー（Eviction Policy）は、キャッシュのメモリが一杯になったときに、どのデータをキャッシュから削除するかを決定するルールです。Redisはキャッシュとして動作するため、新しいデータを保存するスペースを確保する必要があるとき、既存のデータをどのように削除するかを決める必要があります。<br>このポリシーでは、「allkeys」と「volatile」の接頭辞がキャッシュからデータを削除する際の対象を決定し、「lru」、「random」、「ttl」の接尾辞がそのデータをどの順序で削除するかを定義します。<br>接頭辞<br>・allkeys：キャッシュ全体を対象とします。有効期限が設定されているキーもそうでないキーも含まれます。<br>・volatile：有効期限が設定されているキーのみを対象とします。有効期限の設定されているデータの中から削除の対象を選びます。<br>接尾辞<br>・lru (Least Recently Used)：最も最近使われていないデータを優先的に削除します。アクセスされていない古いデータを削除することで、よく使われるデータをキャッシュに保持します。<br>・ttl (Time To Live)：生存時間が短いデータを優先的に削除します。有効期限が近いデータから削除することで、古くなりそうなデータを効率的に管理します。<br>・random：ランダムにデータを選んで削除します。どのデータが削除されるかは予測できませんが、実装がシンプルであり、どのキーも平等に削除される可能性があります。<br>接頭辞や接尾辞のないポリシーとしてnoevictionがありますが、このポリシーは、メモリが一杯になった場合でもデータを削除しません。その代わり、新しい書き込みが失敗し、「エラー: メモリ不足」が返されます。この設定はデータの削除を完全に避けたい場合に使用します。<br>設問のシナリオでは、キャッシュが満杯になると予想され、頻繁にアクセスされる要素を保持する一方で、使用頻度が低い要素を削除することが必要です。下記のポリシーが要件を満たすポリシーです。<br>allkeys-lru：このポリシーは、すべてのキーの中から最も最近使われていないキーを削除します。これにより、最近アクセスされたデータがキャッシュに保持され続けるため、頻繁に使用されるデータはキャッシュ内に残り続けます。<br>volatile-lru：有効期限が設定されているキーの中で最も最近使われていないキーを削除します。このポリシーは、有効期限を持つデータに対してより有効であり、特定の期限が設定されているデータの管理に有用です。'>
+<div class='choice'  data-group='選択肢' >allkeys-ttl</div>
+<div class='choice'  data-group='選択肢' >volatile-random</div>
+<div class='choice'  data-group='選択肢' >allkeys-lru</div>
+<div class='choice'  data-group='選択肢' >volatile-lru</div>
+<div class='choice'  data-group='選択肢' >volatile-ttl</div>
+<div class='choice'  data-group='選択肢' >noeviction</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

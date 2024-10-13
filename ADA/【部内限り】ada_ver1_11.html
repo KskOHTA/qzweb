@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='true' data-question='問題18<br>あなたは、Azure App Serviceアプリを開発していますが、頻繁に使用されるデータをAzure Cache for Redis Premiumインスタンスに格納したいと考えています。<br>以下の要件を満たすためには、どのデータ構造を選択するべきですか。<br>要件１：最近にアクセスされたキャッシュ項目のデータ構造を作成する<br>要件２：関連項目のコレクションを格納するデータ構造を作成する' data-answer='0,6' data-explanation='■正解：<br>要件１：A:リスト(List)<br>要件２：G:セット(Set)<br>■解説<br>Azure Cache for Redisでは、データを効率的に管理するための複数のデータ構造が提供されています。これらのデータ構造は、特定の使用シナリオに合わせて最適化されています。適切なデータ構造を選択することで、アプリケーションのパフォーマンスを向上させることができます。<br>Redisでは、データを格納するために様々なデータ構造を提供しています。ここで、Redisの主要なデータ構造である「ハッシュ」「リスト」「セット」「文字列」について説明します。<br>１．ハッシュ（Hash）：ハッシュは、フィールド名とフィールド値のペアを持つデータ構造です。これは、オブジェクトやレコードを格納するのに適しており、各フィールドに対して個別に操作を行うことができます。<br>２．リスト（List）：リストは、順序付けられた要素のシーケンスを格納するデータ構造で、主にプッシュまたはポップ操作を頻繁に行うデータに使用されます。<br>３．セット（Set）：セットは一意の要素のコレクションを格納するデータ構造で、要素間には順序がありません。セットには同じ要素が二つ存在することはありません。<br>４．文字列（String）：文字列は、Redisで最も基本的なデータ型で、テキストや数値、バイナリデータを含む任意のデータを格納できます。<br>要件１：最近にアクセスされたキャッシュ項目のデータ構造を作成する：Redisのリストは、順序付けられた要素の集合を管理します。最近にアクセスされた項目（最新の項目をリストの先頭に追加することによる）を効率的に追跡するのに適しています。<br>要件２：関連項目のコレクションを格納するデータ構造を作成する：Redisのセットは、一意の要素の集まりを管理するためのデータ構造です。関連項目のコレクションを格納するのに適しています。'>
+<div class='choice'  data-group='要件１' >リスト(List)</div>
+<div class='choice'  data-group='要件１' >文字列(String)</div>
+<div class='choice'  data-group='要件１' >ハッシュ(Hash)</div>
+<div class='choice'  data-group='要件２' >リスト(List)</div>
+<div class='choice'  data-group='要件２' >文字列(String)</div>
+<div class='choice'  data-group='要件２' >セット(Set)</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題19<br>あなたは、Azure SQL Databaseインスタンスに接続するASP.NET Core Webアプリケーションを開発し、デプロイしました。この接続が断続的に失われる問題が発生しており、アプリケーションのコードが接続障害を適切に処理していません。コード内で一時的な接続エラーを再試行によって処理する必要があります。<br>適切な対応方法は何ですか。（３つ選択）' data-answer='0,2,3' data-explanation='■正解：<br>A:初回の再試行後、60秒を上限として、待ち時間を指数関数的に増やす<br>C:最大再試行回数を設定し、その後の接続でエラーを報告する<br>D:初回再試行の前には 5 秒間待機する<br>■解説<br>Azure SQL Databaseインスタンスに接続する際に断続的な接続の失敗を経験するASP.NET Core Webアプリケーションに対して、一時的な接続エラーを再試行メカニズムによって処理する方法を選ぶ必要があります。以下はそのための適切な対応策です。<br>・初回再試行の前には 5 秒間待機する：再試行間に一定の待機時間を設けることで、一時的なネットワーク問題やサーバーの過負荷が解消される時間を提供します。これにより、次の接続試行が成功する可能性が高まります。<br>・最大再試行回数を設定し、その後の接続でエラーを報告する：最大再試行回数を設定することで、無限に再試行を繰り返すことを防ぎます。これはリソースの無駄遣いを防ぐと同時に、問題が解決しない場合には適切なエラー処理を行い、さらなる対策を検討することができます。<br>・初回の再試行後、60 秒を上限として、待ち時間を指数関数的に増やす：指数関数的バックオフを使用すると、連続する再試行間の待機時間が増加します。これは特に、問題が継続している場合にサーバーやネットワークに適切な回復時間を与えるのに役立ちます。最大60秒までの増加は、多くの一時的な問題に対処するのに適切な時間枠を提供します。<br>■その他の選択肢<br>・再試行間にランダムな時間を待機する：ランダムな待機時間は問題の解決に一貫性をもたらさず、予測不可能な動作を引き起こす可能性があり、最適な解決策とは言えません。<br>・エラーが発生した場合、すぐにサーバーを再起動する：サーバーを再起動するのは、通常は接続問題に対する一次的な対策ではなく、他の対策が効果を示さない場合の最終手段です。<br>・単一のリトライのみを行い、それが失敗した場合は処理を停止する：単一の再試行だけでは、一時的な接続エラーを効果的に処理するには不十分であり、多くのケースで問題が継続する可能性があります。'>
+<div class='choice'  data-group='選択肢' >初回の再試行後、60秒を上限として、待ち時間を指数関数的に増やす</div>
+<div class='choice'  data-group='選択肢' >単一のリトライのみを行い、それが失敗した場合は処理を停止する</div>
+<div class='choice'  data-group='選択肢' >最大再試行回数を設定し、その後の接続でエラーを報告する</div>
+<div class='choice'  data-group='選択肢' >初回再試行の前には 5 秒間待機する</div>
+<div class='choice'  data-group='選択肢' >エラーが発生した場合、すぐにサーバーを再起動する</div>
+<div class='choice'  data-group='選択肢' >再試行間にランダムな時間を待機する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題20<br>あなたは、企業内のWindowsデバイス向けにカスタム通知を送信する機能を開発しているSaaS企業の開発者です。この機能は、Azure Notification Hubsを使用してWindows プッシュ通知サービス(WNS) へ通知を送信することを目的としています。顧客がこれを実装するための参考サンプルコードを作成する必要があります。サンプルコードは外部パッケージを使わずに実装されなければなりません。<br>下記コード内のセグメントはどのように設定する必要がありますか。' data-answer='0,4' data-explanation='■正解：<br>セグメント１：A:windows<br>セグメント２：E:application/octet-stream<br>■解説<br>このシナリオでのサンプルコードは、Azure Notification Hubsを利用してWindows プッシュ通知サービス（WNS）に通知を送信するためのものです。このコードを完成させるために必要な設定を指定するには、以下の選択肢の中から正しいものを選ぶ必要があります。<br>ServiceBusNotification-Format ヘッダーは、Azure Notification Hubsを使用して通知を送信する際に、どのプッシュ通知サービスを対象とするかを指定するためのものです。例えば、Windowsデバイスへの通知を送る場合は windows と指定します。この設定は、Azure Notification Hubがどのサービスに通知をルーティングするかを決定するために使用されます。<br>他の値には、apple (Apple Push Notification Service用) や gcm (Google Cloud Messaging用) があります。これらの値は、通知を適切なプラットフォームにルーティングするためにNotification Hubによって内部的に利用されます。<br>request.Contentは、実際に送信する通知の内容（ペイロード）を設定する部分です。このコンテンツは、通知の形式やデータのタイプに合わせて適切に設定する必要があります。例えば、生の通知データを送る場合、application/octet-stream というメディアタイプを使用して、内容を生のバイナリ形式でエンコードします。このメディアタイプは、ファイルやデータが特定の形式に従わず、単にバイトデータとして扱われることを意味します。この設定は、生のデータを送信する場合に適しています。' data-images='000022.jpg'>
+<div class='choice'  data-group='セグメント１' >Windows</div>
+<div class='choice'  data-group='セグメント１' >gcm</div>
+<div class='choice'  data-group='セグメント１' >adm</div>
+<div class='choice'  data-group='セグメント２' >wns/raw</div>
+<div class='choice'  data-group='セグメント２' >application/octet-stream</div>
+<div class='choice'  data-group='セグメント２' >application/xml</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題21<br>あなたは、ライドシェアサービスのためのモバイルアプリを開発しています。アプリは以下のワークフローを使用します。<br>１．運転手が対応可能なエリアを選択する<br>２．そのエリア内のすべての利用可能な運転手に配車リクエストが送られる<br>３．運転手が選択したエリアのリクエストのみが運転手に表示される<br>４．リクエストを受けた最初の運転手がそのリクエストを受け取り、他の運転手には表示されなくなる<br>Azure Service Busを使用して上記アクションを実行する場合、適切な対応手順はどれですか。' data-answer='0,3,4' data-explanation='■正解：<br>手順２：A:Service Busの名前空間を作成する<br>手順３：D:トピックを作成する<br>手順４：E:サブスクリプションを作成する<br>■解説<br>Azure Service Bus のトピックとサブスクリプションは、メッセージングシナリオにおいて、1対多の通信を可能にするための機能です。この機能により、メッセージを複数の受信者に効率的に配信することができます。<br>トピック (Topics)：トピックは、メッセージングのハブのようなもので、メッセージはトピックに送信され、そこからサブスクリプションを通じて関連するすべての購読者に配信されます。<br>サブスクリプション (Subscriptions)：トピックへのメッセージがサブスクリプションを通じて購読者に配信され、サブスクリプションはトピック内のメッセージのフィルタリングルールを持つことができます。これにより、購読者は関心のあるメッセージのみを受け取ることができます。<br>Azure Service Bus のトピックとサブスクリプションを作成する手順は、以下の通りです。<br>手順１：Azure リソース グループを作成：リソースを管理するためのグループ、すなわちリソース グループを作成します。これにより、関連するAzureリソースを一元的に管理することができます。<br>手順２：Service Busの名前空間を作成する：Service Bus 名前空間は、Service Busリソース（キュー、トピック、サブスクリプションなど）のコンテナです。この名前空間を作成することで、それらのリソースを格納し、管理します。<br>手順３：トピックを作成する：トピックを作成して、メッセージを公開する場所を設定します。設問のシナリオでは、配車リクエストをトピックに送信し、運転手がサブスクリプションを通じてリクエストを受け取ることができます。<br>手順４：サブスクリプションを作成するトピックに対してメッセージを受け取りたいクライアントごとにサブスクリプションを作成します。設問のシナリオでは、運転手ごとにサブスクリプションを作成します。サブスクリプションはトピックからのメッセージを受け取るためのもので、運転手が対応可能なエリアに基づいてフィルタリングすることができます。<br>手順５：サブスクリプションにフィルターを作成する：メッセージをフィルタリングするために、サブスクリプションにルールを設定します。これにより、特定の条件に合致するメッセージのみがサブスクリプションに届けられるようになります。設問のシナリオでは、運転手が選択した特定のエリアの配車リクエストのみを受け取るようにします。これにより、不要なリクエストが運転手に表示されることを防ぎます。<br>手順６：名前空間のプライマリ接続文字列を取得する：最後に、作成した名前空間のプライマリ接続文字列を取得します。この接続文字列は、アプリケーションからService Busリソースに接続する際に使用されます。' data-images='000023.jpg'>
+<div class='choice'  data-group='手順２' >Service Busの名前空間を作成する</div>
+<div class='choice'  data-group='手順２' >サブスクリプションを作成する</div>
+<div class='choice'  data-group='手順３' >サブスクリプションを作成する</div>
+<div class='choice'  data-group='手順３' >トピックを作成する</div>
+<div class='choice'  data-group='手順４' >サブスクリプションを作成する</div>
+<div class='choice'  data-group='手順４' >トピックを作成する</div>
+<div class='choice'  data-group='手順４' >Service Busの名前空間を作成する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題22<br>あなたは、全国に100のフィットネスクラブを展開する企業の会員管理システムを開発しています。会員がクラブを利用するたびに、そのイベントはAzure Event Hubに記録されます。各クラブには固有の識別子が割り当てられ、これが会員プログラムの主要な識別子として使用されます。また、クラブはいつでも追加または削除可能で、クラブは自身の利用情報のみを記録できるようにする必要があります。<br>クラブが利用情報を記録できるようにするにはどうすればよいですか。' data-answer='0' data-explanation='■正解：<br>A:発行元ポリシーを使用してクラブごとに設定する<br>■解説<br>Azure Event Hubの発行元ポリシー（publisher policies）は、イベントハブへのデータ送信を管理するための重要な機能です。これにより、特定のエンティティ（この場合はフィットネスクラブ）が自分自身のデータのみを送信できるように設定することが可能です。<br>発行元ポリシーの主な役割は以下の通りです。<br>１．アクセス制御：各発行元には個別の識別子が与えられ、この識別子を使用してイベントハブにデータを送信します。これにより、不正なデータアクセスや送信を防ぐことができます。<br>２．データのセキュリティ：イベントハブへの送信時に、特定の発行元だけがアクセスできるようにすることで、データの安全性を高めることができます。<br>３．柔軟な管理：クラブの追加や削除が容易であり、新しいクラブが参加した際には新たな発行元ポリシーを設定することが可能です。<br>設問のシナリオについて、発行元ポリシーを使用してクラブごとに設定することは、各クラブが自分自身に関連する情報のみを送信できるようにする最も効果的な方法です。これにより、他のクラブのデータに誤ってアクセスしたり、他のクラブのデータを誤って送信したりするリスクを排除できます。'>
+<div class='choice'  data-group='選択肢' >発行元ポリシーを使用してクラブごとに設定する</div>
+<div class='choice'  data-group='選択肢' >クラブごとに別々の名前空間を作成する</div>
+<div class='choice'  data-group='選択肢' >クラブごとに異なるパーティションキーを割り当てる</div>
+<div class='choice'  data-group='選択肢' >各クラブに独自のSASトークンを発行する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題23<br>あなたは、ARMテンプレートを使用して複数の仮想マシンの作成を予定しています。単一の可用性スケールセットにおいて、障害やメンテナンス時に備えて障害ドメインのプロパティplatformUpdateDomainCountを設定する必要があります。<br>可能な限り多くの仮想マシンがアクセスできるようにするには、プロパティの値を何に設定する必要がありますか。' data-answer='2' data-explanation='■正解：<br>C:20<br>■解説<br>platformUpdateDomainCountプロパティは、Azureの可用性セット内で使用される更新ドメインの数を指定します。更新ドメインとは、仮想マシンをグループ化する方法の一つであり、Azureがメンテナンスやソフトウェアアップデートを行う際に、一度に停止する仮想マシンのグループを制御するために使用されます。更新ドメインを使用することで、Azureはシステムのメンテナンス中にも、可用性セット内の一部の仮想マシンを稼働させ続けることができます。<br>Azureにおいて更新ドメインの最大設定可能値は20です。この数値を最大に設定することで、メンテナンスやアップデート時に、より多くの仮想マシンが同時に稼働し続けることが可能になります。つまり、一度に停止される仮想マシンの数が減り、アプリケーションの可用性が向上します。'>
+<div class='choice'  data-group='選択肢' >3</div>
+<div class='choice'  data-group='選択肢' >15</div>
+<div class='choice'  data-group='選択肢' >20</div>
+<div class='choice'  data-group='選択肢' >30</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題24<br>あなたは、Azure App ServiceにASP.NET Webアプリをデプロイする予定です。Application Insightsを使用してそのWebアプリを監視する必要があります。<br>下記要件を満たすApplication Insightsの機能は何ですか。<br>要件１：Webアプリのパフォーマンストレースを、アプリの使用者に悪影響を与えずにキャプチャする<br>要件２：自動的にWebアプリのパフォーマンス問題や失敗の異常を警告する' data-answer='1,3' data-explanation='■正解：<br>要件１：B:スマート検出<br>要件２：D:プロファイラー<br>■解説<br>Azure App ServiceにデプロイされるWebアプリケーションの監視には、Application Insightsの機能であるスナップショットデバッガーとプロファイラーが役立ちます。<br>スマート検知（Smart Detection）は、Application Insightsが提供する機能で、自動的にWebアプリのパフォーマンス問題や失敗の異常を警告します。この機能は特定の異常パターンを検出し、発生する可能性のある問題を事前に通知することで、対応時間を短縮し、アプリの可用性を向上させることができます。たとえば、応答時間の急増や予期せぬ例外の増加など、パフォーマンスの低下を示す兆候を自動的に検出し、開発者に通知します。<br>プロファイラー（Profiler）は、Webアプリのパフォーマンスをリアルタイムで追跡し、リソース使用のボトルネックや遅延の原因を特定するためのツールです。この機能は、アプリの実行中にサイレントに動作し、ユーザーの体験に影響を与えることなく、詳細なパフォーマンストレース情報を提供します。これにより、開発者はコードの最適化を行うことができ、アプリケーションの全体的なパフォーマンスを向上させることが可能になります。'>
+<div class='choice'  data-group='要件１' >プロファイラー</div>
+<div class='choice'  data-group='要件１' >スマート検出</div>
+<div class='choice'  data-group='要件１' >スナップショットデバッガー</div>
+<div class='choice'  data-group='要件２' >プロファイラー</div>
+<div class='choice'  data-group='要件２' >スマート検出</div>
+<div class='choice'  data-group='要件２' >スナップショットデバッガー</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題25<br>あなたは、フリーランスのデザイナーであり、Azure App ServiceのWeb Apps機能を使用してStandard D1プランでポートフォリオウェブサイトを運営しています。現在、新しいプロジェクトを公開するたびにサイト訪問者が増えることで、サーバーの負荷が高くなることが問題となっています。新しいプロジェクトを公開した際の訪問者増加に対応し、サーバーの過負荷を防ぐために、接続数に基づいて自動スケーリングが行われるよう設定する必要があります。<br>自動スケーリングの設定として適切な手順はどれですか。コストを最小限に抑える選択肢を選んでください。' data-answer='3' data-explanation='■正解：<br>D:プランは変更しない ⇒ 自動スケーリングを有効にする ⇒ スケーリング条件を設定する ⇒ スケーリング ルールを追加する<br>■解説<br>Azure App ServiceのStandardプラン（D1プラン）では、基本的な自動スケーリング機能が利用可能です。Premiumプランへの変更はより高度なスケーリングオプションを提供しますが、コストが高くなります。したがって、コストを抑えるためには、プランを変更せずに既存のプラン内で自動スケーリングを設定することが望ましいです。<br>プランは変更しない⇒自動スケーリングを有効にする⇒スケーリング条件を設定する⇒スケーリング ルールを追加するが、コストを最小限に抑えつつ問題を解決するための最適な選択肢です。この選択肢では、既存のプラン内で自動スケーリングを設定し、接続数などのスケーリング条件を基にルールを定義してシステムが需要に応じてスケールアップまたはダウンするようにします。'>
+<div class='choice'  data-group='選択肢' >Premiumプランに変更する ⇒ 自動スケーリングを有効にする ⇒ スケーリング条件を設定する ⇒ スケーリング ルールを追加する</div>
+<div class='choice'  data-group='選択肢' >プランは変更しない ⇒ 自動スケーリングを有効にする ⇒ スケーリング ルールを追加する ⇒ スケーリング条件を設定する</div>
+<div class='choice'  data-group='選択肢' >Premiumプランに変更する ⇒ 自動スケーリングを有効にする ⇒ スケーリング ルールを追加する ⇒ スケーリング条件を設定する</div>
+<div class='choice'  data-group='選択肢' >プランは変更しない ⇒ 自動スケーリングを有効にする ⇒ スケーリング条件を設定する ⇒ スケーリング ルールを追加する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題26<br>あなたは、Azure Cosmos DBの変更フィードを使用してCosmos DBコンテナ内のデータ変更をリアルタイムでキャプチャしたいと考えています。<br>以下の要件を満たすコンポーネントはそれぞれどれですか。<br>要件１：変更フィードプロセッサを使用して変更フィードの変更をリッスンする<br>要件２：複数のワーカーにまたがる変更フィードの処理を調整する' data-answer='0,3' data-explanation='■正解：<br>要件１：A:デリゲート<br>要件２：D:リースコンテナ<br>■解説<br>Azure Cosmos DBの変更フィードは、Azure Cosmos DBコンテナ内でのデータ変更（作成、更新、削除）をリアルタイムでキャプチャする機能です。このフィードは、特定のアプリケーションがデータの変更を連続的に受け取り、それに応じて処理を行うために使用されます。変更フィードプロセッサは、この変更フィードを管理し、安定して効率的にデータ変更を処理するためのパターンやライブラリを提供します。主要なコンポーネントには以下のものがあります。<br>・監視対象コンテナ（Monitored container）：変更フィードが生成されるデータを保存するCosmos DBコンテナです。このコンテナにデータが存在し、このデータに対する変更が変更フィードによって監視されます。<br>・リースコンテナ（Lease container）：複数のワーカー間で変更フィードの処理を調整するために使用されます。リースコンテナは、変更フィードの処理に関する状態情報を保存し、アプリケーションの複数のインスタンスが効率的にフィード処理を分担できるようにし、重複を防ぎます。<br>・コンピューティング インスタンス（Computing instance）：変更フィードの変更をリスニングするプロセスの設定と開始を行います。基本的に変更フィード処理のライフサイクルとオーケストレーションを管理します。<br>・デリゲート（Delegate）：このコンポーネントは、変更フィードから受け取った変更のバッチごとに処理を行います。変更フィードが変更を検出したときに実行されるカスタム処理ロジックを定義します。<br>設問については、以下の通りとなります。<br>要件１：変更フィードプロセッサを使用して変更フィードの変更をリッスンする：この要件には、デリゲートが適切です。デリゲートは、変更フィードプロセッサが変更フィードのデータをリッスン（監視）し、処理する際に実行される具体的な処理を定義する関数やメソッドを指します。<br>要件２：複数のワーカーにまたがる変更フィードの処理を調整する：この要件には、リースコンテナが適切です。リースコンテナは、変更フィードプロセッサによる状態の管理やリーダーシップの選出、スケールアウト時のワーカー間での調整を助けるために使用されます。リースコンテナは、変更フィードの各パーティションに対してどのインスタンスが責任を持つかを追跡し、複数のワーカーが同時に同一のデータを処理しないようにします。'>
+<div class='choice'  data-group='要件１' >デリゲート</div>
+<div class='choice'  data-group='要件１' >コンピューティングインスタンス</div>
+<div class='choice'  data-group='要件２' >監視対象コンテナ</div>
+<div class='choice'  data-group='要件２' >リースコンテナ</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題27<br>あなたはAzure Logic Appを使用してアプリケーションを開発しており、アプリケーションのデータをAzure Blobストレージアカウントに保管する必要があります。<br>Azure Logic AppからAzure Blobストレージアカウントへの安全なアクセスを実現するためにはどのような対応が最適ですか。' data-answer='3' data-explanation='■正解：<br>D:ユーザー割り当てマネージドIDを作成し、ロールベースのアクセス制御を割り当てる<br>■解説<br>ユーザー割り当てのマネージドIDを使用することで、Azure Logic Appに一意のアイデンティティが付与され、このアイデンティティを使ってAzure BlobストレージアカウントなどのAzureリソースへのアクセス制御を行うことができます。また、マネージドIDはAzure Logic Appとは独立して存在し続けるため、Logic Appが削除されてもアイデンティティは残ります。<br>この方法は明示的にクレデンシャルを管理する必要がないため、セキュリティを向上させることが可能です。ロールベースのアクセス制御（RBAC）を適用することで、必要な権限のみをLogic Appに付与することができます。<br>■その他の選択肢<br>Azure AD カスタムロールを作成し、そのロールをAzure Blobストレージアカウントに割り当てる：Azure Blobストレージアカウントにカスタムロールを割り当てるのは適切ですが、この問題ではLogic AppがBlobストレージに安全にアクセスする方法を設定する必要があります。<br>Azure Key Vaultを作成し、クライアント証明書を発行する：クライアント証明書は認証に使用されますが、このケースではマネージドIDの方がシンプルで効果的です。<br>Azure ADカスタムロールを作成し、ロールベースのアクセス制御を割り当てる：カスタムロールの作成は可能ですが、ここではマネージドIDの割り当てがより直接的な解決策です。'>
+<div class='choice'  data-group='選択肢' >Azure ADカスタムロールを作成し、そのロールをAzure Blobストレージアカウントに割り当てる</div>
+<div class='choice'  data-group='選択肢' >Azure Key Vaultを作成し、クライアント証明書を発行する</div>
+<div class='choice'  data-group='選択肢' >Azure ADカスタムロールを作成し、ロールベースのアクセス制御を割り当てる</div>
+<div class='choice'  data-group='選択肢' >ユーザー割り当てマネージドIDを作成し、ロールベースのアクセス制御を割り当てる</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題28<br>あなたは保険会社のためのソリューションを開発しています。このシステムは、顧客の申請状況をリアルタイムで更新し、管理する必要があります。顧客の最新の申請状態や申請の進行具合を正確に追跡し、顧客サービスを最適化することが求められます。<br>Azure Cosmos DBを使用する場合、下記要件を満たす整合性レベルはそれぞれ何ですか。<br>要件１：申請が完了し、すべての評価が終了した後に、最終的な請求データを取得する<br>要件２：申請の統計データをリアルタイムで表示する際は、完全な整合性は不要で、若干の遅延を許容する' data-answer='0,3' data-explanation='■正解：<br>要件１：A:一貫性のあるプレフィックス（Consistent Prefix）<br>要件２：D:最終的（Eventual）<br>■解説<br>このシナリオでは、保険会社の顧客申請状況をリアルタイムで正確に追跡する必要があります。ここでの要件に基づいて、最も適切な整合性レベルを選択することが求められます。<br>要件１：申請が完了し、すべての評価が終了した後に、最終的な請求データを取得する：この要件には、「一貫性のあるプレフィックス（Consistent Prefix）」が適しています。この整合性レベルでは、書き込み操作が行われた順序でデータが読み取られることが保証されます。これにより、申請プロセスが完了し、すべての評価が終わった後に取得される請求データは、書き込まれた順序に沿って整合性を持って提供されます。これは、データの一貫性を保ちながらも、高い整合性の必要性が少ないケースで役立ちます。<br>要件２：申請の統計データをリアルタイムで表示する際は、完全な整合性は不要で、若干の遅延を許容する：この要件は、申請の統計データを扱う際に完全な整合性を犠牲にしても良いという状況を示しています。「最終的（Eventual）」は、データの最新性よりも読み取りの速度やシステムの可用性を優先するため、この要件に適しています。最終的整合性レベルは、申請の統計データをリアルタイムで表示する際に、完全なデータ整合性よりもシステムの応答性やコスト効率を優先する場合に適した選択肢です。'>
+<div class='choice'  data-group='要件１' >一貫性のあるプレフィックス（Consistent Prefix）</div>
+<div class='choice'  data-group='要件１' >セッション（Session）</div>
+<div class='choice'  data-group='要件１' >厳密（Strong）</div>
+<div class='choice'  data-group='要件２' >最終的（Eventual）</div>
+<div class='choice'  data-group='要件２' >有界整合性制約（Bounded Staleness）</div>
+<div class='choice'  data-group='要件２' >厳密（Strong）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題29<br>ある企業が、パートナー企業の従業員に対してMicrosoft Entra B2Bコラボレーションを使用してゲストアクセスを提供していましたが、後にセキュリティ要件が変更されてフェデレーション認証が必要になりました。<br>従業員の認証方法を、それまで使用していたワンタイムパスコード認証からフェデレーション認証に変更する場合、どのMicrosoft Graph APIのパラメータを使用すればよいですか。' data-answer='3' data-explanation='■正解：<br>D:resetRedemption<br>■解説<br>Microsoft Graph APIは、Microsoft 365のサービスとアプリケーションを連携させるためのツールです。開発者がOneDrive、Outlook、Microsoft Entra IDなどのMicrosoftのクラウドサービスにアクセスして、アプリケーション内でこれらのサービスを利用できるようにするRESTful Web APIであり、プログラムから直接呼び出すことができます。<br>resetRedemptionパラメータは、Microsoft Graph APIを使用して、Microsoft Entra B2Bコラボレーションにおいて特定のゲストユーザーの招待をリセットする際に用いられます。この操作は、ゲストユーザーの初回の招待状態をリセットし、ユーザーが再招待された際に新しい認証方法で再度アクセスを試みることを可能にします。<br>設問のシナリオにおいて、このパラメータを使用することで、既存のゲストユーザーを新しい認証方法で再招待し、企業のセキュリティポリシーに準拠させることができます。'>
+<div class='choice'  data-group='選択肢' >invitedUser</div>
+<div class='choice'  data-group='選択肢' >invitedUserMessageInfo</div>
+<div class='choice'  data-group='選択肢' >sendInvitationMessage</div>
+<div class='choice'  data-group='選択肢' >resetRedemption</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題30<br>Azure Content Delivery Network（CDN）を使用してユーザーにコンテンツを配布する際のプロセスとして、正しい手順は何ですか。なおエッジサーバーには、コンテンツがキャッシュされていません。' data-answer='0,3,5' data-explanation='■正解：<br>手順２：A:DNSはリクエストを最もパフォーマンスの良いPOPサーバーにルーティングする<br>手順５：D:オリジンサーバーがコンテンツをエッジサーバーに送信する<br>手順７：F:キャッシュの有効期限（TTL）が切れるまでコンテンツをキャッシュに保持する<br>■解説<br>Azure Content Delivery Network（CDN）は、ウェブサイトのコンテンツを迅速に配信するためのネットワークサービスです。このサービスを使うことで、画像や動画、ウェブページなどのコンテンツを世界中のユーザーに対して高速に提供することができます。<br>Azure CDNのコンテンツ配布プロセスは以下の通りとなります。<br>１．ユーザーがCDN URLからコンテンツをリクエストする：ユーザーがブラウザやアプリを通じて特定のコンテンツ（画像やCSSファイルなど）をリクエストします。このリクエストは、CDNが提供する特別なURLを通じて行われます。<br>２．DNSがリクエストを最もパフォーマンスの良いPOPサーバーにルーティングする：リクエストは、DNS（ドメインネームシステム）によって解析され、ユーザーの地理的位置に最も近い、または最も応答が早いと判断されるPoint of Presence（POP）にルーティングされます。POPは、地理的に分散配置されたサーバーの集まりです。<br>３．POP内のエッジサーバーがコンテンツをチェックする：POPにあるエッジサーバーは最初に自身のキャッシュをチェックして、リクエストされたコンテンツが既に存在するかを確認します。<br>４．エッジサーバーがオリジンサーバーにコンテンツをリクエストする：もしキャッシュにコンテンツがなければ、エッジサーバーはオリジンサーバー（コンテンツが元々ホストされているサーバー）にコンテンツを要求します。<br>５．オリジンサーバーがコンテンツをエッジサーバーに送信する：オリジンサーバーからエッジサーバーにコンテンツが送信され、エッジサーバーはそのコンテンツをキャッシュに保存します。これにより、次回以降の同じリクエストには迅速に応答できるようになります。<br>６．エッジサーバーがコンテンツをユーザーに返す：キャッシュから、またはオリジンサーバーから受け取った後、エッジサーバーはコンテンツをユーザーに返します。これにより、コンテンツのロード時間が大幅に短縮され、ユーザー体験が向上します。<br>７．キャッシュの有効期限（TTL）が切れるまでコンテンツをキャッシュに保持する：エッジサーバーは設定されたTTL（有効期限）が切れるまでコンテンツをキャッシュに保存します。TTLが切れた後は、新たなリクエストが来た際に再度オリジンサーバーからコンテンツを取得し、キャッシュを更新します。<br>このプロセスにより、Azure CDNは世界中のどこからのアクセスに対しても、コンテンツを迅速かつ効率的にユーザーに届けることが可能です。これにより、Webサイトの読み込み速度が向上し、エンドユーザーの満足度を高めることができます。' data-images='000024.jpg'>
+<div class='choice'  data-group='手順２' >DNSはリクエストを最もパフォーマンスの良いPOPサーバーにルーティングする</div>
+<div class='choice'  data-group='手順２' >キャッシュの有効期限（TTL）が切れるまでコンテンツをキャッシュに保持する</div>
+<div class='choice'  data-group='手順５' >DNSはリクエストを最もパフォーマンスの良いPOPサーバーにルーティングする</div>
+<div class='choice'  data-group='手順５' >オリジンサーバーがコンテンツをエッジサーバーに送信する</div>
+<div class='choice'  data-group='手順７' >オリジンサーバーがコンテンツをエッジサーバーに送信する</div>
+<div class='choice'  data-group='手順７' >キャッシュの有効期限（TTL）が切れるまでコンテンツをキャッシュに保持する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題31<br>あなたの組織は、複数のAzure仮想マシンを使用してアプリケーションの開発を検討しています。キーやシークレットなどの機密情報はAzure Key Vaultで管理し、適切な権限を持ったユーザーやアプリケーションがKey Vaultに格納されている機密情報にアクセスできるようにする必要があります。<br>Azure Key vaultへのアクセス制御を行う機能は何ですか。' data-answer='2' data-explanation='■正解：<br>C:アクセスポリシー<br>■解説<br>Azure Key Vaultのアクセスポリシーは、Key Vaultに格納されているキー、シークレット、証明書などの機密情報へのアクセスを制御するために使用されます。アクセスポリシーを通じて、特定のユーザーやアプリケーションに対して、特定の操作（例えば、読み取り、書き込み、削除など）を許可または拒否することができます。これにより、機密情報へのアクセスを厳格に管理し、セキュリティを確保することが可能になります。'>
+<div class='choice'  data-group='選択肢' >Azureポリシー</div>
+<div class='choice'  data-group='選択肢' >バックアップポリシー</div>
+<div class='choice'  data-group='選択肢' >アクセスポリシー</div>
+<div class='choice'  data-group='選択肢' >DLP ポリシー</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題32<br>あなたは、現在、API Managementを使用してバックエンド認証を構成する必要があります。<br>どのような対応方法が適切ですか。（２つ選択）' data-answer='1,3' data-explanation='■正解：<br>B:HTTPエンドポイントに対してクライアント証明書を設定する<br>D:HTTPエンドポイントに対して基本認証を設定する<br>■解説<br>API Managementにおけるバックエンド認証の設定では、APIからバックエンドサービスへの安全な通信を保証するために、認証方法を設定します。この認証には、ユーザー名とパスワードを用いる基本認証や、より安全なクライアント証明書を用いる方法などがあります。<br>基本認証とクライアント証明書認証の違いについては以下の通りとなります。<br>・基本認証（Basic）は、ユーザー名とパスワードを使用して認証を行うシンプルな方法です。セキュリティが極めて重要でないシナリオで適切な場合がありますが、通信が暗号化されていない場合はユーザー名とパスワードが盗み見されるリスクがあります。<br>・クライアント証明書認証では、デジタル証明書を用いてバックエンドサービスへのアクセス認証を行います。これは、基本認証よりも高いセキュリティレベルを提供し、特に機密性の高いデータを扱う場合に適しています。<br>設問の選択肢について、HTTPエンドポイントに対する認証設定は、API ManagementからバックエンドHTTPサービス（Web APIなど）へのリクエストを安全に行うために必要です。バックエンドサービスへのリクエストがHTTPを介して行われるため、このレベルでの認証設定が求められます。Azureリソースに対する直接的な認証設定は、API Managementの文脈では一般的ではありません。API Managementのポリシーは主にHTTPエンドポイントへのアクセス制御に焦点を当てています。'>
+<div class='choice'  data-group='選択肢' >Azureリソースに対して基本認証を設定する</div>
+<div class='choice'  data-group='選択肢' >HTTPエンドポイントに対してクライアント証明書を設定する</div>
+<div class='choice'  data-group='選択肢' >Azureリソースに対してクライアント証明書を設定する</div>
+<div class='choice'  data-group='選択肢' >HTTPエンドポイントに対して基本認証を設定する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題33<br>あなたの組織は、ある金融機関のためにAzure Blob Storageを使用するWebサイトを構築しており、法的規制やコンプライアンス要件に従って顧客データをアーカイブ層に保存する必要があります。金融機関は、アーカイブ層内のデータを表示するためのサービスレベル契約（SLA）を要求しています。<br>その場合、最小SLAをどのように設定するべきですか。' data-answer='1' data-explanation='■正解：<br>B:1時間から15時間の間<br>■解説<br>Azure Blob Storageのアーカイブ層は、長期保存が必要なデータを非常に低コストで保管するために使用されますが、アクセスにはリハイドレート（ホット層やクール層へのリハイドレーションに戻す）を行う必要があり時間がかかります。Azure Blob Storageにおいて、リハイドレートにかかる時間は、最大15時間となっています。<br>最小SLA（サービスレベル契約）とは、顧客が要求するサービスの品質や性能に関する最低限の保証を意味します。具体的には、アーカイブ層からデータを取り出して利用可能にするまでに要する「最短時間」の保証です。最小SLAを「1時間から15時間の間」と設定することは、顧客がアーカイブデータの取り出しを依頼した場合、最短で1時間、最長で15時間以内にデータを利用可能な状態に戻すことを保証することを意味します。'>
+<div class='choice'  data-group='選択肢' > 5分から60分の間</div>
+<div class='choice'  data-group='選択肢' > 1時間から15時間の間</div>
+<div class='choice'  data-group='選択肢' > 1日から2日の間</div>
+<div class='choice'  data-group='選択肢' > 15日以内</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題34<br>あなたは、教育機関向けのオンライン学習プラットフォームをAzure App Serviceに開発し、本番環境に展開しました。このプラットフォームは複数のインスタンスにスケールアウトされており、開発中の変更をサポートするためにテストスロットが設定されています。また、以下の要件を満たす必要があります。<br>要件１：Webサーバーログ、アプリケーションログ、標準出力、および標準エラーをAzure Blob Storageに送信する<br>要件２：プラットフォームの運用環境を監視し、インスタンスのエラー状態が30分間も続く場合には自動的にインスタンスを置き換える<br>Azure App Serviceのどの機能をそれぞれ使用するべきですか。' data-answer='1,4' data-explanation='■正解：<br>要件１：B:診断ログ<br>要件２：E:正常性チェック<br>■解説<br>診断ログを設定することでログデータをAzure Storage blobに送信し、正常性チェックを利用してインスタンスの健全性を監視し、必要に応じて自動的にインスタンスを管理することができます。それぞれの機能については以下の通りです。<br>診断ログ：アプリケーションが動作する際に発生する様々な種類のログを収集し、保存するための機能です。これらのログは、Azure Blob Storage、Azure Event Hubsまたは Azure Monitor Logs に送信して、後で分析や監視に利用することができます。<br>正常性チェック：デプロイされたアプリケーションのインスタンスが正常に動作しているかを定期的にチェックし、特定の基準を満たしていない場合にはアクションを起こす機能です。必要に応じて自動的にインスタンスを管理することができ、エラー状態にインスタンスからのトラフィックのルーティングを停止したり、別のインスタンスに置き換えるなどの対応を取ることが可能です。'>
+<div class='choice'  data-group='要件１' >デプロイスロット</div>
+<div class='choice'  data-group='要件１' >診断ログ</div>
+<div class='choice'  data-group='要件１' >正常性チェック</div>
+<div class='choice'  data-group='要件２' >デプロイスロット</div>
+<div class='choice'  data-group='要件２' >正常性チェック</div>
+<div class='choice'  data-group='要件２' >自動スケーリング</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

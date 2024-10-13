@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='false' data-question='問題18<br>あなたは、グローバルなニュース配信サービスのシステムエンジニアです。 サービスはAzure Container Instances (ACI) を使用してリアルタイムのニュースをユーザーに配信しています。 しかし、最近、特定のページでHTTP 502エラーが頻発しており、ユーザーからニュースのロードに失敗すると報告が頻発しています。<br>この問題を解決するためには、リアルタイムでHTTPサーバーログの出力を確認する必要があります。 最初に使用すべきコマンドは何ですか。' data-answer='3' data-explanation='■正解：<br>D:az container attach<br>■解説<br>Azure Container Instances (ACI)を使用しているシステムでリアルタイムのログを確認するために使用するべきコマンドはaz container attachです。このコマンドを使用すると、指定されたコンテナにアタッチし、そのコンテナの標準出力とエラーストリームをリアルタイムで監視することができます。これにより、HTTP 502エラーの原因を迅速に特定することができます。<br>Azure Container Instances のドキュメント'>
+<div class='choice'  data-group='選択肢' >az webapp log</div>
+<div class='choice'  data-group='選択肢' >az aks get-logs</div>
+<div class='choice'  data-group='選択肢' >az monitor activity-log</div>
+<div class='choice'  data-group='選択肢' >az container attach</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題19<br>あなたは、国際的な物流会社のITディレクターです。この会社は、各配送センターからのデータをAzure Blob Storageに保存し、リアルタイムでの配送状況の監査と管理を行っています。最近、データの整合性を確保するために、特定のセンターでのデータ変更をリアルタイムで追跡する必要があります。<br>これら要件のために、どのような対応が最適ですか。（２つ選択）' data-answer='0,1' data-explanation='■正解：<br>A:Azure Blob Storageの変更フィードを使用して、変更ログをAzure Functionsで処理し、特定の時間範囲のデータ変更を監査する<br>B:Azure Event Gridを使用して、Azure Blob StorageのイベントをAzure Functionsでサブスクライブし、センターごとのイベントをフィルタリングする<br>■解説<br>国際的な物流会社のITディレクターとして、リアルタイムでデータ変更を追跡する必要があるため、以下の2つの選択肢が適しています。<br>Azure Blob Storageの変更フィードを使用して、変更ログをAzure Functionsで処理し、特定の時間範囲のデータ変更を監査する：変更フィードは、Blob Storageアカウントの変更を追跡するためのログを提供します。これにより、特定の時間範囲で行われたデータの変更を詳細に確認できます。変更フィードログを処理するためにAzure Functionsを使用することで、特定の時間範囲での変更を監査し、必要なアクションを自動化することができます。<br>Azure Event Gridを使用して、Azure Blob StorageのイベントをAzure Functionsでサブスクライブし、センターごとのイベントをフィルタリングする：Azure Event Gridはイベント駆動型のサービスであり、Azure Blob Storageのイベントをキャプチャし、他のAzureサービスに通知します。Event Gridからのイベントを処理することで、特定のセンターでのデータ変更をフィルタリングし、必要なアクションを実行できます。<br>Azure Blob Storageの変更フィードとAzure Event Gridの組み合わせにより、リアルタイムでのデータ変更の監査と管理が可能になります。これにより、データの整合性を確保し、特定のセンターでの変更を迅速に追跡できます。'>
+<div class='choice'  data-group='選択肢' > Azure Blob Storageの変更フィードを使用して、変更ログをAzure Functionsで処理し、特定の時間範囲のデータ変更を監査する</div>
+<div class='choice'  data-group='選択肢' > Azure Event Gridを使用して、Azure Blob StorageのイベントをAzure Functionsでサブスクライブし、センターごとのイベントをフィルタリングする</div>
+<div class='choice'  data-group='選択肢' >Azure Storageのライフサイクル管理を使用して、古いデータをアーカイブに移行する</div>
+<div class='choice'  data-group='選択肢' >Azure Blob Storageのバージョン管理を有効にして、各バージョンを定期的にバックアップする</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題20<br>あなたは、グローバルなEコマースプラットフォームのシステムエンジニアです。 このプラットフォームは、数百万のユーザーが商品を購入し、レビューを投稿するためのものです。 リアルタイムでの注文確認と在庫管理のために、Azure Service BusとEvent Gridを統合する必要があります。 すべてのデータは、セカンドリージョンと３つのアベイラビリティゾーンにレプリケートされる必要があり、ユーザーアカウントには最低限の権限のみを与える必要があります。<br>データレプリケーションと高可用性を実現するために、どのAzure Service BusプランとRBACロールを使用すべきですか。' data-answer='0,3' data-explanation='■正解：<br>Azure Service Busプラン：A:Premium<br>RBACロール：D:Contributor<br>■解説<br>グローバルなEコマースプラットフォームのシステムで、数百万のユーザーが商品を購入し、レビューを投稿するために、リアルタイムでの注文確認と在庫管理が求められています。このシナリオでは、データレプリケーションと高可用性が必須であり、ユーザーアカウントには最低限の権限のみを付与する必要があります。<br>Azure Service Busプラン: Premium<br>プレミアムプランは、エンタープライズレベルの機能、高可用性、災害復旧機能を提供します。データがセカンドリージョンと３つのアベイラビリティゾーンにレプリケートされるためには、このプランの利用が必要です。<br>RBACロール: Contributor<br>Contributorロールは、リソースの作成、変更、削除が可能ですが、他のユーザーの権限設定を変更することはできません。これにより、重要なセキュリティ設定が誤って変更されるリスクを減らします。最小権限の原則に従い、必要な機能を実行するために必要最低限の権限だけを与えることで、セキュリティを向上させます。'>
+<div class='choice'  data-group='Azure Service Busプラン' >Premium</div>
+<div class='choice'  data-group='Azure Service Busプラン' > Standard</div>
+<div class='choice'  data-group='RBACロール' >Azure Service Busデータ所有者</div>
+<div class='choice'  data-group='RBACロール' >Contributor</div>
+<div class='choice'  data-group='RBACロール' >所有者</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題21<br>あなたは、大規模なオンライン教育プラットフォームを運営する企業のITディレクターです。 このプラットフォームでは、学生がアップロードした課題を教師がレビューするシステムがあります。 最近、システムの開発環境でテストを行った際、Azure Logic AppsがAzure Functionを呼び出すときに &#39;400 Bad Request&#39; エラーが頻繁に発生していることが判明しました。<br>セキュリティを確保しつつ、最小限の権限で問題を解決するためには、どのような設定を行うべきですか。' data-answer='0' data-explanation='■正解：<br>A: システム割り当てマネージドIDを使用して、関数の認証レベルをanonymousに設定する<br>■解説<br>オンライン教育プラットフォームで、Azure Logic AppsがAzure Functionを呼び出す際に '400 Bad Request' エラーが発生している場合、以下の設定を行うことで問題を解決できます。<br>認証レベルをanonymousに設定する：Azure Logic AppsがAzure Functionを呼び出す際、関数の認証レベルを anonymous に設定する必要があります。これにより、認証トークンを提供せずに関数を呼び出すことができ、400 Bad Request エラーを防ぐことができます。<br>システム割り当てマネージドIDを使用する：システム割り当てのマネージドIDは、Azureリソースにアクセスするための一時的なIDを提供し、Microsoft Entra IDによって管理されるため、最小限の権限でセキュリティを確保することができます。システム割り当てのマネージドIDを使用すると、管理が簡素化され、セキュリティが向上します。'>
+<div class='choice'  data-group='選択肢' >システム割り当てマネージドIDを使用して、関数の認証レベルをanonymousに設定する</div>
+<div class='choice'  data-group='選択肢' >ユーザー割り当てマネージドIDを使用して、関数の認証レベルをanonymousに設定する</div>
+<div class='choice'  data-group='選択肢' >システム割り当てマネージドIDを使用して、関数の認証レベルをfunctionに設定する</div>
+<div class='choice'  data-group='選択肢' >ユーザー割り当てマネージドIDを使用して、関数の認証レベルをfunctionに設定する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題22<br>あなたは、大手金融機関のセキュリティ管理者です。この機関では、顧客データのセキュリティを最優先に考え、各種アプリケーションの設定と暗号化キーの管理を行っています。 最近、Azure Functionsを使用して複数の地域にわたる設定データを管理する新しいセキュリティプロジェクトが立ち上がりました。セキュリティ強化のために、誤って削除された暗号化キーを復元可能にし、すべての設定データを安全に管理する必要があります。<br>これらの要件を満たす対応として適切なのはどれですか。（２つ選択）' data-answer='0,3' data-explanation='■正解：<br>A:論理的な削除とパージ保護を有効にして、RSA-HSMキーをAzure Key Vaultに保存する<br>D:マネージドIDを割り当てて、標準プランのAzure App Configurationインスタンスを作成する<br>■解説<br>論理的な削除とパージ保護を有効にして、RSA-HSMキーをAzure Key Vaultに保存する：Azure Key Vaultは暗号化キーの管理とセキュリティのために設計されたサービスです。Key Vaultを使用することで、暗号化キーがセキュアに保存され、アクセス制御や監査が容易になります。誤って削除された暗号化キーを復元するためには、論理的な削除とパージ保護を有効にすることが重要です。これにより、削除されたキーが一定期間復元可能となり、完全な削除（パージ）を防ぐことができます。論理的な削除を有効にすると、キーが削除された際にも一定期間は復元可能です。また、パージ保護を有効にすることで、キーが誤って削除された場合でも完全に消去されることを防ぎます。<br>マネージドIDを割り当てて、標準プランのAzure App Configurationインスタンスを作成する：マネージドIDを使用することで、リソース間の安全な認証とアクセス管理が実現できます。これにより、サービスプリンシパルやシークレットを管理する手間が省け、セキュリティが向上します。標準プランのAzure App Configurationは、複雑な設定データの管理とセキュリティ機能を提供します。これには、ロールベースのアクセス制御（RBAC）や高度なセキュリティ設定が含まれます。標準プランは、より多くの機能とスケーラビリティを提供し、無料プランに比べてセキュリティが強化されています。'>
+<div class='choice'  data-group='選択肢' >論理的な削除とパージ保護を有効にして、RSA-HSMキーをAzure Key Vaultに保存する</div>
+<div class='choice'  data-group='選択肢' >Azure Cosmos DBに暗号化キーを保存し、バックアップポリシーを設定する</div>
+<div class='choice'  data-group='選択肢' >サービスプリンシパルを使用して、無料プランのAzure App Configurationインスタンスを作成する</div>
+<div class='choice'  data-group='選択肢' >マネージドIDを割り当てて、標準プランのAzure App Configurationインスタンスを作成する</div>
+<div class='choice'  data-group='選択肢' >Azure Functionの認証レベルをanonymousに設定し、管理の簡便性を高める</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題23<br>あなたは、グローバル物流会社のシステムエンジニアです。新しい配送管理システムを導入しており、各配送ドライバーのプロファイル情報を正確に識別する必要があります。このシステムは、Azure Functionを使用してMicrosoft Entra IDからプロファイル情報を取得し、認証されたドライバーのみがアクセスできるようにする必要があります。<br>セキュリティを強化し、各ドライバーのアクセスを一意に識別するために、トークンとペイロードのクレームは何を選択するべきですか。' data-answer='1,4' data-explanation='■正解：<br>トークンの種類：B:IDトークン<br>ペイロードのクレーム：E:oid<br>■解説<br>IDトークンは、ユーザーの認証情報を含むJSON Web Token (JWT)です。ユーザーが認証されたことを証明し、ユーザーのプロファイル情報（名前、メールアドレス、ユーザーIDなど）を取得するために使用されます。これにより、ユーザーが誰であるかを証明するための情報が含まれます。設問のシナリオのような配送管理システムでは、配送ドライバーが正しく認証されたことを確認し、そのプロファイル情報を取得する必要があります。IDトークンは、この認証情報とプロファイル情報を提供するため、最適な選択です。<br>ペイロードのクレームとは、トークンに含まれる情報の部分で、特定のユーザーや認証に関する詳細な情報を含んでいます。<br>oid（Object ID）は、Azure Active Directory（Azure AD）内のユーザーを一意に識別するための識別子です。各ユーザーに一意のIDが割り当てられており、これによってユーザーを特定できます。具体的には、ユーザーの一意識別が必要な場合に使用されます。oidを使用することで、配送ドライバーのプロファイル情報をセキュアに管理できます。'>
+<div class='choice'  data-group='トークンの種類' >アクセストークン</div>
+<div class='choice'  data-group='トークンの種類' >IDトークン</div>
+<div class='choice'  data-group='トークンの種類' >更新トークン</div>
+<div class='choice'  data-group='ペイロードのクレーム' >idp</div>
+<div class='choice'  data-group='ペイロードのクレーム' >oid</div>
+<div class='choice'  data-group='ペイロードのクレーム' >aud</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題24<br>あなたはソフトウェア配布会社で働いており、Azure Blob Storageを使用して顧客が購入したソフトウェアのインストールファイルを安全に提供するシステムを開発する任務を担当しています。 製品のセキュリティを確保し、非正規のダウンロードを防止するために、ダウンロードリンクを限定時間のみ有効に保つ方法を導入することにしました。 顧客がソフトウェアを購入すると、対象ソフトウェアのバージョンに基づいて適切なリンクを提供します。 Azure Blob Storageでは、各ソフトウェアごとに、アクセス可能な期間（開始時間と終了時間）や許可される操作（読み取りアクセス）を定義します。<br>これら要件を満たすために、顧客側とAzure Blob Storageに対して、それぞれどの機能を使用するが適切ですか。' data-answer='1,3' data-explanation='■正解：<br>顧客側：B:SASトークン<br>Azure Blob Storage：D:保存されているアクセス ポリシー<br>■解説<br>SASトークンは、Azure Blob Storageに保存されているデータへのセキュアなアクセスを提供するための方法です。このトークンはURLの一部として生成され、特定の期間や特定の操作（例えば、読み取り、書き込み、削除）のみを許可する設定が可能です。SASトークンを使用することで、顧客に安全にファイルへのアクセスを許可し、そのアクセスがトークンの有効期限で自動的に終了するように設定できます。<br>保存されているアクセスポリシーは、Azure Blob StorageのコンテナやBlobレベルで設定できるアクセス制御ポリシーです。このポリシーを使用すると、複数のSASトークンに共通のルールを適用し、後からこれらのルールを一括で更新または削除することができます。ポリシーには、アクセスの開始時間と終了時間、許可される操作などを指定することができます。'>
+<div class='choice'  data-group='顧客側' >アカウントアクセスキー</div>
+<div class='choice'  data-group='顧客側' >SASトークン</div>
+<div class='choice'  data-group='Azure Blob Storage' >クロスオリジンリソース共有(CORS)</div>
+<div class='choice'  data-group='Azure Blob Storage' >保存されているアクセス ポリシー</div>
+<div class='choice'  data-group='Azure Blob Storage' >ユーザー割り当てマネージドID</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題25<br>ある会社が、スマートシティの交通監視システムが交通量データを中央の場所に送信できるソリューションを開発しています。このソリューションは、メッセージを受信し、処理されるまで保存する必要があります。あなたは、名前、価格帯、サブスクリプション、リソースグループ、および場所を提供してAzure Service Busインスタンスを作成しました。 設定を完了する必要があります。<br>次の手順として、どのコマンドを実行すべきですか。' data-answer='0' data-explanation='■正解：<br>A:New-AzureRmServiceBusQueue -ResourceGroupName traffic-rg -NamespaceName traffic-ns -Name traffic-q -EnablePartitioning $False<br>■解説<br>Azure Service Busは、大量のメッセージを信頼性高く非同期に処理するためのクラウドベースのメッセージングシステムです。ここでは、交通量データを集約し、遅延なく効率的に処理するために、Service Busキューやトピックを使用します。<br>New-AzureRmServiceBusQueueコマンドは、Azure Service Bus内に新しいキューを作成するためのものです。キューは、メッセージを送信および受信するためのFIFO（First In, First Out）メカニズムを提供します。キューにメッセージが送信されると、消費されるまで保持されます。交通監視システムのメッセージを保存し、処理されるまで待機させるためには、キューを使用するのが最適です。これは、メッセージの一時保存と順序正しい処理に適しています。<br>トピックは、メッセージのブロードキャストと複数のサブスクライバーへの配信に適していますが、交通量データの一時保存と順序正しい処理には最適ではありません。'>
+<div class='choice'  data-group='選択肢' >New-AzureRmServiceBusQueue -ResourceGroupName traffic-rg -NamespaceName traffic-ns -Name traffic-q -EnablePartitioning $False</div>
+<div class='choice'  data-group='選択肢' >New-AzureRmServiceBusRule -ResourceGroupName traffic-rg -NamespaceName traffic-ns -TopicName traffic-topic -SubscriptionName traffic-sub -Name traffic-rule -Rights @("Listen", "Send")</div>
+<div class='choice'  data-group='選択肢' >New-AzureRmServiceBusTopic -ResourceGroupName traffic-rg -NamespaceName traffic-ns -Name traffic-topic -EnablePartitioning $True -DuplicateDetectionHistoryTimeWindow "P1D"</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題26<br>あなたはRESTウェブサービスを開発しており、顧客はAzure API Managementを通じてサービスにアクセスします。 このウェブサービスはデータ整合性のエラーを正しく処理していません。 本来ならばHTTPステータスコード400を返すべきところ、サービスはステータスコード500を返しています。 ステータスメッセージの本文には「integrity error」とだけ記載されています。<br>適切なレスポンスを確実にするために、ポリシーをどのように完成させるべきですか。' data-answer='1,2,4' data-explanation='■正解：<br>セグメント１：B:on-error<br>セグメント２：C:context<br>セグメント３：E:set-status<br>■解説<br>Azure API Management (APIM) では、APIのポリシーを利用してリクエストとレスポンスの流れを制御し、エラー処理などのカスタム動作を実装することができます。この問題では、データ整合性エラーが発生した際に適切なHTTPステータスコードを返すようにポリシーを設定する必要があります。以下で、使用される各セグメントの役割について説明します。<br>セグメント１: on-error<br>このセグメントは、APIリクエスト中にエラーが発生した場合に実行されるポリシーのセクションです。APIが予期しないエラー（例えば、バックエンドサービスの障害やデータ処理エラーなど）を遭遇したときに、カスタムエラーレスポンスを生成するために使います。このセクション内で定義されたアクションは、エラーが発生した際にのみトリガーされます。<br>セグメント２: context<br>context オブジェクトは、現在処理中のAPIリクエストやレスポンスに関連するすべての情報にアクセスするためのオブジェクトです。これには、HTTPヘッダー、クエリパラメーター、URL、環境設定、エラー詳細などが含まれます。このシナリオでは、context.Response.StatusCode で現在のレスポンスのステータスコードを参照し、context.LastError.Message で最後に発生したエラーのメッセージを確認します。<br>セグメント３: set-status<br>このアクションは、APIのレスポンスとして返すHTTPステータスコードと理由を明示的に設定するために使用されます。エラー処理の文脈では、元々のエラーコード（例えば500）をより適切なもの（例えば400）に変更するために使うことができます。code="400" と reason="Bad Request" を指定することで、エラーが「Bad Request」であることをクライアントに明確に伝え、HTTP 400 ステータスを返します。<br>この設定により、サービスが間違って500ステータスコードを返した場合でも、APIMがエラーメッセージを検出し、適切な400ステータスコードでクライアントにレスポンスを返すことができるようになります。' data-images='000048.jpg'>
+<div class='choice'  data-group='セグメント１' >set-status</div>
+<div class='choice'  data-group='セグメント１' >on-error</div>
+<div class='choice'  data-group='セグメント２' >context</div>
+<div class='choice'  data-group='セグメント２' >server</div>
+<div class='choice'  data-group='セグメント３' >set-status</div>
+<div class='choice'  data-group='セグメント３' >when-error</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題27<br>あなたは、次のXMLマークアップを使用してAPIポリシーオブジェクトを定義しています。<br>このポリシーについて正しい記述はどれですか。（２つ選択）' data-answer='0,4' data-explanation='■正解：<br>A: XMLセグメントはポリシーの<inbound>セクションに属する<br>E: ファイルサイズが300KBを超えると、HTTP 413エラーが返される<br>■解説<br>XMLセグメントはポリシーの<inbound>セクションに属する：APIマネジメントにおいて、ポリシーは大きく分けて <inbound>、<backend>、<outbound>、<on-error> セクションに分類されます。これらのセクションは、APIリクエストやレスポンスが処理される流れの中で、異なる段階を指します。<br><inbound> セクションは、APIゲートウェイがクライアントからリクエストを受け取った直後、バックエンドサービスに送信する前の処理を行います。設問のシナリオでは、<inbound> セクションには、リクエストのコンテンツサイズをチェックし、特定の条件（この場合はファイルサイズが300KBを超えるかどうか）に基づいて特定のアクション（例えばエラーメッセージの返送）を実行するポリシーが含まれています。これはリクエストがサーバーに到達する前の初期段階で実行されるため、<inbound> セクションに属します。<br>ファイルサイズが300KBを超えると、HTTP 413エラーが返される：HTTPステータスコード413は「Payload Too Large」（ペイロードが大きすぎる）を意味し、リクエストされたリソースに対して送信されたデータがサーバーによって設定された制限を超えた場合に使用されます。<br>設問のケースでは、ポリシーがリクエストヘッダーからContent-Length（内容の長さ）を読み取り、その値が307200バイト（約300KB）を超えているかどうかを判断します。条件が真（つまり300KBを超える）の場合、APIは自動的にリクエストを拒否し、クライアントに対してHTTP 413エラーステータスを返します。これにより、大きなファイルがサーバーに無理な負担をかけることなく、リソースの利用を適切に制御できます。この処理はリクエストの内容に基づいて実行されるため、特にデータ転送に関連する問題を事前に防ぐ目的で用いられます。<br>■その他の選択肢<br>XMLセグメントはポリシーの<outbound>セクションに属する：このセグメントは入力に対する操作を含んでいるため、<inbound> セクションに属します。<br>リクエストがhttp://contoso.com/api/5.2/の場合、ポリシーはより高いバージョンを保持する：XMLのコードでは、条件に関係なく、すべてのリクエストのURIを /limited/ に書き換え、バックエンドサービスのURLを http://contoso.com/api/5.1/ に設定しています。したがって、リクエストがどのバージョンであっても、指定されたURLにリダイレクトされます。<br>ファイルサイズが300KBを下回ると、HTTP 413エラーが返される：ファイルサイズが300KBを超える場合にHTTP 413エラーが返されます。' data-images='000049.jpg'>
+<div class='choice'  data-group='選択肢' >XMLセグメントはポリシーの<inbound>セクションに属する</div>
+<div class='choice'  data-group='選択肢' >XMLセグメントはポリシーの<outbound>セクションに属する</div>
+<div class='choice'  data-group='選択肢' >リクエストがhttp://contoso.com/api/5.2/の場合、ポリシーはより高いバージョンを保持する</div>
+<div class='choice'  data-group='選択肢' >ファイルサイズが300KBを下回ると、HTTP 413エラーが返される</div>
+<div class='choice'  data-group='選択肢' >ファイルサイズが300KBを超えると、HTTP 413エラーが返される</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題28<br>あなたは、Azure Event Gridを使用してスマートホームデバイスからのイベントを処理するシステムを構築しています。 各デバイスは、家庭内の活動に関するデータをトピックに公開します。 ユーザーがデバイスの状態をリアルタイムで監視できるように、Webアプリケーションがこれらのイベントを受信する必要があります。 また、イベントデータは安全かつ効率的に処理される必要があります。<br>イベント配信ならびにトピックの公開設定として何を設定するのが最適ですか。' data-answer='0,3' data-explanation='■正解：<br>イベント配信：A:同期ハンドシェイク<br>トピックの公開設定：D:SASトークン<br>■解説<br>スマートホームデバイスからのイベントを処理するシステムを構築する際、Azure Event Gridを使用してイベント配信およびトピックの公開設定を行う方法を検討する必要があります。ここでの主な目的は、イベントデータが安全かつ効率的に処理されることです。<br>同期ハンドシェイク：これは、イベントグリッドからサブスクライバーに検証コードが送信され、サブスクライバーがこれを受け取って応答する方法です。イベントサブスクリプションを作成する際、Azure Event Gridはエンドポイントに対して検証イベントを送信します。同期ハンドシェイクでは、この検証イベントに含まれるvalidationCodeプロパティを使用して、エンドポイントが正常にリクエストを受信できることを確認します。これにより、エンドポイントの信頼性とセキュリティを確保します。<br>非同期ハンドシェイクは、エンドポイントがリクエストを受信しているかどうかを確認する別の方法ですが、同期ハンドシェイクほど信頼性が高くありません。非同期ハンドシェイクでは、エンドポイントが指定されたURLを呼び出して検証する必要があり、リアルタイム性が求められるスマートホームデバイスには適していません。<br>SASトークン (Shared Access Signature トークン)：SASトークンは、リソースへの限定的なアクセス権を特定の期間内で安全に提供するためのものです。これにより、スマートホームデバイスがイベントデータを安全かつ効率的にトピックに公開できます。SASトークンを使用することで、各デバイスは個別にアクセス権を持ち、認証と承認を簡単に管理できます。<br>Event Grid キーは、Azure Event Gridリソース全体へのアクセスを提供するためのものであり、デバイス単位でのセキュリティ管理には適していません。また、キーの漏洩リスクが高くなり、セキュリティが脆弱になります。<br>マネージド IDはAzureリソースに対する認証と承認を簡素化するためのものですが、スマートホームデバイスのような外部デバイスが直接使用するのには適していません。マネージド IDは主にAzure内部でのリソース間の認証に使用されます。'>
+<div class='choice'  data-group='イベント配信' >同期ハンドシェイク</div>
+<div class='choice'  data-group='イベント配信' >非同期ハンドシェイク</div>
+<div class='choice'  data-group='トピックの公開設定' >Event Grid キー</div>
+<div class='choice'  data-group='トピックの公開設定' >SASトークン</div>
+<div class='choice'  data-group='トピックの公開設定' >マネージド ID</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題29<br>あなたは小規模企業のIT担当者で、新しい製品の情報を顧客に提供するためのシンプルなウェブサイトを立ち上げることになりました。<br>Azure App Serviceを使用してウェブサイトを作成する場合、適切な手順とコマンドは何ですか。' data-answer='1,2,5' data-explanation='■正解：<br>コマンド１：B:az appservice plan create<br>コマンド２：C:az webapp create<br>コマンド３：F:az webapp deployment<br>■解説<br>Azure App Serviceを使用してウェブサイトを作成する場合、以下の手順でコマンドを実行する必要があります。<br>手順1: リソースグループの作成<br>az group create --location westeurope --name ProductInfoResourceGroup<br>まず、Azure上でリソースグループを作成します。リソースグループは、Azureリソースを管理するためのコンテナです。このコマンドは、「ProductInfoResourceGroup」という名前のリソースグループを西ヨーロッパ（westeurope）リージョンに作成します。<br>手順2: App Serviceプランの作成<br>az appservice plan create --name ProductInfoServicePlan --resource-group ProductInfoResourceGroup --sku FREE<br>このコマンドは、App Serviceプランを作成します。App Serviceプランは、Webアプリケーションをホストするための計算リソースとスケーリング設定を定義します。ここでは、「ProductInfoServicePlan」という名前で、リソースグループ「ProductInfoResourceGroup」に無料の（--sku FREE）プランを作成しています。<br>手順3: Webアプリの作成<br>az webapp create --name MyProductInfoSite --resource-group ProductInfoResourceGroup --plan ProductInfoServicePlan<br>このコマンドは、実際のWebアプリケーションを作成します。「MyProductInfoSite」という名前のWebアプリを「ProductInfoResourceGroup」に、前に作成した「ProductInfoServicePlan」に基づいて作成します。<br>手順4: デプロイメント設定<br>az webapp deployment source config --name MyProductInfoSite --resource-group ProductInfoResourceGroup --repo-url https://github.com/username/productinfo --branch master --manual-integration<br>このコマンドは、GitHubリポジトリからのデプロイメント設定を行います。ここでは、「MyProductInfoSite」というWebアプリに対して、「ProductInfoResourceGroup」リソースグループ内で、指定されたGitHubリポジトリからコードをデプロイします。' data-images='000050.jpg'>
+<div class='choice'  data-group='コマンド１' >az webapp deployment</div>
+<div class='choice'  data-group='コマンド１' >az appservice plan create</div>
+<div class='choice'  data-group='コマンド２' >az webapp create</div>
+<div class='choice'  data-group='コマンド２' >az appservice plan create</div>
+<div class='choice'  data-group='コマンド３' >az webapp</div>
+<div class='choice'  data-group='コマンド３' >az webapp deployment</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題30<br>あなたはフィンテック企業で働いており、顧客の支払情報を処理するサーバーレスのアプリケーションをAzure Functionsで開発しています。 システムは支払い処理中に使用される機密情報（APIキーなど）を安全に管理する必要があり、Azure Key Vaultを使用してこれらの情報を保護する予定です。 また、以下の要件を満たす必要があります。<br>・支払いイベントの数に基づいて、Azure Functionsのインスタンスを動的にスケーリングする<br>・インスタンスは常にウォーム状態を保ち、コールドスタートを避ける<br>・アプリケーションが削除された場合、Azure Key Vaultへの認証を自動的に削除する アプリケーションにAzure Key Vaultへのアクセス権を付与する手順として適切なのはどれですか。' data-answer='2' data-explanation='■正解：<br>C:従量課金プランでAzure Functionsアプリを作成する ⇒ システム割り当てマネージドIDを使用する ⇒ Azure Key Vaultでアクセスポリシーを設定する<br>■解説<br>このシナリオにおいて、Azure FunctionsとAzure Key Vaultを組み合わせて使用する場合、適切な選択肢を選ぶには、Azure Functionsのプランの特性を理解するとともに、Key Vaultへのアクセス方法を正しく設定することが重要です。<br>１．従量課金プランでAzure Functionsアプリを作成する：従量課金プランは、使用したリソースに基づいて料金が発生するため、小規模から始めて必要に応じて自動的にスケールアップ（リソースの追加）やスケールダウン（リソースの削減）が行われます。これにより、イベントの数が多い時には多くのリクエストを処理でき、イベントが少ない時にはコストを節約できます。特にサーバーレスアプリケーションでは、使用量が変動する可能性が高いため、このプランが最適です。<br>２．システム割り当てマネージドIDを使用する：システム割り当てマネージドIDは、Azureリソースに自動的に割り当てられ、管理されるIDです。これを使用する最大の利点は、アプリケーションが削除された時にマネージドIDも自動的にAzureから削除されるため、認証情報が不要になるとすぐにそれを安全に削除できることです。これにより、不正アクセスのリスクを減少させることができます。<br>３．Azure Key Vaultでアクセスポリシーを設定する：Azure Key Vaultは機密データ（例えばAPIキー、シークレット、証明書など）を安全に保存するサービスです。アクセスポリシーを設定することで、特定のアプリケーションやユーザーのみが特定の操作を行えるように細かく制御できます。たとえば、あるアプリケーションにはKey Vault内のシークレットを読み出す権限のみを与えることができ、他の操作は制限できます。これにより、必要な機密情報の安全性を確保しながら、アプリケーションがその情報を効果的に使用できるようにします。<br>これらの要素を組み合わせることで、安全かつコスト効率の高いアプリケーション運用を実現します。特に、アプリケーションが削除された場合にマネージドIDも削除されるため、セキュリティの維持管理が容易になります。これは、セキュリティが非常に重要なフィンテック企業にとって特に重要な要素です。'>
+<div class='choice'  data-group='選択肢' >専用(App Service)プランでAzure Functionsアプリを作成する ⇒ システム割り当てマネージドIDを使用する ⇒ Azure Key VaultでSSL証明書を設定する</div>
+<div class='choice'  data-group='選択肢' >プレミアムプランでAzure Functionsアプリを作成する ⇒ ユーザー割り当てマネージドIDを使用する ⇒ Azure Key Vaultでアクセスポリシーを設定する</div>
+<div class='choice'  data-group='選択肢' >従量課金プランでAzure Functionsアプリを作成する ⇒ システム割り当てマネージドIDを使用する ⇒ Azure Key Vaultでアクセスポリシーを設定する</div>
+<div class='choice'  data-group='選択肢' >従量課金プランでAzure Functionsアプリを作成する ⇒ ユーザー割り当てマネージドIDを使用する ⇒ Azure Key VaultでSSL証明書を設定する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題31<br>あなたは大手小売業者のためにブラックフライデーやサイバーマンデーなどの特別イベントのプロモーションサイトを開発しています。 これらのイベント中はウェブサイトに大量のアクセスが予想されるため、サイトのダウンタイムを避けつつ、通常時にはコストを節約する必要があります。<br>これら要件を満たすため、どのような対応が最適ですか。' data-answer='0' data-explanation='■正解：<br>A:Azure App ServiceのStandardプランを使用し、自動スケーリング機能を設定する<br>■解説<br>特別なイベント期間中に大量のウェブトラフィックに対応し、イベントが終わった後でコストを節約するための最適な選択肢を考える際には、それぞれのホスティングオプションの特徴を理解することが重要です。<br>Azure App ServiceのStandardプランは、スケーリングが容易であり、自動スケーリングにより負荷に基づいてリソースを自動的に調整できます。Standardプランは、カスタムドメインのサポートやSSL証明書の使用が可能で、より多くのアクセスに対応するための機能を提供します。トラフィックが減少した際にはスケールインすることで、リソースの使用量を減らしコストを抑えることができます。これにより、特別イベント時の高トラフィックと非イベント時のコスト削減のバランスを取ることが可能となります。<br>Sharedプランは軽量な使用に適しており、自動スケーリングのサポートが限られています。このため、大量のトラフィックには適していません。<br>仮想マシンはフルコントロールが可能ですが、管理の複雑さが増し、スケーリングの設定がより手間がかかるため、迅速なスケールアップやダウンが必要な場合には適していません。<br>スケールセットを使用すると、VMの数を柔軟に調整できますが、App Serviceに比べてセットアップと管理が複雑になります。'>
+<div class='choice'  data-group='選択肢' >Azure App ServiceのStandardプランを使用し、自動スケーリング機能を設定する</div>
+<div class='choice'  data-group='選択肢' >Azure App ServiceのSharedプランを使用し、自動スケーリング機能を設定する</div>
+<div class='choice'  data-group='選択肢' >ウェブサイトをAzure仮想マシンにデプロイし、自動スケーリングを構成する</div>
+<div class='choice'  data-group='選択肢' >ウェブサイトをAzure仮想マシンにデプロイし、スケールセットを構成する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題32<br>あなたは、気象データや環境監視データを収集し分析するシステムを開発しています。これらのデータは、初めの数ヶ月間は頻繁にアクセスされますが、時間が経過するとほとんどアクセスされなくなります。 データは研究目的で5年間保存し、1年以上保管したデータの保管コストは最小限に抑える必要があります。 またアプリケーションデータにゾーン冗長ストレージを構成しなければなりません。<br>どのようなストレージ構成にするのが最適ですか。' data-answer='0' data-explanation='■正解：<br>A:汎用v2ストレージ アカウントを選択し、ライフサイクル管理を使用してクール層に移動させる<br>■解説<br>汎用v2ストレージアカウント: 汎用v2ストレージアカウントは、最も柔軟で機能が豊富なストレージアカウントオプションです。これにより、ホット、クール、アーカイブの各アクセス層を活用でき、データのライフサイクル管理が簡単になります。このアカウントタイプは、さまざまなストレージニーズに対応し、コスト効率の良いデータ保管が可能です。<br>ライフサイクル管理を使用してクール層に移動させる: このシステムは初めの数ヶ月間はデータが頻繁にアクセスされるため、最初はホット層にデータを置いておきます。その後、アクセス頻度が下がると、コスト効率を考慮して自動的にクール層へ移動させます。クール層はアクセス頻度が下がったデータを格納するのに適しており、保管コストを大幅に削減できるため、1年以上経過したデータに適しています。'>
+<div class='choice'  data-group='選択肢' >汎用v2ストレージ アカウントを選択し、ライフサイクル管理を使用してクール層に移動させる</div>
+<div class='choice'  data-group='選択肢' >汎用v1ストレージ アカウントを選択し、ライフサイクル管理を使用してアーカイブ層に移動させる</div>
+<div class='choice'  data-group='選択肢' >Blob Storageを選択し、データを定期的にAzCopyを使用してオンプレミスにバックアップする</div>
+<div class='choice'  data-group='選択肢' >Azure Cosmos DBでデータを選択し、スナップショットを使用してデータのバックアップを毎日行う</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題33<br>あなたは大規模なEコマースプラットフォームのために、顧客の注文データを処理するシステムを開発しています。 このシステムは、注文情報の更新をAzure Cosmos DBで追跡し、変更フィードプロセッサーを使用しています。 注文データはピーク時に集中的に更新されるため、処理の遅延やエラーを最小限に抑えることが求められます。 また、以下の要件を満たす必要があります。<br>要件１: 変更フィードプロセッサーの処理状況を常に確認できるようにする<br>要件２: 一部の処理が読み取り不可能であっても、全体のバッチの処理が停止しないようにする これら要件を満たすためにはどの機能を使用するべきですか。' data-answer='2,4' data-explanation='■正解：<br>要件１：C:変更フィード推定<br>要件２：E:配信不能キュー<br>■解説<br>変更フィード推定（Change Feed Estimator）：変更フィード推定は、Azure Cosmos DBにおいてデータの変更を追跡するための機能です。この機能を利用することで、アプリケーションはデータベース内の項目が更新されたり、新しく追加されたりした際の変更をリアルタイムで受け取ることができます。この情報は、システムのパフォーマンス監視や問題発生時の迅速な対応に役立ちます。<br>配信不能キュー（Dead-letter Queue）：配信不能キューは、メッセージ指向のミドルウェアで一般的に使用される概念で、特にメッセージングシステムにおいて重要です。このキューは、正常に処理できなかったメッセージを一時的に保管する場所として機能します。例えば、メッセージがフォーマットエラーを含む場合や対象のサービスが一時的にダウンしている場合など、何らかの理由でメッセージが正常に配信・処理できなかった際に使用されます。配信不能キューを利用することで、エラーメッセージを隔離し、システム全体の処理が中断することなく、問題のあるメッセージだけを後から再評価または修正することが可能になります。これにより、システムの堅牢性が向上し、一時的なエラーや例外が全体のパフォーマンスに影響を与えることを防ぎます。'>
+<div class='choice'  data-group='要件１' >パーティショニング</div>
+<div class='choice'  data-group='要件１' >配信不能キュー</div>
+<div class='choice'  data-group='要件１' >変更フィード推定</div>
+<div class='choice'  data-group='要件２' >パーティショニング</div>
+<div class='choice'  data-group='要件２' >配信不能キュー</div>
+<div class='choice'  data-group='要件２' >変更フィード推定</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題34<br>あなたは、大手金融機関のためにAzure Blob Storageを使ってトランザクションデータを管理するシステムを開発しています。 このデータは、初期の数ヶ月間は頻繁に分析されますが、その後はほとんどアクセスされなくなります。 金融規制により、トランザクションデータは5年間保存する必要がありますが、コストを削減するために、古いデータは低コストのストレージに移動する必要があります。<br>これら要件を満たすため、以下のポリシールールをストレージアカウントに設定しました。<br>上記のシナリオならびポリシールールについて正しい記述はどれですか。（２つ選択）' data-answer='0,2' data-explanation='■正解：<br>A:データは作成から1826日間後に削除される<br>C:移動対象のデータは接頭辞が"transactions"ならびにブロックブロブのデータである<br>■解説<br>このシナリオでは、金融機関がトランザクションデータをAzure Blob Storageで管理し、データのライフサイクルポリシーを設定してコストを効率的に管理しながら規制の要件を満たすことが目的です。以下のポリシールールが適用されています。<br>データは作成から1826日間後に削除される：ポリシールールのactionsセクションで、deleteアクションが指定されています。daysAfterCreationGreaterThanが1826日と設定されているため、データは作成から1826日後に自動的に削除されます。これは金融規制に基づき、トランザクションデータを5年間（1826日）保存するという要件を満たしています。<br>移動対象のデータは接頭辞が"transactions"ならびにBlock Blobのデータである：ポリシールールのfiltersセクションで、blobTypesが["blockBlob"]と指定されており、これはBlock Blobのデータのみが対象となることを意味します。また、prefixMatchが["transactions"]と設定されているため、接頭辞が"transactions"のデータのみが対象となります。<br>■その他の選択肢<br>データはクールに移動後、再度アクセスされると自動的にホットに戻される：Azure Storageのアクセス層は自動的に変更されません。ユーザーが明示的にアクセス層を変更する操作を実行しない限り、データはクール層に留まります。<br>データは60日間変更されないとクールへ移行する：実際には、データは作成から90日後にクール層に移動される設定になっています。<br>移動対象のデータは接頭辞が"transactions"もしくはBlock Blobのデータである：ポリシーは「接頭辞が"transactions"であり、かつブロックブロブタイプであるデータ」に適用されます。この表現が「もしくは」ではなく「ならびに」であることが重要です。' data-images='000051.jpg'>
+<div class='choice'  data-group='選択肢' >データは作成から1826日間後に削除される</div>
+<div class='choice'  data-group='選択肢' >データはクールに移動後、再度アクセスされると自動的にホットに戻される</div>
+<div class='choice'  data-group='選択肢' >移動対象のデータは接頭辞が"transactions"ならびにBlock Blobのデータである</div>
+<div class='choice'  data-group='選択肢' >データは60日間変更されないとクールへ移行する</div>
+<div class='choice'  data-group='選択肢' >移動対象のデータは接頭辞が"transactions"もしくはBlock Blobのデータである</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

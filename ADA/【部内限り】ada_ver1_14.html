@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='true' data-question='問題18<br>あなたは、オンライン教育プラットフォームのバックエンドシステムの開発を検討しており、そのシステムには2つのDockerコンテナが含まれる予定です。これらのコンテナは、root権限を持たないユーザーとして実行される必要があり、YAMLファイルを使用してAzure Container Instancesにデプロイされます。また、コンテナはライフサイクル、リソース、ローカルネットワーク、およびストレージボリュームを共有し、このストレージボリュームはコンテナがクラッシュしてもデータを保持する必要があります。<br>Azure Container Instances(ACI)を使用する場合、上記要件を満たすリソースの組み合わせはどれですか。（２つ選択）' data-answer='3,4' data-explanation='■正解：<br>D:コンテナグループ<br>E:EmptyDirボリューム<br>■解説<br>Azure Container Instances (ACI) は、Azure 上で容易にコンテナを実行できるサービスです。このサービスを使うことで、サーバーの管理なしにコンテナをデプロイし、アプリケーションを稼働させることが可能になります。<br>コンテナグループは、複数のコンテナが同じライフサイクル、リソース、ローカルネットワークを共有できるようにする機能です。このグループ設定により、コンテナ間での通信やリソースの管理が容易になり、シナリオで求められる共有要件を満たすことができます。<br>EmptyDirボリュームは、コンテナグループ内のすべてのコンテナがアクセス可能な書き込み可能なディレクトリを提供します。コンテナがクラッシュした場合でもデータは維持されるため、設問の要件を満たします。'>
+<div class='choice'  data-group='選択肢' >コンテナイメージ</div>
+<div class='choice'  data-group='選択肢' >シークレット</div>
+<div class='choice'  data-group='選択肢' >Azureファイル共有</div>
+<div class='choice'  data-group='選択肢' >コンテナグループ</div>
+<div class='choice'  data-group='選択肢' >EmptyDirボリューム</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題19<br>あなたは、レストランやイベントの予約を管理するオンライン予約システムを開発しています。このシステムはピーク時に多くのトラフィックを受けるため、Azure Application Insightsを使用してシステムの監視を行う必要があります。具体的には、以下の要件を満たさなければなりません。<br>・5分ごとにウェブサイトが応答するかを確認する<br>・ウェブサイトが指定された時間内に応答することを確認する<br>・ウェブサイトに問題がある場合はアラートを生成する<br>これら要件を最小の労力で実装するために適切な機能は何ですか。' data-answer='2' data-explanation='■正解：<br>C:URL pingテスト<br>■解説<br>URL pingテストは、Azure Application Insightsの機能の一つで、定期的にウェブサイトの特定のURLにHTTPリクエストを送信し、応答を監視するシンプルな監視手法です。このテストはウェブサイトがオンラインであり、基本的な応答を返すかどうかを確認するのに非常に有効です。<br>設問の要件については、以下のように対応することができます。<br>１．5分ごとの応答性確認：URL pingテストは、設定した時間間隔（この場合は5分ごと）でウェブサイトにアクセスし、応答を確認します。これにより、システムが稼働しているかどうかを継続的に監視できます。<br>２．応答時間の確認：このテストは、ウェブサイトがどれくらいの速さで応答するかも測定します。したがって、指定された時間内に応答があるかどうかを確認することが可能です。<br>３．問題発生時のアラート生成：URL pingテストでは、応答がない、または応答に問題がある場合（例えば、応答時間が遅い、エラーステータスコードが返されるなど）にアラートを生成する機能があります。これにより、システムに何か問題が発生した際に迅速に対応できるようになります。'>
+<div class='choice'  data-group='選択肢' >マルチステップWebテスト</div>
+<div class='choice'  data-group='選択肢' >TrackAvailabilityテスト</div>
+<div class='choice'  data-group='選択肢' >URL pingテスト</div>
+<div class='choice'  data-group='選択肢' >可用性アラート</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題20<br>あなたは、オンプレミスのSQL Serverデータベースを使用するオンライン教育プラットフォームのバックエンドシステムを提供するASP.NET Core Webサービスを開発しています。このサービスは3つの異なる教育機関に利用されており、各機関のデータは専用のWebJobインスタンスによって個別に処理され、それぞれがシングルトンとして実行されます。本番データの提供前には、デプロイメントスロットを利用してテストが行われます。また、コスト効率の向上と高いセキュリティの確保が求められるため、Azureリソースは孤立したネットワーク環境で運用する必要があります。<br>上記要件を満たすために必要な仮想マシンの数とAzure App Serviceプランはどれですか。' data-answer='1,2' data-explanation='■正解：<br>仮想マシンの数：B:3<br>App Serviceプラン：C:Isolated<br>■解説<br>WebJobインスタンスは、特定のWebJob（バックグラウンドで実行されるプログラムやスクリプト）が実際に実行されている個別のプロセスやアプリケーションのインスタンスを指します。つまり、1つのWebJobを同時に複数の場所で実行する場合、それぞれの実行場所が一つのインスタンスとなります。これにより、複数のタスクを並行して実行できるようになり、効率的な処理が可能です。<br>シングルトンで実行とは、特定のWebJobが同時に一つのインスタンスだけで実行されることを保証する設定です。これは、複数のインスタンスが同時に同じデータやリソースにアクセスすることで発生する競合を防ぐために使用されます。例えば、同じデータベースレコードの更新など、一度に一つのプロセスのみが実行されるべきタスクでこの設定が有効です。<br>設問のシナリオでの要件に基づいて、最も適切な選択肢を選ぶための考慮点は以下の通りです。<br>・各教育機関のデータは専用のWebJobインスタンスによって個別に処理され、それぞれがシングルトンとして実行される必要があります ⇒ これは、各WebJobが独立して動作する必要があることを意味します。通常、WebJobsはApp Service Plan内で稼働するため、仮想マシン（VM）の数はApp Service Planの容量に依存しますが、ここでは各WebJobが独立している必要があるため、教育機関ごとに独立したリソースが必要です。そのため、必要な仮想マシンの数は３になります。<br>・デプロイメントスロットを利用してテストが行われる ⇒ Azure App Service Planのデプロイメントスロット機能を使って、本番環境への展開前にテストを行うことができます。この機能はStandardプラン以上で利用可能です。<br>・コストの効率化と高いセキュリティの確保が求められるため、Azureリソースは孤立したネットワーク環境で運用する必要があります ⇒ Isolated App Serviceプランは、専用の環境で高いセキュリティとネットワーク'>
+<div class='choice'  data-group='仮想マシンの数' >1</div>
+<div class='choice'  data-group='仮想マシンの数' >3</div>
+<div class='choice'  data-group='App Serviceプラン' >Isolated</div>
+<div class='choice'  data-group='App Serviceプラン' >Shared</div>
+<div class='choice'  data-group='App Serviceプラン' >Basic</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題21<br>あなたは、企業内で使用されるファイル共有サービスを開発しています。このサービスは、Azure Storageアカウントをバックエンドとして使用しており、企業の重要なファイルが安全に保存されることが求められています。Azure Storageアカウントのアクセスキーを安全に管理し、Azure Key Vaultに保存する必要があります。<br>Azure Key Vaultにキーを保存し、取得するまでのプロセスとして正しいコマンドの手順はどれですか。' data-answer='0,2,4' data-explanation='■正解：<br>手順２：A:Set-AzContext -SubscriptionId $subscriptionID:<br>手順３：C:$secretvalue = ConvertTo-SecureString -String $storageAccountKey -AsPlainText -Force:<br>Set-AzKeyVaultSecret -VaultName $vaultName -Name $keyName -SecretValue $secretvalue:<br>手順４：E:Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName:<br>■解説<br>Azure Storageアカウントからキーを取得し、Azure Key Vaultに保管するプロセスは、セキュリティを強化し、機密情報を安全に管理するための重要な手順です。以下は、そのプロセスとなります。<br>手順１：Azureサブスクリプションの確認：最初に、Azureサブスクリプションを確認する必要があります。これは、利用可能なサブスクリプションのリストを取得し、後続の作業に適切なサブスクリプションを選択するために行います。<br>コマンド：Get-AzSubscription:<br>手順２：コンテキストの設定：選択したサブスクリプションに対してコンテキストを設定します。これにより、そのサブスクリプションに関連するリソースに対して操作が行われるようになります。<br>コマンド：Set-AzContext -SubscriptionId $subscriptionID:<br>手順３：ストレージアカウントキーの取得とセキュリティ変換：次に、Azure Storageアカウントからアクセスキーを取得します。このキーは、ストレージアカウントにアクセスするために必要です。<br>コマンド：Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName:<br>手順４：キーのAzure Key Vaultへの保存：<br>取得したキーをセキュアな形式に変換します。これにより、キーを安全に扱うことができます。<br>コマンド：$secretvalue = ConvertTo-SecureString -String $storageAccountKey -AsPlainText -Force:<br>その後、セキュアに変換したキーをAzure Key Vaultに保存します。Key Vaultは、機密データを保護するためのサービスであり、アクセス権を厳格に管理しながらキーを安全に保管できます。<br>コマンド：Set-AzKeyVaultSecret -VaultName $vaultName -Name $keyName -SecretValue $secretvalue:<br>手順５：キーの取得：最後に、保存されたキーをAzure Key Vaultから取得します。このコマンドを使用することで、保存したシークレットを確認または利用することが可能になります。<br>コマンド：Get-AzKeyVaultSecret -VaultName $vaultName -Name $keyName:<br>これらのステップを完了することで、Azure Storageアカウントのキーを安全に管理し、必要なときに安全にアクセスできるようになります。' data-images='000034.jpg'>
+<div class='choice'  data-group='手順２' >Set-AzContext -SubscriptionId $subscriptionID:</div>
+<div class='choice'  data-group='手順２' >Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName:</div>
+<div class='choice'  data-group='手順３' >$secretvalue = ConvertTo-SecureString —String $storageAccountKey -AsPlainText -Force:<br>Set-AzKeyVaultSecret —VaultName $vaultName —Name $keyName —SecretValue $secretvalue:</div>
+<div class='choice'  data-group='手順３' >Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName:</div>
+<div class='choice'  data-group='手順４' >Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName:</div>
+<div class='choice'  data-group='手順４' >Set-AzContext —SubscriptionId $subscriptionID:</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題22<br>あなたの組織は、オンプレミス環境でMongoDBを運用していましたが、現在、AzureのAzure Cosmos DBへの移行を検討しています。<br>データの移行のために適切なツールは何ですか。' data-answer='3' data-explanation='■正解：<br>D:mongorestore<br>■解説<br>mongorestoreは、MongoDBのデータベースバックアップファイルからデータを復元するためのツールです。このツールは、MongoDBのデータをエクスポートした後、それを異なる環境へインポートする場合に使用されます。特に、オンプレミスのMongoDBからAzure Cosmos DBにデータを移行する際に有用です。Azure Cosmos DBはMongoDB APIをサポートしており、このAPIを使ってMongoDBのクライアントツールと互換性のある操作を行うことができます。<br>移行プロセスでは、まずオンプレミスのMongoDBデータベースからデータをダンプ（エクスポート）し、その後、mongorestore コマンドを使用してAzure Cosmos DBのMongoDB APIエンドポイントにそのデータを復元（インポート）します。これにより、データを効率的にかつ正確に新しい環境に移行することが可能です。'>
+<div class='choice'  data-group='選択肢' >Azure Storage Explorer</div>
+<div class='choice'  data-group='選択肢' >AzCopy</div>
+<div class='choice'  data-group='選択肢' >Data Management Gateway</div>
+<div class='choice'  data-group='選択肢' >mongorestore</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題23<br>あるヘルスケアプロバイダーが、患者からの健康モニタリングデータをリアルタイムで受け取るためのサードパーティ製のシステムを開発しています。このシステムは、心拍数、血圧、睡眠パターンなど、多種多様な健康データイベントをAzure Event Gridに公開します。イベントは特定のAzure Functionsアプリで処理されるために、適切にフィルタリングされる必要があります。また、患者データの機密性を保持するために、適切な認証と認可の制御が不可欠です。<br>下記の要件を満たすAzure Event Gridの機能はそれぞれ何ですか。<br>要件１：サードパーティのシステムがイベントを送信するエンドポイント<br>要件２：トピックからイベントを購読し、それらをフィルタリングして特定のアクションをトリガーする' data-answer='2,3' data-explanation='■正解：<br>要件１：C:カスタムトピック<br>要件２：D:イベントサブスクリプション<br>■解説<br>Azure Event Gridは、イベント駆動型のアーキテクチャをサポートするサービスです。イベントが発生した際に、その情報をリアルタイムで他のアプリケーションやサービスへ通知するために使用します。<br>本設問の要件を満たすAzure Event Gridの機能については以下の通りです。<br>要件１：サードパーティのシステムがイベントを送信するエンドポイント：サードパーティのシステムがヘルスケアデータのイベントを送信するためのエンドポイントとして、カスタムトピックを使用します。カスタムトピックは、ユーザーが自ら定義するトピックであり、特定のアプリケーションやサードパーティ製システムのイベントを管理するために作成します。これを使用することで、任意のソースからのカスタムイベントを扱うことが可能になります。これにより、システム固有のイベントを管理できます。<br>要件２：トピックからイベントを購読し、それらをフィルタリングして特定のアクションをトリガーする：カスタムトピックで発生したイベントを購読し、特定のAzure Functionsアプリにルーティングするためにイベントサブスクリプションを使用します。イベントサブスクリプションは、特定のトピックのイベントを購読し、それらのイベントが発生した際に特定のアクションを起動するための設定です。イベントサブスクリプションを使用して、イベントがトピックに送信されたときに何をするか（どのエンドポイントに送るか、どのように処理するか）を定義します。これにより、イベントのフィルタリングや適切な認証が可能になります。'>
+<div class='choice'  data-group='要件１' >イベントサブスクリプション</div>
+<div class='choice'  data-group='要件１' >システムトピック</div>
+<div class='choice'  data-group='要件１' >カスタムトピック</div>
+<div class='choice'  data-group='要件２' >イベントサブスクリプション</div>
+<div class='choice'  data-group='要件２' >イベントハンドラー</div>
+<div class='choice'  data-group='要件２' >カスタムトピック</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題24<br>あなたは大量データ処理サービスを開発しており、Azure API Managementを通じて公開しています。アップロードされたデータセットが特定のサイズ（例えば1GBを超える）を超える場合、別の低コストのバックエンドで処理されます。このサービス層は x-large-dataset というヘッダーによって示されます。また大容量のデータセットは小さなデータセット用のバックエンドでは処理されず、常に低価格で課金されなければなりません。<br>これら要件を満たすためには、下記設定のオプションとポリシーをどのように設定するべきですか。' data-answer='2,4' data-explanation='■正解：<br>オプション：C:override<br>ポリシー：E:set-backend-service base-url<br>■解説<br>Azure API Managementは、APIの公開、運用、保守を効率的に管理するためのクラウドサービスです。ポリシー機能を使用することで、APIのリクエストやレスポンスに対してさまざまな操作を自動的に適用することが可能です。<br>設問のシナリオでは、アップロードされたデータセットのサイズに基づいて処理を異なるバックエンドにルーティングする必要があります。1GBを超える画像を処理する際には、適切なバックエンドサービスを指定しなければなりません。<br>exists-actionは、API Managementのポリシー内でヘッダーやクエリパラメータなどが既に存在する場合の動作を指定するオプションです。この属性は、既に存在するヘッダーやパラメータに対するアクション（上書き、削除、追加など）を定義します。オプションのoverrideは、もしヘッダーが既に存在する場合にその値を新しい値で上書きします。これは、リクエストに対して「x-large-dataset」ヘッダーがすでに設定されている場合、その値を強制的に「true」に更新するために必要です。<br>set-backend-service ポリシーは、APIリクエストが送信されるバックエンドサービスのURLを動的に変更するために使用します。このポリシーを使うことで、APIのエンドポイントが指す先のサーバーやサービスを条件に応じて変更することができます。<br>設問のシナリオでは、データセットのサイズに基づいて異なるバックエンドサービス（低コストまたは標準）にリクエストをルーティングする必要があります。「base-url」属性によって、条件に応じたバックエンドサービスのURLを設定できます。x-large-datasetヘッダーがリクエストに存在する場合、1GBを超えるデータセットと見なされ、そのリクエストは"https://large-dataset-...."にルーティングされます。逆に、x-large-datasetヘッダーが存在しない場合は、1GB未満と見なされ、”https://standard-dataset-....”にルーティングされます。<br>このポリシー設定により、データセットのサイズに応じて適切なバックエンドサービスに効率的にリクエストを分けることが可能となり、コスト効率の良い運用が可能です。' data-images='000035.jpg'>
+<div class='choice'  data-group='オプション' >append</div>
+<div class='choice'  data-group='オプション' >delete</div>
+<div class='choice'  data-group='オプション' >override</div>
+<div class='choice'  data-group='ポリシー' >forward-request base-url</div>
+<div class='choice'  data-group='ポリシー' >set-backend-service backend-id</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題25<br>あなたは、.NET Frameworkを使用してPOS (Point of Sale) システムを開発しています。このシステムには、価格設定、在庫情報、税率など100以上のAzure App Configurationの設定が含まれています。これらの設定は、プロモーションや市場の変動に応じて頻繁に更新されるため、設定の一貫性を確保し、アプリの再起動なしに変更を反映させる必要があります。また、APIのコストを抑えるためにリクエスト数を最小限に抑えることも求められています。<br>これら要件を満たすために適切な対応は何ですか。（２つ選択）' data-answer='2,3' data-explanation='■正解：<br>C:センチネルキーを作成して登録する<br>D:App Configurationキャッシュの有効期限を規定値から増やす<br>■解説<br>設問のシナリオで求められている要件は、設定データの一貫性を保持しつつ、アプリケーションの再起動なしで設定の変更を動的に処理し、さらにApp Configuration APIへのリクエスト数を最小限に抑えることです。これを達成するために適切な対応策は以下の2つです。<br>・App Configurationキャッシュの有効期限を規定値から増やす：通常、Azure App Configurationのキャッシュ機能は、設定値を一定期間メモリ上に保持することで、何度も同じ設定をAPIから読み込む必要をなくします。キャッシュの有効期限を延長することにより、APIへのリクエスト回数が減少し、結果としてAPIのコスト削減につながります。また、設定の読み込みが高速になるため、アプリケーションのパフォーマンスも向上します。この方法は特に、頻繁に更新されない設定や、多くのユーザーがアクセスするアプリケーションに適しています。<br>・センチネルキーを作成して登録する：センチネルキーとは、設定の変更を検出するために使用される特別なキーです。このキーはAzure App Configurationにおいて、設定が更新されたかどうかをチェックするために利用されます。アプリケーションがセンチネルキーの変更を検出した場合、他のすべての設定が自動的に更新されるようトリガーします。これにより、アプリケーションを再起動することなく、リアルタイムで設定の変更をアプリケーションに反映させることができます。センチネルキーを使用することで、設定の一貫性を維持しつつ、ダイナミックな設定更新が可能になります。<br>これらの対策を講じることで、アプリケーションの設定管理が効率的かつコスト効果的になります。'>
+<div class='choice'  data-group='選択肢' >各設定項目に対して個別のAPIエンドポイントを設定する</div>
+<div class='choice'  data-group='選択肢' >Azure Functionを使用して設定更新を監視する</div>
+<div class='choice'  data-group='選択肢' >センチネルキーを作成して登録する</div>
+<div class='choice'  data-group='選択肢' >App Configurationキャッシュの有効期限を規定値から増やす</div>
+<div class='choice'  data-group='選択肢' >App Configurationキャッシュの有効期限を規定値から減らす</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題26<br>あなたは、フィットネスアプリの開発を担当しており、ユーザーが完了したワークアウトセッションのデータを保存しています。プロモーションとして１週間ごとに特別なワークアウトチャレンジが実施され、各セッションはAzure Cosmos DBにsessionCompletedというプロパティで記録されます。<br>ワークアウトチャレンジごとのデータを把握するためには、どのようなクエリを作成するべきですか。' data-answer='0,2' data-explanation='■正解：<br>関数１：A:count<br>関数２：C:DateTimeBin<br>■解説<br>設問の要件に基づいて、ワークアウトチャレンジごとのデータを把握するためには、次のようなクエリの関数を使用する必要があります。<br>count 関数：この関数は、指定された条件またはグループに一致する項目の数をカウントします。設問のシナリオでは、各グループ化された期間における完了したセッションの総数をカウントするために使用されています。たとえば、ある特定の日または週にどれだけのワークアウトセッションが完了されたかを把握することができます。<br>DateTimeBin 関数：この 関数は、日時データを指定された時間間隔に基づいてビン（バケツ）にグループ化するために使用されます。この関数は、大量の日時データを扱う際に特に有用で、データを特定の時間枠にまとめて集計や分析を容易にします。たとえば、1週間ごと、または数日ごとにデータをグループ化することができます。<br>設問のシナリオでは、ワークアウトセッションが完了した日時を7日間のビンにグループ化しています。これにより、週ごとにどれだけのセッションが完了したかをカウントすることが可能です。' data-images='000036.jpg'>
+<div class='choice'  data-group='関数１' >count</div>
+<div class='choice'  data-group='関数１' >max</div>
+<div class='choice'  data-group='関数２' >DateTimeBin</div>
+<div class='choice'  data-group='関数２' >DateTimePart</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題27<br>あなたは、オンラインストアでの顧客の注文情報を管理し、リアルタイムで在庫を更新する電子商取引プラットフォームの開発を行っています。このプラットフォームは、Cosmos DBを使用して顧客の注文データを保存し、顧客からの新しい注文があるたびにデータを追加または更新する必要があります。<br>.NET APIを使用してCosmos DBに接続する場合、Consmos DBインスタンスへの接続を確立するコードセグメントは何ですか。' data-answer='2' data-explanation='■正解：<br>C:client = CosmosClient(url, key)<br>■解説<br>client = CosmosClient(url, key)というコードセグメントは、Microsoft Azure Cosmos DBと接続するために使用される.NET APIの一部です。この行は、Cosmos DBの.NET SDKのCosmosClientクラスを利用して、Cosmos DBのインスタンスへの接続を確立するためのクライアントオブジェクトを作成します。<br>url：これはAzure Cosmos DBサービスのURLまたはエンドポイントで、特定のCosmos DBアカウントにアクセスするためのアドレスです。<br>key：これは認証用のプライマリまたはセカンダリキーで、指定されたCosmos DBアカウントに安全にアクセスするために使用されます。<br>このクライアントインスタンスを使用することで、データベース操作を行うためのメソッドが提供され、開発者はデータの追加、更新、取得、削除などをプログラム的に行うことができます。'>
+<div class='choice'  data-group='選択肢' >session = new ServerSession(url, key)</div>
+<div class='choice'  data-group='選択肢' >cosmos = AzureDatabase(url, key)</div>
+<div class='choice'  data-group='選択肢' >client = CosmosClient(url, key)</div>
+<div class='choice'  data-group='選択肢' >databaseLink = new DataLink(endpointUrl, apiKey)</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題28<br>あなたは、企業がクラウド上で動作するアプリケーションを運用しています。このアプリケーションは、Azure上のKubernetesクラスター「Cluster1」でホストされており、複数のコンテナ化されたサービスから構成されています。最近、特定のサービスでパフォーマンス低下が報告されており、原因を特定する必要があります。Cluster1に属するポッドで発生したエラーを特定し、過去24時間のエラーログを調査して、パフォーマンスの問題につながる可能性のあるエラーを特定する必要があります。<br>下記のクエリにおいて、適切な要素はそれぞれ何ですか。' data-answer='0,3' data-explanation='■正解：<br>要素１：A:ago(1d)<br>要素２：D:distinct ContainerID<br>■解説<br>この問題のシナリオでは、Azure上のKubernetesクラスター「Cluster1」でホストされているアプリケーションのパフォーマンス低下に関連するエラーを過去24時間の間に調査する必要があります。この目的を達成するためには、適切な時間範囲を設定し、関連するコンテナIDを効果的に抽出するクエリが必要です。<br>let startTimestamp = ago(1d):<br>このクエリの部分では、過去24時間のデータを抽出するためのタイムスタンプが必要です。ago(1d)は「1 day ago」を意味し、過去24時間前の時点を示します。これにより、過去24時間のデータに対するクエリが可能になります。<br>let ContainerIDs = KubePodInventory | where ClusterName == "Cluster1" | distinct ContainerID:<br>この部分での目的は、Cluster1内のコンテナIDを効果的に抽出することです。distinct ContainerIDを使用すると、重複を排除してユニークなコンテナIDのリストを取得できます。これにより、重複するデータを避け、クエリのパフォーマンスを向上させることができます。' data-images='000037.jpg'>
+<div class='choice'  data-group='要素１' >ago(1d)</div>
+<div class='choice'  data-group='要素１' >totimespan(1d)</div>
+<div class='choice'  data-group='要素２' >top ContainerID</div>
+<div class='choice'  data-group='要素２' >distinct ContainerID</div>
+<div class='choice'  data-group='要素２' >sample ContainerID</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題29<br>あなたは、さまざまな教育機関のニーズに対応するカスタマイズ可能な教育プラットフォームの開発に取り組んでいます。このプラットフォームは、学生、教員、および管理者が使用することを想定しており、それぞれのユーザーグループに合わせて異なるコンテンツや機能を提供する必要があります。以下の要件を満たす必要があります。<br>・すべてのユーザーはMicrosoft Entra IDを使用して認証を行う<br>・Microsoft Entra グループのメンバーシップに基づいてユーザーに適切なコンテンツを提供する<br>上記要件を満たすようなアプリケーションのマニフェスト構成は何ですか。' data-answer='0,4' data-explanation='■正解：<br>オプション１：A:groupMembershipClaims<br>オプション２：E:oauth2AllowImplicitFlow<br>■解説<br>教育プラットフォームの開発において、Microsoft Entra ID（旧：Azure AD）を使用して認証し、Microsoft Entraグループのメンバーシップに基づいてユーザーにカスタマイズされたコンテンツを提供するためには、アプリケーションのマニフェストを適切に設定する必要があります。<br>groupMembershipClaims：このプロパティは、ユーザーのトークンにユーザーが所属するMicrosoft Entraグループの情報を含めるかどうかを指定します。groupMembershipClaimsをAllに設定すると、ユーザーが所属するすべてのセキュリティグループとディストリビューションリストの情報がトークンに含まれるため、アプリケーションはこの情報を使用してユーザーに適切なコンテンツを動的に提供することができます。<br>oauth2AllowImplicitFlow：このプロパティは、OAuth 2.0 暗黙的フロー（Implicit Flow）を使用するかどうかを制御します。暗黙的フローは、特にシングルページアプリケーション（SPA）のようなクライアントサイドアプリでトークンを取得する際に便利で、フロントエンドから直接Microsoft Entra IDに認証を行う場合に使用されます。oauth2AllowImplicitFlowをtrueに設定すると、アプリケーションはこの認証フローをサポートすることになります。' data-images='000038.jpg'>
+<div class='choice'  data-group='オプション１' >groupMembershipClaims</div>
+<div class='choice'  data-group='オプション１' >requiredResourceAccess</div>
+<div class='choice'  data-group='オプション１' >signInAudience</div>
+<div class='choice'  data-group='オプション２' >appRoles</div>
+<div class='choice'  data-group='オプション２' >oauth2AllowImplicitFlow</div>
+<div class='choice'  data-group='オプション２' >SecurityGroup</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題30<br>あなたは、従業員の経費を管理するWebアプリケーションと関連する複数のAzure Functionアプリを開発しています。アプリケーションにはデータベース接続文字列やAPIキーなどの機密情報が含まれており、これらはAzure Key Vaultに保存されています。アプリケーションのセキュリティを確保し、 Microsoft Entra IDの設定変更を最小限に抑える必要があります。<br>Microsoft Entra IDのどの機能を使用するべきですか。' data-answer='3' data-explanation='■正解：<br>D:ユーザー割り当てマネージドID<br>■解説<br>ユーザー割り当てマネージドIDは、Azureリソースにアクセスするために使用される特定のAzureリソースに割り当てられるMicrosoft Entra IDのアイデンティティです。このIDは、リソース（例えばAzure FunctionやWebアプリなど）がAzureサービス内の他のリソース（例えばAzure Key Vault）に安全にアクセスするために使用されます。また、これは異なるリソース間でマネージドIDを共有することができ、必要に応じて複数のリソースに同じマネージドIDを割り当てることも可能です。<br>設問のシナリオでは、従業員の経費を管理するアプリケーションがAzure Key Vaultに保存されている機密情報（データベース接続文字列やAPIキー）にアクセスする必要があります。このアプリケーションにユーザー割り当てマネージドIDを使用することで、セキュリティが強化され、Microsoft Entra IDの設定変更を最小限に抑えることができます。'>
+<div class='choice'  data-group='選択肢' >システム割り当てマネージドID</div>
+<div class='choice'  data-group='選択肢' >グループポリシー</div>
+<div class='choice'  data-group='選択肢' >サービスプリンシパル</div>
+<div class='choice'  data-group='選択肢' >ユーザー割り当てマネージドID</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題31<br>Microsoft Identity platformで発行できるトークンについて、以下の要件を満たすためにはどのトークンをそれぞれ使用するべきですか。<br>要件１：アクセストークンの有効期限が切れた後でも、ユーザーがサービスに再度認証することなくアクセスを継続できるようにする<br>要件２：認証されたユーザーがサーバー上のリソース（APIやデータベースなど）にアクセスするために使用する' data-answer='1,3' data-explanation='■正解：<br>要件１：B:更新トークン<br>要件２：D:アクセストークン<br>■解説<br>Microsoft Identity platformを使用するWebアプリケーションでは、セキュリティとアクセス制御のために適切なトークンを選択する必要があります。<br>本設問の解説については、以下の通りです。<br>要件１：アクセストークンの有効期限が切れた後でも、ユーザーがサービスに再度認証することなくアクセスを継続できるようにする：この要件は、アクセストークンが失効した後でも、新しいアクセストークンを取得することができるトークン、つまり更新トークンに該当します。更新トークンは、アクセストークンが失効した後もユーザーセッションを継続させるために使用することができるトークンです。このトークンは、ユーザーが再度ログインすることなく新たなアクセストークンを取得できるようにするものです。<br>要件２：認証されたユーザーがサーバー上のリソース（APIやデータベースなど）にアクセスするために使用する：この要件はアクセストークンに最も適しています。これは、リソースサーバー（例えば、API）に対するアクセスを許可するための有効期間の短いトークンです。アクセストークンはAPIやその他のサーバーリソースへのアクセスを許可する目的で使用され、有効期限内であればリソースへの認証されたアクセスを提供します。'>
+<div class='choice'  data-group='要件１' >アクセストークン</div>
+<div class='choice'  data-group='要件１' >更新トークン</div>
+<div class='choice'  data-group='要件１' >SAMLトークン</div>
+<div class='choice'  data-group='要件２' >アクセストークン</div>
+<div class='choice'  data-group='要件２' >更新トークン</div>
+<div class='choice'  data-group='要件２' >SAMLトークン</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題32<br>あなたは、Azure Functionsでデータベースに接続する際、Azure Key Vaultに格納されている接続文字列にアクセスする必要があります。<br>あなたは、Azure SQL Databaseに接続するためのAzure Functionを開発しています。このデータベースの接続文字列が、dbconnectionstringという名前のシークレットとしてAzure Key Vaultに名前databasevaultで保存されています。この接続文字列をAzure Functionが使用してデータベースに接続するための適切な設定を行う必要があります。<br>Azure Key Vaultのシークレットへの参照を行うための設定として正しいものはどれですか。' data-answer='2' data-explanation='■正解：<br>C:@Microsoft.KeyVault(SecretUri=https://weathervault.vault.azure.net/secrets/weatherapitoken/)<br>■解説<br>Azure FunctionsからAzure Key Vaultに保存されたシークレットを参照するための設定を行います。この設定により、Azure Functionはコード内にシークレットを含めることなく、安全にデータベース接続文字列にアクセスできます。Azure FunctionsがAzure Key Vaultに保存されたシークレットにアクセスするには、以下のようにアプリケーション設定（App Settings）で設定を行います。<br>@Microsoft.KeyVault(SecretUri=https://weathervault.vault.azure.net/secrets/weatherapitoken/)<br>この形式はAzure Functionsのアプリケーション設定で使用される正しい形式です。SecretUriにはシークレットのURIが含まれています。この形式により、Azure FunctionsはKey Vaultに保存されているシークレットにアクセスできます。'>
+<div class='choice'  data-group='選択肢' >Secret=weatherapitoken;Vault=weathervault</div>
+<div class='choice'  data-group='選択肢' >@AzureVault(SecretName=weatherapitoken;VaultName=weathervault)</div>
+<div class='choice'  data-group='選択肢' >@Microsoft.KeyVault(SecretUri=https://weathervault.vault.azure.net/secrets/weatherapitoken/)</div>
+<div class='choice'  data-group='選択肢' >AzureKeyVault://weathervault/weatherapitoken</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題33<br>あなたは、ソーシャルメディアの投稿とユーザー活動を分析するためのプラットフォームを開発しています。このプラットフォームでは、リアルタイムでソーシャルメディアのデータを収集し、その分析結果をAzure Blob Storageに保存する必要があります。具体的には、ソーシャルメディアの投稿の挿入と更新操作をAzure Blobストレージに送信し、すべてのパーティションの変更を即座に処理しなければなりません。また、変更処理も並列化する必要があります。<br>これら要件を満たす対応方法は何ですか。（２つ選択）' data-answer='2,4' data-explanation='■正解：<br>C:Azure Functionを利用してCosmos DBのトリガーを作成する<br>E:FeedIteratorとFeedRangeオブジェクトを使用して処理を並列化する<br>■解説<br>設問のシナリオでは、ソーシャルメディアの投稿とユーザー活動をリアルタイムで分析し、Azure Blob Storageにその結果を保存するプラットフォームを開発しており、これはデータの挿入や更新を迅速に処理し、これらの操作を並列化する必要があります。<br>Azure Functionを利用してCosmos DBのトリガーを作成する：Azure Functionはサーバーレス環境で動作し、データベースの変更を検出した瞬間にコードがトリガーされます。この方法は、Cosmos DB内で行われるデータの挿入や更新操作（この場合はソーシャルメディアの投稿とユーザー活動）をリアルタイムで検出し、それに応じた処理を行うことを可能にします。Azure Functionはスケーラブルであり、コードを管理しやすいプラットフォームを提供するため、大量のデータと高頻度のアップデートを効率的に扱うことができます。<br>FeedIteratorとFeedRangeオブジェクトを使用して処理を並列化する：FeedIteratorオブジェクトは、チェンジフィードを反復的に処理するために使用され、データベース内の特定の範囲やパーティションに対するクエリを行う際の並列処理をサポートします。この並列化は、大量のデータや高頻度の更新がある場合に特に有効で、処理の効率を大幅に向上させることができます。<br>■その他の選択肢<br>Azure Logic Appsを使用して、データ処理のワークフローを自動化する：Azure Logic Appsはビジネスプロセスやワークフローを自動化するためのツールですが、リアルタイムのデータ変更の処理や高度な並列処理には向いていません。主に異なるシステム間での統合や定期的なタスクの自動化に利用されます。<br>Azure Cache for Redisを利用して、アプリケーションのパフォーマンスを向上させる：Azure Cache for Redisはキャッシュサービスであり、データの読み取り速度を向上させることには有効ですが、このシナリオの要件であるデータの挿入や更新操作の即時処理には寄与しません。<br>PartitionKeyオブジェクトを利用して、データを効率的に分散させる：PartitionKeyはデータを効率的に分散させるために非常に重要ですが、リアルタイムでのデータ変更処理や並列処理の実装には直接関係ありません。主にデータベース設計の段階で考慮されるべき要素です。'>
+<div class='choice'  data-group='選択肢' >PartitionKeyオブジェクトを利用して、データを効率的に分散させる</div>
+<div class='choice'  data-group='選択肢' >Azure Cache for Redisを利用して、アプリケーションのパフォーマンスを向上させる</div>
+<div class='choice'  data-group='選択肢' >Azure Functionを利用してCosmos DBのトリガーを作成する</div>
+<div class='choice'  data-group='選択肢' >Azure Logic Appsを使用して、データ処理のワークフローを自動化する</div>
+<div class='choice'  data-group='選択肢' >FeedIteratorとFeedRangeオブジェクトを使用して処理を並列化する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題34<br>あなたは、広範囲にわたる気象データを解析するSaaSアプリケーションを開発しており、Azure仮想マシン（VM）で運用する予定です。データはVMに接続された管理ディスクに保存され、解析のパフォーマンスはディスクの速度に大きく依存します。要件は以下の通りです。<br>・システム全体のエラーが発生した場合、アプリケーションは前日のデータに迅速に復帰する能力が必要です。<br>・Azureのデータセンターがダウンした際には、アプリケーションのダウンタイムを最小化する必要があります。<br>どのマネージドディスクと冗長性オプションを選択するべきですか。' data-answer='1,3' data-explanation='■正解：<br>マネージドディスク：B:Premium SSD<br>冗長性オプション：D:ZRS<br>■解説<br>設問のシナリオでは、広範囲にわたる気象データの解析を行うSaaSアプリケーションを開発し、Azure仮想マシン（VM）で運用することが計画されています。データの保存と解析のパフォーマンスはディスクの速度に依存しているため、適切なマネージドディスクのタイプと冗長性オプションの選択が重要です。<br>マネージドディスクの違いは以下の通りです。<br>・Standard HDD：低コストですが、性能が最も低いオプションです。<br>・Standard SSD：読み書きのパフォーマンスはPremium SSDより劣りますが、コストが抑えられます。<br>・Premium SSD：高性能を必要とするアプリケーション向けに設計されており、連続した読み書き操作に対して高いIOPS（Input/Output Operations Per Second）とスループットを提供します。<br>冗長性オプションの違いは以下の通りです。<br>・geo 冗長ストレージ (GRS)：データを地理的に異なるリージョンにレプリケートし、広範囲の地域障害から保護します。ただし、書き込み操作が原リージョンで完了した後、非同期にデータが他リージョンにコピーされるため、即時のデータ一貫性は保証されません。<br>・ゾーン冗長ストレージ (ZRS)：同一リージョン内の異なるアベイラビリティゾーンにデータをレプリケートします。これにより、一つのデータセンターがダウンしてもデータへのアクセスが維持され、ダウンタイムを最小化できます。<br>設問について、解析のパフォーマンスがディスクの速度に大きく依存することと、システム全体のエラーから迅速に復帰する必要があることから、Premium SSDが最適です。さらに、Azureデータセンターがダウンした際にアプリケーションのダウンタイムを最小化する必要があるため、ゾーン冗長ストレージ (ZRS)が適切です。'>
+<div class='choice'  data-group='マネージドディスク' >Standard SSD</div>
+<div class='choice'  data-group='マネージドディスク' >Premium SSD</div>
+<div class='choice'  data-group='冗長性オプション' >GRS</div>
+<div class='choice'  data-group='冗長性オプション' >ZRS</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

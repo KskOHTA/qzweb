@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='true' data-question='問題35<br>あなたは、Azureでホストされる大規模な電子商取引プラットフォームを運営しています。このプラットフォームでは、日々の売上とトランザクション数が一定のパターンを示しています。<br>現在、突然のトランザクションの低下を検出しており、迅速に対応するために過去のデータパターンに基づいて自動的にしきい値を調整し、トランザクション数の異常を監視したいと考えています。また、偶発的な小さな変動による誤検知を避け、実際のトレンドに基づく重要な変動のみを検出する必要があります。<br>Azure Monitorで監視する場合、どのように設定する必要がありますか。' data-answer='0,2' data-explanation='■正解：<br>値１：A:DynamicThresholdCriterion<br>値２：C:Low<br>■解説<br>Azure Monitorのアラート設定において、「criterionType」というパラメーターを使用して、アラートを発生させる基準の種類を選択します。これらは異なる状況やニーズに応じて選択することが重要です。criterionTypeのタイプには以下の２つがあります。<br>DynamicThresholdCriterion（動的しきい値基準）：過去のデータパターンに基づいて自動的にしきい値を調整する方法です。この基準は、特にデータが季節性や時間帯によって変動する場合に有効です。例えば、Webサイトのトラフィックが週末に増加する場合、動的しきい値基準を使用すると、週末の高いトラフィックを正常と認識し、異常があった場合のみアラートを発生させます。この方式は、過去データの振る舞いを学習し、それに基づいて閾値が動的に調整されるため、柔軟でありながら精度の高い監視が可能です。<br>StaticThresholdCriterion（静的しきい値基準）：事前に設定された固定値に基づいてアラートを発生させる方法です。この基準は、特定のメトリックが決められた値を超えたり下回ったりした場合にアラートを出すように設定します。例えば、サーバーのCPU使用率が90%を超えるとアラートを出す、といった設定が可能です。静的しきい値は、業務ルールや特定のパフォーマンス目標に基づいて設定するため、管理者が明確な基準を持っている場合に適しています。<br>alertSensitivityは、アラートルールの感度を指定するプロパティであり、どれだけの変動に対してアラートを発生させるかをコントロールします。この設定は特に、動的しきい値基準（DynamicThresholdCriterion）を使用する際に重要で、アラートの誤検知（偽陽性）や見逃し（偽陰性）のリスクをバランスよく管理するために利用されます。感度は通常、「Low」、「Medium」、「High」のようにレベルが設定されており、それぞれのレベルによってアラートがトリガーされる敏感さが変わります。「High」は非常に敏感で、小さな変動でもアラートを発生させる可能性が高いですが、誤検知のリスクも高くなります。「Low」はその逆で、より大きな変動にのみ反応し、誤検知は少なくなりますが、問題の検出が遅れる可能性があります。<br>設問について、過去のデータパターンを基にしきい値を自動調整する「DynamicThresholdCriterion」を使用し、偶発的な小さな変動による誤検知を避けるために感度を「Low」に設定するのが最適です。これにより、実際のトレンドに基づく重要な変動のみを検出することができます。' data-images='000039.jpg'>
+<div class='choice'  data-group='値１' >DynamicThresholdCriterion</div>
+<div class='choice'  data-group='値１' >StaticThresholdCriterion</div>
+<div class='choice'  data-group='値２' >Low</div>
+<div class='choice'  data-group='値２' >High</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題36<br>あなたはソフトウェア配布会社で働いており、Azure Blob Storageを使用して顧客が購入したソフトウェアのインストールファイルを安全に提供するシステムを開発する任務を担当しています。製品のセキュリティを確保し、非正規のダウンロードを防止するために、ダウンロードリンクを１週間のみ有効に保つ方法を導入することにしました。また以下の要件を満たす必要があります。<br>・顧客がソフトウェアを購入すると、対象ソフトウェアのバージョンに基づいて適切なリンクを提供する。<br>・Azure Blob Storageでは、ソフトウェアごとに、アクセス可能な期間や許可される操作を定義する。<br>これら要件を満たすために、顧客側とAzure Blob Storageに対して、それぞれどの機能を使用するが適切ですか。' data-answer='0,4' data-explanation='■正解：<br>顧客：A:SASトークン<br>Azure Blob Storage：E:保存されているアクセス ポリシー<br>■解説<br>SASトークン（Shared Access Signature）は、Azure Blob Storageに保存されているデータへのセキュアなアクセスを提供するための方法です。このトークンはURLの一部として生成され、特定の期間や特定の操作（例えば、読み取り、書き込み、削除）のみを許可する設定が可能です。SASトークンを使用することで、顧客に安全にファイルへのアクセスを許可し、そのアクセスがトークンの有効期限で自動的に終了するように設定できます。顧客がダウンロードリンクを受け取ったときから、例えば１週間後にリンクが自動的に無効化されるように設定できます。また顧客がファイルを読み取り可能でも、他の操作（削除や変更）は許可されないように設定できます。<br>保存されているアクセスポリシー（Stored Access Policy）は、Azure Blob StorageのコンテナやBlobレベルで設定できるアクセス制御ポリシーです。このポリシーを使用すると、複数のSASトークンに共通のルールを適用し、後からこれらのルールを一括で更新または削除することができます。ポリシーには、アクセスの開始時間と終了時間、許可される操作などを指定することができます。複数のSASトークンに対して一元的にアクセスポリシーを管理できるため、効率的です。ポリシーを変更することで、関連するすべてのSASトークンのアクセス権限を迅速に変更することができます。また、セキュリティが侵害された場合には、ポリシーを編集または削除することで、即座にすべてのアクセスを取り消すことが可能です。'>
+<div class='choice'  data-group='顧客' >SASトークン</div>
+<div class='choice'  data-group='顧客' >アカウントアクセスキー</div>
+<div class='choice'  data-group='Azure Blob Storage' >クロスオリジンリソース共有(CORS)</div>
+<div class='choice'  data-group='Azure Blob Storage' >ユーザー割り当てマネージドID</div>
+<div class='choice'  data-group='Azure Blob Storage' >保存されているアクセス ポリシー</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題37<br>あなたは、開発者としてOAuth 2の暗黙の許可タイプを使用してAzure ADアクセストークンを取得するアプリケーションを作成しました。このアプリケーションをMicrosoft Entra IDに登録する必要があります。<br>登録のために必要な設定は何ですか。' data-answer='3' data-explanation='■正解：<br>D:リダイレクトURI<br>■解説<br>OAuth 2の暗黙の許可タイプ（Implicit Grant Type）を使用してMicrosoft Entra IDからアクセストークンを取得するアプリケーションをMicrosoft Entra IDに登録する際には、特にリダイレクトURIが必要です。リダイレクトURIは、認証プロセスが完了した後にトークンが送信されるURLであり、Microsoft Entra IDによるリダイレクト先として認識される必要があります。<br>このリダイレクトURIは、セキュリティを確保し、認証レスポンスを正しい場所に送信するための重要な設定です。OAuth 2.0暗黙の許可フローは、クライアントがサーバーサイドのコンフィデンシャル（秘密情報）を保持できない状況、例えばJavaScriptのみを実行する単一ページのWebアプリケーション（SPA）でよく使用されます。そのため、シークレットは使用されません。他の選択肢であるシークレット、アクセス許可のステータス、クライアントIDは暗黙のフローで必須ではありませんが、クライアントIDはアプリケーションを一意に識別するために必要です。'>
+<div class='choice'  data-group='選択肢' >クライアントID</div>
+<div class='choice'  data-group='選択肢' >アクセス許可のステータス</div>
+<div class='choice'  data-group='選択肢' >シークレット</div>
+<div class='choice'  data-group='選択肢' >リダイレクトURI</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題38<br>あなたは、政府機関の内部で使用するためのドキュメント共有およびコラボレーションプラットフォームを開発しています。このプラットフォームでは機密文書へのアクセスを保護するために、利用者の身元確認としてTLS相互認証によるクライアント証明書の検証が必要です。<br>検証方法として正しい記述はどれですか。' data-answer='1' data-explanation='■正解：<br>B:base64エンコード値を通じてクライアント証明書をHTTPリクエストヘッダで送信する<br>■解説<br>TLS相互認証は、Transport Layer Security (TLS) プロトコルを使用して、インターネット上でデータを安全に送受信するための一般的な方法です。TLSは、特にウェブブラウザとサーバー間の通信を保護するために広く使用されていますが、TLS相互認証はその応用の一つであり、通常のTLS接続がサーバーのみを認証するのに対し、クライアントとサーバーの両方がお互いの身元を確認することを要求します。<br>そのため設問のシナリオでは、サーバーだけでなくクライアントもその身元を証明する必要があります。クライアント証明書をHTTPリクエストヘッダーに含めることにより、アプリケーション層でクライアントの認証情報を扱うことができます。<br>base64エンコードは、バイナリデータ（この場合は証明書）を文字列ベースの形式に変換するエンコーディング方式です。これにより、HTTPリクエストなどのテキストベースのプロトコルで安全にデータを送信できます。エンコードされた証明書は、HTTPリクエストのヘッダーに安全に埋め込むことができ、サーバー側でデコードされた後、認証プロセスに使用されます。'>
+<div class='choice'  data-group='選択肢' >base64エンコード値を通じてクライアント証明書をURLで送信する</div>
+<div class='choice'  data-group='選択肢' >base64エンコード値を通じてクライアント証明書をHTTPリクエストヘッダで送信する</div>
+<div class='choice'  data-group='選択肢' >Unicodeエンコード値を通じてクライアント証明書をHTTPメッセージで送信する</div>
+<div class='choice'  data-group='選択肢' >Unicodeエンコード値を通じてクライアント証明書をHTMLで送信する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題39<br>あなたは小売チェーン店において、各店舗の販売データを中央の場所で収集して分析するソリューションを開発しています。 この情報は集約され、それぞれの店舗から送られたデータが処理されるまで保管される必要があります。 名前、価格層、サブスクリプション、リソースグループおよび場所を指定してAzure Service Busインスタンスは作成しました。<br>次の手順としてどのコマンドが適切ですか。' data-answer='2' data-explanation='■正解：<br>C:New-AzServiceBusTopic -ResourceGroupName retail-rg -NamespaceName retail-ns -Name salesDataTopic<br>■解説<br>設問のシナリオの場合、次のステップとして適切なのは、キューやトピックといったService Bus内の具体的なリソースを作成するコマンドになります。すでにService Busインスタンスが作成されているため、次はその中にキューやトピックを作成するステップが必要です。<br>New-AzServiceBusTopic コマンドは、Azure Service Bus内でトピックを作成し、このトピックを使用して各店舗からのメッセージ（販売データ）を収集します。トピックとサブスクリプションを使用することで、異なるデータ処理や分析ツールにメッセージを効率的に配信することができます。<br>■その他の選択肢<br>New-AzServiceBusNamespaceコマンド はService Busのネームスペースを作成するコマンドですが、すでにネームスペースが作成されていると仮定されています。<br>New-AzureRmServiceBusQueueコマンド はキューを作成するコマンドですが、このシナリオではトピックベースのアプローチが望ましいため不適切です。<br>New-AzServiceBusSubscriptionコマンド はトピックに対するサブスクリプションを作成しますが、先にトピックを作成する必要があります。'>
+<div class='choice'  data-group='選択肢' > New-AzServiceBusNamespace -ResourceGroupName MyRetailRG -NamespaceName MyRetailNamespace -Location EastUS -EnablePartitioning $true</div>
+<div class='choice'  data-group='選択肢' >New-AzureRmServiceBusQueue -ResourceGroupName retail-rg -NamespaceName retail-ns -Name salesDataQueue -EnablePartitioning $False</div>
+<div class='choice'  data-group='選択肢' >New-AzServiceBusTopic -ResourceGroupName retail-rg -NamespaceName retail-ns -Name salesDataTopic</div>
+<div class='choice'  data-group='選択肢' >New-AzServiceBusSubscription -ResourceGroupName retail-rg -NamespaceName retail-ns -TopicName salesDataTopic -Name storeSubscription</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題40<br>あなたは、顧客が送信する暗号化されたメッセージをAzure Blobストレージに保存するシステムを構築しています。各メッセージは顧客ごとに固有のキーで暗号化されなければなりません。暗号化キーが破損している場合、そのキーは暗号化に使用されてはなりません。また、Blobが暗号化されることを確認する必要があります。<br>以下のBlobClientの設定として正しいオプションは何ですか。' data-answer='1,3,4' data-explanation='■正解：<br>オプション1: B:CustomerProvidedKey(key)<br>オプション2: D:x.Encryption == verify<br>オプション3: E:CustomerProvidedKey<br>■解説<br>オプション1: CustomerProvidedKey(key)<br>CustomerProvidedKeyは、Azure Blobストレージでデータを暗号化するために顧客が提供するキーを使用するクラスです。これにより、各顧客ごとに固有のキーでデータを保護することができます。キーが破損している場合、そのキーは使用されません。<br>オプション2: x.Encryption == verify<br>この条件は、キーが破損していないかどうかを検証するために使用されます。x.Encryptionプロパティがverifyの値と一致するかどうかをチェックします。破損しているキーは暗号化に使用されるべきではないため、この検証が必要です。<br>オプション3: CustomerProvidedKey<br>BlobClientOptionsのプロパティとしてCustomerProvidedKeyを設定します。これにより、BlobClientがデータを暗号化する際に顧客提供のキーを使用します。この設定により、BlobClientはデータを暗号化する際に顧客提供のキーを使用します。データが適切に暗号化され、各顧客のキーで保護されるようになります。' data-images='000040.jpg'>
+<div class='choice'  data-group='オプション１' >AsnEncodedData(key)</div>
+<div class='choice'  data-group='オプション１' >CustomerProvidedKey(key)</div>
+<div class='choice'  data-group='オプション２' >x.RawData == verify</div>
+<div class='choice'  data-group='オプション２' >x.Encryption == verify</div>
+<div class='choice'  data-group='オプション３' >CustomerProvidedKey</div>
+<div class='choice'  data-group='オプション３' >EncryptionScope</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題41<br>Azure Front Doorによるファイル圧縮について正しい記述はどれですか。（２つ選択）' data-answer='0,2' data-explanation='■正解：<br>A: MIMEタイプの圧縮が可能である<br>C: brotliの圧縮形式がサポートされている<br>■解説<br>MIMEタイプの圧縮が可能である：Azure Front Doorは、特定のMIMEタイプのファイルを圧縮する機能を提供しています。これにより、例えばテキストファイルやHTMLファイルなど、圧縮の対象となるMIMEタイプのファイルサイズを小さくすることができます。これにより、データ転送量を減少させ、ウェブサイトのパフォーマンスを向上させることができます​。<br>brotliの圧縮形式がサポートされている：Brotliは、Googleが開発したデータ圧縮アルゴリズムであり、特にウェブパフォーマンスの向上に有効です。Azure Front Doorはbrotli圧縮をサポートしており、これを使用することでウェブページの読み込み速度を高速化し、帯域幅の使用を削減することができます​。<br>Azure Front Doorは、MIMEタイプに基づくファイルの圧縮とbrotli圧縮形式のサポートにより、ウェブサイトのパフォーマンスを向上させることができます。これにより、データ転送量を減少させ、ユーザー体験を改善することができます。<br>■用語解説<br>・MIMEタイプ<br>MIMEタイプは、インターネット上でやり取りされるファイルの種類を表すラベルのようなものです。例えば、テキストファイルや画像ファイルなどがこれに該当します。Azure Front Doorは、これらのファイルの種類に応じて圧縮を行う機能を持っており、特定のMIMEタイプのファイルを圧縮することで、データ量を減らし、ウェブサイトの読み込みを速くすることができます。<br>・Brotli圧縮形式<br>Brotliは、データを小さくするための圧縮技術の一つです。Googleが開発し、ウェブサイトの読み込みを速くするために使われます。従来のgzip圧縮よりも効果的で、データをより小さくすることができます。Azure Front Doorは、このbrotli圧縮をサポートしているため、ユーザーはウェブページをより速く表示することができます。'>
+<div class='choice'  data-group='選択肢' >MIMEタイプの圧縮が可能である</div>
+<div class='choice'  data-group='選択肢' >10MBのファイルサイズの圧縮が可能である</div>
+<div class='choice'  data-group='選択肢' >brotliの圧縮形式がサポートされている</div>
+<div class='choice'  data-group='選択肢' >LZMAの圧縮形式がサポートされている</div>
+<div class='choice'  data-group='選択肢' >キャッシュを有効にすると圧縮のパフォーマンスが低下する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題42<br>あなたはAzure仮想マシン上にデプロイするアプリケーションの構築を計画しています。 アプリケーションからログを収集するためにAzure Monitorを構成する必要があります。<br>どのアクションを実行しなければなりませんか。' data-answer='0,3,4' data-explanation='■正解：<br>手順２：A:VM Insightsソリューションを追加する<br>手順３：D:エージェントを仮想マシンにインストールする<br>手順４：E:Application Insightsリソースを作成する<br>■解説<br>Azureでアプリケーションからのログを収集するために、以下の手順を順に実行する必要があります。<br>１．Log Analytics ワークスペースを作成する：Azure Monitorのデータ収集と分析のための基盤となります。ワークスペースは、収集したデータを保管し、分析ツールを提供するコンテナとして機能します。<br>２．VM Insightsソリューションを追加する：VM Insightsは、Azure Virtual Machinesのパフォーマンス監視と診断を強化するためのツールです。このソリューションをワークスペースに追加することで、VMのパフォーマンスデータや依存関係データが収集されます。<br>３．エージェントを仮想マシンにインストールする：Azure VMにエージェントをインストールすることで、システムやアプリケーションの詳細データを収集できます。これにより、ログデータやパフォーマンスメトリックスがLog Analyticsワークスペースに送信されます。<br>４．Application Insightsリソースを作成する：アプリケーションのパフォーマンス監視とエンドユーザーのエクスペリエンスの追跡を行うために使用します。Application Insightsは、アプリケーションのリアルタイム情報を収集し、分析を提供します。<br>この手順は、Azure仮想マシンにデプロイされるアプリケーションからのデータ収集と監視を総合的に実行するための最も効果的な方法です。<br>Log Analytics ワークスペースの作成について<br>VM Insightsの概要<br>Application Insightsの詳細' data-images='000041.jpg'>
+<div class='choice'  data-group='手順２' >VM Insightsソリューションを追加する</div>
+<div class='choice'  data-group='手順２' >エージェントを仮想マシンにインストールする</div>
+<div class='choice'  data-group='手順３' >Application Insightsリソースを作成する</div>
+<div class='choice'  data-group='手順３' >エージェントを仮想マシンにインストールする</div>
+<div class='choice'  data-group='手順４' >Application Insightsリソースを作成する</div>
+<div class='choice'  data-group='手順４' >VM Insightsソリューションを追加する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題43<br>あなたは、教育機関が学生と教員に向けて教材を配信するWebサービスを構築しています。 このサービスはAzure Function appにより実装され、HTTPトリガーが使用されます。 また従量課金プランのAzure API ManagementがAPIアクセスを提供し、全てのAPIリクエストはOAuthによって認証される必要があります。 リクエストはキャッシュされますが、学生や教員は他のユーザーのキャッシュされたデータを閲覧することができません。<br>これら要件を満たすため、ポリシーをどのように設定すればよいですか。' data-answer='1,3,4' data-explanation='■正解：<br>値１：B:Private<br>値２：D:Internal<br>値３：E:Authorization<br>■解説<br>設問のシナリオでは、教育機関向けのAPIがキャッシュされる際、他のユーザーのデータにアクセスできないようにする必要があります。これを達成するためには、API Managementポリシーにおいて以下の設定が推奨されます。<br>値１（caching-type）：これはキャッシュがどの範囲で有効かを指定するものです。このシナリオでは、特定のユーザーに限定されるデータを扱うため、Privateが適切です。これにより、キャッシュされたデータは特定のユーザーコンテキスト内でのみ有効となります。<br>値２（downstream-caching-type）：これはAPI Managementサービスがキャッシュをどのようにダウンストリーム（クライアントや他のAPI）に提供するかを指定します。この場合、Internalが適切です。これにより、キャッシュはAPI Managementサービス内でのみ保持され、外部には公開されません。<br>値３（vary-by-header）：これはキャッシュを特定のHTTPヘッダーの値に基づいて分岐させるためのものです。Authorizationヘッダーを使用することで、異なる認証情報に基づくユーザー毎にキャッシュを分けることができます。<br>この設定により、API Managementは各ユーザーのセキュリティコンテキストに基づいたデータのキャッシュを効果的に管理し、データの安全性を保ちながらパフォーマンスも向上させることができます。' data-images='000042.jpg'>
+<div class='choice'  data-group='値１' >Public</div>
+<div class='choice'  data-group='値１' >Private</div>
+<div class='choice'  data-group='値２' >External</div>
+<div class='choice'  data-group='値２' >Internal</div>
+<div class='choice'  data-group='値３' >Authorization</div>
+<div class='choice'  data-group='値３' >Authentication</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題44<br>あなたは新しいEコマースプラットフォームの立ち上げを担当しており、Azure App Service Web App for Containersでアプリケーションをホスティングする計画です。 アプリケーションをデプロイするまでの正しいAzure CLIコマンドの手順は何ですか。' data-answer='1,3,5' data-explanation='■正解：<br>手順１：B: az group create<br>手順２：D: az appservice plan create<br>手順３：F: az webapp create<br>■解説<br>新しいEコマースプラットフォームの立ち上げにおいて、Azure App Service Web App for Containersでアプリケーションをホスティングするための正しいAzure CLIコマンドの手順を説明します。<br>手順1: リソースグループの作成<br>まず、リソースグループを作成します。リソースグループは、Azureリソースを論理的にグループ化するためのコンテナです。<br>az group create --name MyResourceGroup --location eastus<br>手順2: App Serviceプランの作成<br>次に、App Serviceプランを作成します。これは、Webアプリをホストするためのリソースとスケーリングオプションを定義します。<br>az appservice plan create --name MyAppServicePlan --resource-group MyResourceGroup --sku B1 --is-linux<br>手順3: Webアプリの作成<br>最後に、Webアプリを作成し、コンテナイメージを指定します。これにより、Webアプリが指定されたApp Serviceプランでホスティングされます。<br>az webapp create --resource-group MyResourceGroup --plan MyAppServicePlan --name MyUniqueAppName --deployment-container-image-name mydockerhubaccount/myapp:latest<br>これにより、Azure App Service上でコンテナベースのWebアプリケーションがホスティングされます。'>
+<div class='choice'  data-group='手順１' >az webapp create</div>
+<div class='choice'  data-group='手順１' >az group create</div>
+<div class='choice'  data-group='手順２' >az group update</div>
+<div class='choice'  data-group='手順２' >az appservice plan create</div>
+<div class='choice'  data-group='手順３' >az webapp update</div>
+<div class='choice'  data-group='手順３' >az webapp create</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題45<br>あなたは、Azure Static Web Appsを使用して企業内プロジェクト管理システムを開発しています。このシステムでは、プロジェクトの詳細は登録ユーザーのみがアクセスでき、プロジェクトの作成や更新は管理者のみが行えます。ユーザーはAzure Active Directory（AAD）を使ってログインします。<br>以下のようにルーティングとレスポンスの設定を定義しました。<br>上記設定について正しい記述はどれですか。（２つ選択）' data-answer='0' data-explanation='■正解：<br>A: 認証されていないユーザーはMicrosoft Entra ID（旧：Azure AD）で認証するように求められる<br>C: registeredusersロールを持つ認証済みユーザーからのHTTP GETメソッドリクエストは/projectsフォルダに送信される<br>■解説<br>設問のルーティングとレスポンスの設定において、以下が正しい記述となります。<br>認証されていないユーザーはMicrosoft Entra ID（旧：Azure AD）で認証するように求められる：設定の/loginルートは/.auth/login/aadにリライトされます。これにより、認証されていないユーザーがログインしようとすると、Microsoft Entra IDを使用して認証するように求められます。<br>registeredusersロールを持つ認証済みユーザーからのHTTP GETメソッドリクエストは/projectsフォルダに送信される：routesセクションの/projects/*ルートでは、methodsが["GET"]に設定されており、allowedRolesが["registeredusers"]に設定されています。つまり、registeredusersロールを持つ認証済みユーザーのみがHTTP GETメソッドを使用してアクセスできます。<br>■その他の選択肢<br>registeredusersロールを持たない認証済みユーザーは、/projectsフォルダにアクセスすると401HTTPエラーが返される：設定には、401HTTPエラーに関するリダイレクト設定が含まれていますが、/projects/*ルートにアクセスする際にregisteredusersロールを持たない場合、403エラー（/no-access.htmlにリライト）となります。設定には401エラーが明示的に適用される場所はありません。<br>/docs/フォルダ内のファイルは404レスポンスコードを生成する：設定のnavigationFallbackセクションのexcludeオプションには/docs/*.{pdf,docx}が含まれていますが、これは特定のファイルタイプを除外するもので、404レスポンスコードを生成する設定ではありません。<br>/scripts/フォルダ内のファイルは404レスポンスコードを生成する：navigationFallbackセクションのexcludeオプションは特定のパスやファイルタイプを除外するためのものであり、404レスポンスコードを生成する設定ではありません。' data-images='000043.jpg,000044.jpg,000045.jpg'>
+<div class='choice'  data-group='選択肢' > 認証されていないユーザーはMicrosoft Entra ID（旧：Azure AD）で認証するように求められる</div>
+<div class='choice'  data-group='選択肢' > registeredusersロールを持たない認証済みユーザーは、/projectsフォルダにアクセスすると401HTTPエラーが返される</div>
+<div class='choice'  data-group='選択肢' > registeredusersロールを持つ認証済みユーザーからのHTTP GETメソッドリクエストは/projectsフォルダに送信される</div>
+<div class='choice'  data-group='選択肢' > /docs/フォルダ内のファイルは404レスポンスコードを生成する</div>
+<div class='choice'  data-group='選択肢' >/scripts/フォルダ内のファイルは404レスポンスコードを生成する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題46<br>あなたは、ASP.NET CoreアプリケーションでAzure App Configurationを使用して機能フラグを管理しています。 以下の要件を満たすためには、どの属性ならびにメソッドを使用するべきですか。<br>属性：特定の機能が有効になっているかどうかに基づいて特定のコードを実行する<br>メソッド：Azure App Configurationストアから機能フラグを取得するためのStartupクラスのメソッド' data-answer='0,4' data-explanation='■正解：<br>属性：A:FeatureGate<br>メソッド：E:AddAzureAppConfiguration<br>■解説<br>FeatureGate属性は、ASP.NET Coreアプリケーションにおいて特定の機能が有効になっているかどうかに基づいて特定のコードを実行するために使用されます。Azure App Configurationを利用することで、機能フラグを簡単に管理し、特定の機能をオン/オフすることができます。例えば、特定の機能が有効である場合にのみ表示されるナビゲーション項目を作成することができます。これは、以下のようにコードで実装されます：<br>AddAzureAppConfigurationメソッドは、StartupクラスのConfigureServicesメソッド内で呼び出され、Azure App Configurationストアから機能フラグを取得するために必要です。このメソッドを使用することで、アプリケーションがAzure App Configurationに接続し、機能フラグの状態を取得できます。'>
+<div class='choice'  data-group='属性' >FeatureGate</div>
+<div class='choice'  data-group='属性' >ServiceFilter</div>
+<div class='choice'  data-group='属性' >TypeFilter</div>
+<div class='choice'  data-group='メソッド' >AddControllersWithViews</div>
+<div class='choice'  data-group='メソッド' >AddAzureAppConfiguration</div>
+<div class='choice'  data-group='メソッド' >AddUserSecrets</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題47<br>あなたは、IT部門の一員として、社内ツールを開発しています。このツールはDockerコンテナとしてパッケージ化されており、Azure App Serviceを使用してホスティングされます。社内のユーザーがツールにアクセスできるように、カスタムドメインを設定し、Azureでホスティングする必要があります。<br>カスタムドメインを追加するため、正しいコマンドの手順はどれですか。' data-answer='1,2,5' data-explanation='■正解：<br>コマンド1: B:az webapp create<br>コマンド2: C:az webapp config container set<br>コマンド3: F:az webapp config hostname add<br>■解説<br>Azure App Serviceを使用してDockerコンテナをホスティングし、カスタムドメインを設定する手順は以下の通りです。<br>az webapp create: 最初に、Azure App Serviceに新しいWebアプリケーションを作成します。これにより、Azure上でホスティングされるアプリケーションの基本設定が完了します。<br>az webapp config container set: 次に、Webアプリケーションの設定を行います。このコマンドでは、特にDockerコンテナイメージを設定します。これにより、指定したDockerイメージがAzure App Serviceで実行されます。<br>az webapp config hostname add: 最後に、カスタムドメインをWebアプリケーションに追加します。このコマンドを使用することで、ユーザーは指定したカスタムドメインを使用してWebアプリケーションにアクセスできるようになります。<br>この手順により、Azure App Service上でDockerコンテナとして社内ツールをホスティングし、カスタムドメインを設定することができます。'>
+<div class='choice'  data-group='コマンド１' >az webapp config container set</div>
+<div class='choice'  data-group='コマンド１' >az webapp create</div>
+<div class='choice'  data-group='コマンド２' >az webapp config container set</div>
+<div class='choice'  data-group='コマンド２' >az webapp config hostname add</div>
+<div class='choice'  data-group='コマンド３' >az webapp config container set</div>
+<div class='choice'  data-group='コマンド３' >az webapp config hostname add</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題48<br>あなたは、ホテル予約システムを管理しています。このシステムでは、ユーザーが宿泊するための部屋を予約できます。新機能として、ユーザーが「特別なリクエスト」を設定できるようにする必要があります。この新機能には、Cosmos DB内のドキュメントにspecialRequestsというプロパティが存在し、文字列値を含む必要があります。既存の多くのWebサイトおよびモバイルアプリは、しばらくの間specialRequestsプロパティを設定するために更新されません。<br>既存のデータ構造に新しいプロパティを追加するためのトリガー関数を実装する必要があります。トリガーを完成するために適切なメソッドは何ですか。' data-answer='0,3,5' data-explanation='■正解：<br>メソッド１：A:getContext().getRequest();<br>メソッド２：D:if(!("specialRequests" in y)){<br>メソッド３：F:x.setBody(y);<br>■解説<br>getContext().getRequest()<br>getContext() メソッドは、トリガー関数の実行コンテキストを取得します。getRequest() メソッドは、そのコンテキスト内の現在のリクエストを取得します。このリクエストには、ユーザーの予約情報が含まれています。リクエストオブジェクトには、ユーザーから送信されたデータ（予約情報）が含まれており、その中に specialRequests プロパティを追加する必要があります。<br>if(!("specialRequests" in y))<br>この if 文は、オブジェクト y に specialRequests プロパティが存在するかどうかを確認します。存在しない場合に次の条件に進み、specialRequests プロパティが文字列であり、nullではないことを確認します。もし条件を満たさない場合、新しく空の文字列を設定します。specialRequests プロパティが存在しない場合に、新しいプロパティを追加するためにこのチェックが必要です。これにより、既存のデータ構造を更新できます。<br>x.setBody(y)<br>setBody(y) メソッドは、更新されたオブジェクト y をリクエストのボディに設定します。これにより、更新されたデータが保存されます。新しい specialRequests プロパティが追加されたオブジェクトをCosmos DBに保存するために、リクエストのボディを更新する必要があります。' data-images='000046.jpg'>
+<div class='choice'  data-group='メソッド１' >getContext().getRequest();</div>
+<div class='choice'  data-group='メソッド１' >getContext().getResponse();</div>
+<div class='choice'  data-group='メソッド２' >if(request.getValue("specialRequests")=== null){</div>
+<div class='choice'  data-group='メソッド２' >if(!("specialRequests" in y)){</div>
+<div class='choice'  data-group='メソッド３' >x.setValue(y);</div>
+<div class='choice'  data-group='メソッド３' >x.setBody(y);</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題49<br>あなたは、特定のドキュメントを管理するためのASP.NET Coreウェブサイトを開発しています。 このウェブサイトはAzure Blob Storageコンテナを使用してドキュメントを保存しています。 ユーザーはMicrosoft Entra IDを通じて認証する必要があります。あなたは、 ロールベースのアクセス制御（RBAC）を実装し、ユーザーをRBACロールに割り当てました。<br>ウェブサイトのMicrosoft Entra IDアプリケーションを構成し、ユーザーの権限をAzure Blobコンテナで使用できるようにするにはMicrosoft GraphならびにAzure Storageにどの権限を付与するべきですか。最小権限の原則に従って選択してください。' data-answer='0,3' data-explanation='■正解：<br>Microsoft Graph：A:User_Impersonation<br>Azure Storage：D:User.Read<br>■解説<br>Microsoft Graph APIを使用することで、アプリケーションはMicrosoft Entra ID内のユーザー情報やグループ情報にアクセスできます。これは、ユーザーの認証状態や、ユーザーがどのグループに属しているかを確認するために必要です。<br>User_Impersonationはアプリケーションがユーザーの代わりにMicrosoft Graph APIを呼び出すための権限です。この権限を付与することで、アプリケーションがユーザーの代わりにMicrosoft Graph APIを使用できるようになります。これにより、ユーザー情報の取得やユーザーとしての操作が可能になります。<br>Azure Blob Storageコンテナに対する操作（読み取り、書き込み、削除など）を行うためには、Azure RBACロールを使用してユーザーに適切な権限を割り当てる必要があります。これにより、ユーザーが自分のアクセス許可に基づいてデータ操作を行うことができます。<br>User.Readはユーザーの情報を読み取るための権限です。Azure Storageのデータを操作する前に、ユーザーの情報を確認するために必要です。この権限でユーザーの基本情報にアクセスできます。<br>また、User_ImpersonationとUser.Readは両方ともdelegated（委任された）許可タイプです。委任された許可は、サインインしているユーザーのコンテキストでアプリケーションがアクセスする権限を持ちます。つまり、アプリケーションはユーザーの代わりに動作し、ユーザーの権限の範囲内でリソースにアクセスします。'>
+<div class='choice'  data-group='Microsoft Graph' >User_Impersonation</div>
+<div class='choice'  data-group='Microsoft Graph' >UnifiedPolicy.User.Read</div>
+<div class='choice'  data-group='Microsoft Graph' >Content.SuperUser</div>
+<div class='choice'  data-group='Azure Storage' >User.Read</div>
+<div class='choice'  data-group='Azure Storage' >Directory.ReadWrite.All</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題50<br>あなたは書籍のレビューサイトを構築しています。このサイトのパフォーマンスを向上させるため、Azure CDNを利用し、さらに、Apple iPhone向けのモバイルアプリも作成し、App Storeにデプロイする予定です。iPhoneユーザーがウェブサイトにアクセスすると、AppleのApp Storeにリダイレクトされる必要があります。また、Azure CDNルールを実装して、iPhoneユーザーがApp Storeにリダイレクトされるようにする必要があります。<br>これら要件を満たすためにどのような設定が必要ですか。選択肢A,BとC,Dから１つずつ選択してください。（２つ選択）' data-answer='0,2' data-explanation='■正解：<br>A:オプション１：DeliveryRuleIsDeviceConditionParameters<br>値１：Mobile<br>C:オプション２：DeliveryRuleRequestHeaderConditionParameters<br>値２：iPhone<br>■解説<br>Azure CDNルールを利用して、iPhoneユーザーがアクセスした際にAppleのApp Storeにリダイレクトさせるための設定を行う必要があります。最初にデバイスの種類（Device Condition：モバイルかどうか）を確認することで、対象となるユーザーを絞り込みます。モバイルデバイスでない場合、この条件に合致しないため、それ以上のチェックは不要です。次に、モバイルデバイスであることが確認された後、そのデバイスが特定の種類（Request Header Condition：ここではiPhoneかどうか）を確認します。これにより、さらに具体的な条件を設定できます。<br>CDNルールにおいて、具体的には以下のオプションならびに値が適切です。<br>オプション1: DeliveryRuleIsDeviceConditionParameters：これは、リクエストがどのデバイスから来ているかを判断するための条件を設定するためのオプションです。ウェブサイトにアクセスするデバイスがモバイルデバイス（スマートフォンやタブレット）であるかどうかを確認する必要があります。この条件を使用することで、ユーザーがモバイルデバイスを使用している場合に特定のルールを適用できます。<br>値1: Mobile：デバイスがモバイルデバイスであることを示す値です。「Mobile」という値を使用することで、ユーザーがスマートフォンやタブレットからアクセスしていることを示します。これにより、モバイルユーザーに対して特定のリダイレクトルールを設定できます。<br>オプション2: DeliveryRuleRequestHeaderConditionParameters：HTTPリクエストヘッダーに基づいて条件を設定するためのオプションです。特定のリクエストヘッダーに含まれる情報に基づいて条件を設定する必要があります。ここでは、リクエストヘッダーに「iPhone」が含まれているかどうかを確認します。<br>値2: iPhone：HTTPリクエストヘッダーに含まれるデバイスの種類を示す値です。「iPhone」という値を使用することで、ユーザーがiPhoneを使用していることを示します。これにより、iPhoneユーザーに対して特定のリダイレクトルールを設定できます。' data-images='000047.jpg'>
+<div class='choice'  data-group='選択肢' >オプション１：DeliveryRuleIsDeviceConditionParameters<br>値１：Mobile</div>
+<div class='choice'  data-group='選択肢' >オプション１：DeliveryRuleRequestHeaderConditionParameters<br>値１：iPhone</div>
+<div class='choice'  data-group='選択肢' >オプション２：DeliveryRuleRequestHeaderConditionParameters<br>値２：iPhone</div>
+<div class='choice'  data-group='選択肢' >オプション２：DeliveryRuleIsDeviceConditionParameters<br>値２：Mobile</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='false' data-question='問題1<br>あなたの組織は、ユーザーが投稿した画像をスマートフォン用の画像に最適化するSaaSソリューションの構築を検討しています。ユーザーが投稿した画像は汎用 v2のAzure Blob Storageに保存され、１分以内に画像の生成プロセスを開始する必要があります。<br>どのようなソリューションが最適ですか。' data-answer='3' data-explanation='■正解：<br>D:写真アップロードをトリガーとしてAzure Functionで写真処理を行う<br>■解説<br>Azure Functionでは、Azure Blob Storageにアップロードされた写真をトリガーとして、瞬時に画像を処理しモバイル用に最適化した写真を生成・返すことが可能です。この方法では、ユーザーが写真をアップロードした直後に自動的に処理が開始されるため、設問の要件を満たすことができます。<br>Azure Functionsを利用することで、効率的かつ柔軟に画像処理を自動化することができ、アプリケーションの機能拡張に役立ちます。<br>■その他の選択肢<br>・Azure Blob Storageの変更フィードをトリガーとして使用し写真処理を行う：Azure Blob Storageの変更フィードは、ストレージ内のBlobの変更を追跡する機能です。これを使用して写真処理をトリガーすることも可能ですが、変更フィードはリアルタイムではなく、遅延が発生することがあります。したがって、1分以内に処理を開始するという厳しい要件を確実に満たすには最適ではありません。<br>・写真アップロードをトリガーとして従量課金プランでAzure Function Appを作成する：従量課金プランはコスト効率が良いですが、最大数分間の遅延が生じる可能性があるため設問の要件を満たしません。<br>・写真アップロードをトリガーとしてAzure Stream Analyticsで写真処理を行う：Azure Stream Analyticsは、リアルタイムデータストリーム処理を目的としたサービスです。主にデータストリームの分析や処理に適しており、バッチ処理やトリガーベースの画像処理タスクには不向きです。'>
+<div class='choice'  data-group='選択肢' >写真アップロードをトリガーとして従量課金プランでAzure Function Appを作成する</div>
+<div class='choice'  data-group='選択肢' >Azure Blob Storageの変更フィードをトリガーとして使用し写真処理を行う</div>
+<div class='choice'  data-group='選択肢' >写真アップロードをトリガーとしてAzure Stream Analyticsで写真処理を行う</div>
+<div class='choice'  data-group='選択肢' >写真アップロードをトリガーとしてAzure Functionで写真処理を行う</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題2<br>Kubernetesのパッケージマネージャーであり、アプリケーションやIngress Controllerなどのソリューションのデプロイを行う機能はどれですか。' data-answer='0' data-explanation='■正解：<br>A:Helm<br>■解説<br>Kubernetesにおけるアプリケーションのデプロイメントは多くの設定ファイルを必要とするため、その管理が複雑になりがちです。Helmは、一連のKubernetesリソースを一つの単位である「チャート」としてまとめ、再利用可能にします。これにより、アプリケーションのインストールや管理が簡単になり、より速く確実にデプロイメントを行うことができます。<br>これにより、特にIngress Controllerのようなインフラ関連コンポーネントのデプロイメントを容易にし、バージョン管理や依存関係の解決も自動で行うことができます。'>
+<div class='choice'  data-group='選択肢' >Helm</div>
+<div class='choice'  data-group='選択肢' >CoreDNS</div>
+<div class='choice'  data-group='選択肢' >Draft</div>
+<div class='choice'  data-group='選択肢' >Brigade</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題3<br>あなたは、Azure Application Insightsを使用して、組織で運用しているWebアプリケーションのパフォーマンス指標がユーザー体験にどのように影響するかを分析したいと考えています。<br>以下の要件を満たすためには、Azure Application Insightsのどの分析指標を確認すればよいですか。<br>要件１：アプリケーション内でユーザーが繰り返し行動しがちな行動を特定する<br>要件２：表示ページのロード時間がユーザーの行動にどう影響するかを特定する' data-answer='1,3' data-explanation='■正解：<br>要件１：B:ユーザーフロー(User Flows)<br>要件２：D:影響(Impacts)<br>■解説<br>Azure Application Insightsの分析指標には、ユーザーの行動やアプリケーションのパフォーマンスを理解するのに役立つ機能が多数あります。要件に基づいて適切な指標を選択する必要があります。<br>具体的には、以下のような機能があります。<br>1. ユーザー (Users)：アプリケーションを使用しているユーザーの数や、どの地域からアクセスしているかなどの情報を提供します。セッション数やユーザーのセグメント分けも行え、アプリケーションの利用状況の概要を把握するのに役立ちます。<br>2. ファネル (Funnels)：ユーザーが定義された一連のステップをどのように進んでいるかを追跡します。例えば、購入プロセスやサインアップフローの各ステージでどれだけのユーザーが次のステップに進んでいるかを視覚化します。これにより、ドロップオフが発生しているポイントを特定し、改善策を検討することができます。<br>3. 影響 (Impact)：パフォーマンスやロード時間がユーザーエクスペリエンスにどのように影響しているかを分析します。特定のページのロード時間が購入率やセッション時間にどのように影響しているかを理解するのに役立ちます。<br>4. 保持 (Retention)：ユーザーがアプリケーションをどの程度の期間継続して使用しているかを追跡します。特定のイベント後にユーザーがどれだけリピートしてアプリケーションを使用しているかを示し、ユーザーのエンゲージメントとロイヤリティを測定するのに適しています。<br>5. ユーザーフロー (User Flows)：ユーザーがアプリケーション内でどのようなパスを辿っているかを視覚的に表示します。ユーザーがどのページからどのページへと移動しているか、どこで離脱しているかなど、ユーザーのナビゲーションパターンを理解するのに役立ちます。これにより、ユーザー体験を改善するための洞察を得ることができます。<br>設問については、以下の通りとなります。<br>要件１：アプリケーション内でユーザーが繰り返し行動しがちな行動を特定する：この要件には、ユーザーフロー (User Flows)が最適です。ユーザーフローは、ユーザーがアプリケーション内でどのようなパスをたどっているか、どの画面でユーザーがどれだけの時間を過ごしているか、どこで離脱しているかなどの情報を視覚的に表示します。これにより、ユーザーが繰り返し訪れるパターンや特定の行動を識別するのに役立ちます。<br>要件２：表示ページのロード時間がユーザーの行動にどう影響するかを特定する<br>この要件には、影響 (Impact)が適しています。影響は、ページロード時間や応答時間がユーザーの行動やコンバージョンにどのように影響しているかを分析する機能です。特に、ページのパフォーマンスがユーザーの次のアクション（例えば、購入へ進む、サインアップする等）にどう影響しているかを明らかにします。'>
+<div class='choice'  data-group='要件１' >ファネル(Funnels)</div>
+<div class='choice'  data-group='要件１' >ユーザーフロー(User Flows)</div>
+<div class='choice'  data-group='要件２' >ユーザー(Users)</div>
+<div class='choice'  data-group='要件２' >影響(Impacts)</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題4<br>下記の使用例を実行できるAzureサービスは何ですか。<br>使用例１：特定のトピックに関して専門知識を持つ従業員についての情報をリストアップするレポートを作成する<br>使用例２：従業員間のコミュニケーションパターンを分析し、影響力のあるネットワークハブやコミュニケーションの障壁を特定する' data-answer='3' data-explanation='■正解：<br>D:Microsoft Graph Data Connect<br>■解説<br>Microsoft Graph Data Connectは、Microsoft 365のデータ（メール、カレンダー、コミュニケーションデータなど）をAzureのデータストアに安全に転送し、大規模なデータ分析を可能にするツールです。<br>主な機能と利点は、以下の通りです。<br>・大規模データアクセス：Microsoft 365 からの大量のデータを安全に抽出し、Azureの分析ツールで利用可能にします。これにより、データドリブンな洞察を得ることが可能です。<br>・コンプライアンスとプライバシーの遵守：企業のコンプライアンスポリシーに基づき、データの取り扱いやアクセス制御が行われます。管理者による完全なデータコントロールと同意管理を提供し、データがどのように使用されるかについて詳細なポリシーを設定し、承認することができます。<br>・詳細なデータフィルタリングと粒度管理：抽出するデータのタイプや範囲を詳細に指定することができ、必要なデータのみを効率的に取得します。'>
+<div class='choice'  data-group='選択肢' >Azure Logic Apps</div>
+<div class='choice'  data-group='選択肢' >Azure Cosmos DB</div>
+<div class='choice'  data-group='選択肢' >Azure Media Services</div>
+<div class='choice'  data-group='選択肢' >Microsoft Graph Data Connect</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題5<br>あなたは、Webアプリの監視を行うため、適切なAzure CLIコマンドを使用してメトリックアラートを作成する必要があります。アラートの条件として、一定の時間内にCPU使用率が90%を超えた場合にアラートを生成したいと考えています。<br>下記のコマンドにどのオプションを追加する必要がありますか。<br>az monitor metrics alert create -n alert1 -g ResourceGroup1 --scopes ResourceID1 --condition "avg Percentage CPU>90"' data-answer='2' data-explanation='■正解：<br>C:--window-size<br>■解説<br>--window-sizeオプションは、アラートの条件を評価する時間の長さを指定します。例えば、"--window-size 10m"とすることで、過去10分間の平均CPU使用率が90%を超えた場合にアラートを生成するように設定できます。<br>az monitor metrics alert create -n alert1 -g ResourceGroup1 --scopes ResourceID1 --condition "avg Percentage CPU>90" --window-size 10m<br>■その他の選択肢<br>・--auto-mitigate：このオプションは、特定のアラートに対する自動解決アクションを有効にするものであり、アラート条件の時間範囲を指定するものではありません。<br>・--evaluation-frequency：このオプションは、アラートの条件がどのくらいの頻度で評価されるかを指定します。このオプションはアラートの評価頻度を設定しますが、条件の評価期間自体を設定するものではありません。<br>・--disabled：このオプションは、アラートを無効にするために使用されます。アラートの条件や評価に関連する設定ではありません。'>
+<div class='choice'  data-group='選択肢' >--evaluation-frequency</div>
+<div class='choice'  data-group='選択肢' >--disabled</div>
+<div class='choice'  data-group='選択肢' >--window-size</div>
+<div class='choice'  data-group='選択肢' >--auto-mitigate</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題6<br>あなたは、音声認識を行い、テキスト形式で結果を返すC++アプリケーションを開発しています。このアプリケーションはaudioRecognizer.exeとしてコンパイルされ、複数のオーディオフォーマット（WAV, MP3, AAC）を入力として受け取ります。このアプリケーションをAzure Functionとしてデプロイする必要があります。<br>適切なAzure Functionsの設定を行うために、function.jsonとhost.jsonファイルをどのように構成するべきですか。' data-answer='0,3' data-explanation='■正解：<br>オプション１：A:"type": "http"<br>オプション２：D:"customHandler": {"description": {<br>■解説<br>Azure Functionsでは、カスタムハンドラーを使用することで、さまざまなプログラミング言語やランタイムで書かれたアプリケーションをサーバレス環境に統合することが可能です。カスタムハンドラーは、標準のAzure Functionランタイムに依存せず、HTTPリクエストを通じてAzure Functionsホストと通信する独自の実行可能ファイルやスクリプトです。<br>function.jsonファイルは、Azure Functionのトリガー、バインディング（入力や出力の定義）、その他の設定を記述するJSONファイルです。<br>具体的なパラメータには以下のものがあります：<br>・name：関数に渡されるデータの名前を指定します。<br>・type：そのFunctionがどのようなトリガーで起動するかを指定します。例えば、HTTPリクエストによって起動する場合は、"type": "http" と記述します。<br>・direction：データが関数へ入力か出力かを指定します。<br>host.jsonは、Functionアプリ全体の設定を記述するJSONファイルで、タイムアウト設定やログの詳細度、カスタムハンドラーの設定など、アプリケーションレベルの挙動をカスタマイズするために使用します。<br>カスタムハンドラーの設定は以下のようになります。<br>・version：使用するAzure Functionsのメジャーバージョンを指定します。<br>・customHandler：カスタムハンドラーの設定を格納するセクションです。<br>・description：カスタムハンドラーに関する説明や追加の設定を含むセクションです。<br>・defaultExecutablePath：カスタムハンドラーとして使用する実行ファイルのパスを指定します。<br>・enableForwardingHttpRequest：このオプションを有効にすると、HTTPリクエストとレスポンスがカスタムハンドラーに直接転送されるようになります。これにより、カスタムハンドラーがHTTPリクエストを完全に制御できるようになります。<br>設問について、オプション１: "type": "http" は、function.jsonにおいてHTTPトリガーを示し、これはHTTPリクエストに基づいて関数が起動することを意味します。これはAzure FunctionでHTTPリクエストを受け取る設定であり、このケースに適しています。<br>オプション２: "customHandler": {"description": { は、host.jsonでカスタムハンドラーを指定する方法を示しています。この設定により、カスタム実行可能ファイルがAzure Functionとして機能するよう設定されます。' data-images='000007.jpg'>
+<div class='choice'  data-group='オプション１' >"type": "http"</div>
+<div class='choice'  data-group='オプション１' >"method": "POST"</div>
+<div class='choice'  data-group='オプション１' >"protocol": "HTTPS"</div>
+<div class='choice'  data-group='オプション２' >"customHandler": {"description": {</div>
+<div class='choice'  data-group='オプション２' >"runtimeHandler": {"details": {</div>
+<div class='choice'  data-group='オプション２' >"pathHandler": {"executable": {</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題7<br>あなたは、Application Insightsを使用してAzure App Serviceにデプロイしたアプリケーションが利用可能か、定期的に確認する必要があります。<br>どのテストタイプを使用するべきですか。' data-answer='1' data-explanation='■正解：<br>B:URL ping<br>■解説<br>URL ping テストは、Azure Application Insightsの一機能であり、Web アプリケーションがインターネットからアクセス可能かどうかを確認し、その可用性と応答性を監視するために設計されています。このテストは、特定のURLに対して簡単なHTTP GETリクエストを定期的に送信し、その応答をチェックすることでアプリケーションの状態を評価します。<br>URL pingの主な機能と利点は、以下の通りです。<br>・可用性の監視：アプリケーションがオンラインであり、予期したHTTP応答を返しているかどうかを確認します。<br>・応答時間の測定：リクエストがどれくらいの速さで処理されるかを計測し、パフォーマンスの問題を早期に特定する手助けをします。<br>・アラート機能: 応答が期待されたものではない場合、アラートを設定して通知を受け取ることができます。<br>・地理的な分散：複数の地理的場所からテストを実行することで、さまざまな場所からのアクセス状況を評価し、地域によるパフォーマンスの違いを識別できます。'>
+<div class='choice'  data-group='選択肢' >コードレビュー</div>
+<div class='choice'  data-group='選択肢' >URL ping</div>
+<div class='choice'  data-group='選択肢' >APIテスト</div>
+<div class='choice'  data-group='選択肢' >ロード</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題8<br>あなたの組織は、写真アーカイブを管理するアプリケーションを運用しており、Azure Blob Storageを使用して画像ファイルを保存しています。<br>Blobのプロパティとメタデータを取得し、メタデータを更新するためには、どのようなメソッドが適していますか。' data-answer='0,2,4' data-explanation='■正解：<br>メソッド１：A:GetPropertiesAsync<br>メソッド２：C:Metadata.Add<br>メソッド３：E:SetMetadataAsync<br>■解説<br>Azure Blob Storageでは、Blobのプロパティとメタデータを管理することができます。Blobのプロパティには、サイズや最終更新日時などが含まれ、メタデータはユーザーが設定する追加の情報をキーと値のペアで保持します。<br>メタデータの更新は、GetPropertiesAsyncで現在のメタデータを取得後、Metadata.Addで追加または更新し、SetMetadataAsyncで変更を保存するプロセスを通じて行われます。この機能を利用することで、アプリケーションから効率的にデータを管理・アクセスすることが可能です。<br>各メソッドの説明については以下の通りです。<br>GetPropertiesAsync：このメソッドは、Blobの現在のプロパティとメタデータを非同期に取得します。この情報は、メタデータの更新前に現在の状態を知るために重要です。<br>Metadata.Add：このメソッドを使って、キーと値のペアでメタデータを追加または更新します。例えば、Metadata.Add("capture_date", "2023-04-18")とすることで、「capture_date」というキーに日付を追加します。<br>SetMetadataAsync：更新したメタデータをBlobに保存し、Azure Storageに変更を適用します。このメソッドは、メタデータを正式に更新するために必要です。<br>これらのメソッドを使用することで、Azure Blob Storage内の画像ファイルに関するメタデータを適切に管理・更新できます。' data-images='000008.jpg'>
+<div class='choice'  data-group='メソッド１' >GetPropertiesAsync</div>
+<div class='choice'  data-group='メソッド１' >Metadata.Add</div>
+<div class='choice'  data-group='メソッド２' >Metadata.Add</div>
+<div class='choice'  data-group='メソッド２' >GetPropertiesAsync</div>
+<div class='choice'  data-group='メソッド３' >SetMetadataAsync</div>
+<div class='choice'  data-group='メソッド３' >UploadFromStreamAsync</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題9<br>Azure仮想マシンが起動中にWindows Updateのプロセスのため、停止してしまいました。<br>トラブルシューティングとしてどのような手順が適切ですか。' data-answer='1,3,4' data-explanation='■正解：<br>手順２：B:dism /Image:C:\ /Get-Packagesコマンドを実行する<br>手順３：D:インストールの保留中の更新プログラムを特定する<br>手順４：E:dism /Image:C:\ /Remove-Package /PackageName:パッケージ名 コマンドを実行する<br>■解説<br>Azure 仮想マシンがWindows Update中に起動が停止する問題を解決するには、以下のステップを行う必要があります。<br>１．管理者権限のコマンドプロンプトを開く：これにより、システムレベルでコマンドを実行できます。<br>２．dism /Image:C:\ /Get-Packages コマンドを実行する：これにより、インストールされたまたは保留中のすべての更新パッケージのリストを取得します。<br>３．インストールの保留中の更新プログラムを特定する：Get-Packagesで取得したリストから、問題を引き起こしている可能性のある保留中の更新を特定します。<br>４．dism /Image:C:\ /Remove-Package /PackageName：パッケージ名 コマンドを実行する: 特定した問題のあるパッケージを削除します。<br>５．OS ディスクを切断して、仮想マシンを再作成する：修正後、システムが正常に起動するか確認するために、VMを再度設定します。' data-images='000009.jpg'>
+<div class='choice'  data-group='手順２' >インストールの保留中の更新プログラムを特定する</div>
+<div class='choice'  data-group='手順２' >dism /Image:C:\ /Get-Packagesコマンドを実行する</div>
+<div class='choice'  data-group='手順３' >dism /Image:C:\ /Get-Packagesコマンドを実行する</div>
+<div class='choice'  data-group='手順３' >インストールの保留中の更新プログラムを特定する</div>
+<div class='choice'  data-group='手順４' >dism /Image:C:\ /Remove-Package /PackageName:パッケージ名 コマンドを実行する</div>
+<div class='choice'  data-group='手順４' >dism /Image:C:\ /Get-Packagesコマンドを実行する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題10<br>仮想マシンのイメージを保存できるストレージとして正しいサービスはどれですか。' data-answer='1' data-explanation='■正解：<br>B:Azure Blob Storage<br>■解説<br>Azure Blob Storageは、非構造化データの格納に最適なサービスであり、仮想マシンのイメージ（VHDファイル）を保存するのにも適しています。Blob Storageは、大規模なオブジェクトやファイルをクラウドで管理するための柔軟性とスケーラビリティを提供します。<br>仮想マシンのイメージをBlobとして保存することで、必要に応じてこれらのイメージから新しいVMインスタンスを迅速にデプロイすることが可能です。'>
+<div class='choice'  data-group='選択肢' >Azure Queue Storage</div>
+<div class='choice'  data-group='選択肢' >Azure Blob Storage</div>
+<div class='choice'  data-group='選択肢' >Azure Table Storage</div>
+<div class='choice'  data-group='選択肢' >Azure File Storage</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題11<br>あなたはフィンテック企業で、外部の決済サービスプロバイダーと連携するWeb APIを開発しています。このAPIはAzure Application Insightsを使用してすべてのテレメトリと依存関係追跡を行う必要があります。また、APIは外部の決済サービスプロバイダーのデータベースにアクセスし、支払いデータを読み書きしなければなりません。<br>外部データベースとの通信の依存関係を追跡するためには、どのプロパティを使用するべきですか。（２つ選択）' data-answer='0,2' data-explanation='■正解：<br>A:Telemetry.Id<br>C:Telemetry.Context.Operation.Id<br>■解説<br>Azure Application Insightsは、Microsoft Azureのパフォーマンス監視ツールであり、アプリケーションのパフォーマンスと使用状況をリアルタイムで追跡するのに役立ちます。<br>Application Insightsにおける依存関係とは、アプリケーションが外部システムやサービス（例えば、データベース、外部API、ファイルシステム等）にアクセスする際の呼び出しを指します。これらはアプリケーションが正常に機能するために「依存している」リソースであるため、「依存関係」と呼ばれます。<br>外部サービスとの通信がどのように行われているかを正確に把握し、エラーが発生した場合に迅速かつ効果的に対応するため、以下のようなプロパティを使用することができます。<br>・Telemetry.Idは、特定のテレメトリ項目に対して自動的に生成される一意の識別子です。このIDは、特定の依存関係呼び出しやリクエストなど、個別のテレメトリイベントを識別するために使用されます。例えば、外部の決済サービスプロバイダーへのAPI呼び出しに対して生成されたTelemetry.Idを使用して、その呼び出しが生成した特定のテレメトリデータを追跡し、問題解析やパフォーマンスの評価に利用することができます。<br>・Telemetry.Context.Operation.Idは、複数のテレメトリイベントが同一のビジネス操作またはトランザクションに関連することを示すために使用される識別子です。これは、一連の操作をまたいで共通のコンテキストを提供し、トレースやログデータを全体的な操作やセッションにリンクするのに役立ちます。例えば、ユーザーが支払いを行う一連のステップを含むトランザクションで、各ステップの依存関係やイベントがどのように連携しているかを理解するために使用されます。'>
+<div class='choice'  data-group='選択肢' >Telemetry.Id</div>
+<div class='choice'  data-group='選択肢' >Telemetry.Timestamp</div>
+<div class='choice'  data-group='選択肢' >Telemetry.Context.Operation.Id</div>
+<div class='choice'  data-group='選択肢' >Telemetry.Context.Session.Id</div>
+<div class='choice'  data-group='選択肢' >Telemetry.Type</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題12<br>あなたは、Azure上で稼働しているアプリケーションの監視と管理を担当しています。このシステムは、アプリケーションの稼働状況や異常を検出し、問題が発生した際に関連するスタッフに自動通知を行う機能を有しています。Microsoft Graph APIを使用してMicrosoft Entra IDのユーザー情報にアクセスし、適切なスタッフに通知を送るためには、バックグラウンドで安全にAPIを呼び出す必要があります。<br>Graph APIを呼び出すためのステップとして正しい手順はどれですか。' data-answer='0,2,5' data-explanation='■正解：<br>手順２：A:クライアントIDを使用してアクセス許可を構成する<br>手順３：C:認証プロバイダーを作成する<br>手順４：F:GraphServiceClient の新しいインスタンスを作成する<br>■解説<br>Microsoft Graph SDK を使用してユーザープロファイル情報を取得するアプリケーションを開発する場合、Microsoft Graph API を呼び出すためには以下のステップを順番に実行する必要があります。これらのステップは、アプリケーションの設定と認証プロセスを適切に構成するために重要です。<br>手順１．Microsoft Identity Platformでアプリケーションを登録する：最初に、Azure Portal上でMicrosoft Identity Platformにアプリケーションを登録します。これにより、アプリケーションがAzure ADの認証と認可を受けるために必要なクライアントIDとシークレット（または証明書）を取得します。<br>手順２．クライアントIDを使用してアクセス許可を構成する：アプリケーション登録時に、Microsoft Graph APIにアクセスするための適切なアクセス許可（スコープ）を設定します。これには、ユーザーやグループデータにアクセスするためのアクセス許可が含まれます。<br>手順３．認証プロバイダーを作成する：アクセス許可とクライアント認証情報を用いて、API呼び出しを行うための認証プロバイダー（たとえば、MSAL（Microsoft Authentication Library）を使用）を作成します。このプロバイダーは、Azure ADからアクセストークンを取得する際に使用されます。<br>手順４．GraphServiceClient の新しいインスタンスを作成する：認証プロバイダーを使用してGraphServiceClientのインスタンスを作成します。このクライアントは、Microsoft Graph APIに対するリクエストを簡単に構築し、実行するために使用されます。<br>手順５．Microsoft Graph API に対するリクエストを行う：GraphServiceClientを使用して、必要なデータを取得するためのAPIリクエストを行います。この例では、ユーザーのプロフィール情報や、異常が発生した際に通知を受け取るべきスタッフの情報を取得するリクエストが該当します。' data-images='000010.jpg'>
+<div class='choice'  data-group='手順２' >クライアントIDを使用してアクセス許可を構成する</div>
+<div class='choice'  data-group='手順２' >認証プロバイダーを作成する</div>
+<div class='choice'  data-group='手順３' >認証プロバイダーを作成する</div>
+<div class='choice'  data-group='手順３' >クライアントIDを使用してアクセス許可を構成する</div>
+<div class='choice'  data-group='手順４' >クライアントIDを使用してアクセス許可を構成する</div>
+<div class='choice'  data-group='手順４' >GraphServiceClient の新しいインスタンスを作成する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題13<br>あなたはオンラインRPGを開発しており、プレイヤーが特定の地域内で活動する際にその他のプレイヤーと協力する機能があります。プレイヤーの位置情報はAzure Cache for Redisに保存され、最近活動したプレイヤーが他のプレイヤーに表示されるようにシステムを設計する必要があります。また、ゲームを離れたプレイヤーはリストから削除されなければなりません。<br>Azure Cache for Redisの削除ポリシー（Eviction Policy）として何を選択すればよいですか。' data-answer='3' data-explanation='■正解：<br>D:volatile-Iru<br>■解説<br>Azure Cache for Redisの削除ポリシー（Eviction Policy）は、キャッシュのメモリが一杯になったときに、どのデータをキャッシュから削除するかを決定するルールです。Redisはキャッシュとして動作するため、新しいデータを保存するスペースを確保する必要があるとき、既存のデータをどのように削除するかを決める必要があります。<br>このポリシーでは、「allkeys」と「volatile」の接頭辞がキャッシュからデータを削除する際の対象を決定し、「lru」、「random」、「lfu」の接尾辞がそのデータをどの順序で削除するかを定義します。<br>接頭辞<br>・allkeys：キャッシュ全体を対象とします。有効期限が設定されているキーもそうでないキーも含まれます。<br>・volatile：有効期限が設定されているキーのみを対象とします。有効期限の設定されているデータの中から削除の対象を選びます。<br>接尾辞<br>・lru (Least Recently Used)：より最近使われていないデータを優先的に削除します。アクセスされていない古いデータを削除することで、よく使われるデータをキャッシュに保持します。<br>・lfu (Least Frequently Used)：使用頻度が最も低いキーを削除します。何度もアクセスされているキーは削除されにくく、滅多に使われないキーが削除されやすくなります。<br>・random：ランダムにデータを選んで削除します。どのデータが削除されるかは予測できませんが、実装がシンプルであり、どのキーも平等に削除される可能性があります。<br>本設問のシナリオについて、volatile-lruは、有効期限が設定されているキーの中からより最近使われていないキーを削除します。プレイヤーがゲームを離れる（つまり、アクティビティがなくなる）と、そのプレイヤーのキーに設定された有効期限が切れるため、このポリシーによって自動的にキャッシュから削除されます。これにより、アクティブなプレイヤーのみが表示され続けます。'>
+<div class='choice'  data-group='選択肢' >volatile-random</div>
+<div class='choice'  data-group='選択肢' >allkeys-Iru</div>
+<div class='choice'  data-group='選択肢' >allkeys-lfu</div>
+<div class='choice'  data-group='選択肢' >volatile-Iru</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題14<br>あなたは、Azure Functionを使用してイベントベースの関数を作成したいと考えています。<br>以下の要件を満たすためには、Azure Functionのどの機能を使用するべきですか。<br>要件１：Azure Blob Storageアカウントに宣言的に接続する<br>要件２：Functionアプリケーションで実行されるコードの実行環境を提供する' data-answer='0,4' data-explanation='■正解：<br>要件１：A:トリガー<br>要件２：E:ランタイム<br>■解説<br>Azure Functionsは柔軟性が高く、さまざまなニーズや要件に対応できるよう設計されています。そのため、特定のシナリオや要件に適したトリガーやホスティングプランを選択し、必要に応じて拡張機能やカスタムハンドラーを利用することで、最適なソリューションを構築することができます。要件に応じて適切なAzure Functionsの機能を選択することが重要です。<br>要件1: Azure Blob Storageアカウントに宣言的に接続する：この要件は、Azure Blob Storageにファイルがアップロードされた際など、特定のイベントに反応してAzure Functionsが実行されるようにすることを指します。Azure Functionsで外部のサービス（この場合はAzure Blob Storage）との連携を宣言的に設定するには、トリガーを使用します。Blob Storageトリガーは、Blob Storage内での変更をトリガーとして関数を自動的に実行させることができます。<br>要件2: Functionアプリケーションで実行されるコードの実行環境を提供する：この要件は、Azure Functionsのコードが実行されるための環境、つまり関数がどのようにして実行されるか（言語、バージョン管理、依存関係の管理など）に関わる部分を指します。Azure Functionsにおけるランタイムは、関数が実行される基盤（実行環境）を提供します。ランタイムは、Node.js、Python、.NETなど、さまざまなプログラミング言語のサポートを含むAzure Functionsのコアコンポーネントです。'>
+<div class='choice'  data-group='要件１' >トリガー</div>
+<div class='choice'  data-group='要件１' >バインド拡張</div>
+<div class='choice'  data-group='要件１' >ランタイム</div>
+<div class='choice'  data-group='要件２' >ポリシー</div>
+<div class='choice'  data-group='要件２' >ランタイム</div>
+<div class='choice'  data-group='要件２' >ホスティングプラン</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題15<br>あなたは、Azure App ServiceでホストされるASP.NET Core Webアプリを開発しており、このアプリはイベントのライブストリーミングとオンデマンド動画の配信を行います。Azure Content Delivery Network (CDN) Standardがウェブエンドポイントで有効にされており、顧客は以下の例のURLを使用して、Webアプリから動画をダウンロードします:<br>http://www.eventstreamxxx.com/live.mp4?event=1234。<br>すべてのイベントコンテンツはキャッシュから24時間後に期限切れになる必要があります。また、異なるイベントの動画は、最も近い地域のポイント・オブ・プレゼンス(POP)ノードから配信される必要があります。<br>カスタムキャッシュ規則をどのように設定するべきですか。' data-answer='2' data-explanation='■正解：<br>C:一致条件：パス<br>一致する値：/live.mp4*<br>キャッシュ動作：オーバーライド<br>キャッシュの有効期間：24時間<br>■解説<br>Azure Content Delivery Network (CDN) は、地理的に分散されたサーバーネットワークを利用してWebコンテンツを迅速に配信するサービスです。このサービスを使用することで、ユーザーに近い場所からコンテンツが配信されるため、ウェブサイトのロード時間が短縮され、ユーザーエクスペリエンスが向上します。Azure CDNでは、キャッシュ規則を設定することで、どのようにコンテンツをキャッシュするかを詳細に制御することができます。<br>カスタムキャッシュ規則を設定して、特定のURLパターンやファイルタイプに対するキャッシュの動作をカスタマイズできます。これには以下の要素が含まれます。<br>1. 一致条件：どのリクエストがこのキャッシュルールの影響を受けるかを決定します。一致条件には、パス、ファイル拡張子などがあり、例えば、特定のファイルタイプや、特定のパスにあるコンテンツだけを対象にすることができます。<br>2. 一致する値：一致条件に具体的に何が含まれるべきかを定義します。たとえば、一致条件が「パス」の場合、一致する値は特定のパスパターン（例:/images/*）を指定することで、そのパターンに一致するURLのリクエストに対して規則が適用されます。ワイルドカードを使うことで、複数のパスに対して一つのルールを適用することも可能です。<br>3. キャッシュ動作：一致したリクエストに対してCDNがどのように反応するかを定義します。主なオプションには、「キャッシュをバイパス（Bypass cache）」、「キャッシュをオーバーライド（Override）」、「存在しない場合に設定（Set if missing）」などがあります。これにより、コンテンツがどのようにキャッシュされるか、またいつオリジンサーバーから新しいコンテンツを取得するかを細かく設定することができます。<br>4. キャッシュの有効期間：コンテンツがキャッシュに保持される期間を指定します。この値は、日数、時間、分および秒で有効期間を指定できます。この設定は、コンテンツがどれだけの頻度で更新されるかに基づいて調整することが一般的です。<br>本設問について、ASP.NET Core Webアプリから配信されるイベント動画のキャッシュを効率的に管理する必要があります。<br>一致条件: パス<br>一致する値: /live.mp4*<br>この条件は、リクエストのURLの中でドメイン名を除いたパス部分と一致するかどうかを判断します。このシナリオでは、「/live.mp4*」と指定されています。このパス条件にはワイルドカード（*）が使用されていて、/live.mp4で始まるすべてのリクエストを対象にします。つまり、どんなクエリパラメータ（例えば ?event=1234）が付加されていても、その前のパスが /live.mp4であればこの規則が適用されます。<br>キャッシュ動作: オーバーライド<br>キャッシュ動作「オーバーライド」を設定すると、既存のキャッシュ設定に優先して新しい設定を適用します。これは、特定の条件下でのキャッシュの挙動をカスタマイズしたい場合に使用します。この場合、キャッシュの保存期間やその他のパラメータをこのルールに従って新たに設定することができます。<br>キャッシュの有効期間: 24時間<br>24時間と設定すると、コンテンツは最初のリクエストから24時間キャッシュされ、その後は新たなコンテンツが再度取得されてキャッシュされます。これにより、定期的にコンテンツを更新しながら、ユーザーへの配信速度を向上させることができます。'>
+<div class='choice'  data-group='選択肢' >一致条件：拡張子<br>キャッシュ動作：オーバーライド<br>キャッシュの有効期間：12時間</div>
+<div class='choice'  data-group='選択肢' >一致条件：パス<br>一致する値：*<br>キャッシュ動作：存在しない場合に設定<br>キャッシュの有効期間：12時間</div>
+<div class='choice'  data-group='選択肢' >一致条件：パス<br>一致する値：/live.mp4*<br>キャッシュ動作：オーバーライド<br>キャッシュの有効期間：24時間</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題16<br>あなたは、医療研究機関の研究論文管理のため、研究論文や臨床試験の結果をAzure Blob Storageに保存するソリューションを開発しています。これらは、PDF、スプレッドシートまたはテキスト形式で保存されています。<br>特定の病気や治療法に関する情報をドキュメントから効率的に検索するためには、どのサービスを利用すればよいですか。' data-answer='0' data-explanation='■正解：<br>A:Azure AI Search<br>■解説<br>Azure AI Searchは、Microsoft Azure の検索サービスであり、アプリケーション内でリッチな検索機能を提供します。このサービスを使用して、大規模なコンテンツから複雑な検索クエリに応じたデータを迅速に抽出できます。<br>設問のシナリオでは、Azure Cognitive Searchが最適です。研究論文や臨床試験結果など、大量の文書データを効率的に検索し、特定の病気や治療法に関連する情報を迅速に見つけ出すことが可能になります。この機能により、研究者は必要な情報にすぐにアクセスでき、時間を節約しながらより効果的に研究活動を進めることができます。'>
+<div class='choice'  data-group='選択肢' >Azure AI Search</div>
+<div class='choice'  data-group='選択肢' >Azure Functions</div>
+<div class='choice'  data-group='選択肢' >Azure Machine Learning</div>
+<div class='choice'  data-group='選択肢' >Azure HDInsight</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題17<br>あなたは、小売店の在庫管理システムを開発しています。このシステムは、店舗からの注文を受け取るたびに在庫データを処理しますが、注文は不規則に送信される可能性があります。また、システムは以下の要件を満たさなければなりません。<br>・キューサイズは80GBを超えてはならない。<br>・注文情報はFIFO順で処理する必要がある。<br>・Azureのコストを最小限に抑える。<br>これら要件を満たす対応方法として適切な選択肢はどれですか。' data-answer='1' data-explanation='■正解：<br>B:Azure Service Busを使用してキューに注文情報を追加する。その後、Azure Storage Queueトリガーを使用するAzure Function Appを作成する。<br>■解説<br>本設問のシナリオの場合、適切な選択肢を見つけるためには、使用するAzureサービスの機能を評価する必要があります。<br>・Azure Service Busは、FIFO順の処理をサポートし、また大規模なキュー管理機能を提供しており、キューサイズが最大80GBまで構成可能です。これにより、不規則に送信される注文の管理が容易になります。<br>・Azure Storage Queueは、比較的シンプルでコスト効率の良いソリューションですが、FIFO保証が弱く、最大キューサイズも64GBとAzure Service Busほど大きくはありません。<br>これらの要件を満たす選択肢は、Azure Service Busを使用してキューに注文情報を追加し、Azure Function Appを使用してこれらのメッセージを処理する方法です。Azure Function Appは、コスト効率が良くスケーラビリティに優れているため、Azure仮想マシンに比べ不規則なトラフィックがある場合のコストを抑えるのに役立ちます。'>
+<div class='choice'  data-group='選択肢' >Azure Service Busを使用してキューに注文情報を追加する。その後、Azure Storage Queueトリガーを使用するAzure仮想マシンを作成する。</div>
+<div class='choice'  data-group='選択肢' >Azure Service Busを使用してキューに注文情報を追加する。その後、Azure Storage Queueトリガーを使用するAzure Function Appを作成する。</div>
+<div class='choice'  data-group='選択肢' >Azure Storage Queueを使用してキューに注文情報を追加する。その後、Azure Storage Queueトリガーを使用するAzure仮想マシンを作成する。</div>
+<div class='choice'  data-group='選択肢' >Azure Storage Queueを使用してキューに注文情報を追加する。その後、Azure Storage Queueトリガーを使用するAzure Function Appを作成する。</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

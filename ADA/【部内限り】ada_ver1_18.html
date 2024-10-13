@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='false' data-question='問題35<br>ある企業は、従業員の経費を管理するためにAzure Functionを使用しています。このソリューションでは、従業員がレシートをアップロードし、処理をAzure Functionで行い、結果はAzure Blob Storageに保存されます。また処理結果のレポートが従業員にメールで送信されます。<br>毎月の月末に経費報告が集中する傾向があり、従業員が一斉にレシートをアップロードするため、Azure Functionの処理能力が限界に達し、レシートの処理に遅延が生じます。<br>月末のピーク時の遅延を解決するためにはどのような対応が最適ですか。' data-answer='3' data-explanation='■正解：<br>D: ループを更新してアイテムを並列処理する<br>■解説<br>設問の内容から、問題の原因がAzure Functionの処理能力にあることがわかります。したがって、内部の処理効率を向上させるために、並列処理を導入することが最適な解決策となります。これは、Azure Function内での処理の効率化を図るものです。並列処理を導入することで、複数のレシートを同時に処理することができ、全体の処理時間を短縮できます。これは特に、ピーク時の大量のレシート処理に対して有効な解決策です。<br>■その他の選択肢<br>Azure FunctionのトリガーをAzure Blob Storageトリガーに変更する：この選択肢は、トリガーの変更に焦点を当てています。Blob Storageトリガーは、Blob Storageに新しいデータがアップロードされたときにAzure Functionを起動しますが、遅延の解決には直接関係ありません。問題はAzure Functionの処理能力であり、トリガーの変更ではありません。<br>従量課金プランが正しく構成されていることを確認し、スケーリングを設定する：従量課金プラン（Consumption Plan）は、スケーリングの自動化に優れていますが、Azure Functionの内部処理の効率化には関与しません。具体的な遅延解決策には不十分です。<br>Azure Functionを専用のApp Serviceプランに移行する：専用のApp Serviceプランに移行することで、より多くのリソースを確保できるため、処理能力の向上が見込めます。しかし、コストが増加する可能性があり、また、処理の最適化については並列処理の方がより効果的です。'>
+<div class='choice'  data-group='選択肢' > Azure FunctionのトリガーをAzure Blob Storageトリガーに変更する</div>
+<div class='choice'  data-group='選択肢' > 従量課金プランが正しく構成されていることを確認し、スケーリングを設定する</div>
+<div class='choice'  data-group='選択肢' > Azure Functionを専用のApp Serviceプランに移行する</div>
+<div class='choice'  data-group='選択肢' > ループを更新してアイテムを並列処理する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題36<br>あなたは小売業界の企業で働いており、在庫の更新を追跡し、必要に応じて補充のための注文を自動的に発行するシステムを開発しています。在庫情報の更新はAzure Queueに送られ、そのデータは後で処理されます。 キューにメッセージを送信し、メッセージを取得するためのコードを以下の通り作成しました。<br>上記シナリオならびにコードについて正しい記述はどれですか。（２つ選択）' data-answer='1,2' data-explanation='■正解：<br>B: 最後のメッセージの読み取り後も、メッセージはキューに残る<br>C:コードの実行後も、ストレージキューはストレージアカウントに残る<br>■解説<br>最後のメッセージの読み取り後も、メッセージはキューに残る：queue.PeekMessageAsync()メソッドを使用すると、キューのメッセージを読み取りますが、メッセージは削除されずにキューに残ります。これはメッセージの内容を確認するための方法であり、メッセージ自体は変更されません。<br>コードの実行後も、ストレージキューはストレージアカウントに残る：queue.CreateIfNotExistsAsync()メソッドは、指定したキューが存在しない場合に新しく作成しますが、すでに存在する場合は何もしません。したがって、キューはストレージアカウントに残り続けます。キューが削除されることはありません。<br>■その他の選択肢<br>コードはキューのロック期間を設定する：コードには、キューのメッセージのロック期間（visibility timeout）を設定する部分がありません。GetMessageAsyncメソッドを呼び出しても、デフォルトのロック期間が適用されるだけです。ロック期間を明示的に設定するには、GetMessageAsync(TimeSpan visibilityTimeout)のように指定する必要があります。<br>inventoryQueueという名前のキューは処理されない：コードの中で、queue.CreateIfNotExistsAsync()メソッドが呼び出されており、このメソッドがキューを作成または取得します。そのため、inventoryQueueという名前のキューは正しく処理されます。' data-images='000052.jpg'>
+<div class='choice'  data-group='選択肢' >コードはキューのロック期間を設定する</div>
+<div class='choice'  data-group='選択肢' >最後のメッセージの読み取り後も、メッセージはキューに残る</div>
+<div class='choice'  data-group='選択肢' >コードの実行後も、ストレージキューはストレージアカウントに残る</div>
+<div class='choice'  data-group='選択肢' >"inventoryQueue" という名前のキューは処理されない</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題37<br>あなたは、Azure仮想マシンにアプリケーションをデプロイする予定です。 アプリケーションを実行する仮想マシンは、以下の要件を満たす必要があります。<br>要件１：Azure Storageに保存されているAzure PowerShellスクリプトを使用して、サポートサービスをインストールする<br>要件２：仮想マシンがプロビジョニングされると、Azureリソースにアクセスする前にファイアウォールを自動的に構成する<br>これら要件を満たすためにはそれぞれどの機能が適切ですか。' data-answer='1,3' data-explanation='■正解：<br>要件１：B:カスタムスクリプト拡張<br>要件２：D:実行コマンド<br>■解説<br>カスタムスクリプト拡張(Custom Script Extension)は、Azure仮想マシン（VM）に特定のスクリプトを実行させるための機能です。これは、VMが作成された後に自動的にスクリプトをダウンロードして実行することで、必要な設定やソフトウェアのインストールを行うことができます。スクリプトはAzure Storageに保存されているため、必要に応じて更新することが簡単です。また、スクリプトの実行は自動化されるため、一貫した設定が保証されます。<br>実行コマンド (Run Command)は、Azure PortalやAzure CLIを通じてリモートからAzure仮想マシンに対してコマンドを実行する機能です。この機能を使用すると、仮想マシン上で直接スクリプトやコマンドを実行でき、特定のタスクを自動化したり、管理者がリモートで管理操作を行うことができます。リモートから直接コマンドを実行できるため、仮想マシンに対するリアルタイムの管理が可能です。これにより、トラブルシューティングや設定変更を迅速に行うことができます。'>
+<div class='choice'  data-group='要件１' >シリアル コンソール</div>
+<div class='choice'  data-group='要件１' >カスタムスクリプト拡張</div>
+<div class='choice'  data-group='要件２' >Hybrid Runbook Worker</div>
+<div class='choice'  data-group='要件２' >実行コマンド</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題38<br>あなたはAzure Functionアプリを開発しており、開発が失敗した場合の再試行を制御するリトライポリシーを設定する必要があります。 以下の要件を満たす必要があります。<br>１．各リトライの間に少なくとも25秒間、最大で13分間間隔を設ける<br>２．リトライの間隔は一定ではなく次第に長くなる<br>３．最大リトライの回数を15回に設定する' data-answer='0,4,6' data-explanation='■正解：<br>プロパティ１：A:retry<br>値１：E:exponentialBackoff<br>プロパティ２：G:maxRetryCount<br>■解説<br>Azure Functionsのリトライポリシーとは、Azure Functionsアプリケーションにおいて、関数の実行が失敗した場合に再試行（リトライ）する方法を定義する設定です。リトライポリシーを設定することで、関数が一時的なエラーやネットワークの問題などで失敗した場合に、再試行して成功する可能性を高めることができます。<br>プロパティ１：retry<br>リトライポリシーを設定するためには、retryプロパティを使用します。retryプロパティはリトライ戦略やリトライ回数、リトライの間隔などを指定するために使用されます。<br>プロパティ２：maxRetryCount<br>maxRetryCountは最大リトライ回数を設定するためのプロパティです。要件で最大リトライ回数を15回に設定する必要があるため、ここでmaxRetryCountを使用します。<br>値1: exponentialBackoff<br>exponentialBackoffはリトライポリシーの戦略の一つで、再試行の間隔を次第に長くする方法です。具体的には、最初の再試行は短い間隔で行い、その後の再試行は次第に間隔が長くなります。これにより、短時間で問題が解決する場合と、長時間を要する場合の両方に対応できます。<br>Azure Functionsのリトライポリシーは、関数が一時的なエラーで失敗した場合に再試行することで、処理の成功率を高める重要な機能です。特にバックオフ戦略を使用することで、一時的な問題が解決されるまでの待機時間を徐々に長くし、再試行の成功率を高めることができます。' data-images='000053.jpg'>
+<div class='choice'  data-group='プロパティ１' > retry</div>
+<div class='choice'  data-group='プロパティ１' > healthMonitor</div>
+<div class='choice'  data-group='値１' > fixedDelay</div>
+<div class='choice'  data-group='値１' > counterThreshold</div>
+<div class='choice'  data-group='値１' > exponentialBackoff</div>
+<div class='choice'  data-group='プロパティ２' > healthCheckInterval</div>
+<div class='choice'  data-group='プロパティ２' > maxRetryCount</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題39<br>あなたは、データベースバックアップファイルを安全にコピーするソリューションを開発しています。 このソリューションでは、Azure Storage Clientライブラリを使用して、バックアップファイルをAzure Blob Storageにコピーします。 次のコードを作成しました。<br>上記コードについて正しい記述はどれですか。（２つ選択）' data-answer='0,2' data-explanation='■正解：<br>A:このコードは無期限のリースを設定している<br>C: finallyブロックでリースを解放する<br>■解説<br>リースは、Blobに対して排他的なアクセス権を一時的に取得するためのメカニズムです。リースを取得すると、その期間中に他のクライアントがそのBlobに対して書き込みや削除を行うことができなくなります。<br>A: このコードは無期限のリースを設定している<br>AcquireLeaseAsyncメソッドにnullを渡すと、リースの期間が無期限に設定されます。具体的には、nullを指定することで、リース期間がデフォルトの45秒間に設定され、これを何度も延長し続けることができます。リースを明示的に解放するか、リース期間が切れるまで他の操作はブロックされます。<br>C: finallyブロックでリースを解放する<br>finallyブロックは、tryブロック内で例外が発生するかどうかに関係なく、必ず実行されるコードブロックです。リソースの解放やクリーンアップ処理に使用されます。リースを取得した後は、操作が完了した時点でリースを解放する必要があります。リースを解放しないと、他のクライアントがそのBlobにアクセスできなくなり、システム全体のパフォーマンスに影響を与える可能性があります。' data-images='000054.jpg'>
+<div class='choice'  data-group='選択肢' >このコードは無期限のリースを設定している</div>
+<div class='choice'  data-group='選択肢' >GetBlockBlobReferenceは、新しいBlobを作成する</div>
+<div class='choice'  data-group='選択肢' >finallyブロックでリースを解放する</div>
+<div class='choice'  data-group='選択肢' >AcquireLeaseAsyncを使用してBlobにコピーを開始する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題40<br>あなたはイベント管理会社のためのアプリケーションを開発しています。 このアプリケーションでは、新しいイベントが追加されたときにユーザーにプッシュ通知を送信する必要があります。通知には、イベントのタイトルと概要が含まれます。 以下コードセグメントをどのように完成させるべきですか。' data-answer='0,3,6' data-explanation='■正解：<br>クラス：A:NotificationHubClient<br>メソッド１：D:CreateClientFromConnectionString<br>メソッド２：G:SendWindowsNativeNotificationAsync<br>■解説<br>クラス：NotificationHubClient<br>このクラスは、Azure Notification Hubsとの通信を管理するためのクライアントクラスです。このクラスを使用して、通知を送信したり、通知ハブの設定を管理することができます。このクラスは、Azure Notification Hubs SDKの一部です。<br>メソッド１：CreateClientFromConnectionString<br>このメソッドは、指定された接続文字列と通知ハブ名を使用して、新しいNotificationHubClientインスタンスを作成するために使用されます。このメソッドを使用すると、Azure Notification Hubsへの接続が簡単に設定できます。<br>メソッド２：SendWindowsNativeNotificationAsync<br>このメソッドは、指定されたペイロードを使用して、Windowsネイティブ通知（トースト通知など）を非同期に送信します。このメソッドを使用することで、アプリケーションからユーザーのWindowsデバイスに通知を送信することができます。<br>設問のコードでは、まずCreateClientFromConnectionStringメソッドを使用して、NotificationHubClientクラスのインスタンスを作成しています。その後、SendWindowsNativeNotificationAsyncメソッドを使用して、トースト通知を送信しています。' data-images='000055.jpg'>
+<div class='choice'  data-group='クラス' >NotificationHubClient</div>
+<div class='choice'  data-group='クラス' >NotificationHubClientSetting</div>
+<div class='choice'  data-group='クラス' >NotificationDetails</div>
+<div class='choice'  data-group='メソッド１' >CreateClientFromConnectionString</div>
+<div class='choice'  data-group='メソッド１' >GetInstallation</div>
+<div class='choice'  data-group='メソッド２' >ScheduleNotificationAsync</div>
+<div class='choice'  data-group='メソッド２' >SendWindowsNativeNotificationAsync</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題41<br>あなたは、大規模なeコマースプラットフォームを開発しています。 このプラットフォームはAzure上でホストされ、ユーザーのショッピングカートや購入履歴を管理するためにAzure SQLデータベースやストレージアカウントを使用します。 セキュリティ要件により、Azure App Configurationに保存された設定情報にアクセスする際には複数の認証方法は使用できません。 Azure App Configurationの構成設定をどのようにするべきですか。' data-answer='1,5' data-explanation='■正解：<br>クラス１：B:ManagedIdentityCredential<br>クラス２：F:AddAzureAppConfiguration<br>■解説<br>ManagedIdentityCredentialは、Azureのリソース間で安全に認証を行うためのクレデンシャル（認証情報）を提供するクラスです。Azureのリソースに対して、追加の資格情報（ユーザー名やパスワードなど）をコードに含めずにアクセスすることができます。これにより、セキュリティが向上し、資格情報の管理が簡素化されます。<br>AddAzureAppConfigurationは、Azure App Configurationから設定情報を読み取るためのクライアントクラスです。このクラスを使用することで、アプリケーションはAzure App Configurationに保存された設定情報（例：プロモーションコード、データベース接続文字列など）を簡単に取得することができます。<br>この設定により、セキュリティ要件を満たしつつ、Azure上でホストされる大規模なeコマースプラットフォームがAzure App Configurationにアクセスして必要な設定情報を取得できます。' data-images='000056.jpg'>
+<div class='choice'  data-group='クラス１' >DefaultAzureCredentiaI</div>
+<div class='choice'  data-group='クラス１' >ManagedIdentityCredential</div>
+<div class='choice'  data-group='クラス１' >AddAzureAppConfiguration</div>
+<div class='choice'  data-group='クラス２' >DefaultAzureCredentiaI</div>
+<div class='choice'  data-group='クラス２' >ManagedIdentityCredential</div>
+<div class='choice'  data-group='クラス２' >AddAzureAppConfiguration</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題42<br>あなたは、Microsoft Graphを使用して業内のプロジェクト管理を支援するウェブアプリを開発しています。 このアプリは、Microsoft Entraグループを使用してプロジェクトチームを編成します。 DynamicMembership タイプでないすべての Microsoft Entraグループを表示するためのウェブページのクエリを生成する必要があります。 適切なクエリのオプションは何ですか。' data-answer='0' data-explanation='■正解：<br>A:$filter=not groupTypes/any(s:s eq &#39;DynamicMembership&#39;)&$count=true<br>■解説<br>Microsoft Graph APIでは、特定の条件に一致するデータを取得するために$filterクエリパラメーターを使用します。これは、SQLのWHERE句に似ています。$filterパラメーターを使って、特定の属性や条件に基づいてデータをフィルタリングすることができます。正解のクエリは、DynamicMembershipタイプでないすべてのMicrosoft Entraグループを表示するために使用されます。クエリについての説明は以下の通りです。<br>$filter：グループのフィルタリング条件を指定します。<br>not groupTypes/any(s:s eq &#39;DynamicMembership&#39;)：groupTypes 配列の中に &#39;DynamicMembership&#39; タイプが含まれていないグループをフィルタリングします。<br>$count=true：結果の総数を取得します。<br>このクエリを使用することで、Microsoft Entraグループの中でDynamicMembership タイプではないものをフィルタリングして表示できます。$filter パラメータは、特定の条件に一致する項目を絞り込むための強力なツールであり、適切に使用することで要求された情報を正確に取得できます。' data-images='000057.jpg'>
+<div class='choice'  data-group='選択肢' >$filter=not groupTypes/any(s:s eq 'DynamicMembership')&$count=true</div>
+<div class='choice'  data-group='選択肢' >$filter=groupTypes/any(s:s eq 'DynamicMembership')&$top=true</div>
+<div class='choice'  data-group='選択肢' >$contain=groupTypes/any(s:s ne 'DynamicMembership')&$count=true</div>
+<div class='choice'  data-group='選択肢' >$search=groupTypes/any(s:s eq 'DynamicMembership')&$count=true</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題43<br>あなたは、技術系のブログサイトを運営している企業のためにウェブサイトを開発しています。 新しい記事が追加されるたびに、ブログの静的HTMLページをスクリプトで生成する必要があります。 GitHubリポジトリからの継続的デプロイ機能を使用し、記事のページが生成された後にのみ、ウェブサイトがトラフィックを処理できるようにします。<br>どのような対応が最適ですか。（２つ選択）' data-answer='1,3' data-explanation='■正解：<br>B:ウェブサイトのcsprojプロジェクトファイルに静的コンテンツ生成スクリプトを実行するPreBuildターゲットを追加する<br>D:リポジトリのルートに.deploymentという名前のファイルを作成し、静的コンテンツを生成してウェブサイトをデプロイするスクリプトを呼び出す<br>■解説<br>ウェブサイトのcsprojプロジェクトファイルに静的コンテンツ生成スクリプトを実行するPreBuildターゲットを追加する：PreBuildターゲットは、プロジェクトがビルドされる前に実行されるスクリプトやコマンドを指定するためのものです。これを使用することで、ビルド前に必要な準備作業（例えば静的コンテンツの生成など）を行うことができます。<br>ウェブサイトの構築には、csprojファイルという設定ファイルが使われます。このファイルにPreBuildターゲットを追加すると、ビルドの前に特定の作業を自動的に行うことができます。例えば、新しい記事が追加されるたびに、その内容を元に静的なHTMLページを生成するスクリプトをここで実行することができます。これにより、記事が更新された際に常に最新の状態でウェブサイトがビルドされます。<br>リポジトリのルートに.deploymentという名前のファイルを作成し、静的コンテンツを生成してウェブサイトをデプロイするスクリプトを呼び出す：.deploymentファイルは、Azure App Serviceのデプロイメントプロセスをカスタマイズするためのファイルです。このファイルを使って、デプロイの際に特定のスクリプトを実行するように指示することができます。<br>Azureには、ウェブサイトを自動的にデプロイする機能があります。.deploymentというファイルを使うと、デプロイする前に特定のスクリプトを実行することができます。例えば、新しい記事が追加されるたびに、記事の内容を静的なHTMLページに変換するスクリプトを実行してからウェブサイトを公開するように設定できます。これにより、常に最新の記事が反映された状態でウェブサイトが公開されます。<br>これらの方法を使うことで、新しい記事が追加されるたびに静的HTMLページが自動的に生成され、常に最新の状態でウェブサイトがデプロイされるようになります。選択肢Bはビルド前にスクリプトを実行し、選択肢Dはデプロイ前にスクリプトを実行する設定です。どちらも静的コンテンツを最新に保つために有効な方法です。'>
+<div class='choice'  data-group='選択肢' >リポジトリのルートに.initializeという名前のファイルを作成し、静的コンテンツを生成する</div>
+<div class='choice'  data-group='選択肢' >ウェブサイトのcsprojプロジェクトファイルに静的コンテンツ生成スクリプトを実行するPreBuildターゲットを追加する</div>
+<div class='choice'  data-group='選択肢' >Azure DevOpsパイプラインを使用して、デプロイ前に静的コンテンツを生成する</div>
+<div class='choice'  data-group='選択肢' >リポジトリのルートに.deploymentという名前のファイルを作成し、ウェブサイトをデプロイするスクリプトを呼び出す</div>
+<div class='choice'  data-group='選択肢' >Azure DevOpsパイプラインを使用して、デプロイ前に静的コンテンツを生成する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題44<br>大規模なイベント運営会社が、参加者の登録と確認プロセスをAzure Functionsで管理しています。参加者の登録情報がAzure Blob Storageにアップロードされると、確認プロセスが開始されます。このプロセスには、参加者が追加情報を提供する必要があり、完了までに時間がかかることがあります。現在、RequestUserApproval Function appで次のエラーが発生しています。<br>&#39;Timeout value of 00:10:00 exceeded by function: RequestUserApproval&#39;<br>このエラーは、タイムアウトが発生しているためです。処理が完了するまでの間、関数は状態を保持し続ける必要があります。参加者の登録情報がAzure Blob Storageに保存された後、Azure Functionを使用してこのデータをAzure Cosmos DBに保存し、確認プロセスが完了するまでの間、関数は状態を保持し続ける必要があります。<br>このエラーを修正するための最適な設定方法は何ですか。' data-answer='2' data-explanation='■正解：<br>C:Durable Functionsを使用して状態を保持しながら確認プロセスを管理する<br>■解説<br>Durable Functionsは、長時間実行されるプロセスを効率的に管理するために設計されたAzure Functionsの拡張機能です。Durable Functionsを使用することで、関数は状態を保持し、外部イベントやユーザー入力を待つ間も実行を続けることができます。設問のシナリオで発生しているTimeout value of 00:10:00 exceeded by function: RequestUserApprovalというエラーは、関数が10分以上の時間を要する処理を実行しようとしているためです。この問題を解決するには、Durable Functionsを使用して状態を保持しながら長時間実行されるプロセスを管理することが最適です。<br>■その他の選択肢<br>関数アプリがApp Serviceプランを使用するように設定しAlways Onを有効する：Always On設定は、関数アプリがアイドル状態にならないようにするために使用されますが、長時間実行されるプロセスのタイムアウト問題を直接解決するわけではありません。<br>host.jsonプロジェクトファイルのfunctionTimeoutプロパティを20分に変更する：functionTimeoutプロパティを延長することでタイムアウトを防ぐことができますが、これは一時的な解決策に過ぎず、長時間実行されるプロセスの管理には不向きです。<br>Azure Cosmos DBを入力バインディングとして設定する：Azure Cosmos DBを入力バインディングとして設定することは、問題の解決には関係ありません。入力バインディングはデータの取得に使用され、状態管理やタイムアウト問題の解決には役立ちません。'>
+<div class='choice'  data-group='選択肢' >関数アプリがApp Serviceプランを使用するように設定しAlways Onを有効する</div>
+<div class='choice'  data-group='選択肢' >host.jsonプロジェクトファイルのfunctionTimeoutプロパティを20分に変更する</div>
+<div class='choice'  data-group='選択肢' >Durable Functionsを使用して状態を保持しながら確認プロセスを管理する</div>
+<div class='choice'  data-group='選択肢' >Azure Cosmos DBを入力バインディングとして設定する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題45<br>あなたは、社内向けポータルサイトを開発しています。このポータルサイトは、社内の従業員が様々なリソースにアクセスするために使用されます。 このポータルサイトをMicrosoft Entraテナントに登録する必要があります。 正しい登録の手順はどれですか。' data-answer='0' data-explanation='■正解：<br>A:Microsoft Entraインスタンスを選択する ⇒ アプリ登録で、新しい登録を選択する ⇒ 新しいアプリケーションを作成し、名前、アカウントタイプ、およびリダイレクトURIを提供する<br>■解説<br>Azure ADテナントにアプリケーションを登録するための正しい手順は以下の通りです。<br>手順１：Microsoft Entraインスタンスを選択する<br>クラウド アプリケーション管理者以上として Microsoft Entra 管理センターにサインインします。ここで、アプリケーションを登録するMicrosoft Entraインスタンスを選びます。<br>手順２：アプリ登録で、新しい登録を選択する<br>次に、「アプリ登録」セクションに移動し、「新規登録」を選択します。これにより、新しいアプリケーションをMicrosoft Entra IDに登録するプロセスが始まります。<br>手順３：新しいアプリケーションを作成し、名前、アカウントタイプ、およびリダイレクトURIを提供する<br>最後に、新しいアプリケーションの登録フォームに必要な情報を入力します。ここでは、アプリケーションの名前、アカウントタイプ（組織内のユーザーのみ、マルチテナント、または個人のMicrosoftアカウントを含む）、およびリダイレクトURIを提供します。この情報を入力して登録を完了すると、アプリケーションがMicrosoft Entra IDに登録されます。'>
+<div class='choice'  data-group='選択肢' >Microsoft Entraインスタンスを選択する ⇒ アプリ登録で、新しい登録を選択する ⇒ 新しいアプリケーションを作成し、名前、アカウントタイプ、およびリダイレクトURIを提供する</div>
+<div class='choice'  data-group='選択肢' >Microsoft Entraインスタンスを選択する ⇒ 新しいアプリケーションを作成し、名前、アカウントタイプ、およびリダイレクトURIを提供する ⇒ アプリ登録で、新しい登録を選択する</div>
+<div class='choice'  data-group='選択肢' >新しいアプリケーションを作成し、名前、アカウントタイプ、およびリダイレクトURIを提供する ⇒ Microsoft Entraインスタンスを選択する ⇒ アプリ登録で、新しい登録を選択する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題46<br>Azure API Managementを使用してクライアントにWebサービスを提供しています。バックエンドのWebサービスはHTTP Strict Transport Security（HSTS）を実装しています。バックエンドサービスへのすべてのリクエストには、有効なHTTP認証ヘッダーが含まれている必要があります。Azure API Managementインスタンスに認証ポリシーを設定する必要があります。どの二つのポリシーを使用できますか。' data-answer='0,2' data-explanation='■正解：<br>A:基本認証<br>C:証明書認証<br>■解説<br>基本認証（Basic Authentication）は、最もシンプルなHTTP認証方式の一つです。この認証方式では、ユーザー名とパスワードがBase64エンコードされてHTTPリクエストのヘッダーに含まれます。Azure API Managementでは、authentication-basicポリシーを使用してバックエンドサービスに対して基本認証を設定できます。<br>証明書認証（Certificate Authentication）は、クライアント証明書を使用してバックエンドサービスに対する認証を行う方式です。この方式は、より高いセキュリティを提供し、信頼性のある通信を確立するのに適しています。Azure API Managementでは、authentication-certificateポリシーを使用してクライアント証明書を設定できます。<br>Azure API Managementでバックエンドサービスへの認証ポリシーを設定する場合、基本認証と証明書認証が適切です。これにより、すべてのリクエストに有効なHTTP認証ヘッダーを含めることができ、セキュアな通信を確保できます。'>
+<div class='choice'  data-group='選択肢' >基本認証</div>
+<div class='choice'  data-group='選択肢' >Digest認証</div>
+<div class='choice'  data-group='選択肢' >証明書認証</div>
+<div class='choice'  data-group='選択肢' >トークン認証</div>
+<div class='choice'  data-group='選択肢' > JWT認証</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題47<br>あなたは、グローバルプロジェクト管理システムを開発しています。 このシステムは、世界中のチームメンバーがプロジェクトの進捗を追跡し、タスクを割り当て、ドキュメントを共有するために使用されます。 各チームは異なる企業に所属しており、Microsoft Entra IDを通じて認証する必要があります。 またこのシステムは、各企業のAzure ADインスタンスからアクセスできる必要があります。 Microsoft Entra IDのアプリのマニフェストをどのように構成するべきですか。' data-answer='0,2,5' data-explanation='■正解：<br>値1: A:true<br>プロパティ: C:requiredResourceAccess<br>値2: F:AzureADMultipleOrgs<br>■解説<br>Microsoft Entraのアプリケーションマニフェストは、Microsoft Entra IDアプリケーションの設定を詳細に定義するJSONファイルです。このマニフェストは、アプリケーションの登録に関する情報や、どのようなアクセス許可や設定が必要かを記述しています。設問で問われているプロパティについては以下の通りとなります。<br>oauth2AllowImplicitFlow<br>このプロパティは、OAuth 2.0 暗黙的フロー（Implicit Flow）を使用するかどうかを制御します。暗黙的フローは、クライアントアプリケーションが直接アクセス トークンを取得するのに使用されます。具体的には、ユーザーが認証プロセスを完了すると、アクセストークンがブラウザに直接返されます。oauth2AllowImplicitFlowをtrueに設定すると、アプリケーションはこの認証フローをサポートすることになります。<br>requiredResourceAccess<br>このプロパティは、アプリケーションがアクセスを必要とするリソースおよびそのリソースで必要とするアクセス許可のリストを指定します。具体的には、アプリがどのAPI（リソース）に対してどのスコープのアクセス権を要求するかを設定します。<br>signInAudience<br>この設定は、アプリケーションがどのAzure ADテナントのユーザーにアクセスを許可するかを指定します。AzureADMultipleOrgs に設定することで、このアプリケーションは複数のMicrosoft Entra IDテナントからのユーザーを受け入れることができます。これは、異なる企業に所属するチームメンバーが同じアプリケーションにサインインできるようにするために必要です。' data-images='000058.jpg'>
+<div class='choice'  data-group='値１' >true</div>
+<div class='choice'  data-group='値１' >false</div>
+<div class='choice'  data-group='プロパティ' > requiredResourceAccess</div>
+<div class='choice'  data-group='プロパティ' > orgRestrictions</div>
+<div class='choice'  data-group='プロパティ' > availableToOtherTenants</div>
+<div class='choice'  data-group='値２' > AzureADMyOrg</div>
+<div class='choice'  data-group='値２' > AzureADMultipleOrgs</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題48<br>あなたは、企業のHR管理システムを開発しています。 このシステムは、Microsoft Entra IDを利用して従業員のデータを管理し、Microsoft Graph APIを使用して従業員情報を取得および更新します。 アプリケーションの認証には、X509証明書を使用します。アプリケーションはappsettings.jsonファイルに、証明書名、クライアントID、およびテナントIDが含まれています。 証明書を使用してトークンを取得するコードを実装する必要があります。<br>以下コード内において、設定を完成させるために適切なクラスならびに配列は何ですか。' data-answer='0,3' data-explanation='■正解：<br>クラス：A:ConfidentialClientApplicationBuilder<br>配列：D:scopes<br>■解説<br>クラス：ConfidentialClientApplicationBuilder<br>ConfidentialClientApplicationBuilderは、Microsoftの認証ライブラリ（MSAL）で使用されるクラスであり、アプリケーションがMicrosoft Entra IDからトークンを取得するための設定を行います。このクラスは、アプリケーションの認証設定を行うために使います。これには、アプリケーションID（Client ID）、証明書、認証のためのURL（Authority）などの設定が含まれます。<br>配列：scopes<br>scopesは、アプリケーションがアクセスしたいリソースやAPIの範囲（スコープ）を指定するための配列です。スコープは、アプリケーションがアクセスしようとするリソースやAPIの許可を指定します。これにより、Microsoft Entra IDは特定の権限を持つトークンを発行します。<br>このコードでは、ConfidentialClientApplicationBuilderクラスを使って、アプリケーションの認証設定を行い、scopes配列を使ってMicrosoft Graph APIへのアクセス権を指定しています。最終的に、Microsoft Entra IDからトークンを取得して、これを使用して従業員情報を取得および更新します。' data-images='000059.jpg'>
+<div class='choice'  data-group='クラス' >ConfidentialClientApplicationBuilder</div>
+<div class='choice'  data-group='クラス' >ConfidentialClientApplication</div>
+<div class='choice'  data-group='配列' >app</div>
+<div class='choice'  data-group='配列' >scopes</div>
+<div class='choice'  data-group='配列' >config</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題49<br>ある物流企業が配送トラックの位置データを管理するためにAzureの使用を検討しています。各トラックは1時間ごとに現在の位置データをAzure Blob Storageに送信します。このデータは、配送状況の監視とルートの最適化に利用されます。<br>物流企業のトラック位置データがAzure Blob Storageにアップロードされた後、このデータをAzure Functionを使用してすぐに処理し、データの監視とルート最適化を行うためのソリューションを構成する必要があります。<br>位置データのイベントルーティングをどのように実装しますか。設定ごとに選択肢をそれぞれ１つずつ選択してください。' data-answer='0,3,4' data-explanation='■正解：<br>データソース: A: Azure Blob Storage<br>データの受信先: D: Azure Event Grid<br>データの処理（ハンドラー）: E: Azure Function App<br>■解説<br>設問の要件を満たすため適切なデータソースや受信先、ハンドラーを選択する必要があります。以下のサービスがそれぞれ適切です。<br>データソース:トラックの位置データは1時間ごとにAzure Blob Storageに送信されるので、データソースはAzure Blob Storageになります。Event Gridはイベントの配信サービスであり、データが最初に送信される場所ではありません。<br>データの受信先: Azure Event Gridは、Blob Storageにデータがアップロードされたイベントを検出し、それを他のサービス（ここではAzure Function App）に転送する役割を果たします。これにより、データがアップロードされると即座に処理が開始されます。Service Busはメッセージングサービスであり、イベントのルーティングには適していません。<br>データの処理（ハンドラー）: Azure Function Appは、イベントがトリガーされると実行されるコードをホストするために使用されます。ここでは、Event Gridからのイベントを受け取り、データを処理します。Logic Appもワークフローの自動化に使用されますが、このシナリオではAzure Function Appが適しています。'>
+<div class='choice'  data-group='データソース' >Azure Blob Storage</div>
+<div class='choice'  data-group='データソース' >Azure Event Grid</div>
+<div class='choice'  data-group='データの受信先' >Azure Service Bus</div>
+<div class='choice'  data-group='データの受信先' >Azure Event Grid</div>
+<div class='choice'  data-group='データの処理（ハンドラー）' >Azure Function App</div>
+<div class='choice'  data-group='データの処理（ハンドラー）' >Azure Logic App</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題50<br>ある貿易会社が輸送管理システムをAzureに移行することを決定しました。この会社は複数の物流業者と連携し、海上および内陸輸送を効率的に管理するために、エンタープライズ統合メタデータを使用したいと考えています。<br>Azure Logic Appsを使って統合サービス環境 (ISE)を構築する手順として正しいのはどれですか。' data-answer='0,2,4' data-explanation='■正解：<br>手順２：A:Logic App を統合アカウントにリンクする<br>手順３：C:パートナー、スキーマ、証明書、マップ、および合意書を追加する<br>手順４：E:Logic Appを更新する<br>■解説<br>エンタープライズ統合メタデータは、企業内外のシステム間でデータを交換するために必要な情報のことです。<br>具体的には、次のようなものが含まれます。<br>・パートナー: データを交換する相手先<br>・スキーマ: データの形式や構造<br>・証明書: 安全にデータを交換するための認証情報<br>・マップ: 異なるデータ形式を変換するためのルール<br>・合意書: データ交換に関する取り決め<br>統合サービス環境（ISE）は、Azure Logic Appsでエンタープライズ統合メタデータを使用するための環境です。ISEを使うことで、データ交換やビジネスプロセスの自動化を効率的に実現できます。Azure Logic Appsを使って統合サービス環境 (ISE)を構築する手順は以下の通りです。<br>手順１: Azure ポータルで統合アカウントを作成する:最初に統合アカウントを作成する必要があります。これにより、必要なメタデータ（パートナー、スキーマ、証明書、マップ、合意書）を管理するための基盤が整います。<br>手順2: Logic App を統合アカウントにリンクする:統合アカウントを作成したら、Logic Appをこの統合アカウントにリンクします。これにより、Logic Appが統合アカウント内のメタデータを利用できるようになります。<br>手順3: パートナー、スキーマ、証明書、マップ、および合意書を追加する:次に、統合アカウントに必要なメタデータを追加します。これにより、Logic Appが実際のデータ交換でこれらのメタデータを使用できるようになります。<br>手順4: Logic Appを更新する:最後に、Logic Appを更新して、追加したメタデータを利用するように設定します。これにより、データ交換が正しく行われるようになります。' data-images='000060.jpg'>
+<div class='choice'  data-group='手順２' >Logic App を統合アカウントにリンクする</div>
+<div class='choice'  data-group='手順２' >Logic App 用のカスタムコネクタを作成する</div>
+<div class='choice'  data-group='手順３' >パートナー、スキーマ、証明書、マップ、および合意書を追加する</div>
+<div class='choice'  data-group='手順３' >Logic App 用のカスタムコネクタを作成する</div>
+<div class='choice'  data-group='手順４' >Logic Appを更新する</div>
+<div class='choice'  data-group='手順４' >Logic App にカスタムコネクタをリンクする</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題51<br>あるグローバルなEコマースサイトを運営する組織が注文処理システムのAzureへの移行を検討しています。Azureへ移行後は、ユーザーが商品を購入すると、注文情報がAzure Blob Storageに保存され、注文情報には商品ID、ユーザーID、注文日、配送先住所などが含まれます。また、サイトはこの注文情報をAzure Cosmos DBに保存し、在庫管理や発送処理に利用する必要があります。<br>ユーザーの注文情報がAzure Blob Storageに保存された後、Azure Functionを使用してこのデータをAzure Cosmos DBに保存するためのソリューションを構成する必要があります。どのように設定するのが最適ですか。下記設定の選択肢よりそれぞれ１つずつ選択してください。' data-answer='0,3,4' data-explanation='■正解：<br>バインディング: A: Azure Cosmos DB<br>バインドの方法: D: 出力バインド<br>トリガー: E: Blob storage<br>■解説<br>グローバルなEコマースサイトの注文処理システムをAzureに移行する際、以下の手順が必要です。<br>１．ユーザーが商品を購入すると、注文情報がAzure Blob Storageに保存されます。<br>２．この注文情報をAzure Cosmos DBに保存し、在庫管理や発送処理に利用します。<br>このシナリオにおいて、Azure Functionを使用してAzure Blob Storageからデータを受け取り、Azure Cosmos DBに保存するための最適な設定は何かを問われています。<br>・バインディング：Azure Cosmos DBをバインディングとして選ぶことで、Azure Functionがこのデータベースに対してデータを保存する操作を実行できるようになります。<br>・バインドの方法: 出力バインドを選択することで、Azure Functionが取得したデータをAzure Cosmos DBに保存する操作を行います。入力バインドはデータを読み取るための設定です。<br>・トリガー: Blob storageをトリガーとすることで、データがBlob Storageにアップロードされた際にAzure Functionが実行されるように設定します。これにより、データのアップロードをきっかけにAzure Functionが起動し、データ処理が行われます。<br>Azure Blob Storageに保存された注文情報をトリガーとしてAzure Functionを実行し、そのデータをAzure Cosmos DBに出力バインドを通じて保存することです。これにより、ユーザーの注文情報が効率的に管理され、在庫管理や発送処理に利用することができます。'>
+<div class='choice'  data-group='バインディング' >Azure Cosmos DB</div>
+<div class='choice'  data-group='バインディング' >Blob storage</div>
+<div class='choice'  data-group='バインディング' >Event Grid</div>
+<div class='choice'  data-group='バインドの方法' >入力バインド</div>
+<div class='choice'  data-group='バインドの方法' >出力バインド</div>
+<div class='choice'  data-group='トリガー' >Blob storage</div>
+<div class='choice'  data-group='トリガー' >Azure Cosmos DB</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

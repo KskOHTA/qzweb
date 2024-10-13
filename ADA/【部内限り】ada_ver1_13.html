@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='true' data-question='問題1<br>あなたは、グローバルなゲームサービスのバックエンドを開発しています。このサービスは、プレイヤーのスコアとゲームの進行状況をAzure Cosmos DBに保存し、アプリケーションはSouth Central USとEast USリージョンにデプロイされています。多地域間でのデータの一貫性を保ちつつ、書き込みレイテンシーを最小限に抑えるために、アプリケーションのデータ書き込み戦略を最適化する必要があります。<br>これら要件を満たす適切な対応はどれですか。（２つ選択）' data-answer='0,3' data-explanation='■正解：<br>A:ConnectionPolicyクラスのPreferredLocationsプロパティを更新し、アプリケーションの地理的な近接性に基づいて、優先するリージョンを指定する<br>D:ConnectionPolicyクラスのUseMultipleWriteLocationsプロパティをtrueに設定して、Azure Cosmos DBの複数書き込みリージョン機能を有効にする<br>■解説<br>設問のシナリオでは、データの一貫性を保ちながら書き込みレイテンシーを最小化する戦略が求められています。Azure Cosmos DBの多地域機能を効果的に活用する方法を考える必要があります。<br>ConnectionPolicyクラスのPreferredLocationsプロパティを更新する：PreferredLocationsプロパティは、アプリケーションがデータベース操作を行う際に優先するリージョンを指定します。これにより、ユーザーの地理的な位置に基づいて、最も近いリージョンにアクセスすることができ、読み取りおよび書き込みのレイテンシーが低減されます。また、アプリケーションがユーザーに最も近いリージョンにアクセスすることで、応答時間が短縮され、ユーザーエクスペリエンスが向上します。これにより、スコアやゲームの進行状況の保存が迅速に行われます。<br>ConnectionPolicyクラスのUseMultipleWriteLocationsプロパティをtrueに設定する：この設定により、Azure Cosmos DBは複数のリージョンで同時に書き込みを許可します。これにより、書き込み操作が地理的に分散され、特定のリージョンに書き込み負荷が集中するのを防ぎ、レイテンシーを最小限に抑えます​ 。また、可用性も向上し、リージョン障害時のデータ可用性も確保されます。'>
+<div class='choice'  data-group='選択肢' >ConnectionPolicyクラスのPreferredLocationsプロパティを更新し、アプリケーションの地理的な近接性に基づいて、優先するリージョンを指定する</div>
+<div class='choice'  data-group='選択肢' >UseMultipleWriteLocationsプロパティをfalseに設定して、書き込み操作を一つのリージョンに限定する</div>
+<div class='choice'  data-group='選択肢' >セッショントークンを利用して、ユーザーセッションごとにデータ書き込みを管理する</div>
+<div class='choice'  data-group='選択肢' >ConnectionPolicyクラスのUseMultipleWriteLocationsプロパティをtrueに設定して、Azure Cosmos DBの複数書き込みリージョン機能を有効にする</div>
+<div class='choice'  data-group='選択肢' >Strong consistencyレベルを使用して、リージョン間でのデータ整合性を最大化する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題2<br>あなたはマルチテナントのクラウドアプリケーションを開発しており、異なる顧客ごとに独立したリソースグループを持っています。各テナントのデータへのアクセスを仮想マシンから行い、顧客ごとにカスタマイズされたサービスを提供する必要があります。<br>Azure Resource Managerを使用して、上記要件を満たす場合どのような対応が最適ですか。' data-answer='3' data-explanation='■正解：<br>D:Invoke-WebRequestコマンドレットを使用して、Azureリソース用のローカル マネージドIDに、Azure Resource Managerのアクセス トークンを取得するよう要求する<br>■解説<br>Invoke-WebRequest は、PowerShellで使用されるコマンドレットの一つであり、HTTPおよびHTTPSプロトコルを使用してWebサービスと通信するための機能を提供します。このコマンドレットは、Webページを取得したり、APIエンドポイントにリクエストを送信したりするために使用されます。<br>Azure Resource Managerへのアクセスを行うために、仮想マシンからInvoke-WebRequestコマンドレットを使用してマネージドIDを使い、アクセストークンを取得することができます。これにより、安全かつ効率的に各テナントのデータにアクセスし、顧客ごとにカスタマイズされたサービスを提供することができます。'>
+<div class='choice'  data-group='選択肢' >X.509証明書を使用して、仮想マシンをAzure Resource Managerに認証する</div>
+<div class='choice'  data-group='選択肢' >Function Appを使用して、データアクセスロジックを実装する</div>
+<div class='choice'  data-group='選択肢' >ロールベースのアクセス制御（RBAC）閲覧者ロールを使用して、仮想マシンをAzure Resource Managerに認証する</div>
+<div class='choice'  data-group='選択肢' >Invoke-WebRequestコマンドレットを使用して、Azureリソース用のローカル マネージドIDに、Azure Resource Managerのアクセス トークンを取得するよう要求する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題3<br>あなたは、全国規模の鉄道ネットワークを監視するシステムを開発しています。このシステムは、列車の位置や速度、遅延情報などの追跡イベントをAzure Event Hubsを利用して収集します。各鉄道路線に対して特有のデータ流量制限を設定するため、各路線に独自のスロットリングポリシーが必要です。<br>路線ごとのスロットルを許可するためにはどのようにAzure Event Hubsを構成すればよいですか。' data-answer='3' data-explanation='■正解：<br>D:路線ごとに独自のアプリケーショングループを作成する<br>■解説<br>Azure Event Hubsは、イベント処理サービスであり、大量のイベントデータの取得、保存、処理をリアルタイムで行うことができます。特に、大規模なシステムやアプリケーションでの利用に適しており、様々なソースからのデータストリームを効率的に扱うことが可能です。<br>スロットリングポリシーは、システムやサービスに対するリクエストの数を制限するルールのことです。このポリシーの目的は、過度のトラフィックがシステムのパフォーマンスに悪影響を及ぼすのを防ぐことにあります。たとえば、あるサービスが1秒間に処理できるリクエストの数に上限を設けることで、システムが過負荷になるのを防ぎます。<br>アプリケーショングループは、Azure Event Hubsなどのサービスで利用される概念であり、異なるアプリケーションやプロジェクトごとにグループを形成し、それぞれのグループに独自のリソースやポリシーを適用できるようにするものです。アプリケーショングループを使用することで、異なるスロットリングポリシーをグループごとに設定することができ、例えば、一つのグループには高いリクエスト率を許容するスロットリングポリシーを適用し、別のグループにはより厳しいリクエスト制限を設けることが可能です。これにより、特定のグループがリソースを過度に消費することを防ぎつつ、他のグループのパフォーマンスを保護することができます。'>
+<div class='choice'  data-group='選択肢' >トピックとサブスクリプションを使わずに直接イベントを送信する</div>
+<div class='choice'  data-group='選択肢' >個々のイベントに対してAPIを公開する</div>
+<div class='choice'  data-group='選択肢' >路線ごとに動的なパーティション割り当てを行う</div>
+<div class='choice'  data-group='選択肢' >路線ごとに独自のアプリケーショングループを作成する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題4<br>あなたは、Azure上でアプリケーションを開発しており、HSMキー使用をするためにAzure Key Vaultに転送する必要があります。<br>Bring Your Own Key(BYOK)プロセスを使用して、既存のAzure Key Vaultに転送する場合、転送の手順として正しいアクションはどれですか。' data-answer='1,3,5' data-explanation='■正解：<br>手順２：B:KEK の公開キーを取得する<br>手順３：D:BYOKツールを使用してキー転送BLOBを生成する<br>手順４：F:キー転送BLOBをアップロードする<br>■解説<br>HSMキー（Hardware Security Module Key）は、ハードウェアセキュリティモジュール（HSM）という専用の物理デバイスによって生成、保管される暗号キーです。HSMは、データの暗号化と復号、デジタル署名、認証プロセスなどのセキュリティ関連の操作を行うために設計されています。このデバイスは、非常に高いセキュリティレベルを提供することを目的としており、特に銀行や政府機関など、高度なセキュリティが要求される環境で広く使用されています。<br>Azure Key Vaultに既存のHSMキーを転送するためのBYOK（Bring Your Own Key）プロセスは以下の通りです。<br>１．KEKを生成する：Key Exchange Key (KEK) を生成することから始めます。KEKは、主にセキュリティが重要なデータ転送プロセスで使用される暗号化キーです。KEKの目的は、安全でないチャネルを介して安全にデータ（この場合は暗号化キー自体）を転送することです。KEKを使用する主な利点は、データ（ターゲットキー）が外部に漏洩しても、KEKがなければデータを復号できないため、セキュリティが大幅に強化されることです。この方法により、データのプライバシーと整合性が保たれます。<br>２．KEK の公開キーを取得する：次に、生成したKEKの公開キーを取得します。この公開キーは、オンプレミスのHSMからエクスポートするキーを暗号化するために使用されます。公開キーを使ってキーを安全に暗号化できるため、キーが外部に漏れても安全です。<br>３．BYOKツールを使用してキー転送BLOBを生成する：このステップで、HSMベンダーが提供するBYOKツールを使用して、キー転送BLOBを生成します。このBLOBファイルには、KEKで保護されたHSMキーが含まれます。これにより、キーがAzure Key Vaultに安全に転送されることを保証します。<br>４．キー転送BLOBをアップロードする：最後に、az keyvault key importコマンドを使用して生成したキー転送BLOBをAzure Key Vaultにアップロードします。これにより、Azure Key Vaultが転送されたキーを保有し、使用する準備が整います。' data-images='000027.jpg'>
+<div class='choice'  data-group='手順２' >BYOKツールを使用してキー転送BLOBを生成する</div>
+<div class='choice'  data-group='手順２' >KEK の公開キーを取得する</div>
+<div class='choice'  data-group='手順３' >キー転送BLOBをアップロードする</div>
+<div class='choice'  data-group='手順３' >BYOKツールを使用してキー転送BLOBを生成する</div>
+<div class='choice'  data-group='手順４' >KEK の公開キーを取得する</div>
+<div class='choice'  data-group='手順４' >キー転送BLOBをアップロードする</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題5<br>あなたはヘルスケアデータを扱うWebアプリを開発しています。顧客情報の安全を確保するために、Microsoft Entra IDとAzure Key Vaultを使用して認証プロセスを保護したいと考えています。<br>これら要件を満たす適切な対応はどれですか。' data-answer='0' data-explanation='■正解：<br>A:マネージドIDを有効にする<br>■解説<br>マネージドID（Managed Identities）は、Azureサービス（例えばAzure App ServiceやAzure Virtual Machinesなど）に自動的に管理されるMicrosoft Entra IDのIDを提供します。この機能を使用することで、資格情報をコードにハードコーディングする必要がなくなり、セキュリティリスクを大幅に軽減できます。<br>設問にあるように、ヘルスケアデータを扱うWebアプリを開発しており、顧客情報の安全を確保したいと考えている場合、マネージドIDを利用することで以下のようなプロセスを実現できます。<br>Azure Key Vaultとの統合：WebアプリがAzure Key Vaultに格納されているシークレット（APIキー、接続文字列など）を安全にアクセスするために、マネージドIDを使用します。このアクセスはAzure ADを通じて行われ、マネージドIDがその認証を代行します。<br>データベースとの安全な通信：Azure SQL DatabaseなどのAzureリソースへの接続にもマネージドIDを使用できます。これにより、接続情報を安全に保ちつつ、データベースへのアクセスを管理できます。<br>このように、マネージドIDはAzure環境において認証と認可のプロセスを簡略化し、セキュリティを強化するための非常に効果的な方法です。'>
+<div class='choice'  data-group='選択肢' >マネージドIDを有効にする</div>
+<div class='choice'  data-group='選択肢' >Key Vaultでシークレットを設定する</div>
+<div class='choice'  data-group='選択肢' >サービスプリンシパルを作成する</div>
+<div class='choice'  data-group='選択肢' >Microsoft Entra Connectを有効にする</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題6<br>あなたは、オンライン教育プラットフォームのWebアプリを開発しています。このプラットフォームはAzure App Service上にデプロイされ、学生と教員の認証にX（旧：Twitter）とMicrosoft Entra IDを使用します。すべての通信はSSLを使用し、Xを主要なアイデンティティプロバイダーとして使用します。<br>Microsoft Entra IDリクエストをアプリコードで検証する必要がある場合、何を検証するべきですか。' data-answer='2' data-explanation='■正解：<br>C:IDトークンの署名<br>■解説<br>IDトークンは、ユーザーが認証プロバイダ（このケースではMicrosoft Entra ID）によって正しく認証されたことをアプリケーションに伝えるために使われます。これらのトークンは通常、JSON Web Token（JWT）形式であり、3つの部分から構成されています：ヘッダー、ペイロード（主張）、そして署名です。<br>IDトークンの署名部分は、トークンの整合性と信頼性を保証するために非常に重要です。署名は、トークンが発行元によって生成され、送信途中で改ざんされていないことを証明します。署名は通常、公開鍵/秘密鍵のペアを用いたデジタル署名技術を使って生成されます。<br>IDトークンの署名を検証することは、セキュリティを確保する上で不可欠です。これにより、アプリケーションは偽造や改ざんから保護され、ユーザーが認証プロバイダから正式に認証されたことを確認できます。また、認証情報が有効であることを確認することで、悪意のあるアクターが無効な認証情報を使用してシステムにアクセスするリスクを減らすことができます。'>
+<div class='choice'  data-group='選択肢' >IDトークンのヘッダー</div>
+<div class='choice'  data-group='選択肢' >IDトークンのペイロード</div>
+<div class='choice'  data-group='選択肢' >IDトークンの署名</div>
+<div class='choice'  data-group='選択肢' >HTTPリクエストメソッド</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題7<br>あなたは、Azure Cosmos DBを使用して大規模な医療情報システムのためのデータ管理ソリューションを開発しています。このシステムには数百万の患者記録が含まれ、それぞれの記録には複数の医療データ属性が含まれています。ドキュメントのプロパティには明確なパーティショニングのための区別可能な値が存在しないため、負荷を適切に分散させる必要があります。<br>これら要件を満たすパーティションキーの適切な作成方法はどれですか。（３つ選択）' data-answer='1,2,4' data-explanation='■正解：<br>B:プロパティ値に基づいてハッシュ値を生成する<br>C:ランダムなサフィックス（接尾辞）を追加する<br>E:複数のプロパティを連結する<br>■解説<br>Azure Cosmos DBにおいて適切なパーティションキーを作成することは、データのスケーラビリティとパフォーマンスの最適化において非常に重要です。特に、大規模な医療情報システムのようなアプリケーションでは、データの負荷を均等に分散させることが求められます。そのような場合、合成パーティションキーの使用が推奨されます。<br>合成パーティションキーは、複数のドキュメントプロパティを組み合わせたり、プロパティに何らかの追加情報（例えば、ランダムな接尾辞やハッシュ値）を加えたりすることで作成されます。この方法により、ドキュメントがより均等に分散され、一部のパーティションにデータが集中することを防ぎます。<br>設問の要件に合う適切な選択肢は以下の通りです。<br>複数のプロパティを連結する：この方法では、患者記録の複数の医療データ属性を組み合わせて一つのパーティションキーを作成します。これにより、各キーがユニークになり、データが各パーティションに均等に分散されることが期待できます。<br>ランダムなサフィックス（接尾辞）を追加する：ランダムなサフィックスを追加することで、パーティションキーの一意性を高め、より均一なデータの分散を促進します。これは特に、元のプロパティ値が重複しやすい場合に有効です。<br>プロパティ値に基づいてハッシュ値を生成する：プロパティ値からハッシュ値を生成することで、パーティションキーの分散を向上させることができます。ハッシュ関数は一般に、入力されたデータから一定の長さの出力を生成するため、パーティション間でのデータの均等な分布を助けます。'>
+<div class='choice'  data-group='選択肢' >頻繁に変更されるプロパティを使用する</div>
+<div class='choice'  data-group='選択肢' >プロパティ値に基づいてハッシュ値を生成する</div>
+<div class='choice'  data-group='選択肢' >ランダムなサフィックス（接尾辞）を追加する</div>
+<div class='choice'  data-group='選択肢' >値の分布が偏っているプロパティを使用する</div>
+<div class='choice'  data-group='選択肢' >複数のプロパティを連結する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題8<br>あなたは、大企業向けの社内ポータルを開発しています。このポータルでは、従業員の認証と認可を通じて、機密性の高い企業情報へのアクセスを厳格に管理する必要があります。また、Azure App Configurationを使用して、ニュースフィードの表示設定や通知設定など、ポータルのさまざまな機能を柔軟に管理する必要があります。<br>これら要件を満たす正しい設定は何ですか。' data-answer='0,2,4' data-explanation='■正解：<br>オプション１：A:UseAuthentication<br>オプション２：C:UseAuthorization<br>オプション３：E:UseAzureAppConfiguration<br>■解説<br>企業内ポータルの開発において、従業員の認証と認可を通じて敏感な企業情報のアクセスを管理し、Azure App Configurationを利用してポータルの様々な機能を管理するための正しい設定を選ぶ必要があります。ここでの主要なタスクは、安全性を確保しつつ、設定の柔軟性を保持することです。それぞれのオプションの役割は以下の通りです。<br>UseAuthentication：これは、ユーザーが誰であるかを確認する認証プロセスを有効にします。つまり、ユーザーがログインする際に、その身元を確認するための仕組みです。<br>UseAuthorization：認証が完了した後、次に実行するべきは認可のプロセスです。これは、認証されたユーザーが特定の操作を行う権限を持っているかどうかをチェックするプロセスです。つまり、ユーザーが特定のリソースにアクセスする権利を持っているかを管理します。<br>UseAzureAppConfiguration：この設定により、Azure App Configurationサービスからアプリケーション設定を取得し、リアルタイムで設定の変更が反映されるようになります。これはアプリケーションの様々な機能設定（ニュースフィードの表示設定や通知設定など）を管理するのに役立ちます。<br>設定情報は、セキュリティに関わる可能性があるため、認証や認可などの基本的なセキュリティチェック後に適用することが一般的です。これら設定により、従業員の安全な認証と認可が保証され、Azure App Configurationを通じてアプリケーション設定を効率的に管理することができます。' data-images='000028.jpg'>
+<div class='choice'  data-group='オプション１' >UseAuthentication</div>
+<div class='choice'  data-group='オプション１' >UseCookiePolicy</div>
+<div class='choice'  data-group='オプション２' >UseAuthorization</div>
+<div class='choice'  data-group='オプション２' >UseAuthentication</div>
+<div class='choice'  data-group='オプション３' >UseAzureAppConfiguration</div>
+<div class='choice'  data-group='オプション３' >UseCors</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題9<br>あなたは、Azure SDKを使用してSaaS型CRM（顧客関係管理）システムのバックエンドを開発しています。このシステムは、顧客情報をBlockBlobStorageに保存して管理します。アプリケーションは最後にデータを読んだ時点からデータが更新されていないかを確認し、更新があった場合にのみ最新の情報を用いて更新操作を行う必要があります。<br>HTTPヘッダーと条件付きヘッダーは何を使用するべきですか。（２つ選択）' data-answer='1,2' data-explanation='■正解：<br>B:ETag<br>C:If-Match<br>■解説<br>このシナリオでは、Azure SDKを使ったSaaS型CRMシステムの開発が行われており、顧客情報がAzureのBlockBlobStorageに保存されています。アプリケーションは、前回データを読み込んだ後でデータが更新されているかを確認し、更新があった場合のみ、その最新情報を使ってデータを更新する必要があります。<br>HTTPヘッダーは、HTTPリクエストやレスポンスに追加情報を付加するために使用されるキーバリューペアのことです。条件付きヘッダーは、特定の条件が満たされたときにのみ、リクエストを成功させるために使われます。<br>ETag (Entity Tag)：ETagは、リソースの特定のバージョンを一意に識別するために使われる値です。サーバーは、リソースが変更されるたびに新しいETagを生成し、それをHTTPレスポンスに含めてクライアントに送ります。クライアントはこのETagを保存しておき、次回同じリソースにアクセスするときにこのETagをリクエストに含めることができます。<br>If-Match：If-Matchヘッダーは、クライアントが提供するETag値がサーバー上のリソースの現在のETag値と一致する場合にのみ、リクエストを実行するようサーバーに指示します。これは、データが最後に読み取られてから変更されていないことを確認するのに役立ちます。'>
+<div class='choice'  data-group='選択肢' >If-Modified-Since</div>
+<div class='choice'  data-group='選択肢' >ETag</div>
+<div class='choice'  data-group='選択肢' >If-Match</div>
+<div class='choice'  data-group='選択肢' >If-None-Match</div>
+<div class='choice'  data-group='選択肢' >User-Agent</div>
+<div class='choice'  data-group='選択肢' >Content-Type</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題10<br>ある企業が製品のイメージファイルをAzure Blob Storageに保存しており、定期的にスナップショットを取ってバックアップしています。新しいバージョンの製品がリリースされるため、古いスナップショットは不要になりましたが、最新のイメージファイルは維持する必要があります。<br>これら要件を満たす、オプションは何ですか' data-answer='0' data-explanation='■正解：<br>A:DeleteSnapshotsOption.OnlySnapshots<br>■解説<br>このシナリオでは、最新のイメージファイルは保持しつつ、それに関連する古いスナップショットだけを削除する必要があります。<br>この場合、スナップショットを管理するためにDeleteSnapshotsOptionを使用します。これには、Blobとそのスナップショットの削除方法を指定するためのオプションが含まれています。<br>OnlySnapshotsは、データの最新の状態を保持しつつ、古いデータのバージョン（スナップショット）を削除する際に特に便利です。例えば、プロジェクトの最終版は保持しながら、過程で生成された多数のスナップショットを削除して、ストレージを整理したい場合にこのオプションを使用します。' data-images='000029.jpg'>
+<div class='choice'  data-group='選択肢' >DeleteSnapshotsOption.OnlySnapshots</div>
+<div class='choice'  data-group='選択肢' >DeleteIfExists.OnlySnapshots</div>
+<div class='choice'  data-group='選択肢' >DeleteIfExists.None</div>
+<div class='choice'  data-group='選択肢' >DeleteSnapshotsOption.IncludeSnapshots</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題11<br>Microsoft Identity platformで発行できるトークンについて、以下の要件を満たすためにはどのトークンをそれぞれ使用するべきですか。<br>要件１：ユーザーの認証情報をアプリケーションに提供し、JWT（JSON Web Token）を使用する<br>要件２：主にエンタープライズアプリケーションで使用され、XMLフォーマットで提供される' data-answer='0,4' data-explanation='■正解：<br>要件１：A:IDトークン<br>要件２：E:SAMLトークン<br>■解説<br>Microsoft Identity platformを使用するWebアプリケーションでは、セキュリティとアクセス制御のためにさまざまな種類のトークンが活用されます。<br>具体的には、以下のトークンが提供されています。<br>・SAMLトークン：XMLフォーマットで提供される認証と認可のデータを含むトークンです。これは主にエンタープライズアプリケーションで使われ、異なるドメイン間でのユーザー認証情報の交換に使用されます。このトークンは、ユーザーがあるサービス（例えば、社内ポータル）で認証された後に、別の関連サービス（例えば、クラウドアプリケーション）に安全にアクセスするために使われます。これにより、ユーザーは複数のサービスに対して繰り返しログインする手間を省けます（シングルサインオン）。<br>・アクセストークン：リソースサーバー（例えば、API）に対するアクセスを許可するための有効期間の短いトークンです。このトークンは、認証されたユーザーが許可された操作（例えば、データの読み取りや更新）を行う際に、リソースサーバーに提出されます。アクセストークンは、その持ち主がどのようなアクセス権を持っているか（つまり、どのリソースにアクセスできるか）をリソースサーバーに通知します。<br>・更新（Refresh）トークン：アクセストークンが失効した後もユーザーセッションを継続させるために使用される長寿命トークンです。このトークンにより、ユーザーは再認証することなく新しいアクセストークンを取得できます。これはアプリケーションがユーザーの介入なしにバックグラウンドでリソースへのアクセス権を維持するのに役立ちます。<br>・IDトークン：OpenID Connectプロトコルを通じてユーザーの認証情報をクライアントアプリケーションに提供するために使用されるJWT（JSON Web Token）です。このトークンには、ユーザーのプロフィール情報やアプリケーションに重要なその他の情報が含まれています。IDトークンは、ユーザーが誰であるかをアプリケーションに伝えるために使われ、クライアントアプリケーションがユーザーを識別するのに役立ちます。<br>本設問の解説については、以下の通りです。<br>要件１：ユーザーの認証情報をアプリケーションに提供し、JWT（JSON Web Token）を使用する<br>この要件には、ユーザーの認証情報を含み、JSON Web Token（JWT）形式で提供されるトークンが適しています。この記述に最も適合するのはIDトークンです。IDトークンは、OpenID Connect規格においてユーザーの認証情報をクライアントアプリケーションに提供する目的で使用され、JWT形式でエンコードされます。<br>要件２：主にエンタープライズアプリケーションで使用され、XMLフォーマットで提供される<br>この要件は、XMLフォーマットを使用して認証情報を提供するSAMLトークンに該当します。SAMLトークンはエンタープライズアプリケーション間でのシングルサインオン（SSO）に広く使用されており、XMLベースのアサーションでユーザー認証情報を伝達します。'>
+<div class='choice'  data-group='要件１' >IDトークン</div>
+<div class='choice'  data-group='要件１' >SAMLトークン</div>
+<div class='choice'  data-group='要件１' >アクセストークン</div>
+<div class='choice'  data-group='要件２' >IDトークン</div>
+<div class='choice'  data-group='要件２' >SAMLトークン</div>
+<div class='choice'  data-group='要件２' >アクセストークン</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題12<br>あなたは、ソフトウェアライセンスキーを管理するためのツールを開発しています。ライセンスキーはAzure Key Vaultに格納され、アプリケーションはこれらのキーにアクセスして認証を行う必要があります。アプリケーションがKey Vaultから安全にライセンスキーを取得できるように、コードを開発する必要があります。<br>適切なコードのセグメントを選択してください。' data-answer='0,2' data-explanation='■正解：<br>セグメント１：A:SecretClient<br>セグメント２：C:DefaultAzureCredential<br>■解説<br>この設定はAzure Key Vaultからシークレットを取得するためのものです。ここで、vaultEndpointは環境変数からKey VaultのURIを取得し、licenseClientはこのURIを使用してKey Vaultへのクライアントを初期化します。クライアントを初期化するためには、適切なクライアントクラスと認証方法が必要です。<br>SecretClientは、Azure Key Vaultからシークレットを取得、追加、更新、削除するためのクライアントライブラリです。このクライアントを使用することで、アプリケーションは特定のシークレットにプログラム的にアクセスでき、それを使用してさまざまな認証や認可のプロセスを実行できます。SecretClient オブジェクトは、Key VaultのURIと認証情報を引数に取ることで初期化されます。<br>DefaultAzureCredentialは、Azure SDKの認証ライブラリで、複数の認証メカニズムを透過的に実行します。これにより、開発者はコードを変更することなく、ローカル開発環境からプロダクション環境まで様々な環境で認証を簡単に実行できます。このクラスは、環境変数、マネージドアイデンティティ、Azure CLI、Azure AD統合された開発環境など、利用可能な認証方法を自動的に検出して使用します。' data-images='000030.jpg'>
+<div class='choice'  data-group='セグメント１' >SecretClient</div>
+<div class='choice'  data-group='セグメント１' >SecretName</div>
+<div class='choice'  data-group='セグメント２' >DefaultAzureCredential</div>
+<div class='choice'  data-group='セグメント２' >GetSecretAsync</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題13<br>あなたは、Azure Cosmos DBデータベースの設計において、適切なクエリの種類を選択する必要があります。<br>下記の例の場合、それぞれどのパーティションクエリを選択するべきですか。<br>例１：同じ従業員情報のデータベースを使って、ある条件（例えば従業員の年齢が30歳以上）に合致するすべての従業員の情報を取得する場合、年齢はパーティションキーではないため、次のようなクエリが必要です。<br>SELECT * FROM c WHERE c.Age >= 30<br>例２：従業員情報を管理するデータベースがあり、EmployeeId をパーティションキーとしているとします。下記のような、特定の従業員（例えば従業員IDが12345）の詳細情報を取得するクエリが必要です。<br>SELECT * FROM c WHERE c.EmployeeId = '12345'' data-answer='1,2' data-explanation='■正解：<br>例１：B:クロスパーティションクエリ<br>例２：C:インパーティションクエリ<br>■解説<br>Azure Cosmos DBでのクエリ種類の選択は、パーティションキーの設定と密接に関連しています。パーティションキーがどのように設定されているかによって、クエリがどのパーティションにアクセスするかが決まります。<br>インパーティションクエリは、単一のパーティション内で完結するクエリです。これは指定されたパーティションキーの値に基づいて実行され、そのパーティション内のデータのみが検索されます。インパーティションクエリは効率が良く、コストも低いため、パフォーマンスが非常に高速です。このタイプのクエリは、パーティションキーに基づいて明確にデータを絞り込むことができる場合に最適です。<br>クロスパーティションクエリは、複数のパーティションにまたがってデータを検索するクエリです。このタイプのクエリは、指定されたパーティションキーの値を使用しない、または範囲検索などでパーティションキーが複数の値にまたがる場合に発生します。クロスパーティションクエリは、必要なリクエストユニット (RU) が多く、パフォーマンスが低下する可能性がありますが、データの全範囲をカバーするためには避けられないことがあります。<br>設問の例１の場合、このクエリでは、Age 属性に基づいてデータをフィルタリングするため、Cosmos DBはすべてのパーティションをスキャンする必要があり、これはクロスパーティションクエリとなります。<br>SELECT * FROM c WHERE c.Age >= 30<br>設問の例２の場合、このクエリは、EmployeeIdがパーティションキーとして設定されています。これは、特定のパーティションキーの値を指定しているため、このクエリは特定のパーティションに直接アクセスするインパーティションクエリとなります。<br>SELECT * FROM c WHERE c.EmployeeId = '12345''>
+<div class='choice'  data-group='例１' >インパーティションクエリ</div>
+<div class='choice'  data-group='例１' >クロスパーティションクエリ</div>
+<div class='choice'  data-group='例２' >インパーティションクエリ</div>
+<div class='choice'  data-group='例２' >クロスパーティションクエリ</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題14<br>あなたはメディア制作会社で働いており、制作中のビデオや画像のバックアップをAzure Blob Storageで管理しています。クリエイティブな変更に対応するために、これらのファイルのスナップショットが定期的に取られます。プロジェクトが完了した後、スナップショットは不要になるため、安全に削除する必要がありますが、元のファイルは保持する必要があります。<br>これら要件を満たすコマンドは何ですか。' data-answer='2' data-explanation='■正解：<br>C:delete_blob(delete_snapshots='Only')<br>■解説<br>設問のシナリオでは、ブロブストレージアカウントのすべてのスナップショットを削除する必要がありますが、ブロブ自体は削除しないように要求されています。この操作に最適なコマンドは、ブロブのスナップショットのみを対象とする delete_snapshots パラメータを使用することです。<br>delete_blob メソッドの delete_snapshots パラメータには、通常 Only オプションを指定することで、元のファイル（Blob）はそのまま保持しつつ、そのBlobのスナップショットだけを削除することができます。<br>Includeは、Blobとそのすべてのスナップショットを削除するパラメータであるため適切ではありません。'>
+<div class='choice'  data-group='選択肢' >delete_blob(snapshots='Only')</div>
+<div class='choice'  data-group='選択肢' >delete_blob(snapshots='Include')</div>
+<div class='choice'  data-group='選択肢' >delete_blob(delete_snapshots='Only')</div>
+<div class='choice'  data-group='選択肢' >delete_blob(delete_snapshots='Include')</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題15<br>あなたは、イベントのチケット予約システムの開発を担当しています。このシステムは、ユーザーがWebアプリケーションを通じてチケットを予約する機能を提供します。ユーザーがチケットを予約すると、その予約情報はAzure Queue Storageに保存されます。このキューに保存された予約データは、後で処理され、処理結果はAzure Table Storageに「Reservations」というテーブルに保存される必要があります。このプロセスは、Azure Function Appを使用して自動化されており、以下のようなコードとなっています。<br>このシステムならびにコードについて正しい記述はどれですか。（２つ選択）' data-answer='0,2' data-explanation='■正解：<br>A:このコードはメッセージの有効期限をログに記録する<br>C:ProcessReservations関数が失敗すると、最大５回まで再試行する<br>■解説<br>設問で与えられたコードには、Azure Queue Storageから注文情報をトリガーとして受け取り、処理するロジックが含まれています。各記述について検討し、それがコードに基づいて正しいかどうかを判断する必要があります。<br>ProcessReservations関数が失敗すると、最大５回まで再試行する：Azure Functionsでは、maxDequeueCountパラメータを使用して、メッセージをポイズンキューに移動する前にメッセージをデキュー（取り出し）する最大回数を制御します。デフォルト値は5であり、これは関数が指定されたメッセージを最大5回まで処理しようとすることを意味します。これはコードで明示的に設定されていなくても、デフォルトの挙動として存在しています。<br>このコードはメッセージの有効期限をログに記録する：CloudQueueMessage オブジェクトの ExpirationTime プロパティを使用して、メッセージの有効期限時刻がログに記録されています。これにより、キューメッセージがいつ期限切れになるかを追跡することができます。<br>■その他の選択肢<br>正常に処理できなかった場合は、管理者に通知が送信される：コード内に、管理者に通知を送信する処理が含まれていません。ProcessFailedReservations 関数は失敗した処理に関するログを記録しますが、特定の通知やアラートを送信する記述はありません。<br>このコードはチケットの予約を完了した時間を記録する：コードは InsertionTime（メッセージがキューに追加された時間）を記録していますが、これは予約が「完了」した時間ではなく、キューに追加された時間です。予約の完了時刻とは異なり、処理された時刻を示しています。' data-images='000031.jpg,000032.jpg,'>
+<div class='choice'  data-group='選択肢' >このコードはメッセージの有効期限をログに記録する</div>
+<div class='choice'  data-group='選択肢' >このコードはチケットの予約を完了した時間を記録する</div>
+<div class='choice'  data-group='選択肢' >ProcessReservations関数が失敗すると、最大５回まで再試行する</div>
+<div class='choice'  data-group='選択肢' >正常に処理できなかった場合は、管理者に通知が送信される</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題16<br>あなたは、Azure Cosmos DBをデータ保管として使用しているアプリケーションを運用しています。このアプリケーションでは、１つのユーザー名に関連付けられた複数のファイルにデータが保存されていますが、このアプリケーションでは１つの操作でそのユーザー名に関連する複数のファイルを同時に更新する必要があります。<br>Azure Cosmos DBをどのように設定すればよいですか。（２つ選択）' data-answer='3,4' data-explanation='■正解：<br>D:シャード化されていないコレクションを作成する<br>E:Azure Cosmos DB for MongoDBを使用できるようにする<br>■解説<br>Azure Cosmos DBのマルチドキュメント トランザクションを使用することで、複数のドキュメントを含む操作を一貫性と原子性を持って実行できます。これは、例えば、ユーザープロファイルを更新する際に、ユーザーに関連する複数の情報を持つドキュメント全体を同時に更新する場合などに非常に有効です。<br>マルチドキュメントトランザクションを使用するためには、以下の要件を満たす必要があります。<br>・シャード化されていないコレクションを作成する：シャード化とは、大きなデータベースを小さな部分に分割することです。データが複数のシャードに分散されるため、一つのサーバーに対する負荷が減少し、それぞれのシャードがより高速に動作します。逆に、シャード化されていないコレクションでは、全てのデータが単一のパーティションに保存されます。これにより、そのコレクション内の全てのドキュメントにわたるトランザクションをサポートすることができます。この設定は、特にデータボリュームが大きくない場合や、特定のキーに基づいてデータを分散させる必要がない場合に適しています。トランザクションの中で、複数のドキュメントを原子的に（全てまたは無しで）更新することが可能になります。<br>・Azure Cosmos DB for MongoDBを使用できるようにする：Azure Cosmos DBのMongoDB APIを使用すると、MongoDBクライアントライブラリを通じてCosmos DBにアクセスできるようになります。MongoDB API バージョン 4.0 以降では、シャード化されていないコレクションに対するマルチドキュメントトランザクションがサポートされています。これは、MongoDBの操作と同様に、トランザクション内での一貫性と回復力を提供するため、複数のドキュメントの更新が必要なシナリオで非常に役立ちます。<br>これらの設定を利用することで、Azure Cosmos DB内でのデータ整合性と効率的なデータ管理が可能になります。特に、ユーザーに関連する複数のファイルを一度に更新するような場合に有効です。'>
+<div class='choice'  data-group='選択肢' >データの自動アーカイブポリシーを設定する</div>
+<div class='choice'  data-group='選択肢' >Azure Cosmos DB for Tableを使用できるようにする</div>
+<div class='choice'  data-group='選択肢' >すべてのコンテナで自動インデックス作成を無効にする</div>
+<div class='choice'  data-group='選択肢' >シャード化されていないコレクションを作成する</div>
+<div class='choice'  data-group='選択肢' >Azure Cosmos DB for MongoDBを使用できるようにする</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題17<br>あなたは、大手オンライン小売企業のシステム管理者です。この企業は、顧客にシームレスなオンラインショッピング体験を提供することを目指しており、そのためにはサーバーの信頼性とパフォーマンスの維持が不可欠です。しかし、最近、特定のWebサーバーがHTTP 500エラー（内部サーバーエラー）を頻繁に生成しており、顧客の体験に悪影響を及ぼしているとの報告がありました。<br>過去7日間に3つの主要なWebサーバー（server1, server2, server3）から発生したHTTP 500エラーの総数を確認し、エラーの発生パターンを分析する必要があります。<br>下記のクエリにおいて、適切な要素はそれぞれ何ですか。' data-answer='0,3' data-explanation='■正解：<br>要素１：A:where ServerName in (targetServers)<br>要素２：D:summarize count() by ServerName<br>■解説<br>設問のシナリオについて、最も適切なクエリの要素を選択するためには、指定されたクエリの動作を理解することが重要です。クエリは、特定のWebサーバーから過去7日間に報告されたHTTP 500エラーの件数を集計することを目的としています。<br>where ServerName in (targetServers) は、特定のサーバー（server1, server2, server3）にフィルタリングを適用するためのものです。where句を使用して、ServerNameがtargetServersリストに含まれるものに限定します。これにより、分析対象を特定の3つのサーバーに絞り込み、それ以外のサーバーからのデータを除外します。<br>summarize count() by ServerNameは、summarize句を使用して、各サーバーごとのHTTP 500エラーの数を集計します。count()関数は、エラーの発生回数をカウントします。サーバーごとのエラー数を集計することで、どのサーバーが問題を引き起こしているのかを特定できます。これにより、シナリオに記述された要件に直接対応し、HTTP 500エラーの発生状況を最も正確かつ効率的に把握するために必要なクエリを実行できます。' data-images='000033.jpg'>
+<div class='choice'  data-group='要素１' >where ServerName in (targetServers)</div>
+<div class='choice'  data-group='要素１' >join ServerName == targetServers.ServerName</div>
+<div class='choice'  data-group='要素１' >where ServerName in (targetServers)</div>
+<div class='choice'  data-group='要素２' >summarize count() by ServerName</div>
+<div class='choice'  data-group='要素２' >summarize by ServerName</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='false' data-question='問題1<br>Azure FunctionがAzure SQL Databaseに接続する際に、下記のようなエラーが発生しています。<br>タイムアウト期間が経過しました。 プールから接続を取得する前にタイムアウト期間が過ぎました。これは、プールされた接続がすべて使用中で、プールの最大サイズに達したために発生した可能性があります。<br>これに対する適切な対応策は何ですか。' data-answer='3' data-explanation='■正解：<br>D:host.jsonファイルにおいてbatchSizeの値を減少させる<br>■解説<br>Azure Functionsでhost.jsonファイルにおけるbatchSizeの値を減少させることは、同時に処理するキューメッセージの最大数を制限することを意味します。ここで言う「バッチサイズ」とは、Azure Functionsが一度に処理するメッセージの量です。この値を減少させると、Azure Functionが消費するリソース量が減少し、同時にデータベースへの接続要求も少なくなります。<br>具体的には、多くの接続要求が同時に発生すると、Azure SQL Databaseなどのデータベースが持っている接続プール（同時に維持できるデータベース接続の数）が枯渇してしまい、設問にあるようなタイムアウトエラーが発生します。つまり、使用可能な接続がなくなると、新しい接続がプールから利用可能になるまで待たなければならず、その間にタイムアウトが発生してしまいます。<br>batchSizeの値を減少させることで、一度にデータベースにアクセスする要求が減り、接続プールが枯渇するリスクが低くなるため、タイムアウトエラーが発生する確率が減少します。これにより、アプリケーションの全体的なパフォーマンスと安定性が向上し、ユーザーエクスペリエンスも改善されます。'>
+<div class='choice'  data-group='選択肢' >Azure Functionを再デプロイする</div>
+<div class='choice'  data-group='選択肢' >Azure Functionのタイムアウト設定を延長する</div>
+<div class='choice'  data-group='選択肢' >host.jsonファイルにおいてvisibilityTimeoutの値を無制限に設定する</div>
+<div class='choice'  data-group='選択肢' >host.jsonファイルにおいてbatchSizeの値を減少させる</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題2<br>あなたは、アプリケーションを構築しており、構成データはAzure App Configurationに保存しています。Azure App Configurationへのアクセスは、マネージドIDを使用する必要があります。Azure App Configurationから構成データをロードする場合、どのようなコードを作成しなければなりませんか。<br>下記コード内の適切なオプションを選択してください。' data-answer='1,4' data-explanation='■正解：<br>オプション１：B:AddAzureAppConfiguration<br>オプション２：E:ManagedldentityCredential<br>■解説<br>Azure App Configurationは、アプリケーションの設定データと機能フラグを中央管理するためのサービスです。このサービスを利用することで、開発者はアプリケーションの設定管理を簡素化し、デプロイメント環境間での設定の一貫性を保つことができます。<br>AddAzureAppConfigurationは、Azure App Configurationからアプリケーションの設定を取得するためのメソッドです。このメソッドを使用することで、Azure App Configurationサービスに保存された設定をアプリケーションに統合できます。具体的には、アプリケーションが起動する際にAzure App Configurationから設定情報を読み込み、アプリケーションの設定として使用することができます。<br>ManagedIdentityCredentialは、Azure ADのマネージドアイデンティティを使用してAzureサービスに認証するためのオプションです。これは、Azureのリソースに対するセキュアなアクセスを提供する方法であり、特に秘密キーや認証情報をコードにハードコーディングするリスクを避けることができます。これにより、セキュリティが向上し、アプリケーションの保守性が高まります。' data-images='000019.jpg'>
+<div class='choice'  data-group='オプション１' >AddAzureKeyVault</div>
+<div class='choice'  data-group='オプション１' >AddAzureAppConfiguration</div>
+<div class='choice'  data-group='オプション２' >DefaultAzureCredential</div>
+<div class='choice'  data-group='オプション２' >AddAzureAppConfiguration</div>
+<div class='choice'  data-group='オプション２' >ManagedldentityCredential</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題3<br>あなたは、Azure APIがAzureリソースにアクセスするための認証方法を実装する必要があります。すべてのAPI呼び出しが認証される必要があり、APIへの呼び出し元は、APIに認証情報を送信してはいけません。<br>そのためには、どの機能を使用する必要がありますか。' data-answer='2' data-explanation='■正解：<br>C:マネージドID<br>■解説<br>マネージドID（Managed Identity）は、Azureリソースにアクセスするための認証メカニズムで、APIや他のサービスがユーザーの認証情報を明示的に管理する必要がないため、セキュリティが向上します。マネージドIDを使用すると、Azureが自動的にMicrosoft Entra ID（旧：Azure Active Directory）を通じて認証を管理し、API呼び出し時に認証情報を明示的に送信する必要がなくなります。これにより、安全な方法でAzureリソースへのアクセスを委任できます。<br>■その他の選択肢<br>・クライアント証明書：クライアント証明書は強力な認証手段ですが、API呼び出し元が証明書をAPIに送信する必要があるため、このシナリオでは適していません。<br>・ユーザー名とパスワード：これは基本認証に該当し、API呼び出し元がAPIにこれらの情報を送信する必要があるため、要件に反します。<br>・アクセス許可トークン：一般的にOAuthなどのトークンベース認証で使用されますが、API呼び出し元がトークンを生成してAPIに送信する必要があるため、この要件には合いません。'>
+<div class='choice'  data-group='選択肢' >クライアント証明書</div>
+<div class='choice'  data-group='選択肢' >アクセス許可トークン</div>
+<div class='choice'  data-group='選択肢' >マネージドID</div>
+<div class='choice'  data-group='選択肢' >ユーザー名とパスワード</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題4<br>Azure Kubernetes Serviceのイングレス コントローラーで可能なことは何ですか。' data-answer='1' data-explanation='■正解：<br>B:パブリックIPアドレスを使用して、複数のマイクロサービスにトラフィックを分散する<br>■解説<br>Azure Kubernetes Service (AKS) のイングレス コントローラーは、クラスター内で外部からのトラフィックを効率的にルーティングするために使用されるツールです。イングレス コントローラーを使用すると、単一のエントリポイント（パブリックIPアドレス）から複数のマイクロサービスへのトラフィックのルーティングを設定し管理できます。これにより、サービスのデプロイメントを簡素化し、複雑な負荷分散やSSL終端などの機能を容易に実装することが可能になります。<br>イングレス コントローラーの主な機能は以下の通りです。<br>・トラフィックのルーティング：ドメイン名やURLパスに基づいてトラフィックを適切なサービスにルーティングします。<br>・負荷分散：複数のマイクロサービスへのトラフィックを効果的に分散し、リソースの最適な利用を促進します。<br>・TLS終端：SSL/TLS証明書をイングレスレベルで管理し、安全なHTTPS接続を提供します。'>
+<div class='choice'  data-group='選択肢' >仮想マシンを自動的にプロビジョニングおよびデプロイする</div>
+<div class='choice'  data-group='選択肢' >パブリックIPアドレスを使用して、複数のマイクロサービスにトラフィックを分散する</div>
+<div class='choice'  data-group='選択肢' >ハードウェア障害からクラスターを保護する</div>
+<div class='choice'  data-group='選択肢' >オペレーティングシステムをインストールまたはアップグレードする</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題5<br>あなたは、Azure Kubernetes Service（AKS）を使用して、Kubernetesクラスターにアプリケーションをデプロイしたいと考えています。Azure CLIを使用して、リソースグループにAKSクラスターを作成しました。デプロイするアプリケーションは、コンテナイメージにパッケージ化済みです。<br>YAMLマニフェストファイルを使用して、アプリケーションをデプロイするためにはどのコマンドが適切ですか。' data-answer='0' data-explanation='■正解：<br>A:kubectl apply -f<br>■解説<br>コンテナイメージにパッケージ化されたアプリケーションをAKSクラスターにデプロイするためには、kubectl apply -f <YAMLマニフェストファイル> コマンドが適切です。<br>Azure Kubernetes Service (AKS) クラスターにアプリケーションをデプロイする手順は、以下のステップに分けられます。<br>１．リソース グループを作成する<br>Azureリソースグループは、Azureリソースのコレクションを管理するためのコンテナです。リソースグループを作成するには、az group createコマンドを実行します。<br>２．AKS クラスターを作成する<br>リソースグループが作成された後、AKSクラスターを作成します。これにはaz aks createコマンドを使用します。<br>３．クラスターに接続する<br>クラスターが作成されたら、そのクラスターに接続するための資格情報を取得します。これにはaz aks get-credentialsコマンドを使用します。<br>４．アプリケーションの配置<br>最後に、アプリケーションをAKSクラスターにデプロイします。アプリケーションの設定はYAMLマニフェストファイルに記述されている必要があります。アプリケーションをデプロイするにはkubectl apply -fコマンドを使用します。'>
+<div class='choice'  data-group='選択肢' >kubectl apply -f</div>
+<div class='choice'  data-group='選択肢' >az group create</div>
+<div class='choice'  data-group='選択肢' >az aks get-credentials</div>
+<div class='choice'  data-group='選択肢' >az aks create</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題6<br>あなたは、クラウドベースのビデオストリーミングサービスを提供する企業のためにREST APIを開発しています。APIはAzure Blob Storage上のビデオファイルへのアクセスを管理するためにユーザー委任SASトークンを利用しています。トークンのセキュリティ侵害が発覚したため、迅速に対応する必要があります。<br>適切な対応方法は何ですか。（２つ選択）' data-answer='1,4' data-explanation='■正解：<br>B:ユーザー委任キーを取り消す<br>E:セキュリティプリンシパルのロール割り当てを変更する<br>■解説<br>ユーザー委任SASトークンが侵害された場合、そのトークンを無効にするためには以下の二つの対策が効果的です。<br>・ユーザー委任キーを取り消す：これはユーザー委任SASトークンを直接無効にする方法であり、ユーザー委任キーを取り消すことで、そのキーに基づいて発行されたすべてのSASトークンが無効となります。<br>・セキュリティプリンシパルのロール割り当てを変更する：SASトークンの発行に使用されたセキュリティプリンシパル（Azure ADオブジェクト）のRBACロール割り当てを変更または削除することで、該当トークンのアクセス権限を無効にすることができます。これにより、侵害されたトークンを使って不正アクセスを行うことを防止できます。<br>これらの方法は、トークンの侵害に直接対応し、不正アクセスのリスクを即座に排除するための有効な手段となります。'>
+<div class='choice'  data-group='選択肢' >エンドポイント保護ソリューションを更新する</div>
+<div class='choice'  data-group='選択肢' >ユーザー委任キーを取り消す</div>
+<div class='choice'  data-group='選択肢' >ストレージアカウントのアクセスレビューを実施する</div>
+<div class='choice'  data-group='選択肢' >Azure Storageアカウントキーを再生成する</div>
+<div class='choice'  data-group='選択肢' >セキュリティプリンシパルのロール割り当てを変更する</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題7<br>あなたは、PowerShellを使用してAzure Key Vaultのオブジェクトを作成しています。作成したオブジェクトを削除する場合、60日間は恒常的に削除されず、必要に応じて復元できる状態にする必要があります。<br>そのためには、どのパラメータが必要ですか。（２つ選択）' data-answer='2,4' data-explanation='■正解：<br>C:EnablePurgeProtection<br>E:EnableSoftDelete<br>■解説<br>EnableSoftDelete：これは論理的な削除（Soft Delete）を有効にするためのパラメータです。これを有効にすることで、Key Vaultからオブジェクトが削除された際に、即座に恒久的に削除されるのではなく、一定期間（この場合は60日）保持され、必要に応じて復元することが可能になります。この期間中は、削除されたオブジェクトにアクセスして復元することができます。<br>EnablePurgeProtection：このパラメータは、論理的な削除が有効になっているKey Vaultにおいて、削除されたオブジェクトが保持期間中に恒久的に削除（パージ）されることを防ぎます。これにより、保持期間が終了するまでオブジェクトの恒久的な削除が不可能になり、データの安全性がさらに高まります。'>
+<div class='choice'  data-group='選択肢' >EnabledForDeployment</div>
+<div class='choice'  data-group='選択肢' >DefaultProfile</div>
+<div class='choice'  data-group='選択肢' >EnablePurgeProtection</div>
+<div class='choice'  data-group='選択肢' >EnabledForDiskEncryption</div>
+<div class='choice'  data-group='選択肢' >EnableSoftDelete</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題8<br>あなたは、Azure PowerShellを使用して開発環境を構築し、メインのWebアプリケーションとステージングスロットを作成しようと考えています。<br>それぞれ適切なコマンドは何ですか。' data-answer='0,3,5' data-explanation='■正解：<br>コマンド１：A:New-AzAppServicePlan<br>コマンド２：D:New-AzWebApp<br>コマンド３：F:New-AzWebAppSlot<br>■解説<br>PowerShell を使用して Azure でウェブアプリを作成する手順は、以下の通りです。それぞれのステップが前のステップの結果に依存しているため、この順序で行う必要があります。<br>１．リソースグループの作成：最初に、他のリソースが配置されるコンテナを作成します。<br>New-AzResourceGroup -Name "ProdResourceGroup" -Location "East US"<br>このコマンドでは、新しいリソースグループ「ProdResourceGroup」を「East US」リージョンに作成します。リソースグループはAzureリソースを整理し、管理するためのコンテナです。<br>２．App Serviceプランの作成：次に、Webアプリをホストするための環境を設定します。<br>New-AzAppServicePlan -Name "ProdAppServicePlan" -ResourceGroupName "ProdResourceGroup" -Location "East US" -Tier "Standard"<br>このコマンドでは、「ProdResourceGroup」内に「ProdAppServicePlan」という名前のApp Serviceプランを作成します。このプランは「Standard」層で、Webアプリの実行環境を提供します。<br>３．Webアプリの作成：App Serviceプラン上にWebアプリケーションを作成します。<br>New-AzWebApp -Name "ProdWebApp" -ResourceGroupName "ProdResourceGroup"<br>「ProdAppServicePlan」を使用して、「ProdResourceGroup」内に「ProdWebApp」というWebアプリを作成します。これにより、実際にアプリケーションをホストできます。<br>４．デプロイメントスロットを追加：最後に、新しいバージョンのアプリをテストするためのステージング環境を追加します。<br>New-AzWebAppSlot -Name "ProdWebApp" -Slot "Staging" -ResourceGroupName "ProdResourceGroup" -AppServicePlan "ProdAppServicePlan"<br>「ProdWebApp」に「Staging」という名前のデプロイメントスロットを追加します。これは新しいバージョンを本番環境に移動する前にテストするための環境です。' data-images='000020.jpg'>
+<div class='choice'  data-group='コマンド１' >New-AzAppServicePlan</div>
+<div class='choice'  data-group='コマンド１' >New-AzWebAppSlot</div>
+<div class='choice'  data-group='コマンド２' >New-AzAppServicePlan</div>
+<div class='choice'  data-group='コマンド２' >New-AzWebApp</div>
+<div class='choice'  data-group='コマンド３' >New-AzAppServicePlan</div>
+<div class='choice'  data-group='コマンド３' >New-AzWebAppSlot</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題9<br>Azure API Managementにおいて、入力（Inbound）セクションに当てはまるポリシーはどれですか。（２つ選択）' data-answer='1,2' data-explanation='■正解：<br>B:Cache-lookup-value<br>C:Set-variable<br>■解説<br>Azure API Management (APIM) において、特定のポリシーを使用することで、APIの動作をカスタマイズし、効率的に管理することができます。<br>選択肢のポリシーについては以下の通りとなります。<br>Set-variable（変数設定）：リクエストや応答の処理中に特定のデータを変数として保存できます。例えば、ユーザーIDやリクエストから得た特定の情報を一時的に保持しておき、後の処理で使用するために変数に設定します。<br>Cache-lookup-value（キャッシュ検索値）キャッシュから特定のデータを検索するために使用します。このポリシーにより、APIがキャッシュ内に既に存在するデータを素早くチェックし、あればそれを利用して処理を速めることができます。<br>Cache-store-value（キャッシュ保存値）：処理結果をキャッシュに保存するために使用します。APIからの応答や生成されたデータをキャッシュに格納して、次回同じリクエストが来た時に早く応答できるようにします。<br>Find-and-replace（検索と置換）：応答の内容を変更するために使用されるポリシーです。例えば、応答内容に含まれる特定の文字列を別の文字列に置換して、より適切な情報をユーザーに提供するために利用します。<br>また、Azure API Managementには入力セクションと出力セクションがあり、これらを設定することでAPIの処理を段階的に管理し、セキュリティやパフォーマンスを向上させることができます。<br>・入力（Inbound）セクション：APIにリクエストが送られてきたときに最初に処理される部分です。ここでリクエストの検証、認証、前処理などが行われます。つまり、APIが処理を始める前に、リクエストが適切かどうかをチェックし、必要な情報を設定する場所です。<br>・出力（Outbound）セクション：APIからの応答がクライアントに送られる前に処理される部分です。ここで応答のカスタマイズや後処理が行われます。APIの処理が完了した後、ユーザーに返す応答を最終的に整える場所です。<br>設問について、入力セクションに該当するポリシーは、Set-variableとCache-lookup-valueになります。Cache-store-valueとFind-and-replaceは、出力ポリシーに該当します。'>
+<div class='choice'  data-group='選択肢' >Cache-store-value</div>
+<div class='choice'  data-group='選択肢' >Cache-lookup-value</div>
+<div class='choice'  data-group='選択肢' >Set-variable</div>
+<div class='choice'  data-group='選択肢' >Find-and-replace</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題10<br>あなたの組織は、企業内のコラボレーションツールを開発しており、すべての従業員は会社のAzure B2Cを通じて認証され、従業員のプロファイル情報はAzure B2C に保存されます。また、このツールは、従業員が自分のプロジェクト、直接のマネージャー、およびオフィスの位置情報を確認できる機能を提供します。<br>どのサービスならびに認証ライブラリを使用するべきですか。' data-answer='1,4' data-explanation='■正解：<br>サービス：B:Microsoft Graph<br>認証ライブラリ：E:Microsoft Authentication Library (MSAL)<br>■解説<br>Microsoft Graphは、Microsoft 365のサービスに接続するための統一的なAPIであり、Microsoft Entra ID、Office 365、Enterprise Mobility + Security、およびWindows 10のデータにアクセスすることができます。これは、Azure B2C環境に保存されたユーザープロファイル情報にアクセスするために最も適したAPIです。ユーザーのプロファイル情報、職務データ、直属のマネージャー情報、オフィスの位置情報など、様々なタイプのデータを取得できます。<br>Microsoft Authentication Library (MSAL)は、Microsoft Identity Platformによる認証を容易にするライブラリです。これを利用することで、アプリケーションはAzure AD B2Cを含むさまざまな認証プロバイダを通じて安全にトークンを取得し、エンドユーザーに代わってMicrosoft Graph APIなどのMicrosoftサービスへ安全にアクセスすることが可能になります。MSALは、モダン認証機能を提供し、アプリケーションのセキュリティを強化します。'>
+<div class='choice'  data-group='サービス' >Azure DevOps</div>
+<div class='choice'  data-group='サービス' >Microsoft Graph</div>
+<div class='choice'  data-group='サービス' >Azure Logic Apps</div>
+<div class='choice'  data-group='認証ライブラリ' >Azure Key Vault SDK</div>
+<div class='choice'  data-group='認証ライブラリ' >Microsoft Authentication Library (MSAL)</div>
+<div class='choice'  data-group='認証ライブラリ' >App Service Authentication</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題11<br>企業は、世界中で展開するeコマースプラットフォームにおいて、各地域の異なる認証要件を満たす必要があります。ヨーロッパではGDPRに準拠した認証フローが求められ、一部のアジア地域では携帯電話番号による認証が必須です。地域ごとに異なる規制や文化に基づいてカスタマイズされた認証フローをXMLポリシーで定義し、適切なユーザーエクスペリエンスを提供する必要があります。<br>Microsoft Entra IDのどの機能を利用するべきですか。' data-answer='1' data-explanation='■正解：<br>B:Azure Active Directory B2Cのカスタムポリシー<br>■解説<br>Azure Active Directory B2C（Azure AD B2C）は、消費者向けのアプリケーションに認証サービスを提供するクラウドベースのアイデンティティ管理サービスです。このサービスを使用すると、アプリケーションのユーザーがソーシャルアカウントや企業アカウントでサインインできるようになります。Azure AD B2Cは、特に「カスタムポリシー」と「ユーザーフロー」という二つの方法で設定をカスタマイズできます。<br>・カスタムポリシー：Identity Experience Framework（IEF）を基にした高度なカスタマイズオプションを提供します。これにより、開発者はXMLベースの構成ファイルを通じて、認証プロセスの挙動を細かくコントロールできます。カスタムポリシーは、非常に複雑な認証要件や複数の外部アイデンティティプロバイダーとの統合、マルチファクター認証の高度なシナリオなどを実現する際に適しています。<br>・ユーザーフロー：よりシンプルで直感的な設定オプションを提供します。ユーザーフローを使用すると、Azureポータルのグラフィカルインターフェースを通じて、サインアップ、サインイン、プロファイル更新、パスワードリセットなどの一般的なユーザーシナリオを簡単に設定できます。開発者はコードを書くことなく、基本的なカスタマイズが可能です。<br>設問の要件を満たす機能は、Azure Active Directory B2Cのカスタムポリシーです。この機能を利用することで、企業はGDPRに準拠した認証フローや、携帯電話番号を使用する認証フローなど、地域ごとに異なる要件に基づいたカスタマイズされた認証プロセスを設計することができ、XMLベースの構成を通じて、企業は特定のユーザー認証要件に対応するために必要なロジックとルールを細かく設定できます。'>
+<div class='choice'  data-group='選択肢' >Azure Active Directory B2Cの外部コラボレーション</div>
+<div class='choice'  data-group='選択肢' >Azure Active Directory B2Cのカスタムポリシー</div>
+<div class='choice'  data-group='選択肢' >Azure Active Directory B2Cのユーザーフロー</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題12<br>あなたは、.NET Core 3.1 SDKをベースにしてASP.NET Coreアプリケーションをビルドし、実行するDockerイメージを作成する予定です。<br>Dockerfile内の命令の配置はどのようになりますか。' data-answer='1,2,5' data-explanation='■正解：<br>命令１：B:WORKDIR /app<br>命令２：C:COPY . .<br>命令３：F:CMD ["dotnet", "out/myapp.dll"]<br>■解説<br>Dockerfileは、Dockerコンテナのビルド手順を記述するためのテキストファイルです。各行には特定の命令（コマンド）があり、これらは以下のように機能します。<br>１．FROM：コンテナのベースとなるイメージを指定します。例えば、.NET Core 3.1 SDKが含まれるイメージを使用する場合、FROM mcr.microsoft.com/dotnet/core/sdk:3.1 のようになります。<br>２．WORKDIR：コンテナ内の作業ディレクトリを設定します。例えば、作業ディレクトリが、/appの場合、WORKDIR /app となります。<br>３．COPY：ローカルファイルをコンテナ内にコピーします。これによりアプリケーションのソースコードがコンテナに取り込まれます。COPY . . の場合、Dockerfileがあるディレクトリのすべてのファイルとサブディレクトリを、コンテナ内の作業ディレクトリ（ここでは/app）にコピーします。<br>４．RUN：コマンドを実行してコンテナイメージに変更を加えます。例えば、RUN dotnet restore ではプロジェクトの依存関係を復元し、RUN dotnet build -c Release -o out でプロジェクトをビルドし、結果をoutディレクトリに出力します。<br>５．CMD：コンテナ起動時に実行されるデフォルトのコマンドを指定します。コンテナが起動したときに、dotnet", "out/myapp.dllコマンドを実行してアプリケーションを起動させるためには、CMD ["dotnet", "out/myapp.dll"] を記述します。<br>これらの命令の配置は非常に重要です。各命令はビルドの異なる段階を表し、前の命令の結果に依存して次の命令が実行されます。適切な順序でこれらを配置することで、効率的かつ正確にイメージを構築することが可能になります。' data-images='000021.jpg'>
+<div class='choice'  data-group='命令１' >COPY . .</div>
+<div class='choice'  data-group='命令１' >WORKDIR /app</div>
+<div class='choice'  data-group='命令２' >COPY . .</div>
+<div class='choice'  data-group='命令２' >WORKDIR /app</div>
+<div class='choice'  data-group='命令３' > COPY . .</div>
+<div class='choice'  data-group='命令３' >CMD ["dotnet", "out/myapp.dll"]</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題13<br>あなたは、EコマースプラットフォームをAzure App Serviceに開発し、オンラインで稼働させています。サイトは大規模なトラフィックを処理するため、Always Onの設定とApplication Insightsを用いて監視していましたが、ブラックフライデーのプロモーションのためアップデートしたところ、多くのトランザクションエラーが発生しました。<br>これらのトランザクションの失敗とパフォーマンスをほぼリアルタイムで確認するには、Application Insightsのどのツールが適していますか。' data-answer='2' data-explanation='■正解：<br>C:Live Metrics<br>■解説<br>Application InsightsのLive Metricsは、Azure上でホストされているアプリケーションのパフォーマンスと健全性をほぼリアルタイムで監視するツールです。このツールを使用すると、アプリケーションの運用中に発生するトラフィックやパフォーマンスに関連するメトリクスを即座に観察することができます。<br>Live Metricsは以下のような特徴を持っています：<br>１．リアルタイム監視： メトリクスとパフォーマンスカウンターは数秒以内に更新され、アプリケーションの現在の状態を即座に反映します。<br>２．フィルタリングとカスタマイズ： ユーザーは表示するデータをフィルタリングしてカスタマイズでき、重要な情報に集中することが可能です。<br>３．サーバーとクライアントの統計： リクエスト、レスポンス時間、例外数など、サーバー側とクライアント側の両方のデータを提供します。<br>４．異常の即時検出： システムの異常や例外が発生した際に、速やかに警告し、問題解決の手がかりを提供します。<br>設問のシナリオにおいて、Live Metricsを使用することで、ブラックフライデーのプロモーション中に発生した多数のトランザクションエラーをリアルタイムで視覚化し、それに基づいて迅速に対応策を講じることが可能になります。'>
+<div class='choice'  data-group='選択肢' >Profiler</div>
+<div class='choice'  data-group='選択肢' >A/B テスト</div>
+<div class='choice'  data-group='選択肢' >Live Metrics</div>
+<div class='choice'  data-group='選択肢' >ユーザーフロー</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題14<br>Azure Cosmos DBの変更フィードプロセッサの進行状況を監視するために使用できる機能はどれですか。' data-answer='0' data-explanation='■正解：<br>A:変更フィード推定（Change feed estimator）<br>■解説<br>変更フィードプロセッサ（Change Feed Processor）は、Azure Cosmos DBでデータが変更（追加、更新、削除）されたときに、その変更をリアルタイムでキャプチャして処理するための仕組みです。これにより、変更されたデータに基づいてリアルタイムに反応するアプリケーションを構築できます。<br>変更フィード推定（Change Feed Estimator）は、変更フィードプロセッサの進行状況を監視するための機能です。この機能を使用することで、変更フィードプロセッサの進捗状況を評価し、処理されたドキュメントと残っているドキュメントの量を把握することができます。また、プロセッサの進行状況に基づいて、データ処理のパフォーマンスを最適化するための洞察を提供します。これにより、処理時間を短縮し、コストを削減することが可能になります。'>
+<div class='choice'  data-group='選択肢' >変更フィード推定（Change feed estimator）</div>
+<div class='choice'  data-group='選択肢' >ライフサイクル通知（Life-cycle notifications）</div>
+<div class='choice'  data-group='選択肢' >配信不能キュー（Dead-letter queue）</div>
+<div class='choice'  data-group='選択肢' >バージョン管理（Versioning）</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題15<br>ある自動車販売会社は、顧客からのローン申請を受けた後、複数ステップの承認プロセスを実行する必要があります。このプロセスにおいて、各ステップは特定の順序で実行される必要があります。<br>Azure Durable Functionsを使用する場合、どの関数タイプの利用が最適ですか。' data-answer='2' data-explanation='■正解：<br>C:オーケストレーター<br>■解説<br>オーケストレーター関数は、複数のステップを含む長期間にわたる論理的なプロセスを定義し、管理するために使用されます。この関数タイプは、各アクションを指定された順序で実行し、必要に応じて外部イベントの完了を待機する能力を持っています。オーケストレーター関数を使用することで、プロセス全体の状態を維持し、各ステップ間でデータを渡すことができます。<br>自動車販売会社がローン申請のプロセスを実行するシナリオでは、複数のステップ（例えば、顧客の信用調査、ローン額の計算、ローン条件の提示など）を特定の順序で実行する必要があります。このようなプロセスを管理するためには、各ステップを単一の論理的なワークフローとして定義し、その実行を調整できるオーケストレーター関数が最適です。'>
+<div class='choice'  data-group='選択肢' >アクティビティ</div>
+<div class='choice'  data-group='選択肢' >クライアント</div>
+<div class='choice'  data-group='選択肢' >オーケストレーター</div>
+<div class='choice'  data-group='選択肢' >エンティティ</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題16<br>Azure Functionアプリで提供されるREST APIエンドポイントの可用性と応答性を監視し、問題があった場合にはアラートを送信する必要があります。<br>どのような対応が最適ですか。' data-answer='0' data-explanation='■正解：<br>A:タイマートリガー関数を作成して、TrackAvailability()を呼び出す<br>■解説<br>TrackAvailability()メソッドは、Azure Application Insights の機能の一つであり、特定のエンドポイントやサービスの可用性をテストし、その結果を監視データとして記録するために使用されます。このメソッドを使うことで、指定したURLやAPIに対して定期的なチェックを行い、その応答時間や成功/失敗の状態を追跡できます。<br>設問については、Azure FunctionアプリでREST APIエンドポイントの可用性を監視するために、タイマートリガー関数内でTrackAvailability()を呼び出し、エンドポイントが適切に機能しているか定期的にチェックし、その結果をApplication Insightsで追跡することで対応することが可能です。これにより、サービスのアップタイムを継続的に監視し、問題が発生した際には迅速に対応できるようになります。'>
+<div class='choice'  data-group='選択肢' >タイマートリガー関数を作成して、TrackAvailability()を呼び出す</div>
+<div class='choice'  data-group='選択肢' >Azure Monitorでアクティビティログアラートを設定する</div>
+<div class='choice'  data-group='選択肢' >Event Gridを使用してすべての関数呼び出しをトラッキングする</div>
+<div class='choice'  data-group='選択肢' >URL pingテストを作成する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題17<br>あなたは、Azureでホストされるデータ分析アプリケーションを開発しています。このアプリケーションは定期的に大規模なデータセットの分析をオフラインで行い、その間にアプリケーションはオフライン状態になります。オフライン処理中にアプリケーションから発生する多数のアラートによって、管理者が度々呼び出されてしまいます。アプリケーションがいつオフラインになったかを常に記録する必要がありますが、オフライン処理中に開発者がページングされないようにする措置が必要です。<br>これら要件を満たすため、適切な対応は何ですか。' data-answer='0' data-explanation='■正解：<br>A:Azure Monitorアラート処理ルールを追加して、アラートを抑制する<br>■解説<br>Azure Monitor アラート処理ルールは、Azure リソースから生成されるアラートに対して特定の条件下でアクションを実行するルールを設定する機能です。この機能を利用することで、アラートの通知を抑制したり、特定の状況でのみアラートを発動させたりすることができます。具体的には、アラートの発生時に通知を送らないようにする、あるいは特定の時間帯にのみアラートを無視するといった設定が可能です。<br>設問のシナリオでは、アプリケーションが定期的にオフラインでデータ処理を行うため、その間に発生するアラートによって管理者が不必要に呼び出される問題があります。アラート処理ルールを使用して、オフライン処理中に特定のアラートが発生した場合に通知を抑制するルールを設定することで、この問題を解決できます。例えば、特定のリソースまたはリソースグループに対するアラートを一時的に無視するルールを作成することができます。'>
+<div class='choice'  data-group='選択肢' >Azure Monitorアラート処理ルールを追加して、アラートを抑制する</div>
+<div class='choice'  data-group='選択肢' >Azure Service Healthアラートを有効にする</div>
+<div class='choice'  data-group='選択肢' >Webアプリケーションのセッションタイムアウト設定を変更する</div>
+<div class='choice'  data-group='選択肢' >Azure Active Directoryの条件付きアクセスポリシーを設定する</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

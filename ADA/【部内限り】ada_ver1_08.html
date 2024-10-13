@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Developer Associate問題集 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+
+        <div id="quiz-data" style="display: none;">
+
+<div class='question' data-multiple='true' data-question='問題18<br>あなたの組織は、Azure Web Appを使用してオンライン学習プラットフォームの開発を行っています。プラットフォーム上でユーザーの活動ログを保存し、学習の進捗を追跡します。また、アプリケーションが再起動してもログデータを失わないようにする必要があります。<br>要件を満たすためのアプリケーション設定とストレージの場所は何ですか。' data-answer='3,4' data-explanation='■正解：<br>アプリ設定：D:WEBSITES_ENABLE_APP_SERVICE_STORAGE=true<br>ストレージ：E:/home<br>■解説<br>Azure App Serviceの環境変数とアプリ設定は、アプリケーションが実行される環境をカスタマイズするために使用され、アプリケーションがAzureのクラウド環境でどのように振る舞うかを制御する設定や値を提供します。これにより、アプリケーションの設定をソースコードから分離し、セキュリティとメンテナンスの面で利点を提供します。<br>WEBSITES_ENABLE_APP_SERVICE_STORAGE=trueという設定は、Azure App Serviceでアプリケーションが使用する内部ストレージを有効にします。これにより、/homeディレクトリ内に保存されたファイルが保持され、アプリケーションの再起動やデプロイ後もデータが失われません。この設定は、ファイルやデータを永続的に保存する必要があるアプリケーションに特に重要です。'>
+<div class='choice'  data-group='アプリ設定' >WEBSITE_LOCAL_CACHE_OPTION=Always</div>
+<div class='choice'  data-group='アプリ設定' >WEBSITES_ENABLE_APP_SERVICE_STORAGE=false</div>
+<div class='choice'  data-group='アプリ設定' >WEBSITE_LOCAL_CACHE_OPTION=Default</div>
+<div class='choice'  data-group='アプリ設定' >WEBSITES_ENABLE_APP_SERVICE_STORAGE=true</div>
+<div class='choice'  data-group='ストレージ' >/home</div>
+<div class='choice'  data-group='ストレージ' >/local</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題19<br>ITサービス会社がクライアントのためにAzureでホスティングされている複数のビジネスアプリケーションの管理を行っています。最近、一部のアプリケーションに対して行われた設定変更が原因で問題が発生していることが判明しました。<br>問題の設定変更を特定するために参照すべきAzure Monitorのログはどれですか。' data-answer='1' data-explanation='■正解：<br>B:AppServiceEnvironmentPlatformlogs<br>■解説<br>AppServiceEnvironmentPlatformlogsは、Azure App Service Environment (ASE) におけるプラットフォームレベルの情報を記録するログです。このログは、ASE のスケールユニットやインフラストラクチャの健全性、および他のプラットフォーム固有のイベントを含む環境全体の活動を追跡します。これにより、システムの設定変更、パフォーマンス問題、および潜在的なセキュリティ問題を特定できる詳細情報が提供されます。<br>このログは、特にクライアント企業がホスティングしているアプリケーションに対して行われた設定変更の監査に有用です。例えば、設定が変更された時刻、変更内容、変更を行ったユーザーなどの詳細を提供し、不具合の原因究明やセキュリティ監査に役立ちます。'>
+<div class='choice'  data-group='選択肢' >VirtualMachinePerformanceLogs</div>
+<div class='choice'  data-group='選択肢' >AppServiceEnvironmentPlatformlogs</div>
+<div class='choice'  data-group='選択肢' >ResourceHealthLogs</div>
+<div class='choice'  data-group='選択肢' >NetworkSecurityGroupFlowLogs</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題20<br>あなたはIT管理者として、オンプレミス環境ならびにクラウド上で複数のサーバーを管理しています。現在、Azure Log Analytics を使用して、サーバーからセキュリティに関するパフォーマンスカウンターを収集し、アラートルールを設定したいと考えています。アラートルールは以下の要件を満たす必要があります。<br>・アラートの作成と解決時に通知を行う<br>・アラートの作成時間は最小限に抑える<br>・アラートルールがディメンションを許可する<br>どのシグナルタイプを基にアラートルールを作成する必要がありますか。' data-answer='3' data-explanation='■正解：<br>D:メトリック<br>■解説<br>メトリックシグナルタイプは、Azureで利用可能なシグナルタイプの一つであり、数値的なデータを基にしたアラートを設定するために使用されます。メトリックとは、システムやアプリケーションのパフォーマンス、健康状態、利用状況などを測定するための数値データのことを指します。これにはCPUの使用率、メモリ使用量、ディスクI/O、ネットワークトラフィック、カスタムアプリケーションメトリックなど、さまざまな種類のデータが含まれます。<br>メトリックシグナルタイプでは、アラートの作成時間を最小限に抑え、リアルタイムに近い反応を可能にし、またディメンションを通じてより細かい条件指定を行うことができます。セキュリティに関するパフォーマンスカウンターの監視には、このタイプが最適です。<br>〇用語解説<br>ディメンション：収集されたデータを分類するための属性やタグのことを指します。例えば、複数のサーバーからデータを収集する場合、どのサーバーからのデータかを示す「サーバー名」、データの種類を示す「データタイプ」などがディメンションとして使用されます。これにより、大量のデータの中から特定の条件に合致するデータを簡単に探し出したり、データを分析しやすくなります。<br>■その他の選択肢<br>・アクティビティログは、Azureリソースに対する操作が記録されるログであり、パフォーマンスカウンターや数値データに基づくアラート設定には適していません。<br>・アプリケーションログは、アプリケーションが生成するログであり、特定のアプリケーションの動作に関する情報を含みますが、システム全体のパフォーマンス監視には向いていません。<br>・監査ログは、セキュリティイベントや監査に関する情報を提供しますが、パフォーマンスカウンターに基づくアラートの設定には適していないため、このシナリオでは適切な選択ではありません。'>
+<div class='choice'  data-group='選択肢' >アプリケーションログ</div>
+<div class='choice'  data-group='選択肢' >アクティビティログ</div>
+<div class='choice'  data-group='選択肢' >監査ログ</div>
+<div class='choice'  data-group='選択肢' >メトリック</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題21<br>あなたは、Azure App Service REST APIを開発しており、APIはAzure App Service Webアプリから呼び出される必要があります。また、APIは、Microsoft Entra IDに格納されているユーザープロファイルを取得し、更新しなければなりません。<br>更新するためには、どのツールを組み合わせて使用するのが適切ですか。（２つ選択）' data-answer='3,4' data-explanation='■正解：<br>D:Microsoft Authentication Library (MSAL)<br>E:Microsoft Graph API<br>■解説<br>Microsoft Graph APIは、Microsoft Entra ID、Office 365、その他多くのMicrosoft クラウドサービスを含むMicrosoft 365のデータとインテリジェンスにアクセスするための統合プログラミングインターフェースです。ユーザープロファイル情報の取得や更新など、Azure ADに格納された情報に対する操作が可能です。このAPIを使用することで、様々なユーザー属性や組織データにアクセスし、それらを管理することができます。<br>Microsoft Authentication Library (MSAL)は、Microsoftのアイデンティティプラットフォームを使って認証やアクセストークンの取得を簡単に行うことができるライブラリです。MSALを使用することで、Microsoft Entra IDから安全にトークンを取得し、そのトークンを利用してMicrosoft Graph APIなどのMicrosoftのクラウドサービスに安全にアクセスすることが可能になります。MSALは様々なプログラミング言語で利用可能で、アプリケーションの認証フローを簡単に統合できるように設計されています。<br>これらのツールを組み合わせることにより、Azure App Service REST APIを通じて、セキュアな方法でMicrosoft Entra IDに格納されたユーザープロファイル情報を効率的に取得および更新することができます。'>
+<div class='choice'  data-group='選択肢' >Visual Studio Code</div>
+<div class='choice'  data-group='選択肢' >Swagger UI</div>
+<div class='choice'  data-group='選択肢' >Azure SDK for .NET</div>
+<div class='choice'  data-group='選択肢' >Microsoft Authentication Library (MSAL)</div>
+<div class='choice'  data-group='選択肢' >Microsoft Graph API</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題22<br>ローカルで開発・ビルドしたアプリケーションのDockerイメージをAzure Container Registryにデプロイする手順として正しいのはどれですか。' data-answer='2' data-explanation='■正解：<br>C:dockerfileを使用して新しいアプリケーションイメージをビルドする ⇒ 完全修飾パスを使用してイメージのエイリアスを作成する ⇒ レジストリにログインし、イメージをプッシュする<br>■解説<br>Azure Container Registry (ACR) にDockerイメージをデプロイする正しい手順は以下の通りです。これは、Azure CLIを使用してローカルで開発・ビルドしたアプリケーションのDockerイメージをクラウド上のプライベートDockerレジストリに安全に格納するためのものです。<br>１．dockerfileを使用して新しいアプリケーションイメージをビルドする：Dockerfileを用いてアプリケーションのDockerイメージをビルドします。Dockerfileは、アプリケーションが実行するために必要なすべての命令と依存関係を含むテキストファイルです。このステップで、docker build コマンドを使用してイメージを作成します。<br>２．完全修飾パスを使用してイメージのエイリアスを作成する：ビルドされたイメージにタグ（エイリアス）を付けます。このタグは、イメージをAzure Container Registryにアップロードするためのアドレスを含む完全修飾パスを指定するために使用されます。これは docker tag コマンドを使用して行われ、イメージをレジストリのアドレスと関連付けます。<br>３．レジストリにログインし、イメージをプッシュする：Azure CLIを用いてAzure Container Registryに認証した後、docker push コマンドを使用してイメージをレジストリにアップロードします。これにより、イメージはAzureのクラウド内に安全に保存され、必要に応じてアクセスおよびデプロイすることができます。'>
+<div class='choice'  data-group='選択肢' >Docker Composeを使用して新しいアプリケーションイメージをビルドする ⇒ 完全修飾パスを使用してイメージのエイリアスを作成する ⇒ イメージをローカルコンピューターにダウンロードする</div>
+<div class='choice'  data-group='選択肢' >dockerfileを使用して新しいアプリケーションイメージをビルドする ⇒ 新しいビルド番号でイメージのエイリアスを作成する ⇒ レジストリにログインし、イメージをプッシュする</div>
+<div class='choice'  data-group='選択肢' >dockerfileを使用して新しいアプリケーションイメージをビルドする ⇒ 完全修飾パスを使用してイメージのエイリアスを作成する ⇒ レジストリにログインし、イメージをプッシュする</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題23<br>あなたは、Azure Cosmos DBの変更フィードを使用してCosmos DBコンテナ内のデータ変更をリアルタイムでキャプチャしたいと考えています。<br>以下の要件を満たすコンポーネントはそれぞれどれですか。<br>要件１：変更の各バッチを処理する<br>要件２：変更フィードの基となるデータを格納する' data-answer='1,2' data-explanation='■正解：<br>要件１：B:デリゲート<br>要件２：C:監視対象コンテナ<br>■解説<br>Azure Cosmos DBの変更フィードは、Azure Cosmos DBコンテナ内でのデータ変更（作成、更新、削除）をリアルタイムでキャプチャする機能です。このフィードは、特定のアプリケーションがデータの変更を連続的に受け取り、それに応じて処理を行うために使用されます。変更フィードプロセッサは、この変更フィードを管理し、安定して効率的にデータ変更を処理するためのパターンやライブラリを提供します。主要なコンポーネントには以下のものがあります。<br>・監視対象コンテナ（Monitored container）：変更フィードが生成されるデータを保存するCosmos DBコンテナです。このコンテナにデータが存在し、このデータに対する変更が変更フィードによって監視されます。<br>・リースコンテナ（Lease container）：複数のワーカー間で変更フィードの処理を調整するために使用されます。リースコンテナは、変更フィードの処理に関する状態情報を保存し、アプリケーションの複数のインスタンスが効率的にフィード処理を分担できるようにし、重複を防ぎます。<br>・コンピューティング インスタンス（Computing instance）：変更フィードの変更をリスニングするプロセスの設定と開始を行います。基本的に変更フィード処理のライフサイクルとオーケストレーションを管理します。<br>・デリゲート（Delegate）：このコンポーネントは、変更フィードから受け取った変更のバッチごとに処理を行います。変更フィードが変更を検出したときに実行されるカスタム処理ロジックを定義します。<br>設問については、以下の通りとなります。<br>要件１：変更の各バッチを処理する：この要件には、デリゲートが適切です。デリゲートは、変更フィードから送信されるデータの各バッチを処理するためのユーザー定義の関数やメソッドを指します。デリゲートを通じて、変更データに対して具体的なビジネスロジックを適用することが可能です。<br>要件２：変更フィードの基となるデータを格納する：この要件には、監視対象コンテナが適切です。監視対象コンテナは、変更フィードが監視するCosmos DBのコンテナを指し、ここに保存されたデータに対する変更が変更フィードによって捕捉されます。監視対象コンテナは変更フィードの源となるデータを保持しているため、この要件に対応します。'>
+<div class='choice'  data-group='要件１' >コンピューティングインスタンス</div>
+<div class='choice'  data-group='要件１' >デリゲート</div>
+<div class='choice'  data-group='要件２' >監視対象コンテナ</div>
+<div class='choice'  data-group='要件２' >リースコンテナ</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題24<br>あなたはオンラインショッピングプラットフォームを開発しています。製品情報はあまり頻繁に変更されないため、Azure Redis Cacheを使用して製品データの効率的な操作を行っていますが、製品情報が更新された際には、キャッシュを無効化する必要があります。<br>キャッシュを無効化するため、下記のコードをどのように設定すればよいですか。' data-answer='0,4' data-explanation='■正解：<br>コード１：A:IDatabase cache = Connection. GetDatabase();<br>コード２：E:cache.KeyDelete("Products");<br>■解説<br>設問の要件として、製品情報が更新された際に、Azure Redis Cache内の製品情報を無効化（削除）するコードを設定する必要があります。ここでの目的は、古いまたは更新されたデータをキャッシュから完全に削除し、最新の情報のみをキャッシュに保持することです。<br>１．キャッシュへの接続を取得する：IDatabase cache = Connection.GetDatabase(); は、Redisデータベースへの接続を取得し、IDatabase インターフェースのインスタンスを返す標準的な方法です。<br>２．キャッシュからキーを削除する：cache.KeyDelete("Products"); により、"Products" というキーに関連付けられたデータがRedisキャッシュから削除されます。これは、データが変更されたときに古いキャッシュをクリアする標準的な方法です。<br>これにより、製品情報が更新された際にキャッシュが確実に無効化され、最新の情報がユーザーに提供されるようになります。' data-images='000011.jpg'>
+<div class='choice'  data-group='コード１' >IDatabase cache = Connection. GetDatabase();</div>
+<div class='choice'  data-group='コード１' >IServer = Connection. GetDatabase();</div>
+<div class='choice'  data-group='コード２' >cache.HashGet("Products");</div>
+<div class='choice'  data-group='コード２' >cache.KeyExpire("Products");</div>
+<div class='choice'  data-group='コード２' >cache.KeyDelete("Products");</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題25<br>あるメディア制作会社は、Azure Storageにアップロードされた動画ファイルを別のフォーマットに変換して配信するためのアプリケーションを開発しています。Azure Functionsを使用して変換処理を行っていますが、エンコーディングの処理に時間がかかりタイムアウトしてしまいます。<br>対応方法として適切な記述はどれですか。（２つ選択）' data-answer='0,2' data-explanation='■正解：<br>A:Azure Service Busキューを組み合わせて処理を非同期化する<br>C:Durable Functionsの非同期HTTP APIパターンを使用する<br>■解説<br>ビデオファイルのエンコーディングのような時間がかかる処理をAzure Functionsで実行する場合、関数のタイムアウトが問題となります。Azure Functionsのデフォルトのタイムアウトは、プランによって異なり、従量課金プランでは5分、Premiumプランや専用プランでは30分となっています。<br>タイムアウトを回避する方法として、以下の選択肢の対応策が有効です。<br>・Azure Service Busキューを組み合わせて処理を非同期化する：Azure Service Busキューを利用して非同期処理を行うことで、関数の実行時間に対する制限を回避し、バックグラウンドで長時間実行されるタスクを処理できます。<br>仕組みとしては、Azure Functionsがトリガーで起動された際、すぐに処理すべきデータをAzure Service Busキューに送信します。Service Busは、即座にHTTPレスポンスをクライアントに返し、関数がタイムアウトすることなく終了します。その後、キュートリガーによりAzure Functionsが再度起動され、キューに入れられたデータの実際の処理をバックグラウンドで行います。これにより、実際の処理は別のキュートリガー関数で非同期に行うことができタイムアウトを回避できます。<br>・Durable Functionsの非同期HTTP APIパターンを使用する：Durable Functionsは、Azure Functionsの拡張機能であり、関数の実行状態を自動で管理します。これにより、長時間実行される処理を効率的に実装できます。<br>非同期HTTP APIパターンでは、長時間実行される処理に対してHTTPリクエストを行う場合、リクエストを受けた直後にレスポンスを返し、処理はバックグラウンドで継続します。これにより、タイムアウトの問題を回避しつつ、処理の進行状況を追跡することができます。<br>■その他の選択肢<br>・host.jsonファイルのfunctionTimeoutプロパティの設定をより長い時間に設定する：functionTimeoutプロパティを変更することで、タイムアウト期間を延長できますが、プランによって最大のタイムアウト時間の制限があり、ビデオエンコーディングのように長時間を要する処理には不十分です。<br>・常時接続(Always On)機能を有効にする：常時接続(Always On)は、AzureのApp Service Planでのみ利用可能な機能であり、関数が自動的にアイドル状態になるのを防ぐものです。ただし、タイムアウトの設定や長時間実行タスクの処理方法に関連するものではありません。'>
+<div class='choice'  data-group='選択肢' >Azure Service Busキューを組み合わせて処理を非同期化する</div>
+<div class='choice'  data-group='選択肢' >常時接続(Always On)機能を有効にする</div>
+<div class='choice'  data-group='選択肢' >Durable Functionsの非同期HTTP APIパターンを使用する</div>
+<div class='choice'  data-group='選択肢' >host.jsonファイルのfunctionTimeoutプロパティの設定をより長い時間に設定する</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題26<br>あなたの組織は、ジョブ検索サイトの構築のためAzure Searchの導入を検討しています。求職者は、業種や職種、雇用形態（正社員、契約社員、パートタイム等）に基づいて求人を検索できるようにする必要があります。<br>そのためには、SearchParametersクラスのどのプロパティを設定すればよいですか。' data-answer='3' data-explanation='■正解：<br>D:Filter<br>■解説<br>SearchParametersクラスのFilterプロパティは、Azure Searchにおいて、検索クエリの結果を特定の条件で絞り込むために使用されるプロパティです。このプロパティを使用することで、検索対象のデータセットから条件に合致する項目のみを選択して返すことが可能になります。<br>設問の場合、業種、職種、雇用形態などの条件に基づいて求人情報をフィルタリングし、求職者のニーズに合った求人情報のみを表示するためにFilterプロパティを設定する必要があります。'>
+<div class='choice'  data-group='選択肢' >OrderBy</div>
+<div class='choice'  data-group='選択肢' >Facets</div>
+<div class='choice'  data-group='選択肢' >QueryType</div>
+<div class='choice'  data-group='選択肢' >Filter</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題27<br>あなたの組織は、Azure App Serviceを利用してWebアプリを運用しています。WebJobs SDKを利用し、Azure Storageに画像のBlobが作成された際に関数を自動的に呼び出してサムネイルを生成したいと考えています。<br>このようなバックグラウンドタスクを設計するには、どの機能を利用するのが適切ですか。' data-answer='3' data-explanation='■正解：<br>D:WebJobs<br>■解説<br>WebJobs機能は、Azure App Serviceに関連付けられたバックグラウンドタスクを実行するためのサービスです。<br>WebJobs SDKはWebJobs向けに設計されたフレームワークであり、Azure StorageにBlobが作成されたことをトリガーとして関数を自動的に呼び出すなど、様々なイベントに基づいてバックグラウンドプロセスを実装できます。このケースでは、Blobの作成をトリガーとしてサムネイルを自動生成するバックグラウンドタスクを設計するのに適しています。'>
+<div class='choice'  data-group='選択肢' >Azure Functions</div>
+<div class='choice'  data-group='選択肢' >Logic Apps</div>
+<div class='choice'  data-group='選択肢' >API Apps</div>
+<div class='choice'  data-group='選択肢' >WebJobs</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題28<br>あなたは、Azure App Serviceを使用してアプリケーションを開発しており、Azure Key Vaultにキー、シークレットおよび証明書を保存する予定です。Azure Key Vaultオブジェクトは、削除後90日間保持する必要があります。<br>論理的削除（Soft Delete）で90日間の保持期間を設定した場合、その保持期間が過ぎるまで最終的な削除を無効にする機能はどれですか。' data-answer='0' data-explanation='■正解：<br>A:消去保護<br>■解説<br>消去保護（Purge protection）は、Azure Key Vaultのデータを保護するための機能であり、論理的削除（Soft delete）が有効になっているキーボールトでのみ利用できます。この機能を有効にすると、削除されたキーボールトオブジェクトが復元可能な保持期間中に、そのオブジェクトを完全に削除（パージ）することが防止されます。一度消去保護が有効になると、保持期間が終了するまで、ユーザーがキーボールトのオブジェクトを完全に削除することはできません。<br>この保護機能は、特にコンプライアンスや規制が厳しい環境での使用に適しており、データが不可逆的に失われることを防ぎます。'>
+<div class='choice'  data-group='選択肢' >消去保護</div>
+<div class='choice'  data-group='選択肢' >アクセス制御</div>
+<div class='choice'  data-group='選択肢' >共有アクセス署名</div>
+<div class='choice'  data-group='選択肢' >キーの監査</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題29<br>あなたは、Azure FunctionsとAzure Web PubSubを組み合わせて、オンラインカンファレンス中に参加者からの質問をリアルタイムで受け取り、スピーカーに転送するWebアプリケーションを構築する予定です。カンファレンスの参加者はWebアプリケーションを通じて質問を送信することで、Azure Functionsがトリガーされ、スピーカーへの質問転送処理を行います。<br>この場合、function.jsonをどのように設定するのが最適ですか。' data-answer='0,4' data-explanation='■正解：<br>値１：A:webPubSubTrigger<br>値２：E:user<br>■解説<br>Azure Web PubSubは、WebとモバイルアプリケーションにリアルタイムのWeb通信機能を提供するクラウドサービスです。このサービスは、WebSocketと互換性のあるプロトコルを使用して、サーバーとクライアント間の双方向通信を可能にします。これにより、開発者はリアルタイムのインタラクティブなアプリケーションを簡単に構築できます。<br>Azure Web PubSubを使用する際のfunction.jsonファイルの各プロパティの説明は以下の通りです。<br>type：関数がどのサービスによってトリガーされるかを定義します。Azure Web PubSubの場合、webPubSubTriggerを使用する必要があります。<br>direction：データフローの方向を指定します。通常はin（入力）です。<br>name：関数内で入力データにアクセスするためのパラメータ名です。<br>hub：Azure Web PubSubサービス内の特定のハブの名前を指定します。<br>eventType：イベントのタイプを指定します。userまたはsystemである必要があります。<br>eventName：トリガーされる具体的なイベントの名前です。例えばconnectやmessageなどが使用されます。<br>設問のシナリオでは、オンラインカンファレンスの参加者がリアルタイムで質問を送信し、Azure Functionsを介してスピーカーに転送するシステムを構築します。適切なfunction.jsonの設定は次のようになります。<br>値１ (type)：この場合、Azure Web PubSubサービスを利用してリアルタイムメッセージングを実現するため、webPubSubTriggerが適切です。<br>値２ (eventType)：参加者からの質問はユーザー生成のイベントに該当するため、userが適切です。' data-images='000012.jpg'>
+<div class='choice'  data-group='値１' >webPubSubTrigger</div>
+<div class='choice'  data-group='値１' >serviceBusTrigger</div>
+<div class='choice'  data-group='値１' >eventHubTrigger</div>
+<div class='choice'  data-group='値１' >httpTrigger</div>
+<div class='choice'  data-group='値２' >user</div>
+<div class='choice'  data-group='値２' >system</div>
+</div>
+
+<div class='question' data-multiple='false' data-question='問題30<br>Azure CLIを使用してAzure App ServiceでWebアプリを作成する場合、正しいコマンドの手順はどれですか。' data-answer='0' data-explanation='■正解：<br>A:az group create ⇒ az appservice plan create ⇒ az webapp create<br>■解説<br>Azure CLIを使用してAzure App ServiceでWebアプリを作成するための正しいコマンドの実行順序は、以下の通りです。<br>１．Azureにログイン：Azureのアカウントにログインします。<br>az login<br>２．リソースグループの作成：リソースグループを作成し、そのグループにリソースを整理します。<br>az group create --name [リソースグループ名] --location [リージョン]<br>３．App Serviceプランの作成：App Serviceプランを設定します。このプランがWebアプリの実行環境を定義します。<br>az appservice plan create --name [プラン名] --resource-group [リソースグループ名] --sku B1 --is-linux<br>４．Webアプリの作成：Webアプリを作成します。<br>az webapp create --resource-group [リソースグループ名] --plan [プラン名] --name [アプリ名] --runtime "NODE|10.14"<br>具体的には、最初にリソースグループを作成し、次にApp Serviceプランを設定し、最後にWebアプリを作成します。この順序でコマンドを実行することが重要です。'>
+<div class='choice'  data-group='選択肢' >az group create ⇒ az appservice plan create ⇒ az webapp create</div>
+<div class='choice'  data-group='選択肢' >az group create ⇒ az webapp create ⇒ az appservice plan create</div>
+<div class='choice'  data-group='選択肢' >az webapp create ⇒ az appservice plan create ⇒ az group create</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題31<br>あなたは、世界中に展開する小売チェーンの店舗ごとの販売データを収集するソリューションを開発しています。各店舗は、1時間ごとに売上データをAzure Blob Storageに送信します。このデータはリアルタイムで処理され、特定の地域の売上パフォーマンスを分析するためにAzure Cosmos DBに蓄積される必要があります。ソリューションは以下のプロセスで構成される必要があります。<br>プロセス１：各店舗から送信される売上データはAzure Blob Storageに保存される。<br>プロセス２：Azure Blob Storageに新しいデータが保存されるたびに、サービス１がイベントをトリガーし、サービス２に通知する<br>プロセス３：サービス１からのイベントに基づいて、サービス２はデータ処理のワークフローを実行し、必要なデータ変換やフィルタリングを行い、最終的にAzure Cosmos DBにデータを転送する。<br>このプロセスにおいて、サービス１とサービス２は何を使用するのが最適ですか。' data-answer='2,4' data-explanation='■正解：<br>サービス１：C:Azure Event Grid<br>サービス２：E:Azure Logic Apps<br>■解説<br>設問のシナリオでは、データがAzure Blob Storageに保存されたときに処理を開始し、地理的に分散された高可用性を保証しつつ、Azure Cosmos DBへのデータの出力を行うイベントをトリガーする必要があります。<br>このプロセスを実行するためには、Azure Event Grid（イベントの受信）ならびにAzure Logic Apps（イベントハンドラー）を組み合わせて使用するのが最適です。<br>Azure Event Gridは、イベントベースのアーキテクチャを簡単に構築できるように設計されたサービスです。Azure Blob Storage に新しいデータが追加されると、Event Gridはこれをイベントソースとして認識し、登録されているイベントハンドラーに対して通知を行います。Event Grid は非常にスケーラブルであり、低遅延でイベントを配信する能力を持っています。また、イベントフィルタリングをサポートし、特定の条件を満たすイベントだけを選択して処理することが可能です。<br>Azure Logic Appsは、ビジネスプロセスやワークフローを自動化するためのクラウドベースのサービスです。Logic Appsは Azure Event Gridからのイベントをトリガーとして使用でき、Blob Storage に新しいデータが追加された際に自動的にアクションを実行することができます。これにより、データの変換やフィルタリング、Azure Cosmos DB へのデータ転送といった一連の処理を自動で行うことができます。<br>このソリューションは、データのリアルタイム処理を効率的に行いながら、Azureのコストも最小限に抑えることができます。また、各サービスはクラウドネイティブで高可用性を備えており、グローバルに展開された店舗からの大量のデータを効率的に処理するのに適しています。'>
+<div class='choice'  data-group='サービス１' >Azure Logic Apps</div>
+<div class='choice'  data-group='サービス１' >Azure Event Hub</div>
+<div class='choice'  data-group='サービス１' >Azure Event Grid</div>
+<div class='choice'  data-group='サービス１' >Azure Service Bus</div>
+<div class='choice'  data-group='サービス２' >Azure Logic Apps</div>
+<div class='choice'  data-group='サービス２' >Azure Event Grid</div>
+<div class='choice'  data-group='サービス２' >Azure App Service</div>
+<div class='choice'  data-group='サービス２' >Azure Event Hub</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題32<br>あなたは保険会社のためのソリューションを開発しています。このシステムは、顧客の申請状況をリアルタイムで更新し、管理する必要があります。顧客の最新の申請状態や申請の進行具合を正確に追跡し、顧客サービスを最適化することが求められます。<br>Azure Cosmos DBを使用する場合、下記要件を満たす整合性レベルはそれぞれ何ですか。<br>要件１：顧客の最新の申請状態が常に取得できるようにする<br>要件２：申請の進行状況データは現在のバージョンかその前のバージョンである' data-answer='0,4' data-explanation='■正解：<br>要件１：A:厳密（Strong）<br>要件２：E:有界整合性制約（Bounded Staleness）<br>■解説<br>このシナリオでは、保険会社の顧客申請状況をリアルタイムで正確に追跡する必要があります。ここでの要件に基づいて、最も適切な整合性レベルを選択することが求められます。<br>要件１：顧客の最新の申請状態が常に取得できるようにする：この要件を満たすには、データの最新状態が常に読み取り可能であることが保証される「厳密（Strong）」整合性レベルが適切です。厳密な整合性は、読み取り操作が書き込み操作の完全な順序を反映することを保証し、全ての地域で最新のデータを提供します。<br>要件２：申請の進行状況データは現在のバージョンかその前のバージョンである：「有界整合性制約（Bounded Staleness）」は、データのバージョンが一定の遅延（時間または操作数による）内であることを保証します。これにより、最新バージョンまたはそれに近いバージョンのデータが保持されるため、この要件に適しています。'>
+<div class='choice'  data-group='要件１' >厳密（Strong）</div>
+<div class='choice'  data-group='要件１' >有界整合性制約（Bounded Staleness）</div>
+<div class='choice'  data-group='要件１' >一貫性のあるプレフィックス（Consistent Prefix）</div>
+<div class='choice'  data-group='要件２' >厳密（Strong）</div>
+<div class='choice'  data-group='要件２' >有界整合性制約（Bounded Staleness）</div>
+<div class='choice'  data-group='要件２' >一貫性のあるプレフィックス（Consistent Prefix）</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題33<br>あなたは、オンライン教育プラットフォームのためのコースAPIのゲートウェイソリューションを開発しています。このコースAPIのバックエンドはRESTfulサービスとして実装され、Azure App Serviceでホストされています。API Managementサービスインスタンスでバックエンド認証を設定する必要があります。<br>どのターゲットとゲートウェイ資格情報を選択するべきですか。' data-answer='1,2' data-explanation='■正解：<br>ターゲット：B:HTTP(s)エンドポイント<br>ゲートウェイ資格情報：C:クライアント証明書<br>■解説<br>Azure API Management（APIM）を用いてAPIを構成する際、バックエンドとゲートウェイの資格情報は非常に重要な役割を果たします。これらの設定は、APIがどのように外部のサービスやリソースと通信するかを決定し、その通信が安全であることを保証するために使用されます。<br>ターゲットは、APIがデータを取得または送信する外部のエンドポイントを指します。通常、これはAPIが接続するサーバーのURLです。この設定は、APIがどこにデータを要求すべきか、またはどこからデータを受け取るべきかを指定します。<br>ゲートウェイ資格情報は、APIがターゲットと安全に通信するために使用する認証方法です。資格情報は、APIがターゲットにアクセスする際に必要な認証トークンや証明書を提供することで、不正アクセスから保護します。<br>本設問について、バックエンドがAzure App ServiceでホストされるRESTfulサービスである場合、通常はHTTPまたはHTTPSプロトコルを用います。またクライアント証明書を用いることで、API Managementとバックエンドサービス間の通信が相互認証によって保護されます。'>
+<div class='choice'  data-group='ターゲット' >Azure Logic App</div>
+<div class='choice'  data-group='ターゲット' >HTTP(s)エンドポイント</div>
+<div class='choice'  data-group='ゲートウェイ資格情報' >クライアント証明書</div>
+<div class='choice'  data-group='ゲートウェイ資格情報' >ベーシック</div>
+</div>
+
+<div class='question' data-multiple='true' data-question='問題34<br>あなたは、世界中の複数の地域で展開されているAzure App Service上で実行されるビデオストリーミングサービスのアプリケーションを開発しました。このサービスはAzure Traffic Managerを利用しており、Application Insightsでサービスの監視が行われています。<br>ビデオストリーミングサービスの毎月のアップタイムを分析するためには、どのサービスもしくは機能を使用するべきですか。' data-answer='1,4' data-explanation='■正解：<br>B:Azure Monitor メトリックス<br>E:Azure Monitor ログ<br>■解説<br>ビデオストリーミングサービスの毎月のアップタイムを分析するためには、システムのパフォーマンスデータやアップタイム情報を収集し、これを効果的に分析するための適切なツールやサービスを選択することが必要です。<br>・Azure Monitor メトリックスは、Azureリソースからパフォーマンスデータや操作データを収集するサービスです。これには、アップタイム、応答時間、その他多くの重要なメトリクスが含まれます。これらのメトリクスを使用して、アプリケーションの健康状態をリアルタイムで監視し、長期的な分析を行うことができます。<br>・Azure Monitor ログは、ログデータやパフォーマンスデータを収集してクエリするためのツールです。カスタムクエリを作成して特定のデータを抽出し、詳細な分析やレポート作成に利用できます。<br>■その他の選択肢<br>・Application Insights SDK：アプリケーションのカスタムテレメトリデータを収集するために使用されます。これはアプリケーションのコード内に組み込むことで、パフォーマンスデータや使用状況データを収集するのに役立ちますが、アップタイムの分析には直接関連しません。<br>・Azure Logic Apps：ビジネスプロセスやワークフローを自動化するためのサービスですが、アップタイムの分析には適していません。<br>・Azure Event Hubs：大量のイベントデータをリアルタイムで収集するためのサービスですが、アップタイム分析には直接関連しません。'>
+<div class='choice'  data-group='選択肢' >Application Insights SDK</div>
+<div class='choice'  data-group='選択肢' >Azure Monitor メトリックス</div>
+<div class='choice'  data-group='選択肢' >Azure Event Hubs</div>
+<div class='choice'  data-group='選択肢' >Azure Logic Apps</div>
+<div class='choice'  data-group='選択肢' >Azure Monitor ログ</div>
+</div>
+
+        </div>
+
+        <h2 id="question"></h2>
+        <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+            <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+        </div>
+        <ul class="choices" id="choices"></ul>
+        <button onclick="checkAnswer()">採点</button>
+        <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestionIndex = 0;
+        let correctCount = 0;
+        const questions = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const questionElements = document.querySelectorAll('#quiz-data .question');
+            questions.push(...Array.from(questionElements).map(questionElement => ({
+                question: questionElement.getAttribute('data-question').replace(/\\n/g, '<br>'),
+                choices: Array.from(questionElement.querySelectorAll('.choice')).map((choice, index) => ({
+                    text: choice.innerHTML.replace(/\\n/g, '<br>'),
+                    group: choice.getAttribute('data-group'),
+                    index: index
+                })),
+                correctAnswer: questionElement.getAttribute('data-answer').split(',').map(Number),
+                explanation: questionElement.getAttribute('data-explanation').replace(/\\n/g, '<br>'),
+                images: questionElement.getAttribute('data-images') ? questionElement.getAttribute('data-images').split(',') : [],
+                multiple: questionElement.getAttribute('data-multiple') === 'true'
+            })));
+            showQuestion();
+        });
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function showQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesContainer = document.getElementById('choices');
+            const imageContainer = document.getElementById('imageContainer');
+            const currentQuestion = questions[currentQuestionIndex];
+
+            shuffleArray(currentQuestion.choices);
+
+            questionElement.innerHTML = currentQuestion.question;
+
+            const images = imageContainer.querySelectorAll('.questionImage');
+            images.forEach((img, index) => {
+                if (currentQuestion.images[index]) {
+                    img.src = currentQuestion.images[index];
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+
+            choicesContainer.innerHTML = '';
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const groupContainer = document.createElement('div');
+                groupContainer.className = 'group-container';
+
+                const groupTitle = document.createElement('h3');
+                groupTitle.innerHTML = `グループ: ${group}`;
+                groupContainer.appendChild(groupTitle);
+
+                currentQuestion.choices.filter(choice => choice.group === group).forEach((choice, i) => {
+                    const li = document.createElement('li');
+                    const input = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    input.type = currentQuestion.multiple ? 'checkbox' : 'radio';
+                    input.name = `choice_${group}`;
+                    input.value = choice.index;
+                    input.id = `choice_${group}_${i}`;
+
+                    label.htmlFor = `choice_${group}_${i}`;
+                    label.innerHTML = choice.text;
+
+                    li.appendChild(input);
+                    li.appendChild(label);
+                    groupContainer.appendChild(li);
+                });
+
+                choicesContainer.appendChild(groupContainer);
+            });
+
+            document.getElementById('result').textContent = "";
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer() {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedChoices = [];
+            const groups = [...new Set(currentQuestion.choices.map(choice => choice.group))];
+
+            groups.forEach(group => {
+                const selected = Array.from(document.querySelectorAll(`input[name="choice_${group}"]:checked`))
+                                      .map(checkbox => parseInt(checkbox.value));
+                selectedChoices.push(...selected);
+            });
+
+            selectedChoices.sort();
+
+            const resultElement = document.getElementById('result');
+
+            if (selectedChoices.length > 0) {
+                const isCorrect = currentQuestion.multiple
+                    ? selectedChoices.toString() === currentQuestion.correctAnswer.sort().toString()
+                    : selectedChoices.length === 1 && selectedChoices[0] === currentQuestion.correctAnswer[0];
+
+                if (isCorrect) {
+                    resultElement.innerHTML = "正解です！<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "green";
+                    correctCount++;
+                } else {
+                    resultElement.innerHTML = "残念、不正解です。<br>" + currentQuestion.explanation;
+                    resultElement.style.color = "red";
+                }
+                document.getElementById('nextButton').style.display = 'inline';
+            } else {
+                resultElement.textContent = "回答を選択してください。";
+                resultElement.style.color = "orange";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2>問題終了！</h2>
+                <p>あなたの正解数は ${correctCount} / ${questions.length} です。</p>
+                <button onclick="restartQuiz()">再挑戦する</button>
+            `;
+        }
+
+        function restartQuiz() {
+            correctCount = 0;
+            currentQuestionIndex = 0;
+
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `
+                <h2 id="question"></h2>
+                <div id="imageContainer" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                    <img class="questionImage" src="" alt="Question Image" style="max-width: 100%; display: none;">
+                </div>
+                <ul class="choices" id="choices"></ul>
+                <button onclick="checkAnswer()">採点</button>
+                <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+                <div class="result" id="result"></div>
+            `;
+
+            showQuestion();
+        }
+    </script>
+</body>
+</html>
